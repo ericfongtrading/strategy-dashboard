@@ -31,7 +31,7 @@ jobs:
         env:
           # If your repo is at https://<user>.github.io/<repo>/, set this to "/<repo>".
           # For a user/organization site (https://<user>.github.io/) leave it blank.
-          NEXT_PUBLIC_BASE_PATH: /trading-dashboard
+          NEXT_PUBLIC_BASE_PATH: /strategy-dashboard
         run: npm run build
       - name: Add .nojekyll
         run: touch ./out/.nojekyll
