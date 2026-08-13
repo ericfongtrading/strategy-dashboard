@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>美元收益策略 · 实盘账户记录</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+    .num { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div class="max-w-5xl mx-auto px-6 py-12">
+
+    <a href="../" class="text-sm text-slate-400 hover:text-slate-200">&larr; 返回策略总览</a>
+
+    <header class="mt-6 mb-10">
+      <div class="flex items-baseline gap-3 flex-wrap">
+        <h1 class="text-4xl font-bold tracking-tight">美元收益策略</h1>
+        <span class="inline-flex items-center gap-1.5 text-sm px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          实盘
+        </span>
+      </div>
+      <p class="text-slate-400 mt-2 max-w-2xl">
+        全自动美元资金利率机器人，24 小时循环运作。以下为实盘账户截图，
+        展示真实资金规模与当前全部在贷仓位，每周更新。
+      </p>
+      <p class="text-slate-500 text-sm mt-2">截图时间 2026-08-10 (HKT)</p>
+    </header>
+
+    <section class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
+        <div class="text-xs text-slate-500 mb-1">账户净值</div>
+        <div class="text-2xl font-bold num">$212,821</div>
+      </div>
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
+        <div class="text-xs text-slate-500 mb-1">在贷仓位数</div>
+        <div class="text-2xl font-bold num">286</div>
+      </div>
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
+        <div class="text-xs text-slate-500 mb-1">在贷金额</div>
+        <div class="text-2xl font-bold num">$212,770</div>
+      </div>
+    </section>
+
+    <section class="mb-12">
+      <h2 class="text-lg font-semibold text-slate-200 mb-1">实盘账户 — 资金页面</h2>
+      <p class="text-sm text-slate-500 mb-4">左下角为账户余额与美元等值总额；右侧 PROVIDED (286) 为当前全部在贷仓位（金额 / 利率 / 到期时间）</p>
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 overflow-x-auto">
+        <img src="funding_account.png" alt="资金账户实盘截图" class="w-full" />
+      </div>
+    </section>
+
+    <footer class="border-t border-slate-800 pt-6 mt-10">
+      <p class="text-xs text-slate-500">
+        累计收益以 $200,000 初始资金为基准计算。浏览器与个人信息已从截图中裁剪。
+      </p>
+    </footer>
+
+  </div>
+</body>
+</html>
