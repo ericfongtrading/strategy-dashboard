@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: #0a0f1c;
+  color: #e5e7eb;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grid backdrop for the hero */
+.grid-bg {
+  background-image:
+    radial-gradient(circle at 20% -10%, rgba(34, 211, 238, 0.18), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(167, 139, 250, 0.15), transparent 40%),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px;
+}
+
+.card-glow {
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 20px 40px -20px rgba(0,0,0,0.6);
+}
