@@ -11,7 +11,6 @@ export default function Home() {
 
   const tradfi = strategies.filter((s) => s.category === 'tradfi');
   const crypto = strategies.filter((s) => s.category === 'crypto');
-  const liveCount = strategies.filter((s) => s.status === 'live' || s.status === 'active').length;
 
   return (
     <>
@@ -27,14 +26,6 @@ export default function Home() {
               All strategies backtested with walk-forward validation, bootstrap drawdown analysis,
               and Monte Carlo simulation.
             </p>
-
-            {/* Summary stats */}
-            <div className="mt-8 flex flex-wrap gap-3">
-              <StatChip label="Total Strategies" value={String(strategies.length)} />
-              <StatChip label="Live / Active" value={String(liveCount)} accent />
-              <StatChip label="Asset Classes" value="5" />
-              <StatChip label="Avg Sharpe" value={avgSharpe()} />
-            </div>
           </div>
         </header>
 
@@ -107,15 +98,6 @@ export default function Home() {
   );
 }
 
-function StatChip({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
-  return (
-    <div className="rounded-lg border border-border bg-bg-card px-4 py-2.5">
-      <div className="text-[11px] text-muted uppercase tracking-wider">{label}</div>
-      <div className={`text-xl font-bold metric-value ${accent ? 'text-good' : 'text-white'}`}>{value}</div>
-    </div>
-  );
-}
-
 function SectionHeader({ title, count }: { title: string; count: number }) {
   return (
     <div className="flex items-baseline gap-3 mb-5">
@@ -132,10 +114,4 @@ function MethodItem({ title, desc }: { title: string; desc: string }) {
       <div className="text-xs text-muted leading-relaxed">{desc}</div>
     </div>
   );
-}
-
-function avgSharpe(): string {
-  const sharpes = strategies.filter((s) => s.sharpe).map((s) => parseFloat(s.sharpe!));
-  if (!sharpes.length) return '—';
-  return (sharpes.reduce((a, b) => a + b, 0) / sharpes.length).toFixed(2);
 }

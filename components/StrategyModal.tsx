@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback } from 'react';
 import type { Strategy } from '@/lib/strategies';
+import { EquityChart } from './EquityChart';
 
 const statusConfig: Record<Strategy['status'], { label: string; color: string; dot: boolean }> = {
   live: { label: 'Live', color: 'text-good bg-good/10 border-good/30', dot: true },
@@ -14,7 +15,7 @@ function Metric({ label, value, large, color }: { label: string; value: string; 
   return (
     <div className="rounded-lg bg-bg/60 border border-border px-4 py-3">
       <div className="text-[11px] text-muted uppercase tracking-wider mb-1">{label}</div>
-      <div className={`${large ? 'text-2xl' : 'text-lg'} font-semibold metric-value ${color || 'text-white'}`}>
+      <div className={`${large ? 'text-2xl' : 'text-lg'} font-bold metric-value ${color || 'text-white'}`}>
         {value}
       </div>
     </div>
@@ -40,19 +41,21 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
   const st = statusConfig[s.status];
   const displayLabel = s.statusLabel || st.label;
+  const hasChart = s.status !== 'development' && s.cagrNum;
 
   return (
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
-        className="modal-panel relative w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-border bg-bg-modal shadow-2xl"
+        className="modal-panel relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-bg-modal shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="sticky top-0 z-10 bg-bg-modal/95 backdrop-blur border-b border-border px-6 py-4 flex items-start justify-between gap-4">
           <div>
+            <div className="text-[11px] font-medium text-muted uppercase tracking-wider mb-1">{s.edge}</div>
             <div className="flex items-center gap-3">
-              <h2 className="text-xl font-bold text-white">{s.name}</h2>
+              <h2 className="text-2xl font-bold text-white">{s.asset}</h2>
               <span className={`shrink-0 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${st.color}`}>
                 {st.dot && (
                   <span className="relative flex h-1.5 w-1.5">
@@ -63,7 +66,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
                 {displayLabel}
               </span>
             </div>
-            <div className="text-sm text-muted mt-0.5">{s.asset} &middot; {s.edge}</div>
+            <div className="text-sm text-muted mt-0.5">{s.name}</div>
           </div>
           <button
             onClick={onClose}
@@ -78,7 +81,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
         {/* Body */}
         <div className="px-6 py-5 space-y-6">
-          {/* Metrics */}
+          {/* Metrics row */}
           {(s.cagr || s.sharpe || s.maxDD) && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {s.cagr && <Metric label="CAGR" value={s.cagr} large color="text-good" />}
@@ -87,11 +90,14 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
             </div>
           )}
 
-          {/* Data source */}
-          {s.dataSource && (
-            <div className="flex items-center gap-2 text-sm">
-              <span className="text-muted">Data:</span>
-              <span className="text-white/80">{s.dataSource}</span>
+          {/* Equity chart */}
+          {hasChart && (
+            <div className="rounded-xl border border-border bg-bg/40 p-4">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-xs font-semibold text-muted uppercase tracking-wider">Performance</h4>
+                {s.dataSource && <span className="text-[11px] text-muted">{s.dataSource}</span>}
+              </div>
+              <EquityChart strategy={s} />
             </div>
           )}
 

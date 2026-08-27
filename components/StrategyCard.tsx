@@ -7,15 +7,6 @@ const statusConfig: Record<Strategy['status'], { label: string; color: string; d
   development: { label: 'In Development', color: 'text-warn bg-warn/10 border-warn/30', dot: false },
 };
 
-function MetricBox({ label, value, color }: { label: string; value: string; color?: string }) {
-  return (
-    <div>
-      <div className="text-[11px] text-muted uppercase tracking-wider">{label}</div>
-      <div className={`text-lg font-semibold metric-value ${color || 'text-white'}`}>{value}</div>
-    </div>
-  );
-}
-
 export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void }) {
   const st = statusConfig[s.status];
   const displayLabel = s.statusLabel || st.label;
@@ -24,14 +15,15 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
     return (
       <button
         onClick={onClick}
-        className="strategy-card text-left rounded-xl border border-dashed border-border bg-bg-card/50 p-5 flex flex-col gap-3 cursor-pointer min-h-[180px]"
+        className="strategy-card text-left rounded-xl border border-dashed border-border bg-bg-card/50 p-6 flex flex-col gap-4 cursor-pointer min-h-[240px]"
       >
         <div className="flex items-start justify-between gap-2">
           <div>
-            <h3 className="text-base font-semibold text-white/70">{s.name}</h3>
-            <div className="text-xs text-muted mt-0.5">{s.asset} &middot; {s.edge}</div>
+            <div className="text-[11px] font-medium text-muted uppercase tracking-wider mb-1">{s.edge}</div>
+            <h3 className="text-xl font-bold text-white/60">{s.asset}</h3>
+            <div className="text-sm text-muted mt-0.5">{s.name}</div>
           </div>
-          <span className={`shrink-0 inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[11px] font-medium ${st.color}`}>
+          <span className={`shrink-0 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${st.color}`}>
             {displayLabel}
           </span>
         </div>
@@ -43,14 +35,16 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
   return (
     <button
       onClick={onClick}
-      className="strategy-card text-left rounded-xl border border-border bg-bg-card p-5 flex flex-col gap-4 cursor-pointer"
+      className="strategy-card text-left rounded-xl border border-border bg-bg-card p-6 flex flex-col gap-5 cursor-pointer"
     >
+      {/* Header: Product + Status */}
       <div className="flex items-start justify-between gap-2">
         <div>
-          <h3 className="text-base font-semibold text-white">{s.name}</h3>
-          <div className="text-xs text-muted mt-0.5">{s.asset} &middot; {s.edge}</div>
+          <div className="text-[11px] font-medium text-muted uppercase tracking-wider mb-1">{s.edge}</div>
+          <h3 className="text-2xl font-bold text-white">{s.asset}</h3>
+          <div className="text-sm text-muted mt-0.5">{s.name}</div>
         </div>
-        <span className={`shrink-0 inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[11px] font-medium ${st.color}`}>
+        <span className={`shrink-0 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${st.color}`}>
           {st.dot && (
             <span className="relative flex h-1.5 w-1.5">
               <span className="pulse-dot absolute inline-flex h-full w-full rounded-full bg-current opacity-75" />
@@ -61,14 +55,32 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
         </span>
       </div>
 
-      <div className="flex items-end gap-5 flex-wrap">
-        {s.cagr && <MetricBox label="CAGR" value={s.cagr} color="text-good" />}
-        {s.sharpe && <MetricBox label="Sharpe" value={s.sharpe} />}
-        {s.maxDD && <MetricBox label="Max DD" value={s.maxDD} color="text-bad" />}
+      {/* Large CAGR */}
+      {s.cagr && (
+        <div>
+          <div className="text-[11px] text-muted uppercase tracking-wider">CAGR</div>
+          <div className="text-4xl font-bold metric-value text-good">{s.cagr}</div>
+        </div>
+      )}
+
+      {/* Supporting metrics */}
+      <div className="flex items-end gap-6">
+        {s.sharpe && (
+          <div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">Sharpe</div>
+            <div className="text-xl font-semibold metric-value text-white">{s.sharpe}</div>
+          </div>
+        )}
+        {s.maxDD && (
+          <div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">Max DD</div>
+            <div className="text-xl font-semibold metric-value text-bad">{s.maxDD}</div>
+          </div>
+        )}
       </div>
 
       {s.dataSource && (
-        <div className="text-[11px] text-muted">{s.dataSource}</div>
+        <div className="text-xs text-muted mt-auto pt-1">{s.dataSource}</div>
       )}
     </button>
   );
