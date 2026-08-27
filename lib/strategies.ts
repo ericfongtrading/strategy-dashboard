@@ -1,199 +1,185 @@
 export type Strategy = {
   id: string;
-  nameZh: string;
-  nameEn: string;
-  /** Short description shown on the card (Simplified Chinese). Edit freely. */
+  name: string;
+  asset: string;
+  category: 'tradfi' | 'crypto';
+  edge: string;
+  cagr?: string;
+  sharpe?: string;
+  maxDD?: string;
+  status: 'live' | 'backtest' | 'active' | 'development';
+  statusLabel?: string;
   description: string;
-  /** Headline KPI label, e.g. "年化回报". */
-  kpiLabel: string;
-  /** Headline KPI value, e.g. "25%". */
-  kpiValue: string;
-  /** Optional secondary KPI (e.g. Sharpe, win rate). */
-  subKpiLabel?: string;
-  subKpiValue?: string;
-  /** Tone of headline KPI for color. */
-  tone?: 'good' | 'bad' | 'neutral';
+  dataSource?: string;
+  highlights?: string[];
   pdfEn?: string;
   pdfZh?: string;
-  /** Optional overrides for the link button labels and icons (default: "📄 中文报告" / "📄 English"). */
-  pdfZhLabel?: string;
-  pdfEnLabel?: string;
-  pdfZhIcon?: string;
-  pdfEnIcon?: string;
-  /** Optional link to a live/real-time trading dashboard for this strategy
-   *  (rendered as a 实时交易 button on the card). */
-  liveDashboardUrl?: string;
-  /** If true, shows a green pulsing "实盘" (live) badge next to the strategy name. */
-  isLive?: boolean;
-  /** Optional override for the live badge text (default "实盘"). */
-  liveLabel?: string;
-  /** Optional third metric, e.g. capital deployed. */
-  deployedLabel?: string;
-  deployedValue?: string;
-  /** Optional link to a verified trade-history page (screenshots of real fills).
-   *  Rendered as a distinct button on the card. */
-  tradesUrl?: string;
-  tradesLabel?: string;
-  tradesIcon?: string;
-  /** If true, render as a placeholder "coming soon" card. */
-  comingSoon?: boolean;
-  /** Marks this card's KPIs as live-patchable by <LiveKpi>. The value is the key
-   *  prefix used in data-live-kpi attributes, e.g. 'model-1' -> 'model-1:pnl'.
-   *  Without it the card keeps whatever the build baked in. */
-  liveKey?: string;
-  /** Build-time value for the "数据更新于" line; replaced client-side when live. */
-  updatedDisplay?: string;
+  proofUrl?: string;
+  proofLabel?: string;
 };
 
-export type Category = {
-  id: string;
-  titleZh: string;
-  titleEn: string;
-  blurb: string;
-  strategies: Strategy[];
-};
-
-// Use the basePath at runtime so PDF links work both locally and on GitHub Pages.
 const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
 const pdf = (p: string) => `${bp}${p}`;
 
-export const categories: Category[] = [
+export const strategies: Strategy[] = [
+  // ── Traditional Finance ──
   {
-    id: 'technical',
-    titleZh: '技术分析策略',
-    titleEn: 'Technical Analysis Strategies',
-    blurb: '基于价格行为、形态识别与技术指标构建的系统化交易策略。',
-    strategies: [
-      {
-        id: 'ta-composite',
-        nameZh: 'TA 综合策略',
-        nameEn: 'TA Composite',
-        description:
-          '五条低相关策略在同一账户上运行，综合多种技术指标。' +
-          '回测期 2017-2026（8.8 年）逐年均为正收益，' +
-          '8.8 年最大回撤仅 -13.0%。' +
-          '交易所挂载止损 + 组合层熔断，已扣除手续费与资金费率。(更新: 2026-08-05)',
-        kpiLabel: '年化回报',
-        kpiValue: '+26.5%',
-        subKpiLabel: '夏普比率',
-        subKpiValue: '1.67',
-        tone: 'good',
-        pdfEn: pdf('/pdfs/technical/ta_composite_EN.pdf'),
-        pdfZh: pdf('/pdfs/technical/ta_composite_ZH.pdf'),
-        isLive: true,
-        liveLabel: '实盘 · 小资金测试中',
-        deployedLabel: '测试金额',
-        deployedValue: '$10,000',
-      },
+    id: 'hsi',
+    name: 'HSI Intraday Multi-Strategy',
+    asset: 'HSI Futures',
+    category: 'tradfi',
+    edge: 'Technical',
+    cagr: '38.0%',
+    sharpe: '1.84',
+    maxDD: '-8.5%',
+    status: 'live',
+    description: 'Multi-strategy intraday system on Hang Seng Index futures combining momentum, mean reversion, and pattern recognition across multiple timeframes.',
+    dataSource: 'Backtest: 2019–2026 (7 yr)',
+    highlights: [
+      'Positive returns every calendar year since 2019',
+      'ATR-normalized position sizing with portfolio-level risk controls',
+      'Automated execution via IB Gateway API',
     ],
   },
   {
-    id: 'onchain',
-    titleZh: '链上数据策略',
-    titleEn: 'On-Chain Data Strategies',
-    blurb: '通过区块链原生数据洞察大额资金动向,先于市场捕捉信号。',
-    strategies: [
-      {
-        id: 'btc-lsr',
-        nameZh: 'BTC 多空持仓比',
-        nameEn: 'BTC Long/Short Ratio',
-        description: '近 3 年累计 +125%,最差年份 −5%。',
-        kpiLabel: '年化回报',
-        kpiValue: '31%',
-        subKpiLabel: '3 年累计',
-        subKpiValue: '+125%',
-        tone: 'good',
-        pdfEn: pdf('/pdfs/onchain/btc_lsr_EN.pdf'),
-        pdfZh: pdf('/pdfs/onchain/btc_lsr_ZH.pdf'),
-        isLive: true,
-        deployedLabel: '已投入资金',
-        deployedValue: '$184,316',
-      },
+    id: 'gc',
+    name: 'Gold Intraday Momentum',
+    asset: 'GC Futures',
+    category: 'tradfi',
+    edge: 'Technical',
+    cagr: '23.5%',
+    sharpe: '1.35',
+    status: 'live',
+    description: 'Momentum-based intraday strategy on COMEX gold futures, capturing directional moves during high-volume sessions.',
+    dataSource: 'Backtest: 2018–2026',
+    highlights: [
+      'Designed for the US session liquidity window',
+      'Walk-forward validated with out-of-sample testing',
     ],
   },
+  {
+    id: 'nq',
+    name: 'NQ Index Momentum',
+    asset: 'NQ Futures',
+    category: 'tradfi',
+    edge: 'Technical',
+    cagr: '9.5%',
+    status: 'live',
+    description: 'Systematic momentum strategy on E-mini Nasdaq-100 futures using ATR-normalized risk measurement.',
+    dataSource: 'Backtest: 2011–2024 (13.3 yr)',
+    highlights: [
+      '476 trades over 13+ years of data',
+      'R-multiple based performance tracking',
+    ],
+  },
+  {
+    id: 'fx',
+    name: 'FX Mean Reversion',
+    asset: 'FX Pairs',
+    category: 'tradfi',
+    edge: 'Statistical',
+    cagr: '8.3%',
+    sharpe: '0.96',
+    maxDD: '-11.5%',
+    status: 'live',
+    description: 'Statistical mean reversion across major and cross FX pairs, exploiting short-term deviations from equilibrium.',
+    dataSource: 'Live: 2017–2024 (7.4 yr)',
+    highlights: [
+      '+80.1% cumulative return over 7.4 years',
+      '19,000+ trades across multiple currency pairs',
+      'Account-level equity curve with verified statements',
+    ],
+  },
+
+  // ── Crypto ──
   {
     id: 'options',
-    titleZh: '期权交易策略',
-    titleEn: 'Options Trading Strategies',
-    blurb: '基于期权定价、波动率结构的衍生品策略。',
-    strategies: [
-      {
-        id: 'btc-deribit',
-        nameZh: 'BTC Deribit 期权',
-        nameEn: 'BTC Deribit Options',
-        description: '系统化卖出 BTC 期权, 以 BTC 积累为目标。最大回撤仅 8%。',
-        pdfEn: pdf('/pdfs/options/btc_deribit_EN.pdf'),
-        pdfZh: pdf('/pdfs/options/btc_deribit_ZH.pdf'),
-        kpiLabel: '5 年累计 (BTC)',
-        kpiValue: '+338%',
-        subKpiLabel: 'USD 含币价',
-        subKpiValue: '+433%',
-        tone: 'good',
-        isLive: true,
-        deployedLabel: '账户净值',
-        deployedValue: '$183,768',
-      },
+    name: 'BTC Options Premium',
+    asset: 'BTC Options',
+    category: 'crypto',
+    edge: 'Volatility',
+    cagr: '80.0%',
+    maxDD: '-8.0%',
+    status: 'active',
+    description: 'Systematic options selling strategy on BTC, structured around macro regime shifts and the Bitcoin halving cycle.',
+    dataSource: 'Live: 2021–2026 (5 yr)',
+    highlights: [
+      '+338% cumulative return (BTC-denominated)',
+      'Account statements available for verification',
     ],
+    pdfEn: pdf('/pdfs/options/btc_deribit_EN.pdf'),
+    pdfZh: pdf('/pdfs/options/btc_deribit_ZH.pdf'),
+  },
+  {
+    id: 'btc-lsr',
+    name: 'BTC Long/Short Ratio',
+    asset: 'BTC',
+    category: 'crypto',
+    edge: 'Exchange Data',
+    cagr: '17.3%',
+    sharpe: '1.45',
+    maxDD: '-16.0%',
+    status: 'live',
+    description: 'Directional BTC strategy using the coefficient between buyers and sellers to identify regime shifts and market bottoms.',
+    dataSource: 'Backtest: 2022–2025 (3 yr)',
+    highlights: [
+      'Successfully identified bottoms across all market regimes',
+      'Walk-forward validated with bootstrap drawdown analysis',
+    ],
+    pdfEn: pdf('/pdfs/onchain/btc_lsr_EN.pdf'),
+    pdfZh: pdf('/pdfs/onchain/btc_lsr_ZH.pdf'),
   },
   {
     id: 'yield',
-    titleZh: '收益策略',
-    titleEn: 'Yield Strategies',
-    blurb: '通过资金利率市场获取稳定的美元收益。',
-    strategies: [
-      {
-        id: 'usd-yield',
-        nameZh: '美元收益策略',
-        nameEn: 'USD Yield Strategy',
-        description:
-          '全自动美元资金利率机器人，24 小时循环运作，动态管理期限结构。' +
-          '目标年化收益 10-15%。(更新: 2026-08-10)',
-        kpiLabel: '实际年化收益率',
-        kpiValue: '13.59%',
-        subKpiLabel: '累计收益',
-        subKpiValue: '$12,821',
-        tone: 'good',
-        isLive: true,
-        deployedLabel: '账户净值',
-        deployedValue: '$212,821',
-        tradesUrl: pdf('/yield/usd_yield_proof.html'),
-        tradesLabel: '实盘账户记录',
-        tradesIcon: '📈',
-      },
+    name: 'Delta-Neutral Yield',
+    asset: 'Stablecoins',
+    category: 'crypto',
+    edge: 'Arbitrage',
+    cagr: '13.6%',
+    maxDD: '-1.0%',
+    status: 'active',
+    statusLabel: 'Live',
+    description: 'Automated delta-neutral yield strategy capturing funding rate differentials with minimal directional exposure.',
+    dataSource: 'Live: 2025–Present',
+    highlights: [
+      'Fully automated 24/7 execution',
+      'Dynamic term structure management',
     ],
+    proofUrl: pdf('/yield/usd_yield_proof.html'),
+    proofLabel: 'Live Account Record',
   },
   {
-    id: 'dl',
-    titleZh: '深度学习策略',
-    titleEn: 'Deep Learning Strategies',
-    blurb: '利用深度学习模型挖掘非线性特征,构建预测信号。',
-    strategies: [
-      {
-        id: 'model-1',
-        nameZh: 'Model 1',
-        nameEn: 'Model 1',
-        description:
-          'AI 深度学习驱动的 BTC 波段交易系统。持续学习技术分析视频、交易所实时数据、图表形态及历史交易记录,自动生成并管理交易计划。系统记录每笔交易决策,复盘得失并持续优化——随着交易经验的积累不断进化。',
-        kpiLabel: '累计盈亏 (模拟)',
-        kpiValue: '+$3,731',
-        subKpiLabel: '交易记录',
-        subKpiValue: '18 笔',
-        tone: 'good',
-        liveKey: 'model-1',
-        updatedDisplay: '2026-08-11 17:00 HKT',
-        pdfZh: pdf('/dl/model_1.html'),
-        pdfZhLabel: '历史交易+交易计划',
-        pdfZhIcon: '📊',
-      },
-      {
-        id: 'dl-more',
-        nameZh: '更多策略即将上线',
-        nameEn: 'More to come',
-        description: '深度学习模型与特征工程正在搭建中。',
-        kpiLabel: '',
-        kpiValue: '',
-        comingSoon: true,
-      },
+    id: 'ta-composite',
+    name: 'TA Composite',
+    asset: 'BTC + Altcoins',
+    category: 'crypto',
+    edge: 'Technical',
+    cagr: '10.6%',
+    sharpe: '1.66',
+    maxDD: '-5.7%',
+    status: 'live',
+    statusLabel: 'Live Testing',
+    description: 'Five low-correlation technical strategies running on a single account. Positive returns every year across 8.8 years of backtesting.',
+    dataSource: 'Backtest: 2017–2026 (8.8 yr)',
+    highlights: [
+      'Exchange-mounted stop losses + portfolio-level circuit breakers',
+      'All fees and funding rates deducted',
+      'Out-of-sample CAGR: 17.1%, Sharpe: 2.35',
+    ],
+    pdfEn: pdf('/pdfs/technical/ta_composite_EN.pdf'),
+    pdfZh: pdf('/pdfs/technical/ta_composite_ZH.pdf'),
+  },
+  {
+    id: 'ml',
+    name: 'ML Signal Engine',
+    asset: 'Crypto',
+    category: 'crypto',
+    edge: 'Machine Learning',
+    status: 'development',
+    description: 'AI-driven trade signal generation using technical, sentiment, and exchange data. Deep learning models trained on historical patterns.',
+    highlights: [
+      'Multi-source data pipeline: order books, sentiment, on-chain',
+      'Feature engineering and model iteration in progress',
     ],
   },
 ];

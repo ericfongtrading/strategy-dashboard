@@ -1,89 +1,141 @@
-import { categories } from '@/lib/strategies';
-import { CategorySection } from '@/components/CategorySection';
-import { LiveKpi } from '@/components/LiveKpi';
+'use client';
+
+import { useState } from 'react';
+import { strategies } from '@/lib/strategies';
+import { StrategyCard } from '@/components/StrategyCard';
+import { StrategyModal } from '@/components/StrategyModal';
+import type { Strategy } from '@/lib/strategies';
 
 export default function Home() {
-  const totalStrategies = categories.reduce(
-    (n, c) => n + c.strategies.filter((s) => !s.comingSoon).length,
-    0,
-  );
+  const [selected, setSelected] = useState<Strategy | null>(null);
+
+  const tradfi = strategies.filter((s) => s.category === 'tradfi');
+  const crypto = strategies.filter((s) => s.category === 'crypto');
+  const liveCount = strategies.filter((s) => s.status === 'live' || s.status === 'active').length;
 
   return (
-    <main className="min-h-screen">
-      {/* Hero */}
-      <header className="grid-bg border-b border-edge">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-edge bg-card/60 px-3 py-1 text-xs text-gray-400">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-            策略组合 · 实时仪表盘 (开发中)
+    <>
+      <main className="min-h-screen">
+        {/* Hero */}
+        <header className="noise-bg border-b border-border">
+          <div className="relative mx-auto max-w-6xl px-6 py-14 md:py-20">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
+              Strategy Dashboard
+            </h1>
+            <p className="mt-2 text-base text-muted max-w-2xl">
+              Systematic trading strategies across futures, FX, crypto, and options.
+              All strategies backtested with walk-forward validation, bootstrap drawdown analysis,
+              and Monte Carlo simulation.
+            </p>
+
+            {/* Summary stats */}
+            <div className="mt-8 flex flex-wrap gap-3">
+              <StatChip label="Total Strategies" value={String(strategies.length)} />
+              <StatChip label="Live / Active" value={String(liveCount)} accent />
+              <StatChip label="Asset Classes" value="5" />
+              <StatChip label="Avg Sharpe" value={avgSharpe()} />
+            </div>
           </div>
-          <h1 className="mt-5 text-4xl md:text-5xl font-bold tracking-tight text-white">
-            量化策略总览
-          </h1>
-          <p className="mt-3 text-base md:text-lg text-gray-400 max-w-2xl">
-            目前正在研究与运行的量化交易策略,涵盖技术分析、链上数据、期权、收益与深度学习五大类。
-            点击下方任意策略可查看完整的中英文报告。
-          </p>
+        </header>
 
-          {/* Top-level KPIs */}
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl">
-            <KpiBox label="策略类别" value={`${categories.length}`} hint="个" />
-            <KpiBox label="已上线策略" value={`${totalStrategies}`} hint="个" />
-            <KpiBox label="实时数据" value="即将接入" />
-            <KpiBox label="语言" value="中 / EN" />
+        <div className="mx-auto max-w-6xl px-6 py-10 space-y-12">
+          {/* TradFi */}
+          <section>
+            <SectionHeader title="Traditional Finance" count={tradfi.length} />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+              {tradfi.map((s) => (
+                <StrategyCard key={s.id} s={s} onClick={() => setSelected(s)} />
+              ))}
+            </div>
+          </section>
+
+          {/* Crypto */}
+          <section>
+            <SectionHeader title="Crypto" count={crypto.length} />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+              {crypto.map((s) => (
+                <StrategyCard key={s.id} s={s} onClick={() => setSelected(s)} />
+              ))}
+            </div>
+          </section>
+
+          {/* Methodology */}
+          <section className="rounded-xl border border-border bg-bg-card p-6 md:p-8">
+            <h3 className="text-lg font-semibold text-white mb-4">Methodology</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <MethodItem
+                title="Walk-Forward"
+                desc="Out-of-sample validation with rolling train/test windows to prevent overfitting"
+              />
+              <MethodItem
+                title="Bootstrap DD"
+                desc="Resampled drawdown distribution for realistic worst-case capital requirements"
+              />
+              <MethodItem
+                title="Monte Carlo"
+                desc="Simulated trade sequences to stress-test edge persistence across regimes"
+              />
+              <MethodItem
+                title="R-Multiples"
+                desc="ATR-normalized risk measurement for cross-asset comparison and capital allocation"
+              />
+            </div>
+          </section>
+
+          {/* Infrastructure */}
+          <section className="rounded-xl border border-border bg-bg-card p-6 md:p-8">
+            <h3 className="text-lg font-semibold text-white mb-3">Infrastructure</h3>
+            <p className="text-sm text-muted leading-relaxed max-w-3xl">
+              Python backtesting framework with automated execution via IB Gateway API.
+              Strategies deployed on VPS for 24/7 operation with real-time position management,
+              risk monitoring, and portfolio-level drawdown controls.
+              Built using AI-assisted development for rapid iteration from idea to live deployment.
+            </p>
+          </section>
+        </div>
+
+        <footer className="border-t border-border">
+          <div className="mx-auto max-w-6xl px-6 py-5 text-xs text-muted flex flex-wrap items-center justify-between gap-2">
+            <div>&copy; {new Date().getFullYear()} Eric Fong</div>
+            <div>Built with Next.js</div>
           </div>
+        </footer>
+      </main>
 
-          {/* Anchor nav */}
-          <nav className="mt-8 flex flex-wrap gap-2">
-            {categories.map((c) => (
-              <a
-                key={c.id}
-                href={`#${c.id}`}
-                className="rounded-full border border-edge bg-panel/60 px-3 py-1.5 text-sm text-gray-300 hover:border-accent/60 hover:text-accent transition-colors"
-              >
-                {c.titleZh}
-              </a>
-            ))}
-          </nav>
-        </div>
-      </header>
-
-      {/* Categories */}
-      <div className="mx-auto max-w-6xl px-6 py-12 space-y-14">
-        <LiveKpi />
-        {categories.map((c) => <CategorySection key={c.id} c={c} />)}
-      </div>
-
-      {/* Roadmap placeholder for live dashboard */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="rounded-2xl border border-dashed border-edge bg-panel/40 p-8 text-center">
-          <div className="text-3xl mb-2">📈</div>
-          <h3 className="text-xl font-semibold text-white">实时表现追踪 · 即将上线</h3>
-          <p className="text-sm text-gray-400 mt-2 max-w-xl mx-auto">
-            未来本仪表盘将接入实时数据,展示每条策略的持仓、盈亏曲线、最大回撤、夏普比率等核心指标,
-            并支持中英文切换与多周期视图。
-          </p>
-        </div>
-      </section>
-
-      <footer className="border-t border-edge">
-        <div className="mx-auto max-w-6xl px-6 py-6 text-xs text-gray-500 flex flex-wrap items-center justify-between gap-2">
-          <div>© {new Date().getFullYear()} 量化策略仪表盘</div>
-          <div>构建于 Next.js · Tailwind CSS</div>
-        </div>
-      </footer>
-    </main>
+      <StrategyModal s={selected} onClose={() => setSelected(null)} />
+    </>
   );
 }
 
-function KpiBox({ label, value, hint }: { label: string; value: string; hint?: string }) {
+function StatChip({ label, value, accent }: { label: string; value: string; accent?: boolean }) {
   return (
-    <div className="rounded-xl border border-edge bg-card/70 px-4 py-3">
-      <div className="text-xs text-gray-500">{label}</div>
-      <div className="flex items-baseline gap-1 mt-0.5">
-        <div className="text-2xl font-bold text-white">{value}</div>
-        {hint ? <div className="text-xs text-gray-500">{hint}</div> : null}
-      </div>
+    <div className="rounded-lg border border-border bg-bg-card px-4 py-2.5">
+      <div className="text-[11px] text-muted uppercase tracking-wider">{label}</div>
+      <div className={`text-xl font-bold metric-value ${accent ? 'text-good' : 'text-white'}`}>{value}</div>
     </div>
   );
+}
+
+function SectionHeader({ title, count }: { title: string; count: number }) {
+  return (
+    <div className="flex items-baseline gap-3 mb-5">
+      <h2 className="text-xl font-bold text-white">{title}</h2>
+      <span className="text-sm text-muted">{count} strategies</span>
+    </div>
+  );
+}
+
+function MethodItem({ title, desc }: { title: string; desc: string }) {
+  return (
+    <div className="rounded-lg bg-bg/50 border border-border p-4">
+      <div className="text-sm font-semibold text-accent mb-1">{title}</div>
+      <div className="text-xs text-muted leading-relaxed">{desc}</div>
+    </div>
+  );
+}
+
+function avgSharpe(): string {
+  const sharpes = strategies.filter((s) => s.sharpe).map((s) => parseFloat(s.sharpe!));
+  if (!sharpes.length) return '—';
+  return (sharpes.reduce((a, b) => a + b, 0) / sharpes.length).toFixed(2);
 }

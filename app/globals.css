@@ -7,23 +7,67 @@
 }
 
 html, body {
-  background: #0a0f1c;
-  color: #e5e7eb;
-  -webkit-font-smoothing: antialiased;
+  background: #08090d;
+  color: #e2e4e9;
 }
 
-/* Subtle grid backdrop for the hero */
-.grid-bg {
-  background-image:
-    radial-gradient(circle at 20% -10%, rgba(34, 211, 238, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(167, 139, 250, 0.15), transparent 40%),
-    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: auto, auto, 28px 28px, 28px 28px;
+/* Subtle noise texture overlay */
+.noise-bg {
+  position: relative;
+}
+.noise-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 0%, rgba(16, 185, 129, 0.06), transparent 60%),
+              radial-gradient(ellipse at 70% 0%, rgba(59, 130, 246, 0.04), transparent 50%);
+  pointer-events: none;
 }
 
-.card-glow {
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.04) inset,
-    0 20px 40px -20px rgba(0,0,0,0.6);
+/* Strategy card hover */
+.strategy-card {
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+.strategy-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(16, 185, 129, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Metric highlight */
+.metric-value {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Modal overlay */
+.modal-overlay {
+  animation: fadeIn 0.15s ease-out;
+}
+.modal-panel {
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2d35; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3d45; }
+
+/* Status pulse */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
 }

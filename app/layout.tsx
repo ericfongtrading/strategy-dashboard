@@ -2,14 +2,20 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '量化策略总览',
-  description: '汇总目前正在研究与运行的量化交易策略',
+  title: 'Strategy Dashboard — Eric Fong',
+  description: 'Systematic trading strategies across futures, FX, crypto, and options',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="zh-CN">
-      <body className="min-h-screen font-sans">{children}</body>
+    <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        />
+      </head>
+      <body className="min-h-screen font-sans antialiased">{children}</body>
     </html>
   );
 }

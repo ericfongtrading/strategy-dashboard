@@ -8,20 +8,28 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          '-apple-system', 'BlinkMacSystemFont', 'PingFang SC',
-          'Microsoft YaHei', 'Helvetica Neue', 'Segoe UI', 'sans-serif',
-        ],
+        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Consolas', 'monospace'],
       },
       colors: {
-        bg: '#0a0f1c',
-        panel: '#111827',
-        card: '#1a2236',
-        edge: '#243049',
-        accent: '#22d3ee',
-        accent2: '#a78bfa',
+        bg: {
+          DEFAULT: '#08090d',
+          card: '#0f1117',
+          hover: '#151821',
+          modal: '#12141b',
+        },
+        border: {
+          DEFAULT: '#1e2029',
+          hover: '#2a2d38',
+        },
+        accent: {
+          DEFAULT: '#10b981',
+          dim: 'rgba(16, 185, 129, 0.15)',
+        },
         good: '#10b981',
         bad: '#ef4444',
+        warn: '#f59e0b',
+        muted: '#6b7280',
       },
     },
   },
