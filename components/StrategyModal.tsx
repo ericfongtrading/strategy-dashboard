@@ -57,7 +57,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
-        className="modal-panel relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-bg-modal shadow-2xl"
+        className="modal-panel relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-bg-modal shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
