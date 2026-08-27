@@ -58,7 +58,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
       {/* Large CAGR */}
       {s.cagr && (
         <div>
-          <div className="text-[11px] text-muted uppercase tracking-wider">CAGR</div>
+          <div className="text-[11px] text-muted uppercase tracking-wider">{s.cagrLabel || 'CAGR'}</div>
           <div className="text-4xl font-bold metric-value text-good">{s.cagr}</div>
         </div>
       )}

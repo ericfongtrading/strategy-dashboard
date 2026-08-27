@@ -32,6 +32,7 @@ export type Strategy = {
   category: 'tradfi' | 'crypto';
   edge: string;
   cagr?: string;
+  cagrLabel?: string;
   cagrNum?: number;
   sharpe?: string;
   maxDD?: string;
@@ -129,13 +130,14 @@ export const strategies: Strategy[] = [
     category: 'tradfi',
     edge: 'Technical',
     cagr: '21.8%',
+    cagrLabel: 'Ann. Return',
     cagrNum: 0.218,
     sharpe: '1.93',
     maxDD: '-11.6%',
     maxDDNum: 0.116,
     status: 'live',
     description: 'Systematic momentum strategy on E-mini Nasdaq-100 futures with 70% positive months and a profit factor of 1.57.',
-    dataSource: 'Backtest: 2021–2026 (5 yr)',
+    dataSource: 'Backtest: 2021–2026 (5 yr) · Live: Jun 2026',
     backtestStart: 2021,
     backtestEnd: 2026,
     liveStart: 2026,
