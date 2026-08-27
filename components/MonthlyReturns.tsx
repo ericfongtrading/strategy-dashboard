@@ -31,7 +31,7 @@ export function MonthlyReturns({ rows }: { rows: MonthlyRow[] }) {
           </thead>
           <tbody>
             {rows.map((row) => {
-              const lastDataIdx = row.months.reduce((acc, v, i) => (v !== null ? i : acc), -1);
+              const lastDataIdx = row.months.reduce<number>((acc, v, i) => (v !== null ? i : acc), -1);
               const isPartialLive = row.isLive && lastDataIdx < 11 && lastDataIdx >= 0;
               return (
                 <tr key={row.year} className="border-b border-border/50 hover:bg-bg-hover/30">
