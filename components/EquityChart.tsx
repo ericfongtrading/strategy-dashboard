@@ -19,7 +19,49 @@ function hashStr(str: string): number {
   return Math.abs(h);
 }
 
+function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; months: number } | null {
+  if (!s.monthlyReturns || s.monthlyReturns.length === 0) return null;
+
+  const backtestPoints: number[] = [100];
+  const livePoints: number[] = [];
+  let equity = 100;
+  let liveStarted = false;
+
+  for (const row of s.monthlyReturns) {
+    for (const m of row.months) {
+      if (m === null) {
+        if (!liveStarted) continue;
+        break;
+      }
+      equity = equity * (1 + m / 100);
+      if (row.isLive && !liveStarted) {
+        liveStarted = true;
+        livePoints.push(backtestPoints[backtestPoints.length - 1]);
+      }
+      if (liveStarted) {
+        livePoints.push(equity);
+      } else {
+        backtestPoints.push(equity);
+      }
+    }
+  }
+
+  if (livePoints.length === 0) {
+    livePoints.push(backtestPoints[backtestPoints.length - 1]);
+    livePoints.push(equity);
+  }
+
+  return {
+    backtest: backtestPoints,
+    live: livePoints,
+    months: backtestPoints.length - 1 + livePoints.length - 1,
+  };
+}
+
 function generateEquityCurve(s: Strategy): { backtest: number[]; live: number[]; months: number } {
+  const fromData = buildFromMonthly(s);
+  if (fromData) return fromData;
+
   const cagr = s.cagrNum || 0.15;
   const maxDD = s.maxDDNum || 0.1;
   const startYr = s.backtestStart || 2020;
@@ -86,8 +128,7 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
   const transitionX = x(liveOffset);
 
   const startYr = strategy.backtestStart || 2020;
-  const endYr = strategy.backtestEnd || 2025;
-  const liveYr = strategy.liveStart || endYr;
+  const liveYr = strategy.liveStart || strategy.backtestEnd || 2025;
 
   const gridValues = [];
   const range = maxVal - minVal;
