@@ -1,11 +1,57 @@
 {
-  "lastUpdated": "2026-08-27T12:00:00Z",
+  "lastUpdated": "2026-08-27T15:31:49Z",
+  "basis": "THEORETICAL (backtest signals, not live fills) - MNQ $2/pt at deployed size",
   "recentTrades": [
-    { "date": "2026-08-26", "direction": "Long", "entry": "19,842", "exit": "19,910", "pnl": "+$340", "pnlNum": 340, "rMultiple": "+1.2R" },
-    { "date": "2026-08-22", "direction": "Short", "entry": "19,965", "exit": "19,881", "pnl": "+$420", "pnlNum": 420, "rMultiple": "+1.5R" },
-    { "date": "2026-08-21", "direction": "Long", "entry": "19,710", "exit": "19,688", "pnl": "-$110", "pnlNum": -110, "rMultiple": "-0.4R" },
-    { "date": "2026-08-20", "direction": "Long", "entry": "19,654", "exit": "19,798", "pnl": "+$720", "pnlNum": 720, "rMultiple": "+2.6R" },
-    { "date": "2026-08-19", "direction": "Short", "entry": "19,823", "exit": "19,790", "pnl": "+$165", "pnlNum": 165, "rMultiple": "+0.6R" }
+    {
+      "date": "2026-08-21",
+      "direction": "Long",
+      "entry": "29,368",
+      "exit": "29,398",
+      "pnl": "+$58",
+      "pnlNum": 58.46,
+      "rMultiple": "+0.2R",
+      "sleeve": "TLB_HYB40"
+    },
+    {
+      "date": "2026-08-24",
+      "direction": "Long",
+      "entry": "29,168",
+      "exit": "29,138",
+      "pnl": "-$125",
+      "pnlNum": -125.08,
+      "rMultiple": "-1.0R",
+      "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-08-24",
+      "direction": "Long",
+      "entry": "29,162",
+      "exit": "29,271",
+      "pnl": "+$217",
+      "pnlNum": 217.4,
+      "rMultiple": "+2.5R",
+      "sleeve": "R3_RE"
+    },
+    {
+      "date": "2026-08-24",
+      "direction": "Long",
+      "entry": "29,059",
+      "exit": "29,164",
+      "pnl": "+$208",
+      "pnlNum": 208.46,
+      "rMultiple": "+1.0R",
+      "sleeve": "TLB_HYB40"
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "Long",
+      "entry": "29,245",
+      "exit": "29,224",
+      "pnl": "-$44",
+      "pnlNum": -44.04,
+      "rMultiple": "-0.2R",
+      "sleeve": "TLB_HYB40"
+    }
   ],
   "positions": []
 }
