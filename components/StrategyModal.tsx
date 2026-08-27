@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback } from 'react';
 import type { Strategy } from '@/lib/strategies';
+import { useLiveData } from '@/lib/useLiveData';
 import { EquityChart } from './EquityChart';
 import { MonthlyReturns } from './MonthlyReturns';
 import { RecentTrades, CurrentPositions } from './TradesTable';
@@ -39,11 +40,16 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
     };
   }, [s, handleKey]);
 
+  const { data: liveData } = useLiveData(s?.id || '');
+
   if (!s) return null;
 
   const st = statusConfig[s.status];
   const displayLabel = s.statusLabel || st.label;
   const hasChart = s.status !== 'development' && s.cagrNum;
+
+  const trades = liveData?.recentTrades || s.recentTrades;
+  const positions = liveData?.positions || s.positions;
 
   return (
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -109,11 +115,18 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           )}
 
           {/* Current Positions */}
-          {s.positions && <CurrentPositions positions={s.positions} />}
+          {positions && <CurrentPositions positions={positions} />}
 
           {/* Recent Trades */}
-          {s.recentTrades && s.recentTrades.length > 0 && (
-            <RecentTrades trades={s.recentTrades} />
+          {trades && trades.length > 0 && (
+            <RecentTrades trades={trades} />
+          )}
+
+          {/* Last updated */}
+          {liveData?.lastUpdated && (
+            <div className="text-[10px] text-muted text-right">
+              Last updated: {new Date(liveData.lastUpdated).toLocaleString()}
+            </div>
           )}
 
           {/* Description */}
