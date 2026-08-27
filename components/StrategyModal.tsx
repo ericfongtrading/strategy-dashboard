@@ -107,7 +107,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
                 <h4 className="text-xs font-semibold text-muted uppercase tracking-wider">Performance</h4>
                 {s.dataSource && <span className="text-[11px] text-muted">{s.dataSource}</span>}
               </div>
-              <EquityChart strategy={s} />
+              <EquityChart strategy={monthlyRows ? { ...s, monthlyReturns: monthlyRows } : s} />
             </div>
           )}
 
