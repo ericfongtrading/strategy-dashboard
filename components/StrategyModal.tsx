@@ -50,6 +50,8 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
   const trades = liveData?.recentTrades || s.recentTrades;
   const positions = liveData?.positions || s.positions;
+  const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
+  const isTheoretical = !!liveData?.basis;
 
   return (
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
@@ -110,8 +112,8 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           )}
 
           {/* Monthly Returns */}
-          {s.monthlyReturns && s.monthlyReturns.length > 0 && (
-            <MonthlyReturns rows={s.monthlyReturns} />
+          {monthlyRows && monthlyRows.length > 0 && (
+            <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} />
           )}
 
           {/* Current Positions */}

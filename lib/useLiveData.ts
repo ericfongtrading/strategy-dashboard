@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import type { Trade, Position } from './strategies';
+import type { Trade, Position, MonthlyRow } from './strategies';
 
 type LiveData = {
   lastUpdated: string;
+  basis?: string;
   recentTrades: Trade[];
   positions: Position[];
+  monthlyReturns?: MonthlyRow[];
 };
 
 const REPO_RAW = 'https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/data';
