@@ -49,6 +49,7 @@ export type Strategy = {
   backtestStart?: number;
   backtestEnd?: number;
   liveStart?: number;
+  liveStartMonth?: number;
   monthlyReturns?: MonthlyRow[];
   recentTrades?: Trade[];
   positions?: Position[];
@@ -140,6 +141,7 @@ export const strategies: Strategy[] = [
     backtestStart: 2021,
     backtestEnd: 2026,
     liveStart: 2026,
+    liveStartMonth: 7,
     highlights: [
       'Sortino: 2.96, profit factor: 1.57, annualized vol: 10.8%',
       'Consistent 13–18% yearly returns including 2022 bear market',

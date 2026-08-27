@@ -22,19 +22,25 @@ function hashStr(str: string): number {
 function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; months: number } | null {
   if (!s.monthlyReturns || s.monthlyReturns.length === 0) return null;
 
+  const liveYear = s.liveStart || 9999;
+  const liveMonth = (s.liveStartMonth || 1) - 1;
+
   const backtestPoints: number[] = [100];
   const livePoints: number[] = [];
   let equity = 100;
   let liveStarted = false;
 
   for (const row of s.monthlyReturns) {
-    for (const m of row.months) {
+    for (let mi = 0; mi < row.months.length; mi++) {
+      const m = row.months[mi];
       if (m === null) {
         if (!liveStarted) continue;
         break;
       }
       equity = equity * (1 + m / 100);
-      if (row.isLive && !liveStarted) {
+
+      const isLiveMonth = row.year > liveYear || (row.year === liveYear && mi >= liveMonth);
+      if (isLiveMonth && !liveStarted) {
         liveStarted = true;
         livePoints.push(backtestPoints[backtestPoints.length - 1]);
       }
