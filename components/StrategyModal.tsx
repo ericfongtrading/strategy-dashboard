@@ -3,6 +3,8 @@
 import { useEffect, useCallback } from 'react';
 import type { Strategy } from '@/lib/strategies';
 import { EquityChart } from './EquityChart';
+import { MonthlyReturns } from './MonthlyReturns';
+import { RecentTrades, CurrentPositions } from './TradesTable';
 
 const statusConfig: Record<Strategy['status'], { label: string; color: string; dot: boolean }> = {
   live: { label: 'Live', color: 'text-good bg-good/10 border-good/30', dot: true },
@@ -99,6 +101,19 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
               </div>
               <EquityChart strategy={s} />
             </div>
+          )}
+
+          {/* Monthly Returns */}
+          {s.monthlyReturns && s.monthlyReturns.length > 0 && (
+            <MonthlyReturns rows={s.monthlyReturns} />
+          )}
+
+          {/* Current Positions */}
+          {s.positions && <CurrentPositions positions={s.positions} />}
+
+          {/* Recent Trades */}
+          {s.recentTrades && s.recentTrades.length > 0 && (
+            <RecentTrades trades={s.recentTrades} />
           )}
 
           {/* Description */}

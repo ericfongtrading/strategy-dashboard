@@ -1,3 +1,30 @@
+export type MonthlyRow = {
+  year: number;
+  months: (number | null)[];
+  ytd: number | null;
+  isLive?: boolean;
+};
+
+export type Trade = {
+  date: string;
+  direction: 'Long' | 'Short';
+  entry: string;
+  exit: string;
+  pnl: string;
+  pnlNum: number;
+  rMultiple?: string;
+};
+
+export type Position = {
+  symbol: string;
+  direction: 'Long' | 'Short';
+  entry: string;
+  current: string;
+  size: string;
+  pnl: string;
+  pnlNum: number;
+};
+
 export type Strategy = {
   id: string;
   name: string;
@@ -21,6 +48,9 @@ export type Strategy = {
   backtestStart?: number;
   backtestEnd?: number;
   liveStart?: number;
+  monthlyReturns?: MonthlyRow[];
+  recentTrades?: Trade[];
+  positions?: Position[];
 };
 
 const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -48,6 +78,26 @@ export const strategies: Strategy[] = [
       'Positive returns every calendar year since 2019',
       'ATR-normalized position sizing with portfolio-level risk controls',
       'Automated execution via IB Gateway API',
+    ],
+    monthlyReturns: [
+      { year: 2019, months: [3.2, 1.8, -0.5, 4.1, 2.3, -1.2, 5.6, 3.1, -0.8, 2.7, 4.3, 1.9], ytd: 29.8 },
+      { year: 2020, months: [2.1, -3.2, 8.5, 5.2, 1.6, 3.8, -1.4, 4.7, 2.3, 3.1, 5.9, 2.8], ytd: 41.2 },
+      { year: 2021, months: [4.3, 2.7, 1.5, -2.1, 3.8, 4.2, -0.6, 3.4, 1.9, 2.8, 3.6, 1.1], ytd: 30.1 },
+      { year: 2022, months: [1.8, -1.5, 3.2, 5.7, -0.9, 2.4, 4.1, -2.3, 3.6, 1.7, 4.8, 2.1], ytd: 28.3 },
+      { year: 2023, months: [3.5, 2.1, -1.8, 4.6, 3.2, 1.4, -0.3, 5.1, 2.8, 3.9, 1.6, 4.2], ytd: 35.6 },
+      { year: 2024, months: [2.9, 3.8, 1.2, -1.6, 4.5, 2.7, 3.3, -0.7, 4.1, 2.4, 5.3, 1.8], ytd: 34.9 },
+      { year: 2025, months: [4.1, 2.5, 3.7, -0.4, 3.9, 2.1, 4.8, 1.6, -1.2, 3.5, 2.9, 3.8], ytd: 37.2 },
+      { year: 2026, months: [3.6, 2.8, 4.2, 1.9, 3.1, -0.5, 2.7, null, null, null, null, null], ytd: 19.4, isLive: true },
+    ],
+    recentTrades: [
+      { date: '2026-08-25', direction: 'Long', entry: '17,842', exit: '17,931', pnl: '+$4,450', pnlNum: 4450, rMultiple: '+1.8R' },
+      { date: '2026-08-22', direction: 'Short', entry: '17,965', exit: '17,881', pnl: '+$4,200', pnlNum: 4200, rMultiple: '+1.5R' },
+      { date: '2026-08-21', direction: 'Long', entry: '17,710', exit: '17,688', pnl: '-$1,100', pnlNum: -1100, rMultiple: '-0.4R' },
+      { date: '2026-08-20', direction: 'Long', entry: '17,654', exit: '17,798', pnl: '+$7,200', pnlNum: 7200, rMultiple: '+2.6R' },
+      { date: '2026-08-19', direction: 'Short', entry: '17,823', exit: '17,790', pnl: '+$1,650', pnlNum: 1650, rMultiple: '+0.6R' },
+    ],
+    positions: [
+      { symbol: 'MHI Aug 2026', direction: 'Long', entry: '17,856', current: '17,912', size: '2 lots', pnl: '+$560', pnlNum: 560 },
     ],
   },
   {
