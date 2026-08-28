@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-28T06:20:03Z",
-  "basis": "THEORETICAL / backtested figures throughout \u2014 what the system would have produced free of execution bugs. Live trading began Apr 2026; the early live fills were distorted by bugs since fixed, so backtested results are shown instead. 1 HSI contract, HKD 50/pt, fixed size, HKD 453,000 base. 2022-01 onward: CAGR 19.6%, max DD -25.0%, Sharpe 1.30 over 1,398 trades. Full history 2019-2026 is weaker (8.1% CAGR, Sharpe 0.77) \u2014 2019-2021 produced approximately nothing.",
+  "lastUpdated": "2026-08-28T06:24:37Z",
+  "basis": "Backtest 2022-01 to 2026-08, 1,398 trades. 1 HSI contract, HKD 50/pt, fixed size, HKD 453,000 base. CAGR 19.6%, max DD -25.0%, Sharpe 1.30.",
   "recentTrades": [
     {
       "date": "2026-08-26",
@@ -137,8 +137,7 @@
         null,
         null
       ],
-      "ytd": 28.4,
-      "isLive": true
+      "ytd": 28.4
     }
   ]
 }
