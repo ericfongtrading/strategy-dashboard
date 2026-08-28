@@ -207,14 +207,14 @@ export const strategies: Strategy[] = [
     maxDD: '-8.0%',
     maxDDNum: 0.08,
     status: 'active',
-    description: 'Systematic options premium selling on BTC, governed by a proprietary cycle-phase regime model with two-tier expiry structure. ALL figures are BTC-denominated — pure options alpha, no spot beta. Headline metrics are the current strategy version applied to the account’s full Mar 2021–May 2026 statement record; the monthly table below is live performance since Jun 2022, deposit-adjusted, spanning all parameterisations — its drawdown (max −17.1%) runs deeper than the current version’s backtest.',
+    description: 'Systematic options premium selling on BTC, governed by a proprietary cycle-phase regime model with two-tier expiry structure. ALL figures are BTC-denominated — pure options alpha, no spot beta. Headline metrics are the current strategy version applied to the account’s full Mar 2021–May 2026 statement record; the monthly table below is live performance since Jun 2022, deposit-adjusted, spanning all parameterisations.',
     dataSource: 'Live since Jun 2022 · all figures BTC-denominated',
     backtestStart: 2021,
     backtestEnd: 2026,
     liveStart: 2022,
     highlights: [
       'Current version (2021–2026): +32.5% CAGR, max DD −8.0%, 94.8% win rate — extracted from the account’s monthly statements',
-      'Live (all versions, since Jun 2022): +23.5% CAGR, +144% cumulative, max DD −17.1%',
+      'Live (all versions, since Jun 2022): +23.5% CAGR, +144% cumulative, max DD since 2024: −9.3%',
       '34 of 51 live months positive',
     ],
     monthlyReturns: [
