@@ -1,0 +1,144 @@
+{
+  "lastUpdated": "2026-08-28T06:08:12Z",
+  "basis": "THEORETICAL (backtest signals at modelled cost, not live fills). 1 HSI contract, HKD 50/pt, fixed size, HKD 453,000 base. Headline 2022-01 onward: CAGR 19.6%, max DD -25.0%, Sharpe 1.30 over 1,398 trades. Full history 2019-2026 is materially weaker (8.1% CAGR, Sharpe 0.77) because 2019-2021 produced ~nothing. Live trading began Apr 2026 but those fills were distorted by execution bugs since fixed, so theoretical results are shown.",
+  "recentTrades": [
+    {
+      "date": "2026-08-26",
+      "direction": "Long",
+      "entry": "25,784",
+      "exit": "25,785",
+      "pnl": "+HK$50",
+      "pnlNum": 50,
+      "rMultiple": "+0.0R"
+    },
+    {
+      "date": "2026-08-24",
+      "direction": "Short",
+      "entry": "25,443",
+      "exit": "25,493",
+      "pnl": "-HK$2,500",
+      "pnlNum": -2500,
+      "rMultiple": "-1.0R"
+    },
+    {
+      "date": "2026-08-24",
+      "direction": "Short",
+      "entry": "25,589",
+      "exit": "25,460",
+      "pnl": "+HK$6,450",
+      "pnlNum": 6450,
+      "rMultiple": "+1.4R"
+    },
+    {
+      "date": "2026-08-21",
+      "direction": "Long",
+      "entry": "25,816",
+      "exit": "25,948",
+      "pnl": "+HK$6,600",
+      "pnlNum": 6600,
+      "rMultiple": "+1.5R"
+    },
+    {
+      "date": "2026-08-20",
+      "direction": "Long",
+      "entry": "25,804",
+      "exit": "25,714",
+      "pnl": "-HK$4,500",
+      "pnlNum": -4500,
+      "rMultiple": "-1.0R"
+    }
+  ],
+  "monthlyReturns": [
+    {
+      "year": 2022,
+      "months": [
+        8.3,
+        -3.5,
+        -5.5,
+        -3.3,
+        1.6,
+        4.1,
+        3.3,
+        -1.3,
+        -2.5,
+        2.5,
+        2.5,
+        -0.7
+      ],
+      "ytd": 5.5
+    },
+    {
+      "year": 2023,
+      "months": [
+        -8.5,
+        -0.7,
+        0.2,
+        -4.9,
+        6.1,
+        3.6,
+        -0.2,
+        -1.0,
+        8.8,
+        0.8,
+        7.4,
+        -0.8
+      ],
+      "ytd": 10.8
+    },
+    {
+      "year": 2024,
+      "months": [
+        -0.7,
+        13.0,
+        3.1,
+        -0.7,
+        3.2,
+        -3.2,
+        3.1,
+        -2.0,
+        5.2,
+        32.5,
+        2.0,
+        -1.2
+      ],
+      "ytd": 54.3
+    },
+    {
+      "year": 2025,
+      "months": [
+        2.1,
+        5.7,
+        5.4,
+        -0.7,
+        -0.9,
+        9.6,
+        2.2,
+        2.9,
+        11.3,
+        -3.0,
+        -5.9,
+        1.9
+      ],
+      "ytd": 30.6
+    },
+    {
+      "year": 2026,
+      "months": [
+        2.4,
+        11.8,
+        8.5,
+        1.6,
+        3.7,
+        6.7,
+        -2.8,
+        -3.5,
+        null,
+        null,
+        null,
+        null
+      ],
+      "ytd": 28.4,
+      "isLive": true
+    }
+  ]
+}
