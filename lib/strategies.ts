@@ -110,7 +110,7 @@ export const strategies: Strategy[] = [
     edge: 'Technical',
     cagr: '29.5%',
     cagrNum: 0.295,
-    sharpe: '1.35',
+    sharpe: '1.50',
     maxDD: '-12.5%',
     maxDDNum: 0.125,
     status: 'live',
