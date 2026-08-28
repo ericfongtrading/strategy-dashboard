@@ -1,6 +1,6 @@
 {
- "lastUpdated": "2026-08-28T02:28:23.815634+00:00",
- "basis": "Live performance since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), open positions marked to equity at the endpoint. Cumulative +143.8% (CAGR +23.5%), max drawdown -17.1%, currently -9.3% from the high, 34 of 51 months positive. Refreshed daily.",
+ "lastUpdated": "2026-08-28T02:36:36.852429+00:00",
+ "basis": "Live performance since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), open positions marked to equity at the endpoint. Cumulative +143.6% (CAGR +23.5%), max drawdown since 2024 -9.3%, currently -9.3% from the high, 34 of 51 months positive. Refreshed daily.",
  "monthlyReturns": [
   {
    "year": 2022,
@@ -88,7 +88,7 @@
     1.8,
     -0.8,
     0.6,
-    -7.6,
+    -7.7,
     null,
     null,
     null,
