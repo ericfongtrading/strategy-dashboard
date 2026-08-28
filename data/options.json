@@ -1,6 +1,6 @@
 {
- "lastUpdated": "2026-08-28T02:10:00.192796+00:00",
- "basis": "LIVE account record since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), open positions marked to equity at the endpoint. Cumulative +129.9% (CAGR +21.8%), max drawdown -17.1%, currently -14.4% from the high, 34 of 51 months positive. Refreshed daily from the Deribit transaction log.",
+ "lastUpdated": "2026-08-28T02:28:23.815634+00:00",
+ "basis": "Live performance since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), open positions marked to equity at the endpoint. Cumulative +143.8% (CAGR +23.5%), max drawdown -17.1%, currently -9.3% from the high, 34 of 51 months positive. Refreshed daily.",
  "monthlyReturns": [
   {
    "year": 2022,
@@ -88,13 +88,13 @@
     1.8,
     -0.8,
     0.6,
-    -12.9,
+    -7.6,
     null,
     null,
     null,
     null
    ],
-   "ytd": -0.1,
+   "ytd": 5.9,
    "isLive": true
   }
  ]
