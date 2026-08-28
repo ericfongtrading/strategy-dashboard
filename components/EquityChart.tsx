@@ -136,8 +136,11 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
   const startYr = strategy.backtestStart || 2020;
   const liveYr = strategy.liveStart || strategy.backtestEnd || 2025;
   // When the live segment is a thin sliver (e.g. live started 2 months ago), the
-  // transition-year label collides with the right-anchored 'Now' label. Shift it left.
+  // transition-year label collides with the right-anchored 'Now' label. Shift it left;
+  // if the divider sits so close to the edge that even the shifted label would touch
+  // 'Now' (~22px wide), drop the year label entirely — 'Now' carries the meaning.
   const yrCrowded = transitionX > x(months) - 34;
+  const yrHidden = transitionX > x(months) - 20;
 
   const gridValues = [];
   const range = maxVal - minVal;
@@ -193,7 +196,9 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
 
         {/* X-axis labels */}
         <text x={x(0)} y={H - 8} fill="#4b5563" fontSize="10" textAnchor="start" fontFamily="Inter, sans-serif">{startYr}</text>
-        <text x={yrCrowded ? transitionX - 6 : transitionX} y={H - 8} fill="#9ca3af" fontSize="10" textAnchor={yrCrowded ? 'end' : 'middle'} fontFamily="Inter, sans-serif">{liveYr}</text>
+        {!yrHidden && (
+          <text x={yrCrowded ? transitionX - 6 : transitionX} y={H - 8} fill="#9ca3af" fontSize="10" textAnchor={yrCrowded ? 'end' : 'middle'} fontFamily="Inter, sans-serif">{liveYr}</text>
+        )}
         <text x={x(months)} y={H - 8} fill="#10b981" fontSize="10" textAnchor="end" fontFamily="Inter, sans-serif">Now</text>
       </svg>
     </div>
