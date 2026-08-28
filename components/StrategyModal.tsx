@@ -51,13 +51,19 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   const trades = liveData?.recentTrades || s.recentTrades;
   const positions = liveData?.positions || s.positions;
   const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
-  const isTheoretical = !!liveData?.basis;
+  // "theoretical" only when the live feed says so — a feed of real fills
+  // (e.g. GC) must not be labelled theoretical.
+  const isTheoretical = (liveData?.basis || '').toUpperCase().includes('THEORETICAL');
+  const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const liveSince = s.liveStart
+    ? `${s.liveStartMonth ? MONTH_ABBR[s.liveStartMonth - 1] + ' ' : ''}${s.liveStart}`
+    : undefined;
 
   return (
     <div className="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
       <div
-        className="modal-panel relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-bg-modal shadow-2xl"
+        className="modal-panel relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-2xl border border-border bg-bg-modal shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -113,7 +119,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
-            <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} />
+            <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince} />
           )}
 
           {/* Current Positions */}
