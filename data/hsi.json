@@ -1,50 +1,50 @@
 {
-  "lastUpdated": "2026-08-28T06:24:37Z",
-  "basis": "Backtest 2022-01 to 2026-08, 1,398 trades. 1 HSI contract, HKD 50/pt, fixed size, HKD 453,000 base. CAGR 19.6%, max DD -25.0%, Sharpe 1.30.",
+  "lastUpdated": "2026-08-28T06:30:46Z",
+  "basis": "Live since Apr 2026 on IB. Recent trades are real fills. Monthly table and headline are backtest 2022-01 to 2026-08 (1,398 trades): 1 HSI contract, HKD 50/pt, fixed size, HKD 453,000 base \u2014 CAGR 19.6%, max DD -25.0%, Sharpe 1.30.",
   "recentTrades": [
+    {
+      "date": "2026-08-28",
+      "direction": "Short",
+      "entry": "25,298",
+      "exit": "25,388",
+      "pnl": "-HK$1,800",
+      "pnlNum": -1800,
+      "rMultiple": "-1.0R"
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "Short",
+      "entry": "25,539",
+      "exit": "25,586",
+      "pnl": "-HK$940",
+      "pnlNum": -940,
+      "rMultiple": "-0.5R"
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "Short",
+      "entry": "25,523",
+      "exit": "25,555",
+      "pnl": "-HK$1,600",
+      "pnlNum": -1600,
+      "rMultiple": "-0.6R"
+    },
     {
       "date": "2026-08-26",
       "direction": "Long",
-      "entry": "25,784",
-      "exit": "25,785",
-      "pnl": "+HK$50",
-      "pnlNum": 50,
+      "entry": "25,785",
+      "exit": "25,787",
+      "pnl": "+HK$40",
+      "pnlNum": 40,
       "rMultiple": "+0.0R"
     },
     {
       "date": "2026-08-24",
       "direction": "Short",
-      "entry": "25,443",
-      "exit": "25,493",
+      "entry": "25,442",
+      "exit": "25,492",
       "pnl": "-HK$2,500",
       "pnlNum": -2500,
-      "rMultiple": "-1.0R"
-    },
-    {
-      "date": "2026-08-24",
-      "direction": "Short",
-      "entry": "25,589",
-      "exit": "25,460",
-      "pnl": "+HK$6,450",
-      "pnlNum": 6450,
-      "rMultiple": "+1.4R"
-    },
-    {
-      "date": "2026-08-21",
-      "direction": "Long",
-      "entry": "25,816",
-      "exit": "25,948",
-      "pnl": "+HK$6,600",
-      "pnlNum": 6600,
-      "rMultiple": "+1.5R"
-    },
-    {
-      "date": "2026-08-20",
-      "direction": "Long",
-      "entry": "25,804",
-      "exit": "25,714",
-      "pnl": "-HK$4,500",
-      "pnlNum": -4500,
       "rMultiple": "-1.0R"
     }
   ],
@@ -137,7 +137,8 @@
         null,
         null
       ],
-      "ytd": 28.4
+      "ytd": 28.4,
+      "isLive": true
     }
   ]
 }
