@@ -1,70 +1,78 @@
 {
-  "lastUpdated": "2026-08-28T01:10:05Z",
+  "lastUpdated": "2026-08-28T01:16:31Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+16.93 across 20 closed trades, 75% winners. The live sample is far too short to confirm the backtest.",
   "recentTrades": [
     {
       "date": "2026-08-26",
+      "symbol": "BTC",
       "direction": "Long",
-      "entry": "\u2014",
-      "exit": "78,054",
-      "pnl": "$+0.30",
-      "pnlNum": 0.3
-    },
-    {
-      "date": "2026-08-26",
-      "direction": "Long",
-      "entry": "\u2014",
-      "exit": "78,054",
-      "pnl": "$+0.02",
-      "pnlNum": 0.02
-    },
-    {
-      "date": "2026-08-26",
-      "direction": "Long",
-      "entry": "\u2014",
-      "exit": "78,054",
-      "pnl": "$+0.01",
-      "pnlNum": 0.01
-    },
-    {
-      "date": "2026-08-25",
-      "direction": "Long",
-      "entry": "\u2014",
-      "exit": "78,765",
-      "pnl": "$+3.92",
-      "pnlNum": 3.92
+      "entry": "77,995",
+      "exit": "78,252",
+      "pnl": "$+3.58",
+      "pnlNum": 3.58
     },
     {
       "date": "2026-08-23",
+      "symbol": "BTC",
       "direction": "Long",
-      "entry": "\u2014",
-      "exit": "77,350",
-      "pnl": "$+8.49",
-      "pnlNum": 8.49
+      "entry": "64,957",
+      "exit": "65,777",
+      "pnl": "$+4.91",
+      "pnlNum": 4.91
     },
     {
       "date": "2026-08-21",
+      "symbol": "RENDER",
       "direction": "Long",
-      "entry": "\u2014",
+      "entry": "1.3727",
       "exit": "1.4863",
-      "pnl": "$+2.69",
-      "pnlNum": 2.69
-    },
-    {
-      "date": "2026-08-21",
-      "direction": "Long",
-      "entry": "\u2014",
-      "exit": "74,598",
-      "pnl": "$+0.97",
-      "pnlNum": 0.97
+      "pnl": "$+2.67",
+      "pnlNum": 2.67
     },
     {
       "date": "2026-08-19",
+      "symbol": "ETH",
       "direction": "Long",
-      "entry": "\u2014",
-      "exit": "2,107.5",
-      "pnl": "$+2.12",
-      "pnlNum": 2.12
+      "entry": "1,917",
+      "exit": "2,108",
+      "pnl": "$+2.11",
+      "pnlNum": 2.11
+    },
+    {
+      "date": "2026-08-17",
+      "symbol": "LINK",
+      "direction": "Long",
+      "entry": "9.5864",
+      "exit": "9.5528",
+      "pnl": "$+0.05",
+      "pnlNum": 0.05
+    },
+    {
+      "date": "2026-08-15",
+      "symbol": "LINK",
+      "direction": "Long",
+      "entry": "8.1803",
+      "exit": "8.7258",
+      "pnl": "$+2.53",
+      "pnlNum": 2.53
+    },
+    {
+      "date": "2026-08-10",
+      "symbol": "XRP",
+      "direction": "Long",
+      "entry": "1.0202",
+      "exit": "1.0353",
+      "pnl": "$+0.23",
+      "pnlNum": 0.23
+    },
+    {
+      "date": "2026-07-22",
+      "symbol": "ETH",
+      "direction": "Long",
+      "entry": "1,877",
+      "exit": "1,916",
+      "pnl": "$+2.02",
+      "pnlNum": 2.02
     }
   ],
   "positions": [
@@ -72,28 +80,28 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "79,507.4",
-      "current": "80,766.5",
+      "current": "80,762.5",
       "size": "0.01342",
-      "pnl": "$+16.90",
-      "pnlNum": 16.9
+      "pnl": "$+16.82",
+      "pnlNum": 16.82
     },
     {
       "symbol": "ATOM",
       "direction": "Long",
       "entry": "1.5946",
-      "current": "1.5681",
+      "current": "1.5701",
       "size": "19.02",
-      "pnl": "$-0.50",
-      "pnlNum": -0.5
+      "pnl": "$-0.46",
+      "pnlNum": -0.46
     },
     {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "7.525",
-      "current": "7.5285",
+      "current": "7.5319",
       "size": "28.6",
-      "pnl": "$+0.10",
-      "pnlNum": 0.1
+      "pnl": "$+0.14",
+      "pnlNum": 0.14
     }
   ],
   "liveRealisedPnl": 16.93,
