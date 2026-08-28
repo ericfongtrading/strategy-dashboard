@@ -4,6 +4,9 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
   // Only show the instrument column when some trade actually carries one, so
   // single-market strategies keep their existing layout.
   const showSymbol = trades.some((t) => !!t.symbol);
+  // Same opt-in pattern for entry dates: when present, the single Date column
+  // becomes an Entered/Exited pair.
+  const showEntryDate = trades.some((t) => !!t.entryDate);
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
       <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Recent Closed Trades</h4>
@@ -11,7 +14,10 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
         <table className="w-full text-xs" style={{ minWidth: 500 }}>
           <thead>
             <tr className="border-b border-border">
-              <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">Date</th>
+              {showEntryDate && (
+                <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">Entered</th>
+              )}
+              <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">{showEntryDate ? 'Exited' : 'Date'}</th>
               {showSymbol && (
                 <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">Symbol</th>
               )}
@@ -25,6 +31,9 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
           <tbody>
             {trades.map((t, i) => (
               <tr key={i} className="border-b border-border/50 hover:bg-bg-hover/30">
+                {showEntryDate && (
+                  <td className="px-2 py-2 text-white/80 font-mono">{t.entryDate || '—'}</td>
+                )}
                 <td className="px-2 py-2 text-white/80 font-mono">{t.date}</td>
                 {showSymbol && (
                   <td className="px-2 py-2 text-white font-medium">{t.symbol || '—'}</td>

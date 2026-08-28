@@ -7,6 +7,9 @@ export type MonthlyRow = {
 
 export type Trade = {
   date: string;
+  /** Entry date. Optional: when any trade carries one, the table shows
+   *  Entered/Exited columns instead of the single Date column. */
+  entryDate?: string;
   /** Instrument. Optional: single-market strategies (GC, NQ) omit it and the
    *  table hides the column. Multi-coin strategies must set it, or every row
    *  reads as the same trade. */
@@ -57,6 +60,10 @@ export type Strategy = {
   monthlyReturns?: MonthlyRow[];
   recentTrades?: Trade[];
   positions?: Position[];
+  /** Optional pre-rendered chart image (e.g. signals overlaid on price).
+   *  Render with a transparent background for the dark modal. */
+  chartImg?: string;
+  chartImgLabel?: string;
 };
 
 const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -226,14 +233,15 @@ export const strategies: Strategy[] = [
     asset: 'BTC',
     category: 'crypto',
     edge: 'Exchange Data',
-    cagr: '21.4%',
-    cagrNum: 0.214,
+    cagr: '27.8%',
+    cagrLabel: 'CAGR (since first trade)',
+    cagrNum: 0.278,
     sharpe: '1.84',
     maxDD: '-7.2%',
     maxDDNum: 0.072,
     status: 'live',
     statusLabel: 'Live (manual)',
-    description: 'Directional BTC strategy using the coefficient between buyers and sellers to identify regime shifts and market bottoms. Card metrics are the signal record 2022–present at 40% of equity per signal, unlevered (cash otherwise idle); full history from 2014 compounds at 16.7%. Live execution is manual since Apr 2025, with fills verified against exchange order IDs at 0.02–1.2% slippage to signal; the trade list shows strategy signals, not live fills.',
+    description: 'Directional BTC strategy using the coefficient between buyers and sellers to identify regime shifts and market bottoms. Card metrics are the signal record at 40% of equity per signal, unlevered (cash otherwise idle). CAGR is measured from the first signal (Dec 2022); the same curve compounds at 21.4% measured from Jan 2022, and full history from 2014 at 16.7%. Live execution is manual since Apr 2025, with fills verified against exchange order IDs at 0.02–1.2% slippage to signal; the trade list shows strategy signals, not live fills.',
     dataSource: 'Signals (backtest): 2022–2026 (4.7 yr) · Live (manual): Apr 2025',
     backtestStart: 2022,
     backtestEnd: 2026,
@@ -251,8 +259,8 @@ export const strategies: Strategy[] = [
       { year: 2025, months: [0.0, 0.0, 0.0, 3.5, 4.8, 1.1, 3.7, 3.4, 0.0, 0.0, 1.6, -1.6], ytd: 17.4, isLive: true },
       { year: 2026, months: [0.0, 0.0, 0.0, 4.7, -1.6, 0.0, 1.9, 11.2, null, null, null, null], ytd: 16.8, isLive: true },
     ],
-    pdfEn: pdf('/pdfs/onchain/btc_lsr_EN.pdf'),
-    pdfZh: pdf('/pdfs/onchain/btc_lsr_ZH.pdf'),
+    chartImg: pdf('/charts/btc-lsr-signals.png'),
+    chartImgLabel: 'Backtest signals · not live fills',
   },
   {
     id: 'yield',

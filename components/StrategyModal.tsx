@@ -117,6 +117,18 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
             </div>
           )}
 
+          {/* Signals-on-price chart image */}
+          {s.chartImg && (
+            <div className="rounded-xl border border-border bg-bg/40 p-4">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="text-xs font-semibold text-muted uppercase tracking-wider">Signals on Price</h4>
+                {s.chartImgLabel && <span className="text-[11px] text-muted">{s.chartImgLabel}</span>}
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={s.chartImg} alt="Strategy signals overlaid on price" className="w-full h-auto" />
+            </div>
+          )}
+
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
             <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince} />

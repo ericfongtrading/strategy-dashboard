@@ -1,9 +1,10 @@
 {
-  "lastUpdated": "2026-08-28T06:56:10Z",
-  "basis": "Card metrics and monthlyReturns are the SIGNAL/backtest record 2022-present, 40% of equity per signal, unlevered, mark-to-market daily; full history 2014- compounds at 16.7%. recentTrades below are strategy signals (TradingView strategy tester), NOT live fills. Live execution is manual, verified since 2025-04-10 by exchange order IDs (entry slippage 0.02-1.2% vs signal); live capture has trailed signals where exits were taken early (a +49.9% signal was exited at +4.4% in Apr 2025). Short overlay v3 is flat since its 2026-08-19 stop at -5.0%.",
+  "lastUpdated": "2026-08-28T07:24:22Z",
+  "basis": "Card metrics and monthlyReturns are the SIGNAL/backtest record, 40% of equity per signal, unlevered, mark-to-market daily. Headline CAGR 27.8% is measured from the first signal (2022-12-21); from 2022-01-01 the same curve compounds at 21.4%, full history 2014- at 16.7%. recentTrades are strategy signals (TradingView strategy tester), NOT live fills. Live execution is manual, verified since 2025-04-10 by exchange order IDs (entry slippage 0.02-1.2% vs signal); live capture has trailed signals where exits were taken early (a +49.9% signal was exited at +4.4% in Apr 2025). Short overlay v3 flat since its 2026-08-19 stop at -5.0%.",
   "recentTrades": [
     {
       "date": "2026-05-29",
+      "entryDate": "2026-04-01",
       "direction": "Long",
       "entry": "68,226",
       "exit": "73,539",
@@ -12,6 +13,7 @@
     },
     {
       "date": "2025-12-15",
+      "entryDate": "2025-11-24",
       "direction": "Long",
       "entry": "86,852",
       "exit": "86,852",
@@ -20,6 +22,7 @@
     },
     {
       "date": "2025-08-14",
+      "entryDate": "2025-04-10",
       "direction": "Long",
       "entry": "82,577",
       "exit": "123,866",
@@ -28,6 +31,7 @@
     },
     {
       "date": "2025-04-09",
+      "entryDate": "2025-04-08",
       "direction": "Long",
       "entry": "79,147",
       "exit": "75,189",
@@ -36,6 +40,7 @@
     },
     {
       "date": "2024-11-11",
+      "entryDate": "2024-09-10",
       "direction": "Long",
       "entry": "57,072",
       "exit": "85,608",
@@ -44,6 +49,7 @@
     },
     {
       "date": "2024-09-02",
+      "entryDate": "2024-08-06",
       "direction": "Long",
       "entry": "54,067",
       "exit": "57,336",
@@ -52,6 +58,7 @@
     },
     {
       "date": "2024-04-30",
+      "entryDate": "2024-04-19",
       "direction": "Long",
       "entry": "63,514",
       "exit": "60,338",
@@ -60,6 +67,7 @@
     },
     {
       "date": "2023-12-04",
+      "entryDate": "2023-10-16",
       "direction": "Long",
       "entry": "27,172",
       "exit": "40,757",
@@ -68,6 +76,7 @@
     },
     {
       "date": "2023-09-11",
+      "entryDate": "2023-08-18",
       "direction": "Long",
       "entry": "26,632",
       "exit": "25,300",
@@ -76,6 +85,7 @@
     },
     {
       "date": "2023-04-22",
+      "entryDate": "2023-03-12",
       "direction": "Long",
       "entry": "20,718",
       "exit": "27,264",
@@ -84,6 +94,7 @@
     },
     {
       "date": "2023-03-05",
+      "entryDate": "2022-12-21",
       "direction": "Long",
       "entry": "16,900",
       "exit": "22,349",
