@@ -7,6 +7,10 @@ export type MonthlyRow = {
 
 export type Trade = {
   date: string;
+  /** Instrument. Optional: single-market strategies (GC, NQ) omit it and the
+   *  table hides the column. Multi-coin strategies must set it, or every row
+   *  reads as the same trade. */
+  symbol?: string;
   direction: 'Long' | 'Short';
   entry: string;
   exit: string;

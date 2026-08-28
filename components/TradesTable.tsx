@@ -1,6 +1,9 @@
 import type { Trade, Position } from '@/lib/strategies';
 
 export function RecentTrades({ trades }: { trades: Trade[] }) {
+  // Only show the instrument column when some trade actually carries one, so
+  // single-market strategies keep their existing layout.
+  const showSymbol = trades.some((t) => !!t.symbol);
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
       <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Recent Closed Trades</h4>
@@ -9,6 +12,9 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
           <thead>
             <tr className="border-b border-border">
               <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">Date</th>
+              {showSymbol && (
+                <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">Symbol</th>
+              )}
               <th className="px-2 py-2 text-left text-[10px] font-semibold text-muted uppercase tracking-wider">Side</th>
               <th className="px-2 py-2 text-right text-[10px] font-semibold text-muted uppercase tracking-wider">Entry</th>
               <th className="px-2 py-2 text-right text-[10px] font-semibold text-muted uppercase tracking-wider">Exit</th>
@@ -20,6 +26,9 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
             {trades.map((t, i) => (
               <tr key={i} className="border-b border-border/50 hover:bg-bg-hover/30">
                 <td className="px-2 py-2 text-white/80 font-mono">{t.date}</td>
+                {showSymbol && (
+                  <td className="px-2 py-2 text-white font-medium">{t.symbol || '—'}</td>
+                )}
                 <td className="px-2 py-2">
                   <span className={`inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold ${
                     t.direction === 'Long'
