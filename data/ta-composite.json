@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-30T08:00:20Z",
+  "lastUpdated": "2026-08-30T12:00:21Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+14.39 across 21 closed trades, 71% winners. The live sample is far too short to confirm the backtest.",
   "recentTrades": [
     {
@@ -79,29 +79,29 @@
     {
       "symbol": "BTC",
       "direction": "Long",
-      "entry": "79,507.4",
-      "current": "78,085.5",
-      "size": "0.01342",
-      "pnl": "$-19.00",
-      "pnlNum": -19.0
+      "entry": "79,484.7",
+      "current": "78,148.5",
+      "size": "0.01365",
+      "pnl": "$-18.19",
+      "pnlNum": -18.19
     },
     {
       "symbol": "ATOM",
       "direction": "Long",
       "entry": "1.5946",
-      "current": "1.4764",
+      "current": "1.4875",
       "size": "1.26",
-      "pnl": "$-0.15",
-      "pnlNum": -0.15
+      "pnl": "$-0.13",
+      "pnlNum": -0.13
     },
     {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "7.525",
-      "current": "7.3218",
+      "current": "7.3813",
       "size": "28.6",
-      "pnl": "$-5.60",
-      "pnlNum": -5.6
+      "pnl": "$-4.09",
+      "pnlNum": -4.09
     }
   ],
   "liveRealisedPnl": 14.39,
