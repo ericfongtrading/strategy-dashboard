@@ -149,7 +149,7 @@ export const strategies: Strategy[] = [
     asset: 'NQ Futures',
     category: 'tradfi',
     edge: 'Technical',
-    cagr: '15.9%',
+    cagr: '12.0%',
     cagrNum: 0.159,
     sharpe: '1.93',
     maxDD: '-11.6%',
