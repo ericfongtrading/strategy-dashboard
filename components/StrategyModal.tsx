@@ -53,7 +53,10 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
-  const isTheoretical = (liveData?.basis || '').toUpperCase().includes('THEORETICAL');
+  const _basis = (liveData?.basis || '').toUpperCase();
+  // A feed is model/signal-level if it says so either way. A feed of REAL fills
+  // (e.g. GC) says neither and keeps the plain backtested legend.
+  const isTheoretical = _basis.includes('THEORETICAL') || _basis.includes('STRATEGY RETURNS');
   const MONTH_ABBR = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const liveSince = s.liveStart
     ? `${s.liveStartMonth ? MONTH_ABBR[s.liveStartMonth - 1] + ' ' : ''}${s.liveStart}`
