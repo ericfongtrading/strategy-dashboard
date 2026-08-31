@@ -1,12 +1,18 @@
 import { useState, useEffect } from 'react';
-import type { Trade, Position, MonthlyRow } from './strategies';
+import type { Trade, Position, MonthlyRow, Plan, Headline } from './strategies';
 
-type LiveData = {
+export type LiveData = {
   lastUpdated: string;
   basis?: string;
   recentTrades: Trade[];
   positions: Position[];
   monthlyReturns?: MonthlyRow[];
+  /** Setups not yet entered. Hyper bot only; other feeds omit it. */
+  plans?: Plan[];
+  /** Card/modal headline numbers for strategies with no meaningful CAGR yet. */
+  headline?: Headline[];
+  /** e.g. the mark used for unrealised P&L. */
+  priceNote?: string;
 };
 
 const REPO_RAW = 'https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/data';
@@ -18,6 +24,12 @@ export function useLiveData(strategyId: string) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    // An empty id means "this caller does not want a live feed" (a card that has
+    // not opted in, or a closed modal). Fetching it would request data/.json.
+    if (!strategyId) {
+      setData(null);
+      return;
+    }
     const cached = cache[strategyId];
     if (cached && Date.now() - cached.ts < CACHE_TTL) {
       setData(cached.data);

@@ -5,7 +5,7 @@ import type { Strategy } from '@/lib/strategies';
 import { useLiveData } from '@/lib/useLiveData';
 import { EquityChart } from './EquityChart';
 import { MonthlyReturns } from './MonthlyReturns';
-import { RecentTrades, CurrentPositions } from './TradesTable';
+import { RecentTrades, CurrentPositions, PendingPlans } from './TradesTable';
 
 const statusConfig: Record<Strategy['status'], { label: string; color: string; dot: boolean }> = {
   live: { label: 'Live', color: 'text-good bg-good/10 border-good/30', dot: true },
@@ -50,6 +50,10 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
   const trades = liveData?.recentTrades || s.recentTrades;
   const positions = liveData?.positions || s.positions;
+  const plans = liveData?.plans;
+  // Strategies with a track record too short to annualise supply their own
+  // headline numbers instead of an invented CAGR.
+  const headline = liveData?.headline;
   const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
@@ -100,6 +104,23 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
         {/* Body */}
         <div className="px-6 py-5 space-y-6">
+          {/* Live headline (strategies with no meaningful CAGR yet) */}
+          {headline && headline.length > 0 && (
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {headline.map((h, i) => (
+                <div key={i} className="rounded-lg bg-bg/60 border border-border px-4 py-3">
+                  <div className="text-[11px] text-muted uppercase tracking-wider mb-1">{h.label}</div>
+                  <div className={`text-2xl font-bold metric-value ${
+                    h.tone === 'good' ? 'text-good' : h.tone === 'bad' ? 'text-bad' : 'text-white'
+                  }`}>
+                    {h.value}
+                  </div>
+                  {h.sub && <div className="text-[11px] text-muted mt-0.5">{h.sub}</div>}
+                </div>
+              ))}
+            </div>
+          )}
+
           {/* Metrics row */}
           {(s.cagr || s.sharpe || s.maxDD) && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -138,7 +159,10 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           )}
 
           {/* Current Positions */}
-          {positions && <CurrentPositions positions={positions} />}
+          {positions && <CurrentPositions positions={positions} note={liveData?.priceNote} />}
+
+          {/* Pending Plans — setups published before they trigger */}
+          {plans && <PendingPlans plans={plans} />}
 
           {/* Recent Trades */}
           {trades && trades.length > 0 && (

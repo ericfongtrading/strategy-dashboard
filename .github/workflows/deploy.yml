@@ -3,6 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    # Live strategy data is fetched from raw.githubusercontent at runtime, so a
+    # data refresh needs no rebuild. The Hyper bot republishes its book whenever
+    # a plan, a fill or a trade changes; without this, every one of those would
+    # queue a Pages build against a soft limit of roughly ten per hour and the
+    # page would end up further behind than it was on a weekly cron.
+    paths-ignore:
+      - 'data/**'
   workflow_dispatch:
 
 permissions:

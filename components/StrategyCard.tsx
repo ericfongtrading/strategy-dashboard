@@ -1,4 +1,7 @@
+'use client';
+
 import type { Strategy } from '@/lib/strategies';
+import { useLiveData } from '@/lib/useLiveData';
 
 const statusConfig: Record<Strategy['status'], { label: string; color: string; dot: boolean }> = {
   live: { label: 'Live', color: 'text-good bg-good/10 border-good/30', dot: true },
@@ -10,6 +13,12 @@ const statusConfig: Record<Strategy['status'], { label: string; color: string; d
 export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void }) {
   const st = statusConfig[s.status];
   const displayLabel = s.statusLabel || st.label;
+  // Only cards that opt in fetch on the front page, so adding one live card does
+  // not turn the grid into ten requests, nine of which 404.
+  const { data: live } = useLiveData(s.liveHeadline ? s.id : '');
+  const headline = s.liveHeadline ? live?.headline : undefined;
+  const openCount = s.liveHeadline ? live?.positions?.length : undefined;
+  const planCount = s.liveHeadline ? live?.plans?.length : undefined;
 
   if (s.status === 'development') {
     return (
@@ -54,6 +63,37 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
           {displayLabel}
         </span>
       </div>
+
+      {/* Live headline: the real numbers for a strategy too young to annualise */}
+      {headline && headline.length > 0 && (
+        <>
+          <div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">{headline[0].label}</div>
+            <div className={`text-4xl font-bold metric-value ${
+              headline[0].tone === 'bad' ? 'text-bad' : 'text-good'
+            }`}>
+              {headline[0].value}
+            </div>
+            {headline[0].sub && <div className="text-[11px] text-muted mt-0.5">{headline[0].sub}</div>}
+          </div>
+          <div className="flex items-end gap-6">
+            {headline.slice(1).map((h, i) => (
+              <div key={i}>
+                <div className="text-[11px] text-muted uppercase tracking-wider">{h.label}</div>
+                <div className="text-xl font-semibold metric-value text-white">{h.value}</div>
+              </div>
+            ))}
+          </div>
+          {(openCount !== undefined || planCount !== undefined) && (
+            <div className="flex items-center gap-2 text-[11px] text-muted flex-wrap">
+              <span className="inline-flex h-1.5 w-1.5 rounded-full bg-good pulse-dot" />
+              <span>{openCount || 0} open {openCount === 1 ? 'position' : 'positions'}</span>
+              <span className="text-border">&middot;</span>
+              <span>{planCount || 0} pending {planCount === 1 ? 'plan' : 'plans'}</span>
+            </div>
+          )}
+        </>
+      )}
 
       {/* Large CAGR */}
       {s.cagr && (

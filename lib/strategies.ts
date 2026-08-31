@@ -20,6 +20,9 @@ export type Trade = {
   pnl: string;
   pnlNum: number;
   rMultiple?: string;
+  /** Why the trade ended, in a few words. Optional: only strategies whose feed
+   *  explains its exits (the Hyper bot) set it, and the column hides otherwise. */
+  note?: string;
 };
 
 export type Position = {
@@ -30,6 +33,36 @@ export type Position = {
   size: string;
   pnl: string;
   pnlNum: number;
+  /** Risk detail. All optional and all opt-in per column, so a feed that only
+   *  reports mark-to-market (GC, NQ) keeps its existing four-column table. */
+  stop?: string;
+  targets?: string;
+  realized?: string;
+  /** Share of the position not yet taken off, e.g. "60%". */
+  open?: string;
+};
+
+/** A setup that has NOT been entered — published before it triggers rather than
+ *  reported after it resolves. Only the Hyper bot has these. */
+export type Plan = {
+  symbol: string;
+  direction: 'Long' | 'Short';
+  zone: string;
+  stop: string;
+  targets: string;
+  /** 0-5. A conviction label the planner writes; it does not gate execution. */
+  conviction?: number;
+  status: string;
+};
+
+/** A headline number on the card and at the top of the modal, supplied by the
+ *  live feed rather than baked in at build time. Used where the standard
+ *  CAGR/Sharpe/MaxDD trio would have to be invented to be filled in. */
+export type Headline = {
+  label: string;
+  value: string;
+  sub?: string;
+  tone?: 'good' | 'bad';
 };
 
 export type Strategy = {
@@ -60,6 +93,10 @@ export type Strategy = {
   monthlyReturns?: MonthlyRow[];
   recentTrades?: Trade[];
   positions?: Position[];
+  /** Fetch this strategy's live feed on the CARD, not just in the modal, and
+   *  render its `headline` block where CAGR/Sharpe would sit. Opt-in so the
+   *  front page still makes exactly one network request per live-fed card. */
+  liveHeadline?: boolean;
   /** Optional pre-rendered chart image (e.g. signals overlaid on price).
    *  Render with a transparent background for the dark modal. */
   chartImg?: string;
@@ -361,6 +398,9 @@ export const strategies: Strategy[] = [
     edge: 'Machine Learning',
     status: 'active',
     statusLabel: 'Paper Trading',
+    liveHeadline: true,
+    proofUrl: pdf('/dl/model_1.html'),
+    proofLabel: 'Full record & live book',
     description: 'Autonomous AI trading system running 24/7 on a dedicated server. Every hour it assembles a full market brief - derivatives positioning, order flow, liquidation maps and macro flows - and an AI reasoning engine maintains a book of conditional trade plans, each with entry zone, stop and targets. A state machine watches the triggers and executes around the clock, and every closed trade is journaled with a written post-mortem that feeds back into future plans. Currently in supervised paper trading ahead of live deployment.',
     dataSource: 'Paper trading: Jun 2026-Present | 1 BTC notional per trade',
     liveStart: 2026,
@@ -371,6 +411,9 @@ export const strategies: Strategy[] = [
       'Hourly market brief: funding, open interest, CVD order flow, liquidation heatmaps, ETF flows',
       'Runs unattended on a VPS with watchdog alerts to Telegram',
     ],
+    // Fallback only. The live feed (data/hyper-bot.json) replaces this list, the
+    // open positions and the headline numbers on every load; this is what shows
+    // if raw.githubusercontent cannot be reached.
     recentTrades: [
       { date: '2026-08-24', entryDate: '2026-08-24', direction: 'Short', entry: '77,200', exit: '78,542', pnl: '$-1,342', pnlNum: -1342.4 },
       { date: '2026-08-24', entryDate: '2026-08-23', direction: 'Short', entry: '77,244', exit: '77,680', pnl: '$-436', pnlNum: -436.3 },
