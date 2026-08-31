@@ -20,6 +20,8 @@ export type Trade = {
   pnl: string;
   pnlNum: number;
   rMultiple?: string;
+  /** What the bot learned from this trade (losing trades; from the failure-mode journal). */
+  lesson?: string;
   /** Why the trade ended, in a few words. Optional: only strategies whose feed
    *  explains its exits (the Hyper bot) set it, and the column hides otherwise. */
   note?: string;
@@ -449,7 +451,7 @@ export const strategies: Strategy[] = [
       'Own data stack: multi-timeframe candles, OI, CVD, funding, liquidation maps, volume profile, macro calendar',
       'Self-improvement loop: losses auto-tagged by failure mode, fixes backtested on 6y of data before going live',
       'Risk rails in code: minimum 2:1 reward-to-risk, position caps, weekly trade budget, one unified book',
-      'Full transparency below: every historical trade, current positions and pending plans, updated automatically',
+      'Full transparency below: every trade, position and pending plan, updated automatically — losing trades annotated with what the bot learned',
       'Live on Bitget at small size, measured on a $100k model book — sample far too short to draw conclusions yet',
     ],
     monthlyReturns: [

@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import type { Trade, Position, Plan } from '@/lib/strategies';
 
 export function RecentTrades({ trades }: { trades: Trade[] }) {
@@ -40,7 +41,8 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
           </thead>
           <tbody>
             {trades.map((t, i) => (
-              <tr key={i} className="border-b border-border/50 hover:bg-bg-hover/30">
+              <Fragment key={i}>
+              <tr className={`hover:bg-bg-hover/30 ${t.lesson ? '' : 'border-b border-border/50'}`}>
                 {showEntryDate && (
                   <td className="px-2 py-2 text-white/80 font-mono">{t.entryDate || '—'}</td>
                 )}
@@ -73,6 +75,14 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
                   <td className="px-2 py-2 text-muted whitespace-nowrap">{t.note || '—'}</td>
                 )}
               </tr>
+              {t.lesson && (
+                <tr className="border-b border-border/50">
+                  <td colSpan={12} className="px-2 pb-2 pt-0 text-[11px] text-warn/90">
+                    {t.lesson}
+                  </td>
+                </tr>
+              )}
+              </Fragment>
             ))}
           </tbody>
         </table>
