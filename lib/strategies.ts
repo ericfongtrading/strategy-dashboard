@@ -198,6 +198,7 @@ export const strategies: Strategy[] = [
       'Net of measured spreads â the same run at zero cost overstates it by 12%',
       'Two losing years (2018 â6.7%, 2019 â4.5%); the edge is ~0.05R per trade',
       'Currency-exclusion rule caps exposure to one open position per currency',
+      'Apr 2026 onward is the strategy replayed on live IB feed data — the actual fills over that period were distorted by execution bugs since fixed',
     ],
     monthlyReturns: [
       { year: 2017, months: [-1.8, 0.2, 2.0, -4.1, 3.9, -0.2, 2.2, 1.0, 2.0, 1.2, 1.5, 1.5], ytd: 9.4 },
@@ -209,7 +210,7 @@ export const strategies: Strategy[] = [
       { year: 2023, months: [1.4, 0.2, 3.3, 3.2, -1.5, 3.8, 2.1, 0.2, 4.3, 2.5, 0.7, 4.4], ytd: 24.6 },
       { year: 2024, months: [-0.5, 2.3, 0.9, -2.3, -1.0, 1.7, -5.6, 1.5, 4.5, 4.6, 3.7, 0.7], ytd: 10.5 },
       { year: 2025, months: [-0.6, 1.0, 3.0, 1.0, 4.6, 2.3, 2.8, 0.1, -0.6, 1.2, 1.0, -0.5], ytd: 15.3 },
-      { year: 2026, months: [-1.3, 2.0, 3.5, 1.3, 0.0, null, null, null, null, null, null, null], ytd: 5.5, isLive: true },
+      { year: 2026, months: [-1.3, 2.0, 3.5, 1.5, -0.1, -2.1, 2.6, 1.3, null, null, null, null], ytd: 7.4, isLive: true },
     ],
     recentTrades: [
       { date: '2026-08-27', direction: 'Long', entry: '0.93792', exit: '0.93696', pnl: '+$182', pnlNum: 182, rMultiple: '+0.4R' },
