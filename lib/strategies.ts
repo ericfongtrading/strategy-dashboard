@@ -403,15 +403,17 @@ export const strategies: Strategy[] = [
     status: 'active',
     statusLabel: 'Live (small-size test)',
     liveHeadline: true,
-    description: 'Autonomous AI trading system running 24/7 on a dedicated server. Every hour it assembles a full market brief - derivatives positioning, order flow, liquidation maps and macro flows - and an AI reasoning engine maintains a book of conditional trade plans, each with entry zone, stop and targets. A state machine watches the triggers and executes around the clock, and every closed trade is journaled with a written post-mortem that feeds back into future plans. Executing live on Hyperliquid at reduced size since Aug 2026; the record below is kept at a constant 1 BTC notional so every trade in the series stays directly comparable.',
+    description: 'A closed-loop trading system: it gathers its own data, forms its own views, places and manages its own orders, and audits itself afterwards. Every hour it assembles an eight-section market brief - price and order-flow structure, funding and open interest, ETF flows, aggregate liquidations, multi-timeframe liquidation heatmaps, transcribed analyst commentary, and the current state of its own book - and a reasoning model reads all of it. From that it writes conditional trade plans: direction, entry zone, stop and staged targets, each held behind conditions drawn from a library of 38 signal types that must all be true before anything is sent. When they are, the order fires on Hyperliquid with its stop and take-profits attached, and the system keeps managing the position as the market moves - pulling a stop to breakeven, taking partial profit, revising levels, or closing outright when the reasoning behind the trade stops holding. Every closed trade is then written up: what the thesis was, what actually happened, and what should change. Those post-mortems become standing rules replayed into every future plan, so the system meets each of its mistakes once. Executing live on Hyperliquid at reduced size since Aug 2026; the record below is kept at a constant 1 BTC notional so every trade in the series stays directly comparable.',
     dataSource: 'Live on Hyperliquid since Aug 2026 | record kept at 1 BTC notional per trade',
     liveStart: 2026,
     liveStartMonth: 6,
     highlights: [
-      'Record since Jun 2026, every trade at 1 BTC notional — see the live table above',
-      'Self-auditing: every exit ships a written rationale, and post-mortems become standing rules for future plans',
-      'Hourly market brief: funding, open interest, CVD order flow, liquidation heatmaps, ETF flows',
-      'Runs unattended on a VPS with watchdog alerts to Telegram',
+      'Writes its own plans — no human sets a direction, an entry, a stop or a target',
+      'Nothing fires on a hunch: each plan is gated on conditions from a 38-signal library, and waits until they are all true',
+      'Executes and manages on Hyperliquid — stop and staged take-profits go on with the entry, then get revised as the market moves',
+      'Exits on its own reasoning, not just its stop: a position whose thesis has broken is closed rather than held to be stopped out',
+      'Reviews every closed trade in writing and carries the rule forward, so the same mistake is not available to it twice',
+      'Runs unattended 24/7 on a VPS, with watchdog alerts to Telegram if any part of the loop stalls',
     ],
     // Fallback only. The live feed (data/hyper-bot.json) replaces this list, the
     // open positions and the headline numbers on every load; this is what shows
