@@ -1,0 +1,221 @@
+{
+ "lastUpdated": "2026-08-31T06:29:40.257366+00:00",
+ "basis": "PAPER forward test, $100k book, live since 2026-08-11. 16 closed trades, 38% winners, equity $102,557 (+2.56%), max drawdown -2.6%. All trades, positions and pending plans shown are the bot's real-time paper book, refreshed daily.",
+ "recentTrades": [
+  {
+   "date": "2026-08-28",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "79,650",
+   "exit": "78,362",
+   "pnl": "$-1,288",
+   "pnlNum": -1288.01,
+   "rMultiple": "-1.03R"
+  },
+  {
+   "date": "2026-08-28",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "80,450",
+   "exit": "79,377",
+   "pnl": "$-1,073",
+   "pnlNum": -1072.66,
+   "rMultiple": "-1.00R"
+  },
+  {
+   "date": "2026-08-26",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "76,900",
+   "exit": "77,777",
+   "pnl": "$+438",
+   "pnlNum": 438.5,
+   "rMultiple": "+0.60R"
+  },
+  {
+   "date": "2026-08-24",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "76,900",
+   "exit": "79,688",
+   "pnl": "$+1,394",
+   "pnlNum": 1394.19,
+   "rMultiple": "+1.92R"
+  },
+  {
+   "date": "2026-08-23",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "77,200",
+   "exit": "76,000",
+   "pnl": "$-1,200",
+   "pnlNum": -1200.0,
+   "rMultiple": "-0.86R"
+  },
+  {
+   "date": "2026-08-21",
+   "symbol": "BTC",
+   "direction": "Short",
+   "entry": "75,900",
+   "exit": "76,896",
+   "pnl": "$-996",
+   "pnlNum": -996.02,
+   "rMultiple": "-0.71R"
+  },
+  {
+   "date": "2026-08-21",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "69,350",
+   "exit": "76,632",
+   "pnl": "$+3,641",
+   "pnlNum": 3640.86,
+   "rMultiple": "+6.93R"
+  },
+  {
+   "date": "2026-08-20",
+   "symbol": "ETH",
+   "direction": "Long",
+   "entry": "1,866",
+   "exit": "2,010",
+   "pnl": "$+2,315",
+   "pnlNum": 2315.11,
+   "rMultiple": "+1.89R"
+  },
+  {
+   "date": "2026-08-20",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "69,350",
+   "exit": "71,872",
+   "pnl": "$+1,261",
+   "pnlNum": 1261.04,
+   "rMultiple": "+2.40R"
+  },
+  {
+   "date": "2026-08-19",
+   "symbol": "BTC",
+   "direction": "Short",
+   "entry": "65,750",
+   "exit": "65,978",
+   "pnl": "$-228",
+   "pnlNum": -227.74,
+   "rMultiple": "-0.27R"
+  },
+  {
+   "date": "2026-08-19",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "63,450",
+   "exit": "64,328",
+   "pnl": "$+878",
+   "pnlNum": 878.01,
+   "rMultiple": "+1.16R"
+  },
+  {
+   "date": "2026-08-16",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "63,260",
+   "exit": "62,894",
+   "pnl": "$-366",
+   "pnlNum": -366.33,
+   "rMultiple": "-0.45R"
+  },
+  {
+   "date": "2026-08-15",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "64,000",
+   "exit": "63,070",
+   "pnl": "$-930",
+   "pnlNum": -929.99,
+   "rMultiple": "-0.52R"
+  },
+  {
+   "date": "2026-08-14",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "63,430",
+   "exit": "63,190",
+   "pnl": "$-240",
+   "pnlNum": -240.0,
+   "rMultiple": "-0.44R"
+  },
+  {
+   "date": "2026-08-13",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "63,450",
+   "exit": "63,050",
+   "pnl": "$-400",
+   "pnlNum": -399.99,
+   "rMultiple": "-0.67R"
+  },
+  {
+   "date": "2026-08-11",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "63,900",
+   "exit": "63,250",
+   "pnl": "$-650",
+   "pnlNum": -650.01,
+   "rMultiple": "-0.31R"
+  }
+ ],
+ "positions": [
+  {
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "77,300",
+   "current": "78,000",
+   "size": "1 BTC",
+   "stop": "75,900",
+   "targets": "79,600 / 81,400",
+   "pnl": "$+700",
+   "pnlNum": 700.0
+  },
+  {
+   "symbol": "ETH",
+   "direction": "Long",
+   "entry": "2,464",
+   "current": "2,441",
+   "size": "$30,000 notional",
+   "stop": "2,330",
+   "targets": "2,800 / 3,000",
+   "pnl": "$-280",
+   "pnlNum": -279.55
+  }
+ ],
+ "plans": [
+  {
+   "symbol": "BTC",
+   "direction": "Short",
+   "zone": "84,000\u201384,200",
+   "stop": "85,100",
+   "targets": "82,000 / 80,500",
+   "status": "resting"
+  }
+ ],
+ "monthlyReturns": [
+  {
+   "year": 2026,
+   "months": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    2.56,
+    null,
+    null,
+    null,
+    null
+   ],
+   "ytd": 2.56,
+   "isLive": true
+  }
+ ]
+}
