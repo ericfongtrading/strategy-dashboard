@@ -153,7 +153,7 @@ export const strategies: Strategy[] = [
     cagrNum: 0.120,
     sharpe: '1.34',
     maxDD: '-12.7%',
-    maxDDNum: 0.116,
+    maxDDNum: 0.127,
     status: 'live',
     description: 'Systematic momentum strategy on E-mini Nasdaq-100 futures. Fixed 5 MNQ contracts on $22,500 base. Total return +109% over 5 years with 70% positive months.',
     dataSource: 'Backtest: 2021-2026 (5 yr) | Live: Jul 2026',
