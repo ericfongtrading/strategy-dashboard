@@ -25,8 +25,8 @@ export default function Home() {
             <p className="mt-2 text-base text-muted max-w-2xl">
               AI-built systematic strategies across futures, FX, crypto, and options — from
               initial research through backtesting to fully automated live execution.
-              Every strategy follows the same rigorous pipeline: idea, data, backtest,
-              validate, deploy, monitor.
+              Every strategy follows the same rigorous pipeline: research, data,
+              backtesting, validation, deployment, monitoring.
             </p>
           </div>
         </header>
