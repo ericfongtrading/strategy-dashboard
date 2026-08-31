@@ -11,6 +11,7 @@ export default function Home() {
 
   const tradfi = strategies.filter((s) => s.category === 'tradfi');
   const crypto = strategies.filter((s) => s.category === 'crypto');
+  const ml = strategies.filter((s) => s.category === 'ml');
 
   return (
     <>
@@ -45,6 +46,16 @@ export default function Home() {
             <SectionHeader title="Crypto" count={crypto.length} />
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
               {crypto.map((s) => (
+                <StrategyCard key={s.id} s={s} onClick={() => setSelected(s)} />
+              ))}
+            </div>
+          </section>
+
+          {/* Machine Learning */}
+          <section>
+            <SectionHeader title="Machine Learning" count={ml.length} />
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+              {ml.map((s) => (
                 <StrategyCard key={s.id} s={s} onClick={() => setSelected(s)} />
               ))}
             </div>

@@ -71,7 +71,7 @@ export type Strategy = {
   id: string;
   name: string;
   asset: string;
-  category: 'tradfi' | 'crypto';
+  category: 'tradfi' | 'crypto' | 'ml';
   edge: string;
   cagr?: string;
   cagrLabel?: string;
@@ -402,7 +402,7 @@ export const strategies: Strategy[] = [
     id: 'hyper-bot',
     name: 'Hyper Bot',
     asset: 'BTC Perp',
-    category: 'crypto',
+    category: 'ml',
     edge: 'Machine Learning',
     status: 'active',
     statusLabel: 'Live (small-size test)',
@@ -434,14 +434,11 @@ export const strategies: Strategy[] = [
     id: 'ml',
     name: 'ML Swing Trading Bot',
     asset: 'BTC + Majors',
-    category: 'crypto',
+    category: 'ml',
     edge: 'Machine Learning',
-    cagr: '+$2,557',
-    cagrLabel: 'Net P&L (live)',
-    pf: '1.35',
-    winRate: '38%',
     status: 'active',
     statusLabel: 'Live (small-size test)',
+    liveHeadline: true,
     description: 'An AI head-trader running a 24/7 swing desk. Every day it watches the videos of three crypto YouTube analysts, transcribes them, and summarizes each one’s market overview and the key levels they are watching. It fuses those views with data it gathers itself — multi-timeframe price structure (15m to daily), open interest, CVD, funding rates, liquidation heatmaps, volume-profile value areas and the macro calendar — maintains a persistent market view between runs, and designs its own trade setups: entry zone, stop, targets and holding horizon, entered as resting orders that fill only when the level is reached and holds. The analysts are inputs, never authority — the model judges every setup against its own read. It learns from its own mistakes: every losing trade is automatically tagged with a failure mode, recurring modes are backtested against six years of history, and only fixes that prove out are promoted into the live rules. Risk limits are enforced in code, not left to the model. Performance is measured on a $100,000 model book (1 BTC standard size per idea); the same trades execute live on Bitget at reduced size while the track record builds.',
     dataSource: '$100k model book · live on Bitget since Aug 2026',
     liveStart: 2026,
@@ -453,9 +450,6 @@ export const strategies: Strategy[] = [
       'Risk rails in code: minimum 2:1 reward-to-risk, position caps, weekly trade budget, one unified book',
       'Full transparency below: every trade, position and pending plan, updated automatically — losing trades annotated with what the bot learned',
       'Live on Bitget at small size, measured on a $100k model book — sample far too short to draw conclusions yet',
-    ],
-    monthlyReturns: [
-      { year: 2026, months: [null, null, null, null, null, null, null, 2.56, null, null, null, null], ytd: 2.56, isLive: true },
     ],
   },
 ];
