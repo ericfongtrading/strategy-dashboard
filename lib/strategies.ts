@@ -288,7 +288,7 @@ export const strategies: Strategy[] = [
   },
   {
     id: 'yield',
-    name: 'Automated Money Market',
+    name: 'Automated Yield',
     asset: 'Stablecoins',
     category: 'crypto',
     edge: 'Carry',
@@ -296,7 +296,7 @@ export const strategies: Strategy[] = [
     cagrNum: 0.136,
     status: 'live',
     statusLabel: 'Live',
-    description: 'Automated money-market strategy generating yield on stablecoin balances through short-term, collateralized financing at floating market rates. The system continuously reprices its offers as rate conditions shift and rolls maturing balances automatically, so interest compounds without manual intervention. Returns accrue as interest rather than price movement, with zero directional market exposure.',
+    description: 'Automated yield-generation strategy on stablecoin balances, earning through short-term, collateralized financing at floating market rates. The system continuously reprices its offers as rate conditions shift and rolls maturing balances automatically, so interest compounds without manual intervention. Returns accrue as interest rather than price movement, with zero directional market exposure.',
     dataSource: 'Live: 2025-Present',
     backtestStart: 2024,
     backtestEnd: 2025,
