@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-31T02:48:38Z",
-  "basis": "THEORETICAL (backtest signals, not live fills) - MNQ $2/pt at deployed size",
+  "lastUpdated": "2026-08-31T02:49:10Z",
+  "basis": "Strategy returns - signal-level at deployed size, MNQ $2/pt, net of measured costs ($5.40/contract round-turn incl. 1.88pt slippage). Live execution since Jul 2026.",
   "recentTrades": [
     {
       "date": "2026-08-24",
