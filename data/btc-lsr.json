@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-08-28T07:24:22Z",
-  "basis": "Card metrics and monthlyReturns are the SIGNAL/backtest record, 40% of equity per signal, unlevered, mark-to-market daily. Headline CAGR 27.8% is measured from the first signal (2022-12-21); from 2022-01-01 the same curve compounds at 21.4%, full history 2014- at 16.7%. recentTrades are strategy signals (TradingView strategy tester), NOT live fills. Live execution is manual, verified since 2025-04-10 by exchange order IDs (entry slippage 0.02-1.2% vs signal); live capture has trailed signals where exits were taken early (a +49.9% signal was exited at +4.4% in Apr 2025). Short overlay v3 flat since its 2026-08-19 stop at -5.0%.",
+  "lastUpdated": "2026-08-31T03:43:27Z",
+  "basis": "Card metrics and monthlyReturns are the strategy signal record, 40% of equity per signal, unlevered, mark-to-market daily. Headline CAGR 27.8% is measured from the first signal (2022-12-21); the same curve compounds at 21.4% from 2022-01-01 and 16.7% from 2014. recentTrades list the signal history at signal prices. Trading live since 2025-04-10; live fills are recorded separately with exchange order IDs (entry slippage 0.02-1.2% vs signal; live exit timing has differed from signal exits). Short overlay flat since its 2026-08-19 stop.",
   "recentTrades": [
     {
       "date": "2026-05-29",
