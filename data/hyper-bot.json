@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T12:44:01.198289+00:00",
+  "lastUpdated": "2026-08-31T14:42:01.392819+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,28 +26,28 @@
   ],
   "positions": [
     {
-      "symbol": "KANE",
-      "direction": "Short",
-      "entry": "79,000",
-      "current": "77,814",
+      "symbol": "SUAREZ",
+      "direction": "Long",
+      "entry": "77,754",
+      "current": "78,453",
       "size": "1 BTC",
-      "pnl": "+$1,186",
-      "pnlNum": 1186,
-      "stop": "81,500",
-      "targets": "75,000 / 72,999 / 71,251",
+      "pnl": "+$699",
+      "pnlNum": 699,
+      "stop": "76,400",
+      "targets": "79,036 / 79,700 / 80,500",
       "realized": "-",
       "open": "100%"
     },
     {
-      "symbol": "SUAREZ",
-      "direction": "Long",
-      "entry": "77,754",
-      "current": "77,814",
+      "symbol": "KANE",
+      "direction": "Short",
+      "entry": "79,000",
+      "current": "78,453",
       "size": "1 BTC",
-      "pnl": "+$60",
-      "pnlNum": 60,
-      "stop": "76,400",
-      "targets": "79,036 / 79,700 / 80,500",
+      "pnl": "+$547",
+      "pnlNum": 547,
+      "stop": "81,500",
+      "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
       "open": "100%"
     }
@@ -386,5 +386,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,814"
+  "priceNote": "Unrealised P&L marked at $78,453"
 }
