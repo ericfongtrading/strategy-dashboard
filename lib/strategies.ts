@@ -150,7 +150,7 @@ export const strategies: Strategy[] = [
     category: 'tradfi',
     edge: 'Technical',
     cagr: '12.0%',
-    cagrNum: 0.159,
+    cagrNum: 0.120,
     sharpe: '1.93',
     maxDD: '-11.6%',
     maxDDNum: 0.116,
