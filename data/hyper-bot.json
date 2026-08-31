@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T05:02:01.184167+00:00",
+  "lastUpdated": "2026-08-31T05:06:10.106768+00:00",
   "basis": "paper trading, 1 BTC notional per trade",
   "headline": [
     {
@@ -24,10 +24,10 @@
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "current": "77,533",
+      "current": "77,632",
       "size": "1 BTC",
-      "pnl": "+$1,467",
-      "pnlNum": 1467,
+      "pnl": "+$1,368",
+      "pnlNum": 1368,
       "stop": "81,500",
       "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
@@ -73,6 +73,7 @@
       "exit": "78,542",
       "pnl": "-$1,342",
       "pnlNum": -1342,
+      "rMultiple": "-0.54R",
       "note": "Closed early — thesis void"
     },
     {
@@ -84,6 +85,7 @@
       "exit": "77,680",
       "pnl": "-$436",
       "pnlNum": -436,
+      "rMultiple": "-0.19R",
       "note": "Closed early — thesis void"
     },
     {
@@ -95,6 +97,7 @@
       "exit": "77,228",
       "pnl": "+$193",
       "pnlNum": 193,
+      "rMultiple": "+0.09R",
       "note": "Closed early — thesis void"
     },
     {
@@ -106,6 +109,7 @@
       "exit": "66,297",
       "pnl": "-$1,279",
       "pnlNum": -1279,
+      "rMultiple": "-1.08R",
       "note": "Stopped out"
     },
     {
@@ -117,6 +121,7 @@
       "exit": "65,216",
       "pnl": "+$899",
       "pnlNum": 899,
+      "rMultiple": "+0.91R",
       "note": "Breakeven stop"
     },
     {
@@ -128,6 +133,7 @@
       "exit": "64,773",
       "pnl": "+$885",
       "pnlNum": 885,
+      "rMultiple": "+0.61R",
       "note": "All targets hit"
     },
     {
@@ -139,6 +145,7 @@
       "exit": "63,934",
       "pnl": "+$397",
       "pnlNum": 397,
+      "rMultiple": "+0.31R",
       "note": "Breakeven stop"
     },
     {
@@ -150,6 +157,7 @@
       "exit": "63,853",
       "pnl": "-$802",
       "pnlNum": -802,
+      "rMultiple": "-1.00R",
       "note": "Stopped out"
     },
     {
@@ -161,6 +169,7 @@
       "exit": "64,475",
       "pnl": "+$273",
       "pnlNum": 273,
+      "rMultiple": "+0.18R",
       "note": "Breakeven stop"
     },
     {
@@ -172,6 +181,7 @@
       "exit": "64,547",
       "pnl": "-$304",
       "pnlNum": -304,
+      "rMultiple": "-0.22R",
       "note": "Closed early — thesis void"
     },
     {
@@ -183,6 +193,7 @@
       "exit": "63,885",
       "pnl": "+$190",
       "pnlNum": 190,
+      "rMultiple": "+0.13R",
       "note": "Breakeven stop"
     },
     {
@@ -194,8 +205,9 @@
       "exit": "62,836",
       "pnl": "+$246",
       "pnlNum": 246,
+      "rMultiple": "+0.12R",
       "note": "Closed early — thesis void"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,533"
+  "priceNote": "Unrealised P&L marked at $77,632"
 }
