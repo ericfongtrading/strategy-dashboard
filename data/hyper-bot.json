@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-31T05:12:01.220163+00:00",
+  "lastUpdated": "2026-08-31T05:14:01.258884+00:00",
   "basis": "paper trading, 1 BTC notional per trade",
   "headline": [
     {
@@ -24,10 +24,10 @@
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "current": "77,647",
+      "current": "77,752",
       "size": "1 BTC",
-      "pnl": "+$1,353",
-      "pnlNum": 1353,
+      "pnl": "+$1,248",
+      "pnlNum": 1248,
       "stop": "81,500",
       "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
@@ -209,5 +209,5 @@
       "note": "Closed early — thesis void"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,647"
+  "priceNote": "Unrealised P&L marked at $77,752"
 }
