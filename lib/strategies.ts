@@ -163,7 +163,8 @@ export const strategies: Strategy[] = [
     liveStartMonth: 7,
     highlights: [
       'Live automated execution on IB from a 24/7 VPS: IB Gateway + IBC auto-login, server-side GTC/OCA brackets, per-strategy clientId isolation, cron watchdogs with auto-restart',
-      'Live fills reconciled trade-by-trade against the model: 31 of 32 round-trips matched at identical signal prices, zero missed signals',
+      'Every live fill reconciled trade-by-trade against the model: entries matched at identical signal prices, zero missed signals, and the P&L decomposition closes to the cent',
+      'Reconciliation surfaced a stale-data bug that had produced one bad regime read — diagnosed, fixed, and now guarded by a daily cross-source price check',
       'Returns net of MEASURED execution cost ($5.40/contract round-turn, incl. 1.88pt slippage) rather than a commission-only assumption',
       'Positive in every year of the 5-year test, including the 2022 bear market',
     ],
