@@ -92,7 +92,7 @@ export const strategies: Strategy[] = [
       'Headline basis is 2022 onward. Over the full 2019-2026 record the same code returns 8.1% CAGR at -25% DD with Sharpe 0.77.',
       'Walk-forward tested out-of-sample: parameter selection carries forward, not curve-fitted.',
       'Worst drawdown lasted 651 days (Jul 2021 -> May 2023).',
-      'Automated execution via IB Gateway; server-side stops as a disconnect safety net.',
+      'Runs unattended 24/5 on a VPS against the IB Gateway API, with server-side stops so a disconnect cannot leave a position unprotected',
     ],
     monthlyReturns: [
       { year: 2022, months: [8.3, -3.5, -5.5, -3.3, 1.6, 4.1, 3.3, -1.3, -2.5, 2.5, 2.5, -0.7], ytd: 5.5 },
@@ -199,6 +199,7 @@ export const strategies: Strategy[] = [
       'Two losing years shown (2018 -6.7%, 2019 -4.5%) rather than omitted',
       'Concurrency limits prevent stacked exposure to the same currency',
       'Apr 2026 onward is modelled on live broker feed data',
+      'Runs unattended 24/5 on a VPS against the IB Gateway API, with server-side stops so a disconnect cannot leave a position unprotected',
     ],
     monthlyReturns: [
       { year: 2017, months: [-1.8, 0.2, 2.0, -4.1, 3.9, -0.2, 2.2, 1.0, 2.0, 1.2, 1.5, 1.5], ytd: 9.4 },
