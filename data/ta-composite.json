@@ -1,7 +1,16 @@
 {
-  "lastUpdated": "2026-08-31T00:00:44Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+2.76 across 23 closed trades, 65% winners. The live sample is far too short to confirm the backtest.",
+  "lastUpdated": "2026-08-31T04:00:21Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+2.43 across 24 closed trades, 62% winners. The live sample is far too short to confirm the backtest.",
   "recentTrades": [
+    {
+      "date": "2026-08-31",
+      "symbol": "ATOM",
+      "direction": "Long",
+      "entry": "1.5946",
+      "exit": "1.4528",
+      "pnl": "$-2.72",
+      "pnlNum": -2.72
+    },
     {
       "date": "2026-08-31",
       "symbol": "AVAX",
@@ -64,15 +73,6 @@
       "exit": "8.7258",
       "pnl": "$+2.53",
       "pnlNum": 2.53
-    },
-    {
-      "date": "2026-08-10",
-      "symbol": "XRP",
-      "direction": "Long",
-      "entry": "1.0202",
-      "exit": "1.0353",
-      "pnl": "$+0.23",
-      "pnlNum": 0.23
     }
   ],
   "positions": [
@@ -80,21 +80,12 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "79,484.7",
-      "current": "77,625.5",
+      "current": "77,741.5",
       "size": "0.01365",
-      "pnl": "$-25.74",
-      "pnlNum": -25.74
-    },
-    {
-      "symbol": "ATOM",
-      "direction": "Long",
-      "entry": "1.5946",
-      "current": "1.4524",
-      "size": "1.26",
-      "pnl": "$-0.18",
-      "pnlNum": -0.18
+      "pnl": "$-23.62",
+      "pnlNum": -23.62
     }
   ],
-  "liveRealisedPnl": 2.76,
-  "liveClosedTrades": 23
+  "liveRealisedPnl": 2.43,
+  "liveClosedTrades": 24
 }
