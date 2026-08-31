@@ -226,7 +226,7 @@ export const strategies: Strategy[] = [
   {
     id: 'options',
     name: 'Options Premium',
-    asset: 'BTC Options',
+    asset: 'BTC Options (Deribit)',
     category: 'crypto',
     edge: 'Volatility',
     cagr: '23.5%',
