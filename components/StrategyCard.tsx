@@ -117,6 +117,18 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
             <div className="text-xl font-semibold metric-value text-bad">{s.maxDD}</div>
           </div>
         )}
+        {s.pf && (
+          <div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">PF</div>
+            <div className="text-xl font-semibold metric-value text-white">{s.pf}</div>
+          </div>
+        )}
+        {s.winRate && (
+          <div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">Win Rate</div>
+            <div className="text-xl font-semibold metric-value text-white">{s.winRate}</div>
+          </div>
+        )}
       </div>
 
       {s.dataSource && (

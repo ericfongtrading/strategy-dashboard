@@ -75,6 +75,8 @@ export type Strategy = {
   cagrLabel?: string;
   cagrNum?: number;
   sharpe?: string;
+  pf?: string;
+  winRate?: string;
   maxDD?: string;
   maxDDNum?: number;
   status: 'live' | 'backtest' | 'active' | 'development';
@@ -434,8 +436,8 @@ export const strategies: Strategy[] = [
     edge: 'Machine Learning',
     cagr: '+$2,557',
     cagrLabel: 'Net P&L (live)',
-    maxDD: '-2.6%',
-    maxDDNum: 0.026,
+    pf: '1.35',
+    winRate: '38%',
     status: 'active',
     statusLabel: 'Live (small-size test)',
     description: 'An AI head-trader running a 24/7 swing desk. Every day it watches the videos of three crypto YouTube analysts, transcribes them, and summarizes each one’s market overview and the key levels they are watching. It fuses those views with data it gathers itself — multi-timeframe price structure (15m to daily), open interest, CVD, funding rates, liquidation heatmaps, volume-profile value areas and the macro calendar — maintains a persistent market view between runs, and designs its own trade setups: entry zone, stop, targets and holding horizon, entered as resting orders that fill only when the level is reached and holds. The analysts are inputs, never authority — the model judges every setup against its own read. It learns from its own mistakes: every losing trade is automatically tagged with a failure mode, recurring modes are backtested against six years of history, and only fixes that prove out are promoted into the live rules. Risk limits are enforced in code, not left to the model. Performance is measured on a $100,000 model book (1 BTC standard size per idea); the same trades execute live on Bitget at reduced size while the track record builds.',
