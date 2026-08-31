@@ -354,6 +354,32 @@ export const strategies: Strategy[] = [
 
   },
   {
+    id: 'hyper-bot',
+    name: 'Hyper Bot',
+    asset: 'BTC Perp',
+    category: 'crypto',
+    edge: 'Machine Learning',
+    status: 'active',
+    statusLabel: 'Paper Trading',
+    description: 'Autonomous AI trading system running 24/7 on a dedicated server. Every hour it assembles a full market brief - derivatives positioning, order flow, liquidation maps and macro flows - and an AI reasoning engine maintains a book of conditional trade plans, each with entry zone, stop and targets. A state machine watches the triggers and executes around the clock, and every closed trade is journaled with a written post-mortem that feeds back into future plans. Currently in supervised paper trading ahead of live deployment.',
+    dataSource: 'Paper trading: Jun 2026-Present | 1 BTC notional per trade',
+    liveStart: 2026,
+    liveStartMonth: 6,
+    highlights: [
+      'Paper record since Jun 2026: 26 trades, 54% win rate, profit factor 1.22',
+      'Self-auditing: every exit ships a written rationale, and post-mortems become standing rules for future plans',
+      'Hourly market brief: funding, open interest, CVD order flow, liquidation heatmaps, ETF flows',
+      'Runs unattended on a VPS with watchdog alerts to Telegram',
+    ],
+    recentTrades: [
+      { date: '2026-08-24', entryDate: '2026-08-24', direction: 'Short', entry: '77,200', exit: '78,542', pnl: '$-1,342', pnlNum: -1342.4 },
+      { date: '2026-08-24', entryDate: '2026-08-23', direction: 'Short', entry: '77,244', exit: '77,680', pnl: '$-436', pnlNum: -436.3 },
+      { date: '2026-08-23', entryDate: '2026-08-22', direction: 'Short', entry: '77,421', exit: '77,228', pnl: '$+193', pnlNum: 192.7 },
+      { date: '2026-08-19', entryDate: '2026-08-19', direction: 'Short', entry: '65,018', exit: '66,297', pnl: '$-1,279', pnlNum: -1279.1 },
+      { date: '2026-08-19', entryDate: '2026-08-10', direction: 'Short', entry: '65,209', exit: '65,216', pnl: '$+899', pnlNum: 898.55 },
+    ],
+  },
+  {
     id: 'ml',
     name: 'ML Signal Engine',
     asset: 'Crypto',
