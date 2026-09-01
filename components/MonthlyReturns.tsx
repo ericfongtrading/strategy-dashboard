@@ -66,9 +66,9 @@ export function MonthlyReturns({ rows, theoretical, liveSince }: { rows: Monthly
         </span>
         {theoretical ? (
           <span>Strategy returns, net of measured costs</span>
-        ) : (
+        ) : rows.some((r) => !r.isLive) ? (
           <span>All other rows are backtested</span>
-        )}
+        ) : null}
       </div>
     </div>
   );
