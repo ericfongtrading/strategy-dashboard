@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-09-01T03:30:40Z",
+  "lastUpdated": "2026-09-01T23:44:25Z",
   "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
   "recentTrades": [
+    {
+      "date": "2026-09-01",
+      "symbol": "AUDCAD",
+      "direction": "Long",
+      "entry": "0.99372",
+      "exit": "0.99525",
+      "pnl": "+$235",
+      "pnlNum": 235,
+      "rMultiple": "+0.4R",
+      "source": "live"
+    },
     {
       "date": "2026-08-27",
       "direction": "Long",
@@ -41,29 +52,30 @@
       "pnlNum": 536,
       "rMultiple": "+1.0R",
       "source": "modelled"
-    },
-    {
-      "date": "2026-08-18",
-      "direction": "Long",
-      "entry": "1.90274",
-      "exit": "1.90873",
-      "pnl": "+$541",
-      "pnlNum": 541,
-      "rMultiple": "+0.9R",
-      "source": "modelled"
     }
   ],
   "positions": [
     {
-      "symbol": "AUDCAD",
-      "direction": "Long",
-      "entry": "0.99370",
-      "current": "0.99343",
-      "size": "216,420",
-      "stop": "0.98986",
-      "targets": "0.99577",
-      "pnl": "-61 CAD",
-      "pnlNum": -61
+      "symbol": "GBPNZD",
+      "direction": "Short",
+      "entry": "2.29728",
+      "current": "2.29373",
+      "size": "91,103",
+      "stop": "2.30845",
+      "targets": "2.28863",
+      "pnl": "+323 NZD",
+      "pnlNum": 323
+    },
+    {
+      "symbol": "EURCHF",
+      "direction": "Short",
+      "entry": "0.94115",
+      "current": "0.94088",
+      "size": "163,162",
+      "stop": "0.94414",
+      "targets": "0.93820",
+      "pnl": "+44 CHF",
+      "pnlNum": 44
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency."
