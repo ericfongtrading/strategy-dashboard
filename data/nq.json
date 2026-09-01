@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-01T01:30:14Z",
-  "basis": "Strategy returns - signal-level at deployed size, MNQ $2/pt, net of measured costs ($5.40/contract round-turn incl. 1.88pt slippage). Live execution since Jul 2026.",
+  "lastUpdated": "2026-09-01T04:20:20Z",
+  "basis": "Monthly figures are strategy returns - signal-level at deployed size, MNQ $2/pt, net of modelled cost $5.40/contract round-turn (incl. 1.88pt measured slippage). Recent trades are actual IB fills, net of commission. Live execution since Jul 2026.",
   "recentTrades": [
     {
       "date": "2026-08-24",
@@ -53,7 +53,17 @@
       "sleeve": "TLB_HYB40"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "MNQ",
+      "direction": "Long",
+      "entry": "29,456",
+      "current": "29,486",
+      "size": 2,
+      "pnl": "+$118",
+      "pnlNum": 118.0
+    }
+  ],
   "monthlyReturns": [
     {
       "year": 2021,
