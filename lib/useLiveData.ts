@@ -18,6 +18,9 @@ export type LiveData = {
 const REPO_RAW = 'https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/data';
 const cache: Record<string, { data: LiveData; ts: number }> = {};
 const CACHE_TTL = 60_000;
+/** How often an OPEN page re-checks. The feed publishes on any real change to
+ *  the book, so a page left open should not sit on the snapshot it loaded with. */
+const POLL_MS = 60_000;
 
 export function useLiveData(strategyId: string) {
   const [data, setData] = useState<LiveData | null>(null);
@@ -30,24 +33,52 @@ export function useLiveData(strategyId: string) {
       setData(null);
       return;
     }
-    const cached = cache[strategyId];
-    if (cached && Date.now() - cached.ts < CACHE_TTL) {
-      setData(cached.data);
-      return;
-    }
 
-    setLoading(true);
-    fetch(`${REPO_RAW}/${strategyId}.json?t=${Date.now()}`)
-      .then((r) => {
-        if (!r.ok) throw new Error('not found');
-        return r.json();
-      })
-      .then((d: LiveData) => {
-        cache[strategyId] = { data: d, ts: Date.now() };
-        setData(d);
-      })
-      .catch(() => setData(null))
-      .finally(() => setLoading(false));
+    let alive = true;
+
+    const load = (force: boolean) => {
+      const cached = cache[strategyId];
+      if (!force && cached && Date.now() - cached.ts < CACHE_TTL) {
+        setData(cached.data);
+        return;
+      }
+      if (!cached) setLoading(true);
+      fetch(`${REPO_RAW}/${strategyId}.json?t=${Date.now()}`)
+        .then((r) => {
+          if (!r.ok) throw new Error('not found');
+          return r.json();
+        })
+        .then((d: LiveData) => {
+          if (!alive) return;
+          cache[strategyId] = { data: d, ts: Date.now() };
+          setData(d);
+        })
+        .catch(() => {
+          // Keep whatever is already on screen. Wiping a working card because one
+          // poll failed shows nothing in place of numbers that were merely stale.
+          if (alive && !cache[strategyId]) setData(null);
+        })
+        .finally(() => {
+          if (alive) setLoading(false);
+        });
+    };
+
+    load(false);
+    const timer = setInterval(() => load(true), POLL_MS);
+    // Coming back to a tab that has been in the background for hours is exactly
+    // when the numbers are most likely to be wrong.
+    const onFocus = () => {
+      if (document.visibilityState === 'visible') load(true);
+    };
+    document.addEventListener('visibilitychange', onFocus);
+    window.addEventListener('focus', onFocus);
+
+    return () => {
+      alive = false;
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', onFocus);
+      window.removeEventListener('focus', onFocus);
+    };
   }, [strategyId]);
 
   return { data, loading };
