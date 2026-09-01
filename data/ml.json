@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-01T00:20:04.850681+00:00",
+ "lastUpdated": "2026-09-01T12:20:05.335186+00:00",
  "basis": "Live (small size) on Bitget since 2026-08-11, measured on a $100,000 model book at 1 BTC standard size. Trades, positions and pending plans update automatically.",
  "headline": [
   {
@@ -201,26 +201,34 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "77,300",
-   "current": "78,811",
+   "current": "77,974",
    "size": "1 BTC",
    "stop": "76,700",
    "targets": "79,600 / 81,400",
-   "pnl": "$+1,511",
-   "pnlNum": 1511.03
+   "pnl": "$+674",
+   "pnlNum": 673.68
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464",
-   "current": "2,475",
+   "current": "2,454",
    "size": "$30,000 notional",
    "stop": "2,330",
    "targets": "2,800 / 3,000",
-   "pnl": "$+133",
-   "pnlNum": 133.2
+   "pnl": "$-122",
+   "pnlNum": -122.0
   }
  ],
  "plans": [
+  {
+   "symbol": "BTC",
+   "direction": "Short",
+   "zone": "81,450\u201381,650",
+   "stop": "82,300",
+   "targets": "79,400 / 78,600",
+   "status": "resting"
+  },
   {
    "symbol": "BTC",
    "direction": "Short",
