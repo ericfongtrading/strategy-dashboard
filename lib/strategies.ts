@@ -351,7 +351,7 @@ export const strategies: Strategy[] = [
     ],
     monthlyReturns: [
       { year: 2025, months: [null, null, null, null, null, null, null, null, null, null, 0.45, 0.87], ytd: 1.3, isLive: true },
-      { year: 2026, months: [1.13, 1.03, 1.07, 0.75, 0.9, 0.71, null, null, null, null, null, null], ytd: 5.7, isLive: true },
+      { year: 2026, months: [1.13, 1.03, 1.07, 0.75, 0.9, 0.95, 0.87, 0.76, null, null, null, null], ytd: 7.5, isLive: true },
     ],
   },
   {
