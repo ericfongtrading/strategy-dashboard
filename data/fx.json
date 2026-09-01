@@ -1,0 +1,70 @@
+{
+  "lastUpdated": "2026-09-01T03:30:40Z",
+  "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
+  "recentTrades": [
+    {
+      "date": "2026-08-27",
+      "direction": "Long",
+      "entry": "0.93792",
+      "exit": "0.93696",
+      "pnl": "+$182",
+      "pnlNum": 182,
+      "rMultiple": "+0.4R",
+      "source": "modelled"
+    },
+    {
+      "date": "2026-08-27",
+      "direction": "Long",
+      "entry": "1.89784",
+      "exit": "1.88928",
+      "pnl": "-$609",
+      "pnlNum": -609,
+      "rMultiple": "-1.0R",
+      "source": "modelled"
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "Short",
+      "entry": "0.98728",
+      "exit": "0.98991",
+      "pnl": "-$314",
+      "pnlNum": -314,
+      "rMultiple": "-0.5R",
+      "source": "modelled"
+    },
+    {
+      "date": "2026-08-21",
+      "direction": "Long",
+      "entry": "0.93262",
+      "exit": "0.93629",
+      "pnl": "+$536",
+      "pnlNum": 536,
+      "rMultiple": "+1.0R",
+      "source": "modelled"
+    },
+    {
+      "date": "2026-08-18",
+      "direction": "Long",
+      "entry": "1.90274",
+      "exit": "1.90873",
+      "pnl": "+$541",
+      "pnlNum": 541,
+      "rMultiple": "+0.9R",
+      "source": "modelled"
+    }
+  ],
+  "positions": [
+    {
+      "symbol": "AUDCAD",
+      "direction": "Long",
+      "entry": "0.99370",
+      "current": "0.99343",
+      "size": "216,420",
+      "stop": "0.98986",
+      "targets": "0.99577",
+      "pnl": "-61 CAD",
+      "pnlNum": -61
+    }
+  ],
+  "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency."
+}
