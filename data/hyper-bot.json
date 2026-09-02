@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-01T12:08:02.057765+00:00",
+  "lastUpdated": "2026-09-02T00:10:01.408218+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "current": "78,040",
+      "current": "77,368",
       "size": "1 BTC",
-      "pnl": "+$960",
-      "pnlNum": 960,
+      "pnl": "+$1,632",
+      "pnlNum": 1632,
       "stop": "81,500",
       "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
@@ -385,5 +385,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $78,040"
+  "priceNote": "Unrealised P&L marked at $77,368"
 }
