@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T12:12:01.269394+00:00",
+  "lastUpdated": "2026-09-02T20:14:01.222767+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "current": "76,814",
+      "current": "77,277",
       "size": "1 BTC",
-      "pnl": "+$2,186",
-      "pnlNum": 2186,
+      "pnl": "+$1,723",
+      "pnlNum": 1723,
       "stop": "81,500",
       "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
@@ -46,15 +46,6 @@
       "zone": "73,600 - 74,200",
       "stop": "71,200",
       "targets": "77,000 / 80,500 / 83,500",
-      "conviction": 4,
-      "status": "Waiting"
-    },
-    {
-      "symbol": "HIGUAIN",
-      "direction": "Short",
-      "zone": "82,600 - 83,000",
-      "stop": "84,500",
-      "targets": "79,000 / 77,500 / 74,000",
       "conviction": 4,
       "status": "Waiting"
     }
@@ -385,5 +376,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $76,814"
+  "priceNote": "Unrealised P&L marked at $77,277"
 }
