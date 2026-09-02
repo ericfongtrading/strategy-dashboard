@@ -1,27 +1,7 @@
 {
-  "lastUpdated": "2026-09-01T04:20:20Z",
+  "lastUpdated": "2026-09-02T01:30:14Z",
   "basis": "Monthly figures are strategy returns - signal-level at deployed size, MNQ $2/pt, net of modelled cost $5.40/contract round-turn (incl. 1.88pt measured slippage). Recent trades are actual IB fills, net of commission. Live execution since Jul 2026.",
   "recentTrades": [
-    {
-      "date": "2026-08-24",
-      "direction": "Long",
-      "entry": "29,168",
-      "exit": "29,138",
-      "pnl": "-$132",
-      "pnlNum": -131.8,
-      "rMultiple": "-1.0R",
-      "sleeve": "VWAP_LONG_R3"
-    },
-    {
-      "date": "2026-08-24",
-      "direction": "Long",
-      "entry": "29,162",
-      "exit": "29,271",
-      "pnl": "+$214",
-      "pnlNum": 214.04,
-      "rMultiple": "+2.5R",
-      "sleeve": "R3_RE"
-    },
     {
       "date": "2026-08-24",
       "direction": "Long",
@@ -51,17 +31,37 @@
       "pnlNum": 120.6,
       "rMultiple": "+0.5R",
       "sleeve": "TLB_HYB40"
+    },
+    {
+      "date": "2026-08-31",
+      "direction": "Long",
+      "entry": "29,456",
+      "exit": "29,521",
+      "pnl": "+$255",
+      "pnlNum": 254.56,
+      "rMultiple": "+3.0R",
+      "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-09-01",
+      "direction": "Long",
+      "entry": "29,214",
+      "exit": "29,182",
+      "pnl": "-$127",
+      "pnlNum": -126.94,
+      "rMultiple": "-1.1R",
+      "sleeve": "VWAP_LONG_R3"
     }
   ],
   "positions": [
     {
       "symbol": "MNQ",
       "direction": "Long",
-      "entry": "29,456",
+      "entry": "29,457",
       "current": "29,486",
       "size": 2,
-      "pnl": "+$118",
-      "pnlNum": 118.0
+      "pnl": "+$116",
+      "pnlNum": 116.0
     }
   ],
   "monthlyReturns": [
