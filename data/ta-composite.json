@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-02T16:00:32Z",
+  "lastUpdated": "2026-09-02T20:00:34Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+2.25 across 25 closed trades, 60% winners. The live sample is far too short to confirm the backtest.",
   "recentTrades": [
     {
@@ -80,19 +80,19 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "79,484.7",
-      "current": "77,283.5",
+      "current": "77,317.5",
       "size": "0.01365",
-      "pnl": "$-30.46",
-      "pnlNum": -30.46
+      "pnl": "$-29.62",
+      "pnlNum": -29.62
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "11.393",
-      "current": "11.0845",
+      "current": "11.118",
       "size": "18.9",
-      "pnl": "$-6.07",
-      "pnlNum": -6.07
+      "pnl": "$-5.22",
+      "pnlNum": -5.22
     }
   ],
   "liveRealisedPnl": 2.25,
