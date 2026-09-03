@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-09-03T06:05:01Z",
+  "lastUpdated": "2026-09-03T08:05:01Z",
   "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
   "recentTrades": [
+    {
+      "date": "2026-09-03",
+      "symbol": "EURCHF",
+      "direction": "Short",
+      "entry": "0.94116",
+      "exit": "0.94007",
+      "pnl": "+$215",
+      "pnlNum": 215,
+      "rMultiple": "+0.4R",
+      "source": "live"
+    },
     {
       "date": "2026-09-02",
       "symbol": "GBPNZD",
@@ -43,30 +54,9 @@
       "pnlNum": -609,
       "rMultiple": "-1.0R",
       "source": "modelled"
-    },
-    {
-      "date": "2026-08-25",
-      "direction": "Short",
-      "entry": "0.98728",
-      "exit": "0.98991",
-      "pnl": "-$314",
-      "pnlNum": -314,
-      "rMultiple": "-0.5R",
-      "source": "modelled"
     }
   ],
   "positions": [
-    {
-      "symbol": "EURCHF",
-      "direction": "Short",
-      "entry": "0.94115",
-      "current": "0.94136",
-      "size": "163,162",
-      "stop": "0.94414",
-      "targets": "0.94022",
-      "pnl": "-33 CHF",
-      "pnlNum": -33
-    },
     {
       "symbol": "NZDCAD",
       "direction": "Long",
@@ -265,12 +255,12 @@
         -2.1,
         2.6,
         1.3,
-        -0.3,
+        -0.1,
         null,
         null,
         null
       ],
-      "ytd": 7.1,
+      "ytd": 7.3,
       "isLive": true
     }
   ]
