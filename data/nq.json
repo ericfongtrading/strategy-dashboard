@@ -1,35 +1,15 @@
 {
-  "lastUpdated": "2026-09-03T00:32:20Z",
+  "lastUpdated": "2026-09-03T00:40:07Z",
   "basis": "Monthly figures are strategy returns - signal-level at deployed size, MNQ $2/pt, net of modelled cost $5.40/contract round-turn (incl. 1.88pt measured slippage). Recent trades are actual IB fills, net of commission. Live execution since Jul 2026.",
   "recentTrades": [
     {
-      "date": "2026-08-25",
+      "date": "2026-09-02",
       "direction": "Long",
-      "entry": "29,245",
-      "exit": "29,224",
-      "pnl": "-$47",
-      "pnlNum": -47.4,
-      "rMultiple": "-0.2R",
-      "sleeve": "TLB_HYB40"
-    },
-    {
-      "date": "2026-08-26",
-      "direction": "Long",
-      "entry": "29,283",
-      "exit": "29,346",
-      "pnl": "+$121",
-      "pnlNum": 120.6,
-      "rMultiple": "+0.5R",
-      "sleeve": "TLB_HYB40"
-    },
-    {
-      "date": "2026-08-31",
-      "direction": "Long",
-      "entry": "29,456",
-      "exit": "29,521",
-      "pnl": "+$255",
-      "pnlNum": 254.56,
-      "rMultiple": "+3.0R",
+      "entry": "28,973",
+      "exit": "28,936",
+      "pnl": "-$149",
+      "pnlNum": -149.44,
+      "rMultiple": "-1.1R",
       "sleeve": "VWAP_LONG_R3"
     },
     {
@@ -43,14 +23,34 @@
       "sleeve": "VWAP_LONG_R3"
     },
     {
-      "date": "2026-09-02",
+      "date": "2026-08-31",
       "direction": "Long",
-      "entry": "28,973",
-      "exit": "28,936",
-      "pnl": "-$149",
-      "pnlNum": -149.44,
-      "rMultiple": "-1.1R",
+      "entry": "29,456",
+      "exit": "29,521",
+      "pnl": "+$255",
+      "pnlNum": 254.56,
+      "rMultiple": "+3.0R",
       "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "Long",
+      "entry": "29,283",
+      "exit": "29,346",
+      "pnl": "+$121",
+      "pnlNum": 120.6,
+      "rMultiple": "+0.5R",
+      "sleeve": "TLB_HYB40"
+    },
+    {
+      "date": "2026-08-25",
+      "direction": "Long",
+      "entry": "29,245",
+      "exit": "29,224",
+      "pnl": "-$47",
+      "pnlNum": -47.4,
+      "rMultiple": "-0.2R",
+      "sleeve": "TLB_HYB40"
     }
   ],
   "positions": [],
