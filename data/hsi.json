@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T03:48:54Z",
+  "lastUpdated": "2026-09-03T08:40:01Z",
   "basis": "Recent trades are real IB fills. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base; headline metrics quote the 2022-onward window.",
   "recentTrades": [
     {
