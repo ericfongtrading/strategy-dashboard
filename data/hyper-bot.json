@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-09-03T16:18:01.175673+00:00",
+  "lastUpdated": "2026-09-03T19:24:02.079632+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$2,691",
+      "value": "+$172",
       "tone": "good",
-      "sub": "27 trades, 1 BTC each"
+      "sub": "28 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "56%",
-      "sub": "15W / 12L"
+      "value": "54%",
+      "sub": "15W / 13L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.26",
+      "value": "1.01",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "KANE",
-      "direction": "Short",
-      "entry": "79,000",
-      "current": "80,785",
-      "size": "1 BTC",
-      "pnl": "-$1,785",
-      "pnlNum": -1785,
-      "stop": "81,500",
-      "targets": "75,000 / 72,999 / 71,251",
-      "realized": "-",
-      "open": "100%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "INZAGHI",
@@ -51,6 +37,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-09-03",
+      "entryDate": "2026-08-24",
+      "symbol": "KANE",
+      "direction": "Short",
+      "entry": "79,000",
+      "exit": "81,519",
+      "pnl": "-$2,519",
+      "pnlNum": -2519,
+      "rMultiple": "-1.01R",
+      "note": "Stopped out"
+    },
     {
       "date": "2026-09-01",
       "entryDate": "2026-08-31",
@@ -376,5 +374,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,785"
+  "priceNote": "Unrealised P&L marked at $81,537"
 }
