@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T18:05:01Z",
+  "lastUpdated": "2026-09-03T20:05:02Z",
   "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
   "recentTrades": [
     {
