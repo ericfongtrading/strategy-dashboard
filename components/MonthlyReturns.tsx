@@ -14,7 +14,7 @@ function Cell({ value, isMtd }: { value: number | null; isMtd?: boolean }) {
   );
 }
 
-export function MonthlyReturns({ rows, theoretical, liveSince }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string }) {
+export function MonthlyReturns({ rows, theoretical, liveSince, note }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string }) {
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
       <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Monthly Historical Returns</h4>
@@ -70,6 +70,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince }: { rows: Monthly
           <span>All other rows are backtested</span>
         ) : null}
       </div>
+      {note && <p className="mt-2 text-[10px] leading-relaxed text-muted/80">{note}</p>}
     </div>
   );
 }

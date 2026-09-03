@@ -157,7 +157,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
-            <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince} />
+            <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince} note={s.monthlyNote} />
           )}
 
           {/* Current Positions */}

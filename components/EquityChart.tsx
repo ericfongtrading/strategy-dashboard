@@ -37,7 +37,9 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
         if (!liveStarted) continue;
         break;
       }
-      equity = equity * (1 + m / 100);
+      // A fixed-contract book on a fixed capital base does not compound: each
+      // month adds its percentage points to the same denominator.
+      equity = s.additiveEquity ? equity + m : equity * (1 + m / 100);
 
       const isLiveMonth = row.year > liveYear || (row.year === liveYear && mi >= liveMonth);
       if (isLiveMonth && !liveStarted) {
@@ -133,7 +135,10 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
 
   const transitionX = x(liveOffset);
 
-  const startYr = strategy.backtestStart || 2020;
+  // Take the axis label from the rows actually plotted, not from backtestStart:
+  // the live feed can supply a shorter history than the static entry declares,
+  // and a label that disagrees with the curve is worse than no label.
+  const startYr = strategy.monthlyReturns?.[0]?.year ?? strategy.backtestStart ?? 2020;
   const liveYr = strategy.liveStart || strategy.backtestEnd || 2025;
   // When the live segment is a thin sliver (e.g. live started 2 months ago), the
   // transition-year label collides with the right-anchored 'Now' label. Shift it left;
@@ -141,6 +146,37 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
   // 'Now' (~22px wide), drop the year label entirely — 'Now' carries the meaning.
   const yrCrowded = transitionX > x(months) - 34;
   const yrHidden = transitionX > x(months) - 20;
+
+  // Underwater series: distance below the running equity high, in percentage
+  // points of capital. A month-end table cannot show a drawdown whose peak and
+  // trough land mid-month, so plot it.
+  const underwater = (() => {
+    if (!strategy.showUnderwater) return null;
+    // Prefer a daily-derived series: a drawdown whose peak and trough fall
+    // mid-month is invisible in month-end data, which is exactly the number
+    // this panel exists to show.
+    let uw: number[];
+    if (strategy.underwaterSeries && strategy.underwaterSeries.length > 1) {
+      uw = strategy.underwaterSeries;
+    } else {
+      let peak = -Infinity;
+      uw = all.map((v) => {
+        if (v > peak) peak = v;
+        return strategy.additiveEquity ? v - peak : (v / peak - 1) * 100;
+      });
+    }
+    const worst = Math.min(...uw);
+    if (worst >= -0.05) return null;
+    const UH = 74;
+    const n = uw.length - 1;
+    const ux = (i: number) => PAD.left + (i / n) * plotW;
+    const uy = (d: number) => 4 + (d / worst) * (UH - 22);
+    const path = uw.map((d, i) => `${i === 0 ? 'M' : 'L'}${ux(i).toFixed(1)},${uy(d).toFixed(1)}`).join(' ');
+    const area = `M${ux(0).toFixed(1)},${uy(0).toFixed(1)} ` +
+      uw.map((d, i) => `L${ux(i).toFixed(1)},${uy(d).toFixed(1)}`).join(' ') +
+      ` L${ux(n).toFixed(1)},${uy(0).toFixed(1)} Z`;
+    return { path, area, worst, ux, uy, UH, troughIdx: uw.indexOf(worst) };
+  })();
 
   const gridValues = [];
   const range = maxVal - minVal;
@@ -201,6 +237,49 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
         )}
         <text x={x(months)} y={H - 8} fill="#10b981" fontSize="10" textAnchor="end" fontFamily="Inter, sans-serif">Now</text>
       </svg>
+
+      {underwater && (
+        <div className="mt-1">
+          <div className="flex items-baseline justify-between mb-1">
+            <span className="text-[10px] uppercase tracking-wider text-muted">
+              Drawdown from peak{strategy.underwaterLabel ? ` · ${strategy.underwaterLabel}` : ''}
+            </span>
+            <span className="text-[10px] metric-value text-bad">{underwater.worst.toFixed(1)}% worst</span>
+          </div>
+          <svg viewBox={`0 0 ${W} ${underwater.UH}`} className="w-full" style={{ maxHeight: underwater.UH }}>
+            <defs>
+              <linearGradient id={`uw-fill-${strategy.id}`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#ef4444" stopOpacity="0.05" />
+                <stop offset="100%" stopColor="#ef4444" stopOpacity="0.35" />
+              </linearGradient>
+            </defs>
+            <line x1={PAD.left} y1={underwater.uy(0)} x2={W - PAD.right} y2={underwater.uy(0)} stroke="#1e2029" strokeWidth="0.5" />
+            <line
+              x1={PAD.left}
+              y1={underwater.uy(underwater.worst)}
+              x2={W - PAD.right}
+              y2={underwater.uy(underwater.worst)}
+              stroke="#1e2029"
+              strokeWidth="0.5"
+              strokeDasharray="3,3"
+            />
+            <text x={PAD.left - 6} y={underwater.uy(0) + 3} textAnchor="end" fill="#4b5563" fontSize="9" fontFamily="Inter, sans-serif">0%</text>
+            <text
+              x={PAD.left - 6}
+              y={underwater.uy(underwater.worst) + 3}
+              textAnchor="end"
+              fill="#4b5563"
+              fontSize="9"
+              fontFamily="Inter, sans-serif"
+            >
+              {underwater.worst.toFixed(0)}%
+            </text>
+            <path d={underwater.area} fill={`url(#uw-fill-${strategy.id})`} />
+            <path d={underwater.path} fill="none" stroke="#ef4444" strokeWidth="1.2" />
+            <circle cx={underwater.ux(underwater.troughIdx)} cy={underwater.uy(underwater.worst)} r="2.5" fill="#ef4444" />
+          </svg>
+        </div>
+      )}
     </div>
   );
 }

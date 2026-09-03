@@ -95,6 +95,22 @@ export type Strategy = {
   liveStart?: number;
   liveStartMonth?: number;
   monthlyReturns?: MonthlyRow[];
+  /** Sum the monthly percentages instead of compounding them. Correct for a
+   *  fixed-contract, fixed-capital-base strategy where the position size never
+   *  scales with equity — compounding those months overstates the curve. */
+  additiveEquity?: boolean;
+  /** Draw an underwater (drawdown-from-peak) panel beneath the equity line.
+   *  Month-end tables cannot show a drawdown whose peak and trough fall
+   *  mid-month; this makes it visible. */
+  showUnderwater?: boolean;
+  /** Drawdown from peak in percentage points, sampled off the DAILY equity
+   *  curve (weekly minima, so troughs survive the downsample). Supply this
+   *  wherever the true depth falls between month-ends — deriving the panel
+   *  from monthly rows alone understates it. */
+  underwaterSeries?: number[];
+  underwaterLabel?: string;
+  /** Footnote rendered under the monthly table. */
+  monthlyNote?: string;
   recentTrades?: Trade[];
   positions?: Position[];
   /** Fetch this strategy's live feed on the CARD, not just in the modal, and
@@ -124,18 +140,55 @@ export const strategies: Strategy[] = [
     maxDDNum: 0.25,
     status: 'live',
     description: 'Multi-sleeve intraday system on Hang Seng Index futures, combining higher-timeframe structure with intraday momentum and mean-reversion entries, and rule-based exits. Single-contract sizing, no compounding, on a fixed capital base. Headline covers 2022 onward; full-history figures below.',
-    dataSource: 'Backtest 2022-2026 (4.6 yr) | Live: Apr 2026',
-    backtestStart: 2022,
+    dataSource: 'Backtest 2019-2026 (7.7 yr), headline basis 2022 onward | Live: Apr 2026',
+    backtestStart: 2019,
     backtestEnd: 2026,
     liveStart: 2026,
     liveStartMonth: 4,
+    additiveEquity: true,
+    showUnderwater: true,
+    // Drawdown from the DAILY equity curve, weekly minima, 2019-01 to 2026-08.
+    // Month-end rows bottom out at -33%; the real trough is -38.8% and lands mid-month.
+    underwaterSeries: [
+      -1, -1, -1.1, -1.5, -1.4, 0, -1, -2, -3.8, -6.8, -6.5, -4.7, -3.6, -4.7, -8.6, -6.9, -8.4, -11.2, -13.3,
+      -14.3, -16.8, -19.4, -22.4, -22.1, -20, -21.2, -23.7, -23.4, -20.7, -22.6, -24.3, -22.5, -21.3, -22.8,
+      -25.9, -25.9, -28.5, -29.1, -30.5, -28.7, -29.4, -28.7, -28.7, -25.4, -19.8, -19.9, -19.1, -17.6, -19.7,
+      -20.7, -19.8, -20.1, -21.1, -21.4, -21.5, -21.1, -21.5, -19.4, -16.4, -15.4, -14.8, -12.1, -8.4, -9.3,
+      -13, -12.2, -17, -20.6, -22.3, -22.5, -21.2, -21, -23.3, -16.2, -15.9, -16.7, -15.6, -13.2, -16.5, -17.1,
+      -18.1, -22.3, -24.1, -24.1, -20.6, -18.6, -16.7, -15, -15.2, -15.4, -14.9, -16.5, -16.5, -18.3, -20.4,
+      -22.7, -23.7, -25.8, -26.4, -27.6, -27.1, -26.4, -26.4, -29.9, -31.1, -30.5, -34.6, -35.6, -30.8, -25.7,
+      -25.9, -25.9, -25.9, -22.5, -14, -14, -13.8, -12, -9.5, -2.6, -5.6, -6, -4.1, -8.3, -9, -9, -9.7, -7.2,
+      -7.2, -9, -7.7, -4.3, -2.5, -3.2, -1.3, -6.9, -7.3, -7.2, -4.7, -11.9, -15.2, -15.7, -14.4, -12.9, -14,
+      -15.9, -16.4, -17.7, -19.8, -22.7, -24.3, -27.8, -26.3, -25.9, -25.4, -24.8, -26.2, -25.2, -22.9, -22.3,
+      -23, -17.9, -19.5, -20.9, -20.4, -22, -22.6, -26.1, -23.6, -27.9, -27.8, -28.7, -28.7, -30.2, -33, -33.4,
+      -33.1, -31, -29.4, -27.8, -28.8, -26.2, -25.1, -27.7, -26.9, -24.8, -24.8, -24.1, -25.1, -27.2, -28.2,
+      -26.9, -25.5, -20.8, -23.8, -25.1, -26.3, -25.7, -23.6, -21.6, -22.5, -16.1, -17.7, -19.9, -20.1, -22.5,
+      -23.5, -20.8, -20.8, -22.6, -27.2, -33.5, -33.5, -31.8, -33.3, -31.5, -29.1, -30.1, -29.4, -29.6, -27.2,
+      -29.8, -30.4, -32.8, -34, -35.6, -37.7, -38.8, -32.6, -32.3, -30.6, -27.2, -29.2, -27.3, -26.7, -25.7,
+      -26.1, -26.2, -27.5, -27, -28.6, -28.9, -29.8, -27.8, -24.5, -23.1, -24.1, -17.6, -18.9, -17.9, -17.7,
+      -18.1, -18.1, -16.3, -14.9, -12.1, -11.1, -9.5, -9.7, -12.5, -12.5, -11.6, -13.7, -14.1, -8.7, -12.2,
+      -12.2, -7.8, -4.1, 0, -1.2, -0.3, -1, -4.1, -4.7, -5.3, -4.1, -4.1, -4.8, -4.6, -2.8, -3.8, -3.1, -4,
+      -4.3, -4.4, -5.4, -4.8, -6.1, -3, -2, -2.7, -4.7, -6.6, -7.9, -8.4, -3.6, -5.4, -5.4, -0.8, 0, -2.1,
+      -2.1, -0.8, -2, -2, -3, -3.2, -2.8, -4.3, -4.9, -1.6, -1.6, -3.4, -2.2, -2.2, -2.8, -2.7, -2.7, -4, -2.2,
+      -2.1, -0.5, -0.8, -4, -1.4, -3.1, -2.2, -2.6, -1.5, -4.2, -6.1, -5.1, -5.7, -7, -6.4, -5.4, -2.7, -1,
+      -2.5, -3.6, -0.7, -1, 0, -1.2, -1.6, -2.3, -2.3, -3.3, -1.6, -5.3, -2.5, -2.7, -2.1, -4.2, -2.7, -4.6,
+      -5.5, -3.7, -6.1, -10.6, -12.8, -11, -11.2, -12.2, -10.4, -6, -6.8, -9.6, -9.6, -2.3, -3, -4.9, -4.1, 0,
+      -1, -0.9, -1.5, 0, -1.3, -0.8, -0.3, -1.9, -2.8, -2.6, -3.2, -1, -2, -1, -1, -1.4, -1.4, -2.2, -5.8,
+      -4.3, -4.7, -8.6, -9, -10.6, -8.2
+    ],
+    underwaterLabel: 'daily curve, 2019-2026',
+    monthlyNote:
+      'Months are month-end. Max drawdown is measured on the daily equity curve, so its peak and trough fall inside months that can show positive returns — the -25.0% ran 4 Nov 2022 to 8 May 2023.',
     highlights: [
-      'Headline basis is 2022 onward. Over the full 2019-2026 record the same code returns 8.1% CAGR at -25% DD with Sharpe 0.77.',
-      'Walk-forward tested out-of-sample: parameter selection carries forward, not curve-fitted.',
-      'Worst drawdown lasted 651 days (Jul 2021 -> May 2023).',
+      'Headline basis is 2022 onward. Over the full 2019-2026 record the same code returns 11.3% CAGR at -38.8% max DD with Sharpe 0.77 - 2019-2021 produced approximately nothing.',
+      'Walk-forward tested out-of-sample: parameter selection carries forward, not curve-fitted. Four consecutive out-of-sample folds lost through 2021-2023, so that period is a regime cost rather than a fitting error.',
+      'Worst drawdown -38.8%: peak 9 Jul 2021, trough 8 May 2023 (668 days), back to a new high 22 Feb 2024 (958 days underwater). On the 2022-onward basis the worst is -25.0%, 4 Nov 2022 to 8 May 2023.',
       'Runs unattended 24/5 on a VPS against the IB Gateway API, with server-side stops so a disconnect cannot leave a position unprotected',
     ],
     monthlyReturns: [
+      { year: 2019, months: [13.8, 3.4, 0.3, -5.7, -9.5, -2.5, -1.3, -3.4, -2.8, 7.3, 4.8, -3.6], ytd: 0.8 },
+      { year: 2020, months: [0.8, 7.8, -0.6, -10.3, 6.2, 3.1, -10.9, 10.0, -2.4, -6.2, -3.5, 0.6], ytd: -5.4 },
+      { year: 2021, months: [-0.3, 4.3, 9.5, 7.5, -5.2, 4.2, 7.5, -6.8, -4.3, -4.8, -8.4, -0.4], ytd: 2.8 },
       { year: 2022, months: [8.3, -3.5, -5.5, -3.3, 1.6, 4.1, 3.3, -1.3, -2.5, 2.5, 2.5, -0.7], ytd: 5.5 },
       { year: 2023, months: [-8.5, -0.7, 0.2, -4.9, 6.1, 3.6, -0.2, -1.0, 8.8, 0.8, 7.4, -0.8], ytd: 10.8 },
       { year: 2024, months: [-0.7, 13.0, 3.1, -0.7, 3.2, -3.2, 3.1, -2.0, 5.2, 32.5, 2.0, -1.2], ytd: 54.3 },
