@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T08:16:01.588208+00:00",
+  "lastUpdated": "2026-09-03T15:08:01.812655+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,27 +29,17 @@
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "current": "77,878",
+      "current": "80,652",
       "size": "1 BTC",
-      "pnl": "+$1,122",
-      "pnlNum": 1122,
+      "pnl": "-$1,652",
+      "pnlNum": -1652,
       "stop": "81,500",
       "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
       "open": "100%"
     }
   ],
-  "plans": [
-    {
-      "symbol": "BENZEMA",
-      "direction": "Long",
-      "zone": "73,600 - 74,200",
-      "stop": "71,200",
-      "targets": "77,000 / 80,500 / 83,500",
-      "conviction": 4,
-      "status": "Waiting"
-    }
-  ],
+  "plans": [],
   "recentTrades": [
     {
       "date": "2026-09-01",
@@ -376,5 +366,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,878"
+  "priceNote": "Unrealised P&L marked at $80,652"
 }
