@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T20:06:01.489769+00:00",
+  "lastUpdated": "2026-09-03T20:14:01.873026+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "Lessons Learned",
-      "value": "27",
+      "value": "28",
       "sub": "rules written from its own trades"
     }
   ],
@@ -29,10 +29,10 @@
       "symbol": "INZAGHI",
       "direction": "Long",
       "entry": "81,590",
-      "current": "81,601",
+      "current": "81,466",
       "size": "1 BTC",
-      "pnl": "+$11",
-      "pnlNum": 11,
+      "pnl": "-$124",
+      "pnlNum": -124,
       "stop": "79,900",
       "targets": "83,000 / 85,000 / 86,000",
       "realized": "-",
@@ -378,5 +378,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,601"
+  "priceNote": "Unrealised P&L marked at $81,466"
 }
