@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T15:08:01.812655+00:00",
+  "lastUpdated": "2026-09-03T16:18:01.175673+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,17 +29,27 @@
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "current": "80,652",
+      "current": "80,785",
       "size": "1 BTC",
-      "pnl": "-$1,652",
-      "pnlNum": -1652,
+      "pnl": "-$1,785",
+      "pnlNum": -1785,
       "stop": "81,500",
       "targets": "75,000 / 72,999 / 71,251",
       "realized": "-",
       "open": "100%"
     }
   ],
-  "plans": [],
+  "plans": [
+    {
+      "symbol": "INZAGHI",
+      "direction": "Long",
+      "zone": "81,500 - 81,700",
+      "stop": "79,900",
+      "targets": "83,000 / 85,000 / 86,000",
+      "conviction": 3,
+      "status": "Waiting"
+    }
+  ],
   "recentTrades": [
     {
       "date": "2026-09-01",
@@ -366,5 +376,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,652"
+  "priceNote": "Unrealised P&L marked at $80,785"
 }
