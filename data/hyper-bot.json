@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T11:53:28.244929+00:00",
+  "lastUpdated": "2026-09-04T11:54:01.541558+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -47,7 +47,7 @@
       "pnl": "-$1,490",
       "pnlNum": -1490,
       "rMultiple": "-0.60R",
-      "note": "⛔"
+      "note": "Invalidated"
     },
     {
       "date": "2026-09-01",
@@ -374,5 +374,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,258"
+  "priceNote": "Unrealised P&L marked at $81,249"
 }
