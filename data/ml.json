@@ -1,17 +1,17 @@
 {
- "lastUpdated": "2026-09-03T12:20:04.726237+00:00",
+ "lastUpdated": "2026-09-04T00:20:05.044214+00:00",
  "basis": "Live (small size) on Bitget since 2026-08-11, measured on a $100,000 model book at 1 BTC standard size. Trades, positions and pending plans update automatically.",
  "headline": [
   {
    "label": "Cumulative P&L",
-   "value": "$+1,838",
+   "value": "$+1,824",
    "tone": "good",
-   "sub": "17 trades, 1 BTC standard"
+   "sub": "18 trades, 1 BTC standard"
   },
   {
    "label": "Win Rate",
-   "value": "35%",
-   "sub": "6W / 11L"
+   "value": "33%",
+   "sub": "6W / 12L"
   },
   {
    "label": "Profit Factor",
@@ -20,11 +20,22 @@
   },
   {
    "label": "Lessons Learned",
-   "value": "11",
+   "value": "12",
    "sub": "losses reviewed; 1 rule hard-coded after a 6y backtest"
   }
  ],
  "recentTrades": [
+  {
+   "date": "2026-09-03",
+   "symbol": "BTC",
+   "direction": "Short",
+   "entry": "81,450",
+   "exit": "81,464",
+   "pnl": "$-14",
+   "pnlNum": -14.17,
+   "rMultiple": "-0.02R",
+   "lesson": "\ud83d\udcda instant stop \u2014 Learned: a touched level is not an accepted level \u2014 entry lacked rejection evidence"
+  },
   {
    "date": "2026-09-01",
    "symbol": "BTC",
@@ -212,12 +223,12 @@
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464",
-   "current": "2,407",
+   "current": "2,506",
    "size": "$30,000 notional",
    "stop": "2,330",
    "targets": "2,800 / 3,000",
-   "pnl": "$-694",
-   "pnlNum": -693.63
+   "pnl": "$+514",
+   "pnlNum": 514.04
   }
  ],
  "plans": [
@@ -227,22 +238,6 @@
    "zone": "74,300\u201375,000",
    "stop": "73,150",
    "targets": "77,950 / 80,800",
-   "status": "resting"
-  },
-  {
-   "symbol": "BTC",
-   "direction": "Short",
-   "zone": "81,450\u201381,650",
-   "stop": "82,300",
-   "targets": "79,400 / 78,600",
-   "status": "resting"
-  },
-  {
-   "symbol": "BTC",
-   "direction": "Short",
-   "zone": "84,000\u201384,200",
-   "stop": "85,100",
-   "targets": "82,000 / 80,500",
    "status": "resting"
   }
  ]
