@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-09-04T09:16:01.417426+00:00",
+  "lastUpdated": "2026-09-04T11:53:28.244929+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$172",
+      "value": "+$1,201",
       "tone": "good",
       "sub": "28 trades, 1 BTC each"
     },
@@ -15,7 +15,7 @@
     },
     {
       "label": "Profit Factor",
-      "value": "1.01",
+      "value": "1.10",
       "sub": "gross win / gross loss"
     },
     {
@@ -38,16 +38,16 @@
   ],
   "recentTrades": [
     {
-      "date": "2026-09-03",
+      "date": "2026-08-25",
       "entryDate": "2026-08-24",
       "symbol": "KANE",
       "direction": "Short",
       "entry": "79,000",
-      "exit": "81,519",
-      "pnl": "-$2,519",
-      "pnlNum": -2519,
-      "rMultiple": "-1.01R",
-      "note": "Stopped out"
+      "exit": "80,490",
+      "pnl": "-$1,490",
+      "pnlNum": -1490,
+      "rMultiple": "-0.60R",
+      "note": "⛔"
     },
     {
       "date": "2026-09-01",
@@ -374,5 +374,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,085"
+  "priceNote": "Unrealised P&L marked at $81,258"
 }
