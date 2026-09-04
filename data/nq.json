@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-03T04:30:14Z",
+  "lastUpdated": "2026-09-04T00:30:13Z",
   "basis": "Monthly figures are strategy returns - signal-level at deployed size, MNQ $2/pt, net of modelled cost $5.40/contract round-turn (incl. 1.88pt measured slippage). Recent trades are actual IB fills, net of commission. Live execution since Jul 2026.",
   "recentTrades": [
     {
