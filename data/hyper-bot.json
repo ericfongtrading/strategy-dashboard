@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-04T03:30:03.060092+00:00",
+  "lastUpdated": "2026-09-04T09:16:01.417426+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -25,7 +25,17 @@
     }
   ],
   "positions": [],
-  "plans": [],
+  "plans": [
+    {
+      "symbol": "SCHOLES",
+      "direction": "Long",
+      "zone": "78,297 - 78,493",
+      "stop": "76,500",
+      "targets": "79,800 / 81,500 / 82,900",
+      "conviction": 4,
+      "status": "Waiting"
+    }
+  ],
   "recentTrades": [
     {
       "date": "2026-09-03",
@@ -364,5 +374,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,802"
+  "priceNote": "Unrealised P&L marked at $81,085"
 }
