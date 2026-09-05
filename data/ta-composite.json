@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-05T13:11:32Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $-0.89 across 26 closed trades, 58% winners. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-09-05T16:00:20Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $-1.38 across 27 closed trades, 56% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
       "date": "2026-09-05",
@@ -80,23 +80,23 @@
       "symbol": "LINK",
       "direction": "Long",
       "entry": "11.393",
-      "current": "11.8515",
+      "current": "11.9565",
       "size": "18.9",
-      "pnl": "$+8.68",
-      "pnlNum": 8.68
+      "pnl": "$+10.63",
+      "pnlNum": 10.63
     },
     {
       "symbol": "BCH",
       "direction": "Long",
       "entry": "258.88",
-      "current": "248.475",
+      "current": "252.06",
       "size": "1.662",
-      "pnl": "$-17.25",
-      "pnlNum": -17.25
+      "pnl": "$-11.42",
+      "pnlNum": -11.42
     }
   ],
-  "liveRealisedPnl": -0.89,
-  "liveClosedTrades": 26,
+  "liveRealisedPnl": -1.38,
+  "liveClosedTrades": 27,
   "monthlyReturns": [
     {
       "year": 2017,
@@ -271,12 +271,12 @@
         4.81,
         -0.04,
         -0.22,
-        -0.02,
+        0.02,
         null,
         null,
         null
       ],
-      "ytd": 9.0,
+      "ytd": 9.04,
       "isLive": true
     }
   ]
