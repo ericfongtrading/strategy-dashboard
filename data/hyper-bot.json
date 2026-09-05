@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T12:14:02.054869+00:00",
+  "lastUpdated": "2026-09-05T16:56:01.806742+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -24,7 +24,21 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "DROGBA",
+      "direction": "Short",
+      "entry": "80,034",
+      "current": "80,050",
+      "size": "1 BTC",
+      "pnl": "-$16",
+      "pnlNum": -16,
+      "stop": "82,300",
+      "targets": "78,100 / 76,765 / 73,700",
+      "realized": "-",
+      "open": "100%"
+    }
+  ],
   "plans": [
     {
       "symbol": "LAMPARD",
@@ -34,15 +48,6 @@
       "targets": "78,080 / 76,765 / 73,700",
       "conviction": 4,
       "status": "Waiting"
-    },
-    {
-      "symbol": "DROGBA",
-      "direction": "Short",
-      "zone": "80,034 - 80,376",
-      "stop": "82,300",
-      "targets": "78,100 / 76,765 / 73,700",
-      "conviction": 4,
-      "status": "Order resting"
     }
   ],
   "recentTrades": [
@@ -383,5 +388,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $79,628"
+  "priceNote": "Unrealised P&L marked at $80,050"
 }
