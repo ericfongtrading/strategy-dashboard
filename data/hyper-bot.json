@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-05T10:40:01.575481+00:00",
+  "lastUpdated": "2026-09-05T11:16:01.336224+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -32,6 +32,15 @@
       "zone": "78,297 - 78,493",
       "stop": "76,500",
       "targets": "79,800 / 81,500 / 82,900",
+      "conviction": 4,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "LAMPARD",
+      "direction": "Short",
+      "zone": "79,000 - 79,400",
+      "stop": "80,600",
+      "targets": "78,080 / 76,765 / 73,700",
       "conviction": 4,
       "status": "Waiting"
     }
@@ -374,5 +383,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $79,584"
+  "priceNote": "Unrealised P&L marked at $79,593"
 }
