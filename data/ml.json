@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-05T12:20:05.394641+00:00",
+ "lastUpdated": "2026-09-06T00:20:07.036291+00:00",
  "basis": "Live (small size) on Bitget since 2026-08-11, measured on a $100,000 model book at 1 BTC standard size. Trades, positions and pending plans update automatically.",
  "headline": [
   {
@@ -220,15 +220,59 @@
  ],
  "positions": [
   {
+   "symbol": "THE",
+   "direction": "Long",
+   "entry": "0.07724",
+   "current": "0.0771",
+   "size": "$30,000 notional",
+   "stop": "0.05407",
+   "targets": "0.2317",
+   "pnl": "$-54",
+   "pnlNum": -54.38
+  },
+  {
+   "symbol": "MAGMA",
+   "direction": "Long",
+   "entry": "0.2489",
+   "current": "0.2745",
+   "size": "$30,000 notional",
+   "stop": "0.1991",
+   "targets": "0.4978",
+   "pnl": "$+3,084",
+   "pnlNum": 3084.25
+  },
+  {
+   "symbol": "XAN",
+   "direction": "Long",
+   "entry": "0.01533",
+   "current": "0.01655",
+   "size": "$30,000 notional",
+   "stop": "0.01073",
+   "targets": "0.04598",
+   "pnl": "$+2,390",
+   "pnlNum": 2389.9
+  },
+  {
+   "symbol": "\u5e01\u5b89\u4eba\u751f",
+   "direction": "Long",
+   "entry": "0.5905",
+   "current": "0.565",
+   "size": "$30,000 notional",
+   "stop": "0.4133",
+   "targets": "1.772",
+   "pnl": "$-1,296",
+   "pnlNum": -1295.51
+  },
+  {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464",
-   "current": "2,455",
+   "current": "2,482",
    "size": "$30,000 notional",
    "stop": "2,330",
    "targets": "2,800 / 3,000",
-   "pnl": "$-112",
-   "pnlNum": -112.13
+   "pnl": "$+220",
+   "pnlNum": 219.64
   }
  ],
  "plans": [
