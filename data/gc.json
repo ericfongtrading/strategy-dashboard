@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-07T14:40:02Z",
+  "lastUpdated": "2026-09-07T16:40:01Z",
   "basis": "LIVE (real IB fills, 1 MGC; P&L gross of commissions). Monthly table: backtest to Jul 2026, live from Aug 2026.",
   "recentTrades": [
     {
@@ -53,19 +53,28 @@
       "symbol": "MGCZ6",
       "direction": "Long",
       "entry": "4,441.7",
-      "current": "4,452.9",
+      "current": "4,461.1",
       "size": "1 MGC",
-      "pnl": "+$112",
-      "pnlNum": 112.0
+      "pnl": "+$194",
+      "pnlNum": 194.0
     },
     {
       "symbol": "MGCZ6",
       "direction": "Long",
       "entry": "4,452.2",
-      "current": "4,452.9",
+      "current": "4,461.1",
       "size": "1 MGC",
-      "pnl": "+$7",
-      "pnlNum": 7.0
+      "pnl": "+$89",
+      "pnlNum": 89.0
+    },
+    {
+      "symbol": "MGCZ6",
+      "direction": "Long",
+      "entry": "4,461.4",
+      "current": "4,461.1",
+      "size": "1 MGC",
+      "pnl": "-$3",
+      "pnlNum": -3.0
     }
   ],
   "monthlyReturns": [
