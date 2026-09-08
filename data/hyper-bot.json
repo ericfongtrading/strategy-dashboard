@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T14:22:01.785935+00:00",
+  "lastUpdated": "2026-09-08T19:14:01.353301+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "DROGBA",
       "direction": "Short",
       "entry": "80,034",
-      "current": "78,291",
+      "current": "78,432",
       "size": "1 BTC",
-      "pnl": "+$1,811",
-      "pnlNum": 1811,
+      "pnl": "+$1,719",
+      "pnlNum": 1719,
       "stop": "80,034 (BE)",
       "targets": "✓ 78,100 / 76,765 / 73,700",
       "realized": "+$678",
@@ -42,10 +42,10 @@
       "symbol": "HENRY",
       "direction": "Short",
       "entry": "78,300",
-      "current": "78,291",
+      "current": "78,432",
       "size": "1 BTC",
-      "pnl": "+$9",
-      "pnlNum": 9,
+      "pnl": "-$132",
+      "pnlNum": -132,
       "stop": "80,100",
       "targets": "77,000 / 76,000 / 74,800",
       "realized": "-",
@@ -60,6 +60,15 @@
       "stop": "71,500",
       "targets": "78,100 / 80,428 / 83,556",
       "conviction": 4,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "CRISTIANO",
+      "direction": "Long",
+      "zone": "77,000 - 77,500",
+      "stop": "75,200",
+      "targets": "78,700 / 79,376 / 80,034",
+      "conviction": 3,
       "status": "Waiting"
     }
   ],
@@ -401,5 +410,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $78,291"
+  "priceNote": "Unrealised P&L marked at $78,432"
 }
