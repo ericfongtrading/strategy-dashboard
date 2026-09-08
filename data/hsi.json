@@ -1,7 +1,16 @@
 {
-  "lastUpdated": "2026-09-07T08:40:01Z",
+  "lastUpdated": "2026-09-08T08:40:01Z",
   "basis": "Recent trades are real IB fills. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base; headline metrics quote the 2022-onward window.",
   "recentTrades": [
+    {
+      "date": "2026-09-08",
+      "direction": "Short",
+      "entry": "25,200",
+      "exit": "25,290",
+      "pnl": "-HK$1,800",
+      "pnlNum": -1800,
+      "rMultiple": "-1.0R"
+    },
     {
       "date": "2026-09-07",
       "direction": "Short",
@@ -37,15 +46,6 @@
       "pnl": "-HK$2,500",
       "pnlNum": -2500,
       "rMultiple": "-1.0R"
-    },
-    {
-      "date": "2026-09-03",
-      "direction": "Short",
-      "entry": "25,367",
-      "exit": "25,336",
-      "pnl": "+HK$1,550",
-      "pnlNum": 1550,
-      "rMultiple": "+0.4R"
     }
   ],
   "positions": [],
@@ -133,12 +133,12 @@
         6.7,
         -2.8,
         -3.5,
-        3.2,
+        2.3,
         null,
         null,
         null
       ],
-      "ytd": 31.6,
+      "ytd": 30.7,
       "isLive": true
     }
   ]
