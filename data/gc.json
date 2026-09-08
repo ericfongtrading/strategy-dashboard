@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-08T00:58:16Z",
-  "basis": "LIVE (real IB fills; P&L gross of commissions; 2-MGC base with 3/1 overnight-direction sizing since 2026-09-08, 1 MGC before). Monthly table: backtest to Jul 2026, live from Aug 2026.",
+  "lastUpdated": "2026-09-08T04:22:09Z",
+  "basis": "LIVE (real IB fills; P&L gross of commissions). Monthly table: backtest to Jul 2026, live from Aug 2026.",
   "recentTrades": [
     {
       "date": "2026-09-08",
@@ -84,7 +84,7 @@
         2.5,
         0.4
       ],
-      "ytd": 61.1
+      "ytd": 51.3
     },
     {
       "year": 2021,
@@ -102,7 +102,7 @@
         3.1,
         -2.8
       ],
-      "ytd": 5.7
+      "ytd": 7.6
     },
     {
       "year": 2022,
@@ -120,7 +120,7 @@
         -1.8,
         6.1
       ],
-      "ytd": 25.0
+      "ytd": 22.9
     },
     {
       "year": 2023,
@@ -138,7 +138,7 @@
         2.9,
         13.5
       ],
-      "ytd": 25.7
+      "ytd": 24.7
     },
     {
       "year": 2024,
@@ -156,7 +156,7 @@
         -0.6,
         9.6
       ],
-      "ytd": 20.3
+      "ytd": 21.2
     },
     {
       "year": 2025,
@@ -174,7 +174,7 @@
         4.5,
         -2.3
       ],
-      "ytd": 58.8
+      "ytd": 48.2
     },
     {
       "year": 2026,
@@ -186,13 +186,13 @@
         5.9,
         10.9,
         -1.5,
-        -1.2,
+        -1.1,
         0.9,
         null,
         null,
         null
       ],
-      "ytd": 54.2,
+      "ytd": 47.8,
       "isLive": true
     }
   ]
