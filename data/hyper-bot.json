@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-08T06:12:02.036271+00:00",
+  "lastUpdated": "2026-09-08T09:50:01.937673+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "DROGBA",
       "direction": "Short",
       "entry": "80,034",
-      "current": "78,476",
+      "current": "78,749",
       "size": "1 BTC",
-      "pnl": "+$1,558",
-      "pnlNum": 1558,
+      "pnl": "+$1,285",
+      "pnlNum": 1285,
       "stop": "82,300",
       "targets": "78,100 / 76,765 / 73,700",
       "realized": "-",
@@ -56,7 +56,7 @@
       "stop": "80,600",
       "targets": "78,080 / 76,765 / 73,700",
       "conviction": 4,
-      "status": "Waiting"
+      "status": "Order resting"
     }
   ],
   "recentTrades": [
@@ -397,5 +397,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $78,476"
+  "priceNote": "Unrealised P&L marked at $78,749"
 }
