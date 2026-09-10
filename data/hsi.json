@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T07:59:58Z",
+  "lastUpdated": "2026-09-10T08:40:01Z",
   "basis": "Recent trades are real IB fills from 2026-09-11 onward. Earlier live fills are withheld: a bar-assembly fault between 2026-06-16 and 2026-09-10 fed the signal engine unfinished candles, so those entries do not reflect the strategy. The modelled record covers that period. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base, NET of trading costs (4.5 pt per round trip modelled; live fills net of actual commission and fees); headline metrics quote the 2022-onward window.",
   "recentTrades": [],
   "positions": [],
