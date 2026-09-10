@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-10T16:00:25Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $-16.09 across 33 closed trades, 48% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-09-10T20:00:18Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $-18.39 across 34 closed trades, 47% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
       "date": "2026-09-10",
@@ -76,8 +76,8 @@
     }
   ],
   "positions": [],
-  "liveRealisedPnl": -16.09,
-  "liveClosedTrades": 33,
+  "liveRealisedPnl": -18.39,
+  "liveClosedTrades": 34,
   "monthlyReturns": [
     {
       "year": 2017,
