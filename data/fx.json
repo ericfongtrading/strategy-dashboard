@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T00:05:02Z",
+  "lastUpdated": "2026-09-10T02:05:01Z",
   "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
   "recentTrades": [
     {
@@ -63,12 +63,12 @@
       "symbol": "NZDCAD",
       "direction": "Long",
       "entry": "0.80597",
-      "current": "0.80592",
+      "current": "0.80697",
       "size": "150,248",
       "stop": "0.80046",
-      "targets": "0.80948",
-      "pnl": "-9 CAD",
-      "pnlNum": -9
+      "targets": "0.80909",
+      "pnl": "+149 CAD",
+      "pnlNum": 149
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
