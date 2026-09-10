@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-09-10T08:05:01Z",
+  "lastUpdated": "2026-09-10T10:05:01Z",
   "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
   "recentTrades": [
+    {
+      "date": "2026-09-10",
+      "symbol": "NZDCAD",
+      "direction": "Long",
+      "entry": "0.80588",
+      "exit": "0.80686",
+      "pnl": "+$103",
+      "pnlNum": 103,
+      "rMultiple": "+0.2R",
+      "source": "live"
+    },
     {
       "date": "2026-09-07",
       "symbol": "GBPAUD",
@@ -45,32 +56,9 @@
       "pnlNum": 215,
       "rMultiple": "+0.4R",
       "source": "live"
-    },
-    {
-      "date": "2026-09-02",
-      "symbol": "GBPNZD",
-      "direction": "Short",
-      "entry": "2.29734",
-      "exit": "2.30863",
-      "pnl": "-$610",
-      "pnlNum": -610,
-      "rMultiple": "-1.0R",
-      "source": "live"
     }
   ],
-  "positions": [
-    {
-      "symbol": "NZDCAD",
-      "direction": "Long",
-      "entry": "0.80597",
-      "current": "0.80748",
-      "size": "150,248",
-      "stop": "0.80046",
-      "targets": "0.80876",
-      "pnl": "+226 CAD",
-      "pnlNum": 226
-    }
-  ],
+  "positions": [],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
   "monthlyReturns": [
     {
@@ -210,12 +198,12 @@
         -0.7,
         5.4,
         -0.3,
-        -1.1,
+        -1.0,
         null,
         null,
         null
       ],
-      "ytd": 4.2,
+      "ytd": 4.3,
       "isLive": true
     }
   ]
