@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-09-11T04:08:01.648639+00:00",
+  "lastUpdated": "2026-09-11T13:50:01.746685+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$1,201",
+      "value": "+$1,651",
       "tone": "good",
-      "sub": "28 trades, 1 BTC each"
+      "sub": "29 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "54%",
-      "sub": "15W / 13L"
+      "value": "55%",
+      "sub": "16W / 13L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.10",
+      "value": "1.14",
       "sub": "gross win / gross loss"
     },
     {
@@ -29,27 +29,14 @@
       "symbol": "DROGBA",
       "direction": "Short",
       "entry": "80,034",
-      "current": "76,947",
+      "current": "78,502",
       "size": "1 BTC",
-      "pnl": "+$2,767",
-      "pnlNum": 2767,
+      "pnl": "+$2,300",
+      "pnlNum": 2300,
       "stop": "80,034 (BE)",
       "targets": "✓ 78,100 / ✓ 76,765 / 73,700",
       "realized": "+$1,841",
       "open": "30%"
-    },
-    {
-      "symbol": "HENRY",
-      "direction": "Short",
-      "entry": "78,300",
-      "current": "76,947",
-      "size": "1 BTC",
-      "pnl": "+$1,334",
-      "pnlNum": 1334,
-      "stop": "78,300 (BE)",
-      "targets": "✓ 77,000 / 76,000 / 74,800",
-      "realized": "+$454",
-      "open": "65%"
     }
   ],
   "plans": [
@@ -64,6 +51,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-09-11",
+      "entryDate": "2026-09-08",
+      "symbol": "HENRY",
+      "direction": "Short",
+      "entry": "78,300",
+      "exit": "78,308",
+      "pnl": "+$449",
+      "pnlNum": 449,
+      "rMultiple": "+0.25R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-08-25",
       "entryDate": "2026-08-24",
@@ -401,5 +400,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $76,947"
+  "priceNote": "Unrealised P&L marked at $78,502"
 }
