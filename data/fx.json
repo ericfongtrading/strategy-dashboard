@@ -1,7 +1,18 @@
 {
-  "lastUpdated": "2026-09-11T00:05:01Z",
+  "lastUpdated": "2026-09-11T02:05:01Z",
   "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
   "recentTrades": [
+    {
+      "date": "2026-09-11",
+      "symbol": "NZDCAD",
+      "direction": "Long",
+      "entry": "0.80239",
+      "exit": "0.80439",
+      "pnl": "+$326",
+      "pnlNum": 326,
+      "rMultiple": "+0.4R",
+      "source": "live"
+    },
     {
       "date": "2026-09-10",
       "symbol": "NZDCAD",
@@ -45,52 +56,30 @@
       "pnlNum": -595,
       "rMultiple": "-1.0R",
       "source": "live"
-    },
-    {
-      "date": "2026-09-03",
-      "symbol": "EURCHF",
-      "direction": "Short",
-      "entry": "0.94116",
-      "exit": "0.94007",
-      "pnl": "+$215",
-      "pnlNum": 215,
-      "rMultiple": "+0.4R",
-      "source": "live"
     }
   ],
   "positions": [
     {
-      "symbol": "NZDCAD",
-      "direction": "Long",
-      "entry": "0.80243",
-      "current": "0.80190",
-      "size": "227,961",
-      "stop": "0.79696",
-      "targets": "0.80686",
-      "pnl": "-120 CAD",
-      "pnlNum": -120
-    },
-    {
       "symbol": "GBPAUD",
       "direction": "Short",
       "entry": "1.88573",
-      "current": "1.88777",
+      "current": "1.88626",
       "size": "171,285",
       "stop": "1.89306",
-      "targets": "1.87789",
-      "pnl": "-350 AUD",
-      "pnlNum": -350
+      "targets": "1.87839",
+      "pnl": "-92 AUD",
+      "pnlNum": -92
     },
     {
       "symbol": "GBPNZD",
       "direction": "Short",
       "entry": "2.32770",
-      "current": "2.33053",
+      "current": "2.32435",
       "size": "57,001",
       "stop": "2.34131",
-      "targets": "2.31593",
-      "pnl": "-161 NZD",
-      "pnlNum": -161
+      "targets": "2.31693",
+      "pnl": "+191 NZD",
+      "pnlNum": 191
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
@@ -232,12 +221,12 @@
         -0.7,
         5.4,
         -0.3,
-        -1.0,
+        -0.6,
         null,
         null,
         null
       ],
-      "ytd": 4.3,
+      "ytd": 4.7,
       "isLive": true
     }
   ]
