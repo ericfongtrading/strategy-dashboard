@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-09-14T00:30:12Z",
+  "lastUpdated": "2026-09-14T08:30:12Z",
   "basis": "Monthly figures are strategy returns - signal-level at deployed size, MNQ $2/pt, net of modelled cost $5.40/contract round-turn (incl. 1.88pt measured slippage). Recent trades are actual IB fills, net of commission. Live execution since Jul 2026.",
   "recentTrades": [
+    {
+      "date": "2026-09-14",
+      "direction": "Long",
+      "entry": "29,236",
+      "exit": "29,199",
+      "pnl": "-$151",
+      "pnlNum": -151.44,
+      "rMultiple": "-1.0R",
+      "sleeve": "VWAP_LONG_R3"
+    },
     {
       "date": "2026-09-02",
       "direction": "Long",
@@ -40,16 +50,6 @@
       "pnl": "+$121",
       "pnlNum": 120.6,
       "rMultiple": "+0.5R",
-      "sleeve": "TLB_HYB40"
-    },
-    {
-      "date": "2026-08-25",
-      "direction": "Long",
-      "entry": "29,245",
-      "exit": "29,224",
-      "pnl": "-$47",
-      "pnlNum": -47.4,
-      "rMultiple": "-0.2R",
       "sleeve": "TLB_HYB40"
     }
   ],
