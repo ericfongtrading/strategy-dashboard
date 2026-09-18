@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T17:18:01.276172+00:00",
+  "lastUpdated": "2026-09-18T18:12:01.821826+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -30,7 +30,7 @@
       "symbol": "ZIDANE",
       "direction": "Long",
       "zone": "79,375 - 79,616",
-      "stop": "77,800",
+      "stop": "77,250",
       "targets": "81,224 / 84,101 / 86,000",
       "conviction": 3,
       "status": "Waiting"
@@ -398,5 +398,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,858"
+  "priceNote": "Unrealised P&L marked at $80,902"
 }
