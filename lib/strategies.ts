@@ -123,7 +123,7 @@ export type Strategy = {
   chartImgLabel?: string;
   /** Extra labelled figures shown beside the headline, for strategies whose key
    *  numbers are not Sharpe / Max DD (e.g. net P&L after hedges, capital). */
-  extraMetrics?: { label: string; value: string; tone?: 'good' | 'bad' }[];
+  extraMetrics?: { label: string; value: string; tone?: 'good' | 'bad'; modalOnly?: boolean }[];
 };
 
 const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -363,25 +363,28 @@ export const strategies: Strategy[] = [
   },
   {
     id: 'lp-hedged',
-    name: 'Hedged Liquidity Provision',
-    asset: 'US Equities',
+    name: 'Hedged AMM LP',
+    asset: 'DEX Liquidity Pools',
     category: 'crypto',
-    edge: 'Market Making',
+    edge: 'AMM LP',
     cagr: '40%',
     cagrLabel: 'Projected APR (fees)',
     status: 'live',
     statusLabel: 'Live',
     extraMetrics: [
-      { label: 'Net P&L after hedges', value: '+$2,518', tone: 'good' },
-      { label: 'Capital', value: '$206k' },
+      { label: 'Initial capital', value: '$200,847', modalOnly: true },
+      { label: 'Current value', value: '$205,896', modalOnly: true },
+      { label: 'Hedge P&L', value: '-$2,531', tone: 'bad' },
+      { label: 'Net P&L', value: '+$2,518', tone: 'good' },
     ],
-    description: 'Liquidity provision with a partial hedge. Capital is deployed as concentrated liquidity on US-equity markets and earns a fee on every trade that passes through its price range. The most volatile names are hedged with offsetting short positions sized to the inventory each position holds, so their returns come from fees rather than price direction; lower-volatility names are carried unhedged. Ranges are re-centred when price leaves them, and each market is capped at a small share of its total depth so added capital never dilutes its own fee share. Net P&L below is after all hedge gains and losses.',
+    description: 'AMM liquidity provision on decentralised exchanges, maximised for fee yield and hedged. Capital sits as concentrated liquidity in DEX pools and earns a fee on every swap that trades through its price range. Positions in the most volatile pools are hedged with offsetting short positions sized to the inventory each LP holds, so their returns come from swap fees rather than price direction; lower-volatility pools carry their direction unhedged. Ranges are re-centred when price leaves them, and each pool is capped at a small share of its total liquidity so added capital does not dilute its own fee share. Net P&L is after all hedge gains and losses.',
     dataSource: 'Live since Sep 2026 | updated 2026-09-18',
     highlights: [
-      'Projected APR ~40%, from measured fee income: about 0.11% of capital per day over the first week',
-      'Net P&L after hedges: +$2,518 since 11 Sep 2026 on ~$206k (about 62% annualized, which includes price moves on the unhedged names)',
-      'Partial hedge: high-volatility names are shorted back to neutral; lower-volatility names carry their direction',
-      'Each market capped at 4% of its depth, so new capital does not dilute its own fees',
+      'Projected APR ~40%, from measured swap-fee income: about 0.11% of capital per day over the first week',
+      'Initial capital $200,847 -> current value $205,896 (+$5,049); hedge P&L -$2,531; net P&L +$2,518 since 11 Sep 2026',
+      'About 62% annualized net so far, which includes price gains on unhedged pools',
+      'Partial hedge: high-volatility pools are hedged back to neutral; lower-volatility pools carry their direction',
+      'Each pool capped at 4% of its liquidity, so new capital does not dilute its own fees',
       'One week of live data - far too short to confirm the projection',
     ],
   },

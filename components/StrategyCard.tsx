@@ -129,7 +129,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
             <div className="text-xl font-semibold metric-value text-white">{s.winRate}</div>
           </div>
         )}
-        {s.extraMetrics?.map((m, i) => (
+        {s.extraMetrics?.filter((m) => !m.modalOnly).map((m, i) => (
           <div key={i}>
             <div className="text-[11px] text-muted uppercase tracking-wider">{m.label}</div>
             <div className={`text-xl font-semibold metric-value ${
