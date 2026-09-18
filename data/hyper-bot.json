@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T14:12:01.950020+00:00",
+  "lastUpdated": "2026-09-18T15:12:01.620851+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -25,17 +25,7 @@
     }
   ],
   "positions": [],
-  "plans": [
-    {
-      "symbol": "KAKA",
-      "direction": "Long",
-      "zone": "74,000 - 74,800",
-      "stop": "71,500",
-      "targets": "78,100 / 80,428 / 83,556",
-      "conviction": 4,
-      "status": "Waiting"
-    }
-  ],
+  "plans": [],
   "recentTrades": [
     {
       "date": "2026-09-18",
@@ -398,5 +388,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,257"
+  "priceNote": "Unrealised P&L marked at $80,574"
 }
