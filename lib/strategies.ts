@@ -121,6 +121,9 @@ export type Strategy = {
    *  Render with a transparent background for the dark modal. */
   chartImg?: string;
   chartImgLabel?: string;
+  /** Extra labelled figures shown beside the headline, for strategies whose key
+   *  numbers are not Sharpe / Max DD (e.g. net P&L after hedges, capital). */
+  extraMetrics?: { label: string; value: string; tone?: 'good' | 'bad' }[];
 };
 
 const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
@@ -356,6 +359,30 @@ export const strategies: Strategy[] = [
     monthlyReturns: [
       { year: 2025, months: [null, null, null, null, null, null, null, null, null, null, 0.45, 0.87], ytd: 1.3, isLive: true },
       { year: 2026, months: [1.13, 1.03, 1.07, 0.75, 0.9, 0.95, 0.87, 0.76, 0.08, null, null, null], ytd: 7.5, isLive: true },
+    ],
+  },
+  {
+    id: 'lp-hedged',
+    name: 'Hedged Liquidity Provision',
+    asset: 'US Equities',
+    category: 'crypto',
+    edge: 'Market Making',
+    cagr: '40%',
+    cagrLabel: 'Projected APR (fees)',
+    status: 'live',
+    statusLabel: 'Live',
+    extraMetrics: [
+      { label: 'Net P&L after hedges', value: '+$2,518', tone: 'good' },
+      { label: 'Capital', value: '$206k' },
+    ],
+    description: 'Liquidity provision with a partial hedge. Capital is deployed as concentrated liquidity on US-equity markets and earns a fee on every trade that passes through its price range. The most volatile names are hedged with offsetting short positions sized to the inventory each position holds, so their returns come from fees rather than price direction; lower-volatility names are carried unhedged. Ranges are re-centred when price leaves them, and each market is capped at a small share of its total depth so added capital never dilutes its own fee share. Net P&L below is after all hedge gains and losses.',
+    dataSource: 'Live since Sep 2026 | updated 2026-09-18',
+    highlights: [
+      'Projected APR ~40%, from measured fee income: about 0.11% of capital per day over the first week',
+      'Net P&L after hedges: +$2,518 since 11 Sep 2026 on ~$206k (about 62% annualized, which includes price moves on the unhedged names)',
+      'Partial hedge: high-volatility names are shorted back to neutral; lower-volatility names carry their direction',
+      'Each market capped at 4% of its depth, so new capital does not dilute its own fees',
+      'One week of live data - far too short to confirm the projection',
     ],
   },
   {

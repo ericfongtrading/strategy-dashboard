@@ -125,6 +125,10 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           {(s.cagr || s.sharpe || s.maxDD) && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {s.cagr && <Metric label={s.cagrLabel || 'CAGR'} value={s.cagr} large color="text-good" />}
+              {s.extraMetrics?.map((x, i) => (
+                <Metric key={i} label={x.label} value={x.value} large
+                  color={x.tone === 'good' ? 'text-good' : x.tone === 'bad' ? 'text-bad' : undefined} />
+              ))}
               {s.pf && <Metric label="Profit Factor" value={s.pf} />}
               {s.winRate && <Metric label="Win Rate" value={s.winRate} />}
               {s.sharpe && <Metric label="Sharpe Ratio" value={s.sharpe} large />}
