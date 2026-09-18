@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-18T14:41:46Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+10.72 (+0.31%): realised $-25.67 across 10 closed trades (10% winners), open $+36.39. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
+  "lastUpdated": "2026-09-18T17:02:37Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+6.43 (+0.18%): realised $-25.67 across 10 closed trades (10% winners), open $+32.10. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
   "recentTrades": [
     {
       "date": "2026-09-18",
@@ -108,77 +108,77 @@
       "symbol": "SOL",
       "direction": "Long",
       "entry": "105.70",
-      "current": "109.95",
+      "current": "111.58",
       "size": "1.25",
-      "pnl": "$+5.33",
-      "pnlNum": 5.33
+      "pnl": "$+7.34",
+      "pnlNum": 7.34
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "11.45",
-      "current": "12.08",
+      "current": "12.11",
       "size": "10.2",
-      "pnl": "$+6.42",
-      "pnlNum": 6.42
+      "pnl": "$+6.77",
+      "pnlNum": 6.77
     },
     {
       "symbol": "DOGE",
       "direction": "Long",
       "entry": "0.083067",
-      "current": "0.087752",
+      "current": "0.08756",
       "size": "1297",
-      "pnl": "$+6.07",
-      "pnlNum": 6.07
+      "pnl": "$+5.81",
+      "pnlNum": 5.81
     },
     {
       "symbol": "ADA",
       "direction": "Long",
       "entry": "0.19816",
-      "current": "0.219615",
+      "current": "0.218135",
       "size": "436",
-      "pnl": "$+9.35",
-      "pnlNum": 9.35
-    },
-    {
-      "symbol": "WLD",
-      "direction": "Long",
-      "entry": "0.38522",
-      "current": "0.43388",
-      "size": "174.7",
-      "pnl": "$+8.49",
-      "pnlNum": 8.49
+      "pnl": "$+8.71",
+      "pnlNum": 8.71
     },
     {
       "symbol": "ZEC",
       "direction": "Long",
       "entry": "1,359",
-      "current": "1,478",
+      "current": "1,447",
       "size": "0.05",
-      "pnl": "$+5.91",
-      "pnlNum": 5.91
+      "pnl": "$+4.37",
+      "pnlNum": 4.37
+    },
+    {
+      "symbol": "WLD",
+      "direction": "Long",
+      "entry": "0.38522",
+      "current": "0.41402",
+      "size": "174.7",
+      "pnl": "$+5.03",
+      "pnlNum": 5.03
     },
     {
       "symbol": "UNI",
       "direction": "Short",
       "entry": "8.6633",
-      "current": "8.83835",
+      "current": "8.93535",
       "size": "7.7",
-      "pnl": "$-1.35",
-      "pnlNum": -1.35
+      "pnl": "$-2.09",
+      "pnlNum": -2.09
     },
     {
       "symbol": "ENA",
       "direction": "Short",
       "entry": "0.15421",
-      "current": "0.16434",
+      "current": "0.16442",
       "size": "376",
-      "pnl": "$-3.81",
-      "pnlNum": -3.81
+      "pnl": "$-3.83",
+      "pnlNum": -3.83
     }
   ],
   "liveRealisedPnl": -25.67,
-  "liveOpenPnl": 36.39,
+  "liveOpenPnl": 32.1,
   "liveClosedTrades": 10,
   "monthlyReturns": [
     {
@@ -246,12 +246,12 @@
         2.9,
         -0.07,
         -4.43,
-        0.57,
+        0.44,
         null,
         null,
         null
       ],
-      "ytd": 17.13,
+      "ytd": 16.98,
       "isLive": true
     }
   ]
