@@ -1,7 +1,16 @@
 {
-  "lastUpdated": "2026-09-17T08:40:01Z",
+  "lastUpdated": "2026-09-18T08:40:01Z",
   "basis": "Recent trades are real IB fills from 2026-09-11 onward. Earlier live fills are withheld: a bar-assembly fault between 2026-06-16 and 2026-09-10 fed the signal engine unfinished candles, so those entries do not reflect the strategy. The modelled record covers that period. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base, NET of trading costs (4.5 pt per round trip modelled; live fills net of actual commission and fees); headline metrics quote the 2022-onward window.",
   "recentTrades": [
+    {
+      "date": "2026-09-18",
+      "direction": "Long",
+      "entry": "24,830",
+      "exit": "24,770",
+      "pnl": "-HK$1,248",
+      "pnlNum": -1248,
+      "rMultiple": "-0.7R"
+    },
     {
       "date": "2026-09-16",
       "direction": "Long",
@@ -115,12 +124,12 @@
         -0.8,
         -0.5,
         -4.1,
-        0.7,
+        -0.0,
         null,
         null,
         null
       ],
-      "ytd": 25.0,
+      "ytd": 24.3,
       "isLive": true
     }
   ]
