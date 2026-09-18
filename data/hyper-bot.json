@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-09-18T12:04:01.815854+00:00",
+  "lastUpdated": "2026-09-18T13:52:01.693028+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$1,651",
+      "value": "+$3,472",
       "tone": "good",
-      "sub": "29 trades, 1 BTC each"
+      "sub": "30 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "55%",
-      "sub": "16W / 13L"
+      "value": "57%",
+      "sub": "17W / 13L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.14",
+      "value": "1.30",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "DROGBA",
-      "direction": "Short",
-      "entry": "80,034",
-      "current": "78,000",
-      "size": "1 BTC",
-      "pnl": "+$2,451",
-      "pnlNum": 2451,
-      "stop": "80,034 (BE)",
-      "targets": "✓ 78,100 / ✓ 76,765 / 73,700",
-      "realized": "+$1,841",
-      "open": "30%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "KAKA",
@@ -51,6 +37,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-09-18",
+      "entryDate": "2026-09-05",
+      "symbol": "DROGBA",
+      "direction": "Short",
+      "entry": "80,034",
+      "exit": "80,097",
+      "pnl": "+$1,822",
+      "pnlNum": 1822,
+      "rMultiple": "+0.80R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-09-11",
       "entryDate": "2026-09-08",
@@ -400,5 +398,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $78,000"
+  "priceNote": "Unrealised P&L marked at $80,368"
 }
