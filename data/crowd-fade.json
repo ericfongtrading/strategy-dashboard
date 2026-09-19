@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-09-18T22:03:05Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+15.98 (+0.46%): realised $-25.67 across 10 closed trades (10% winners), open $+41.65. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
+  "lastUpdated": "2026-09-19T01:03:07Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+19.75 (+0.56%): realised $-12.09 across 11 closed trades (18% winners), open $+31.83. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
   "recentTrades": [
+    {
+      "date": "2026-09-19",
+      "symbol": "ADA",
+      "direction": "Long",
+      "entry": "0.19816",
+      "exit": "0.226296",
+      "pnl": "$+13.58",
+      "pnlNum": 13.58,
+      "entryDate": "2026-09-15"
+    },
     {
       "date": "2026-09-18",
       "symbol": "ETH",
@@ -108,87 +118,78 @@
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,608",
-      "current": "2,629",
+      "current": "2,626",
       "size": "0.0633",
-      "pnl": "$+1.39",
-      "pnlNum": 1.39
+      "pnl": "$+1.10",
+      "pnlNum": 1.1
     },
     {
       "symbol": "SOL",
       "direction": "Long",
       "entry": "105.70",
-      "current": "113.25",
+      "current": "113.67",
       "size": "1.15",
-      "pnl": "$+8.67",
-      "pnlNum": 8.67
+      "pnl": "$+9.15",
+      "pnlNum": 9.15
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "11.45",
-      "current": "12.40",
+      "current": "12.38",
       "size": "9.3",
-      "pnl": "$+8.82",
-      "pnlNum": 8.82
+      "pnl": "$+8.63",
+      "pnlNum": 8.63
     },
     {
       "symbol": "DOGE",
       "direction": "Long",
       "entry": "0.083067",
-      "current": "0.088272",
+      "current": "0.087867",
       "size": "1297",
-      "pnl": "$+6.75",
-      "pnlNum": 6.75
-    },
-    {
-      "symbol": "ADA",
-      "direction": "Long",
-      "entry": "0.19816",
-      "current": "0.225505",
-      "size": "436",
-      "pnl": "$+11.93",
-      "pnlNum": 11.93
+      "pnl": "$+6.21",
+      "pnlNum": 6.21
     },
     {
       "symbol": "WLD",
       "direction": "Long",
       "entry": "0.38522",
-      "current": "0.4268",
+      "current": "0.42723",
       "size": "174.7",
-      "pnl": "$+7.27",
-      "pnlNum": 7.27
+      "pnl": "$+7.29",
+      "pnlNum": 7.29
     },
     {
       "symbol": "UNI",
       "direction": "Short",
       "entry": "8.6633",
-      "current": "9.0154",
+      "current": "8.87475",
       "size": "7.7",
-      "pnl": "$-2.70",
-      "pnlNum": -2.7
+      "pnl": "$-1.63",
+      "pnlNum": -1.63
     },
     {
       "symbol": "ENA",
       "direction": "Short",
       "entry": "0.15421",
-      "current": "0.169965",
+      "current": "0.17509",
       "size": "376",
-      "pnl": "$-5.93",
-      "pnlNum": -5.93
+      "pnl": "$-7.85",
+      "pnlNum": -7.85
     },
     {
       "symbol": "ZEC",
       "direction": "Long",
       "entry": "1,359",
-      "current": "1,496",
+      "current": "1,583",
       "size": "0.04",
-      "pnl": "$+5.47",
-      "pnlNum": 5.47
+      "pnl": "$+8.93",
+      "pnlNum": 8.93
     }
   ],
-  "liveRealisedPnl": -25.67,
-  "liveOpenPnl": 41.65,
-  "liveClosedTrades": 10,
+  "liveRealisedPnl": -12.09,
+  "liveOpenPnl": 31.83,
+  "liveClosedTrades": 11,
   "monthlyReturns": [
     {
       "year": 2023,
@@ -255,12 +256,12 @@
         2.9,
         -0.07,
         -4.43,
-        0.8,
+        0.89,
         null,
         null,
         null
       ],
-      "ytd": 17.4,
+      "ytd": 17.51,
       "isLive": true
     }
   ]
