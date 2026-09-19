@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-18T22:26:01.764956+00:00",
+  "lastUpdated": "2026-09-19T02:20:01.909738+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,27 +29,17 @@
       "symbol": "BATISTUTA",
       "direction": "Short",
       "entry": "81,290",
-      "current": "81,216",
+      "current": "81,320",
       "size": "1 BTC",
-      "pnl": "+$74",
-      "pnlNum": 74,
+      "pnl": "-$30",
+      "pnlNum": -30,
       "stop": "82,700",
       "targets": "80,299 / 79,833 / 79,375",
       "realized": "-",
       "open": "100%"
     }
   ],
-  "plans": [
-    {
-      "symbol": "ZIDANE",
-      "direction": "Long",
-      "zone": "79,375 - 79,616",
-      "stop": "76,550",
-      "targets": "81,224 / 84,101 / 86,000",
-      "conviction": 3,
-      "status": "Waiting"
-    }
-  ],
+  "plans": [],
   "recentTrades": [
     {
       "date": "2026-09-18",
@@ -412,5 +402,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,216"
+  "priceNote": "Unrealised P&L marked at $81,320"
 }
