@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-19T02:20:01.909738+00:00",
+  "lastUpdated": "2026-09-19T14:22:01.835255+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "BATISTUTA",
       "direction": "Short",
       "entry": "81,290",
-      "current": "81,320",
+      "current": "81,500",
       "size": "1 BTC",
-      "pnl": "-$30",
-      "pnlNum": -30,
+      "pnl": "-$210",
+      "pnlNum": -210,
       "stop": "82,700",
       "targets": "80,299 / 79,833 / 79,375",
       "realized": "-",
@@ -402,5 +402,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,320"
+  "priceNote": "Unrealised P&L marked at $81,500"
 }
