@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-20T16:34:01.826102+00:00",
+  "lastUpdated": "2026-09-20T17:50:01.408327+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -20,12 +20,31 @@
     },
     {
       "label": "Lessons Learned",
-      "value": "63",
+      "value": "64",
       "sub": "rules written from its own trades"
     }
   ],
   "positions": [],
-  "plans": [],
+  "plans": [
+    {
+      "symbol": "VILLA",
+      "direction": "Short",
+      "zone": "85,500 - 87,000",
+      "stop": "88,500",
+      "targets": "83,000 / 80,300 / 77,600",
+      "conviction": 4,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "BENZEMA",
+      "direction": "Short",
+      "zone": "82,600 - 83,200",
+      "stop": "84,600",
+      "targets": "81,224 / 80,300 / 78,173",
+      "conviction": 3,
+      "status": "Waiting"
+    }
+  ],
   "recentTrades": [
     {
       "date": "2026-09-20",
@@ -400,5 +419,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,250"
+  "priceNote": "Unrealised P&L marked at $81,302"
 }
