@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-09-20T15:02:01.528030+00:00",
+  "lastUpdated": "2026-09-20T16:34:01.826102+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$3,472",
+      "value": "+$3,819",
       "tone": "good",
-      "sub": "30 trades, 1 BTC each"
+      "sub": "31 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "57%",
-      "sub": "17W / 13L"
+      "value": "58%",
+      "sub": "18W / 13L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.30",
+      "value": "1.33",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,23 +24,21 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
+  "positions": [],
+  "plans": [],
+  "recentTrades": [
     {
+      "date": "2026-09-20",
+      "entryDate": "2026-09-18",
       "symbol": "BATISTUTA",
       "direction": "Short",
       "entry": "81,290",
-      "current": "80,765",
-      "size": "1 BTC",
-      "pnl": "+$693",
-      "pnlNum": 693,
-      "stop": "81,290 (BE)",
-      "targets": "✓ 80,299 / 79,833 / 79,375",
-      "realized": "+$352",
-      "open": "65%"
-    }
-  ],
-  "plans": [],
-  "recentTrades": [
+      "exit": "81,299",
+      "pnl": "+$346",
+      "pnlNum": 346,
+      "rMultiple": "+0.25R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-09-18",
       "entryDate": "2026-09-05",
@@ -402,5 +400,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,765"
+  "priceNote": "Unrealised P&L marked at $81,250"
 }
