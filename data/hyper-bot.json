@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T02:12:02.027718+00:00",
+  "lastUpdated": "2026-09-21T09:16:01.268544+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -38,9 +38,9 @@
     {
       "symbol": "BENZEMA",
       "direction": "Short",
-      "zone": "82,400 - 83,200",
-      "stop": "84,600",
-      "targets": "81,224 / 80,300 / 78,173",
+      "zone": "83,400 - 84,200",
+      "stop": "85,500",
+      "targets": "82,400 / 81,224 / 80,043",
       "conviction": 3,
       "status": "Waiting"
     }
@@ -419,5 +419,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,300"
+  "priceNote": "Unrealised P&L marked at $83,966"
 }
