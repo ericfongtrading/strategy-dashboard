@@ -1,7 +1,16 @@
 {
-  "lastUpdated": "2026-09-21T08:00:38Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $-10.45 across 36 closed trades, 36% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-09-21T12:00:42Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+11.17 across 37 closed trades, 38% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
+    {
+      "date": "2026-09-21",
+      "symbol": "ETH",
+      "direction": "Long",
+      "entry": "2,470",
+      "exit": "2,720",
+      "pnl": "$+21.62",
+      "pnlNum": 21.62
+    },
     {
       "date": "2026-09-15",
       "symbol": "LINK",
@@ -64,15 +73,6 @@
       "exit": "1.4863",
       "pnl": "$+2.67",
       "pnlNum": 2.67
-    },
-    {
-      "date": "2026-08-19",
-      "symbol": "ETH",
-      "direction": "Long",
-      "entry": "1,917",
-      "exit": "2,108",
-      "pnl": "$+2.11",
-      "pnlNum": 2.11
     }
   ],
   "positions": [
@@ -80,41 +80,41 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "81,493.9",
-      "current": "81,767.5",
+      "current": "84,914.5",
       "size": "0.01889",
-      "pnl": "$+6.37",
-      "pnlNum": 6.37
+      "pnl": "$+63.79",
+      "pnlNum": 63.79
     },
     {
-      "symbol": "ETH",
+      "symbol": "LINK",
       "direction": "Long",
-      "entry": "2,469.6",
-      "current": "2,663.45",
-      "size": "0.0871",
-      "pnl": "$+17.11",
-      "pnlNum": 17.11
+      "entry": "13.04",
+      "current": "13.0505",
+      "size": "23.1",
+      "pnl": "$+0.00",
+      "pnlNum": 0.0
     },
     {
       "symbol": "DOT",
       "direction": "Long",
       "entry": "1.06706",
-      "current": "1.1612",
+      "current": "1.1897",
       "size": "202.8",
-      "pnl": "$+19.15",
-      "pnlNum": 19.15
+      "pnl": "$+24.24",
+      "pnlNum": 24.24
     },
     {
       "symbol": "FET",
       "direction": "Long",
       "entry": "0.183139",
-      "current": "0.183585",
+      "current": "0.195745",
       "size": "1549",
-      "pnl": "$+0.94",
-      "pnlNum": 0.94
+      "pnl": "$+19.27",
+      "pnlNum": 19.27
     }
   ],
-  "liveRealisedPnl": -10.45,
-  "liveClosedTrades": 36,
+  "liveRealisedPnl": 11.17,
+  "liveClosedTrades": 37,
   "monthlyReturns": [
     {
       "year": 2017,
@@ -289,12 +289,12 @@
         4.81,
         -0.04,
         -0.22,
-        0.34,
+        1.06,
         null,
         null,
         null
       ],
-      "ytd": 9.39,
+      "ytd": 10.18,
       "isLive": true
     }
   ]
