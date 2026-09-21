@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-21T12:00:42Z",
+  "lastUpdated": "2026-09-21T16:00:28Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $5,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+11.17 across 37 closed trades, 38% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -80,37 +80,37 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "81,493.9",
-      "current": "84,914.5",
+      "current": "85,985.5",
       "size": "0.01889",
-      "pnl": "$+63.79",
-      "pnlNum": 63.79
+      "pnl": "$+84.97",
+      "pnlNum": 84.97
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "13.04",
-      "current": "13.0505",
+      "current": "13.0295",
       "size": "23.1",
-      "pnl": "$+0.00",
-      "pnlNum": 0.0
+      "pnl": "$-0.20",
+      "pnlNum": -0.2
     },
     {
       "symbol": "DOT",
       "direction": "Long",
       "entry": "1.06706",
-      "current": "1.1897",
+      "current": "1.19135",
       "size": "202.8",
-      "pnl": "$+24.24",
-      "pnlNum": 24.24
+      "pnl": "$+25.11",
+      "pnlNum": 25.11
     },
     {
       "symbol": "FET",
       "direction": "Long",
       "entry": "0.183139",
-      "current": "0.195745",
+      "current": "0.203475",
       "size": "1549",
-      "pnl": "$+19.27",
-      "pnlNum": 19.27
+      "pnl": "$+31.07",
+      "pnlNum": 31.07
     }
   ],
   "liveRealisedPnl": 11.17,
@@ -289,12 +289,12 @@
         4.81,
         -0.04,
         -0.22,
-        1.06,
+        1.35,
         null,
         null,
         null
       ],
-      "ytd": 10.18,
+      "ytd": 10.49,
       "isLive": true
     }
   ]
