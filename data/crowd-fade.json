@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-22T01:02:23Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+32.00 (+0.91%): realised $+18.72 across 15 closed trades (33% winners), open $+13.27. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
+  "lastUpdated": "2026-09-22T03:02:45Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+25.74 (+0.74%): realised $+18.72 across 15 closed trades (33% winners), open $+7.02. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
   "recentTrades": [
     {
       "date": "2026-09-22",
@@ -128,95 +128,95 @@
       "symbol": "BNB",
       "direction": "Long",
       "entry": "778.05",
-      "current": "794.77",
+      "current": "791.27",
       "size": "0.225",
-      "pnl": "$+3.66",
-      "pnlNum": 3.66
-    },
-    {
-      "symbol": "ETH",
-      "direction": "Long",
-      "entry": "2,605",
-      "current": "2,754",
-      "size": "0.0638",
-      "pnl": "$+9.35",
-      "pnlNum": 9.35
+      "pnl": "$+2.97",
+      "pnlNum": 2.97
     },
     {
       "symbol": "BTC",
       "direction": "Long",
       "entry": "85,926",
-      "current": "85,940",
+      "current": "85,742",
       "size": "0.00204",
-      "pnl": "$-0.07",
-      "pnlNum": -0.07
+      "pnl": "$-0.38",
+      "pnlNum": -0.38
+    },
+    {
+      "symbol": "ETH",
+      "direction": "Long",
+      "entry": "2,605",
+      "current": "2,740",
+      "size": "0.0638",
+      "pnl": "$+8.60",
+      "pnlNum": 8.6
     },
     {
       "symbol": "SOL",
       "direction": "Long",
       "entry": "105.84",
-      "current": "118.19",
+      "current": "116.59",
       "size": "1.25",
-      "pnl": "$+15.34",
-      "pnlNum": 15.34
+      "pnl": "$+13.44",
+      "pnlNum": 13.44
     },
     {
       "symbol": "DOGE",
       "direction": "Long",
       "entry": "0.083067",
-      "current": "0.09964",
+      "current": "0.099114",
       "size": "1297",
-      "pnl": "$+21.32",
-      "pnlNum": 21.32
+      "pnl": "$+20.81",
+      "pnlNum": 20.81
     },
     {
       "symbol": "XRP",
       "direction": "Long",
       "entry": "1.41993",
-      "current": "1.52035",
+      "current": "1.51655",
       "size": "83",
-      "pnl": "$+8.25",
-      "pnlNum": 8.25
+      "pnl": "$+8.02",
+      "pnlNum": 8.02
     },
     {
       "symbol": "ADA",
       "direction": "Short",
       "entry": "0.224716",
-      "current": "0.245295",
+      "current": "0.246125",
       "size": "469",
-      "pnl": "$-9.56",
-      "pnlNum": -9.56
+      "pnl": "$-10.01",
+      "pnlNum": -10.01
     },
     {
       "symbol": "kPEPE",
       "direction": "Short",
       "entry": "0.00402",
-      "current": "0.004992",
+      "current": "0.005055",
       "size": "17457",
-      "pnl": "$-16.85",
-      "pnlNum": -16.85
+      "pnl": "$-18.07",
+      "pnlNum": -18.07
     },
     {
       "symbol": "UNI",
       "direction": "Short",
       "entry": "8.6633",
-      "current": "9.0731",
+      "current": "9.13065",
       "size": "7.7",
-      "pnl": "$-3.09",
-      "pnlNum": -3.09
+      "pnl": "$-3.59",
+      "pnlNum": -3.59
     },
     {
       "symbol": "ENA",
       "direction": "Short",
       "entry": "0.15421",
-      "current": "0.212765",
+      "current": "0.21156",
       "size": "258",
-      "pnl": "$-15.07",
-      "pnlNum": -15.07
+      "pnl": "$-14.77",
+      "pnlNum": -14.77
     }
   ],
   "liveRealisedPnl": 18.72,
-  "liveOpenPnl": 13.27,
+  "liveOpenPnl": 7.02,
   "liveClosedTrades": 15,
   "monthlyReturns": [
     {
@@ -284,12 +284,12 @@
         2.9,
         -0.07,
         -4.43,
-        0.66,
+        0.48,
         null,
         null,
         null
       ],
-      "ytd": 17.24,
+      "ytd": 17.03,
       "isLive": true
     }
   ]
