@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T06:04:01.960412+00:00",
+  "lastUpdated": "2026-09-22T07:20:01.749267+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -25,7 +25,17 @@
     }
   ],
   "positions": [],
-  "plans": [],
+  "plans": [
+    {
+      "symbol": "AGUERO",
+      "direction": "Short",
+      "zone": "85,900 - 86,250",
+      "stop": "87,800",
+      "targets": "83,931 / 82,799 / 81,147",
+      "conviction": 4,
+      "status": "Order resting"
+    }
+  ],
   "recentTrades": [
     {
       "date": "2026-09-20",
@@ -400,5 +410,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $85,355"
+  "priceNote": "Unrealised P&L marked at $85,333"
 }
