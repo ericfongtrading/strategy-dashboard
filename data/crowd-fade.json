@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-09-22T04:03:00Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+26.30 (+0.75%): realised $+18.72 across 15 closed trades (33% winners), open $+7.58. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
+  "lastUpdated": "2026-09-22T05:03:01Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+29.61 (+0.85%): realised $+40.92 across 16 closed trades (38% winners), open $-11.31. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09.",
   "recentTrades": [
+    {
+      "date": "2026-09-22",
+      "symbol": "DOGE",
+      "direction": "Long",
+      "entry": "0.083067",
+      "exit": "0.100263",
+      "pnl": "$+22.20",
+      "pnlNum": 22.2,
+      "entryDate": "2026-09-14"
+    },
     {
       "date": "2026-09-22",
       "symbol": "LINK",
@@ -111,16 +121,6 @@
       "pnl": "$-5.17",
       "pnlNum": -5.17,
       "entryDate": "2026-09-11"
-    },
-    {
-      "date": "2026-09-11",
-      "symbol": "ETH",
-      "direction": "Short",
-      "entry": "2,453",
-      "exit": "2,504",
-      "pnl": "$-3.46",
-      "pnlNum": -3.46,
-      "entryDate": "2026-09-09"
     }
   ],
   "positions": [
@@ -128,96 +128,87 @@
       "symbol": "BNB",
       "direction": "Long",
       "entry": "778.05",
-      "current": "789.39",
+      "current": "787.25",
       "size": "0.225",
-      "pnl": "$+2.54",
-      "pnlNum": 2.54
+      "pnl": "$+2.02",
+      "pnlNum": 2.02
     },
     {
       "symbol": "BTC",
       "direction": "Long",
       "entry": "85,926",
-      "current": "85,710",
+      "current": "85,492",
       "size": "0.00204",
-      "pnl": "$-0.44",
-      "pnlNum": -0.44
+      "pnl": "$-0.92",
+      "pnlNum": -0.92
     },
     {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,605",
-      "current": "2,740",
+      "current": "2,731",
       "size": "0.0638",
-      "pnl": "$+8.59",
-      "pnlNum": 8.59
+      "pnl": "$+7.97",
+      "pnlNum": 7.97
     },
     {
       "symbol": "SOL",
       "direction": "Long",
       "entry": "105.84",
-      "current": "116.75",
+      "current": "116.44",
       "size": "1.25",
-      "pnl": "$+13.61",
-      "pnlNum": 13.61
+      "pnl": "$+13.21",
+      "pnlNum": 13.21
     },
     {
       "symbol": "XRP",
       "direction": "Long",
       "entry": "1.41993",
-      "current": "1.51475",
+      "current": "1.51375",
       "size": "83",
-      "pnl": "$+7.86",
-      "pnlNum": 7.86
-    },
-    {
-      "symbol": "DOGE",
-      "direction": "Long",
-      "entry": "0.083067",
-      "current": "0.103175",
-      "size": "1198",
-      "pnl": "$+24.08",
-      "pnlNum": 24.08
+      "pnl": "$+7.75",
+      "pnlNum": 7.75
     },
     {
       "symbol": "ADA",
       "direction": "Short",
       "entry": "0.224716",
-      "current": "0.249085",
+      "current": "0.24719",
       "size": "469",
-      "pnl": "$-11.42",
-      "pnlNum": -11.42
+      "pnl": "$-10.49",
+      "pnlNum": -10.49
     },
     {
       "symbol": "kPEPE",
       "direction": "Short",
       "entry": "0.00402",
-      "current": "0.005284",
+      "current": "0.004982",
       "size": "15526",
-      "pnl": "$-19.61",
-      "pnlNum": -19.61
+      "pnl": "$-14.90",
+      "pnlNum": -14.9
     },
     {
       "symbol": "UNI",
       "direction": "Short",
       "entry": "8.6633",
-      "current": "9.0444",
+      "current": "8.87055",
       "size": "7.7",
-      "pnl": "$-2.96",
-      "pnlNum": -2.96
+      "pnl": "$-1.59",
+      "pnlNum": -1.59
     },
     {
       "symbol": "ENA",
       "direction": "Short",
       "entry": "0.15421",
-      "current": "0.21106",
+      "current": "0.20993",
       "size": "258",
-      "pnl": "$-14.67",
-      "pnlNum": -14.67
+      "pnl": "$-14.36",
+      "pnlNum": -14.36
     }
   ],
-  "liveRealisedPnl": 18.72,
-  "liveOpenPnl": 7.58,
-  "liveClosedTrades": 15,
+  "liveRealisedPnl": 40.92,
+  "liveOpenPnl": -11.31,
+  "liveClosedTrades": 16,
   "monthlyReturns": [
     {
       "year": 2023,
@@ -284,12 +275,12 @@
         2.9,
         -0.07,
         -4.43,
-        0.49,
+        0.53,
         null,
         null,
         null
       ],
-      "ytd": 17.04,
+      "ytd": 17.09,
       "isLive": true
     }
   ]
