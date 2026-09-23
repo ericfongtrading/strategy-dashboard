@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-22T01:55:03Z",
+  "lastUpdated": "2026-09-23T01:55:03Z",
   "basis": "Card metrics and monthlyReturns are the strategy signal record, 40% of equity per signal, unlevered, mark-to-market daily. Headline CAGR 27.8% is measured from the first signal (2022-12-21); the same curve compounds at 21.4% from 2022-01-01 and 16.7% from 2014. recentTrades list the signal history at signal prices. Trading live since 2025-04-10; live fills are recorded separately with exchange order IDs (entry slippage 0.02-1.2% vs signal; live exit timing has differed from signal exits). Short overlay flat since its 2026-08-19 stop.",
   "recentTrades": [
     {
@@ -107,10 +107,10 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "59,983",
-      "current": "85,662",
+      "current": "86,182",
       "size": "40% eq",
-      "pnl": "+42.8%",
-      "pnlNum": 42.8
+      "pnl": "+43.7%",
+      "pnlNum": 43.7
     }
   ],
   "monthlyReturns": [
@@ -197,12 +197,12 @@
         0.0,
         1.9,
         10.27,
-        4.2,
+        4.51,
         null,
         null,
         null
       ],
-      "ytd": 20.6,
+      "ytd": 21.0,
       "isLive": true
     }
   ]
