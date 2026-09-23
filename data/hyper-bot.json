@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-23T00:02:01.388237+00:00",
+  "lastUpdated": "2026-09-23T00:44:01.276619+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "Lessons Learned",
-      "value": "69",
+      "value": "70",
       "sub": "rules written from its own trades"
     }
   ],
@@ -29,10 +29,10 @@
       "symbol": "AGUERO",
       "direction": "Short",
       "entry": "86,075",
-      "current": "86,114",
+      "current": "86,402",
       "size": "1 BTC",
-      "pnl": "-$40",
-      "pnlNum": -40,
+      "pnl": "-$327",
+      "pnlNum": -327,
       "stop": "87,800",
       "targets": "83,931 / 82,799 / 75,608",
       "realized": "-",
@@ -433,5 +433,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $86,114"
+  "priceNote": "Unrealised P&L marked at $86,402"
 }
