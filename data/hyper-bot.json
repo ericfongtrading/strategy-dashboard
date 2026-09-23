@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-23T00:44:01.276619+00:00",
+  "lastUpdated": "2026-09-23T02:02:01.681646+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,13 +26,26 @@
   ],
   "positions": [
     {
+      "symbol": "GRIEZMANN",
+      "direction": "Short",
+      "entry": "86,414",
+      "current": "86,300",
+      "size": "1 BTC",
+      "pnl": "+$114",
+      "pnlNum": 114,
+      "stop": "87,800",
+      "targets": "83,931 / 82,799 / 75,608",
+      "realized": "-",
+      "open": "100%"
+    },
+    {
       "symbol": "AGUERO",
       "direction": "Short",
       "entry": "86,075",
-      "current": "86,402",
+      "current": "86,300",
       "size": "1 BTC",
-      "pnl": "-$327",
-      "pnlNum": -327,
+      "pnl": "-$225",
+      "pnlNum": -225,
       "stop": "87,800",
       "targets": "83,931 / 82,799 / 75,608",
       "realized": "-",
@@ -40,15 +53,6 @@
     }
   ],
   "plans": [
-    {
-      "symbol": "GRIEZMANN",
-      "direction": "Short",
-      "zone": "86,200 - 87,200",
-      "stop": "87,800",
-      "targets": "83,931 / 82,799 / 75,608",
-      "conviction": 4,
-      "status": "Waiting"
-    },
     {
       "symbol": "TOTTI",
       "direction": "Long",
@@ -433,5 +437,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $86,402"
+  "priceNote": "Unrealised P&L marked at $86,300"
 }
