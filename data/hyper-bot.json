@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-24T06:12:01.667872+00:00",
+  "lastUpdated": "2026-09-24T07:12:01.290435+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "GRIEZMANN",
       "direction": "Short",
       "entry": "86,414",
-      "current": "84,119",
+      "current": "84,019",
       "size": "1 BTC",
-      "pnl": "+$2,370",
-      "pnlNum": 2370,
+      "pnl": "+$2,435",
+      "pnlNum": 2435,
       "stop": "86,414 (BE)",
       "targets": "✓ 83,931 / 82,799 / 75,608",
       "realized": "+$878",
@@ -42,10 +42,10 @@
       "symbol": "AGUERO",
       "direction": "Short",
       "entry": "86,075",
-      "current": "84,119",
+      "current": "84,019",
       "size": "1 BTC",
-      "pnl": "+$2,031",
-      "pnlNum": 2031,
+      "pnl": "+$2,096",
+      "pnlNum": 2096,
       "stop": "86,075 (BE)",
       "targets": "✓ 83,931 / 82,799 / 75,608",
       "realized": "+$760",
@@ -75,7 +75,7 @@
       "symbol": "MALDINI",
       "direction": "Long",
       "zone": "82,100 - 82,600",
-      "stop": "79,800",
+      "stop": "79,000",
       "targets": "83,931 / 85,534 / 86,200",
       "conviction": 3,
       "status": "Waiting"
@@ -455,5 +455,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,119"
+  "priceNote": "Unrealised P&L marked at $84,019"
 }
