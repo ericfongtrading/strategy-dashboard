@@ -521,13 +521,14 @@ body {
 <div class="footer">
   <span>Auto-refreshes every 60s</span>
   <span class="footer-dot">&middot;</span>
-  <span>Data from <span class="mono">nq_live.json</span></span>
+  <span>Data from <a href="https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/data/nq_live.json" style="color:var(--text-dim)">nq_live.json</a></span>
   <span class="footer-dot">&middot;</span>
   <span>Last update: <span id="lastUpdate" class="mono">--</span></span>
 </div>
 
 <script>
-const DATA_URL = 'https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/data/nq_live.json';
+// GitHub API returns fresh content (no CDN cache). Public repo, no auth needed.
+const DATA_API = 'https://api.github.com/repos/ericfongtrading/strategy-dashboard/contents/data/nq_live.json';
 const REFRESH_SEC = 60;
 let countdown = REFRESH_SEC;
 let refreshInterval = null;
@@ -722,7 +723,9 @@ async function fetchData() {
   const icon = document.getElementById('refreshIcon');
   try {
     icon.classList.add('spin');
-    const resp = await fetch(DATA_URL + '?t=' + Date.now());
+    const resp = await fetch(DATA_API, {
+      headers: { 'Accept': 'application/vnd.github.raw+json' }
+    });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
     render(data);
