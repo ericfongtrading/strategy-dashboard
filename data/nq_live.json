@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-09-25T12:25:02Z",
+  "updated_utc": "2026-09-25T12:30:02Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "PAUSED",
   "emitter_pause_reason": "PAUSED by Eric 2026-09-24 \u2014 stop everything NQ on FTMO",
-  "ib_connected": true,
-  "heartbeat_age_sec": 556,
+  "ib_connected": false,
+  "heartbeat_age_sec": 856,
   "bot_log_tail": [
-    "2026-09-25 12:16:21,694 UTC [INFO] ============================================================",
-    "2026-09-25 12:16:28,534 UTC [INFO] Warm-up: replaying 4264 5-min bars",
-    "2026-09-25 12:16:30,147 UTC [INFO] Warm-up: replaying 2237 1-min bars",
-    "2026-09-25 12:16:30,503 UTC [INFO] Warm-up done.",
-    "2026-09-25 12:16:30,503 UTC [INFO] Subscribing to NQZ6 realtime bars (5s)"
+    "2026-09-25 12:27:10,019 UTC [INFO] ============================================================",
+    "2026-09-25 12:27:16,422 UTC [INFO] Warm-up: replaying 4266 5-min bars",
+    "2026-09-25 12:27:18,038 UTC [INFO] Warm-up: replaying 2248 1-min bars",
+    "2026-09-25 12:27:18,385 UTC [INFO] Warm-up done.",
+    "2026-09-25 12:27:18,386 UTC [INFO] Subscribing to NQZ6 realtime bars (5s)"
   ],
   "ib": {
     "fills": [],
