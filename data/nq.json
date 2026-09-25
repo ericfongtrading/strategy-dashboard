@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2026-09-25T04:30:29Z",
-  "basis": "Monthly figures are strategy returns - signal-level at deployed size, MNQ $2/pt, net of modelled cost $4.80/contract round-turn (incl. 1.88pt measured slippage). Recent trades are actual IB fills, net of commission. Live execution since Jul 2026.",
+  "basis": "CCI AM + Snapback + TBS (3 sleeves, 1 MNQ each). Monthly figures are strategy returns net of .80/RT cost (incl. 1.88pt measured slippage). Live execution since Sep 2026.",
   "recentTrades": [
     {
       "date": "2026-09-14",
@@ -58,115 +58,110 @@
     {
       "year": 2021,
       "months": [
-        0.0,
-        -0.6,
+        -0.0,
+        3.4,
+        3.7,
         0.3,
-        0.3,
-        0.3,
-        -0.2,
+        0.8,
+        -0.3,
         0.0,
-        0.0,
-        1.0,
-        -0.9,
-        0.2,
-        0.5
+        0.6,
+        -3.0,
+        0.6,
+        1.6,
+        1.3
       ],
-      "ytd": 0.8,
-      "isLive": false
+      "ytd": 9.0
     },
     {
       "year": 2022,
       "months": [
-        1.9,
-        3.2,
-        -0.1,
-        0.4,
-        5.2,
-        2.4,
-        -0.4,
-        0.5,
-        2.1,
-        2.1,
-        -1.5,
-        1.6
+        -0.8,
+        9.4,
+        6.3,
+        2.8,
+        7.5,
+        4.7,
+        -0.7,
+        -1.8,
+        3.9,
+        8.1,
+        -1.4,
+        5.0
       ],
-      "ytd": 18.7,
-      "isLive": false
+      "ytd": 43.0
     },
     {
       "year": 2023,
       "months": [
-        -1.2,
-        0.8,
-        -0.1,
-        0.4,
-        0.4,
-        0.7,
-        -0.7,
-        -0.7,
-        -0.7,
-        1.3,
-        0.1,
-        0.9
+        -1.6,
+        -0.3,
+        2.1,
+        1.5,
+        0.6,
+        0.0,
+        -0.6,
+        1.7,
+        -2.9,
+        1.6,
+        0.0,
+        1.9
       ],
-      "ytd": 1.1,
-      "isLive": false
+      "ytd": 3.9
     },
     {
       "year": 2024,
       "months": [
-        0.5,
-        0.3,
-        0.2,
-        -0.4,
-        -0.3,
-        0.4,
-        0.5,
-        -0.4,
-        2.4,
-        2.8,
-        0.2,
-        -0.4
+        3.0,
+        0.0,
+        0.0,
+        1.2,
+        0.0,
+        0.0,
+        4.0,
+        0.8,
+        -1.4,
+        2.3,
+        5.7,
+        0.0
       ],
-      "ytd": 5.8,
-      "isLive": false
+      "ytd": 15.7
     },
     {
       "year": 2025,
       "months": [
-        2.0,
+        3.2,
+        -3.4,
+        0.6,
+        8.5,
+        -1.4,
+        -0.4,
+        -0.7,
         1.0,
-        1.8,
-        5.6,
-        0.4,
-        -0.2,
-        -0.5,
-        0.2,
         0.0,
-        0.5,
-        1.8,
-        -0.6
+        5.2,
+        8.1,
+        1.1
       ],
-      "ytd": 12.5,
-      "isLive": false
+      "ytd": 21.8
     },
     {
       "year": 2026,
       "months": [
-        -1.0,
-        0.8,
-        6.0,
-        0.8,
-        1.9,
-        4.7,
-        -0.7,
-        2.7,
-        0.0,
+        1.1,
+        -0.1,
+        26.4,
+        0.9,
+        1.6,
+        10.4,
+        4.5,
+        4.5,
+        -0.4,
         null,
         null,
         null
       ],
-      "ytd": 15.9,
+      "ytd": 48.9,
       "isLive": true
     }
   ]
