@@ -1,15 +1,15 @@
 {
-  "updated_utc": "2026-09-25T12:33:47Z",
+  "updated_utc": "2026-09-25T12:35:02Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": false,
-  "heartbeat_age_sec": 1081,
+  "heartbeat_age_sec": 1156,
   "bot_log_tail": [
     "Peer closed connection. clientId 55 already in use?",
     "API connection failed: TimeoutError()",
-    "2026-09-25 08:32:34 ET [WARN] connect failed (TimeoutError()); retry in 60s",
+    "2026-09-25 08:33:54 ET [WARN] connect failed (TimeoutError()); retry in 60s",
     "Error 326, reqId -1: Unable to connect as the client id is already in use. Retry with a unique client id.",
     "Peer closed connection. clientId 55 already in use?"
   ],
