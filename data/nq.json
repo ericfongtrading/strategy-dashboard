@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2026-09-25T04:30:29Z",
-  "basis": "4 sleeves at 1 MNQ each on 8,540 capital (4x margin + 1.5x DD buffer). Returns net of .80/RT cost (incl. 1.88pt measured slippage). Live execution since Sep 2026.",
+  "basis": "5 sleeves (CCI_AM + VWAP_LONG_R3 + VWAP_SHORT_R1 + R3_RE + TBS) at 1 MNQ each on $28,540 capital. Returns net of $4.80/RT cost (incl. 1.88pt measured slippage). Drawdown measured intraday (minute-by-minute). Live execution since Sep 2026.",
   "recentTrades": [
     {
       "date": "2026-09-14",
@@ -50,119 +50,16 @@
       "pnl": "+$121",
       "pnlNum": 120.6,
       "rMultiple": "+0.5R",
-      "sleeve": "TLB_HYB40"
+      "sleeve": "VWAP_LONG_R3"
     }
   ],
   "positions": [],
   "monthlyReturns": [
-    {
-      "year": 2021,
-      "months": [
-        0.0,
-        -0.6,
-        0.3,
-        0.3,
-        0.3,
-        -0.2,
-        0.0,
-        0.0,
-        1.0,
-        -0.9,
-        0.2,
-        0.5
-      ],
-      "ytd": 0.9
-    },
-    {
-      "year": 2022,
-      "months": [
-        1.9,
-        3.2,
-        -0.1,
-        0.4,
-        5.2,
-        2.4,
-        -0.4,
-        0.5,
-        2.1,
-        2.1,
-        -1.5,
-        1.6
-      ],
-      "ytd": 17.4
-    },
-    {
-      "year": 2023,
-      "months": [
-        -1.2,
-        0.8,
-        -0.1,
-        0.4,
-        0.4,
-        0.7,
-        -0.7,
-        -0.7,
-        -0.7,
-        1.3,
-        0.1,
-        0.9
-      ],
-      "ytd": 1.2
-    },
-    {
-      "year": 2024,
-      "months": [
-        0.5,
-        0.3,
-        0.2,
-        -0.4,
-        -0.3,
-        0.4,
-        0.5,
-        -0.4,
-        2.4,
-        2.8,
-        0.2,
-        -0.4
-      ],
-      "ytd": 5.8
-    },
-    {
-      "year": 2025,
-      "months": [
-        2.0,
-        1.0,
-        1.8,
-        5.6,
-        0.4,
-        -0.2,
-        -0.5,
-        0.2,
-        0.0,
-        0.5,
-        1.8,
-        -0.6
-      ],
-      "ytd": 12.0
-    },
-    {
-      "year": 2026,
-      "months": [
-        -1.0,
-        0.8,
-        6.0,
-        0.8,
-        1.9,
-        4.7,
-        -0.7,
-        2.7,
-        null,
-        null,
-        null,
-        null
-      ],
-      "ytd": 15.2,
-      "isLive": true
-    }
+    { "year": 2021, "months": [0.0, -0.6, 0.3, 0.3, 0.3, -0.2, 0.0, 0.0, 1.0, -0.9, 0.2, 0.5], "ytd": 0.9 },
+    { "year": 2022, "months": [1.4, 3.0, -0.3, 1.3, 6.0, 2.7, -0.6, 0.2, 3.4, 2.9, -1.6, 1.8], "ytd": 20.2 },
+    { "year": 2023, "months": [-1.8, 1.0, -0.2, 0.5, 0.5, 0.8, -0.9, -0.8, -0.8, 1.8, 0.1, 1.1], "ytd": 1.3 },
+    { "year": 2024, "months": [0.6, 0.4, 0.2, -0.4, -0.4, 0.5, 0.6, -0.0, 2.9, 3.5, 0.2, -0.5], "ytd": 7.6 },
+    { "year": 2025, "months": [2.5, 0.1, 2.2, 8.5, 0.5, -0.3, -0.5, 0.3, 0.0, 0.7, 2.6, -0.9], "ytd": 15.7 },
+    { "year": 2026, "months": [-1.5, 0.8, 8.7, 1.7, 2.9, 7.4, -1.1, 4.3, -0.3, null, null, null], "ytd": 22.9, "isLive": true }
   ]
 }
