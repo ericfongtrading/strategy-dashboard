@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-09-25T12:35:02Z",
-  "regime": "BOTH_BULL",
+  "updated_utc": "2026-09-25T12:40:01Z",
+  "regime": "UNKNOWN",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
-  "ib_connected": false,
-  "heartbeat_age_sec": 1156,
+  "ib_connected": true,
+  "heartbeat_age_sec": 1,
   "bot_log_tail": [
-    "Peer closed connection. clientId 55 already in use?",
-    "API connection failed: TimeoutError()",
-    "2026-09-25 08:33:54 ET [WARN] connect failed (TimeoutError()); retry in 60s",
-    "Error 326, reqId -1: Unable to connect as the client id is already in use. Retry with a unique client id.",
-    "Peer closed connection. clientId 55 already in use?"
+    "2026-09-25 08:35:30 ET [INFO] Contract: MNQZ6 (expiry 20261218)",
+    "2026-09-25 08:35:32 ET [INFO] 1m bars (full): 2255 (2026-09-23 22:00:00+00:00 .. 2026-09-25 12:34:00+00:00)",
+    "2026-09-25 08:35:46 ET [INFO] 5m bars (full): 9060 (2026-08-11 12:35:31+00:00 .. 2026-09-25 12:30:00+00:00)",
+    "2026-09-25 08:35:48 ET [INFO] Daily closes: 251 (2025-09-25 .. 2026-09-24)",
+    "2026-09-25 08:35:48 ET [INFO] [TBS] warm-up: 2255 1-min bars, 150 15-min buckets, 14 pivots, 10 lines"
   ],
   "ib": {
     "fills": [],
