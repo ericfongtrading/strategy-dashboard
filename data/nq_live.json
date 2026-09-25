@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-09-25T13:35:01Z",
+  "updated_utc": "2026-09-25T13:40:01Z",
   "regime": "UNKNOWN",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
@@ -7,11 +7,11 @@
   "ib_connected": true,
   "heartbeat_age_sec": 0,
   "bot_log_tail": [
-    "2026-09-25 08:35:30 ET [INFO] Contract: MNQZ6 (expiry 20261218)",
-    "2026-09-25 08:35:32 ET [INFO] 1m bars (full): 2255 (2026-09-23 22:00:00+00:00 .. 2026-09-25 12:34:00+00:00)",
-    "2026-09-25 08:35:46 ET [INFO] 5m bars (full): 9060 (2026-08-11 12:35:31+00:00 .. 2026-09-25 12:30:00+00:00)",
     "2026-09-25 08:35:48 ET [INFO] Daily closes: 251 (2025-09-25 .. 2026-09-24)",
-    "2026-09-25 08:35:48 ET [INFO] [TBS] warm-up: 2255 1-min bars, 150 15-min buckets, 14 pivots, 10 lines"
+    "2026-09-25 08:35:48 ET [INFO] [TBS] warm-up: 2255 1-min bars, 150 15-min buckets, 14 pivots, 10 lines",
+    "2026-09-25 09:35:50 ET [INFO] 1m bars (full): 2315 (2026-09-23 22:00:00+00:00 .. 2026-09-25 13:34:00+00:00)",
+    "2026-09-25 09:36:05 ET [INFO] 5m bars (full): 9060 (2026-08-11 13:35:50+00:00 .. 2026-09-25 13:30:00+00:00)",
+    "2026-09-25 09:36:07 ET [INFO] Daily closes: 251 (2025-09-25 .. 2026-09-24)"
   ],
   "ib": {
     "fills": [],
