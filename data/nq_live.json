@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-09-25T22:40:01Z",
+  "updated_utc": "2026-09-25T22:45:02Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": false,
-  "heartbeat_age_sec": 21271,
+  "heartbeat_age_sec": 21572,
   "bot_log_tail": [
-    "2026-09-25 18:39:49 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55",
+    "2026-09-25 18:44:58 ET [WARN] IB disconnected \u2014 reconnecting",
+    "2026-09-25 18:45:01 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55",
     "API connection failed: ConnectionRefusedError(111, \"Connect call failed ('127.0.0.1', 7497)\")",
     "Make sure API port on TWS/IBG is open",
-    "2026-09-25 18:39:49 ET [ERROR] main loop error: ConnectionRefusedError(111, \"Connect call failed ('127.0.0.1', 7497)\")",
-    "2026-09-25 18:39:59 ET [WARN] IB disconnected \u2014 reconnecting"
+    "2026-09-25 18:45:01 ET [ERROR] main loop error: ConnectionRefusedError(111, \"Connect call failed ('127.0.0.1', 7497)\")"
   ],
   "ib": {
     "fills": [],
