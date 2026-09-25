@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-09-25T12:20:02Z",
+  "updated_utc": "2026-09-25T12:25:02Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "PAUSED",
   "emitter_pause_reason": "PAUSED by Eric 2026-09-24 \u2014 stop everything NQ on FTMO",
   "ib_connected": true,
-  "heartbeat_age_sec": 256,
+  "heartbeat_age_sec": 556,
   "bot_log_tail": [
     "2026-09-25 12:16:21,694 UTC [INFO] ============================================================",
     "2026-09-25 12:16:28,534 UTC [INFO] Warm-up: replaying 4264 5-min bars",
