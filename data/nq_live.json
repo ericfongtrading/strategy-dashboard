@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-09-25T14:10:01Z",
+  "updated_utc": "2026-09-25T14:15:02Z",
   "regime": "UNKNOWN",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": true,
-  "heartbeat_age_sec": 0,
+  "heartbeat_age_sec": 1,
   "bot_log_tail": [
     "2026-09-25 08:35:48 ET [INFO] Daily closes: 251 (2025-09-25 .. 2026-09-24)",
     "2026-09-25 08:35:48 ET [INFO] [TBS] warm-up: 2255 1-min bars, 150 15-min buckets, 14 pivots, 10 lines",
