@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-09-25T13:00:02Z",
+  "updated_utc": "2026-09-25T13:05:02Z",
   "regime": "UNKNOWN",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": true,
-  "heartbeat_age_sec": 0,
+  "heartbeat_age_sec": 1,
   "bot_log_tail": [
     "2026-09-25 08:35:30 ET [INFO] Contract: MNQZ6 (expiry 20261218)",
     "2026-09-25 08:35:32 ET [INFO] 1m bars (full): 2255 (2026-09-23 22:00:00+00:00 .. 2026-09-25 12:34:00+00:00)",
