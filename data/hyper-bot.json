@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-26T00:04:01.330372+00:00",
+  "lastUpdated": "2026-09-26T12:06:01.314871+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "GRIEZMANN",
       "direction": "Short",
       "entry": "86,414",
-      "current": "84,018",
+      "current": "84,100",
       "size": "1 BTC",
-      "pnl": "+$2,436",
-      "pnlNum": 2436,
+      "pnl": "+$2,382",
+      "pnlNum": 2382,
       "stop": "86,414 (BE)",
       "targets": "✓ 83,931 / 82,799 / 75,608",
       "realized": "+$878",
@@ -42,10 +42,10 @@
       "symbol": "AGUERO",
       "direction": "Short",
       "entry": "86,075",
-      "current": "84,018",
+      "current": "84,100",
       "size": "1 BTC",
-      "pnl": "+$2,097",
-      "pnlNum": 2097,
+      "pnl": "+$2,043",
+      "pnlNum": 2043,
       "stop": "86,075 (BE)",
       "targets": "✓ 83,931 / 82,799 / 75,608",
       "realized": "+$760",
@@ -446,5 +446,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,018"
+  "priceNote": "Unrealised P&L marked at $84,100"
 }
