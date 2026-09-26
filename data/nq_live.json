@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-09-26T01:35:01Z",
+  "updated_utc": "2026-09-26T01:40:01Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": false,
-  "heartbeat_age_sec": 31771,
+  "heartbeat_age_sec": 32071,
   "bot_log_tail": [
-    "2026-09-25 21:33:57 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55",
+    "2026-09-25 21:38:58 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55",
     "API connection failed: TimeoutError()",
-    "2026-09-25 21:34:27 ET [ERROR] main loop error: TimeoutError()",
-    "2026-09-25 21:34:37 ET [WARN] IB disconnected \u2014 reconnecting",
-    "2026-09-25 21:34:40 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55"
+    "2026-09-25 21:39:29 ET [ERROR] main loop error: TimeoutError()",
+    "2026-09-25 21:39:39 ET [WARN] IB disconnected \u2014 reconnecting",
+    "2026-09-25 21:39:42 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55"
   ],
   "ib": {
     "fills": [],
