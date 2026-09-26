@@ -1,21 +1,21 @@
 {
- "lastUpdated": "2026-09-26T20:07:06.698984+00:00",
+ "lastUpdated": "2026-09-26T21:07:04.984970+00:00",
  "basis": "Measured on a $100,000 model book; every trade risks the same fixed share of the book, so the size follows the stop. Trades, positions and pending plans update automatically.",
  "headline": [
   {
    "label": "Cumulative P&L",
-   "value": "$+8,432",
+   "value": "$+8,557",
    "tone": "good",
-   "sub": "36 trades, fixed risk per trade"
+   "sub": "37 trades, fixed risk per trade"
   },
   {
    "label": "Win Rate",
-   "value": "44%",
-   "sub": "16W / 20L"
+   "value": "46%",
+   "sub": "17W / 20L"
   },
   {
    "label": "Profit Factor",
-   "value": "1.77",
+   "value": "1.78",
    "sub": "gross win / gross loss"
   },
   {
@@ -25,6 +25,16 @@
   }
  ],
  "recentTrades": [
+  {
+   "date": "2026-09-26",
+   "symbol": "ETH",
+   "direction": "Long",
+   "entry": "2,648",
+   "exit": "2,667",
+   "pnl": "$+125",
+   "pnlNum": 125.27,
+   "rMultiple": "+0.12R"
+  },
   {
    "date": "2026-09-25",
    "symbol": "SOL",
@@ -404,111 +414,100 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "83,503",
-   "current": "84,052",
+   "current": "84,111",
    "size": "$25,452",
    "stop": "83,183",
    "targets": "rides the trend",
-   "pnl": "$+167",
-   "pnlNum": 167.36
-  },
-  {
-   "symbol": "ETH",
-   "direction": "Long",
-   "entry": "2,648",
-   "current": "2,684",
-   "size": "$20,152",
-   "stop": "2,667",
-   "targets": "rides the trend",
-   "pnl": "$+276",
-   "pnlNum": 275.91
+   "pnl": "$+185",
+   "pnlNum": 185.23
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.35",
-   "current": "121.06",
+   "current": "120.73",
    "size": "$17,424",
    "stop": "115.86",
    "targets": "rides the trend",
-   "pnl": "$+1,185",
-   "pnlNum": 1184.95
+   "pnl": "$+1,134",
+   "pnlNum": 1134.22
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.69",
-   "current": "121.06",
+   "current": "120.73",
    "size": "$26,704 (half banked)",
    "stop": "113.69",
    "targets": "118.34 banked \u00b7 rest rides",
-   "pnl": "$+1,730",
-   "pnlNum": 1729.82
+   "pnl": "$+1,652",
+   "pnlNum": 1652.31
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "81,490",
-   "current": "84,052",
+   "current": "84,111",
    "size": "$26,158 (half banked)",
    "stop": "81,490",
    "targets": "84,650 banked \u00b7 next 84,650",
-   "pnl": "$+823",
-   "pnlNum": 822.55
+   "pnl": "$+841",
+   "pnlNum": 841.37
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "104.94",
-   "current": "121.06",
+   "current": "120.73",
    "size": "$9,389 (half banked)",
    "stop": "104.94",
    "targets": "110.56 banked \u00b7 rest rides",
-   "pnl": "$+1,443",
-   "pnlNum": 1442.81
+   "pnl": "$+1,413",
+   "pnlNum": 1413.28
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "76,250",
-   "current": "84,052",
+   "current": "84,111",
    "size": "$6,571 (half banked)",
    "stop": "82,300",
    "targets": "79,700 banked \u00b7 next 87,800",
-   "pnl": "$+672",
-   "pnlNum": 672.31
+   "pnl": "$+677",
+   "pnlNum": 677.36
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652",
-   "current": "84,052",
+   "current": "84,111",
    "size": "$5,694",
    "stop": "68,966",
    "targets": "rides the trend",
-   "pnl": "$+632",
-   "pnlNum": 632.27
+   "pnl": "$+637",
+   "pnlNum": 636.68
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,398",
-   "current": "2,684",
+   "current": "2,679",
    "size": "$4,006",
    "stop": "2,097",
    "targets": "rides the trend",
-   "pnl": "$+477",
-   "pnlNum": 477.16
+   "pnl": "$+469",
+   "pnlNum": 468.79
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464",
-   "current": "2,684",
+   "current": "2,679",
    "size": "$15,000 (half banked)",
    "stop": "2,564",
    "targets": "2,666 banked \u00b7 next 2,800 / 3,000",
-   "pnl": "$+1,340",
-   "pnlNum": 1340.44
+   "pnl": "$+1,310",
+   "pnlNum": 1309.94
   }
  ],
  "plans": [
