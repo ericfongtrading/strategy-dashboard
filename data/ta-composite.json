@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-27T04:00:23Z",
+  "lastUpdated": "2026-09-27T08:00:18Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+226.03 across 43 closed trades, 47% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -80,28 +80,28 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "84,376",
-      "current": "84,382",
+      "current": "84,770.5",
       "size": "0.03791",
-      "pnl": "$-0.19",
-      "pnlNum": -0.19
+      "pnl": "$+14.06",
+      "pnlNum": 14.06
     },
     {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,697.15",
+      "current": "2,718.45",
       "size": "0.2373",
-      "pnl": "$-5.48",
-      "pnlNum": -5.48
+      "pnl": "$-0.69",
+      "pnlNum": -0.69
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "13.136",
-      "current": "14.112",
+      "current": "14.4595",
       "size": "39.3",
-      "pnl": "$+38.32",
-      "pnlNum": 38.32
+      "pnl": "$+51.84",
+      "pnlNum": 51.84
     }
   ],
   "liveRealisedPnl": 226.03,
@@ -280,12 +280,12 @@
         4.57,
         -0.41,
         -0.26,
-        1.91,
+        2.0,
         null,
         null,
         null
       ],
-      "ytd": 10.86,
+      "ytd": 10.96,
       "isLive": true
     }
   ]
