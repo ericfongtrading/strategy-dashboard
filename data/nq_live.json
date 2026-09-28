@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-09-28T00:40:01Z",
+  "updated_utc": "2026-09-28T00:45:01Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
-  "ib_connected": false,
-  "heartbeat_age_sec": 201271,
+  "ib_connected": true,
+  "heartbeat_age_sec": 0,
   "bot_log_tail": [
-    "2026-09-27 20:39:17 ET [WARN] IB disconnected \u2014 reconnecting",
-    "2026-09-27 20:39:20 ET [INFO] Connecting to IB: 127.0.0.1:7497 clientId=55",
-    "API connection failed: TimeoutError()",
-    "2026-09-27 20:39:50 ET [ERROR] main loop error: TimeoutError()",
-    "2026-09-27 20:40:00 ET [WARN] IB disconnected \u2014 reconnecting"
+    "2026-09-27 20:41:32 ET [INFO] New day: 2026-09-27",
+    "2026-09-27 20:41:36 ET [INFO] 1m bars (full): 1541 (2026-09-24 22:00:00+00:00 .. 2026-09-28 00:40:00+00:00)",
+    "2026-09-27 20:41:40 ET [INFO] 5m bars (full): 8508 (2026-08-14 00:41:36+00:00 .. 2026-09-28 00:35:00+00:00)",
+    "2026-09-27 20:41:43 ET [INFO] Daily closes: 250 (2025-09-29 00:00:00 .. 2026-09-25 00:00:00)",
+    "2026-09-27 20:41:43 ET [INFO] [VWAP] warm-up: fed 8508 5m bars, long streak=2, short streak=0"
   ],
   "ib": {
     "fills": [],
