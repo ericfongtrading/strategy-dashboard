@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-09-28T13:15:01Z",
+  "updated_utc": "2026-09-28T13:20:02Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": true,
-  "heartbeat_age_sec": 0,
+  "heartbeat_age_sec": 1,
   "bot_log_tail": [
     "Error 1102, reqId -1: Connectivity between IBKR and Trader Workstation has been restored - data maintained. All data farms are connected: hfarm; cashfarm; usfuture; usopt.nj; usfarm; apachmds; cashhmds; ushmds; secdefhk.",
     "2026-09-28 08:41:39 ET [INFO] 1m bars (full): 2261 (2026-09-24 22:00:00+00:00 .. 2026-09-28 12:40:00+00:00)",
