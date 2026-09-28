@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-28T15:02:48Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+23.58 (+0.67%): realised $+24.15 across 29 closed trades (41% winners), open $-0.57. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09. Costs are charged at 5 bp a side; measured against the live fill record the true figure is 4.74 bp (4.50 fee, 0.24 slippage), so the backtest is if anything slightly conservative. From 2026-09-24 entries rest as post-only orders rather than crossing the spread, which should lower that further \u2014 no figure here assumes it yet.",
+  "lastUpdated": "2026-09-28T17:02:51Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+6.46 (+0.18%): realised $+24.15 across 29 closed trades (41% winners), open $-17.69. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09. Costs are charged at 5 bp a side; measured against the live fill record the true figure is 4.74 bp (4.50 fee, 0.24 slippage), so the backtest is if anything slightly conservative. From 2026-09-24 entries rest as post-only orders rather than crossing the spread, which should lower that further \u2014 no figure here assumes it yet.",
   "recentTrades": [
     {
       "date": "2026-09-28",
@@ -128,104 +128,104 @@
       "symbol": "BNB",
       "direction": "Long",
       "entry": "778.05",
-      "current": "758.45",
+      "current": "766.71",
       "size": "0.225",
-      "pnl": "$-4.40",
-      "pnlNum": -4.4
+      "pnl": "$-2.55",
+      "pnlNum": -2.55
     },
     {
       "symbol": "SOL",
       "direction": "Long",
       "entry": "107.14",
-      "current": "118.20",
+      "current": "119.06",
       "size": "1.34",
-      "pnl": "$+14.84",
-      "pnlNum": 14.84
+      "pnl": "$+15.99",
+      "pnlNum": 15.99
     },
     {
       "symbol": "HYPE",
       "direction": "Short",
       "entry": "91.21",
-      "current": "87.42",
+      "current": "88.77",
       "size": "1.49",
-      "pnl": "$+5.64",
-      "pnlNum": 5.64
+      "pnl": "$+3.59",
+      "pnlNum": 3.59
     },
     {
       "symbol": "LINK",
       "direction": "Short",
       "entry": "13.94",
-      "current": "14.20",
-      "size": "8",
-      "pnl": "$-2.04",
-      "pnlNum": -2.04
+      "current": "15.37",
+      "size": "7.3",
+      "pnl": "$-10.68",
+      "pnlNum": -10.68
     },
     {
       "symbol": "ADA",
       "direction": "Short",
       "entry": "0.224716",
-      "current": "0.24141",
+      "current": "0.245515",
       "size": "424",
-      "pnl": "$-7.09",
-      "pnlNum": -7.09
+      "pnl": "$-8.86",
+      "pnlNum": -8.86
     },
     {
       "symbol": "SUI",
       "direction": "Short",
       "entry": "1.1746",
-      "current": "1.15635",
+      "current": "1.16085",
       "size": "76",
-      "pnl": "$+1.41",
-      "pnlNum": 1.41
+      "pnl": "$+1.04",
+      "pnlNum": 1.04
     },
     {
       "symbol": "ZEC",
       "direction": "Short",
       "entry": "1,578",
-      "current": "1,535",
+      "current": "1,524",
       "size": "0.05",
-      "pnl": "$+2.12",
-      "pnlNum": 2.12
+      "pnl": "$+2.69",
+      "pnlNum": 2.69
     },
     {
       "symbol": "kPEPE",
       "direction": "Short",
       "entry": "0.004087",
-      "current": "0.004155",
+      "current": "0.00421",
       "size": "17753",
-      "pnl": "$-1.20",
-      "pnlNum": -1.2
-    },
-    {
-      "symbol": "WLD",
-      "direction": "Short",
-      "entry": "0.48547",
-      "current": "0.48391",
-      "size": "143.6",
-      "pnl": "$+0.24",
-      "pnlNum": 0.24
+      "pnl": "$-2.21",
+      "pnlNum": -2.21
     },
     {
       "symbol": "PUMP",
       "direction": "Short",
       "entry": "0.004866",
-      "current": "0.004998",
+      "current": "0.005348",
       "size": "13719",
-      "pnl": "$-1.78",
-      "pnlNum": -1.78
+      "pnl": "$-6.72",
+      "pnlNum": -6.72
+    },
+    {
+      "symbol": "WLD",
+      "direction": "Short",
+      "entry": "0.48547",
+      "current": "0.49712",
+      "size": "143.6",
+      "pnl": "$-1.68",
+      "pnlNum": -1.68
     },
     {
       "symbol": "ENA",
       "direction": "Short",
       "entry": "0.22079",
-      "current": "0.25968",
+      "current": "0.259615",
       "size": "214",
-      "pnl": "$-8.31",
-      "pnlNum": -8.31
+      "pnl": "$-8.29",
+      "pnlNum": -8.29
     }
   ],
   "liveRealisedPnl": 24.15,
-  "liveOpenPnl": -0.57,
+  "liveOpenPnl": -17.69,
   "liveClosedTrades": 29,
   "monthlyReturns": [
     {
@@ -293,12 +293,12 @@
         2.9,
         -0.07,
         -4.43,
-        0.38,
+        -0.14,
         null,
         null,
         null
       ],
-      "ytd": 16.91,
+      "ytd": 16.31,
       "isLive": true
     }
   ]
