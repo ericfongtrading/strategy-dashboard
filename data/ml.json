@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-28T11:07:05.073971+00:00",
+ "lastUpdated": "2026-09-28T12:07:04.739574+00:00",
  "basis": "Measured on a $100,000 model book; every trade risks the same fixed share of the book, so the size follows the stop. Trades, positions and pending plans update automatically.",
  "headline": [
   {
@@ -484,81 +484,105 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "82,600",
-   "current": "83,006",
+   "current": "83,423",
    "size": "$13,337",
    "stop": "80,900",
    "targets": "87,396 / 90,000",
-   "pnl": "$+66",
-   "pnlNum": 65.56
+   "pnl": "$+133",
+   "pnlNum": 132.93
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.69",
-   "current": "118.68",
+   "current": "119.66",
    "size": "$26,704 (half banked)",
    "stop": "113.69",
    "targets": "118.34 banked \u00b7 rest rides",
-   "pnl": "$+1,171",
-   "pnlNum": 1170.83
+   "pnl": "$+1,401",
+   "pnlNum": 1401.0
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "81,490",
-   "current": "83,006",
+   "current": "83,423",
    "size": "$26,158 (half banked)",
    "stop": "81,490",
    "targets": "84,650 banked \u00b7 next 84,650",
-   "pnl": "$+487",
-   "pnlNum": 486.79
+   "pnl": "$+621",
+   "pnlNum": 620.74
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "76,250",
-   "current": "83,006",
+   "current": "83,423",
    "size": "$6,571 (half banked)",
    "stop": "82,300",
    "targets": "79,700 banked \u00b7 next 87,800",
-   "pnl": "$+582",
-   "pnlNum": 582.18
+   "pnl": "$+618",
+   "pnlNum": 618.14
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652",
-   "current": "83,006",
+   "current": "83,423",
    "size": "$5,694",
    "stop": "68,966",
    "targets": "rides the trend",
-   "pnl": "$+554",
-   "pnlNum": 553.53
+   "pnl": "$+585",
+   "pnlNum": 584.94
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,398",
-   "current": "2,661",
+   "current": "2,688",
    "size": "$4,006",
    "stop": "2,097",
    "targets": "rides the trend",
-   "pnl": "$+439",
-   "pnlNum": 438.53
+   "pnl": "$+483",
+   "pnlNum": 483.07
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464",
-   "current": "2,661",
+   "current": "2,688",
    "size": "$15,000 (half banked)",
    "stop": "2,564",
    "targets": "2,666 banked \u00b7 next 2,800 / 3,000",
-   "pnl": "$+1,200",
-   "pnlNum": 1199.7
+   "pnl": "$+1,362",
+   "pnlNum": 1361.99
   }
  ],
  "plans": [
+  {
+   "symbol": "BTC",
+   "direction": "Long",
+   "zone": "83,083\u201383,083",
+   "stop": "81,123",
+   "targets": "rides the trend",
+   "status": "resting"
+  },
+  {
+   "symbol": "ETH",
+   "direction": "Long",
+   "zone": "2,669\u20132,669",
+   "stop": "2,587",
+   "targets": "rides the trend",
+   "status": "resting"
+  },
+  {
+   "symbol": "SOL",
+   "direction": "Long",
+   "zone": "118.73\u2013118.73",
+   "stop": "111.82",
+   "targets": "rides the trend",
+   "status": "resting"
+  },
   {
    "symbol": "BTC",
    "direction": "Long",
