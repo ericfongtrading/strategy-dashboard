@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-09-28T05:05:01Z",
+  "updated_utc": "2026-09-28T05:10:01Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": true,
-  "heartbeat_age_sec": 1,
+  "heartbeat_age_sec": 0,
   "bot_log_tail": [
     "2026-09-28 00:00:00 ET [INFO] New day: 2026-09-28",
     "2026-09-28 00:41:35 ET [INFO] 1m bars (full): 1781 (2026-09-24 22:00:00+00:00 .. 2026-09-28 04:40:00+00:00)",
