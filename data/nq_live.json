@@ -1,17 +1,17 @@
 {
-  "updated_utc": "2026-09-28T14:40:01Z",
+  "updated_utc": "2026-09-28T14:45:01Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": true,
-  "heartbeat_age_sec": 0,
+  "heartbeat_age_sec": 1,
   "bot_log_tail": [
-    "2026-09-28 08:41:56 ET [INFO] [VWAP] warm-up: fed 8508 5m bars, long streak=0, short streak=0",
-    "2026-09-28 09:41:40 ET [INFO] 1m bars (full): 2321 (2026-09-24 22:00:00+00:00 .. 2026-09-28 13:40:00+00:00)",
-    "2026-09-28 09:41:54 ET [INFO] 5m bars (full): 8508 (2026-08-14 13:41:39+00:00 .. 2026-09-28 13:35:00+00:00)",
-    "2026-09-28 09:41:57 ET [INFO] Daily closes: 251 (2025-09-29 00:00:00 .. 2026-09-28 00:00:00)",
-    "2026-09-28 09:41:57 ET [INFO] [VWAP] warm-up: fed 8508 5m bars, long streak=0, short streak=0"
+    "2026-09-28 09:41:57 ET [INFO] [VWAP] warm-up: fed 8508 5m bars, long streak=0, short streak=0",
+    "2026-09-28 10:41:40 ET [INFO] 1m bars (full): 2381 (2026-09-24 22:00:00+00:00 .. 2026-09-28 14:40:00+00:00)",
+    "2026-09-28 10:41:54 ET [INFO] 5m bars (full): 8508 (2026-08-14 14:41:40+00:00 .. 2026-09-28 14:35:00+00:00)",
+    "2026-09-28 10:41:57 ET [INFO] Daily closes: 251 (2025-09-29 00:00:00 .. 2026-09-28 00:00:00)",
+    "2026-09-28 10:41:57 ET [INFO] [VWAP] warm-up: fed 8508 5m bars, long streak=0, short streak=0"
   ],
   "ib": {
     "fills": [],
