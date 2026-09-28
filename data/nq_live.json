@@ -1,11 +1,11 @@
 {
-  "updated_utc": "2026-09-28T15:30:01Z",
+  "updated_utc": "2026-09-28T15:35:01Z",
   "regime": "BOTH_BULL",
   "bot_status": "RUNNING",
   "emitter_status": "STOPPED",
   "emitter_pause_reason": "service not active",
   "ib_connected": true,
-  "heartbeat_age_sec": 0,
+  "heartbeat_age_sec": 1,
   "bot_log_tail": [
     "2026-09-28 09:41:57 ET [INFO] [VWAP] warm-up: fed 8508 5m bars, long streak=0, short streak=0",
     "2026-09-28 10:41:40 ET [INFO] 1m bars (full): 2381 (2026-09-24 22:00:00+00:00 .. 2026-09-28 14:40:00+00:00)",
