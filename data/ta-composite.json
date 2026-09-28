@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-09-28T16:00:22Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+191.44 across 45 closed trades, 47% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-09-28T20:00:27Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+237.37 across 48 closed trades, 50% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
       "date": "2026-09-23",
@@ -80,23 +80,23 @@
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,678.05",
+      "current": "2,673.55",
       "size": "0.2373",
-      "pnl": "$-10.15",
-      "pnlNum": -10.15
+      "pnl": "$-10.63",
+      "pnlNum": -10.63
     },
     {
-      "symbol": "LINK",
+      "symbol": "XLM",
       "direction": "Long",
-      "entry": "13.136",
-      "current": "14.429",
-      "size": "23.1",
-      "pnl": "$+29.43",
-      "pnlNum": 29.43
+      "entry": "0.227672",
+      "current": "0.22717",
+      "size": "5963",
+      "pnl": "$-0.01",
+      "pnlNum": -0.01
     }
   ],
-  "liveRealisedPnl": 191.44,
-  "liveClosedTrades": 45,
+  "liveRealisedPnl": 237.37,
+  "liveClosedTrades": 48,
   "monthlyReturns": [
     {
       "year": 2017,
@@ -271,12 +271,12 @@
         4.57,
         -0.41,
         -0.26,
-        1.76,
+        1.8,
         null,
         null,
         null
       ],
-      "ytd": 10.7,
+      "ytd": 10.74,
       "isLive": true
     }
   ]
