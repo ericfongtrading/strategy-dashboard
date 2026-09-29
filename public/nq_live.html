@@ -56,7 +56,8 @@ async function refresh(){
  $('connection').textContent=stale?'Published data is stale. Do not infer current trading status.':'Publication is fresh. Broker connectivity requires each source’s own heartbeat.';$('connection').className=stale?'stale':'muted';
  $('updated').textContent='Published '+utc(d.updated_utc)+' UTC · nq4-cci05-v1';
  const active=Object.values(d.lanes).some(l=>l.state==='ACTIVE');
- $('deployment').innerHTML=active?'<strong>Forward telemetry received.</strong> Check each category’s state and heartbeat independently. A missing or stale venue is not assumed to be trading.':'<strong>Selected version is not confirmed active.</strong> Execution integration and broker acceptance checks are still required. '+(d.legacy_entries_disabled?'The old runtime’s entry-disable flag is present. ':'')+'Do not remove the old pause flag to activate this version.';
+ const warming=d.lanes?.ib?.warmup_verified===false;
+ $('deployment').innerHTML=active?'<strong>Forward telemetry received.</strong> Check each category’s state and heartbeat independently. A missing or stale venue is not assumed to be trading.':'<strong>Automatic trading is disabled.</strong> '+(warming?'Indicator history is incomplete; the selected four-sleeve strategy is not ready to trade. ':'')+'Connected observation is not live execution. Broker execution acceptance remains unverified. '+(d.legacy_entries_disabled?'The old five-sleeve runtime remains paused. ':'');
  }catch(error){$('connection').textContent='Data unavailable: '+error.message+'. '+(dataset?'Last loaded records are retained; status is unverified.':'No example trades or assumed balances are displayed.');$('connection').className='stale';$('deployment').textContent='Current activation status is unverified. This dashboard does not activate trading.';}finally{$('refresh').disabled=false}
 }
 for(const id of ['sleeve','state','venue'])$(id).addEventListener('change',render);
