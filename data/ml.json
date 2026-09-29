@@ -1,27 +1,26 @@
 {
- "lastUpdated": "2026-09-29T08:07:04.458184+00:00",
- "basis": "Measured on a $100,000 model book; every trade risks the same fixed share of the book, so the size follows the stop. Trades, positions and pending plans update automatically.",
+ "lastUpdated": "2026-09-29T09:07:01+00:00",
+ "basis": "ML Bot V2: one continuing paper account. Inherited balance $109,906.26 at 2026-09-29; original capital $100,000. Legacy history preserved, not revalidated. Closed rows include partial exits. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow. Latest mark UTC epoch 1790672400.",
  "headline": [
   {
-   "label": "Cumulative P&L",
-   "value": "$+9,906",
-   "tone": "good",
-   "sub": "47 trades, fixed risk per trade"
+   "label": "Realized balance",
+   "value": "$109,906.26",
+   "sub": "Continuing original account"
   },
   {
-   "label": "Win Rate",
-   "value": "45%",
-   "sub": "21W / 26L"
+   "label": "Marked equity",
+   "value": "$115,653.21",
+   "sub": "Balance plus open P&L"
   },
   {
-   "label": "Profit Factor",
-   "value": "1.79",
-   "sub": "gross win / gross loss"
+   "label": "P&L since upgrade",
+   "value": "$+0.00",
+   "sub": "Realized after handover; not lifetime profit"
   },
   {
-   "label": "Lessons Learned",
-   "value": "13",
-   "sub": "losses reviewed; 1 rule hard-coded after a 6y backtest"
+   "label": "Open positions",
+   "value": "8",
+   "sub": "0 pending plans"
   }
  ],
  "recentTrades": [
@@ -31,19 +30,21 @@
    "direction": "Long",
    "entry": "118.90",
    "exit": "117.25",
-   "pnl": "$-302",
+   "pnl": "$-302.16",
    "pnlNum": -302.16,
-   "rMultiple": "-0.27R"
+   "rMultiple": "-0.27R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-29",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "81,490",
-   "exit": "83,492",
-   "pnl": "$+616",
+   "entry": "81,489.55",
+   "exit": "83,491.66",
+   "pnl": "$+616.20",
    "pnlNum": 616.2,
-   "rMultiple": "+1.21R"
+   "rMultiple": "+1.21R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
@@ -51,29 +52,32 @@
    "direction": "Long",
    "entry": "118.73",
    "exit": "117.57",
-   "pnl": "$-204",
+   "pnl": "$-203.73",
    "pnlNum": -203.73,
-   "rMultiple": "-0.19R"
+   "rMultiple": "-0.19R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "83,347",
-   "exit": "82,958",
-   "pnl": "$-266",
+   "entry": "83,346.93",
+   "exit": "82,957.70",
+   "pnl": "$-265.67",
    "pnlNum": -265.67,
-   "rMultiple": "-0.24R"
+   "rMultiple": "-0.24R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,652",
-   "exit": "2,642",
-   "pnl": "$-182",
+   "entry": "2,652.35",
+   "exit": "2,641.74",
+   "pnl": "$-182.14",
    "pnlNum": -182.14,
-   "rMultiple": "-0.16R"
+   "rMultiple": "-0.16R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
@@ -81,9 +85,10 @@
    "direction": "Long",
    "entry": "119.87",
    "exit": "118.04",
-   "pnl": "$-314",
+   "pnl": "$-313.80",
    "pnlNum": -313.8,
-   "rMultiple": "-0.28R"
+   "rMultiple": "-0.28R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
@@ -91,9 +96,10 @@
    "direction": "Long",
    "entry": "104.94",
    "exit": "119.84",
-   "pnl": "$+1,323",
+   "pnl": "$+1,323.41",
    "pnlNum": 1323.41,
-   "rMultiple": "+5.26R"
+   "rMultiple": "+5.26R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
@@ -101,39 +107,43 @@
    "direction": "Long",
    "entry": "113.35",
    "exit": "119.81",
-   "pnl": "$+975",
+   "pnl": "$+974.58",
    "pnlNum": 974.58,
-   "rMultiple": "+0.91R"
+   "rMultiple": "+0.91R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "83,503",
-   "exit": "83,830",
-   "pnl": "$+74",
+   "entry": "83,502.94",
+   "exit": "83,829.62",
+   "pnl": "$+74.07",
    "pnlNum": 74.07,
-   "rMultiple": "+0.07R"
+   "rMultiple": "+0.07R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-28",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,697",
-   "exit": "2,665",
-   "pnl": "$-372",
+   "entry": "2,696.60",
+   "exit": "2,664.52",
+   "pnl": "$-371.98",
    "pnlNum": -371.98,
-   "rMultiple": "-0.34R"
+   "rMultiple": "-0.34R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-26",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,648",
-   "exit": "2,667",
-   "pnl": "$+125",
+   "entry": "2,647.94",
+   "exit": "2,667.06",
+   "pnl": "$+125.27",
    "pnlNum": 125.27,
-   "rMultiple": "+0.12R"
+   "rMultiple": "+0.12R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-25",
@@ -141,29 +151,32 @@
    "direction": "Long",
    "entry": "113.69",
    "exit": "118.34",
-   "pnl": "$+1,079",
+   "pnl": "$+1,079.23",
    "pnlNum": 1079.23,
-   "rMultiple": "+1.98R"
+   "rMultiple": "+1.98R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-24",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,618",
-   "exit": "2,618",
-   "pnl": "$-26",
+   "entry": "2,617.88",
+   "exit": "2,617.61",
+   "pnl": "$-25.53",
    "pnlNum": -25.53,
-   "rMultiple": "-0.05R"
+   "rMultiple": "-0.05R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-24",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,656",
-   "exit": "2,647",
-   "pnl": "$-93",
+   "entry": "2,656.47",
+   "exit": "2,647.40",
+   "pnl": "$-92.80",
    "pnlNum": -92.8,
-   "rMultiple": "-0.09R"
+   "rMultiple": "-0.09R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-24",
@@ -171,49 +184,54 @@
    "direction": "Long",
    "entry": "113.87",
    "exit": "112.99",
-   "pnl": "$-158",
+   "pnl": "$-157.87",
    "pnlNum": -157.87,
-   "rMultiple": "-0.14R"
+   "rMultiple": "-0.14R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-24",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "83,942",
-   "exit": "83,492",
-   "pnl": "$-168",
+   "entry": "83,942.40",
+   "exit": "83,491.66",
+   "pnl": "$-167.68",
    "pnlNum": -167.68,
-   "rMultiple": "-0.16R"
+   "rMultiple": "-0.16R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-24",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "84,004",
-   "exit": "83,856",
-   "pnl": "$-76",
+   "entry": "84,004.40",
+   "exit": "83,855.68",
+   "pnl": "$-75.55",
    "pnlNum": -75.55,
-   "rMultiple": "-0.07R"
+   "rMultiple": "-0.07R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-23",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,686",
-   "exit": "2,640",
-   "pnl": "$-1,141",
+   "entry": "2,685.84",
+   "exit": "2,639.94",
+   "pnl": "$-1,140.80",
    "pnlNum": -1140.8,
-   "rMultiple": "-1.05R"
+   "rMultiple": "-1.05R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-23",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "80,734",
-   "exit": "85,105",
-   "pnl": "$+1,402",
+   "entry": "80,733.67",
+   "exit": "85,105.49",
+   "pnl": "$+1,402.08",
    "pnlNum": 1402.08,
-   "rMultiple": "+1.38R"
+   "rMultiple": "+1.38R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-23",
@@ -221,59 +239,65 @@
    "direction": "Long",
    "entry": "111.16",
    "exit": "115.53",
-   "pnl": "$+667",
+   "pnl": "$+666.81",
    "pnlNum": 666.81,
-   "rMultiple": "+0.66R"
+   "rMultiple": "+0.66R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-23",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,584",
-   "exit": "2,716",
-   "pnl": "$+987",
+   "entry": "2,584.33",
+   "exit": "2,715.64",
+   "pnl": "$+986.70",
    "pnlNum": 986.7,
-   "rMultiple": "+0.97R"
+   "rMultiple": "+0.97R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-21",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "82,600",
-   "exit": "86,000",
-   "pnl": "$+1,293",
+   "entry": "82,600.00",
+   "exit": "86,000.00",
+   "pnl": "$+1,292.89",
    "pnlNum": 1292.89,
-   "rMultiple": "+2.52R"
+   "rMultiple": "+2.52R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-21",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "81,490",
-   "exit": "84,650",
-   "pnl": "$+996",
+   "entry": "81,489.55",
+   "exit": "84,649.73",
+   "pnl": "$+995.91",
    "pnlNum": 995.91,
-   "rMultiple": "+1.96R"
+   "rMultiple": "+1.96R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-21",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,618",
-   "exit": "2,732",
-   "pnl": "$+998",
+   "entry": "2,617.88",
+   "exit": "2,732.31",
+   "pnl": "$+997.98",
    "pnlNum": 997.98,
-   "rMultiple": "+1.97R"
+   "rMultiple": "+1.97R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-21",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,464",
-   "exit": "2,666",
-   "pnl": "$+1,228",
+   "entry": "2,464.00",
+   "exit": "2,665.80",
+   "pnl": "$+1,228.49",
    "pnlNum": 1228.49,
-   "rMultiple": "+1.51R"
+   "rMultiple": "+1.51R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-18",
@@ -281,322 +305,331 @@
    "direction": "Long",
    "entry": "104.94",
    "exit": "110.56",
-   "pnl": "$+497",
+   "pnl": "$+496.57",
    "pnlNum": 496.57,
-   "rMultiple": "+1.97R"
+   "rMultiple": "+1.97R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-18",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "76,250",
-   "exit": "79,700",
-   "pnl": "$+297",
+   "entry": "76,250.00",
+   "exit": "79,700.00",
+   "pnl": "$+297.29",
    "pnlNum": 297.29,
-   "rMultiple": "+2.36R"
+   "rMultiple": "+2.36R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-15",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,475",
-   "exit": "2,464",
-   "pnl": "$-70",
+   "entry": "2,474.54",
+   "exit": "2,464.46",
+   "pnl": "$-70.16",
    "pnlNum": -70.16,
-   "rMultiple": "-0.14R"
+   "rMultiple": "-0.14R",
+   "origin": "legacy"
   },
   {
    "date": "2026-09-10",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "77,950",
-   "exit": "76,845",
-   "pnl": "$-1,105",
+   "entry": "77,950.00",
+   "exit": "76,844.88",
+   "pnl": "$-1,105.12",
    "pnlNum": -1105.12,
    "rMultiple": "-1.00R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   },
   {
    "date": "2026-09-03",
    "symbol": "BTC",
    "direction": "Short",
-   "entry": "81,450",
-   "exit": "81,464",
-   "pnl": "$-14",
+   "entry": "81,450.00",
+   "exit": "81,464.17",
+   "pnl": "$-14.17",
    "pnlNum": -14.17,
    "rMultiple": "-0.02R",
-   "lesson": "\ud83d\udcda instant stop \u2014 Learned: a touched level is not an accepted level \u2014 entry lacked rejection evidence"
+   "origin": "legacy"
   },
   {
    "date": "2026-09-01",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "77,300",
-   "exit": "76,581",
-   "pnl": "$-719",
+   "entry": "77,300.00",
+   "exit": "76,580.98",
+   "pnl": "$-719.02",
    "pnlNum": -719.02,
    "rMultiple": "-0.51R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-28",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "79,650",
-   "exit": "78,362",
-   "pnl": "$-1,288",
+   "entry": "79,650.00",
+   "exit": "78,361.99",
+   "pnl": "$-1,288.01",
    "pnlNum": -1288.01,
    "rMultiple": "-1.03R",
-   "lesson": "\ud83d\udcda chase extended \u2014 Learned: don't chase entries far above the value area after an extended run \u2014 anchor to volume-profile levels"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-28",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "80,450",
-   "exit": "79,377",
-   "pnl": "$-1,073",
+   "entry": "80,450.00",
+   "exit": "79,377.34",
+   "pnl": "$-1,072.66",
    "pnlNum": -1072.66,
    "rMultiple": "-1.00R",
-   "lesson": "\ud83d\udcda chase extended \u2014 Learned: don't chase entries far above the value area after an extended run \u2014 anchor to volume-profile levels"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-26",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "76,900",
-   "exit": "77,777",
-   "pnl": "$+438",
+   "entry": "76,900.00",
+   "exit": "77,777.00",
+   "pnl": "$+438.50",
    "pnlNum": 438.5,
-   "rMultiple": "+0.60R"
+   "rMultiple": "+0.60R",
+   "origin": "legacy"
   },
   {
    "date": "2026-08-24",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "76,900",
-   "exit": "79,688",
-   "pnl": "$+1,394",
+   "entry": "76,900.00",
+   "exit": "79,688.38",
+   "pnl": "$+1,394.19",
    "pnlNum": 1394.19,
-   "rMultiple": "+1.92R"
+   "rMultiple": "+1.92R",
+   "origin": "legacy"
   },
   {
    "date": "2026-08-23",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "77,200",
-   "exit": "76,000",
-   "pnl": "$-1,200",
+   "entry": "77,200.00",
+   "exit": "76,000.00",
+   "pnl": "$-1,200.00",
    "pnlNum": -1200.0,
    "rMultiple": "-0.86R",
-   "lesson": "\ud83d\udcda chase extended \u2014 Learned: don't chase entries far above the value area after an extended run \u2014 anchor to volume-profile levels"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-21",
    "symbol": "BTC",
    "direction": "Short",
-   "entry": "75,900",
-   "exit": "76,896",
-   "pnl": "$-996",
+   "entry": "75,900.00",
+   "exit": "76,896.02",
+   "pnl": "$-996.02",
    "pnlNum": -996.02,
    "rMultiple": "-0.71R",
-   "lesson": "\ud83d\udcda instant stop \u2014 Learned: a touched level is not an accepted level \u2014 entry lacked rejection evidence"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-21",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "69,350",
-   "exit": "76,632",
-   "pnl": "$+3,641",
+   "entry": "69,350.00",
+   "exit": "76,631.72",
+   "pnl": "$+3,640.86",
    "pnlNum": 3640.86,
-   "rMultiple": "+6.93R"
+   "rMultiple": "+6.93R",
+   "origin": "legacy"
   },
   {
    "date": "2026-08-20",
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "1,866",
-   "exit": "2,010",
-   "pnl": "$+2,315",
+   "entry": "1,866.00",
+   "exit": "2,010.00",
+   "pnl": "$+2,315.11",
    "pnlNum": 2315.11,
-   "rMultiple": "+1.89R"
+   "rMultiple": "+1.89R",
+   "origin": "legacy"
   },
   {
    "date": "2026-08-20",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "69,350",
-   "exit": "71,872",
-   "pnl": "$+1,261",
+   "entry": "69,350.00",
+   "exit": "71,872.09",
+   "pnl": "$+1,261.04",
    "pnlNum": 1261.04,
-   "rMultiple": "+2.40R"
+   "rMultiple": "+2.40R",
+   "origin": "legacy"
   },
   {
    "date": "2026-08-19",
    "symbol": "BTC",
    "direction": "Short",
-   "entry": "65,750",
-   "exit": "65,978",
-   "pnl": "$-228",
+   "entry": "65,750.00",
+   "exit": "65,977.74",
+   "pnl": "$-227.74",
    "pnlNum": -227.74,
    "rMultiple": "-0.27R",
-   "lesson": "\ud83d\udcda instant stop \u2014 Learned: a touched level is not an accepted level \u2014 entry lacked rejection evidence"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-19",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "63,450",
-   "exit": "64,328",
-   "pnl": "$+878",
+   "entry": "63,450.00",
+   "exit": "64,328.01",
+   "pnl": "$+878.01",
    "pnlNum": 878.01,
-   "rMultiple": "+1.16R"
+   "rMultiple": "+1.16R",
+   "origin": "legacy"
   },
   {
    "date": "2026-08-16",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "63,260",
-   "exit": "62,894",
-   "pnl": "$-366",
+   "entry": "63,260.00",
+   "exit": "62,893.67",
+   "pnl": "$-366.33",
    "pnlNum": -366.33,
    "rMultiple": "-0.45R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-15",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "64,000",
-   "exit": "63,070",
-   "pnl": "$-930",
+   "entry": "64,000.00",
+   "exit": "63,070.01",
+   "pnl": "$-929.99",
    "pnlNum": -929.99,
    "rMultiple": "-0.52R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-14",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "63,430",
-   "exit": "63,190",
-   "pnl": "$-240",
+   "entry": "63,430.00",
+   "exit": "63,190.00",
+   "pnl": "$-240.00",
    "pnlNum": -240.0,
    "rMultiple": "-0.44R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-13",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "63,450",
-   "exit": "63,050",
-   "pnl": "$-400",
+   "entry": "63,450.00",
+   "exit": "63,050.01",
+   "pnl": "$-399.99",
    "pnlNum": -399.99,
    "rMultiple": "-0.67R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   },
   {
    "date": "2026-08-11",
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "63,900",
-   "exit": "63,250",
-   "pnl": "$-650",
+   "entry": "63,900.00",
+   "exit": "63,249.99",
+   "pnl": "$-650.01",
    "pnlNum": -650.01,
    "rMultiple": "-0.31R",
-   "lesson": "\ud83d\udcda zone rechurn \u2014 Learned: two losses at one level means stop re-trying it \u2014 backtested on 6y of data and now a hard rule in the bot"
+   "origin": "legacy"
   }
  ],
  "positions": [
   {
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "83,091",
-   "current": "84,038",
-   "size": "$46,360",
-   "stop": "82,598",
-   "targets": "rides the trend",
-   "pnl": "$+529",
-   "pnlNum": 528.59
+   "entry": "83,090.84",
+   "current": "83,874.01",
+   "size": "$46,359.75",
+   "stop": "82,597.55",
+   "targets": "Trailing / original rule",
+   "pnl": "$+436.96",
+   "pnlNum": 436.96
   },
   {
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,669",
-   "current": "2,716",
-   "size": "$35,831",
-   "stop": "2,636",
-   "targets": "rides the trend",
-   "pnl": "$+621",
-   "pnlNum": 621.15
+   "entry": "2,669.26",
+   "current": "2,708.84",
+   "size": "$35,830.74",
+   "stop": "2,635.69",
+   "targets": "Trailing / original rule",
+   "pnl": "$+531.34",
+   "pnlNum": 531.34
   },
   {
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "82,600",
-   "current": "84,038",
-   "size": "$13,337",
-   "stop": "80,900",
-   "targets": "87,396 / 90,000",
-   "pnl": "$+232",
-   "pnlNum": 232.22
+   "entry": "82,600.00",
+   "current": "83,874.01",
+   "size": "$13,336.98",
+   "stop": "80,900.00",
+   "targets": "90,000.00",
+   "pnl": "$+205.71",
+   "pnlNum": 205.71
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.69",
-   "current": "119.37",
-   "size": "$26,704 (half banked)",
+   "current": "119.18",
+   "size": "$26,703.54",
    "stop": "113.69",
-   "targets": "118.34 banked \u00b7 rest rides",
-   "pnl": "$+1,333",
-   "pnlNum": 1332.89
+   "targets": "Trailing / original rule",
+   "pnl": "$+1,288.26",
+   "pnlNum": 1288.26
   },
   {
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "76,250",
-   "current": "84,038",
-   "size": "$6,571 (half banked)",
-   "stop": "82,300",
-   "targets": "79,700 banked \u00b7 next 87,800",
-   "pnl": "$+671",
-   "pnlNum": 671.13
+   "entry": "76,250.00",
+   "current": "83,874.01",
+   "size": "$6,570.59",
+   "stop": "82,300.00",
+   "targets": "87,800.00",
+   "pnl": "$+656.97",
+   "pnlNum": 656.97
   },
   {
    "symbol": "BTC",
    "direction": "Long",
-   "entry": "75,652",
-   "current": "84,038",
-   "size": "$5,694",
-   "stop": "68,966",
-   "targets": "rides the trend",
-   "pnl": "$+631",
-   "pnlNum": 631.23
+   "entry": "75,652.04",
+   "current": "83,874.01",
+   "size": "$5,694.33",
+   "stop": "68,966.22",
+   "targets": "Trailing / original rule",
+   "pnl": "$+618.87",
+   "pnlNum": 618.87
   },
   {
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,398",
-   "current": "2,716",
-   "size": "$4,006",
-   "stop": "2,097",
-   "targets": "rides the trend",
-   "pnl": "$+530",
-   "pnlNum": 529.5
+   "entry": "2,398.50",
+   "current": "2,708.84",
+   "size": "$4,005.97",
+   "stop": "2,097.19",
+   "targets": "Trailing / original rule",
+   "pnl": "$+518.33",
+   "pnlNum": 518.33
   },
   {
    "symbol": "ETH",
    "direction": "Long",
-   "entry": "2,464",
-   "current": "2,716",
-   "size": "$15,000 (half banked)",
-   "stop": "2,564",
-   "targets": "2,666 banked \u00b7 next 2,800 / 3,000",
-   "pnl": "$+1,531",
-   "pnlNum": 1531.23
+   "entry": "2,464.00",
+   "current": "2,708.84",
+   "size": "$15,000.00",
+   "stop": "2,564.00",
+   "targets": "3,000.00",
+   "pnl": "$+1,490.50",
+   "pnlNum": 1490.5
   }
  ],
  "plans": []
