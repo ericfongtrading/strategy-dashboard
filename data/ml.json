@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-29T09:17:14+00:00",
+ "lastUpdated": "2026-09-29T09:19:59+00:00",
  "basis": "ML Bot V2: one continuing paper account. Inherited balance $109,906.26 at 2026-09-29; original capital $100,000. Legacy history preserved, not revalidated. Closed rows include partial exits. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow. Latest mark UTC epoch 1790672400.",
  "headline": [
   {
@@ -13,9 +13,9 @@
    "sub": "Balance plus open P&L"
   },
   {
-   "label": "P&L since upgrade",
+   "label": "Equity change since upgrade",
    "value": "$+0.00",
-   "sub": "Realized after handover; not lifetime profit"
+   "sub": "From first V2 mark; includes open P&L"
   },
   {
    "label": "Open positions",
