@@ -1,0 +1,72 @@
+{
+  "schema": "nq4.dashboard.1",
+  "version": "nq4-cci05-v1",
+  "updated_utc": "2026-09-29T09:23:55.446837+00:00",
+  "legacy_entries_disabled": true,
+  "allocation": [
+    {
+      "sleeve": "VL_R3",
+      "ib_contracts": 1,
+      "ftmo_risk_usd": 100
+    },
+    {
+      "sleeve": "R3_RE",
+      "ib_contracts": 1,
+      "ftmo_risk_usd": 100
+    },
+    {
+      "sleeve": "CCI_AM",
+      "ib_contracts": 1,
+      "ftmo_risk_usd": 100
+    },
+    {
+      "sleeve": "TBS",
+      "ib_contracts": 2,
+      "ftmo_risk_usd": 200
+    }
+  ],
+  "lanes": {
+    "theoretical": {
+      "records": [],
+      "source_present": false,
+      "errors": 0,
+      "state": "AWAITING_TELEMETRY",
+      "heartbeat_utc": null,
+      "summary": {
+        "closed": 0,
+        "open": 0,
+        "measured": 0,
+        "net_usd": null,
+        "fees_usd": null
+      }
+    },
+    "ib": {
+      "records": [],
+      "source_present": false,
+      "errors": 0,
+      "state": "AWAITING_TELEMETRY",
+      "heartbeat_utc": null,
+      "summary": {
+        "closed": 0,
+        "open": 0,
+        "measured": 0,
+        "net_usd": null,
+        "fees_usd": null
+      }
+    },
+    "ftmo": {
+      "records": [],
+      "source_present": false,
+      "errors": 0,
+      "state": "AWAITING_TELEMETRY",
+      "heartbeat_utc": null,
+      "summary": {
+        "closed": 0,
+        "open": 0,
+        "measured": 0,
+        "net_usd": null,
+        "fees_usd": null
+      }
+    }
+  }
+}
