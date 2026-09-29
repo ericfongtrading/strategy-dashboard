@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-29T09:07:46+00:00",
+ "lastUpdated": "2026-09-29T09:17:14+00:00",
  "basis": "ML Bot V2: one continuing paper account. Inherited balance $109,906.26 at 2026-09-29; original capital $100,000. Legacy history preserved, not revalidated. Closed rows include partial exits. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow. Latest mark UTC epoch 1790672400.",
  "headline": [
   {
@@ -551,6 +551,7 @@
    "size": "$46,359.75",
    "stop": "82,597.55",
    "targets": "Trailing / original rule",
+   "open": "100%",
    "pnl": "$+436.96",
    "pnlNum": 436.96
   },
@@ -562,6 +563,7 @@
    "size": "$35,830.74",
    "stop": "2,635.69",
    "targets": "Trailing / original rule",
+   "open": "100%",
    "pnl": "$+531.34",
    "pnlNum": 531.34
   },
@@ -572,7 +574,8 @@
    "current": "83,874.01",
    "size": "$13,336.98",
    "stop": "80,900.00",
-   "targets": "90,000.00",
+   "targets": "TP1 87,396.00 (bank half); 90,000.00",
+   "open": "100%",
    "pnl": "$+205.71",
    "pnlNum": 205.71
   },
@@ -584,6 +587,7 @@
    "size": "$26,703.54",
    "stop": "113.69",
    "targets": "Trailing / original rule",
+   "open": "50%",
    "pnl": "$+1,288.26",
    "pnlNum": 1288.26
   },
@@ -595,6 +599,7 @@
    "size": "$6,570.59",
    "stop": "82,300.00",
    "targets": "87,800.00",
+   "open": "50%",
    "pnl": "$+656.97",
    "pnlNum": 656.97
   },
@@ -606,6 +611,7 @@
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
+   "open": "100%",
    "pnl": "$+618.87",
    "pnlNum": 618.87
   },
@@ -617,6 +623,7 @@
    "size": "$4,005.97",
    "stop": "2,097.19",
    "targets": "Trailing / original rule",
+   "open": "100%",
    "pnl": "$+518.33",
    "pnlNum": 518.33
   },
@@ -628,6 +635,7 @@
    "size": "$15,000.00",
    "stop": "2,564.00",
    "targets": "3,000.00",
+   "open": "50%",
    "pnl": "$+1,490.50",
    "pnlNum": 1490.5
   }
