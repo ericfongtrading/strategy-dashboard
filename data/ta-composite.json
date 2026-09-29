@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-29T16:00:19Z",
+  "lastUpdated": "2026-09-29T20:00:23Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+237.37 across 48 closed trades, 50% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -77,31 +77,40 @@
   ],
   "positions": [
     {
+      "symbol": "BTC",
+      "direction": "Long",
+      "entry": "83,545",
+      "current": "83,556.5",
+      "size": "0.03829",
+      "pnl": "$-0.04",
+      "pnlNum": -0.04
+    },
+    {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,674.25",
+      "current": "2,690.65",
       "size": "0.2373",
-      "pnl": "$-10.54",
-      "pnlNum": -10.54
+      "pnl": "$-7.07",
+      "pnlNum": -7.07
     },
     {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "11.4766",
-      "current": "11.2175",
+      "current": "11.3415",
       "size": "56.26",
-      "pnl": "$-14.33",
-      "pnlNum": -14.33
+      "pnl": "$-7.52",
+      "pnlNum": -7.52
     },
     {
       "symbol": "XLM",
       "direction": "Long",
       "entry": "0.227672",
-      "current": "0.22652",
+      "current": "0.22079",
       "size": "5963",
-      "pnl": "$-5.08",
-      "pnlNum": -5.08
+      "pnl": "$-37.76",
+      "pnlNum": -37.76
     }
   ],
   "liveRealisedPnl": 237.37,
@@ -280,12 +289,12 @@
         4.57,
         -0.41,
         -0.26,
-        1.79,
+        1.72,
         null,
         null,
         null
       ],
-      "ytd": 10.73,
+      "ytd": 10.65,
       "isLive": true
     }
   ]
