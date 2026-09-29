@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-09-29T09:55:01.974167+00:00",
+  "updated_utc": "2026-09-29T09:55:27.595234+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -31,7 +31,9 @@
       "source_present": false,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-09-29T09:55:01.473694+00:00",
+      "heartbeat_utc": "2026-09-29T09:55:27.212356+00:00",
+      "broker_connected": null,
+      "armed": false,
       "summary": {
         "closed": 0,
         "open": 0,
@@ -45,7 +47,9 @@
       "source_present": false,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-09-29T09:55:01.473694+00:00",
+      "heartbeat_utc": "2026-09-29T09:55:27.212356+00:00",
+      "broker_connected": true,
+      "armed": false,
       "summary": {
         "closed": 0,
         "open": 0,
@@ -59,7 +63,9 @@
       "source_present": false,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-09-29T09:55:01.875417+00:00",
+      "heartbeat_utc": "2026-09-29T09:55:27.488224+00:00",
+      "broker_connected": true,
+      "armed": false,
       "summary": {
         "closed": 0,
         "open": 0,
