@@ -76,9 +76,9 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
             </div>
             {headline[0].sub && <div className="text-[11px] text-muted mt-0.5">{headline[0].sub}</div>}
           </div>
-          <div className="grid grid-cols-3 gap-3">
+          <div className={s.id === "ml" ? "grid grid-cols-2 gap-3" : "flex items-end gap-6"}>
             {headline.slice(1).map((h, i) => (
-              <div key={i}>
+              <div key={i} className={s.id === "ml" && i === 0 ? "col-span-2" : undefined}>
                 <div className="text-[11px] text-muted uppercase tracking-wider">{h.label}</div>
                 <div className="text-xl font-semibold metric-value text-white">{h.value}</div>
               </div>
