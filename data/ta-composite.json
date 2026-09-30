@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-30T04:00:17Z",
+  "lastUpdated": "2026-09-30T08:00:17Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+237.37 across 48 closed trades, 50% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -80,37 +80,37 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "83,545",
-      "current": "83,270.5",
+      "current": "83,258.5",
       "size": "0.03829",
-      "pnl": "$-10.26",
-      "pnlNum": -10.26
+      "pnl": "$-11.33",
+      "pnlNum": -11.33
     },
     {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,672.35",
+      "current": "2,674.95",
       "size": "0.2373",
-      "pnl": "$-11.46",
-      "pnlNum": -11.46
+      "pnl": "$-10.94",
+      "pnlNum": -10.94
     },
     {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "11.4766",
-      "current": "11.2815",
+      "current": "11.114",
       "size": "56.26",
-      "pnl": "$-10.73",
-      "pnlNum": -10.73
+      "pnl": "$-20.46",
+      "pnlNum": -20.46
     },
     {
       "symbol": "XLM",
       "direction": "Long",
       "entry": "0.227672",
-      "current": "0.221415",
+      "current": "0.22486",
       "size": "5963",
-      "pnl": "$-37.22",
-      "pnlNum": -37.22
+      "pnl": "$-17.78",
+      "pnlNum": -17.78
     }
   ],
   "liveRealisedPnl": 237.37,
@@ -289,12 +289,12 @@
         4.57,
         -0.41,
         -0.26,
-        1.67,
+        1.69,
         null,
         null,
         null
       ],
-      "ytd": 10.6,
+      "ytd": 10.62,
       "isLive": true
     }
   ]
