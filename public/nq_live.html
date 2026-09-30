@@ -55,9 +55,13 @@ async function refresh(){
  dataset=d;render();const age=(Date.now()-Date.parse(d.updated_utc))/1000,stale=!Number.isFinite(age)||age>600||age< -60;
  $('connection').textContent=stale?'Published data is stale. Do not infer current trading status.':'Publication is fresh. Broker connectivity requires each source’s own heartbeat.';$('connection').className=stale?'stale':'muted';
  $('updated').textContent='Published '+utc(d.updated_utc)+' UTC · nq4-cci05-v1';
- const active=Object.values(d.lanes).some(l=>l.state==='ACTIVE');
+ const armed=['ib','ftmo'].filter(k=>d.lanes[k]?.armed===true);
+ const faults=['ib','ftmo'].filter(k=>['ERROR','STALE','DATA_ERROR'].includes(d.lanes[k]?.state));
  const warming=d.lanes?.ib?.warmup_verified===false;
- $('deployment').innerHTML=active?'<strong>Forward telemetry received.</strong> Check each category’s state and heartbeat independently. A missing or stale venue is not assumed to be trading.':'<strong>Automatic trading is disabled.</strong> '+(warming?'Indicator history is incomplete; the selected four-sleeve strategy is not ready to trade. ':'')+'Connected observation is not live execution. Broker execution acceptance remains unverified. '+(d.legacy_entries_disabled?'The old five-sleeve runtime remains paused. ':'');
+ if(armed.length){$('deployment').innerHTML='<strong>Entries enabled: '+armed.map(k=>LABEL[k]).join(' / ')+'.</strong> Each venue has its own status and protection. '+(faults.length?'A venue also reports an error; check its entry-halt reasons below.':'The first organic trade per venue triggers its review hold.');}
+ else if(d.execution_mode==='LIVE'){$('deployment').innerHTML='<strong>Live mode configured; new entries are blocked.</strong> '+(faults.length?'The services report safety faults or stale status. A recovered connection does not clear a latched entry halt. ':'Check the first-trade review hold and venue status below. ')+'This is not observation mode. Existing protective exits are separate from entry permission.';}
+ else{$('deployment').innerHTML='<strong>New entries are not confirmed enabled.</strong> '+(warming?'Indicator history is incomplete. ':'')+'Check each venue’s heartbeat and entry status below. '+(d.legacy_entries_disabled?'The old five-sleeve runtime remains paused.':'');}
+
  }catch(error){$('connection').textContent='Data unavailable: '+error.message+'. '+(dataset?'Last loaded records are retained; status is unverified.':'No example trades or assumed balances are displayed.');$('connection').className='stale';$('deployment').textContent='Current activation status is unverified. This dashboard does not activate trading.';}finally{$('refresh').disabled=false}
 }
 for(const id of ['sleeve','state','venue'])$(id).addEventListener('change',render);
