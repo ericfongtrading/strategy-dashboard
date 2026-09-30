@@ -11,6 +11,7 @@ export type LiveData = {
   plans?: Plan[];
   /** Card/modal headline numbers for strategies with no meaningful CAGR yet. */
   headline?: Headline[];
+  detailHeadline?: Headline[];
   /** e.g. the mark used for unrealised P&L. */
   priceNote?: string;
 };

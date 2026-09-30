@@ -76,7 +76,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
             </div>
             {headline[0].sub && <div className="text-[11px] text-muted mt-0.5">{headline[0].sub}</div>}
           </div>
-          <div className="flex items-end gap-6">
+          <div className="grid grid-cols-3 gap-3">
             {headline.slice(1).map((h, i) => (
               <div key={i}>
                 <div className="text-[11px] text-muted uppercase tracking-wider">{h.label}</div>

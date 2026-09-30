@@ -505,20 +505,20 @@ export const strategies: Strategy[] = [
   },
   {
   "id": "ml",
-  "name": "ML Swing Trading Bot V2",
+  "name": "ML Swing Trading Bot",
   "asset": "BTC + Majors",
   "category": "ml",
   "edge": "AI-assisted research",
   "status": "active",
   "statusLabel": "Experimental paper",
   "liveHeadline": true,
-  "description": "One continuing paper account upgraded from the original ML bot on 29 September 2026. The inherited balance, trade history and remaining positions are preserved. V2 first analyzes market data independently, then reviews four video sources before proposing trades for the same account. Deterministic risk checks decide whether a proposal can become an order. Existing trend, trailing-stop and partial-exit rules manage inherited positions inside V2. Forecasts and provisional video lessons are recorded for evaluation; no trained model has trading authority and profitable autonomous learning has not been established. Execution uses hourly spot-reference candles and excludes funding and borrow costs. This paper account places no live exchange orders.",
-  "dataSource": "Continuing $100k paper account · V2 handover 29 Sep 2026",
+  "description": "Performance is measured from the original $100,000 paper account, including realized profits and losses and open positions. V2 first analyzes market data independently, then reviews four video sources before proposing trades for the same account. Deterministic risk checks decide whether a proposal can become an order. Existing trend, trailing-stop and partial-exit rules manage inherited positions inside V2. Forecasts and provisional video lessons are recorded for evaluation; no trained model has trading authority and profitable autonomous learning has not been established. Execution uses hourly spot-reference candles and excludes funding and borrow costs. This paper account places no live exchange orders.",
+  "dataSource": "Paper performance since inception · $100,000 starting capital",
   "highlights": [
     "One balance, one execution process; original history and partial profits preserved",
     "Independent analysis followed by four-source video review; videos are evidence, not authority",
     "Retained daily-trend, channel-trailing and pullback exit rules for inherited positions",
-    "New orders share account-wide risk and exposure limits; inherited concentration can block additions",
+    "New V2 trades have their own risk limits; inherited holdings remain managed in the same account",
     "Forecast calibration and method validation remain research work; no profitability claim",
     "Dashboard positions and trade history refresh automatically from the V2 ledger"
   ]
