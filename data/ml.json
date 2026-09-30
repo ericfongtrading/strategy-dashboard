@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-30T19:07:02+00:00",
+ "lastUpdated": "2026-09-30T20:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+14,983.23",
+   "value": "$+14,128.04",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+5,076.97",
+   "value": "$+4,221.78",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+14,983.23",
+   "value": "$+14,128.04",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 9906.257315191848,
-  "floatingPnl": 5076.971348118343,
-  "totalPnl": 14983.22866331019,
-  "equity": 114983.22866331019,
+  "floatingPnl": 4221.780763028726,
+  "totalPnl": 14128.038078220574,
+  "equity": 114128.03807822058,
   "closedTrades": 39,
   "wins": 14,
   "profitFactor": 1.5816138023011446
@@ -595,97 +595,97 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "83,090.84",
-   "current": "83,950.00",
+   "current": "83,603.16",
    "size": "$46,359.75",
    "stop": "82,775.94",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+479.36",
-   "pnlNum": 479.36
+   "pnl": "$+285.85",
+   "pnlNum": 285.85
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,669.26",
-   "current": "2,679.15",
+   "current": "2,669.61",
    "size": "$35,830.74",
    "stop": "2,652.20",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+132.80",
-   "pnlNum": 132.8
+   "pnl": "$+4.74",
+   "pnlNum": 4.74
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "82,600.00",
-   "current": "83,950.00",
+   "current": "83,603.16",
    "size": "$13,336.98",
    "stop": "80,900.00",
    "targets": "TP1 87,396.00 (bank half); 90,000.00",
    "open": "100%",
-   "pnl": "$+217.98",
-   "pnlNum": 217.98
+   "pnl": "$+161.97",
+   "pnlNum": 161.97
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.69",
-   "current": "118.72",
+   "current": "117.24",
    "size": "$26,703.54",
    "stop": "113.69",
    "targets": "Trailing / original rule",
    "open": "50%",
-   "pnl": "$+1,180.22",
-   "pnlNum": 1180.22
+   "pnl": "$+832.61",
+   "pnlNum": 832.61
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "76,250.00",
-   "current": "83,950.00",
+   "current": "83,603.16",
    "size": "$6,570.59",
    "stop": "82,300.00",
    "targets": "87,800.00",
    "open": "50%",
-   "pnl": "$+663.52",
-   "pnlNum": 663.52
+   "pnl": "$+633.63",
+   "pnlNum": 633.63
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "83,950.00",
+   "current": "83,603.16",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+624.59",
-   "pnlNum": 624.59
+   "pnl": "$+598.48",
+   "pnlNum": 598.48
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,398.50",
-   "current": "2,679.15",
+   "current": "2,669.61",
    "size": "$4,005.97",
    "stop": "2,097.19",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+468.74",
-   "pnlNum": 468.74
+   "pnl": "$+452.81",
+   "pnlNum": 452.81
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464.00",
-   "current": "2,679.15",
+   "current": "2,669.61",
    "size": "$15,000.00",
    "stop": "2,564.00",
    "targets": "3,000.00",
    "open": "50%",
-   "pnl": "$+1,309.76",
-   "pnlNum": 1309.76
+   "pnl": "$+1,251.68",
+   "pnlNum": 1251.68
   }
  ],
  "plans": [
