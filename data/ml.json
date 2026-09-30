@@ -1,28 +1,76 @@
 {
- "lastUpdated": "2026-09-30T15:07:01+00:00",
- "basis": "ML Bot V2: one continuing paper account. Inherited balance $109,906.26 at 2026-09-29; original capital $100,000. Legacy history preserved, not revalidated. Closed rows include partial exits. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow. Latest mark UTC epoch 1790780400.",
+ "lastUpdated": "2026-09-30T15:31:41+00:00",
+ "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
+ "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
   {
-   "label": "Realized balance",
-   "value": "$109,906.26",
-   "sub": "Continuing original account"
+   "label": "Realized P&L",
+   "value": "$+9,906.26",
+   "sub": "+9.91% on original $100,000",
+   "tone": "good"
   },
   {
-   "label": "Marked equity",
-   "value": "$114,854.48",
-   "sub": "Balance plus open P&L"
+   "label": "Total P&L",
+   "value": "$+14,854.48",
+   "sub": "Realized plus floating P&L",
+   "tone": "good"
   },
   {
-   "label": "Equity change since upgrade",
-   "value": "$-798.73",
-   "sub": "From first V2 mark; includes open P&L"
+   "label": "Win rate",
+   "value": "35.9%",
+   "sub": "14/39 fully closed trades"
   },
   {
-   "label": "Open positions",
-   "value": "8",
-   "sub": "0 pending plans"
+   "label": "Profit factor",
+   "value": "1.58",
+   "sub": "Net winning P&L / net losing P&L"
   }
  ],
+ "detailHeadline": [
+  {
+   "label": "Starting capital",
+   "value": "$100,000.00",
+   "sub": "Original account base"
+  },
+  {
+   "label": "Realized P&L",
+   "value": "$+9,906.26",
+   "sub": "+9.91% on original $100,000",
+   "tone": "good"
+  },
+  {
+   "label": "Floating P&L",
+   "value": "$+4,948.22",
+   "sub": "Open positions",
+   "tone": "good"
+  },
+  {
+   "label": "Total P&L",
+   "value": "$+14,854.48",
+   "sub": "Realized plus floating P&L",
+   "tone": "good"
+  },
+  {
+   "label": "Win rate",
+   "value": "35.9%",
+   "sub": "14/39 fully closed trades"
+  },
+  {
+   "label": "Profit factor",
+   "value": "1.58",
+   "sub": "Net winning P&L / net losing P&L"
+  }
+ ],
+ "accountMetrics": {
+  "startingCapital": 100000.0,
+  "realizedPnl": 9906.257315191848,
+  "floatingPnl": 4948.217825384176,
+  "totalPnl": 14854.475140576023,
+  "equity": 114854.47514057602,
+  "closedTrades": 39,
+  "wins": 14,
+  "profitFactor": 1.5816138023011446
+ },
  "recentTrades": [
   {
    "date": "2026-09-29",
@@ -640,5 +688,22 @@
    "pnlNum": 1303.98
   }
  ],
- "plans": []
+ "plans": [
+  {
+   "symbol": "ETH",
+   "direction": "Short",
+   "zone": "2,710.00",
+   "stop": "2,748.60",
+   "targets": "2,635.69",
+   "status": "limit"
+  },
+  {
+   "symbol": "SOL",
+   "direction": "Long",
+   "zone": "116.32",
+   "stop": "112.52",
+   "targets": "124.95",
+   "status": "limit"
+  }
+ ]
 }
