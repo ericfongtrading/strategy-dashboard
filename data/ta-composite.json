@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-01T00:00:24Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+203.80 across 50 closed trades, 48% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-10-01T04:00:20Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+202.99 across 51 closed trades, 47% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
       "date": "2026-10-01",
@@ -80,23 +80,23 @@
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,686.55",
+      "current": "2,697.15",
       "size": "0.2373",
-      "pnl": "$-7.83",
-      "pnlNum": -7.83
+      "pnl": "$-5.55",
+      "pnlNum": -5.55
     },
     {
       "symbol": "XLM",
       "direction": "Long",
       "entry": "0.227672",
-      "current": "0.22653",
+      "current": "0.228925",
       "size": "5963",
-      "pnl": "$-6.22",
-      "pnlNum": -6.22
+      "pnl": "$+7.74",
+      "pnlNum": 7.74
     }
   ],
-  "liveRealisedPnl": 203.8,
-  "liveClosedTrades": 50,
+  "liveRealisedPnl": 202.99,
+  "liveClosedTrades": 51,
   "monthlyReturns": [
     {
       "year": 2017,
@@ -272,11 +272,11 @@
         -0.41,
         -0.26,
         1.75,
-        -0.03,
+        0.02,
         null,
         null
       ],
-      "ytd": 10.65,
+      "ytd": 10.71,
       "isLive": true
     }
   ]
