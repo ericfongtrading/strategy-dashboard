@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-01T20:07:01+00:00",
+ "lastUpdated": "2026-10-01T21:07:02+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+15,725.53",
+   "value": "$+15,609.35",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+6,076.06",
+   "value": "$+5,959.88",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+15,725.53",
+   "value": "$+15,609.35",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 9649.468015859733,
-  "floatingPnl": 6076.06391005985,
-  "totalPnl": 15725.531925919582,
-  "equity": 115725.53192591958,
+  "floatingPnl": 5959.883247998662,
+  "totalPnl": 15609.351263858396,
+  "equity": 115609.35126385839,
   "closedTrades": 40,
   "wins": 14,
   "profitFactor": 1.5499092843078521
@@ -606,97 +606,97 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "83,090.84",
-   "current": "84,675.36",
+   "current": "84,634.00",
    "size": "$46,359.75",
    "stop": "82,956.11",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+884.07",
-   "pnlNum": 884.07
+   "pnl": "$+860.99",
+   "pnlNum": 860.99
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,669.26",
-   "current": "2,700.70",
+   "current": "2,698.82",
    "size": "$35,830.74",
    "stop": "2,656.92",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+422.08",
-   "pnlNum": 422.08
+   "pnl": "$+396.84",
+   "pnlNum": 396.84
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "82,600.00",
-   "current": "84,675.36",
+   "current": "84,634.00",
    "size": "$13,336.98",
    "stop": "80,900.00",
    "targets": "TP1 87,396.00 (bank half); 90,000.00",
    "open": "100%",
-   "pnl": "$+335.10",
-   "pnlNum": 335.1
+   "pnl": "$+328.42",
+   "pnlNum": 328.42
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.69",
-   "current": "118.31",
+   "current": "118.14",
    "size": "$26,703.54",
    "stop": "113.69",
    "targets": "Trailing / original rule",
    "open": "50%",
-   "pnl": "$+1,083.92",
-   "pnlNum": 1083.92
+   "pnl": "$+1,044.00",
+   "pnlNum": 1044.0
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "76,250.00",
-   "current": "84,675.36",
+   "current": "84,634.00",
    "size": "$6,570.59",
    "stop": "82,300.00",
    "targets": "87,800.00",
    "open": "50%",
-   "pnl": "$+726.03",
-   "pnlNum": 726.03
+   "pnl": "$+722.46",
+   "pnlNum": 722.46
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "84,675.36",
+   "current": "84,634.00",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+679.19",
-   "pnlNum": 679.19
+   "pnl": "$+676.07",
+   "pnlNum": 676.07
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,398.50",
-   "current": "2,700.70",
+   "current": "2,698.82",
    "size": "$4,005.97",
    "stop": "2,097.19",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+504.73",
-   "pnlNum": 504.73
+   "pnl": "$+501.59",
+   "pnlNum": 501.59
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464.00",
-   "current": "2,700.70",
+   "current": "2,698.82",
    "size": "$15,000.00",
    "stop": "2,564.00",
    "targets": "3,000.00",
    "open": "50%",
-   "pnl": "$+1,440.95",
-   "pnlNum": 1440.95
+   "pnl": "$+1,429.50",
+   "pnlNum": 1429.5
   }
  ],
  "plans": [
