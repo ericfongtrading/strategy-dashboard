@@ -1,7 +1,16 @@
 {
-  "lastUpdated": "2026-09-30T20:00:19Z",
+  "lastUpdated": "2026-10-01T00:00:24Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+203.80 across 50 closed trades, 48% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
+    {
+      "date": "2026-10-01",
+      "symbol": "BTC",
+      "direction": "Long",
+      "entry": "83,545",
+      "exit": "83,599",
+      "pnl": "$-0.81",
+      "pnlNum": -0.81
+    },
     {
       "date": "2026-09-23",
       "symbol": "BTC",
@@ -64,44 +73,26 @@
       "exit": "12.54",
       "pnl": "$+21.55",
       "pnlNum": 21.55
-    },
-    {
-      "date": "2026-08-31",
-      "symbol": "ATOM",
-      "direction": "Long",
-      "entry": "1.5946",
-      "exit": "1.4528",
-      "pnl": "$-2.72",
-      "pnlNum": -2.72
     }
   ],
   "positions": [
     {
-      "symbol": "BTC",
-      "direction": "Long",
-      "entry": "83,545",
-      "current": "83,586.5",
-      "size": "0.03829",
-      "pnl": "$+2.57",
-      "pnlNum": 2.57
-    },
-    {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,671.15",
+      "current": "2,686.55",
       "size": "0.2373",
-      "pnl": "$-11.60",
-      "pnlNum": -11.6
+      "pnl": "$-7.83",
+      "pnlNum": -7.83
     },
     {
       "symbol": "XLM",
       "direction": "Long",
       "entry": "0.227672",
-      "current": "0.22684",
+      "current": "0.22653",
       "size": "5963",
-      "pnl": "$-4.31",
-      "pnlNum": -4.31
+      "pnl": "$-6.22",
+      "pnlNum": -6.22
     }
   ],
   "liveRealisedPnl": 203.8,
@@ -280,12 +271,12 @@
         4.57,
         -0.41,
         -0.26,
-        1.73,
-        null,
+        1.75,
+        -0.03,
         null,
         null
       ],
-      "ytd": 10.66,
+      "ytd": 10.65,
       "isLive": true
     }
   ]
