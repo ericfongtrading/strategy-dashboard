@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-01T07:07:01+00:00",
+ "lastUpdated": "2026-10-01T08:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+16,020.18",
+   "value": "$+14,200.86",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+6,113.92",
+   "value": "$+4,294.61",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+16,020.18",
+   "value": "$+14,200.86",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 9906.257315191848,
-  "floatingPnl": 6113.924419123331,
-  "totalPnl": 16020.181734315178,
-  "equity": 116020.18173431518,
+  "floatingPnl": 4294.606357426866,
+  "totalPnl": 14200.863672618714,
+  "equity": 114200.86367261871,
   "closedTrades": 39,
   "wins": 14,
   "profitFactor": 1.5816138023011446
@@ -595,97 +595,97 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "83,090.84",
-   "current": "84,121.45",
+   "current": "83,429.93",
    "size": "$46,359.75",
    "stop": "82,900.00",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+575.02",
-   "pnlNum": 575.02
+   "pnl": "$+189.19",
+   "pnlNum": 189.19
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,669.26",
-   "current": "2,715.21",
+   "current": "2,677.48",
    "size": "$35,830.74",
    "stop": "2,656.92",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+616.85",
-   "pnlNum": 616.85
+   "pnl": "$+110.38",
+   "pnlNum": 110.38
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "82,600.00",
-   "current": "84,121.45",
+   "current": "83,429.93",
    "size": "$13,336.98",
    "stop": "80,900.00",
    "targets": "TP1 87,396.00 (bank half); 90,000.00",
    "open": "100%",
-   "pnl": "$+245.66",
-   "pnlNum": 245.66
+   "pnl": "$+134.00",
+   "pnlNum": 134.0
   },
   {
    "symbol": "SOL",
    "direction": "Long",
    "entry": "113.69",
-   "current": "119.24",
+   "current": "117.49",
    "size": "$26,703.54",
    "stop": "113.69",
    "targets": "Trailing / original rule",
    "open": "50%",
-   "pnl": "$+1,302.35",
-   "pnlNum": 1302.35
+   "pnl": "$+891.33",
+   "pnlNum": 891.33
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "76,250.00",
-   "current": "84,121.45",
+   "current": "83,429.93",
    "size": "$6,570.59",
    "stop": "82,300.00",
    "targets": "87,800.00",
    "open": "50%",
-   "pnl": "$+678.30",
-   "pnlNum": 678.3
+   "pnl": "$+618.71",
+   "pnlNum": 618.71
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "84,121.45",
+   "current": "83,429.93",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+637.49",
-   "pnlNum": 637.49
+   "pnl": "$+585.44",
+   "pnlNum": 585.44
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,398.50",
-   "current": "2,715.21",
+   "current": "2,677.48",
    "size": "$4,005.97",
    "stop": "2,097.19",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+528.97",
-   "pnlNum": 528.97
+   "pnl": "$+465.95",
+   "pnlNum": 465.95
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464.00",
-   "current": "2,715.21",
+   "current": "2,677.48",
    "size": "$15,000.00",
    "stop": "2,564.00",
    "targets": "3,000.00",
    "open": "50%",
-   "pnl": "$+1,529.28",
-   "pnlNum": 1529.28
+   "pnl": "$+1,299.59",
+   "pnlNum": 1299.59
   }
  ],
  "plans": [
