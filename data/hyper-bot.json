@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-02T04:22:02.154935+00:00",
+  "lastUpdated": "2026-10-02T04:24:01.588636+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$5,719",
+      "value": "+$7,879",
       "tone": "good",
-      "sub": "32 trades, 1 BTC each"
+      "sub": "33 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "59%",
-      "sub": "19W / 13L"
+      "value": "61%",
+      "sub": "20W / 13L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.49",
+      "value": "1.67",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "GRIEZMANN",
-      "direction": "Short",
-      "entry": "86,414",
-      "current": "86,311",
-      "size": "1 BTC",
-      "pnl": "+$2,182",
-      "pnlNum": 2182,
-      "stop": "86,414 (BE)",
-      "targets": "✓ 83,931 / ✓ 82,799 / 75,608",
-      "realized": "+$2,151",
-      "open": "30%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "TOTTI",
@@ -51,6 +37,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-02",
+      "entryDate": "2026-09-23",
+      "symbol": "GRIEZMANN",
+      "direction": "Short",
+      "entry": "86,414",
+      "exit": "86,385",
+      "pnl": "+$2,159",
+      "pnlNum": 2159,
+      "rMultiple": "+1.56R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-10-02",
       "entryDate": "2026-09-22",
@@ -436,5 +434,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $86,311"
+  "priceNote": "Unrealised P&L marked at $86,323"
 }
