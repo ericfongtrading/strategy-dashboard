@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T16:14:01.425367+00:00",
+  "lastUpdated": "2026-10-02T17:12:01.481137+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -25,26 +25,7 @@
     }
   ],
   "positions": [],
-  "plans": [
-    {
-      "symbol": "ETOO",
-      "direction": "Short",
-      "zone": "86,500 - 86,550",
-      "stop": "88,050",
-      "targets": "84,380 / 83,590 / 82,840",
-      "conviction": 4,
-      "status": "Waiting"
-    },
-    {
-      "symbol": "TOTTI",
-      "direction": "Long",
-      "zone": "73,500 - 74,500",
-      "stop": "71,700",
-      "targets": "75,980 / 81,224 / 83,931",
-      "conviction": 3,
-      "status": "Waiting"
-    }
-  ],
+  "plans": [],
   "recentTrades": [
     {
       "date": "2026-10-02",
@@ -443,5 +424,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $85,183"
+  "priceNote": "Unrealised P&L marked at $85,044"
 }
