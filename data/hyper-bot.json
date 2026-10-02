@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-01T22:22:01.703400+00:00",
+  "lastUpdated": "2026-10-02T04:22:02.154935+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$3,819",
+      "value": "+$5,719",
       "tone": "good",
-      "sub": "31 trades, 1 BTC each"
+      "sub": "32 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "58%",
-      "sub": "18W / 13L"
+      "value": "59%",
+      "sub": "19W / 13L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.33",
+      "value": "1.49",
       "sub": "gross win / gross loss"
     },
     {
@@ -29,26 +29,13 @@
       "symbol": "GRIEZMANN",
       "direction": "Short",
       "entry": "86,414",
-      "current": "84,693",
+      "current": "86,311",
       "size": "1 BTC",
-      "pnl": "+$2,667",
-      "pnlNum": 2667,
+      "pnl": "+$2,182",
+      "pnlNum": 2182,
       "stop": "86,414 (BE)",
       "targets": "✓ 83,931 / ✓ 82,799 / 75,608",
       "realized": "+$2,151",
-      "open": "30%"
-    },
-    {
-      "symbol": "AGUERO",
-      "direction": "Short",
-      "entry": "86,075",
-      "current": "84,693",
-      "size": "1 BTC",
-      "pnl": "+$2,328",
-      "pnlNum": 2328,
-      "stop": "86,075 (BE)",
-      "targets": "✓ 83,931 / ✓ 82,799 / 75,608",
-      "realized": "+$1,913",
       "open": "30%"
     }
   ],
@@ -64,6 +51,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-02",
+      "entryDate": "2026-09-22",
+      "symbol": "AGUERO",
+      "direction": "Short",
+      "entry": "86,075",
+      "exit": "86,117",
+      "pnl": "+$1,901",
+      "pnlNum": 1901,
+      "rMultiple": "+1.10R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-09-20",
       "entryDate": "2026-09-18",
@@ -437,5 +436,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,693"
+  "priceNote": "Unrealised P&L marked at $86,311"
 }
