@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T16:00:18Z",
+  "lastUpdated": "2026-10-05T20:00:18Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+116.90 across 54 closed trades, 46% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -80,37 +80,37 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "85,300",
-      "current": "85,232.5",
+      "current": "85,699.5",
       "size": "0.03751",
-      "pnl": "$-2.44",
-      "pnlNum": -2.44
+      "pnl": "$+15.83",
+      "pnlNum": 15.83
     },
     {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,696.65",
+      "current": "2,708.05",
       "size": "0.2373",
-      "pnl": "$-5.65",
-      "pnlNum": -5.65
+      "pnl": "$-2.75",
+      "pnlNum": -2.75
     },
     {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "11.154",
-      "current": "10.8475",
+      "current": "10.8795",
       "size": "57.91",
-      "pnl": "$-17.78",
-      "pnlNum": -17.78
+      "pnl": "$-15.87",
+      "pnlNum": -15.87
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "14.14",
-      "current": "13.789",
+      "current": "13.919",
       "size": "45.6",
-      "pnl": "$-16.24",
-      "pnlNum": -16.24
+      "pnl": "$-9.80",
+      "pnlNum": -9.8
     }
   ],
   "liveRealisedPnl": 116.9,
@@ -290,11 +290,11 @@
         -0.41,
         -0.26,
         1.72,
-        -0.36,
+        -0.27,
         null,
         null
       ],
-      "ytd": 10.25,
+      "ytd": 10.35,
       "isLive": true
     }
   ]
