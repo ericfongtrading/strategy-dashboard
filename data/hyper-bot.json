@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T03:16:01.100489+00:00",
+  "lastUpdated": "2026-10-05T15:02:01.166301+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -33,7 +33,7 @@
       "stop": "84,050",
       "targets": "87,220",
       "conviction": 3,
-      "status": "Waiting"
+      "status": "Order resting"
     }
   ],
   "recentTrades": [
@@ -434,5 +434,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $86,405"
+  "priceNote": "Unrealised P&L marked at $85,502"
 }
