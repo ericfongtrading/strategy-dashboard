@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-05T17:02:47Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $-30.85 (-0.88%): realised $-13.46 across 46 closed trades (35% winners), open $-17.39. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09. Costs are charged at 5 bp a side; measured against the live fill record the true figure is 4.74 bp (4.50 fee, 0.24 slippage), so the backtest is if anything slightly conservative. From 2026-09-24 entries rest as post-only orders rather than crossing the spread, which should lower that further \u2014 no figure here assumes it yet.",
+  "lastUpdated": "2026-10-05T19:02:56Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $-28.68 (-0.82%): realised $-13.46 across 46 closed trades (35% winners), open $-15.23. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09. Costs are charged at 5 bp a side; measured against the live fill record the true figure is 4.74 bp (4.50 fee, 0.24 slippage), so the backtest is if anything slightly conservative. From 2026-09-24 entries rest as post-only orders rather than crossing the spread, which should lower that further \u2014 no figure here assumes it yet.",
   "recentTrades": [
     {
       "date": "2026-10-05",
@@ -128,86 +128,86 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "86,035",
-      "current": "85,236",
+      "current": "85,562",
       "size": "0.00203",
-      "pnl": "$-1.62",
-      "pnlNum": -1.62
+      "pnl": "$-0.99",
+      "pnlNum": -0.99
     },
     {
       "symbol": "XRP",
       "direction": "Long",
       "entry": "1.522",
-      "current": "1.49065",
+      "current": "1.49795",
       "size": "86",
-      "pnl": "$-2.73",
-      "pnlNum": -2.73
+      "pnl": "$-2.09",
+      "pnlNum": -2.09
     },
     {
       "symbol": "LINK",
       "direction": "Short",
       "entry": "13.94",
-      "current": "13.82",
+      "current": "13.89",
       "size": "7.3",
-      "pnl": "$+0.92",
-      "pnlNum": 0.92
+      "pnl": "$+0.39",
+      "pnlNum": 0.39
     },
     {
       "symbol": "SUI",
       "direction": "Short",
       "entry": "1.1844",
-      "current": "1.18545",
+      "current": "1.19215",
       "size": "70.1",
-      "pnl": "$-0.07",
-      "pnlNum": -0.07
+      "pnl": "$-0.54",
+      "pnlNum": -0.54
     },
     {
       "symbol": "ZEC",
       "direction": "Short",
       "entry": "1,466",
-      "current": "1,298",
+      "current": "1,327",
       "size": "0.06",
-      "pnl": "$+10.04",
-      "pnlNum": 10.04
+      "pnl": "$+8.30",
+      "pnlNum": 8.3
     },
     {
       "symbol": "WLD",
       "direction": "Short",
       "entry": "0.48547",
-      "current": "0.56316",
+      "current": "0.55991",
       "size": "123.6",
-      "pnl": "$-9.60",
-      "pnlNum": -9.6
-    },
-    {
-      "symbol": "PUMP",
-      "direction": "Short",
-      "entry": "0.004866",
-      "current": "0.006299",
-      "size": "8879",
-      "pnl": "$-12.72",
-      "pnlNum": -12.72
+      "pnl": "$-9.19",
+      "pnlNum": -9.19
     },
     {
       "symbol": "NEAR",
       "direction": "Long",
       "entry": "5.3346",
-      "current": "4.99425",
+      "current": "5.15425",
       "size": "10.9",
-      "pnl": "$-3.71",
-      "pnlNum": -3.71
+      "pnl": "$-1.97",
+      "pnlNum": -1.97
+    },
+    {
+      "symbol": "PUMP",
+      "direction": "Short",
+      "entry": "0.004866",
+      "current": "0.00626",
+      "size": "8879",
+      "pnl": "$-12.39",
+      "pnlNum": -12.39
     },
     {
       "symbol": "ARB",
       "direction": "Long",
       "entry": "0.19483",
-      "current": "0.20329",
+      "current": "0.20788",
       "size": "248.8",
-      "pnl": "$+2.10",
-      "pnlNum": 2.1
+      "pnl": "$+3.25",
+      "pnlNum": 3.25
     }
   ],
   "liveRealisedPnl": -13.46,
-  "liveOpenPnl": -17.39,
+  "liveOpenPnl": -15.23,
   "liveClosedTrades": 46,
   "monthlyReturns": [
     {
@@ -276,11 +276,11 @@
         -0.07,
         -4.43,
         -0.22,
-        -0.84,
+        -0.78,
         null,
         null
       ],
-      "ytd": 15.24,
+      "ytd": 15.31,
       "isLive": true
     }
   ]
