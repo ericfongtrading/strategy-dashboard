@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-05T08:00:20Z",
+  "lastUpdated": "2026-10-05T12:00:20Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+116.90 across 54 closed trades, 46% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -80,37 +80,37 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "85,300",
-      "current": "86,240.5",
+      "current": "86,177.5",
       "size": "0.03751",
-      "pnl": "$+36.57",
-      "pnlNum": 36.57
+      "pnl": "$+32.60",
+      "pnlNum": 32.6
     },
     {
       "symbol": "ETH",
       "direction": "Long",
       "entry": "2,719.9",
-      "current": "2,726.5",
+      "current": "2,717.25",
       "size": "0.2373",
-      "pnl": "$+1.59",
-      "pnlNum": 1.59
+      "pnl": "$-0.71",
+      "pnlNum": -0.71
     },
     {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "11.154",
-      "current": "11.065",
+      "current": "11.0095",
       "size": "57.91",
-      "pnl": "$-5.15",
-      "pnlNum": -5.15
+      "pnl": "$-8.28",
+      "pnlNum": -8.28
     },
     {
       "symbol": "LINK",
       "direction": "Long",
       "entry": "14.14",
-      "current": "14.2445",
+      "current": "14.206",
       "size": "45.6",
-      "pnl": "$+4.83",
-      "pnlNum": 4.83
+      "pnl": "$+3.10",
+      "pnlNum": 3.1
     }
   ],
   "liveRealisedPnl": 116.9,
@@ -290,11 +290,11 @@
         -0.41,
         -0.26,
         1.72,
-        -0.13,
+        -0.16,
         null,
         null
       ],
-      "ytd": 10.51,
+      "ytd": 10.47,
       "isLive": true
     }
   ]
