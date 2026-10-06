@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-06T14:40:01.724880+00:00",
+  "updated_utc": "2026-10-06T14:45:01.501532+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -31,8 +31,8 @@
       "source_present": false,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-06T14:40:01.646836+00:00",
-      "data_final_utc": "2026-10-06T14:40:00+00:00",
+      "heartbeat_utc": "2026-10-06T14:45:01.018105+00:00",
+      "data_final_utc": "2026-10-06T14:45:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -51,8 +51,8 @@
       "source_present": false,
       "errors": 0,
       "state": "ERROR",
-      "heartbeat_utc": "2026-10-06T14:40:01.646836+00:00",
-      "data_final_utc": "2026-10-06T14:40:00+00:00",
+      "heartbeat_utc": "2026-10-06T14:45:01.018105+00:00",
+      "data_final_utc": "2026-10-06T14:45:00+00:00",
       "halt_reasons": [
         "HOST_LOOP_OR_TELEMETRY_FAILURE",
         "NQ_RECOVERY_NOT_VERIFIED",
@@ -75,7 +75,7 @@
       "source_present": false,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-06T14:40:01.647134+00:00",
+      "heartbeat_utc": "2026-10-06T14:45:01.321088+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
