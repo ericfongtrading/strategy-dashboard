@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-07T08:00:19Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+90.79 across 56 closed trades, 46% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-10-07T12:00:24Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+56.12 across 57 closed trades, 46% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
       "date": "2026-10-01",
@@ -77,26 +77,17 @@
   ],
   "positions": [
     {
-      "symbol": "ETH",
-      "direction": "Long",
-      "entry": "2,719.9",
-      "current": "2,615.15",
-      "size": "0.2373",
-      "pnl": "$-24.99",
-      "pnlNum": -24.99
-    },
-    {
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "11.154",
-      "current": "11.3255",
+      "current": "10.9975",
       "size": "57.91",
-      "pnl": "$+10.02",
-      "pnlNum": 10.02
+      "pnl": "$-9.03",
+      "pnlNum": -9.03
     }
   ],
-  "liveRealisedPnl": 90.79,
-  "liveClosedTrades": 56,
+  "liveRealisedPnl": 56.12,
+  "liveClosedTrades": 57,
   "monthlyReturns": [
     {
       "year": 2017,
@@ -272,11 +263,11 @@
         -0.41,
         -0.26,
         1.68,
-        -0.32,
+        -0.4,
         null,
         null
       ],
-      "ytd": 10.25,
+      "ytd": 10.17,
       "isLive": true
     }
   ]
