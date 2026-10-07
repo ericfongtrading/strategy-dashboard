@@ -1,6 +1,6 @@
 {
- "lastUpdated": "2026-10-06T00:15:05.961500+00:00",
- "basis": "Live performance since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), marked to daily account equity since 2026-08-28 (earlier months: settled cash flows). Cumulative +155.2% (CAGR +24.2%), max drawdown since 2024 -10.6%, currently -5.0% from the high, 35 of 53 months positive. Refreshed daily.",
+ "lastUpdated": "2026-10-07T00:15:06.427263+00:00",
+ "basis": "Live performance since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), marked to daily account equity since 2026-08-28 (earlier months: settled cash flows). Cumulative +155.4% (CAGR +24.2%), max drawdown since 2024 -10.6%, currently -4.9% from the high, 36 of 53 months positive. Refreshed daily.",
  "monthlyReturns": [
   {
    "year": 2022,
@@ -90,11 +90,11 @@
     0.6,
     -7.8,
     5.0,
-    -0.1,
+    0.0,
     null,
     null
    ],
-   "ytd": 10.9,
+   "ytd": 11.0,
    "isLive": true
   }
  ]
