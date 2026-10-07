@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-07T04:06:01.367230+00:00",
+  "lastUpdated": "2026-10-07T12:14:01.403604+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,6 +26,15 @@
   ],
   "positions": [],
   "plans": [
+    {
+      "symbol": "INZAGHI",
+      "direction": "Long",
+      "zone": "82,820 - 82,840",
+      "stop": "80,800",
+      "targets": "83,430 / 84,030 / 84,410",
+      "conviction": 3,
+      "status": "Waiting"
+    },
     {
       "symbol": "VILLA",
       "direction": "Short",
@@ -434,5 +443,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,114"
+  "priceNote": "Unrealised P&L marked at $83,609"
 }
