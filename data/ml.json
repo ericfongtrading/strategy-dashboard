@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-07T05:07:01+00:00",
+ "lastUpdated": "2026-10-07T06:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+13,819.13",
+   "value": "$+13,975.48",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+2,799.96",
+   "value": "$+2,956.32",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+13,819.13",
+   "value": "$+13,975.48",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 11019.163770558269,
-  "floatingPnl": 2799.961509559479,
-  "totalPnl": 13819.125280117747,
-  "equity": 113819.12528011775,
+  "floatingPnl": 2956.3179042334677,
+  "totalPnl": 13975.481674791736,
+  "equity": 113975.48167479174,
   "closedTrades": 54,
   "wins": 21,
   "profitFactor": 1.6602506970419437
@@ -804,61 +804,61 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "82,600.00",
-   "current": "84,103.06",
+   "current": "84,332.85",
    "size": "$13,336.98",
    "stop": "80,900.00",
    "targets": "TP1 87,396.00 (bank half); 90,000.00",
    "open": "100%",
-   "pnl": "$+242.69",
-   "pnlNum": 242.69
+   "pnl": "$+279.79",
+   "pnlNum": 279.79
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "76,250.00",
-   "current": "84,103.06",
+   "current": "84,332.85",
    "size": "$6,570.59",
    "stop": "82,300.00",
    "targets": "87,800.00",
    "open": "50%",
-   "pnl": "$+676.71",
-   "pnlNum": 676.71
+   "pnl": "$+696.51",
+   "pnlNum": 696.51
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "84,103.06",
+   "current": "84,332.85",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+636.11",
-   "pnlNum": 636.11
+   "pnl": "$+653.40",
+   "pnlNum": 653.4
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,398.50",
-   "current": "2,610.31",
+   "current": "2,620.90",
    "size": "$4,005.97",
    "stop": "2,097.19",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+353.77",
-   "pnlNum": 353.77
+   "pnl": "$+371.45",
+   "pnlNum": 371.45
   },
   {
    "symbol": "ETH",
    "direction": "Long",
    "entry": "2,464.00",
-   "current": "2,610.31",
+   "current": "2,620.90",
    "size": "$15,000.00",
    "stop": "2,564.00",
    "targets": "3,000.00",
    "open": "50%",
-   "pnl": "$+890.69",
-   "pnlNum": 890.69
+   "pnl": "$+955.15",
+   "pnlNum": 955.15
   }
  ],
  "plans": [
