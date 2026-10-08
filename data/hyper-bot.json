@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T00:16:01.232062+00:00",
+  "lastUpdated": "2026-10-08T05:12:01.506488+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -36,11 +36,20 @@
       "status": "Waiting"
     },
     {
+      "symbol": "SHEVCHENKO",
+      "direction": "Short",
+      "zone": "84,410 - 84,430",
+      "stop": "85,650",
+      "targets": "84,080 / 83,695 / 83,480",
+      "conviction": 3,
+      "status": "Waiting"
+    },
+    {
       "symbol": "VILLA",
       "direction": "Short",
       "zone": "85,490 - 85,500",
       "stop": "86,850",
-      "targets": "85,020 / 84,460 / 84,080",
+      "targets": "85,080 / 84,460 / 84,080",
       "conviction": 3,
       "status": "Waiting"
     }
@@ -443,5 +452,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $83,255"
+  "priceNote": "Unrealised P&L marked at $82,648"
 }
