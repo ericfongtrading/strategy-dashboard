@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-08T08:00:22Z",
+  "lastUpdated": "2026-10-08T12:00:19Z",
   "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+56.12 across 57 closed trades, 46% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
@@ -80,10 +80,10 @@
       "symbol": "AVAX",
       "direction": "Long",
       "entry": "11.154",
-      "current": "10.8275",
+      "current": "10.728",
       "size": "57.91",
-      "pnl": "$-18.47",
-      "pnlNum": -18.47
+      "pnl": "$-24.73",
+      "pnlNum": -24.73
     }
   ],
   "liveRealisedPnl": 56.12,
@@ -263,11 +263,11 @@
         -0.41,
         -0.26,
         1.72,
-        -0.46,
+        -0.48,
         null,
         null
       ],
-      "ytd": 10.14,
+      "ytd": 10.12,
       "isLive": true
     }
   ]
