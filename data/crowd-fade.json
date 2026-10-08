@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-10-08T21:02:15Z",
-  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+19.68 (+0.56%): realised $-28.31 across 53 closed trades (34% winners), open $+47.99. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09. Costs are charged at 5 bp a side; measured against the live fill record the true figure is 4.74 bp (4.50 fee, 0.24 slippage), so the backtest is if anything slightly conservative. From 2026-09-24 entries rest as post-only orders rather than crossing the spread, which should lower that further \u2014 no figure here assumes it yet.",
+  "lastUpdated": "2026-10-08T23:02:48Z",
+  "basis": "Backtest 2023-01 to 2026-08: returns on strategy capital (20 fixed slots, volatility-scaled, never above 1x gross), net of fees and funding, universe re-ranked monthly with no hindsight. Live since 2026-09-08 on Hyperliquid perps at $3,500 capital. Live P/L $+16.90 (+0.48%): realised $-14.15 across 54 closed trades (35% winners), open $+31.05. The live sample is far too short to confirm the backtest. In the monthly grid, live figures begin 2026-09. Costs are charged at 5 bp a side; measured against the live fill record the true figure is 4.74 bp (4.50 fee, 0.24 slippage), so the backtest is if anything slightly conservative. From 2026-09-24 entries rest as post-only orders rather than crossing the spread, which should lower that further \u2014 no figure here assumes it yet.",
   "recentTrades": [
+    {
+      "date": "2026-10-08",
+      "symbol": "ADA",
+      "direction": "Short",
+      "entry": "0.266728",
+      "exit": "0.23454",
+      "pnl": "$+14.16",
+      "pnlNum": 14.16,
+      "entryDate": "2026-10-05"
+    },
     {
       "date": "2026-10-08",
       "symbol": "NEAR",
@@ -111,16 +121,6 @@
       "pnl": "$+1.39",
       "pnlNum": 1.39,
       "entryDate": "2026-10-03"
-    },
-    {
-      "date": "2026-10-04",
-      "symbol": "DOGE",
-      "direction": "Short",
-      "entry": "0.091369",
-      "exit": "0.092649",
-      "pnl": "$-1.71",
-      "pnlNum": -1.71,
-      "entryDate": "2026-10-02"
     }
   ],
   "positions": [
@@ -128,123 +128,114 @@
       "symbol": "ETH",
       "direction": "Short",
       "entry": "2,597",
-      "current": "2,473",
+      "current": "2,476",
       "size": "0.0724",
-      "pnl": "$+9.01",
-      "pnlNum": 9.01
+      "pnl": "$+8.77",
+      "pnlNum": 8.77
     },
     {
       "symbol": "BNB",
       "direction": "Short",
       "entry": "764.43",
-      "current": "733.33",
+      "current": "737.15",
       "size": "0.242",
-      "pnl": "$+7.50",
-      "pnlNum": 7.5
+      "pnl": "$+6.59",
+      "pnlNum": 6.59
     },
     {
       "symbol": "BTC",
       "direction": "Short",
       "entry": "83,493",
-      "current": "81,716",
+      "current": "81,854",
       "size": "0.0021",
-      "pnl": "$+3.74",
-      "pnlNum": 3.74
+      "pnl": "$+3.40",
+      "pnlNum": 3.4
     },
     {
       "symbol": "SOL",
       "direction": "Short",
       "entry": "107.70",
-      "current": "109.77",
+      "current": "110.30",
       "size": "1.47",
-      "pnl": "$-3.02",
-      "pnlNum": -3.02
+      "pnl": "$-3.85",
+      "pnlNum": -3.85
     },
     {
       "symbol": "XRP",
       "direction": "Short",
       "entry": "1.4171",
-      "current": "1.37825",
+      "current": "1.38265",
       "size": "92",
-      "pnl": "$+3.56",
-      "pnlNum": 3.56
+      "pnl": "$+3.14",
+      "pnlNum": 3.14
     },
     {
       "symbol": "HYPE",
       "direction": "Short",
       "entry": "90.08",
-      "current": "84.51",
+      "current": "84.44",
       "size": "1.49",
-      "pnl": "$+8.30",
-      "pnlNum": 8.3
-    },
-    {
-      "symbol": "ADA",
-      "direction": "Short",
-      "entry": "0.266727",
-      "current": "0.23431",
-      "size": "442",
-      "pnl": "$+14.30",
-      "pnlNum": 14.3
+      "pnl": "$+8.38",
+      "pnlNum": 8.38
     },
     {
       "symbol": "TAO",
       "direction": "Long",
       "entry": "269.17",
-      "current": "270.53",
+      "current": "270.25",
       "size": "0.325",
-      "pnl": "$+0.45",
-      "pnlNum": 0.45
+      "pnl": "$+0.38",
+      "pnlNum": 0.38
     },
     {
       "symbol": "ZEC",
       "direction": "Short",
       "entry": "1,416",
-      "current": "1,179",
+      "current": "1,189",
       "size": "0.06",
-      "pnl": "$+14.21",
-      "pnlNum": 14.21
+      "pnl": "$+13.63",
+      "pnlNum": 13.63
     },
     {
       "symbol": "UNI",
       "direction": "Long",
       "entry": "7.3033",
-      "current": "7.34205",
+      "current": "7.352",
       "size": "9.5",
-      "pnl": "$+0.38",
-      "pnlNum": 0.38
+      "pnl": "$+0.48",
+      "pnlNum": 0.48
     },
     {
       "symbol": "WLD",
       "direction": "Short",
       "entry": "0.48971",
-      "current": "0.48237",
+      "current": "0.48114",
       "size": "143.2",
-      "pnl": "$+1.07",
-      "pnlNum": 1.07
+      "pnl": "$+1.21",
+      "pnlNum": 1.21
     },
     {
       "symbol": "PUMP",
       "direction": "Short",
       "entry": "0.004965",
-      "current": "0.005667",
+      "current": "0.00565",
       "size": "10733",
-      "pnl": "$-7.51",
-      "pnlNum": -7.51
+      "pnl": "$-7.38",
+      "pnlNum": -7.38
     },
     {
       "symbol": "ARB",
       "direction": "Long",
       "entry": "0.18526",
-      "current": "0.17283",
+      "current": "0.17378",
       "size": "322",
-      "pnl": "$-4.00",
-      "pnlNum": -4.0
+      "pnl": "$-3.70",
+      "pnlNum": -3.7
     }
   ],
-  "liveRealisedPnl": -28.31,
-  "liveOpenPnl": 47.99,
-  "liveClosedTrades": 53,
+  "liveRealisedPnl": -14.15,
+  "liveOpenPnl": 31.05,
+  "liveClosedTrades": 54,
   "monthlyReturns": [
     {
       "year": 2023,
@@ -312,11 +303,11 @@
         -0.07,
         -4.43,
         -0.46,
-        0.95,
+        0.87,
         null,
         null
       ],
-      "ytd": 17.04,
+      "ytd": 16.94,
       "isLive": true
     }
   ]
