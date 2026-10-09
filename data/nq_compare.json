@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-09T06:25:01.284139+00:00",
+  "updated_utc": "2026-10-09T06:30:02.033886+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -109,14 +109,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-09T06:25:00.575245+00:00",
-      "data_final_utc": "2026-10-09T06:24:00+00:00",
+      "state": "STALE",
+      "heartbeat_utc": "2026-10-09T06:26:33.743116+00:00",
+      "data_final_utc": "2026-10-09T06:26:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
-      "armed": false,
-      "warmup_verified": true,
+      "armed": null,
+      "warmup_verified": null,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -169,18 +169,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "ERROR",
-      "heartbeat_utc": "2026-10-09T06:25:00.575245+00:00",
-      "data_final_utc": "2026-10-09T06:24:00+00:00",
-      "halt_reasons": [
-        "IB",
-        "NQ_RECOVERY_NOT_VERIFIED",
-        "VENUE_RECOVERY_NOT_VERIFIED"
-      ],
+      "state": "STALE",
+      "heartbeat_utc": "2026-10-09T06:26:33.943364+00:00",
+      "data_final_utc": null,
+      "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": true,
-      "armed": false,
-      "warmup_verified": true,
+      "broker_connected": null,
+      "armed": null,
+      "warmup_verified": null,
       "summary": {
         "closed": 1,
         "open": 0,
@@ -272,13 +268,13 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "ERROR",
-      "heartbeat_utc": "2026-10-09T06:25:01.091785+00:00",
+      "state": "STALE",
+      "heartbeat_utc": "2026-10-09T06:26:33.852066+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": true,
-      "armed": false,
+      "broker_connected": null,
+      "armed": null,
       "warmup_verified": null,
       "summary": {
         "closed": 2,
@@ -289,5 +285,5 @@
       }
     }
   },
-  "execution_mode": "LIVE"
+  "execution_mode": null
 }
