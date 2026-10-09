@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-09T04:00:18Z",
-  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $+23.13 across 58 closed trades, 45% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
+  "lastUpdated": "2026-10-09T08:00:22Z",
+  "basis": "Backtest 2017-2026 shown UNLEVERED (weights normalised to 1.00x gross). Live since 2026-08 on Hyperliquid perps at a $15,000 sizing base whose deployed gross reaches 2.36x. Realised live P/L $-5.25 across 60 closed trades, 43% winners. The live sample is far too short to confirm the backtest. 1 trade corrected for a known order-execution bug (see hl_tradelog.BUG_CORRECTIONS); the raw exchange record is unchanged, only this figure is. In the monthly grid, live figures begin 2026-09; August executed live but spanned a 10x sizing change mid-month, so it remains a backtest row.",
   "recentTrades": [
     {
       "date": "2026-10-01",
@@ -77,26 +77,17 @@
   ],
   "positions": [
     {
-      "symbol": "BTC",
-      "direction": "Short",
-      "entry": "81,025",
-      "current": "82,390.5",
-      "size": "0.01703",
-      "pnl": "$-23.33",
-      "pnlNum": -23.33
-    },
-    {
       "symbol": "TIA",
       "direction": "Long",
       "entry": "0.52056",
-      "current": "0.51991",
+      "current": "0.51009",
       "size": "1359.2",
-      "pnl": "$+0.13",
-      "pnlNum": 0.13
+      "pnl": "$-15.04",
+      "pnlNum": -15.04
     }
   ],
-  "liveRealisedPnl": 23.13,
-  "liveClosedTrades": 58,
+  "liveRealisedPnl": -5.25,
+  "liveClosedTrades": 60,
   "monthlyReturns": [
     {
       "year": 2017,
@@ -272,11 +263,11 @@
         -0.41,
         -0.26,
         1.72,
-        -0.57,
+        -0.62,
         null,
         null
       ],
-      "ytd": 10.02,
+      "ytd": 9.97,
       "isLive": true
     }
   ]
