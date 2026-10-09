@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-09T10:07:01+00:00",
+ "lastUpdated": "2026-10-09T11:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+12,503.75",
+   "value": "$+12,496.90",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+527.34",
+   "value": "$+520.49",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+12,503.75",
+   "value": "$+12,496.90",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 11976.409669626591,
-  "floatingPnl": 527.3393929124767,
-  "totalPnl": 12503.749062539067,
-  "equity": 112503.74906253906,
+  "floatingPnl": 520.4920762625177,
+  "totalPnl": 12496.901745889108,
+  "equity": 112496.9017458891,
   "closedTrades": 58,
   "wins": 24,
   "profitFactor": 1.8169014720340164
@@ -848,13 +848,13 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "82,658.01",
+   "current": "82,567.04",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+527.34",
-   "pnlNum": 527.34
+   "pnl": "$+520.49",
+   "pnlNum": 520.49
   }
  ],
  "plans": [
@@ -880,6 +880,14 @@
    "zone": "83,000.00",
    "stop": "83,800.00",
    "targets": "80,500.00",
+   "status": "limit"
+  },
+  {
+   "symbol": "ETH",
+   "direction": "Long",
+   "zone": "2,440.00",
+   "stop": "2,380.00",
+   "targets": "2,580.00",
    "status": "limit"
   }
  ]
