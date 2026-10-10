@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-10T01:07:02+00:00",
+ "lastUpdated": "2026-10-10T02:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+12,612.63",
+   "value": "$+12,583.44",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+648.69",
+   "value": "$+619.49",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+12,612.63",
+   "value": "$+12,583.44",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 11963.94201692022,
-  "floatingPnl": 648.6892201230594,
-  "totalPnl": 12612.631237043279,
-  "equity": 112612.63123704329,
+  "floatingPnl": 619.4939382320969,
+  "totalPnl": 12583.435955152318,
+  "equity": 112583.43595515232,
   "closedTrades": 58,
   "wins": 24,
   "profitFactor": 1.8169014720340164
@@ -848,25 +848,25 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "82,564.35",
+   "current": "82,694.00",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+520.29",
-   "pnlNum": 520.29
+   "pnl": "$+530.05",
+   "pnlNum": 530.05
   },
   {
    "symbol": "BTC",
    "direction": "Short",
    "entry": "82,991.70",
-   "current": "82,564.35",
+   "current": "82,694.00",
    "size": "$24,935.31",
    "stop": "83,800.00",
    "targets": "80,500.00",
    "open": "100%",
-   "pnl": "$+128.40",
-   "pnlNum": 128.4
+   "pnl": "$+89.45",
+   "pnlNum": 89.45
   }
  ],
  "plans": [
