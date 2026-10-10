@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-10T06:07:01+00:00",
+ "lastUpdated": "2026-10-10T07:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+12,549.66",
+   "value": "$+12,573.53",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+585.71",
+   "value": "$+609.58",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+12,549.66",
+   "value": "$+12,573.53",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 11963.94201692022,
-  "floatingPnl": 585.7138824167222,
-  "totalPnl": 12549.655899336942,
-  "equity": 112549.65589933694,
+  "floatingPnl": 609.5835305497123,
+  "totalPnl": 12573.525547469933,
+  "equity": 112573.52554746994,
   "closedTrades": 58,
   "wins": 24,
   "profitFactor": 1.8169014720340164
@@ -848,25 +848,25 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "82,844.01",
+   "current": "82,738.01",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+541.34",
-   "pnlNum": 541.34
+   "pnl": "$+533.36",
+   "pnlNum": 533.36
   },
   {
    "symbol": "BTC",
    "direction": "Short",
    "entry": "82,991.70",
-   "current": "82,844.01",
+   "current": "82,738.01",
    "size": "$24,935.31",
    "stop": "83,800.00",
    "targets": "80,500.00",
    "open": "100%",
-   "pnl": "$+44.37",
-   "pnlNum": 44.37
+   "pnl": "$+76.22",
+   "pnlNum": 76.22
   }
  ],
  "plans": [
