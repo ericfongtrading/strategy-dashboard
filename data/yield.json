@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-10T13:46:13.625070+00:00",
-  "basis": "Funding balance and available USD are read live from the authoritative Bitfinex funding-wallet API. Active lending is the bot's itemized active-credit view, which may not include every credit represented in the wallet total. Historical monthly returns through September 2026 remain the verified, deposit-adjusted dashboard record. The current month is intentionally blank until a deposit-adjusted return is available.",
+  "lastUpdated": "2026-10-10T13:48:43.905225+00:00",
+  "basis": "Monthly returns are calculated from Bitfinex Margin Funding Payment ledger entries, excluding deposits and withdrawals. Historical returns through September 2026 remain the verified dashboard record.",
   "monthlyReturns": [
     {
       "year": 2025,
@@ -33,51 +33,16 @@
         0.87,
         0.76,
         0.58,
-        null,
+        0.24,
         null,
         null
       ],
-      "ytd": 8.04,
+      "ytd": 8.28,
       "isLive": true
     }
   ],
-  "headline": [
-    {
-      "label": "Funding balance",
-      "value": "$216,034",
-      "tone": "good"
-    },
-    {
-      "label": "Weighted APR",
-      "value": "10.17%",
-      "tone": "good"
-    },
-    {
-      "label": "Itemized active lending",
-      "value": "$194,950",
-      "sub": "153 credits reported to bot"
-    }
-  ],
-  "detailHeadline": [
-    {
-      "label": "Funding balance",
-      "value": "$216,034.47",
-      "tone": "good"
-    },
-    {
-      "label": "Weighted APR",
-      "value": "10.17%",
-      "tone": "good"
-    },
-    {
-      "label": "Pending offers",
-      "value": "$0.00"
-    },
-    {
-      "label": "Available",
-      "value": "$64.56"
-    }
-  ],
+  "headline": [],
+  "detailHeadline": [],
   "recentTrades": [],
   "positions": []
 }
