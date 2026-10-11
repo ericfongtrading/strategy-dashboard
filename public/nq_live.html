@@ -7,6 +7,7 @@
 <a href="./">← Strategy dashboard</a>
 <header><div><div class="eyebrow">NQ / MNQ · Four-sleeve portfolio</div><h1>One strategy. Three execution views.</h1><p class="muted">Follow each signal from its theoretical outcome to its futures and CFD fills.</p></div><button id="refresh" type="button">Refresh data</button></header>
 <div id="connection" class="muted" role="status">Loading published telemetry…</div>
+<div id="observation" class="muted"></div>
 <div class="notice" id="deployment"><strong>Selected version: nq4-cci05-v1.</strong> Loading activation status. This page does not activate trading.</div>
 <div class="allocation" aria-label="Selected allocation">
 <div><b>VL</b><span class="muted">IB 1 MNQ · FTMO $100 risk</span></div><div><b>R3</b><span class="muted">IB 1 MNQ · FTMO $100 risk</span></div><div><b>CCI-AM</b><span class="muted">IB 1 MNQ · FTMO $100 risk</span></div><div><b>TBS</b><span class="muted">IB 2 MNQ · FTMO $200 risk</span></div></div>
@@ -60,7 +61,9 @@ async function refresh(){
  const warming=d.lanes?.ib?.warmup_verified===false;
  if(armed.length){$('deployment').innerHTML='<strong>Entries enabled: '+armed.map(k=>LABEL[k]).join(' / ')+'.</strong> Each venue has its own status and protection. '+(faults.length?'A venue also reports an error; check its entry-halt reasons below.':'The first organic trade per venue triggers its review hold.');}
  else if(d.execution_mode==='LIVE'){$('deployment').innerHTML='<strong>Live mode configured; new entries are blocked.</strong> '+(faults.length?'The services report safety faults or stale status. A recovered connection does not clear a latched entry halt. ':'Check the first-trade review hold and venue status below. ')+'This is not observation mode. Existing protective exits are separate from entry permission.';}
+ else if(d.execution_mode==='OBSERVE_ONLY'){$('deployment').innerHTML='<strong>Monitoring mode: broker orders are disabled.</strong> New theoretical signals will be counted in this observation period. IB and FTMO stay blank unless a broker fill is actually recorded after a later live release.';}
  else{$('deployment').innerHTML='<strong>New entries are not confirmed enabled.</strong> '+(warming?'Indicator history is incomplete. ':'')+'Check each venue’s heartbeat and entry status below. '+(d.legacy_entries_disabled?'The old five-sleeve runtime remains paused.':'');}
+ $('observation').textContent=d.observation_started_utc?'Observation window started '+utc(d.observation_started_utc)+' UTC. Closed P&L and trade counters exclude records entered before this time.':'All published forward records are included; no observation reset has been recorded.';
 
  }catch(error){$('connection').textContent='Data unavailable: '+error.message+'. '+(dataset?'Last loaded records are retained; status is unverified.':'No example trades or assumed balances are displayed.');$('connection').className='stale';$('deployment').textContent='Current activation status is unverified. This dashboard does not activate trading.';}finally{$('refresh').disabled=false}
 }
