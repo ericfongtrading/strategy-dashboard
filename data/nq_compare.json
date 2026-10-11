@@ -1,8 +1,8 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-11T06:30:01.440048+00:00",
-  "legacy_entries_disabled": true,
+  "updated_utc": "2026-10-11T06:30:26.056273+00:00",
+  "legacy_entries_disabled": false,
   "allocation": [
     {
       "sleeve": "VL_R3",
@@ -109,14 +109,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-10-09T06:26:33.743116+00:00",
-      "data_final_utc": "2026-10-09T06:26:00+00:00",
+      "state": "OBSERVING",
+      "heartbeat_utc": "2026-10-11T06:30:25.029305+00:00",
+      "data_final_utc": "2026-10-09T20:59:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -169,14 +169,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-10-09T06:26:33.943364+00:00",
-      "data_final_utc": null,
+      "state": "OBSERVING",
+      "heartbeat_utc": "2026-10-11T06:30:25.029305+00:00",
+      "data_final_utc": "2026-10-09T20:59:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "broker_connected": true,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 1,
         "open": 0,
@@ -269,7 +269,7 @@
       "source_present": true,
       "errors": 0,
       "state": "STALE",
-      "heartbeat_utc": "2026-10-09T06:26:33.852066+00:00",
+      "heartbeat_utc": "2026-10-09T05:52:59.588682+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -284,6 +284,5 @@
         "fees_usd": 0.0
       }
     }
-  },
-  "execution_mode": null
+  }
 }
