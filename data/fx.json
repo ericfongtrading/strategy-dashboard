@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-11T22:29:53.559946+00:00",
+  "lastUpdated": "2026-10-11T22:39:54.180340+00:00",
   "basis": "Strategy returns. Historical prices reconstruct the uninterrupted strategy during the pause; these are not broker-account returns. Published history through August 2026 is retained. September onward follows the same research price-fill convention: RSI(14) 30/70, BB(20) midpoint, 2.5 ATR stop, 24 bars, half risk for shared currencies, one pip assumed round-trip cost. 1R = 1 percentage point; returns are additive. Exits use the UTC exit-bar month. Executable bid/ask, slippage and rollover limit fills can differ. Open strategy trades are excluded.",
   "monthlyReturns": [
     {
@@ -149,7 +149,7 @@
   ],
   "recentTrades": [],
   "observer": {
-    "checkedAt": "2026-10-11T22:29:53.559946+00:00",
+    "checkedAt": "2026-10-11T22:39:54.180340+00:00",
     "mode": "OBSERVE_ONLY",
     "connection": "WAITING_FOR_TWS",
     "ibExecutionEnabled": false,
