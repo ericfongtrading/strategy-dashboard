@@ -1,77 +1,6 @@
 {
-  "lastUpdated": "2026-10-11T14:05:02Z",
-  "basis": "Open positions are real and live at the broker. Recent trades marked live are real IB fills, recorded from 2026-09-01. Trades marked modelled are the same strategy replayed on real IB feed data, used for the earlier period whose live fills span known engine bugs. Headline and monthly table are backtest 2017-2026.",
-  "recentTrades": [
-    {
-      "date": "2026-09-16",
-      "symbol": "GBPNZD",
-      "direction": "Short",
-      "entry": "2.33635",
-      "exit": "2.34498",
-      "pnl": "-$285",
-      "pnlNum": -285,
-      "rMultiple": "-0.3R",
-      "source": "live"
-    },
-    {
-      "date": "2026-09-14",
-      "symbol": "GBPAUD",
-      "direction": "Short",
-      "entry": "1.88556",
-      "exit": "1.89313",
-      "pnl": "-$929",
-      "pnlNum": -929,
-      "rMultiple": "-1.0R",
-      "source": "live"
-    },
-    {
-      "date": "2026-09-11",
-      "symbol": "GBPNZD",
-      "direction": "Short",
-      "entry": "2.32765",
-      "exit": "2.31693",
-      "pnl": "+$351",
-      "pnlNum": 351,
-      "rMultiple": "+0.4R",
-      "source": "live"
-    },
-    {
-      "date": "2026-09-11",
-      "symbol": "NZDCAD",
-      "direction": "Long",
-      "entry": "0.80239",
-      "exit": "0.80439",
-      "pnl": "+$326",
-      "pnlNum": 326,
-      "rMultiple": "+0.4R",
-      "source": "live"
-    },
-    {
-      "date": "2026-09-10",
-      "symbol": "NZDCAD",
-      "direction": "Long",
-      "entry": "0.80588",
-      "exit": "0.80686",
-      "pnl": "+$103",
-      "pnlNum": 103,
-      "rMultiple": "+0.2R",
-      "source": "live"
-    }
-  ],
-  "positions": [
-    {
-      "symbol": "GBPAUD",
-      "direction": "Short",
-      "entry": "1.90329",
-      "current": "1.90329",
-      "size": "63,047",
-      "stop": "1.91467",
-      "targets": "1.88965",
-      "pnl": "-",
-      "pnlNum": 0
-    }
-  ],
-  "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
+  "lastUpdated": "2026-10-11T15:17:17.378562+00:00",
+  "basis": "Strategy returns. Historical prices reconstruct the uninterrupted strategy during the pause; these are not broker-account returns. Published history through August 2026 is retained. September onward follows the same research price-fill convention: RSI(14) 30/70, BB(20) midpoint, 2.5 ATR stop, 24 bars, half risk for shared currencies, one pip assumed round-trip cost. 1R = 1 percentage point; returns are additive. Exits use the UTC exit-bar month. Executable bid/ask, slippage and rollover limit fills can differ. Open strategy trades are excluded.",
   "monthlyReturns": [
     {
       "year": 2019,
@@ -210,13 +139,37 @@
         -0.7,
         5.4,
         -0.3,
-        -1.6,
-        0.0,
+        0.3,
+        0.7,
         null,
         null
       ],
-      "ytd": 3.7,
-      "isLive": true
+      "ytd": 6.3
+    }
+  ],
+  "recentTrades": [],
+  "observer": {
+    "checkedAt": "2026-10-11T15:17:17.378562+00:00",
+    "mode": "OBSERVE_ONLY",
+    "connection": "CONNECTED",
+    "ibExecutionEnabled": false,
+    "ftmoExecutionEnabled": false
+  },
+  "dataThrough": "2026-10-09T21:00:00+00:00",
+  "monthlyNote": "Price history through 2026-10-09 21:00 UTC. Latest month is partial. Strategy returns. Historical prices reconstruct the uninterrupted strategy during the pause; these are not broker-account returns. Published history through August 2026 is retained. September onward follows the same research price-fill convention: RSI(14) 30/70, BB(20) midpoint, 2.5 ATR stop, 24 bars, half risk for shared currencies, one pip assumed round-trip cost. 1R = 1 percentage point; returns are additive. Exits use the UTC exit-bar month. Executable bid/ask, slippage and rollover limit fills can differ. Open strategy trades are excluded.",
+  "headline": [
+    {
+      "label": "Mode",
+      "value": "Monitoring only"
+    },
+    {
+      "label": "TWS feed",
+      "value": "CONNECTED"
+    },
+    {
+      "label": "Strategy MTD",
+      "value": "+0.7%",
+      "sub": "Through 09 Oct 21:00 UTC"
     }
   ]
 }
