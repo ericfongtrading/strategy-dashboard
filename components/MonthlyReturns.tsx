@@ -14,10 +14,10 @@ function Cell({ value, isMtd }: { value: number | null; isMtd?: boolean }) {
   );
 }
 
-export function MonthlyReturns({ rows, theoretical, liveSince, note }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string }) {
+export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnly, dataThrough }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string; strategyOnly?: boolean; dataThrough?: string }) {
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
-      <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Monthly Historical Returns</h4>
+      <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">{strategyOnly ? 'Monthly Strategy Returns' : 'Monthly Historical Returns'}</h4>
       <div className="overflow-x-auto">
         <table className="w-full text-xs" style={{ minWidth: 700 }}>
           <thead>
@@ -32,7 +32,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note }: { rows: M
           <tbody>
             {rows.map((row) => {
               const lastDataIdx = row.months.reduce<number>((acc, v, i) => (v !== null ? i : acc), -1);
-              const isPartialLive = row.isLive && lastDataIdx < 11 && lastDataIdx >= 0;
+              const isPartialLive = (row.isLive || (strategyOnly && dataThrough && row.year === new Date(dataThrough).getUTCFullYear())) && lastDataIdx < 11 && lastDataIdx >= 0;
               return (
                 <tr key={row.year} className="border-b border-border/50 hover:bg-bg-hover/30">
                   <td className="px-2 py-1.5 text-sm font-semibold text-white">
@@ -45,7 +45,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note }: { rows: M
                     <Cell
                       key={i}
                       value={v}
-                      isMtd={isPartialLive && i === lastDataIdx}
+                      isMtd={!!isPartialLive && i === lastDataIdx}
                     />
                   ))}
                   <td className={`px-2 py-1.5 text-center text-xs font-bold metric-value bg-bg/60 ${
@@ -60,11 +60,11 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note }: { rows: M
         </table>
       </div>
       <div className="flex items-center gap-4 mt-3 text-[10px] text-muted">
-        <span className="flex items-center gap-1">
+        {!strategyOnly && <span className="flex items-center gap-1">
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-good pulse-dot" />
           Live since {liveSince || 'Jul 2026'}
-        </span>
-        {theoretical ? (
+        </span>}
+        {strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost · Live execution paused</span> : theoretical ? (
           <span>Strategy returns, net of measured costs</span>
         ) : rows.some((r) => !r.isLive) ? (
           <span>All other rows are backtested</span>

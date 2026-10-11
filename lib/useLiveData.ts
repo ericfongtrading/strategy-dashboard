@@ -14,6 +14,9 @@ export type LiveData = {
   detailHeadline?: Headline[];
   /** e.g. the mark used for unrealised P&L. */
   priceNote?: string;
+  /** FX observer coverage and methodology, independent of broker fills. */
+  dataThrough?: string;
+  monthlyNote?: string;
 };
 
 const REPO_RAW = 'https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/data';
@@ -51,6 +54,9 @@ export function useLiveData(strategyId: string) {
         })
         .then((d: LiveData) => {
           if (!alive) return;
+          if (strategyId === 'fx' && Date.now() - Date.parse(d.lastUpdated) > 15 * 60_000) {
+            d.headline = d.headline?.map(h => h.label === 'TWS feed' ? { ...h, value: 'STALE', tone: 'bad' } : h);
+          }
           cache[strategyId] = { data: d, ts: Date.now() };
           setData(d);
         })
