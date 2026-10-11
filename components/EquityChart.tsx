@@ -56,7 +56,7 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
 
   if (livePoints.length === 0) {
     livePoints.push(backtestPoints[backtestPoints.length - 1]);
-    livePoints.push(equity);
+    if (s.id !== 'fx') livePoints.push(equity);
   }
 
   return {
@@ -190,12 +190,12 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
       <div className="flex items-center gap-6 mb-3 text-xs text-muted">
         <span className="flex items-center gap-1.5">
           <svg width="16" height="2"><line x1="0" y1="1" x2="16" y2="1" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="3,2" /></svg>
-          Backtest
+          {strategy.id === 'fx' ? 'Strategy returns' : 'Backtest'}
         </span>
-        <span className="flex items-center gap-1.5">
+        {strategy.id !== 'fx' && <span className="flex items-center gap-1.5">
           <svg width="16" height="2"><line x1="0" y1="1" x2="16" y2="1" stroke="#10b981" strokeWidth="2" /></svg>
           Live
-        </span>
+        </span>}
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ maxHeight: 220 }}>
         <defs>
@@ -216,10 +216,10 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
         ))}
 
         {/* Transition line */}
-        <line x1={transitionX} y1={PAD.top} x2={transitionX} y2={H - PAD.bottom} stroke="#1e2029" strokeWidth="1" strokeDasharray="4,3" />
+        {strategy.id !== 'fx' && <line x1={transitionX} y1={PAD.top} x2={transitionX} y2={H - PAD.bottom} stroke="#1e2029" strokeWidth="1" strokeDasharray="4,3" />}
 
         {/* Live area fill */}
-        <path d={liveAreaPath} fill={`url(#live-fill-${strategy.id})`} />
+        {strategy.id !== 'fx' && <path d={liveAreaPath} fill={`url(#live-fill-${strategy.id})`} />}
 
         {/* Backtest line (dashed) */}
         <path d={backtestPath} fill="none" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="4,3" />
