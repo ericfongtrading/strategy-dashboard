@@ -162,7 +162,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
             <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince}
-              note={liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} dataThrough={liveData?.dataThrough} />
+              note={s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} dataThrough={liveData?.dataThrough} />
           )}
 
           {s.id === 'ml' && liveData?.basis && <p className="text-xs text-muted leading-relaxed">{liveData.basis}</p>}
