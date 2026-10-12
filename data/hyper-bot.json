@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-12T14:36:01.436679+00:00",
+  "lastUpdated": "2026-10-12T14:54:02.049104+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -41,15 +41,6 @@
       "zone": "84,410 - 84,430",
       "stop": "85,840",
       "targets": "83,600 / 82,840 / 82,220",
-      "conviction": 3,
-      "status": "Waiting"
-    },
-    {
-      "symbol": "VILLA",
-      "direction": "Short",
-      "zone": "85,490 - 85,500",
-      "stop": "87,100",
-      "targets": "85,165 / 84,510 / 84,460",
       "conviction": 3,
       "status": "Waiting"
     }
@@ -452,5 +443,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,858"
+  "priceNote": "Unrealised P&L marked at $82,556"
 }
