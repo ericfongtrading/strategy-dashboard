@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-12T16:44:01.594467+00:00",
+  "lastUpdated": "2026-10-12T19:10:02.595765+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "BENZEMA",
       "direction": "Short",
       "entry": "82,750",
-      "current": "82,771",
+      "current": "82,390",
       "size": "1 BTC",
-      "pnl": "-$21",
-      "pnlNum": -21,
+      "pnl": "+$360",
+      "pnlNum": 360,
       "stop": "83,880",
       "targets": "81,220 / 80,420 / 76,100",
       "realized": "-",
@@ -42,11 +42,11 @@
       "symbol": "RAUL",
       "direction": "Long",
       "entry": "82,820",
-      "current": "82,771",
+      "current": "82,390",
       "size": "1 BTC",
-      "pnl": "-$49",
-      "pnlNum": -49,
-      "stop": "81,850",
+      "pnl": "-$430",
+      "pnlNum": -430,
+      "stop": "81,750",
       "targets": "83,400 / 84,350 / 85,400",
       "realized": "-",
       "open": "100%"
@@ -461,5 +461,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,771"
+  "priceNote": "Unrealised P&L marked at $82,390"
 }
