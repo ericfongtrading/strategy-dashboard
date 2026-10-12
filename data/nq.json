@@ -1,7 +1,58 @@
 {
   "lastUpdated": "2026-10-11T15:51:23.626046Z",
-  "basis": "Selected four-sleeve NQ/MNQ model: 1 VL_R3, 1 R3_RE, 1 CCI_AM and 2 TBS. Returns are simulated MNQ P&L normalized to a $28,540 reference base, net of 1.045 NQ points simulated slippage and $1.22 MNQ round-trip commission.",
-  "recentTrades": [],
+  "basis": "5 sleeves (CCI_AM + VWAP_LONG_R3 + VWAP_SHORT_R1 + R3_RE + TBS) at 1 MNQ each on $28,540 capital. Returns net of $4.80/RT cost (incl. 1.88pt measured slippage). Drawdown measured intraday (minute-by-minute). Live execution since Sep 2026.",
+  "recentTrades": [
+    {
+      "date": "2026-09-14",
+      "direction": "Long",
+      "entry": "29,236",
+      "exit": "29,199",
+      "pnl": "-$151",
+      "pnlNum": -151.44,
+      "rMultiple": "-1.0R",
+      "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-09-02",
+      "direction": "Long",
+      "entry": "28,973",
+      "exit": "28,936",
+      "pnl": "-$149",
+      "pnlNum": -149.44,
+      "rMultiple": "-1.1R",
+      "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-09-01",
+      "direction": "Long",
+      "entry": "29,214",
+      "exit": "29,182",
+      "pnl": "-$127",
+      "pnlNum": -126.94,
+      "rMultiple": "-1.1R",
+      "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-08-31",
+      "direction": "Long",
+      "entry": "29,456",
+      "exit": "29,521",
+      "pnl": "+$255",
+      "pnlNum": 254.56,
+      "rMultiple": "+3.0R",
+      "sleeve": "VWAP_LONG_R3"
+    },
+    {
+      "date": "2026-08-26",
+      "direction": "Long",
+      "entry": "29,283",
+      "exit": "29,346",
+      "pnl": "+$121",
+      "pnlNum": 120.6,
+      "rMultiple": "+0.5R",
+      "sleeve": "VWAP_LONG_R3"
+    }
+  ],
   "positions": [],
   "monthlyReturns": [
     {
