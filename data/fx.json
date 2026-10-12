@@ -1,6 +1,6 @@
 {
   "lastUpdated": "2026-10-12T00:42:49.103655+00:00",
-  "basis": "Strategy returns reconstructed from historical prices, not broker-account returns. Results include assumed trading costs; actual execution may differ. The latest month is partial.",
+  "basis": "Strategy returns. Historical prices reconstruct the uninterrupted strategy during the pause; these are not broker-account returns. Published history through August 2026 is retained. September onward follows the same research price-fill convention: RSI(14) 30/70, BB(20) midpoint, 2.5 ATR stop, 24 bars, half risk for shared currencies, one pip assumed round-trip cost. 1R = 1 percentage point; returns are additive. Exits use the UTC exit-bar month. Executable bid/ask, slippage and rollover limit fills can differ. Open strategy trades are excluded.",
   "monthlyReturns": [
     {
       "year": 2019,
@@ -148,6 +148,28 @@
     }
   ],
   "recentTrades": [],
+  "observer": {
+    "checkedAt": "2026-10-12T00:42:49.103655+00:00",
+    "mode": "OBSERVE_ONLY",
+    "connection": "CONNECTED",
+    "ibExecutionEnabled": false,
+    "ftmoExecutionEnabled": false
+  },
   "dataThrough": "2026-10-09T21:00:00+00:00",
-  "monthlyNote": "Price history through 2026-10-09T21:00:00+00:00. Strategy returns reconstructed from historical prices, not broker-account returns. Results include assumed trading costs; actual execution may differ. The latest month is partial."
+  "monthlyNote": "Price history through 2026-10-09 21:00 UTC. Latest month is partial. Strategy returns. Historical prices reconstruct the uninterrupted strategy during the pause; these are not broker-account returns. Published history through August 2026 is retained. September onward follows the same research price-fill convention: RSI(14) 30/70, BB(20) midpoint, 2.5 ATR stop, 24 bars, half risk for shared currencies, one pip assumed round-trip cost. 1R = 1 percentage point; returns are additive. Exits use the UTC exit-bar month. Executable bid/ask, slippage and rollover limit fills can differ. Open strategy trades are excluded.",
+  "headline": [
+    {
+      "label": "Mode",
+      "value": "Monitoring only"
+    },
+    {
+      "label": "TWS feed",
+      "value": "CONNECTED"
+    },
+    {
+      "label": "Strategy MTD",
+      "value": "+0.7%",
+      "sub": "Through 09 Oct 21:00 UTC"
+    }
+  ]
 }
