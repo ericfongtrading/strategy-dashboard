@@ -53,7 +53,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   const plans = liveData?.plans;
   // Strategies with a track record too short to annualise supply their own
   // headline numbers instead of an invented CAGR.
-  const headline = liveData?.detailHeadline || liveData?.headline;
+  const headline = s.id === 'fx' ? undefined : liveData?.detailHeadline || liveData?.headline;
   const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
