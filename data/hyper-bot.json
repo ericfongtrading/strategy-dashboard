@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-13T01:10:01.345840+00:00",
+  "lastUpdated": "2026-10-13T01:40:01.502430+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$6,917",
+      "value": "+$7,523",
       "tone": "good",
-      "sub": "34 trades, 1 BTC each"
+      "sub": "35 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "59%",
-      "sub": "20W / 14L"
+      "value": "60%",
+      "sub": "21W / 14L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.55",
+      "value": "1.59",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "BENZEMA",
-      "direction": "Short",
-      "entry": "82,750",
-      "current": "81,680",
-      "size": "1 BTC",
-      "pnl": "+$1,254",
-      "pnlNum": 1254,
-      "stop": "82,760",
-      "targets": "✓ 81,220 / 80,420 / 76,100",
-      "realized": "+$612",
-      "open": "60%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "CRESPO",
@@ -60,6 +46,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-12",
+      "entryDate": "2026-10-12",
+      "symbol": "BENZEMA",
+      "direction": "Short",
+      "entry": "82,750",
+      "exit": "82,760",
+      "pnl": "+$606",
+      "pnlNum": 606,
+      "rMultiple": "+61.22R",
+      "note": "sl_during_downtime"
+    },
     {
       "date": "2026-10-13",
       "entryDate": "2026-10-12",
@@ -469,5 +467,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,680"
+  "priceNote": "Unrealised P&L marked at $82,256"
 }
