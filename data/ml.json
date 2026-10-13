@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-13T13:07:02+00:00",
+ "lastUpdated": "2026-10-13T14:07:03+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+11,238.80",
+   "value": "$+11,245.37",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+531.86",
+   "value": "$+538.42",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+11,238.80",
+   "value": "$+11,245.37",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 10706.9441366088,
-  "floatingPnl": 531.8596864636397,
-  "totalPnl": 11238.80382307244,
-  "equity": 111238.80382307243,
+  "floatingPnl": 538.4232843611151,
+  "totalPnl": 11245.367420969915,
+  "equity": 111245.36742096991,
   "closedTrades": 64,
   "wins": 25,
   "profitFactor": 1.6719418521856662
@@ -925,26 +925,35 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "83,360.00",
+   "current": "83,278.01",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+580.18",
-   "pnlNum": 580.18
+   "pnl": "$+574.01",
+   "pnlNum": 574.01
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,497.60",
-   "current": "2,505.53",
+   "current": "2,503.44",
    "size": "$15,218.62",
    "stop": "2,539.00",
    "targets": "2,415.00",
    "open": "100%",
-   "pnl": "$-48.32",
-   "pnlNum": -48.32
+   "pnl": "$-35.58",
+   "pnlNum": -35.58
   }
  ],
- "plans": []
+ "plans": [
+  {
+   "symbol": "SOL",
+   "direction": "Short",
+   "zone": "105.30",
+   "stop": "110.80",
+   "targets": "96.00",
+   "status": "stop"
+  }
+ ]
 }
