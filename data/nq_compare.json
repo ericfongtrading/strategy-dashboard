@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-13T07:45:01.350115+00:00",
+  "updated_utc": "2026-10-13T07:46:01.703461+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -22,7 +22,7 @@
     {
       "sleeve": "TBS",
       "ib_contracts": 2,
-      "ftmo_risk_usd": 200
+      "ftmo_risk_usd": 100
     }
   ],
   "lanes": {
@@ -112,7 +112,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-13T07:45:01.281146+00:00",
+      "heartbeat_utc": "2026-10-13T07:45:37.473577+00:00",
       "data_final_utc": "2026-10-13T07:45:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -212,14 +212,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-13T07:45:01.281146+00:00",
-      "data_final_utc": "2026-10-13T07:45:00+00:00",
+      "state": "PAUSED",
+      "heartbeat_utc": "2026-10-13T07:45:37.542214+00:00",
+      "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": true,
-      "armed": true,
-      "warmup_verified": true,
+      "broker_connected": false,
+      "armed": false,
+      "warmup_verified": null,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -274,7 +274,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-13T07:45:01.998284+00:00",
+      "heartbeat_utc": "2026-10-13T07:45:37.360611+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
