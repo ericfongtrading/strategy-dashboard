@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T02:14:01.746729+00:00",
+  "lastUpdated": "2026-10-13T02:26:02.010128+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -56,7 +56,7 @@
   ],
   "recentTrades": [
     {
-      "date": "2026-10-12",
+      "date": "2026-10-13",
       "entryDate": "2026-10-12",
       "symbol": "BENZEMA",
       "direction": "Short",
@@ -65,7 +65,7 @@
       "pnl": "+$606",
       "pnlNum": 606,
       "rMultiple": "+61.22R",
-      "note": "sl_during_downtime"
+      "note": "Breakeven stop"
     },
     {
       "date": "2026-10-13",
@@ -476,5 +476,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,660"
+  "priceNote": "Unrealised P&L marked at $82,764"
 }
