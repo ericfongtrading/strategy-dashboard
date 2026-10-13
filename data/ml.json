@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-13T05:07:10+00:00",
+ "lastUpdated": "2026-10-13T06:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+11,169.95",
+   "value": "$+11,103.63",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+463.00",
+   "value": "$+396.69",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+11,169.95",
+   "value": "$+11,103.63",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 10706.9441366088,
-  "floatingPnl": 463.00281310583847,
-  "totalPnl": 11169.946949714638,
-  "equity": 111169.94694971463,
+  "floatingPnl": 396.6862243140618,
+  "totalPnl": 11103.630360922862,
+  "equity": 111103.63036092286,
   "closedTrades": 64,
   "wins": 25,
   "profitFactor": 1.6719418521856662
@@ -925,26 +925,35 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "83,453.87",
+   "current": "83,681.87",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+587.24",
-   "pnlNum": 587.24
+   "pnl": "$+604.41",
+   "pnlNum": 604.41
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,497.60",
-   "current": "2,517.99",
+   "current": "2,531.69",
    "size": "$15,218.62",
    "stop": "2,539.00",
    "targets": "2,415.00",
    "open": "100%",
-   "pnl": "$-124.24",
-   "pnlNum": -124.24
+   "pnl": "$-207.72",
+   "pnlNum": -207.72
   }
  ],
- "plans": []
+ "plans": [
+  {
+   "symbol": "BTC",
+   "direction": "Long",
+   "zone": "83,100.00",
+   "stop": "80,450.00",
+   "targets": "88,074.00",
+   "status": "close_retest"
+  }
+ ]
 }
