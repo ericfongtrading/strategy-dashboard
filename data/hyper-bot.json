@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-13T00:02:02.008078+00:00",
+  "lastUpdated": "2026-10-13T00:10:02.631526+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "Lessons Learned",
-      "value": "84",
+      "value": "85",
       "sub": "rules written from its own trades"
     }
   ],
@@ -29,10 +29,10 @@
       "symbol": "BENZEMA",
       "direction": "Short",
       "entry": "82,750",
-      "current": "81,880",
+      "current": "81,352",
       "size": "1 BTC",
-      "pnl": "+$870",
-      "pnlNum": 870,
+      "pnl": "+$1,398",
+      "pnlNum": 1398,
       "stop": "83,880",
       "targets": "81,220 / 80,420 / 76,100",
       "realized": "-",
@@ -40,6 +40,15 @@
     }
   ],
   "plans": [
+    {
+      "symbol": "CRESPO",
+      "direction": "Long",
+      "zone": "81,160 - 81,250",
+      "stop": "80,050",
+      "targets": "82,160 / 82,640",
+      "conviction": 3,
+      "status": "Waiting"
+    },
     {
       "symbol": "SHEVCHENKO",
       "direction": "Short",
@@ -460,5 +469,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,880"
+  "priceNote": "Unrealised P&L marked at $81,352"
 }
