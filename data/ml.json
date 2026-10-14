@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-14T01:07:02+00:00",
+ "lastUpdated": "2026-10-14T02:07:12+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+11,228.80",
+   "value": "$+11,230.67",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+521.86",
+   "value": "$+523.72",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+11,228.80",
+   "value": "$+11,230.67",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 10706.9441366088,
-  "floatingPnl": 521.8579301158038,
-  "totalPnl": 11228.802066724604,
-  "equity": 111228.8020667246,
+  "floatingPnl": 523.7240988761523,
+  "totalPnl": 11230.66823548495,
+  "equity": 111230.66823548495,
   "closedTrades": 64,
   "wins": 25,
   "profitFactor": 1.6719418521856662
@@ -925,25 +925,25 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "83,417.36",
+   "current": "83,328.01",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+584.50",
-   "pnlNum": 584.5
+   "pnl": "$+577.77",
+   "pnlNum": 577.77
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,497.60",
-   "current": "2,507.88",
+   "current": "2,506.47",
    "size": "$15,218.62",
    "stop": "2,539.00",
    "targets": "2,415.00",
    "open": "100%",
-   "pnl": "$-62.64",
-   "pnlNum": -62.64
+   "pnl": "$-54.05",
+   "pnlNum": -54.05
   }
  ],
  "plans": [
