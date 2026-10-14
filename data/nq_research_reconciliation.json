@@ -1,0 +1,17 @@
+{
+  "period": [
+    "2020-12-30",
+    "2026-10-13"
+  ],
+  "capitalBaseUsd": 7012.87,
+  "netUsd": 19847.01,
+  "totalReturnPct": 283.0,
+  "cagrPct": 26.1,
+  "sharpe": 2.09,
+  "maxDrawdownUsd": 777.44,
+  "maxDrawdownPct": 11.1,
+  "monthlyPnlSumUsd": 19847.01,
+  "finalEquityUsd": 26859.87,
+  "dailyObservations": 1510,
+  "convention": "fixed contracts; additive returns; full daily calendar including zero-P&L days"
+}
