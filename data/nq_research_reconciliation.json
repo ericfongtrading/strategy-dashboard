@@ -3,15 +3,16 @@
     "2020-12-30",
     "2026-10-13"
   ],
-  "capitalBaseUsd": 7012.87,
+  "capitalBaseUsd": 27412.87,
   "netUsd": 19847.01,
-  "totalReturnPct": 283.0,
-  "cagrPct": 26.1,
+  "totalReturnPct": 72.4,
+  "cagrPct": 9.9,
   "sharpe": 2.09,
   "maxDrawdownUsd": 777.44,
-  "maxDrawdownPct": 11.1,
+  "maxDrawdownPct": 2.8,
   "monthlyPnlSumUsd": 19847.01,
-  "finalEquityUsd": 26859.87,
+  "finalEquityUsd": 47259.87,
   "dailyObservations": 1510,
-  "convention": "fixed contracts; additive returns; full daily calendar including zero-P&L days"
+  "convention": "fixed contracts; additive returns; full daily calendar including zero-P&L days",
+  "capitalConvention": "$6,800 per MNQ x four sleeves + mean drawdown buffer"
 }
