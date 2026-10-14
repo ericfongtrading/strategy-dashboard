@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T14:14:01.389429+00:00",
+  "lastUpdated": "2026-10-14T16:04:02.023987+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -32,6 +32,15 @@
       "zone": "81,160 - 81,250",
       "stop": "80,050",
       "targets": "82,160 / 82,640",
+      "conviction": 3,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "PIRLO",
+      "direction": "Short",
+      "zone": "82,680 - 82,780",
+      "stop": "84,010",
+      "targets": "81,620 / 81,200",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -467,5 +476,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,034"
+  "priceNote": "Unrealised P&L marked at $81,607"
 }
