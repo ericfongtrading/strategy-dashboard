@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-14T21:37:01.942889+00:00",
+  "updated_utc": "2026-10-14T21:38:01.736671+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -213,7 +213,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ERROR",
-      "heartbeat_utc": "2026-10-14T21:36:57.888951+00:00",
+      "heartbeat_utc": "2026-10-14T21:37:57.983223+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -274,7 +274,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-14T21:37:02.610569+00:00",
+      "heartbeat_utc": "2026-10-14T21:38:02.285120+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
