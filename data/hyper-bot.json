@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-14T16:08:01.158972+00:00",
+  "lastUpdated": "2026-10-15T01:16:01.897832+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -27,11 +27,11 @@
   "positions": [],
   "plans": [
     {
-      "symbol": "CRESPO",
-      "direction": "Long",
-      "zone": "81,160 - 81,250",
-      "stop": "80,050",
-      "targets": "82,160 / 82,640",
+      "symbol": "ROMARIO",
+      "direction": "Short",
+      "zone": "81,000 - 81,130",
+      "stop": "82,950",
+      "targets": "78,900 / 75,100",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -467,5 +467,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,754"
+  "priceNote": "Unrealised P&L marked at $81,600"
 }
