@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-15T16:07:00+00:00",
+ "lastUpdated": "2026-10-15T17:07:08+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+11,967.37",
+   "value": "$+12,012.91",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+48.42",
+   "value": "$+93.96",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+11,967.37",
+   "value": "$+12,012.91",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 11918.956413625594,
-  "floatingPnl": 48.41651123478658,
-  "totalPnl": 11967.372924860381,
-  "equity": 111967.37292486038,
+  "floatingPnl": 93.95773828533271,
+  "totalPnl": 12012.914151910927,
+  "equity": 112012.91415191093,
   "closedTrades": 71,
   "wins": 28,
   "profitFactor": 1.6425855403050396
@@ -1013,25 +1013,25 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "82,418.00",
+   "current": "82,108.01",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+509.27",
-   "pnlNum": 509.27
+   "pnl": "$+485.94",
+   "pnlNum": 485.94
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,400.76",
-   "current": "2,440.64",
+   "current": "2,434.68",
    "size": "$27,743.35",
    "stop": "2,455.00",
    "targets": "2,240.00",
    "open": "100%",
-   "pnl": "$-460.86",
-   "pnlNum": -460.86
+   "pnl": "$-391.98",
+   "pnlNum": -391.98
   }
  ],
  "plans": [
