@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T20:14:01.998091+00:00",
+  "lastUpdated": "2026-10-15T22:10:02.252826+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "ROMARIO",
       "direction": "Short",
       "entry": "81,130",
-      "current": "82,260",
+      "current": "82,387",
       "size": "1 BTC",
-      "pnl": "-$1,130",
-      "pnlNum": -1130,
+      "pnl": "-$1,257",
+      "pnlNum": -1257,
       "stop": "82,950",
       "targets": "78,900 / 75,100",
       "realized": "-",
@@ -46,15 +46,6 @@
       "zone": "77,650 - 78,300",
       "stop": "75,500",
       "targets": "81,100 / 82,150",
-      "conviction": 3,
-      "status": "Waiting"
-    },
-    {
-      "symbol": "PIRLO",
-      "direction": "Short",
-      "zone": "82,680 - 82,780",
-      "stop": "84,200",
-      "targets": "81,620 / 81,200",
       "conviction": 3,
       "status": "Waiting"
     }
@@ -481,5 +472,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,260"
+  "priceNote": "Unrealised P&L marked at $82,387"
 }
