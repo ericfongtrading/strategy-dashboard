@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T12:30:01.586884+00:00",
+  "lastUpdated": "2026-10-16T15:14:01.564884+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "ROMARIO",
       "direction": "Short",
       "entry": "81,130",
-      "current": "82,297",
+      "current": "81,762",
       "size": "1 BTC",
-      "pnl": "-$1,167",
-      "pnlNum": -1167,
+      "pnl": "-$632",
+      "pnlNum": -632,
       "stop": "82,950",
       "targets": "78,900 / 75,100",
       "realized": "-",
@@ -53,7 +53,7 @@
       "symbol": "CAVANI",
       "direction": "Short",
       "zone": "84,200 - 84,500",
-      "stop": "86,100",
+      "stop": "86,900",
       "targets": "82,250 / 81,200 / 78,500",
       "conviction": 3,
       "status": "Waiting"
@@ -481,5 +481,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,297"
+  "priceNote": "Unrealised P&L marked at $81,762"
 }
