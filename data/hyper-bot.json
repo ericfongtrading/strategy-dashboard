@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T15:14:01.564884+00:00",
+  "lastUpdated": "2026-10-16T15:22:02.036322+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "Lessons Learned",
-      "value": "89",
+      "value": "90",
       "sub": "rules written from its own trades"
     }
   ],
@@ -29,10 +29,10 @@
       "symbol": "ROMARIO",
       "direction": "Short",
       "entry": "81,130",
-      "current": "81,762",
+      "current": "81,551",
       "size": "1 BTC",
-      "pnl": "-$632",
-      "pnlNum": -632,
+      "pnl": "-$421",
+      "pnlNum": -421,
       "stop": "82,950",
       "targets": "78,900 / 75,100",
       "realized": "-",
@@ -481,5 +481,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,762"
+  "priceNote": "Unrealised P&L marked at $81,551"
 }
