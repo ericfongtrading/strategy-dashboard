@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-16T12:15:02.477481+00:00",
+  "updated_utc": "2026-10-16T12:17:01.436244+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -112,8 +112,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-16T12:15:00.735895+00:00",
-      "data_final_utc": "2026-10-16T12:14:00+00:00",
+      "heartbeat_utc": "2026-10-16T12:16:59.980163+00:00",
+      "data_final_utc": "2026-10-16T12:16:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -213,12 +213,15 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-16T12:15:00.735895+00:00",
-      "data_final_utc": "2026-10-16T12:14:00+00:00",
-      "halt_reasons": [],
+      "heartbeat_utc": "2026-10-16T12:16:59.980163+00:00",
+      "data_final_utc": "2026-10-16T12:16:00+00:00",
+      "halt_reasons": [
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED"
+      ],
       "pilot_hold": false,
       "broker_connected": true,
-      "armed": true,
+      "armed": false,
       "warmup_verified": true,
       "summary": {
         "closed": 2,
@@ -274,12 +277,12 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-16T12:15:03.513899+00:00",
+      "heartbeat_utc": "2026-10-16T12:17:02.173983+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
-      "armed": true,
+      "armed": false,
       "warmup_verified": null,
       "summary": {
         "closed": 1,
@@ -297,8 +300,8 @@
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
     "healthy": true,
-    "heartbeat_utc": "2026-10-16T12:14:59.295859+00:00",
-    "last_bar_utc": "2026-10-16T12:13:00+00:00",
+    "heartbeat_utc": "2026-10-16T12:16:59.411082+00:00",
+    "last_bar_utc": "2026-10-16T12:14:00+00:00",
     "position": null,
     "summary": {
       "reads": 0,
@@ -319,6 +322,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-10-16T12:14:21.690050+00:00"
+    "validation_updated_utc": "2026-10-16T12:16:28.307827+00:00"
   }
 }
