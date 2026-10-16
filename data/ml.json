@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-16T16:07:00+00:00",
+ "lastUpdated": "2026-10-16T17:07:06+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+11,704.25",
+   "value": "$+11,710.50",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+429.12",
+   "value": "$+435.37",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+11,704.25",
+   "value": "$+11,710.50",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 11275.130386932957,
-  "floatingPnl": 429.12175987925883,
-  "totalPnl": 11704.252146812216,
-  "equity": 111704.25214681221,
+  "floatingPnl": 435.3669161115013,
+  "totalPnl": 11710.497303044458,
+  "equity": 111710.49730304445,
   "closedTrades": 72,
   "wins": 28,
   "profitFactor": 1.5863997463509125
@@ -1024,30 +1024,22 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "81,353.14",
+   "current": "81,436.11",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+429.12",
-   "pnlNum": 429.12
+   "pnl": "$+435.37",
+   "pnlNum": 435.37
   }
  ],
  "plans": [
   {
    "symbol": "BTC",
-   "direction": "Long",
-   "zone": "84,450.00",
-   "stop": "83,000.00",
-   "targets": "88,074.00",
-   "status": "stop"
-  },
-  {
-   "symbol": "BTC",
-   "direction": "Long",
-   "zone": "83,000.00",
-   "stop": "81,400.00",
-   "targets": "88,074.00",
+   "direction": "Short",
+   "zone": "79,650.00",
+   "stop": "80,800.00",
+   "targets": "77,250.00",
    "status": "stop"
   }
  ]
