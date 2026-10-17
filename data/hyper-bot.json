@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T09:32:01.101811+00:00",
+  "lastUpdated": "2026-10-17T09:54:01.132913+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,6 +26,15 @@
   ],
   "positions": [],
   "plans": [
+    {
+      "symbol": "HAALAND",
+      "direction": "Long",
+      "zone": "81,550 - 81,800",
+      "stop": "80,750",
+      "targets": "82,900 / 83,500 / 83,900",
+      "conviction": 4,
+      "status": "Waiting"
+    },
     {
       "symbol": "FALCAO",
       "direction": "Long",
@@ -479,5 +488,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,640"
+  "priceNote": "Unrealised P&L marked at $81,708"
 }
