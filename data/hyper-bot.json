@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-17T03:44:01.206173+00:00",
+  "lastUpdated": "2026-10-17T09:04:01.874931+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$7,523",
+      "value": "+$6,985",
       "tone": "good",
-      "sub": "35 trades, 1 BTC each"
+      "sub": "36 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "60%",
-      "sub": "21W / 14L"
+      "value": "58%",
+      "sub": "21W / 15L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.59",
+      "value": "1.53",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,31 +24,8 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "ROMARIO",
-      "direction": "Short",
-      "entry": "81,130",
-      "current": "81,569",
-      "size": "1 BTC",
-      "pnl": "-$439",
-      "pnlNum": -439,
-      "stop": "82,950",
-      "targets": "78,900 / 75,100",
-      "realized": "-",
-      "open": "100%"
-    }
-  ],
+  "positions": [],
   "plans": [
-    {
-      "symbol": "BERGKAMP",
-      "direction": "Long",
-      "zone": "77,650 - 78,300",
-      "stop": "75,500",
-      "targets": "81,100 / 82,150",
-      "conviction": 3,
-      "status": "Waiting"
-    },
     {
       "symbol": "CAVANI",
       "direction": "Short",
@@ -60,6 +37,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-17",
+      "entryDate": "2026-10-15",
+      "symbol": "ROMARIO",
+      "direction": "Short",
+      "entry": "81,130",
+      "exit": "81,668",
+      "pnl": "-$538",
+      "pnlNum": -538,
+      "rMultiple": "-0.30R",
+      "note": "Closed early — thesis void"
+    },
     {
       "date": "2026-10-13",
       "entryDate": "2026-10-12",
@@ -481,5 +470,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,569"
+  "priceNote": "Unrealised P&L marked at $81,677"
 }
