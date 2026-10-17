@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T09:12:01.821416+00:00",
+  "lastUpdated": "2026-10-17T09:30:02.302053+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,6 +26,15 @@
   ],
   "positions": [],
   "plans": [
+    {
+      "symbol": "FALCAO",
+      "direction": "Long",
+      "zone": "81,050 - 81,300",
+      "stop": "79,300",
+      "targets": "83,400 / 84,300",
+      "conviction": 3,
+      "status": "Waiting"
+    },
     {
       "symbol": "CAVANI",
       "direction": "Short",
@@ -470,5 +479,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,696"
+  "priceNote": "Unrealised P&L marked at $81,626"
 }
