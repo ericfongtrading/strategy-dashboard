@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-17T09:56:01.794608+00:00",
+  "lastUpdated": "2026-10-17T10:12:02.047388+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,11 +29,11 @@
       "symbol": "HAALAND",
       "direction": "Long",
       "entry": "81,696",
-      "current": "81,698",
+      "current": "81,558",
       "size": "1 BTC",
-      "pnl": "+$2",
-      "pnlNum": 2,
-      "stop": "80,750",
+      "pnl": "-$138",
+      "pnlNum": -138,
+      "stop": "80,000",
       "targets": "82,900 / 83,500 / 83,900",
       "realized": "-",
       "open": "100%"
@@ -493,5 +493,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,698"
+  "priceNote": "Unrealised P&L marked at $81,558"
 }
