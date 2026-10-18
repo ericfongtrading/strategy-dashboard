@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-18T04:07:00+00:00",
+ "lastUpdated": "2026-10-18T05:07:04+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+11,256.30",
+   "value": "$+11,108.73",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+544.57",
+   "value": "$+397.00",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+11,256.30",
+   "value": "$+11,108.73",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 10711.722768312451,
-  "floatingPnl": 544.5739224732291,
-  "totalPnl": 11256.29669078568,
-  "equity": 111256.29669078568,
+  "floatingPnl": 397.0036860715441,
+  "totalPnl": 11108.726454383996,
+  "equity": 111108.726454384,
   "closedTrades": 73,
   "wins": 28,
   "profitFactor": 1.543962410929071
@@ -1035,25 +1035,25 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "81,960.00",
+   "current": "81,801.00",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+474.80",
-   "pnlNum": 474.8
+   "pnl": "$+462.83",
+   "pnlNum": 462.83
   },
   {
    "symbol": "BTC",
    "direction": "Long",
    "entry": "81,878.19",
-   "current": "81,960.00",
+   "current": "81,801.00",
    "size": "$69,829.37",
    "stop": "80,700.00",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+69.77",
-   "pnlNum": 69.77
+   "pnl": "$-65.83",
+   "pnlNum": -65.83
   }
  ],
  "plans": []
