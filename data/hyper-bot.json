@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-18T01:16:01.927586+00:00",
+  "lastUpdated": "2026-10-18T09:32:01.537481+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$6,985",
+      "value": "+$7,265",
       "tone": "good",
-      "sub": "36 trades, 1 BTC each"
+      "sub": "37 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "58%",
-      "sub": "21W / 15L"
+      "value": "59%",
+      "sub": "22W / 15L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.53",
+      "value": "1.55",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "HAALAND",
-      "direction": "Long",
-      "entry": "81,696",
-      "current": "81,556",
-      "size": "1 BTC",
-      "pnl": "-$140",
-      "pnlNum": -140,
-      "stop": "80,000",
-      "targets": "82,900 / 83,500 / 83,900",
-      "realized": "-",
-      "open": "100%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "CAVANI",
@@ -51,6 +37,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-18",
+      "entryDate": "2026-10-17",
+      "symbol": "HAALAND",
+      "direction": "Long",
+      "entry": "81,696",
+      "exit": "81,976",
+      "pnl": "+$280",
+      "pnlNum": 280,
+      "rMultiple": "+0.16R",
+      "note": "Closed early — thesis void"
+    },
     {
       "date": "2026-10-17",
       "entryDate": "2026-10-15",
@@ -484,5 +482,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,556"
+  "priceNote": "Unrealised P&L marked at $81,990"
 }
