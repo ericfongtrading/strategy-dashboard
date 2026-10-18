@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-18T10:20:01.859408+00:00",
+  "lastUpdated": "2026-10-18T11:02:01.901011+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -24,17 +24,22 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [],
-  "plans": [
+  "positions": [
     {
       "symbol": "GERRARD",
       "direction": "Long",
-      "zone": "82,000 - 82,120",
+      "entry": "82,000",
+      "current": "82,014",
+      "size": "1 BTC",
+      "pnl": "+$14",
+      "pnlNum": 14,
       "stop": "80,000",
       "targets": "82,900 / 83,500 / 83,900",
-      "conviction": 4,
-      "status": "Order resting"
-    },
+      "realized": "-",
+      "open": "100%"
+    }
+  ],
+  "plans": [
     {
       "symbol": "CAVANI",
       "direction": "Short",
@@ -491,5 +496,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,160"
+  "priceNote": "Unrealised P&L marked at $82,014"
 }
