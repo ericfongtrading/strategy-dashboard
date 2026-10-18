@@ -1,28 +1,28 @@
 {
- "lastUpdated": "2026-10-18T20:07:00+00:00",
+ "lastUpdated": "2026-10-18T21:07:00+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
   {
    "label": "Realized P&L",
-   "value": "$+10,711.72",
-   "sub": "+10.71% on original $100,000",
+   "value": "$+9,665.62",
+   "sub": "+9.67% on original $100,000",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+10,253.95",
+   "value": "$+10,065.39",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
   {
    "label": "Win rate",
-   "value": "38.4%",
-   "sub": "28/73 fully closed trades"
+   "value": "37.8%",
+   "sub": "28/74 fully closed trades"
   },
   {
    "label": "Profit factor",
-   "value": "1.54",
+   "value": "1.46",
    "sub": "Net winning P&L / net losing P&L"
   }
  ],
@@ -34,44 +34,55 @@
   },
   {
    "label": "Realized P&L",
-   "value": "$+10,711.72",
-   "sub": "+10.71% on original $100,000",
+   "value": "$+9,665.62",
+   "sub": "+9.67% on original $100,000",
    "tone": "good"
   },
   {
    "label": "Floating P&L",
-   "value": "$-457.77",
+   "value": "$+399.76",
    "sub": "Open positions",
-   "tone": "bad"
+   "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+10,253.95",
+   "value": "$+10,065.39",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
   {
    "label": "Win rate",
-   "value": "38.4%",
-   "sub": "28/73 fully closed trades"
+   "value": "37.8%",
+   "sub": "28/74 fully closed trades"
   },
   {
    "label": "Profit factor",
-   "value": "1.54",
+   "value": "1.46",
    "sub": "Net winning P&L / net losing P&L"
   }
  ],
  "accountMetrics": {
   "startingCapital": 100000.0,
-  "realizedPnl": 10711.722768312451,
-  "floatingPnl": -457.7713851311182,
-  "totalPnl": 10253.951383181333,
-  "equity": 110253.95138318134,
-  "closedTrades": 73,
+  "realizedPnl": 9665.621001584484,
+  "floatingPnl": 399.7641814140125,
+  "totalPnl": 10065.385182998498,
+  "equity": 110065.38518299849,
+  "closedTrades": 74,
   "wins": 28,
-  "profitFactor": 1.543962410929071
+  "profitFactor": 1.4638630510952026
  },
  "recentTrades": [
+  {
+   "date": "2026-10-18",
+   "symbol": "BTC",
+   "direction": "Long",
+   "entry": "81,878.19",
+   "exit": "80,691.93",
+   "pnl": "$-1,046.10",
+   "pnlNum": -1046.1,
+   "rMultiple": "-0.96R",
+   "origin": "v2"
+  },
   {
    "date": "2026-10-17",
    "symbol": "SOL",
@@ -1035,25 +1046,13 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "80,880.02",
+   "current": "80,963.11",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+393.51",
-   "pnlNum": 393.51
-  },
-  {
-   "symbol": "BTC",
-   "direction": "Long",
-   "entry": "81,878.19",
-   "current": "80,880.02",
-   "size": "$69,829.37",
-   "stop": "80,700.00",
-   "targets": "Trailing / original rule",
-   "open": "100%",
-   "pnl": "$-851.28",
-   "pnlNum": -851.28
+   "pnl": "$+399.76",
+   "pnlNum": 399.76
   }
  ],
  "plans": []
