@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T01:18:01.231990+00:00",
+  "lastUpdated": "2026-10-19T02:00:01.635335+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "GERRARD",
       "direction": "Long",
       "entry": "82,000",
-      "current": "82,465",
+      "current": "82,415",
       "size": "1 BTC",
-      "pnl": "+$465",
-      "pnlNum": 465,
+      "pnl": "+$415",
+      "pnlNum": 415,
       "stop": "80,000",
       "targets": "82,900 / 83,500 / 83,900",
       "realized": "-",
@@ -45,7 +45,16 @@
       "direction": "Short",
       "zone": "83,700 - 84,000",
       "stop": "86,200",
-      "targets": "80,000 / 77,000 / 72,500",
+      "targets": "80,000 / 77,000 / 74,000",
+      "conviction": 5,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "VIEIRA",
+      "direction": "Short",
+      "zone": "83,700 - 84,000",
+      "stop": "86,200",
+      "targets": "62,000 / 50,000 / 43,000",
       "conviction": 5,
       "status": "Waiting"
     }
@@ -496,5 +505,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,465"
+  "priceNote": "Unrealised P&L marked at $82,415"
 }
