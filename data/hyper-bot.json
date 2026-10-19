@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T14:44:01.480295+00:00",
+  "lastUpdated": "2026-10-19T15:50:02.096314+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,6 +26,15 @@
   ],
   "positions": [],
   "plans": [
+    {
+      "symbol": "TERRY",
+      "direction": "Long",
+      "zone": "79,450 - 79,900",
+      "stop": "78,700",
+      "targets": "81,000 / 82,800 / 84,300",
+      "conviction": 5,
+      "status": "Waiting"
+    },
     {
       "symbol": "PUYOL",
       "direction": "Short",
@@ -503,5 +512,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,951"
+  "priceNote": "Unrealised P&L marked at $82,006"
 }
