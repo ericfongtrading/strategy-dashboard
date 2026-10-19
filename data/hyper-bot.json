@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-19T07:34:01.406837+00:00",
+  "lastUpdated": "2026-10-19T14:02:01.412891+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$7,265",
+      "value": "+$7,638",
       "tone": "good",
-      "sub": "37 trades, 1 BTC each"
+      "sub": "38 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "59%",
-      "sub": "22W / 15L"
+      "value": "61%",
+      "sub": "23W / 15L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.55",
+      "value": "1.58",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "GERRARD",
-      "direction": "Long",
-      "entry": "82,000",
-      "current": "82,940",
-      "size": "1 BTC",
-      "pnl": "+$938",
-      "pnlNum": 938,
-      "stop": "82,000 (BE)",
-      "targets": "✓ 82,900 / 83,500 / 83,900",
-      "realized": "+$374",
-      "open": "60%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "KAKA",
@@ -51,6 +37,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-19",
+      "entryDate": "2026-10-18",
+      "symbol": "GERRARD",
+      "direction": "Long",
+      "entry": "82,000",
+      "exit": "82,000",
+      "pnl": "+$374",
+      "pnlNum": 374,
+      "rMultiple": "+0.19R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-10-18",
       "entryDate": "2026-10-17",
@@ -496,5 +494,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,940"
+  "priceNote": "Unrealised P&L marked at $81,924"
 }
