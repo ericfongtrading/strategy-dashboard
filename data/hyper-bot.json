@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T06:16:01.793614+00:00",
+  "lastUpdated": "2026-10-19T07:34:01.406837+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,14 +29,14 @@
       "symbol": "GERRARD",
       "direction": "Long",
       "entry": "82,000",
-      "current": "82,730",
+      "current": "82,940",
       "size": "1 BTC",
-      "pnl": "+$730",
-      "pnlNum": 730,
-      "stop": "80,000",
-      "targets": "82,900 / 83,500 / 83,900",
-      "realized": "-",
-      "open": "100%"
+      "pnl": "+$938",
+      "pnlNum": 938,
+      "stop": "82,000 (BE)",
+      "targets": "✓ 82,900 / 83,500 / 83,900",
+      "realized": "+$374",
+      "open": "60%"
     }
   ],
   "plans": [
@@ -496,5 +496,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,730"
+  "priceNote": "Unrealised P&L marked at $82,940"
 }
