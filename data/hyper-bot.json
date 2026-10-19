@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T05:12:01.865699+00:00",
+  "lastUpdated": "2026-10-19T06:16:01.793614+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,17 +29,27 @@
       "symbol": "GERRARD",
       "direction": "Long",
       "entry": "82,000",
-      "current": "82,626",
+      "current": "82,730",
       "size": "1 BTC",
-      "pnl": "+$626",
-      "pnlNum": 626,
+      "pnl": "+$730",
+      "pnlNum": 730,
       "stop": "80,000",
       "targets": "82,900 / 83,500 / 83,900",
       "realized": "-",
       "open": "100%"
     }
   ],
-  "plans": [],
+  "plans": [
+    {
+      "symbol": "KAKA",
+      "direction": "Short",
+      "zone": "84,385 - 84,632",
+      "stop": "86,800",
+      "targets": "82,200 / 81,150 / 77,600",
+      "conviction": 4,
+      "status": "Waiting"
+    }
+  ],
   "recentTrades": [
     {
       "date": "2026-10-18",
@@ -486,5 +496,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,626"
+  "priceNote": "Unrealised P&L marked at $82,730"
 }
