@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-19T14:12:02.014010+00:00",
+  "lastUpdated": "2026-10-19T14:40:01.355449+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -26,6 +26,24 @@
   ],
   "positions": [],
   "plans": [
+    {
+      "symbol": "PUYOL",
+      "direction": "Short",
+      "zone": "83,700 - 84,000",
+      "stop": "86,200",
+      "targets": "62,000 / 50,000 / 43,000",
+      "conviction": 5,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "CANNAVARO",
+      "direction": "Short",
+      "zone": "83,700 - 84,000",
+      "stop": "86,200",
+      "targets": "80,000 / 77,000 / 74,000",
+      "conviction": 4,
+      "status": "Waiting"
+    },
     {
       "symbol": "KAKA",
       "direction": "Short",
@@ -494,5 +512,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,869"
+  "priceNote": "Unrealised P&L marked at $81,908"
 }
