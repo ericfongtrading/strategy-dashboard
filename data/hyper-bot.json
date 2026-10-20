@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T10:14:01.976255+00:00",
+  "lastUpdated": "2026-10-20T13:42:01.136244+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -42,6 +42,15 @@
       "stop": "86,200",
       "targets": "62,000 / 50,000 / 43,000",
       "conviction": 5,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "RONALDO",
+      "direction": "Long",
+      "zone": "81,000 - 81,200",
+      "stop": "79,150",
+      "targets": "82,180 / 83,137 / 84,350",
+      "conviction": 4,
       "status": "Waiting"
     },
     {
@@ -512,5 +521,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,572"
+  "priceNote": "Unrealised P&L marked at $81,650"
 }
