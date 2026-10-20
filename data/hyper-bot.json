@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T07:14:01.805480+00:00",
+  "lastUpdated": "2026-10-20T10:14:01.976255+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -30,7 +30,7 @@
       "symbol": "TERRY",
       "direction": "Long",
       "zone": "79,450 - 79,900",
-      "stop": "77,300",
+      "stop": "78,000",
       "targets": "81,000 / 82,800 / 84,300",
       "conviction": 5,
       "status": "Waiting"
@@ -512,5 +512,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,746"
+  "priceNote": "Unrealised P&L marked at $81,572"
 }
