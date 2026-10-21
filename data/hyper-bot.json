@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T15:08:01.519527+00:00",
+  "lastUpdated": "2026-10-21T16:20:01.917626+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -48,8 +48,8 @@
       "symbol": "CANNAVARO",
       "direction": "Short",
       "zone": "83,900 - 84,385",
-      "stop": "85,000",
-      "targets": "83,480 / 82,200 / 81,740",
+      "stop": "87,600",
+      "targets": "83,480 / 82,200 / 81,740 / 77,100 / 72,200 / 62,000 / 50,000 / 43,000",
       "conviction": 4,
       "status": "Waiting"
     }
@@ -512,5 +512,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,603"
+  "priceNote": "Unrealised P&L marked at $84,622"
 }
