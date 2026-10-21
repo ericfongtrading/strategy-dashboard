@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-21T13:07:02+00:00",
+ "lastUpdated": "2026-10-21T14:07:01+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+10,256.64",
+   "value": "$+10,280.88",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+591.02",
+   "value": "$+615.25",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+10,256.64",
+   "value": "$+10,280.88",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 9665.621001584484,
-  "floatingPnl": 591.0171043854762,
-  "totalPnl": 10256.63810596996,
-  "equity": 110256.63810596996,
+  "floatingPnl": 615.2548138990876,
+  "totalPnl": 10280.875815483572,
+  "equity": 110280.87581548357,
   "closedTrades": 74,
   "wins": 28,
   "profitFactor": 1.4638630510952026
@@ -1046,14 +1046,39 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "83,504.00",
+   "current": "83,826.01",
    "size": "$5,694.33",
    "stop": "68,966.22",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+591.02",
-   "pnlNum": 591.02
+   "pnl": "$+615.25",
+   "pnlNum": 615.25
   }
  ],
- "plans": []
+ "plans": [
+  {
+   "symbol": "BTC",
+   "direction": "Long",
+   "zone": "83,780.01",
+   "stop": "83,015.38",
+   "targets": "0.00",
+   "status": "market"
+  },
+  {
+   "symbol": "ETH",
+   "direction": "Long",
+   "zone": "2,476.95",
+   "stop": "2,447.29",
+   "targets": "0.00",
+   "status": "market"
+  },
+  {
+   "symbol": "SOL",
+   "direction": "Long",
+   "zone": "107.10",
+   "stop": "106.14",
+   "targets": "0.00",
+   "status": "market"
+  }
+ ]
 }
