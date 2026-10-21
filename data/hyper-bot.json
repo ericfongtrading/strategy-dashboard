@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T16:32:02.061052+00:00",
+  "lastUpdated": "2026-10-21T16:46:01.320000+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -51,6 +51,15 @@
       "stop": "85,000",
       "targets": "83,480 / 82,200 / 81,740",
       "conviction": 4,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "PUYOL",
+      "direction": "Short",
+      "zone": "84,450 - 84,900",
+      "stop": "87,600",
+      "targets": "77,100 / 72,200 / 62,000 / 50,000 / 43,000",
+      "conviction": 3,
       "status": "Waiting"
     }
   ],
@@ -512,5 +521,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,629"
+  "priceNote": "Unrealised P&L marked at $84,590"
 }
