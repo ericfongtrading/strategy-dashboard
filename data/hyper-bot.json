@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T01:44:01.520503+00:00",
+  "lastUpdated": "2026-10-21T09:10:02.153003+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -30,7 +30,7 @@
       "symbol": "TERRY",
       "direction": "Long",
       "zone": "79,450 - 79,900",
-      "stop": "78,000",
+      "stop": "78,700",
       "targets": "81,000 / 82,800 / 84,300",
       "conviction": 5,
       "status": "Waiting"
@@ -38,9 +38,9 @@
     {
       "symbol": "PUYOL",
       "direction": "Short",
-      "zone": "83,700 - 84,000",
-      "stop": "86,200",
-      "targets": "62,000 / 50,000 / 43,000",
+      "zone": "83,900 - 84,385",
+      "stop": "87,600",
+      "targets": "77,100 / 72,200 / 62,000 / 50,000 / 43,000",
       "conviction": 5,
       "status": "Waiting"
     },
@@ -56,9 +56,9 @@
     {
       "symbol": "CANNAVARO",
       "direction": "Short",
-      "zone": "83,700 - 84,000",
-      "stop": "86,200",
-      "targets": "80,000 / 77,000 / 74,000",
+      "zone": "83,900 - 84,385",
+      "stop": "85,000",
+      "targets": "81,550 / 77,100 / 74,000",
       "conviction": 4,
       "status": "Waiting"
     }
@@ -521,5 +521,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $82,919"
+  "priceNote": "Unrealised P&L marked at $83,425"
 }
