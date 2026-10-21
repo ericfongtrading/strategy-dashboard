@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-21T12:17:01.524296+00:00",
+  "updated_utc": "2026-10-21T12:18:01.863631+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -112,8 +112,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-21T12:15:49.621352+00:00",
-      "data_final_utc": "2026-10-21T12:15:00+00:00",
+      "heartbeat_utc": "2026-10-21T12:17:58.191433+00:00",
+      "data_final_utc": "2026-10-21T12:17:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -212,14 +212,17 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "ERROR",
-      "heartbeat_utc": "2026-10-21T12:16:24.058081+00:00",
-      "data_final_utc": null,
-      "halt_reasons": [],
+      "state": "ACTIVE",
+      "heartbeat_utc": "2026-10-21T12:17:58.191433+00:00",
+      "data_final_utc": "2026-10-21T12:17:00+00:00",
+      "halt_reasons": [
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED"
+      ],
       "pilot_hold": false,
-      "broker_connected": false,
+      "broker_connected": true,
       "armed": false,
-      "warmup_verified": null,
+      "warmup_verified": true,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -274,7 +277,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-21T12:17:02.349646+00:00",
+      "heartbeat_utc": "2026-10-21T12:18:02.537176+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -296,8 +299,8 @@
     "present": true,
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
-    "healthy": true,
-    "heartbeat_utc": "2026-10-21T12:16:58.766451+00:00",
+    "healthy": false,
+    "heartbeat_utc": "2026-10-21T12:17:58.823207+00:00",
     "last_bar_utc": "2026-10-21T12:14:00+00:00",
     "position": null,
     "summary": {
