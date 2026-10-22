@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-21T16:46:01.320000+00:00",
+  "lastUpdated": "2026-10-22T00:08:01.470759+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -24,35 +24,22 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [],
-  "plans": [
-    {
-      "symbol": "TERRY",
-      "direction": "Long",
-      "zone": "79,450 - 79,900",
-      "stop": "78,700",
-      "targets": "81,120 / 82,160 / 84,300",
-      "conviction": 5,
-      "status": "Waiting"
-    },
-    {
-      "symbol": "RONALDO",
-      "direction": "Long",
-      "zone": "81,000 - 81,200",
-      "stop": "79,150",
-      "targets": "82,180 / 83,137 / 84,350",
-      "conviction": 4,
-      "status": "Waiting"
-    },
+  "positions": [
     {
       "symbol": "CANNAVARO",
       "direction": "Short",
-      "zone": "83,900 - 84,385",
+      "entry": "84,075",
+      "current": "84,238",
+      "size": "1 BTC",
+      "pnl": "-$163",
+      "pnlNum": -163,
       "stop": "85,000",
       "targets": "83,480 / 82,200 / 81,740",
-      "conviction": 4,
-      "status": "Waiting"
-    },
+      "realized": "-",
+      "open": "100%"
+    }
+  ],
+  "plans": [
     {
       "symbol": "PUYOL",
       "direction": "Short",
@@ -521,5 +508,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,590"
+  "priceNote": "Unrealised P&L marked at $84,238"
 }
