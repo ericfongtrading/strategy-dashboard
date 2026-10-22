@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-22T00:08:01.470759+00:00",
+  "lastUpdated": "2026-10-22T01:54:01.991121+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "CANNAVARO",
       "direction": "Short",
       "entry": "84,075",
-      "current": "84,238",
+      "current": "83,512",
       "size": "1 BTC",
-      "pnl": "-$163",
-      "pnlNum": -163,
+      "pnl": "+$563",
+      "pnlNum": 563,
       "stop": "85,000",
       "targets": "83,480 / 82,200 / 81,740",
       "realized": "-",
@@ -43,7 +43,7 @@
     {
       "symbol": "PUYOL",
       "direction": "Short",
-      "zone": "84,450 - 84,900",
+      "zone": "84,450 - 84,700",
       "stop": "87,600",
       "targets": "77,100 / 72,200 / 62,000 / 50,000 / 43,000",
       "conviction": 3,
@@ -508,5 +508,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $84,238"
+  "priceNote": "Unrealised P&L marked at $83,512"
 }
