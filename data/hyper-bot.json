@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T00:22:01.821123+00:00",
+  "lastUpdated": "2026-10-23T02:10:02.527587+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "CANNAVARO",
       "direction": "Short",
       "entry": "84,075",
-      "current": "81,179",
+      "current": "81,315",
       "size": "1 BTC",
-      "pnl": "+$1,859",
-      "pnlNum": 1859,
+      "pnl": "+$1,812",
+      "pnlNum": 1812,
       "stop": "84,075 (BE)",
       "targets": "✓ 83,480 / ✓ 82,200 / 79,675",
       "realized": "+$846",
@@ -44,7 +44,7 @@
       "symbol": "DROGBA",
       "direction": "Short",
       "zone": "80,950 - 81,100",
-      "stop": "82,800",
+      "stop": "83,650",
       "targets": "79,750 / 77,300 / 75,600",
       "conviction": 3,
       "status": "Waiting"
@@ -517,5 +517,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,179"
+  "priceNote": "Unrealised P&L marked at $81,315"
 }
