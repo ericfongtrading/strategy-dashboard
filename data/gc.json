@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-10-23T08:40:06Z",
+  "lastUpdated": "2026-10-23T10:40:08Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-23",
+      "entryDate": "2026-10-23",
+      "symbol": "P4",
+      "direction": "Short",
+      "entry": "4,028.5",
+      "exit": "4,044.6",
+      "pnl": "-$322",
+      "pnlNum": -322.28,
+      "rMultiple": "-1.0R",
+      "note": "stop loss"
+    },
     {
       "date": "2026-10-23",
       "entryDate": "2026-10-23",
@@ -109,33 +121,9 @@
       "pnlNum": -36.0,
       "rMultiple": "-0.1R",
       "note": "rule d opp cluster"
-    },
-    {
-      "date": "2026-10-21",
-      "entryDate": "2026-10-21",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,145.8",
-      "exit": "4,162.4",
-      "pnl": "-$332",
-      "pnlNum": -331.66,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
     }
   ],
-  "positions": [
-    {
-      "symbol": "P4",
-      "direction": "Short",
-      "entry": "4,028.5",
-      "current": "4,029.8",
-      "size": "2 MGC",
-      "open": "10-23 09:10 HKT",
-      "stop": "4,044.6",
-      "pnl": "-$26",
-      "pnlNum": -26.0
-    }
-  ],
+  "positions": [],
   "monthlyReturns": [
     {
       "year": 2019,
