@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-23T00:28:15Z",
-  "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it. Monthly table: backtest to Jul 2026, live execution series from Aug 2026.",
+  "lastUpdated": "2026-10-23T00:29:07Z",
+  "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
     {
       "date": "2026-10-22",
@@ -128,23 +128,23 @@
       "symbol": "P2",
       "direction": "Short",
       "entry": "4,048.1",
-      "current": "4,036.5",
+      "current": "4,032.1",
       "size": "2 MGC",
-      "open": "2026-10-22 18:41Z",
+      "open": "10-23 02:41 HKT",
       "stop": "4,064.3",
-      "pnl": "+$232",
-      "pnlNum": 232.0
+      "pnl": "+$320",
+      "pnlNum": 320.0
     },
     {
       "symbol": "P3",
       "direction": "Short",
       "entry": "4,039.0",
-      "current": "4,036.5",
+      "current": "4,032.1",
       "size": "2 MGC",
-      "open": "2026-10-22 23:05Z",
+      "open": "10-23 07:05 HKT",
       "stop": "4,055.2",
-      "pnl": "+$50",
-      "pnlNum": 50.0
+      "pnl": "+$138",
+      "pnlNum": 138.0
     }
   ],
   "monthlyReturns": [
