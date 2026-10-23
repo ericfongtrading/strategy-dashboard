@@ -1,7 +1,31 @@
 {
-  "lastUpdated": "2026-10-23T10:40:08Z",
+  "lastUpdated": "2026-10-23T14:40:06Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-23",
+      "entryDate": "2026-10-23",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "4,023.2",
+      "exit": "4,009.6",
+      "pnl": "+$272",
+      "pnlNum": 272.0,
+      "rMultiple": "+0.8R",
+      "note": "rule b outer vwap"
+    },
+    {
+      "date": "2026-10-23",
+      "entryDate": "2026-10-23",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "4,031.9",
+      "exit": "4,007.1",
+      "pnl": "+$496",
+      "pnlNum": 496.0,
+      "rMultiple": "+1.5R",
+      "note": "rule b outer vwap"
+    },
     {
       "date": "2026-10-23",
       "entryDate": "2026-10-23",
@@ -97,33 +121,21 @@
       "pnlNum": 628.0,
       "rMultiple": "+1.9R",
       "note": "rule e two bars"
-    },
-    {
-      "date": "2026-10-22",
-      "entryDate": "2026-10-21",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,148.3",
-      "exit": "4,107.2",
-      "pnl": "+$822",
-      "pnlNum": 822.0,
-      "rMultiple": "+2.5R",
-      "note": "rule a blue line"
-    },
-    {
-      "date": "2026-10-22",
-      "entryDate": "2026-10-22",
-      "symbol": "P3",
-      "direction": "Short",
-      "entry": "4,131.0",
-      "exit": "4,132.8",
-      "pnl": "-$36",
-      "pnlNum": -36.0,
-      "rMultiple": "-0.1R",
-      "note": "rule d opp cluster"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "4,003.6",
+      "current": "4,009.6",
+      "size": "2 MGC",
+      "open": "10-23 22:20 HKT",
+      "stop": "4,019.6",
+      "pnl": "-$120",
+      "pnlNum": -120.0
+    }
+  ],
   "monthlyReturns": [
     {
       "year": 2019,
@@ -263,11 +275,11 @@
         -1.5,
         -1.1,
         4.5,
-        -1.6,
+        -1.0,
         null,
         null
       ],
-      "ytd": 49.8,
+      "ytd": 50.4,
       "isLive": true
     }
   ]
