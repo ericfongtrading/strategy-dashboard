@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-23T02:10:02.527587+00:00",
+  "lastUpdated": "2026-10-23T12:32:01.714019+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "CANNAVARO",
       "direction": "Short",
       "entry": "84,075",
-      "current": "81,315",
+      "current": "81,706",
       "size": "1 BTC",
-      "pnl": "+$1,812",
-      "pnlNum": 1812,
+      "pnl": "+$1,675",
+      "pnlNum": 1675,
       "stop": "84,075 (BE)",
       "targets": "✓ 83,480 / ✓ 82,200 / 79,675",
       "realized": "+$846",
@@ -41,11 +41,20 @@
   ],
   "plans": [
     {
+      "symbol": "BATISTUTA",
+      "direction": "Long",
+      "zone": "76,800 - 77,300",
+      "stop": "74,700",
+      "targets": "79,450 / 81,050",
+      "conviction": 3,
+      "status": "Waiting"
+    },
+    {
       "symbol": "DROGBA",
       "direction": "Short",
       "zone": "80,950 - 81,100",
       "stop": "83,650",
-      "targets": "79,750 / 77,300 / 75,600",
+      "targets": "79,750 / 77,300 / 75,650",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -54,7 +63,7 @@
       "direction": "Short",
       "zone": "84,450 - 84,700",
       "stop": "87,600",
-      "targets": "77,100 / 72,200 / 62,000 / 50,000 / 43,000",
+      "targets": "77,100 / 72,700 / 62,000 / 50,000 / 43,000",
       "conviction": 3,
       "status": "Waiting"
     }
@@ -517,5 +526,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,315"
+  "priceNote": "Unrealised P&L marked at $81,706"
 }
