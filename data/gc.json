@@ -1,7 +1,43 @@
 {
-  "lastUpdated": "2026-10-23T02:40:06Z",
+  "lastUpdated": "2026-10-23T04:40:06Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-23",
+      "entryDate": "2026-10-23",
+      "symbol": "P4",
+      "direction": "Short",
+      "entry": "4,018.1",
+      "exit": "4,034.2",
+      "pnl": "-$321",
+      "pnlNum": -321.45,
+      "rMultiple": "-1.0R",
+      "note": "stop loss"
+    },
+    {
+      "date": "2026-10-23",
+      "entryDate": "2026-10-22",
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "4,039.0",
+      "exit": "4,020.9",
+      "pnl": "+$362",
+      "pnlNum": 362.0,
+      "rMultiple": "+1.1R",
+      "note": "rule a blue line"
+    },
+    {
+      "date": "2026-10-23",
+      "entryDate": "2026-10-22",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "4,048.1",
+      "exit": "4,016.4",
+      "pnl": "+$634",
+      "pnlNum": 634.0,
+      "rMultiple": "+2.0R",
+      "note": "rule b outer vwap"
+    },
     {
       "date": "2026-10-22",
       "entryDate": "2026-10-22",
@@ -85,66 +121,19 @@
       "pnlNum": -331.66,
       "rMultiple": "-1.0R",
       "note": "stop loss"
-    },
-    {
-      "date": "2026-10-21",
-      "entryDate": "2026-10-21",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,138.1",
-      "exit": "4,154.7",
-      "pnl": "-$331",
-      "pnlNum": -331.05,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
-    },
-    {
-      "date": "2026-10-21",
-      "entryDate": "2026-10-20",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,139.3",
-      "exit": "4,155.9",
-      "pnl": "-$331",
-      "pnlNum": -331.14,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
-    },
-    {
-      "date": "2026-10-21",
-      "entryDate": "2026-10-21",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,130.6",
-      "exit": "4,147.1",
-      "pnl": "-$330",
-      "pnlNum": -330.45,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
     }
   ],
   "positions": [
     {
-      "symbol": "P2",
+      "symbol": "P4",
       "direction": "Short",
-      "entry": "4,048.1",
-      "current": "4,045.6",
+      "entry": "4,028.5",
+      "current": "4,021.2",
       "size": "2 MGC",
-      "open": "10-23 02:41 HKT",
-      "stop": "4,064.3",
-      "pnl": "+$50",
-      "pnlNum": 50.0
-    },
-    {
-      "symbol": "P3",
-      "direction": "Short",
-      "entry": "4,039.0",
-      "current": "4,045.6",
-      "size": "2 MGC",
-      "open": "10-23 07:05 HKT",
-      "stop": "4,055.2",
-      "pnl": "-$132",
-      "pnlNum": -132.0
+      "open": "10-23 09:10 HKT",
+      "stop": "4,044.6",
+      "pnl": "+$146",
+      "pnlNum": 146.0
     }
   ],
   "monthlyReturns": [
