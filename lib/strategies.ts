@@ -508,24 +508,4 @@ export const strategies: Strategy[] = [
       { date: '2026-08-19', entryDate: '2026-08-10', direction: 'Short', entry: '65,209', exit: '65,216', pnl: '$+899', pnlNum: 898.55 },
     ],
   },
-  {
-  "id": "ml",
-  "name": "ML Swing Trading Bot",
-  "asset": "BTC + Majors",
-  "category": "ml",
-  "edge": "AI-assisted research",
-  "status": "active",
-  "statusLabel": "Experimental paper",
-  "liveHeadline": true,
-  "description": "Performance is measured from the original $100,000 paper account, including realized profits and losses and open positions. V2 first analyzes market data independently, then reviews four video sources before proposing trades for the same account. Deterministic risk checks decide whether a proposal can become an order. Existing trend, trailing-stop and partial-exit rules manage inherited positions inside V2. Forecasts and provisional video lessons are recorded for evaluation; no trained model has trading authority and profitable autonomous learning has not been established. Execution uses hourly spot-reference candles and excludes funding and borrow costs. This paper account places no live exchange orders.",
-  "dataSource": "Paper performance since inception · $100,000 starting capital",
-  "highlights": [
-    "One balance, one execution process; original history and partial profits preserved",
-    "Independent analysis followed by four-source video review; videos are evidence, not authority",
-    "Retained daily-trend, channel-trailing and pullback exit rules for inherited positions",
-    "New V2 trades have their own risk limits; inherited holdings remain managed in the same account",
-    "Forecast calibration and method validation remain research work; no profitability claim",
-    "Dashboard positions and trade history refresh automatically from the V2 ledger"
-  ]
-},
 ];
