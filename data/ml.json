@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-10-23T10:07:06+00:00",
+ "lastUpdated": "2026-10-23T11:07:03+00:00",
  "basis": "Performance since the original $100,000 paper account began. Win rate and profit factor combine partial exits and include only fully closed trades; realized P&L also includes banked partial exits and fees. Open P&L uses completed hourly spot candles; shorts exclude funding/borrow.",
  "priceNote": "Floating P&L uses completed hourly spot candles.",
  "headline": [
@@ -11,7 +11,7 @@
   },
   {
    "label": "Total P&L",
-   "value": "$+10,249.30",
+   "value": "$+10,351.27",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -40,13 +40,13 @@
   },
   {
    "label": "Floating P&L",
-   "value": "$+4,856.12",
+   "value": "$+4,958.09",
    "sub": "Open positions",
    "tone": "good"
   },
   {
    "label": "Total P&L",
-   "value": "$+10,249.30",
+   "value": "$+10,351.27",
    "sub": "Realized plus floating P&L",
    "tone": "good"
   },
@@ -64,9 +64,9 @@
  "accountMetrics": {
   "startingCapital": 100000.0,
   "realizedPnl": 5393.182673974821,
-  "floatingPnl": 4856.117972224905,
-  "totalPnl": 10249.300646199727,
-  "equity": 110249.30064619973,
+  "floatingPnl": 4958.086144337604,
+  "totalPnl": 10351.268818312426,
+  "equity": 110351.26881831243,
   "closedTrades": 82,
   "wins": 29,
   "profitFactor": 1.2168180479703143
@@ -1167,181 +1167,181 @@
    "symbol": "BTC",
    "direction": "Long",
    "entry": "75,652.04",
-   "current": "81,676.26",
+   "current": "81,692.01",
    "size": "$5,694.33",
    "stop": "79,600.00",
    "targets": "84,898.00",
    "open": "100%",
-   "pnl": "$+453.44",
-   "pnlNum": 453.44
+   "pnl": "$+454.63",
+   "pnlNum": 454.63
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,482.10",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$1,080.17",
    "stop": "2,482.10",
    "targets": "Trailing / original rule",
    "open": "50%",
-   "pnl": "$+36.32",
-   "pnlNum": 36.32
+   "pnl": "$+36.74",
+   "pnlNum": 36.74
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,475.41",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$49,415.63",
    "stop": "2,441.19",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+1,532.38",
-   "pnlNum": 1532.38
+   "pnl": "$+1,551.74",
+   "pnlNum": 1551.74
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,475.71",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$355.44",
    "stop": "2,475.71",
    "targets": "Trailing / original rule",
    "open": "50%",
-   "pnl": "$+11.06",
-   "pnlNum": 11.06
+   "pnl": "$+11.20",
+   "pnlNum": 11.2
   },
   {
    "symbol": "BTC",
    "direction": "Short",
    "entry": "82,816.04",
-   "current": "81,676.26",
+   "current": "81,692.01",
    "size": "$57,147.78",
    "stop": "84,231.20",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+786.51",
-   "pnlNum": 786.51
+   "pnl": "$+775.64",
+   "pnlNum": 775.64
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,440.46",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$40,383.84",
    "stop": "2,500.69",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+691.79",
-   "pnlNum": 691.79
+   "pnl": "$+707.84",
+   "pnlNum": 707.84
   },
   {
    "symbol": "SOL",
    "direction": "Short",
    "entry": "105.53",
-   "current": "104.21",
+   "current": "104.07",
    "size": "$35,685.71",
    "stop": "108.43",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+446.18",
-   "pnlNum": 446.18
+   "pnl": "$+493.52",
+   "pnlNum": 493.52
   },
   {
    "symbol": "BTC",
    "direction": "Short",
    "entry": "82,897.48",
-   "current": "81,676.26",
+   "current": "81,692.01",
    "size": "$57,377.82",
    "stop": "84,256.91",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+845.27",
-   "pnlNum": 845.27
+   "pnl": "$+834.37",
+   "pnlNum": 834.37
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,444.33",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$4,671.56",
    "stop": "2,500.29",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+87.29",
-   "pnlNum": 87.29
+   "pnl": "$+89.15",
+   "pnlNum": 89.15
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,446.06",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$6,220.25",
    "stop": "2,487.20",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+120.55",
-   "pnlNum": 120.55
+   "pnl": "$+123.02",
+   "pnlNum": 123.02
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,423.76",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$4,713.89",
    "stop": "2,453.00",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+48.83",
-   "pnlNum": 48.83
+   "pnl": "$+50.72",
+   "pnlNum": 50.72
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,400.94",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$28,283.81",
    "stop": "2,453.00",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$+26.98",
-   "pnlNum": 26.98
+   "pnl": "$+38.40",
+   "pnlNum": 38.4
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,384.76",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$28,294.69",
    "stop": "2,422.00",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$-164.78",
-   "pnlNum": -164.78
+   "pnl": "$-153.28",
+   "pnlNum": -153.28
   },
   {
    "symbol": "SOL",
    "direction": "Short",
    "entry": "103.42",
-   "current": "104.21",
+   "current": "104.07",
    "size": "$6,688.29",
    "stop": "105.91",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$-51.11",
-   "pnlNum": -51.11
+   "pnl": "$-42.06",
+   "pnlNum": -42.06
   },
   {
    "symbol": "ETH",
    "direction": "Short",
    "entry": "2,385.00",
-   "current": "2,398.65",
+   "current": "2,397.68",
    "size": "$2,550.09",
    "stop": "2,422.00",
    "targets": "Trailing / original rule",
    "open": "100%",
-   "pnl": "$-14.59",
-   "pnlNum": -14.59
+   "pnl": "$-13.56",
+   "pnlNum": -13.56
   }
  ],
  "plans": [
