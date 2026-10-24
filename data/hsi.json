@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-24T14:10:00Z",
-  "basis": "Approved HSI structural-sizing plus shock-release strategy. Exact replay 2019-01-02 through 2026-10-16; fixed HK$453,000 capital; normally 2 MHI, qualifying structural trades 4 MHI, shock-release trades 2 MHI; no compounding; six index points cost per unit round trip. October 2026 is partial.",
+  "lastUpdated": "2026-10-24T08:40:01Z",
+  "basis": "Recent trades are real IB fills from 2026-09-11 onward. Earlier live fills are withheld: a bar-assembly fault between 2026-06-16 and 2026-09-10 fed the signal engine unfinished candles, so those entries do not reflect the strategy. The modelled record covers that period. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base, NET of trading costs (4.5 pt per round trip modelled; live fills net of actual commission and fees); headline metrics quote the 2022-onward window.",
   "recentTrades": [
     {
       "date": "2026-09-28",
@@ -51,253 +51,95 @@
   "positions": [],
   "monthlyReturns": [
     {
-      "year": 2019,
-      "months": [
-        3.5,
-        2.1,
-        2.1,
-        -1.2,
-        -1.7,
-        2.5,
-        0.8,
-        -0.4,
-        -1.2,
-        -0.7,
-        2.3,
-        -3.3
-      ],
-      "ytd": 4.9
-    },
-    {
-      "year": 2020,
-      "months": [
-        -1.8,
-        -0.6,
-        -1.0,
-        -2.0,
-        6.6,
-        -1.4,
-        3.0,
-        0.6,
-        -1.0,
-        -1.0,
-        -2.2,
-        -0.3
-      ],
-      "ytd": -1.1
-    },
-    {
-      "year": 2021,
-      "months": [
-        4.3,
-        4.2,
-        1.1,
-        6.2,
-        1.2,
-        3.3,
-        7.5,
-        4.0,
-        0.2,
-        -2.6,
-        -1.3,
-        0.5
-      ],
-      "ytd": 28.6
-    },
-    {
       "year": 2022,
       "months": [
+        3.7,
+        0.5,
+        -7.2,
+        -0.3,
+        4.9,
+        1.7,
+        3.3,
+        -2.3,
         3.1,
-        0.4,
-        -3.1,
-        -1.3,
-        0.1,
-        0.4,
-        3.2,
-        -0.8,
-        1.1,
-        0.6,
-        2.3,
-        -1.1
+        1.0,
+        9.6,
+        0.0
       ],
-      "ytd": 4.9
+      "ytd": 18.0
     },
     {
       "year": 2023,
       "months": [
-        0.3,
-        2.5,
-        0.1,
-        -0.7,
+        -1.6,
         2.6,
-        -1.3,
-        0.4,
-        0.8,
-        0.5,
-        -0.7,
-        3.7,
-        1.3
+        1.8,
+        -0.9,
+        2.7,
+        1.3,
+        1.4,
+        3.2,
+        -1.1,
+        1.3,
+        10.1,
+        2.3
       ],
-      "ytd": 9.3
+      "ytd": 23.1
     },
     {
       "year": 2024,
       "months": [
-        -1.9,
-        4.6,
+        -4.6,
+        6.3,
+        0.6,
+        2.1,
+        -2.0,
+        -3.4,
+        2.4,
+        3.3,
         1.1,
-        0.2,
-        -0.1,
-        -3.3,
-        1.7,
-        0.7,
-        1.1,
-        16.3,
-        2.7,
+        17.7,
+        6.5,
         -0.3
       ],
-      "ytd": 22.9
+      "ytd": 29.7
     },
     {
       "year": 2025,
       "months": [
-        0.4,
-        2.5,
-        0.6,
-        -3.2,
-        0.4,
-        5.6,
-        1.2,
-        -2.3,
-        5.8,
-        0.4,
-        -1.6,
-        0.3
+        2.3,
+        6.4,
+        2.1,
+        -8.1,
+        0.7,
+        12.9,
+        2.4,
+        -6.7,
+        12.6,
+        -0.6,
+        -1.3,
+        0.9
       ],
-      "ytd": 10.0
+      "ytd": 23.6
     },
     {
       "year": 2026,
       "months": [
-        6.5,
-        4.9,
-        3.3,
-        -0.9,
-        3.0,
-        -0.4,
-        0.1,
-        -1.4,
-        0.6,
-        -0.0,
+        7.7,
+        15.0,
+        5.5,
+        -2.3,
+        3.8,
+        -0.8,
+        -0.5,
+        -4.1,
+        0.8,
+        0.0,
         null,
         null
       ],
-      "ytd": 15.8,
+      "ytd": 25.1,
       "isLive": true
-    }
-  ],
-  "metrics": {
-    "basis": {
-      "from": "2019-01-02",
-      "through": "2026-10-16",
-      "capital_hkd": 453000.0,
-      "base_size_mhi": 2,
-      "hkd_per_mhi_point": 10.0,
-      "cost_points_per_unit_round_trip": 6.0,
-      "return_method": "fixed capital, no compounding",
-      "sharpe_method": "sqrt(252) x mean/std of all observed session returns, including zero-trade sessions",
-      "drawdown_method": "closed-trade realized equity"
-    },
-    "trades": 1540,
-    "contract_equivalent_units": 1683,
-    "structurally_doubled_trades": 143,
-    "shock_release_trades": 32,
-    "net_points": 21571.0,
-    "net_hkd": 431420.0,
-    "total_return_pct": 95.23620309050773,
-    "cagr_pct": 8.972119313719151,
-    "daily_sharpe": 1.385832736688502,
-    "max_drawdown_points": 2292.0,
-    "max_drawdown_hkd": 45840.0,
-    "max_drawdown_pct": 10.119205298013245,
-    "return_to_drawdown": 9.411431064572426,
-    "positive_years": 7,
-    "years": 8,
-    "positive_months": 59,
-    "negative_months": 35
-  },
-  "yearlyReturns": [
-    {
-      "year": 2019,
-      "trades": 191,
-      "net_points": 1099.0,
-      "net_hkd": 21980.0,
-      "return_pct": 4.8520971302,
-      "max_dd_hkd": -18040.0,
-      "max_dd_pct": 3.9823399558
-    },
-    {
-      "year": 2020,
-      "trades": 198,
-      "net_points": -252.0,
-      "net_hkd": -5040.0,
-      "return_pct": -1.1125827815,
-      "max_dd_hkd": -29840.0,
-      "max_dd_pct": 6.587196468
-    },
-    {
-      "year": 2021,
-      "trades": 193,
-      "net_points": 6468.0,
-      "net_hkd": 129360.0,
-      "return_pct": 28.5562913907,
-      "max_dd_hkd": -26020.0,
-      "max_dd_pct": 5.7439293598
-    },
-    {
-      "year": 2022,
-      "trades": 180,
-      "net_points": 1117.0,
-      "net_hkd": 22340.0,
-      "return_pct": 4.9315673289,
-      "max_dd_hkd": -25720.0,
-      "max_dd_pct": 5.6777041943
-    },
-    {
-      "year": 2023,
-      "trades": 195,
-      "net_points": 2115.0,
-      "net_hkd": 42300.0,
-      "return_pct": 9.3377483444,
-      "max_dd_hkd": -17120.0,
-      "max_dd_pct": 3.7792494481
-    },
-    {
-      "year": 2024,
-      "trades": 191,
-      "net_points": 5179.0,
-      "net_hkd": 103580.0,
-      "return_pct": 22.8653421634,
-      "max_dd_hkd": -20660.0,
-      "max_dd_pct": 4.5607064018
-    },
-    {
-      "year": 2025,
-      "trades": 228,
-      "net_points": 2272.0,
-      "net_hkd": 45440.0,
-      "return_pct": 10.0309050773,
-      "max_dd_hkd": -20140.0,
-      "max_dd_pct": 4.4459161148
-    },
-    {
-      "year": 2026,
-      "trades": 164,
-      "net_points": 3573.0,
-      "net_hkd": 71460.0,
-      "return_pct": 15.7748344371,
-      "max_dd_hkd": -16040.0,
-      "max_dd_pct": 3.5408388521
     }
   ]
 }
