@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-24T04:02:01.838194+00:00",
+  "lastUpdated": "2026-10-24T15:12:01.512385+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$7,638",
+      "value": "+$10,047",
       "tone": "good",
-      "sub": "38 trades, 1 BTC each"
+      "sub": "39 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "61%",
-      "sub": "23W / 15L"
+      "value": "62%",
+      "sub": "24W / 15L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.58",
+      "value": "1.76",
       "sub": "gross win / gross loss"
     },
     {
@@ -26,30 +26,17 @@
   ],
   "positions": [
     {
-      "symbol": "CANNAVARO",
-      "direction": "Short",
-      "entry": "84,075",
-      "current": "81,012",
-      "size": "1 BTC",
-      "pnl": "+$1,918",
-      "pnlNum": 1918,
-      "stop": "84,075 (BE)",
-      "targets": "✓ 83,480 / ✓ 82,200 / 79,675",
-      "realized": "+$846",
-      "open": "35%"
-    },
-    {
       "symbol": "DROGBA",
       "direction": "Short",
       "entry": "81,024",
-      "current": "81,012",
+      "current": "79,820",
       "size": "1 BTC",
-      "pnl": "+$12",
-      "pnlNum": 12,
-      "stop": "83,650",
-      "targets": "79,750 / 77,300 / 75,650",
-      "realized": "-",
-      "open": "100%"
+      "pnl": "+$1,289",
+      "pnlNum": 1289,
+      "stop": "81,024 (BE)",
+      "targets": "✓ 79,750 / 77,300 / 75,650",
+      "realized": "+$566",
+      "open": "60%"
     }
   ],
   "plans": [
@@ -73,6 +60,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-24",
+      "entryDate": "2026-10-22",
+      "symbol": "CANNAVARO",
+      "direction": "Short",
+      "entry": "84,075",
+      "exit": "79,608",
+      "pnl": "+$2,409",
+      "pnlNum": 2409,
+      "rMultiple": "+2.60R",
+      "note": "All targets hit"
+    },
     {
       "date": "2026-10-19",
       "entryDate": "2026-10-18",
@@ -530,5 +529,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $81,012"
+  "priceNote": "Unrealised P&L marked at $79,820"
 }
