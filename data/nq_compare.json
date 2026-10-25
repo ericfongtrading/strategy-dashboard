@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-25T06:10:01.849844+00:00",
+  "updated_utc": "2026-10-25T06:11:01.603412+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -111,14 +111,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-10-25T05:43:06.599426+00:00",
+      "state": "OBSERVING",
+      "heartbeat_utc": "2026-10-25T06:10:59.272534+00:00",
       "data_final_utc": "2026-10-23T20:59:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -212,14 +212,18 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-10-25T05:47:13.064756+00:00",
-      "data_final_utc": null,
-      "halt_reasons": [],
+      "state": "ACTIVE",
+      "heartbeat_utc": "2026-10-25T06:10:59.272534+00:00",
+      "data_final_utc": "2026-10-23T20:59:00+00:00",
+      "halt_reasons": [
+        "NQ_FEED_STALE",
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED"
+      ],
       "pilot_hold": false,
-      "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "broker_connected": true,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -274,7 +278,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-25T06:10:03.041000+00:00",
+      "heartbeat_utc": "2026-10-25T06:11:02.107528+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -290,14 +294,14 @@
       }
     }
   },
-  "execution_mode": null,
+  "execution_mode": "LIVE",
   "observation_started_utc": "2026-10-11T09:31:52.639394+00:00",
   "osr_paper": {
     "present": true,
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
     "healthy": false,
-    "heartbeat_utc": "2026-10-25T06:09:58.615805+00:00",
+    "heartbeat_utc": "2026-10-25T06:10:58.679776+00:00",
     "last_bar_utc": "2026-10-23T16:49:00+00:00",
     "position": null,
     "summary": {
