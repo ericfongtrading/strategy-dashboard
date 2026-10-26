@@ -1,7 +1,19 @@
-import { Fragment } from 'react';
+'use client';
+
+import { Fragment, useEffect, useRef, useState } from 'react';
 import type { Trade, Position, Plan } from '@/lib/strategies';
 
-export function RecentTrades({ trades }: { trades: Trade[] }) {
+export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategyId?: string }) {
+  const [replayOpen, setReplayOpen] = useState(false);
+  const replayPanel = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (replayOpen) replayPanel.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  }, [replayOpen]);
+  const replayUrl = `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/replays/cannavaro.html`;
+  // Keep replay metadata outside the periodically replaced live feed, and match
+  // the specific trade so a future reused codename cannot open the wrong replay.
+  const hasReplay = (t: Trade) => strategyId === 'hyper-bot' &&
+    t.symbol === 'CANNAVARO' && t.entryDate === '2026-10-22' && t.date === '2026-10-24';
   // Only show the instrument column when some trade actually carries one, so
   // single-market strategies keep their existing layout.
   const showSymbol = trades.some((t) => !!t.symbol);
@@ -16,6 +28,15 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
       <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Recent Closed Trades</h4>
+      {replayOpen && trades.some(hasReplay) && (
+        <section ref={replayPanel} id="cannavaro-replay" aria-label="CANNAVARO trade replay" className="mb-4 rounded-lg border border-border overflow-hidden">
+          <div className="flex items-center justify-between gap-3 p-3 text-xs">
+            <a href={replayUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 underline">Open replay full screen ↗</a>
+            <button type="button" onClick={() => setReplayOpen(false)} className="text-white hover:underline">Close replay</button>
+          </div>
+          <iframe title="CANNAVARO trade replay" src={replayUrl} sandbox="allow-scripts" className="w-full h-[820px] border-0" />
+        </section>
+      )}
       <div className="overflow-x-auto">
         <table className="w-full text-xs" style={{ minWidth: 500 }}>
           <thead>
@@ -48,7 +69,15 @@ export function RecentTrades({ trades }: { trades: Trade[] }) {
                 )}
                 <td className="px-2 py-2 text-white/80 font-mono">{t.date}</td>
                 {showSymbol && (
-                  <td className="px-2 py-2 text-white font-medium">{t.symbol || '—'}</td>
+                  <td className="px-2 py-2 text-white font-medium">
+                    {hasReplay(t) ? (
+                      <button type="button" aria-expanded={replayOpen} aria-controls="cannavaro-replay"
+                        onClick={() => setReplayOpen(!replayOpen)}
+                        className="text-blue-400 hover:text-blue-300 underline underline-offset-4 whitespace-nowrap">
+                        ▶ {t.symbol} · Replay
+                      </button>
+                    ) : t.symbol || '—'}
+                  </td>
                 )}
                 <td className="px-2 py-2">
                   <span className={`inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold ${

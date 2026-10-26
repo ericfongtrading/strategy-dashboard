@@ -175,7 +175,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
           {/* Recent Trades */}
           {trades && trades.length > 0 && (
-            <RecentTrades trades={trades} />
+            <RecentTrades trades={trades} strategyId={s.id} />
           )}
 
           {/* Last updated */}
