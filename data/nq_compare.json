@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-26T03:27:02.201869+00:00",
+  "updated_utc": "2026-10-26T03:28:02.114188+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -112,8 +112,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-26T03:27:01.150824+00:00",
-      "data_final_utc": "2026-10-26T03:26:00+00:00",
+      "heartbeat_utc": "2026-10-26T03:28:01.452913+00:00",
+      "data_final_utc": "2026-10-26T03:27:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -213,12 +213,15 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-26T03:27:01.150824+00:00",
-      "data_final_utc": "2026-10-26T03:26:00+00:00",
-      "halt_reasons": [],
+      "heartbeat_utc": "2026-10-26T03:28:01.452913+00:00",
+      "data_final_utc": "2026-10-26T03:27:00+00:00",
+      "halt_reasons": [
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED"
+      ],
       "pilot_hold": false,
       "broker_connected": true,
-      "armed": true,
+      "armed": false,
       "warmup_verified": true,
       "summary": {
         "closed": 2,
@@ -274,12 +277,12 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-26T03:27:03.025416+00:00",
+      "heartbeat_utc": "2026-10-26T03:28:02.687954+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
-      "armed": true,
+      "armed": false,
       "warmup_verified": null,
       "summary": {
         "closed": 1,
@@ -297,8 +300,8 @@
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
     "healthy": true,
-    "heartbeat_utc": "2026-10-26T03:26:58.897412+00:00",
-    "last_bar_utc": "2026-10-26T03:25:00+00:00",
+    "heartbeat_utc": "2026-10-26T03:27:58.968798+00:00",
+    "last_bar_utc": "2026-10-26T03:26:00+00:00",
     "position": null,
     "summary": {
       "reads": 6,
