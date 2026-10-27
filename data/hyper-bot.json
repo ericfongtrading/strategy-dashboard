@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-27T19:14:01.517939+00:00",
+  "lastUpdated": "2026-10-27T21:32:01.179248+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$10,047",
+      "value": "+$10,598",
       "tone": "good",
-      "sub": "39 trades, 1 BTC each"
+      "sub": "40 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
       "value": "62%",
-      "sub": "24W / 15L"
+      "sub": "25W / 15L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.76",
+      "value": "1.80",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "DROGBA",
-      "direction": "Short",
-      "entry": "81,024",
-      "current": "80,609",
-      "size": "1 BTC",
-      "pnl": "+$815",
-      "pnlNum": 815,
-      "stop": "81,024 (BE)",
-      "targets": "✓ 79,750 / 77,300 / 75,650",
-      "realized": "+$566",
-      "open": "60%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "BATISTUTA",
@@ -69,6 +55,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-27",
+      "entryDate": "2026-10-24",
+      "symbol": "DROGBA",
+      "direction": "Short",
+      "entry": "81,024",
+      "exit": "81,050",
+      "pnl": "+$551",
+      "pnlNum": 551,
+      "rMultiple": "+0.21R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-10-24",
       "entryDate": "2026-10-22",
@@ -538,5 +536,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,609"
+  "priceNote": "Unrealised P&L marked at $80,984"
 }
