@@ -4,6 +4,7 @@ import { useEffect, useCallback } from 'react';
 import type { Strategy } from '@/lib/strategies';
 import { useLiveData } from '@/lib/useLiveData';
 import { EquityChart } from './EquityChart';
+import { OptionsPayoffChart } from './OptionsPayoffChart';
 import { MonthlyReturns } from './MonthlyReturns';
 import { RecentTrades, CurrentPositions, PendingPlans } from './TradesTable';
 
@@ -147,6 +148,13 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
             </div>
           )}
 
+          {s.id === 'options' && liveData?.payoff && (
+            <div className="rounded-xl border border-border bg-bg/40 p-4">
+              <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-2">Current Book: Terminal Payoff</h4>
+              <OptionsPayoffChart payoff={liveData.payoff} />
+            </div>
+          )}
+
           {/* Signals-on-price chart image */}
           {s.chartImg && (
             <div className="rounded-xl border border-border bg-bg/40 p-4">
@@ -175,7 +183,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
           {/* Recent Trades */}
           {trades && trades.length > 0 && (
-            <RecentTrades trades={trades} strategyId={s.id} />
+            <RecentTrades trades={trades} />
           )}
 
           {/* Last updated */}
