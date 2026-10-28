@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-28T17:56:02.354883+00:00",
+  "lastUpdated": "2026-10-28T18:01:04.887684+00:00",
   "basis": "Monthly returns are calculated from Bitfinex Margin Funding Payment ledger entries, excluding deposits and withdrawals. Historical returns through September 2026 remain the verified dashboard record.",
   "monthlyReturns": [
     {
