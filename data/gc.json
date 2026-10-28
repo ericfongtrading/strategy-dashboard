@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-10-28T06:40:06Z",
+  "lastUpdated": "2026-10-28T08:40:06Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-28",
+      "entryDate": "2026-10-28",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "4,041.4",
+      "exit": "4,057.6",
+      "pnl": "-$323",
+      "pnlNum": -323.31,
+      "rMultiple": "-1.0R",
+      "note": "stop loss"
+    },
     {
       "date": "2026-10-27",
       "entryDate": "2026-10-27",
@@ -109,18 +121,6 @@
       "pnlNum": -320.29,
       "rMultiple": "-1.0R",
       "note": "stop loss"
-    },
-    {
-      "date": "2026-10-23",
-      "entryDate": "2026-10-23",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,023.2",
-      "exit": "4,009.6",
-      "pnl": "+$272",
-      "pnlNum": 272.0,
-      "rMultiple": "+0.8R",
-      "note": "rule b outer vwap"
     }
   ],
   "positions": [
@@ -128,23 +128,12 @@
       "symbol": "P1",
       "direction": "Short",
       "entry": "4,049.5",
-      "current": "4,041.9",
+      "current": "4,063.8",
       "size": "2 MGC",
       "open": "10-28 12:57 HKT",
       "stop": "4,065.7",
-      "pnl": "+$152",
-      "pnlNum": 152.0
-    },
-    {
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,041.4",
-      "current": "4,041.9",
-      "size": "2 MGC",
-      "open": "10-28 14:38 HKT",
-      "stop": "4,057.6",
-      "pnl": "-$10",
-      "pnlNum": -10.0
+      "pnl": "-$286",
+      "pnlNum": -286.0
     }
   ],
   "monthlyReturns": [
@@ -286,11 +275,11 @@
         -1.5,
         -1.1,
         4.5,
-        -3.5,
+        -3.9,
         null,
         null
       ],
-      "ytd": 47.9,
+      "ytd": 47.5,
       "isLive": true
     }
   ]
