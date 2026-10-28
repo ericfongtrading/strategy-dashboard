@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Trade, Position, MonthlyRow, Plan, Headline } from './strategies';
+import type { OptionsPayoff } from '@/components/OptionsPayoffChart';
 
 export type LiveData = {
   lastUpdated: string;
