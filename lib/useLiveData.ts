@@ -15,6 +15,8 @@ export type LiveData = {
   detailHeadline?: Headline[];
   /** e.g. the mark used for unrealised P&L. */
   priceNote?: string;
+  /** Aggregate terminal P&L curve for the current options portfolio. */
+  payoff?: OptionsPayoff;
   /** FX observer coverage and methodology, independent of broker fills. */
   dataThrough?: string;
   monthlyNote?: string;
