@@ -25,6 +25,7 @@ export type Trade = {
   /** Why the trade ended, in a few words. Optional: only strategies whose feed
    *  explains its exits (the Hyper bot) set it, and the column hides otherwise. */
   note?: string;
+  source?: string;
 };
 
 export type Position = {
@@ -254,7 +255,6 @@ export const strategies: Strategy[] = [
     statusLabel: 'Live',
     liveHeadline: false,
     additiveEquity: true,
-    cagrLabel: 'Historical CAGR (through Aug 2026)',
     description: 'Mean reversion on NZDCAD, AUDCAD, GBPAUD and GBPNZD. RSI extremes drive entries toward the Bollinger midpoint, with a 2.5 ATR stop and 24-bar holding limit. Shared-currency exposure takes half risk. The strategy runs live on Hostinger using the IB TWS feed, with execution enabled on IB and FTMO.',
     dataSource: 'Latest historical backtest | Live: actual IB fills',
     backtestStart: 2019,
