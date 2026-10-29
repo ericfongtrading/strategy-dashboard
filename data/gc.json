@@ -1,7 +1,31 @@
 {
-  "lastUpdated": "2026-10-29T18:40:06Z",
+  "lastUpdated": "2026-10-29T20:40:06Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-29",
+      "entryDate": "2026-10-29",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "4,021.1",
+      "exit": "4,037.2",
+      "pnl": "-$322",
+      "pnlNum": -321.69,
+      "rMultiple": "-1.0R",
+      "note": "stop loss"
+    },
+    {
+      "date": "2026-10-29",
+      "entryDate": "2026-10-29",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "4,049.5",
+      "exit": "4,020.7",
+      "pnl": "+$576",
+      "pnlNum": 576.0,
+      "rMultiple": "+1.8R",
+      "note": "rule a blue line"
+    },
     {
       "date": "2026-10-29",
       "entryDate": "2026-10-29",
@@ -97,56 +121,9 @@
       "pnlNum": -321.58,
       "rMultiple": "-1.0R",
       "note": "stop loss"
-    },
-    {
-      "date": "2026-10-27",
-      "entryDate": "2026-10-27",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,012.7",
-      "exit": "4,028.8",
-      "pnl": "-$321",
-      "pnlNum": -321.02,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
-    },
-    {
-      "date": "2026-10-27",
-      "entryDate": "2026-10-26",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,019.7",
-      "exit": "4,035.8",
-      "pnl": "-$322",
-      "pnlNum": -321.58,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
     }
   ],
-  "positions": [
-    {
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,049.5",
-      "current": "4,019.9",
-      "size": "2 MGC",
-      "open": "10-29 11:23 HKT",
-      "stop": "4,065.7",
-      "pnl": "+$592",
-      "pnlNum": 592.0
-    },
-    {
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,021.1",
-      "current": "4,019.9",
-      "size": "2 MGC",
-      "open": "10-30 01:51 HKT",
-      "stop": "4,037.2",
-      "pnl": "+$24",
-      "pnlNum": 24.0
-    }
-  ],
+  "positions": [],
   "monthlyReturns": [
     {
       "year": 2019,
@@ -286,11 +263,11 @@
         -1.5,
         -1.1,
         4.5,
-        -4.4,
+        -4.1,
         null,
         null
       ],
-      "ytd": 47.0,
+      "ytd": 47.3,
       "isLive": true
     }
   ]
