@@ -27,7 +27,9 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
   const showR = trades.some((t) => !!t.rMultiple);
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
-      <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">Recent Closed Trades</h4>
+      <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">
+        {strategyId === 'fx' ? 'Recent Strategy Trades' : 'Recent Closed Trades'}
+      </h4>
       {replayOpen && trades.some(hasReplay) && (
         <section ref={replayPanel} id="cannavaro-replay" aria-label="CANNAVARO trade replay" className="mb-4 rounded-lg border border-border overflow-hidden">
           <div className="flex items-center justify-between gap-3 p-3 text-xs">
@@ -90,7 +92,9 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
                 </td>
                 <td className="px-2 py-2 text-right text-white/80 font-mono metric-value">{t.entry}</td>
                 <td className="px-2 py-2 text-right text-white/80 font-mono metric-value">{t.exit}</td>
-                <td className={`px-2 py-2 text-right font-semibold font-mono metric-value ${t.pnlNum >= 0 ? 'text-good' : 'text-bad'}`}>
+                <td className={`px-2 py-2 text-right font-semibold font-mono metric-value ${
+                  t.pnl === 'Open' ? 'text-muted' : t.pnlNum >= 0 ? 'text-good' : 'text-bad'
+                }`}>
                   {t.pnl}
                 </td>
                 {showR && (
