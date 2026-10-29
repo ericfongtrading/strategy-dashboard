@@ -1,6 +1,65 @@
 {
-  "lastUpdated": "2026-10-12T00:42:49.103655+00:00",
-  "basis": "Strategy returns reconstructed from historical prices, not broker-account returns. Results include assumed trading costs; actual execution may differ. The latest month is partial.",
+  "lastUpdated": "2026-10-29T14:57:31Z",
+  "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
+  "recentTrades": [
+    {
+      "entryDate": "2026-10-15 13:00 HKT",
+      "date": "2026-10-19",
+      "symbol": "GBPAUD",
+      "direction": "Short",
+      "entry": "1.91340",
+      "exit": "1.90893",
+      "pnl": "+0.20R",
+      "pnlNum": 0.2,
+      "source": "strategy"
+    },
+    {
+      "entryDate": "2026-10-27 17:00 HKT",
+      "date": "2026-10-28",
+      "symbol": "GBPNZD",
+      "direction": "Long",
+      "entry": "2.33700",
+      "exit": "2.34718",
+      "pnl": "+0.85R",
+      "pnlNum": 0.85,
+      "source": "strategy"
+    },
+    {
+      "entryDate": "2026-10-28 05:00 HKT",
+      "date": "2026-10-29",
+      "symbol": "GBPAUD",
+      "direction": "Long",
+      "entry": "1.88920",
+      "exit": "1.89469",
+      "pnl": "+0.26R",
+      "pnlNum": 0.26,
+      "source": "strategy"
+    },
+    {
+      "entryDate": "2026-10-28 09:00 HKT",
+      "date": "Open",
+      "symbol": "NZDCAD",
+      "direction": "Long",
+      "entry": "0.78865",
+      "exit": "Open",
+      "pnl": "Open",
+      "pnlNum": 0,
+      "source": "strategy"
+    },
+    {
+      "entryDate": "2026-10-28 13:00 HKT",
+      "date": "Open",
+      "symbol": "GBPNZD",
+      "direction": "Short",
+      "entry": "2.37135",
+      "exit": "Open",
+      "pnl": "Open",
+      "pnlNum": 0,
+      "source": "strategy"
+    }
+  ],
+  "positions": [],
+  "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
   "monthlyReturns": [
     {
       "year": 2019,
@@ -18,7 +77,7 @@
         1.4,
         1.3
       ],
-      "ytd": 11.6
+      "ytd": 11.4
     },
     {
       "year": 2020,
@@ -36,7 +95,7 @@
         0.5,
         0.3
       ],
-      "ytd": 0.8
+      "ytd": 0.7
     },
     {
       "year": 2021,
@@ -126,7 +185,7 @@
         1.0,
         0.9
       ],
-      "ytd": 15.6
+      "ytd": 15.7
     },
     {
       "year": 2026,
@@ -139,15 +198,13 @@
         -0.7,
         5.4,
         -0.3,
-        0.3,
-        0.7,
+        -1.6,
+        0.2,
         null,
         null
       ],
-      "ytd": 6.3
+      "ytd": 3.9,
+      "isLive": true
     }
-  ],
-  "recentTrades": [],
-  "dataThrough": "2026-10-09T21:00:00+00:00",
-  "monthlyNote": "Price history through 2026-10-09T21:00:00+00:00. Strategy returns reconstructed from historical prices, not broker-account returns. Results include assumed trading costs; actual execution may differ. The latest month is partial."
+  ]
 }
