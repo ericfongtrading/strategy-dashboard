@@ -1,51 +1,51 @@
 {
-  "lastUpdated": "2026-10-29T08:40:01Z",
-  "basis": "Recent trades are real IB fills from 2026-09-11 onward. Earlier live fills are withheld: a bar-assembly fault between 2026-06-16 and 2026-09-10 fed the signal engine unfinished candles, so those entries do not reflect the strategy. The modelled record covers that period. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base, NET of trading costs (4.5 pt per round trip modelled; live fills net of actual commission and fees); headline metrics quote the 2022-onward window.",
+  "lastUpdated": "2026-10-29T14:17:02Z",
+  "basis": "Recent rows combine actual IB fills with clearly labelled trades from the latest approved historical backtest through 2026-10-23. New IB fills replace older historical rows automatically. Earlier live fills are withheld: a bar-assembly fault between 2026-06-16 and 2026-09-10 fed the signal engine unfinished candles, so those entries do not reflect the strategy. The modelled record covers that period. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base, NET of trading costs (4.5 pt per round trip modelled; live fills net of actual commission and fees); headline metrics quote the 2022-onward window.",
   "recentTrades": [
     {
-      "date": "2026-09-28",
+      "date": "2026-10-23",
       "direction": "Short",
-      "entry": "24,671",
-      "exit": "24,697",
-      "pnl": "-HK$1,338",
-      "pnlNum": -1338,
-      "rMultiple": "-0.3R"
+      "entry": "22,875",
+      "exit": "22,965",
+      "pnl": "-HK$1,920",
+      "pnlNum": -1920,
+      "note": "Historical backtest \u00b7 P1"
     },
     {
-      "date": "2026-09-28",
+      "date": "2026-10-22",
       "direction": "Short",
-      "entry": "24,663",
-      "exit": "24,714",
-      "pnl": "-HK$2,588",
-      "pnlNum": -2588,
-      "rMultiple": "-0.6R"
+      "entry": "23,392",
+      "exit": "23,051",
+      "pnl": "+HK$6,700",
+      "pnlNum": 6700,
+      "note": "Historical backtest \u00b7 P1"
     },
     {
-      "date": "2026-09-28",
-      "direction": "Long",
-      "entry": "24,758",
-      "exit": "24,677",
-      "pnl": "-HK$4,088",
-      "pnlNum": -4088,
-      "rMultiple": "-0.9R"
+      "date": "2026-10-22",
+      "direction": "Short",
+      "entry": "23,269",
+      "exit": "23,119",
+      "pnl": "+HK$2,880",
+      "pnlNum": 2880,
+      "note": "Historical backtest \u00b7 P2"
     },
     {
-      "date": "2026-09-25",
+      "date": "2026-10-16",
       "direction": "Short",
-      "entry": "24,298",
-      "exit": "24,354",
-      "pnl": "-HK$2,838",
-      "pnlNum": -2838,
-      "rMultiple": "-1.1R"
+      "entry": "24,296",
+      "exit": "24,148",
+      "pnl": "+HK$2,840",
+      "pnlNum": 2840,
+      "note": "Historical backtest \u00b7 reversal"
     },
     {
-      "date": "2026-09-25",
+      "date": "2026-10-16",
       "direction": "Short",
-      "entry": "24,466",
-      "exit": "24,359",
-      "pnl": "+HK$5,312",
-      "pnlNum": 5312,
-      "rMultiple": "+1.2R"
+      "entry": "24,324",
+      "exit": "24,227",
+      "pnl": "+HK$1,820",
+      "pnlNum": 1820,
+      "note": "Historical backtest \u00b7 outer-band"
     }
   ],
   "positions": [],
