@@ -50,12 +50,13 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   const hasChart = s.status !== 'development' && s.cagrNum;
 
   const trades = liveData?.recentTrades || s.recentTrades;
-  const positions = s.id === 'fx' ? undefined : liveData?.positions || s.positions;
+  const positions = liveData?.positions || s.positions;
   const plans = liveData?.plans;
   // Strategies with a track record too short to annualise supply their own
   // headline numbers instead of an invented CAGR.
-  const headline = s.id === 'fx' ? undefined : liveData?.detailHeadline || liveData?.headline;
-  const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
+  const headline = liveData?.detailHeadline || liveData?.headline;
+  const keepLatestBacktest = s.id === 'hsi' || s.id === 'nq' || s.id === 'fx';
+  const monthlyRows = keepLatestBacktest ? s.monthlyReturns : (liveData?.monthlyReturns || s.monthlyReturns);
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
   const _basis = (liveData?.basis || '').toUpperCase();
