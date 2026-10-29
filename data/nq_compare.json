@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-29T02:52:01.478167+00:00",
+  "updated_utc": "2026-10-29T02:53:01.616965+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -51,7 +51,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ERROR",
-      "heartbeat_utc": "2026-10-29T02:51:15.919343+00:00",
+      "heartbeat_utc": "2026-10-29T02:52:17.137599+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -71,7 +71,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-29T02:52:02.247050+00:00",
+      "heartbeat_utc": "2026-10-29T02:53:02.128596+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -94,7 +94,7 @@
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
     "healthy": false,
-    "heartbeat_utc": "2026-10-29T02:51:57.600804+00:00",
+    "heartbeat_utc": "2026-10-29T02:52:57.663206+00:00",
     "last_bar_utc": "2026-10-28T12:14:00+00:00",
     "position": null,
     "summary": {
