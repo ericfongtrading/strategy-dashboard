@@ -1,7 +1,31 @@
 {
-  "lastUpdated": "2026-10-29T14:40:07Z",
+  "lastUpdated": "2026-10-29T16:40:07Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-29",
+      "entryDate": "2026-10-29",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "4,040.0",
+      "exit": "4,025.2",
+      "pnl": "+$296",
+      "pnlNum": 296.0,
+      "rMultiple": "+0.9R",
+      "note": "ob rejection"
+    },
+    {
+      "date": "2026-10-29",
+      "entryDate": "2026-10-29",
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "4,026.9",
+      "exit": "4,025.2",
+      "pnl": "+$34",
+      "pnlNum": 34.0,
+      "rMultiple": "+0.1R",
+      "note": "rule d opp cluster"
+    },
     {
       "date": "2026-10-29",
       "entryDate": "2026-10-29",
@@ -97,30 +121,6 @@
       "pnlNum": -321.58,
       "rMultiple": "-1.0R",
       "note": "stop loss"
-    },
-    {
-      "date": "2026-10-26",
-      "entryDate": "2026-10-26",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,025.8",
-      "exit": "4,041.9",
-      "pnl": "-$322",
-      "pnlNum": -322.06,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
-    },
-    {
-      "date": "2026-10-26",
-      "entryDate": "2026-10-26",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,011.2",
-      "exit": "4,027.2",
-      "pnl": "-$321",
-      "pnlNum": -320.9,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
     }
   ],
   "positions": [
@@ -128,23 +128,12 @@
       "symbol": "P1",
       "direction": "Short",
       "entry": "4,049.5",
-      "current": "4,042.7",
+      "current": "4,025.2",
       "size": "2 MGC",
       "open": "10-29 11:23 HKT",
       "stop": "4,065.7",
-      "pnl": "+$136",
-      "pnlNum": 136.0
-    },
-    {
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,040.0",
-      "current": "4,042.7",
-      "size": "2 MGC",
-      "open": "10-29 13:51 HKT",
-      "stop": "4,056.2",
-      "pnl": "-$54",
-      "pnlNum": -54.0
+      "pnl": "+$486",
+      "pnlNum": 486.0
     }
   ],
   "monthlyReturns": [
