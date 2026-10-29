@@ -64,7 +64,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-good pulse-dot" />
           Live since {liveSince || 'Jul 2026'}
         </span>}
-        {strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost · Live execution paused</span> : theoretical ? (
+        {strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost</span> : theoretical ? (
           <span>Strategy returns, net of measured costs</span>
         ) : rows.some((r) => !r.isLive) ? (
           <span>All other rows are backtested</span>
