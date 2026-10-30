@@ -1,7 +1,19 @@
 {
-  "lastUpdated": "2026-10-30T16:40:06Z",
+  "lastUpdated": "2026-10-30T18:40:06Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-30",
+      "entryDate": "2026-10-30",
+      "symbol": "P4",
+      "direction": "Short",
+      "entry": "3,928.1",
+      "exit": "3,891.1",
+      "pnl": "+$740",
+      "pnlNum": 740.0,
+      "rMultiple": "+2.4R",
+      "note": "rule a blue line"
+    },
     {
       "date": "2026-10-30",
       "entryDate": "2026-10-30",
@@ -109,33 +121,9 @@
       "pnlNum": -320.3,
       "rMultiple": "-1.0R",
       "note": "stop loss"
-    },
-    {
-      "date": "2026-10-29",
-      "entryDate": "2026-10-29",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,021.1",
-      "exit": "4,037.2",
-      "pnl": "-$322",
-      "pnlNum": -321.69,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
     }
   ],
-  "positions": [
-    {
-      "symbol": "P4",
-      "direction": "Short",
-      "entry": "3,928.1",
-      "current": "3,905.6",
-      "size": "2 MGC",
-      "open": "10-30 21:50 HKT",
-      "stop": "3,943.8",
-      "pnl": "+$450",
-      "pnlNum": 450.0
-    }
-  ],
+  "positions": [],
   "monthlyReturns": [
     {
       "year": 2019,
@@ -275,11 +263,11 @@
         -1.5,
         -1.1,
         4.5,
-        -1.2,
+        -0.3,
         null,
         null
       ],
-      "ytd": 50.2,
+      "ytd": 51.1,
       "isLive": true
     }
   ]
