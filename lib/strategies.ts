@@ -336,7 +336,7 @@ export const strategies: Strategy[] = [
       { year: 2023, months: [15.7, 0.0, 13.0, -2.1, 0.0, 0.0, 0.0, -1.1, -1.0, 11.0, 4.0, 3.9], ytd: 50.6 },
       { year: 2024, months: [0.0, 0.0, 0.0, -2.0, 0.0, 0.0, 0.0, 3.6, 3.1, 4.6, 9.8, 0.0], ytd: 20.3 },
       { year: 2025, months: [0.0, 0.0, 0.0, 3.5, 4.8, 1.1, 3.7, 3.4, 0.0, 0.0, 1.6, -1.6], ytd: 17.4, isLive: true },
-      { year: 2026, months: [0.0, 0.0, 0.0, 4.7, -1.6, 0.0, 1.9, 10.3, 3.0, -3.3, null, null], ytd: 15.3, isLive: true },
+      { year: 2026, months: [0.0, 0.0, 0.0, 4.7, -1.6, 0.0, 1.9, 10.3, 3.0, -3.3, null, null], ytd: 15.2, isLive: true },
     ],
     chartImg: pdf('/charts/btc-lsr-signals-v3.png'),
     chartImgLabel: 'Strategy signals 2022-2026',
