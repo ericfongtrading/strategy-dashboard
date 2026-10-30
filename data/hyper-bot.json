@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T00:02:01.244585+00:00",
+  "lastUpdated": "2026-10-30T11:52:01.572190+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -24,17 +24,22 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [],
-  "plans": [
+  "positions": [
     {
       "symbol": "BATISTUTA",
       "direction": "Long",
-      "zone": "76,800 - 77,450",
+      "entry": "77,434",
+      "current": "77,401",
+      "size": "1 BTC",
+      "pnl": "-$33",
+      "pnlNum": -33,
       "stop": "74,700",
       "targets": "79,450 / 81,050",
-      "conviction": 3,
-      "status": "Waiting"
-    },
+      "realized": "-",
+      "open": "100%"
+    }
+  ],
+  "plans": [
     {
       "symbol": "SUAREZ",
       "direction": "Short",
@@ -536,5 +541,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,944"
+  "priceNote": "Unrealised P&L marked at $77,401"
 }
