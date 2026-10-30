@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T07:40:01Z",
+  "lastUpdated": "2026-10-30T07:45:02Z",
   "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
   "recentTrades": [
     {
