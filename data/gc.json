@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T10:40:08Z",
+  "lastUpdated": "2026-10-30T12:40:07Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
     {
@@ -123,7 +123,19 @@
       "note": "stop loss"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,971.5",
+      "current": "3,972.8",
+      "size": "2 MGC",
+      "open": "10-30 20:15 HKT",
+      "stop": "3,987.4",
+      "pnl": "-$26",
+      "pnlNum": -26.0
+    }
+  ],
   "monthlyReturns": [
     {
       "year": 2019,
