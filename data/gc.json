@@ -1,7 +1,43 @@
 {
-  "lastUpdated": "2026-10-30T12:40:07Z",
+  "lastUpdated": "2026-10-30T14:40:07Z",
   "basis": "GC STRATEGY RECORD. Every canonical signal is shown whether IB, FTMO, both, or neither venue filled it.",
   "recentTrades": [
+    {
+      "date": "2026-10-30",
+      "entryDate": "2026-10-30",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "3,961.9",
+      "exit": "3,919.0",
+      "pnl": "+$858",
+      "pnlNum": 858.0,
+      "rMultiple": "+2.7R",
+      "note": "rule b outer vwap"
+    },
+    {
+      "date": "2026-10-30",
+      "entryDate": "2026-10-30",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,971.5",
+      "exit": "3,908.0",
+      "pnl": "+$1,271",
+      "pnlNum": 1270.88,
+      "rMultiple": "+4.0R",
+      "note": "take profit r"
+    },
+    {
+      "date": "2026-10-30",
+      "entryDate": "2026-10-30",
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "3,948.6",
+      "exit": "3,953.3",
+      "pnl": "-$94",
+      "pnlNum": -94.0,
+      "rMultiple": "-0.3R",
+      "note": "scratch 3rd"
+    },
     {
       "date": "2026-10-30",
       "entryDate": "2026-10-30",
@@ -85,55 +121,30 @@
       "pnlNum": 576.0,
       "rMultiple": "+1.8R",
       "note": "rule a blue line"
-    },
-    {
-      "date": "2026-10-29",
-      "entryDate": "2026-10-29",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,040.0",
-      "exit": "4,025.2",
-      "pnl": "+$296",
-      "pnlNum": 296.0,
-      "rMultiple": "+0.9R",
-      "note": "ob rejection"
-    },
-    {
-      "date": "2026-10-29",
-      "entryDate": "2026-10-29",
-      "symbol": "P3",
-      "direction": "Short",
-      "entry": "4,026.9",
-      "exit": "4,025.2",
-      "pnl": "+$34",
-      "pnlNum": 34.0,
-      "rMultiple": "+0.1R",
-      "note": "rule d opp cluster"
-    },
-    {
-      "date": "2026-10-29",
-      "entryDate": "2026-10-29",
-      "symbol": "P3",
-      "direction": "Short",
-      "entry": "4,029.7",
-      "exit": "4,045.8",
-      "pnl": "-$322",
-      "pnlNum": -322.38,
-      "rMultiple": "-1.0R",
-      "note": "stop loss"
     }
   ],
   "positions": [
     {
-      "symbol": "P1",
+      "symbol": "P3",
       "direction": "Short",
-      "entry": "3,971.5",
-      "current": "3,972.8",
+      "entry": "3,944.5",
+      "current": "3,919.0",
       "size": "2 MGC",
-      "open": "10-30 20:15 HKT",
-      "stop": "3,987.4",
-      "pnl": "-$26",
-      "pnlNum": -26.0
+      "open": "10-30 21:32 HKT",
+      "stop": "3,960.3",
+      "pnl": "+$510",
+      "pnlNum": 510.0
+    },
+    {
+      "symbol": "P4",
+      "direction": "Short",
+      "entry": "3,928.1",
+      "current": "3,919.0",
+      "size": "2 MGC",
+      "open": "10-30 21:50 HKT",
+      "stop": "3,943.8",
+      "pnl": "+$182",
+      "pnlNum": 182.0
     }
   ],
   "monthlyReturns": [
@@ -275,11 +286,11 @@
         -1.5,
         -1.1,
         4.5,
-        -4.4,
+        -1.8,
         null,
         null
       ],
-      "ytd": 47.0,
+      "ytd": 49.6,
       "isLive": true
     }
   ]
