@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-30T11:52:01.572190+00:00",
+  "lastUpdated": "2026-10-30T13:18:01.426793+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$10,598",
+      "value": "+$10,446",
       "tone": "good",
-      "sub": "40 trades, 1 BTC each"
+      "sub": "41 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "62%",
-      "sub": "25W / 15L"
+      "value": "61%",
+      "sub": "25W / 16L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.80",
+      "value": "1.78",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "BATISTUTA",
-      "direction": "Long",
-      "entry": "77,434",
-      "current": "77,401",
-      "size": "1 BTC",
-      "pnl": "-$33",
-      "pnlNum": -33,
-      "stop": "74,700",
-      "targets": "79,450 / 81,050",
-      "realized": "-",
-      "open": "100%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "SUAREZ",
@@ -60,6 +46,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-10-30",
+      "entryDate": "2026-10-30",
+      "symbol": "BATISTUTA",
+      "direction": "Long",
+      "entry": "77,434",
+      "exit": "77,282",
+      "pnl": "-$152",
+      "pnlNum": -152,
+      "rMultiple": "-0.06R",
+      "note": "Closed early — thesis void"
+    },
     {
       "date": "2026-10-27",
       "entryDate": "2026-10-24",
@@ -541,5 +539,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,401"
+  "priceNote": "Unrealised P&L marked at $77,288"
 }
