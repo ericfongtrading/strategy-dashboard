@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-31T15:58:01.589551+00:00",
+  "updated_utc": "2026-10-31T15:59:01.402632+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -112,7 +112,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-31T15:58:00.769910+00:00",
+      "heartbeat_utc": "2026-10-31T15:59:00.411833+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -173,7 +173,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T15:58:00.769910+00:00",
+      "heartbeat_utc": "2026-10-31T15:59:00.411833+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [
         "NQ_FEED_STALE",
@@ -238,7 +238,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T15:58:02.369792+00:00",
+      "heartbeat_utc": "2026-10-31T15:59:02.380332+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -261,10 +261,10 @@
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
     "healthy": false,
-    "state": "DATA_WAIT",
-    "validator_state": "OK",
-    "data_error": "OperationalError: unable to open database file",
-    "heartbeat_utc": "2026-10-31T15:57:59.424820+00:00",
+    "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
+    "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
+    "data_error": null,
+    "heartbeat_utc": "2026-10-31T15:59:01.730108+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
@@ -285,7 +285,7 @@
         "signal_utc": "2026-10-30T14:31:00+00:00",
         "entry_utc": "2026-10-30T14:31:00+00:00",
         "entry_t": 29889511,
-        "signal_vwap": 28838.99188291947,
+        "signal_vwap": 28839.06455973947,
         "paper_only": true,
         "status": "CLOSED",
         "exit": 28525.75,
@@ -391,8 +391,7 @@
         "regime_asof": "2026-10-19",
         "regime_provisional": false,
         "read_hash": "acd41df758c92d2ba73bb6479550b80cc73c9c5fbe90456f336382d8076bf48c",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-21",
@@ -422,8 +421,7 @@
         "regime_asof": "2026-10-20",
         "regime_provisional": false,
         "read_hash": "36a1077e4eff0eb7a79157cd72b46a46f4f6fc50873299c03a417869452b6c72",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-22",
@@ -453,8 +451,7 @@
         "regime_asof": "2026-10-21",
         "regime_provisional": false,
         "read_hash": "a5d63bd50dd20cb5a61dbcddedc3d8d5f29991c5ed4cd5d162a5ee15ec50c323",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-23",
@@ -484,8 +481,7 @@
         "regime_asof": "2026-10-22",
         "regime_provisional": false,
         "read_hash": "9fb7d4e0f4449a0157410ae4dcc8d42a994dad8f2cfcdabe07c3f80c9d473e7e",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-26",
@@ -515,8 +511,7 @@
         "regime_asof": "2026-10-25",
         "regime_provisional": false,
         "read_hash": "7cb57ac36a1cc75cccc1508fc2866bd22727f67a65a2231f0244529f9782df53",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-27",
@@ -546,8 +541,7 @@
         "regime_asof": "2026-10-26",
         "regime_provisional": false,
         "read_hash": "b9e602b1283f83621ff9bdf7889b0ec7824c774699b5b0b2f2c81481c083c4d9",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-28",
@@ -577,8 +571,7 @@
         "regime_asof": "2026-10-27",
         "regime_provisional": false,
         "read_hash": "bed157c904340a188a9864317de2649c48731418bf9f455a3d1764a178ccb868",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-29",
@@ -608,8 +601,7 @@
         "regime_asof": "2026-10-28",
         "regime_provisional": false,
         "read_hash": "0d93389731a7a3ec485495b1974bf988059281c4929e866d403fc1683cdf24f4",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-30",
@@ -629,16 +621,16 @@
         "qualifies": true,
         "take": true,
         "side": -1,
-        "distance_pct": -0.5790489612030201,
-        "vwap": 28838.99188291947,
-        "vol_ratio": 1.1455003328436122,
+        "distance_pct": -0.5792995101952708,
+        "vwap": 28839.06455973947,
+        "vol_ratio": 1.1455003687220384,
         "busy": false,
         "regime": "ZONE_A",
         "why": "take",
         "data_ready": true,
         "regime_asof": "2026-10-29",
         "regime_provisional": false,
-        "read_hash": "19d5ba190ca38df6c8a7ec6512011b029b76a93f2d76b01851be470caa89514b",
+        "read_hash": "004c5642487f949678cf1b24710887c8dec12280496f87a85199b6983e286eb8",
         "origin": "BACKFILLED_REPLAY",
         "corrected_after_backfill": true
       }
@@ -664,6 +656,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-10-31T15:57:23.826215+00:00"
+    "validation_updated_utc": "2026-10-31T15:58:24.084912+00:00"
   }
 }
