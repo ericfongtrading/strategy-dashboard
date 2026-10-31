@@ -50,7 +50,7 @@ label { font-size: 0.85rem; color: var(--ink-2); }
     <button class="spd" data-s="1" aria-pressed="true">1×</button><button class="spd" data-s="2">2×</button><button class="spd" data-s="4">4×</button>
     <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="position in the replay">
     <span class="clock" id="clock">—</span>
-    <label><input type="checkbox" id="pauseEv" checked> hold on each step</label>
+
   </div>
   <p class="foot">Candles: Binance BTCUSDT spot, 1 h. Fills and orders: Hyperliquid, from the bot's order log. Steps: the bot's monitor journal, order log, plan history and the brain's thinking journal, at their logged times. Results in R (risk = entry to stop, 1.1% of price) and % of position. The resistance level came from the analyst's published videos, read automatically; the plan was approved by the desk before going live; the last target was widened by hand. The sell-stop line is a visual trigger guide after the resistance-touch candle, not a historical resting entry order. Within-hour candle bodies are illustrative interpolations anchored to recorded target fills; full wicks appear at the hourly close. The entry is shown at the fill price; the bot's rule was an hourly rejection in the zone followed by a market sell, which filled at $84,075.</p>
 </main>
@@ -84,13 +84,14 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   E('armed').ts = armBar.t + STEP;
   const T = {step1:E('level').ts, armed:E('armed').ts, fill:E('fill').ts};
   EV.sort((a,b)=>a.ts-b.ts);
+  EV.forEach((e,i)=>{ e.step=i+1; });
   const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
   const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
   const $ = id => document.getElementById(id);
   const fmt = p => '$' + Math.round(p).toLocaleString();
   const fmtT = ms => new Date(ms).toISOString().slice(5, 16).replace('T', ' ') + ' UTC';
   const WHO = { brain: ['AI BRAIN', '--b-brain'], executor: ['EXECUTOR', '--b-exec'], manager: ['MANAGER', '--b-manager'], video: ['ANALYST VIDEO', '--b-video'], market: ['MARKET', '--b-market'] };
-  let now = T0, playing = true, speed = 1, lastFrame = 0, acc = 0, fired = new Set(), pauseUntil = 0;
+  let now = T0, playing = true, speed = 1, lastFrame = 0, acc = 0, fired = new Set();
   let anim = null;                                              // {start, ev}: the step alert popping up and settling into place
   const ANIM_MS = 2800;
   const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
@@ -256,7 +257,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   function render() {
     $('clock').textContent=fmtT(now); $('scrub').value=Math.round((now-T0)/(T1-T0)*1000);
     const cur=[...EV].reverse().find(e=>e.ts<=now);
-    const text=state(now).closed ? '9. Trade closed · +2.57 R' : cur ? `${cur.step}. ${cur.title}` : 'Watching the approach to resistance';
+    const text=state(now).closed ? `${E('close').step}. Trade closed · +2.57 R` : cur ? `${cur.step}. ${cur.title}` : 'Watching the approach to resistance';
     if(text!==captionKey) { $('eventCaption').textContent=text; captionKey=text; }
     draw();
   }
@@ -264,22 +265,19 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     if (!playing) return;
     if (!lastFrame) lastFrame=ts;
     const dt=Math.min(ts-lastFrame,100); lastFrame=ts;
-    if(ts<pauseUntil) { render(); requestAnimationFrame(tick); return; }
     if(now>=T1) { playing=false; anim=null; $('play').textContent='▶ Replay'; render(); return; }
     const tp1=EV.find(e=>e.kind==='tp' && e.px===83480).ts;
     const tp2=EV.find(e=>e.kind==='tp' && e.px===82200).ts;
-    const per=now<T.armed ? 380 : now<T.fill ? 850 : now<=tp1 ? 5500 : now<=tp2 ? 1100 : 220;
+    const per=now<T.armed ? 120 : now<T.fill ? 850 : now<=tp1 ? 5500 : now<=tp2 ? 1100 : 220;
     const destination=Math.min(T1,now+dt*speed/per*STEP);
     const hit=EV.find(e=>e.ts>now && e.ts<=destination && !fired.has(e));
     if(hit) {
       now=hit.ts; fired.add(hit); anim={start:ts,ev:hit};
-      const important=['fill','brackets','tp','be','tp3early','tp3','close'].includes(hit.kind);
-      pauseUntil=ts+ANIM_MS+($('pauseEv').checked ? (important?2400:900) : 200);
     } else now=destination;
     render(); requestAnimationFrame(tick);
   }
   function restart() {
-    now=T0; fired.clear(); anim=null; pauseUntil=0; lastFrame=0;
+    now=T0; fired.clear(); anim=null; lastFrame=0;
     const wasPlaying=playing; playing=true; $('play').textContent='❚❚ Pause'; render();
     if(!wasPlaying) requestAnimationFrame(tick);
   }
@@ -291,7 +289,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   $('restart').addEventListener('click',restart);
   document.querySelectorAll('.spd').forEach(b => b.addEventListener('click', () => { speed = +b.dataset.s; document.querySelectorAll('.spd').forEach(x => x.setAttribute('aria-pressed', x === b)); }));
   $('scrub').addEventListener('input',e=>{
-    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; pauseUntil=0; lastFrame=0;
+    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; lastFrame=0;
     EV.forEach(ev=>{if(ev.ts<=now) fired.add(ev); else fired.delete(ev);});
     if(now>=T1) { playing=false; $('play').textContent='▶ Replay'; }
     render();
