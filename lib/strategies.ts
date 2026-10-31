@@ -1,515 +1,515 @@
-export type MonthlyRow = {
-  year: number;
-  months: (number | null)[];
-  ytd: number | null;
-  isLive?: boolean;
-};
-
-export type Trade = {
-  date: string;
-  /** Entry date. Optional: when any trade carries one, the table shows
-   *  Entered/Exited columns instead of the single Date column. */
-  entryDate?: string;
-  /** Instrument. Optional: single-market strategies (GC, NQ) omit it and the
-   *  table hides the column. Multi-coin strategies must set it, or every row
-   *  reads as the same trade. */
-  symbol?: string;
-  direction: 'Long' | 'Short';
-  entry: string;
-  exit: string;
-  pnl: string;
-  pnlNum: number;
-  rMultiple?: string;
-  /** What the bot learned from this trade (losing trades; from the failure-mode journal). */
-  lesson?: string;
-  /** Why the trade ended, in a few words. Optional: only strategies whose feed
-   *  explains its exits (the Hyper bot) set it, and the column hides otherwise. */
-  note?: string;
-  source?: string;
-};
-
-export type Position = {
-  symbol: string;
-  direction: 'Long' | 'Short';
-  entry: string;
-  current: string;
-  size: string;
-  pnl: string;
-  pnlNum: number;
-  /** Risk detail. All optional and all opt-in per column, so a feed that only
-   *  reports mark-to-market (GC, NQ) keeps its existing four-column table. */
-  stop?: string;
-  targets?: string;
-  realized?: string;
-  /** Share of the position not yet taken off, e.g. "60%". */
-  open?: string;
-};
-
-/** A setup that has NOT been entered — published before it triggers rather than
- *  reported after it resolves. Only the Hyper bot has these. */
-export type Plan = {
-  symbol: string;
-  direction: 'Long' | 'Short';
-  zone: string;
-  stop: string;
-  targets: string;
-  /** 0-5. A conviction label the planner writes; it does not gate execution. */
-  conviction?: number;
-  status: string;
-};
-
-/** A headline number on the card and at the top of the modal, supplied by the
- *  live feed rather than baked in at build time. Used where the standard
- *  CAGR/Sharpe/MaxDD trio would have to be invented to be filled in. */
-export type Headline = {
-  label: string;
-  value: string;
-  sub?: string;
-  tone?: 'good' | 'bad';
-};
-
-export type Strategy = {
-  id: string;
-  name: string;
-  asset: string;
-  category: 'tradfi' | 'crypto' | 'ml';
-  edge: string;
-  cagr?: string;
-  cagrLabel?: string;
-  cagrNum?: number;
-  sharpe?: string;
-  pf?: string;
-  winRate?: string;
-  maxDD?: string;
-  maxDDNum?: number;
-  status: 'live' | 'backtest' | 'active' | 'development';
-  statusLabel?: string;
-  description: string;
-  /** Optional concise overview on the scoreboard card. */
-  cardSummary?: string;
-  dataSource?: string;
-  highlights?: string[];
-  pdfEn?: string;
-  pdfZh?: string;
-  proofUrl?: string;
-  proofLabel?: string;
-  backtestStart?: number;
-  backtestEnd?: number;
-  liveStart?: number;
-  liveStartMonth?: number;
-  monthlyReturns?: MonthlyRow[];
-  /** Sum the monthly percentages instead of compounding them. Correct for a
-   *  fixed-contract, fixed-capital-base strategy where the position size never
-   *  scales with equity — compounding those months overstates the curve. */
-  additiveEquity?: boolean;
-  /** Draw an underwater (drawdown-from-peak) panel beneath the equity line.
-   *  Month-end tables cannot show a drawdown whose peak and trough fall
-   *  mid-month; this makes it visible. */
-  showUnderwater?: boolean;
-  /** Drawdown from peak in percentage points, sampled off the DAILY equity
-   *  curve (weekly minima, so troughs survive the downsample). Supply this
-   *  wherever the true depth falls between month-ends — deriving the panel
-   *  from monthly rows alone understates it. */
-  underwaterSeries?: number[];
-  underwaterLabel?: string;
-  /** Footnote rendered under the monthly table. */
-  monthlyNote?: string;
-  recentTrades?: Trade[];
-  positions?: Position[];
-  /** Fetch this strategy's live feed on the CARD, not just in the modal, and
-   *  render its `headline` block where CAGR/Sharpe would sit. Opt-in so the
-   *  front page still makes exactly one network request per live-fed card. */
-  liveHeadline?: boolean;
-  /** Optional pre-rendered chart image (e.g. signals overlaid on price).
-   *  Render with a transparent background for the dark modal. */
-  chartImg?: string;
-  chartImgLabel?: string;
-  /** Extra labelled figures shown beside the headline, for strategies whose key
-   *  numbers are not Sharpe / Max DD (e.g. net P&L after hedges, capital). */
-  extraMetrics?: { label: string; value: string; tone?: 'good' | 'bad'; modalOnly?: boolean }[];
-};
-
-const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
-const pdf = (p: string) => `${bp}${p}`;
-
-export const strategies: Strategy[] = [
-  {
-    id: 'hsi',
-    name: 'Intraday Multi-Strategy',
-    asset: 'HSI Futures',
-    category: 'tradfi',
-    edge: 'Technical',
-    cagr: '9.07%',
-    cagrNum: 0.0907,
-    sharpe: '1.40',
-    maxDD: '-10.12%',
-    maxDDNum: 0.1012,
-    status: 'live',
-    description: 'Four-rule intraday portfolio on MHI futures with the approved three-session structural sizing overlay, five-session shock release and shock P2 management. Historical figures use fixed HK$453,000 capital with no compounding and include modelled costs. Live trades shown below are actual IB fills.',
-    dataSource: 'Latest backtest: 2 Jan 2019-23 Oct 2026 | Live: IB fills',
-    backtestStart: 2019,
-    backtestEnd: 2026,
-    liveStart: 2026,
-    liveStartMonth: 4,
-    additiveEquity: true,
-    monthlyNote:
-      'Months are month-end. Max drawdown is measured on the daily equity curve, so its peak and trough fall inside months that can show positive returns — the -9.5% ran 25 Feb 2022 to 3 May 2022.',
+export type MonthlyRow = {
+  year: number;
+  months: (number | null)[];
+  ytd: number | null;
+  isLive?: boolean;
+};
+
+export type Trade = {
+  date: string;
+  /** Entry date. Optional: when any trade carries one, the table shows
+   *  Entered/Exited columns instead of the single Date column. */
+  entryDate?: string;
+  /** Instrument. Optional: single-market strategies (GC, NQ) omit it and the
+   *  table hides the column. Multi-coin strategies must set it, or every row
+   *  reads as the same trade. */
+  symbol?: string;
+  direction: 'Long' | 'Short';
+  entry: string;
+  exit: string;
+  pnl: string;
+  pnlNum: number;
+  rMultiple?: string;
+  /** What the bot learned from this trade (losing trades; from the failure-mode journal). */
+  lesson?: string;
+  /** Why the trade ended, in a few words. Optional: only strategies whose feed
+   *  explains its exits (the Hyper bot) set it, and the column hides otherwise. */
+  note?: string;
+  source?: string;
+};
+
+export type Position = {
+  symbol: string;
+  direction: 'Long' | 'Short';
+  entry: string;
+  current: string;
+  size: string;
+  pnl: string;
+  pnlNum: number;
+  /** Risk detail. All optional and all opt-in per column, so a feed that only
+   *  reports mark-to-market (GC, NQ) keeps its existing four-column table. */
+  stop?: string;
+  targets?: string;
+  realized?: string;
+  /** Share of the position not yet taken off, e.g. "60%". */
+  open?: string;
+};
+
+/** A setup that has NOT been entered — published before it triggers rather than
+ *  reported after it resolves. Only the Hyper bot has these. */
+export type Plan = {
+  symbol: string;
+  direction: 'Long' | 'Short';
+  zone: string;
+  stop: string;
+  targets: string;
+  /** 0-5. A conviction label the planner writes; it does not gate execution. */
+  conviction?: number;
+  status: string;
+};
+
+/** A headline number on the card and at the top of the modal, supplied by the
+ *  live feed rather than baked in at build time. Used where the standard
+ *  CAGR/Sharpe/MaxDD trio would have to be invented to be filled in. */
+export type Headline = {
+  label: string;
+  value: string;
+  sub?: string;
+  tone?: 'good' | 'bad';
+};
+
+export type Strategy = {
+  id: string;
+  name: string;
+  asset: string;
+  category: 'tradfi' | 'crypto' | 'ml';
+  edge: string;
+  cagr?: string;
+  cagrLabel?: string;
+  cagrNum?: number;
+  sharpe?: string;
+  pf?: string;
+  winRate?: string;
+  maxDD?: string;
+  maxDDNum?: number;
+  status: 'live' | 'backtest' | 'active' | 'development';
+  statusLabel?: string;
+  description: string;
+  /** Optional concise overview on the scoreboard card. */
+  cardSummary?: string;
+  dataSource?: string;
+  highlights?: string[];
+  pdfEn?: string;
+  pdfZh?: string;
+  proofUrl?: string;
+  proofLabel?: string;
+  backtestStart?: number;
+  backtestEnd?: number;
+  liveStart?: number;
+  liveStartMonth?: number;
+  monthlyReturns?: MonthlyRow[];
+  /** Sum the monthly percentages instead of compounding them. Correct for a
+   *  fixed-contract, fixed-capital-base strategy where the position size never
+   *  scales with equity — compounding those months overstates the curve. */
+  additiveEquity?: boolean;
+  /** Draw an underwater (drawdown-from-peak) panel beneath the equity line.
+   *  Month-end tables cannot show a drawdown whose peak and trough fall
+   *  mid-month; this makes it visible. */
+  showUnderwater?: boolean;
+  /** Drawdown from peak in percentage points, sampled off the DAILY equity
+   *  curve (weekly minima, so troughs survive the downsample). Supply this
+   *  wherever the true depth falls between month-ends — deriving the panel
+   *  from monthly rows alone understates it. */
+  underwaterSeries?: number[];
+  underwaterLabel?: string;
+  /** Footnote rendered under the monthly table. */
+  monthlyNote?: string;
+  recentTrades?: Trade[];
+  positions?: Position[];
+  /** Fetch this strategy's live feed on the CARD, not just in the modal, and
+   *  render its `headline` block where CAGR/Sharpe would sit. Opt-in so the
+   *  front page still makes exactly one network request per live-fed card. */
+  liveHeadline?: boolean;
+  /** Optional pre-rendered chart image (e.g. signals overlaid on price).
+   *  Render with a transparent background for the dark modal. */
+  chartImg?: string;
+  chartImgLabel?: string;
+  /** Extra labelled figures shown beside the headline, for strategies whose key
+   *  numbers are not Sharpe / Max DD (e.g. net P&L after hedges, capital). */
+  extraMetrics?: { label: string; value: string; tone?: 'good' | 'bad'; modalOnly?: boolean }[];
+};
+
+const bp = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const pdf = (p: string) => `${bp}${p}`;
+
+export const strategies: Strategy[] = [
+  {
+    id: 'hsi',
+    name: 'Intraday Multi-Strategy',
+    asset: 'HSI Futures',
+    category: 'tradfi',
+    edge: 'Technical',
+    cagr: '9.07%',
+    cagrNum: 0.0907,
+    sharpe: '1.40',
+    maxDD: '-10.12%',
+    maxDDNum: 0.1012,
+    status: 'live',
+    description: 'Four-rule intraday portfolio on MHI futures with the approved three-session structural sizing overlay, five-session shock release and shock P2 management. Historical figures use fixed HK$453,000 capital with no compounding and include modelled costs. Live trades shown below are actual IB fills.',
+    dataSource: 'Latest backtest: 2 Jan 2019-23 Oct 2026 | Live: IB fills',
+    backtestStart: 2019,
+    backtestEnd: 2026,
+    liveStart: 2026,
+    liveStartMonth: 4,
+    additiveEquity: true,
+    monthlyNote:
+      'Months are month-end. Max drawdown is measured on the daily equity curve, so its peak and trough fall inside months that can show positive returns — the -9.5% ran 25 Feb 2022 to 3 May 2022.',
+    highlights: [
+      '1,543 backtest trades; HK$439,080 net and +96.93% total return on the fixed capital convention',
+      'Return/drawdown 9.58; seven of eight calendar years positive',
+      'Historical table is the latest causal replay through 23 October 2026; live trade rows are IB executions, not model signals',
+    ],
+    monthlyReturns: [
+      { year: 2019, months: [3.47,2.08,2.11,-1.16,-1.68,2.48,0.77,-0.38,-1.19,-0.70,2.35,-3.29], ytd: 4.85 },
+      { year: 2020, months: [-1.77,-0.57,-1.00,-2.02,6.60,-1.35,3.01,0.63,-1.04,-1.01,-2.25,-0.34], ytd: -1.11 },
+      { year: 2021, months: [4.29,4.25,1.07,6.16,1.20,3.32,7.47,4.05,0.23,-2.59,-1.34,0.46], ytd: 28.56 },
+      { year: 2022, months: [3.14,0.38,-3.14,-1.25,0.12,0.37,3.15,-0.78,1.12,0.56,2.34,-1.06], ytd: 4.93 },
+      { year: 2023, months: [0.29,2.47,0.05,-0.71,2.58,-1.30,0.36,0.75,0.50,-0.69,3.70,1.34], ytd: 9.34 },
+      { year: 2024, months: [-1.93,4.64,1.05,0.18,-0.08,-3.26,1.66,0.72,1.14,16.26,2.75,-0.25], ytd: 22.87 },
+      { year: 2025, months: [0.37,2.51,0.63,-3.21,0.39,5.63,1.21,-2.34,5.77,0.36,-1.61,0.31], ytd: 10.03 },
+      { year: 2026, months: [6.52,4.88,3.34,-0.91,3.00,-0.40,0.14,-1.38,0.60,1.68,null,null], ytd: 17.47, isLive: true },
+    ],
+    recentTrades: [],   // live feed (data/hsi.json) supplies fills from 2026-09-11
+  },
+  {
+    id: 'gc',
+    name: 'Intraday Momentum',
+    asset: 'GC Futures',
+    category: 'tradfi',
+    edge: 'Technical',
+    cagr: '33.8%',
+    cagrNum: 0.338,
+    sharpe: '1.55',
+    maxDD: '-12.7%',
+    maxDDNum: 0.127,
+    status: 'live',
+    additiveEquity: true,
+    description: 'Systematic momentum strategy on COMEX gold futures. Trades the Asia/London and US sessions, pyramiding up to 4 positions in a confirmed trend. Fixed-contract sizing on a fixed capital base. Every calendar year positive.',
+    dataSource: 'Backtest: 2020-2026 (6.6 yr) | Live: Aug 2026',
+    backtestStart: 2020,
+    backtestEnd: 2026,
+    liveStart: 2026,
+    liveStartMonth: 8,
+    highlights: [
+      'Profit factor 1.23 across 4,298 trades (~650/yr)',
+      'Walk-forward validated + independently replicated by a third-party review',
+      'Live on IB since Aug 2026  -  trade feed below shows real fills, not signals',
+    ],
+    monthlyReturns: [
+      { year: 2019, months: [null, null, null, null, null, null, null, null, null, null, null, 1.4], ytd: 1.4 },
+      { year: 2020, months: [5.0, 15.6, -4.2, 6.2, 3.1, 4.5, 20.8, 0.1, -3.0, 0.3, 2.5, 0.4], ytd: 51.3 },
+      { year: 2021, months: [-2.3, 14.4, 1.3, -4.6, 11.4, -3.0, -5.4, -1.1, -0.3, -3.1, 3.1, -2.8], ytd: 7.6 },
+      { year: 2022, months: [3.8, 4.7, 4.7, -2.5, 1.6, 2.7, 1.1, 1.7, 2.3, -1.5, -1.8, 6.1], ytd: 22.9 },
+      { year: 2023, months: [3.6, -2.0, -0.8, 1.3, 2.5, 0.8, -2.1, -5.4, 11.7, -1.3, 2.9, 13.5], ytd: 24.7 },
+      { year: 2024, months: [-6.0, -1.9, 19.5, -4.1, -1.4, 0.8, 1.5, -4.1, 4.4, 3.5, -0.6, 9.6], ytd: 21.2 },
+      { year: 2025, months: [8.1, -1.4, 10.5, 5.3, -2.6, 1.8, 5.9, 2.6, 9.2, 6.6, 4.5, -2.3], ytd: 48.2 },
+      { year: 2026, months: [28.5, 1.6, -3.3, 5.9, 5.9, 10.9, -1.5, null, null, null, null, null], ytd: 48.0, isLive: true },
+    ],
+  },
+  {
+    id: 'nq',
+    name: 'Four-Sleeve Intraday Portfolio',
+    asset: 'NQ Futures',
+    category: 'tradfi',
+    edge: 'Technical',
+    cagr: '9.37%',
+    cagrNum: 0.0937,
+    sharpe: '1.89',
+    maxDD: '-3.09%',
+    maxDDNum: 0.0309,
+    status: 'live',
+    description: 'Four intraday sleeves on Micro E-mini Nasdaq-100 futures: VWAP Long R3, R3 Re-Entry, CCI-AM and TBS. The current production allocation is 1 / 1 / 1 / 2 MNQ. Historical figures are from the exact production replay; live trade rows are actual IB fills.',
+    dataSource: 'Backtest: 30 Dec 2020-13 Oct 2026 | Live: Sep 2026',
+    backtestStart: 2020,
+    backtestEnd: 2026,
+    liveStart: 2026,
+    liveStartMonth: 9,
+    additiveEquity: true,
+    monthlyNote: 'Latest 1/1/1/2 production replay. Monthly percentages use a fixed $35,083.02 reference capital base (five-MNQ initial margin plus the backtest drawdown buffer), with no compounding. Sharpe includes zero-P&L days.',
+    highlights: [
+      '795 trades and $23,833.52 net after modelled costs',
+      'Daily Sharpe 1.89 with flat trading days included',
+      'Maximum daily-equity drawdown $1,083.02; return/drawdown 22.01',
+      'Monthly table and headline totals come from the same exact 1/1/1/2 production ledger',
+    ],
+    monthlyReturns: [
+      { year: 2020, months: [null,null,null,null,null,null,null,null,null,null,null,0.00], ytd: 0.00 },
+      { year: 2021, months: [-0.06,-0.14,1.88,0.86,0.25,-0.17,-0.20,0.00,1.04,-0.19,0.12,0.69], ytd: 4.08 },
+      { year: 2022, months: [2.46,-0.49,0.39,-0.13,5.92,1.18,-0.95,1.85,2.52,2.13,-0.20,1.87], ytd: 16.54 },
+      { year: 2023, months: [-0.65,0.79,-0.08,0.11,0.31,0.44,-0.47,-0.75,0.32,1.17,-0.14,0.86], ytd: 1.93 },
+      { year: 2024, months: [0.35,0.35,0.15,0.27,-0.09,0.16,-0.16,-0.55,1.33,1.76,0.09,0.12], ytd: 3.79 },
+      { year: 2025, months: [1.42,0.63,6.12,7.89,1.32,0.67,-0.52,0.11,-0.15,0.19,1.99,-1.64], ytd: 18.04 },
+      { year: 2026, months: [-0.24,1.62,8.10,1.20,2.04,7.81,-0.69,2.30,1.63,-0.19,null,null], ytd: 23.57 },
+    ],
+  },
+  {
+    id: 'fx',
+    name: 'Mean Reversion',
+    asset: 'FX Pairs',
+    category: 'tradfi',
+    edge: 'Statistical',
+    cagr: '8.0%',
+    cagrNum: 0.080,
+    sharpe: '1.44',
+    maxDD: '-7.8%',
+    maxDDNum: 0.078,
+    status: 'live',
+    statusLabel: 'Live',
+    liveHeadline: false,
+    additiveEquity: true,
+    description: 'Mean reversion on NZDCAD, AUDCAD, GBPAUD and GBPNZD. RSI extremes drive entries toward the Bollinger midpoint, with a 2.5 ATR stop and 24-bar holding limit. Shared-currency exposure takes half risk. The strategy runs live on Hostinger using the IB TWS feed, with execution enabled on IB and FTMO.',
+    dataSource: 'Latest historical backtest | Current strategy ledger',
+    backtestStart: 2019,
+    backtestEnd: 2026,
+    monthlyNote: 'Historical table is the latest reconstructed backtest through 9 October 2026. It is kept separate from the live section; live trades and positions are actual IB executions.',
+    highlights: [
+      'Historical headline and monthly table use the latest reconstructed strategy record through 9 October 2026',
+      'Recent trades show strategy decisions whether or not IB or FTMO delivered them',
+      'Four-hour candles follow the New York FX rollover; incomplete candles are excluded',
+      'Signals sharing a currency with an open strategy position take half risk',
+      'Live on Hostinger with IB TWS market data and automated execution enabled on IB and FTMO',
+    ],
+    monthlyReturns: [
+      { year: 2019, months: [2.2, 2.9, 2.4, 1.5, -1.4, -0.1, -2.4, 3.8, -0.2, 0.0, 1.4, 1.3], ytd: 11.6 },
+      { year: 2020, months: [-2.5, 0.1, 0.2, 0.6, 2.9, -1.9, 0.9, 1.1, -4.1, 2.6, 0.5, 0.3], ytd: 0.8 },
+      { year: 2021, months: [1.3, 1.2, -2.5, -2.7, 4.1, 2.7, 2.9, 0.8, -1.8, -1.0, 1.7, 0.8], ytd: 7.5 },
+      { year: 2022, months: [-1.0, -0.3, -3.7, -0.3, 0.7, 0.7, 3.8, 3.4, 0.8, 0.4, -0.2, 0.4], ytd: 4.7 },
+      { year: 2023, months: [0.5, 2.8, 5.3, -0.1, -1.6, 3.6, 3.4, 0.3, -0.1, 4.3, 3.0, 3.1], ytd: 24.5 },
+      { year: 2024, months: [0.9, 1.4, 1.8, -0.6, 0.8, 1.5, -5.0, 3.5, 0.6, 2.8, 3.2, 0.6], ytd: 11.5 },
+      { year: 2025, months: [0.5, -2.0, 0.2, 0.9, 2.3, 3.5, 3.7, 3.8, -0.1, 1.0, 1.0, 0.9], ytd: 15.6 },
+      { year: 2026, months: [-3.5, 0.0, 3.2, 1.3, -0.1, -0.7, 5.4, -0.3, 0.3, 0.7, null, null], ytd: 6.3 },
+    ],
+  },
+  {
+    id: 'options',
+    name: 'Options Premium',
+    asset: 'BTC Options (Deribit)',
+    category: 'crypto',
+    edge: 'Volatility',
+    cagr: '24.3%',
+    cagrNum: 0.243,
+    sharpe: '0.95',
+    maxDD: '-10.6%',
+    maxDDNum: 0.106,
+    status: 'live',
+    description: 'Systematic options premium selling on BTC via Deribit, governed by a proprietary cycle-phase regime model with two-tier expiry structure. ALL figures are BTC-denominated  -  pure options alpha, no spot beta. Headline metrics and the monthly table are live performance since Jun 2022, deposit-adjusted (unitized NAV), positions carried per the trading plan; drawdown is stated for the current era (since 2024).',
+    dataSource: 'Live since Jun 2022 | all figures BTC-denominated',
+    backtestStart: 2021,
+    backtestEnd: 2026,
+    liveStart: 2022,
+    highlights: [
+      'Live (all versions, since Jun 2022): +23.5% CAGR, +144% cumulative, max DD since 2024: -9.3%',
+      '34 of 51 live months positive',
+    ],
+    monthlyReturns: [
+      { year: 2022, months: [null, null, null, null, null, 37.1, 2.9, 3.3, 1.1, 2.0, -13.3, 5.8], ytd: 37.8, isLive: true },
+      { year: 2023, months: [-8.4, 1.9, 2.0, 3.6, 5.3, 0.9, -3.7, 0.3, -6.3, 13.6, 2.6, 13.5], ytd: 25.4, isLive: true },
+      { year: 2024, months: [-5.5, 10.6, 19.6, 3.8, -1.1, 0.0, 2.3, -4.9, 2.0, 6.2, -0.8, -0.7], ytd: 33.1, isLive: true },
+      { year: 2025, months: [0.9, -3.7, 0.5, 0.3, -0.6, 0.3, 1.0, -0.1, -0.1, 3.3, -0.7, -0.9], ytd: 0.1, isLive: true },
+      { year: 2026, months: [2.7, 4.0, 3.6, 2.1, 1.8, -0.8, 0.6, -7.6, null, null, null, null], ytd: 5.9, isLive: true },
+    ],
+  },
+  {
+    id: 'btc-lsr',
+    name: 'Long/Short Ratio',
+    asset: 'BTC',
+    category: 'crypto',
+    edge: 'Exchange Data',
+    cagr: '26.0%',
+    cagrLabel: 'CAGR (since first trade)',
+    cagrNum: 0.260,
+    sharpe: '1.71',
+    maxDD: '-7.2%',
+    maxDDNum: 0.072,
+    status: 'live',
+    description: 'Directional BTC strategy using the coefficient between buyers and sellers to identify regime shifts and market bottoms. Card metrics are the signal record at 40% of equity per signal, unlevered (cash otherwise idle). CAGR is measured from the first signal (Dec 2022); the same curve compounds at 20.2% from Jan 2022 and 16.7% from 2014. Trading live since Apr 2025 - live entries tracked the signals within 0.02-1.2%, verified against exchange order IDs.',
+    dataSource: 'Signals: 2022-2026 (4.9 yr) | Live: Apr 2025',
+    backtestStart: 2022,
+    backtestEnd: 2026,
+    liveStart: 2025,
+    liveStartMonth: 4,
+    highlights: [
+      'Entered within days of the Dec-2022 ($16.9K), Sep-2024 ($57K) and Jul-2026 ($60K) lows',
+      'Walk-forward validated with bootstrap drawdown analysis',
+      'Live entries within 0.02-1.2% of signal price, exchange-order-ID verified',
+    ],
+    monthlyReturns: [
+      { year: 2022, months: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.9], ytd: -0.9 },
+      { year: 2023, months: [15.7, 0.0, 13.0, -2.1, 0.0, 0.0, 0.0, -1.1, -1.0, 11.0, 4.0, 3.9], ytd: 50.6 },
+      { year: 2024, months: [0.0, 0.0, 0.0, -2.0, 0.0, 0.0, 0.0, 3.6, 3.1, 4.6, 9.8, 0.0], ytd: 20.3 },
+      { year: 2025, months: [0.0, 0.0, 0.0, 3.5, 4.8, 1.1, 3.7, 3.4, 0.0, 0.0, 1.6, -1.6], ytd: 17.4, isLive: true },
+      { year: 2026, months: [0.0, 0.0, 0.0, 4.7, -1.6, 0.0, 1.9, 10.3, 3.0, -3.3, null, null], ytd: 15.2, isLive: true },
+    ],
+    chartImg: pdf('/charts/btc-lsr-signals-v3.png'),
+    chartImgLabel: 'Strategy signals 2022-2026',
+  },
+  {
+    id: 'yield',
+    name: 'Automated Yield',
+    asset: 'Stablecoins',
+    category: 'crypto',
+    edge: 'Carry',
+    cagr: '10.0%',
+    cagrLabel: 'Annualized (live)',
+    cagrNum: 0.100,
+    status: 'live',
+    statusLabel: 'Live',
+    description: 'Automated yield-generation strategy on stablecoin balances, earning through short-term, collateralized financing at floating market rates. The system continuously reprices its offers as rate conditions shift and rolls maturing balances automatically, so interest compounds without manual intervention. Returns accrue as interest rather than price movement, with zero directional market exposure - the equity curve only steps upward.',
+    dataSource: 'Live: Nov 2025-Present',
+    liveStart: 2025,
+    liveStartMonth: 11,
+    highlights: [
+      'Positive every month since inception - returns are accrued interest, not price movement',
+      'Runs 24/7 unattended - no scheduled reviews or manual intervention required',
+      'Continuously recalibrates offer rates and terms to prevailing market conditions',
+      'Interest auto-reinvests as balances roll, compounding the position',
+      'Dynamic term structure management',
+    ],
+    monthlyReturns: [
+      { year: 2025, months: [null, null, null, null, null, null, null, null, null, null, 0.45, 0.87], ytd: 1.3, isLive: true },
+      { year: 2026, months: [1.13, 1.03, 1.07, 0.75, 0.9, 0.95, 0.87, 0.76, 0.58, null, null, null], ytd: 8.0, isLive: true },
+    ],
+  },
+  {
+    id: 'lp-hedged',
+    name: 'Hedged AMM LP',
+    asset: 'DEX Liquidity Pools',
+    category: 'crypto',
+    edge: 'AMM LP',
+    cagr: '33.0%',
+    cagrLabel: 'Net APR (annualized)',
+    status: 'live',
+    statusLabel: 'Live',
+    extraMetrics: [
+      { label: 'LP gain (before hedges)', value: '+$14,025', tone: 'good' },
+      { label: 'Net P&L (after hedges)', value: '+$7,235', tone: 'good' },
+      { label: 'Initial capital', value: '$200,000', modalOnly: true },
+      { label: 'Current value', value: '$214,025', modalOnly: true },
+      { label: 'Displayed uncollected fees', value: '$1,216', modalOnly: true },
+      { label: 'Hedge loss (realized + open)', value: '$6,790', modalOnly: true },
+    ],
+    description: 'AMM liquidity provision on decentralised exchanges, maximised for fee yield and hedged. Capital sits as concentrated liquidity in DEX pools and earns a fee on every swap that trades through its price range. Positions in the most volatile pools are hedged with offsetting short positions sized to the inventory each LP holds, so their returns come from swap fees rather than price direction; lower-volatility pools carry their direction unhedged. Ranges are re-centred when price leaves them, and each pool is capped at a small share of its total liquidity so added capital does not dilute its own fee share. Net P&L is after all hedge gains and losses.',
+    dataSource: 'Live since Sep 2026 | updated 2026-10-14',
+    highlights: [
+      'Net +$7,235 on $200,000 over 40 days = 33.0% annualized, after realized and open hedge losses',
+      'Initial capital $200,000 -> displayed assets $214,025: +$14,025 before hedges, less $6,790 of realized and open hedge losses',
+      'The latest screenshots show $1,216 of uncollected fees; historical collected fees are already included in displayed assets, so the card does not present that number as cumulative fee earnings',
+      'PLTR is approximately neutral-hedged; AMC is partially hedged, while lower-volatility pools carry their direction',
+      'Each pool capped at 4% of its liquidity, so new capital does not dilute its own fees',
+      'Forty days of live data is far too short to treat the annualized figure as a forecast',
+    ],
+  },
+  {
+    id: 'ta-composite',
+    name: 'TA Composite',
+    asset: 'BTC + Altcoins',
+    category: 'crypto',
+    edge: 'Technical',
+    cagr: '11.7%',
+    cagrNum: 0.117,
+    sharpe: '1.74',
+    maxDD: '-5.1%',
+    maxDDNum: 0.051,
+    status: 'live',
+    statusLabel: 'Live (small-size test)',
+    description: 'Five low-correlation technical strategies netted into a single account: trend, momentum, breakout, chart-pattern and a deep-drawdown crash short. Positive in all ten backtested years. Executed live on Hyperliquid perpetuals by a fully automated bot running 24/7 on a Linux VPS: it wakes at every 4-hour candle close, replays each strategy, nets the five sleeves into one position per coin, and gives each sleeve its own exchange-mounted stop. Trading live since August 2026 at a small test size  -  the live sample is far too short to confirm the backtest, and the figures shown are backtest unless stated otherwise.',
+    dataSource: 'Backtest 2017-2026 (9.0 yr, unlevered) | live since Aug 2026',
+    backtestStart: 2017,
+    backtestEnd: 2026,
+    liveStart: 2026,
+    highlights: [
+      'Fully automated execution: systemd daemon on a Linux VPS, 455 cycles since June 2026',
+      'Unattended on 4h candle closes (00/04/08/12/16/20 UTC), auto-restart on failure',
+      'Stops rest on the exchange, surviving bot, VPS or network failure',
+      'Five sleeves net to one position per coin, each keeping its own stop and target',
+      'Exchange-mounted stop losses + portfolio-level circuit breakers',
+      'All fees and funding rates deducted',
+      'Live since Aug 2026 at $5,000 sizing base  -  track record too short to draw conclusions',
+      'Out-of-sample 2022-2026: CAGR 11.1%, Sharpe 1.73',
+      'Levered equivalent at 2.36x gross: CAGR 29.0%, maxDD -11.7%',
+    ],
+    liveStartMonth: 8,
+    monthlyReturns: [
+      { year: 2017, months: [null, null, null, null, null, null, null, 0.0, 0.07, 4.14, 4.08, 6.68], ytd: 15.7 },
+      { year: 2018, months: [3.19, -0.05, 2.64, 1.68, 1.65, 1.13, 1.46, 2.77, -2.93, -0.97, 4.87, -2.84], ytd: 13.0 },
+      { year: 2019, months: [0.35, 0.8, 0.42, 1.7, 5.56, 1.32, 0.05, -0.75, -0.57, -0.2, -0.09, -0.23], ytd: 8.51 },
+      { year: 2020, months: [2.38, 0.04, 0.49, 0.67, 0.53, -2.13, 2.31, -0.58, 0.05, 6.01, 1.29, 0.71], ytd: 12.18 },
+      { year: 2021, months: [0.97, 0.48, -0.28, -0.17, -1.29, 0.36, -0.17, 2.36, -1.81, 2.54, 0.53, 0.69], ytd: 4.2 },
+      { year: 2022, months: [2.34, 1.26, 1.49, 0.19, 3.78, 4.08, -0.95, -1.34, -0.48, -1.32, 1.62, 0.68], ytd: 11.76 },
+      { year: 2023, months: [6.22, -0.28, 1.26, 0.28, -0.41, 2.28, -0.41, -1.49, 0.12, 3.63, -0.16, 1.52], ytd: 13.03 },
+      { year: 2024, months: [-0.17, 2.15, 0.01, -0.04, 0.06, -0.64, 1.01, 0.86, 0.34, -0.44, 2.56, 0.66], ytd: 6.49 },
+      { year: 2025, months: [-2.07, 2.45, -0.12, -0.07, 3.05, 0.12, -0.7, -0.7, -0.75, -0.06, 0.86, -0.52], ytd: 1.38 },
+      { year: 2026, months: [3.56, 1.75, -0.64, -1.2, 0.82, 4.81, -0.04, -0.22, null, null, null, null], ytd: 9.0 },
+    ],
+
+  },
+  {
+    id: 'crowd-fade',
+    name: 'Crowd-Fade',
+    asset: 'Top-20 Crypto Perps',
+    category: 'crypto',
+    edge: 'Positioning',
+    cagr: '19.8%',
+    cagrNum: 0.198,
+    sharpe: '1.29',
+    maxDD: '-14.5%',
+    maxDDNum: 0.145,
+    status: 'live',
+    statusLabel: 'Live (small-size test)',
+    description: 'A contrarian strategy that fades extreme crowd positioning in crypto perpetuals. For each of the 20 largest coins by 30-day trading volume (re-ranked every month, with no hindsight), it measures how far traders’ long/short positioning has stretched from that coin’s own recent norm; when the crowd is unusually one-sided it takes the other side, and holds until positioning normalizes. Positions are volatility-scaled and never levered above 1x. There are no stop losses by design: exits are purely signal-driven, which tested better than stops for this edge. Executed live on Hyperliquid perpetuals by a fully automated bot running every hour on a Linux VPS, on its own sub-account. Trading live since September 2026 at a small test size  -  the live sample is far too short to confirm the backtest, and the figures shown are backtest unless stated otherwise.',
+    dataSource: 'Backtest 2023-2026 (3.7 yr, on capital, never above 1x gross) | live since Sep 2026',
+    backtestStart: 2023,
+    backtestEnd: 2026,
+    liveStart: 2026,
+    liveStartMonth: 9,
+    highlights: [
+      'Fades the crowd: takes the other side when long/short positioning is extreme against each coin’s own 30-day norm',
+      'Survivorship-free universe: top 20 perpetuals by 30-day volume, re-ranked monthly; delisted coins included in the backtest',
+      'Out-of-sample 2025-2026: CAGR 20.1%, Sharpe 1.41, max drawdown -8.9%',
+      '30 of 44 backtest months positive; every calendar year positive',
+      'Volatility-scaled sizing, never above 1x gross; all fees and actual funding rates deducted',
+      'Fully automated: hourly cycles on a Linux VPS, own Hyperliquid sub-account, every cycle reconciled against the exchange',
+      'Backtest independently code-reviewed and corrected in Sep 2026  -  the figures shown are the corrected ones',
+      'Live since Sep 2026 at $3,500 capital  -  track record too short to draw conclusions',
+    ],
+    monthlyReturns: [
+      { year: 2023, months: [0.15, 1.21, 4.27, -1.66, 1.27, 4.24, -0.72, 4.36, 3.32, 8.27, -1.64, 1.99], ytd: 27.57 },
+      { year: 2024, months: [2.34, 3.07, -2.63, 5.23, -1.89, 3.52, 6.31, 1.69, -2.48, -0.34, -3.8, 0.92], ytd: 11.98 },
+      { year: 2025, months: [0.16, 1.06, 1.99, 2.81, 2.1, 1.17, 8.16, 1.17, 0.06, -1.34, 1.84, -3.45], ytd: 16.45 },
+      { year: 2026, months: [9.93, 7.3, -1.73, -1.96, 4.29, 2.9, -0.07, -4.43, null, null, null, null], ytd: 16.47 },
+    ],
+  },
+  {
+    id: 'hyper-bot',
+    name: 'Hyper Bot',
+    asset: 'BTC Perp',
+    category: 'ml',
+    edge: 'Machine Learning',
+    status: 'active',
+    statusLabel: 'Live',
+    liveHeadline: true,
+    cardSummary: "An autonomous AI trading system that builds plans from market data and technical-analysis videos, executes through exchange APIs, and manages positions within predefined risk controls.",
+    description: "Hyper Bot uses an AI reasoning model to turn market data and technical-analysis videos into conditional BTC trade plans. It specifies the direction, entry conditions, stop-loss, targets and invalidation criteria. Once the required conditions and risk checks pass, the execution engine places and manages orders through the Hyperliquid API without routine manual trade approval. New market data, analyst updates and position events prompt reassessment: the bot can revise pending plans, adjust permitted stops and targets, take partial profits, or close positions under its operating rules. It reviews completed trades and skipped setups, records lessons, and compares historical decision contexts to develop and re-evaluate pattern hypotheses. Human oversight defines the operating rules and can intervene; autonomy operates within those limits.",
+    dataSource: 'Live on Hyperliquid since Aug 2026 | record kept at 1 BTC notional per trade',
+    liveStart: 2026,
+    liveStartMonth: 6,
     highlights: [
-      '1,543 backtest trades; HK$439,080 net and +96.93% total return on the fixed capital convention',
-      'Return/drawdown 9.58; seven of eight calendar years positive',
-      'Historical table is the latest causal replay through 23 October 2026; live trade rows are IB executions, not model signals',
-    ],
-    monthlyReturns: [
-      { year: 2019, months: [3.47,2.08,2.11,-1.16,-1.68,2.48,0.77,-0.38,-1.19,-0.70,2.35,-3.29], ytd: 4.85 },
-      { year: 2020, months: [-1.77,-0.57,-1.00,-2.02,6.60,-1.35,3.01,0.63,-1.04,-1.01,-2.25,-0.34], ytd: -1.11 },
-      { year: 2021, months: [4.29,4.25,1.07,6.16,1.20,3.32,7.47,4.05,0.23,-2.59,-1.34,0.46], ytd: 28.56 },
-      { year: 2022, months: [3.14,0.38,-3.14,-1.25,0.12,0.37,3.15,-0.78,1.12,0.56,2.34,-1.06], ytd: 4.93 },
-      { year: 2023, months: [0.29,2.47,0.05,-0.71,2.58,-1.30,0.36,0.75,0.50,-0.69,3.70,1.34], ytd: 9.34 },
-      { year: 2024, months: [-1.93,4.64,1.05,0.18,-0.08,-3.26,1.66,0.72,1.14,16.26,2.75,-0.25], ytd: 22.87 },
-      { year: 2025, months: [0.37,2.51,0.63,-3.21,0.39,5.63,1.21,-2.34,5.77,0.36,-1.61,0.31], ytd: 10.03 },
-      { year: 2026, months: [6.52,4.88,3.34,-0.91,3.00,-0.40,0.14,-1.38,0.60,1.68,null,null], ytd: 17.47, isLive: true },
-    ],
-    recentTrades: [],   // live feed (data/hsi.json) supplies fills from 2026-09-11
-  },
-  {
-    id: 'gc',
-    name: 'Intraday Momentum',
-    asset: 'GC Futures',
-    category: 'tradfi',
-    edge: 'Technical',
-    cagr: '33.8%',
-    cagrNum: 0.338,
-    sharpe: '1.55',
-    maxDD: '-12.7%',
-    maxDDNum: 0.127,
-    status: 'live',
-    additiveEquity: true,
-    description: 'Systematic momentum strategy on COMEX gold futures. Trades the Asia/London and US sessions, pyramiding up to 4 positions in a confirmed trend. Fixed-contract sizing on a fixed capital base. Every calendar year positive.',
-    dataSource: 'Backtest: 2020-2026 (6.6 yr) | Live: Aug 2026',
-    backtestStart: 2020,
-    backtestEnd: 2026,
-    liveStart: 2026,
-    liveStartMonth: 8,
-    highlights: [
-      'Profit factor 1.23 across 4,298 trades (~650/yr)',
-      'Walk-forward validated + independently replicated by a third-party review',
-      'Live on IB since Aug 2026  -  trade feed below shows real fills, not signals',
-    ],
-    monthlyReturns: [
-      { year: 2019, months: [null, null, null, null, null, null, null, null, null, null, null, 1.4], ytd: 1.4 },
-      { year: 2020, months: [5.0, 15.6, -4.2, 6.2, 3.1, 4.5, 20.8, 0.1, -3.0, 0.3, 2.5, 0.4], ytd: 51.3 },
-      { year: 2021, months: [-2.3, 14.4, 1.3, -4.6, 11.4, -3.0, -5.4, -1.1, -0.3, -3.1, 3.1, -2.8], ytd: 7.6 },
-      { year: 2022, months: [3.8, 4.7, 4.7, -2.5, 1.6, 2.7, 1.1, 1.7, 2.3, -1.5, -1.8, 6.1], ytd: 22.9 },
-      { year: 2023, months: [3.6, -2.0, -0.8, 1.3, 2.5, 0.8, -2.1, -5.4, 11.7, -1.3, 2.9, 13.5], ytd: 24.7 },
-      { year: 2024, months: [-6.0, -1.9, 19.5, -4.1, -1.4, 0.8, 1.5, -4.1, 4.4, 3.5, -0.6, 9.6], ytd: 21.2 },
-      { year: 2025, months: [8.1, -1.4, 10.5, 5.3, -2.6, 1.8, 5.9, 2.6, 9.2, 6.6, 4.5, -2.3], ytd: 48.2 },
-      { year: 2026, months: [28.5, 1.6, -3.3, 5.9, 5.9, 10.9, -1.5, null, null, null, null, null], ytd: 48.0, isLive: true },
-    ],
-  },
-  {
-    id: 'nq',
-    name: 'Four-Sleeve Intraday Portfolio',
-    asset: 'NQ Futures',
-    category: 'tradfi',
-    edge: 'Technical',
-    cagr: '9.37%',
-    cagrNum: 0.0937,
-    sharpe: '1.89',
-    maxDD: '-3.09%',
-    maxDDNum: 0.0309,
-    status: 'live',
-    description: 'Four intraday sleeves on Micro E-mini Nasdaq-100 futures: VWAP Long R3, R3 Re-Entry, CCI-AM and TBS. The current production allocation is 1 / 1 / 1 / 2 MNQ. Historical figures are from the exact production replay; live trade rows are actual IB fills.',
-    dataSource: 'Backtest: 30 Dec 2020-13 Oct 2026 | Live: Sep 2026',
-    backtestStart: 2020,
-    backtestEnd: 2026,
-    liveStart: 2026,
-    liveStartMonth: 9,
-    additiveEquity: true,
-    monthlyNote: 'Latest 1/1/1/2 production replay. Monthly percentages use a fixed $35,083.02 reference capital base (five-MNQ initial margin plus the backtest drawdown buffer), with no compounding. Sharpe includes zero-P&L days.',
-    highlights: [
-      '795 trades and $23,833.52 net after modelled costs',
-      'Daily Sharpe 1.89 with flat trading days included',
-      'Maximum daily-equity drawdown $1,083.02; return/drawdown 22.01',
-      'Monthly table and headline totals come from the same exact 1/1/1/2 production ledger',
-    ],
-    monthlyReturns: [
-      { year: 2020, months: [null,null,null,null,null,null,null,null,null,null,null,0.00], ytd: 0.00 },
-      { year: 2021, months: [-0.06,-0.14,1.88,0.86,0.25,-0.17,-0.20,0.00,1.04,-0.19,0.12,0.69], ytd: 4.08 },
-      { year: 2022, months: [2.46,-0.49,0.39,-0.13,5.92,1.18,-0.95,1.85,2.52,2.13,-0.20,1.87], ytd: 16.54 },
-      { year: 2023, months: [-0.65,0.79,-0.08,0.11,0.31,0.44,-0.47,-0.75,0.32,1.17,-0.14,0.86], ytd: 1.93 },
-      { year: 2024, months: [0.35,0.35,0.15,0.27,-0.09,0.16,-0.16,-0.55,1.33,1.76,0.09,0.12], ytd: 3.79 },
-      { year: 2025, months: [1.42,0.63,6.12,7.89,1.32,0.67,-0.52,0.11,-0.15,0.19,1.99,-1.64], ytd: 18.04 },
-      { year: 2026, months: [-0.24,1.62,8.10,1.20,2.04,7.81,-0.69,2.30,1.63,-0.19,null,null], ytd: 23.57 },
-    ],
-  },
-  {
-    id: 'fx',
-    name: 'Mean Reversion',
-    asset: 'FX Pairs',
-    category: 'tradfi',
-    edge: 'Statistical',
-    cagr: '8.0%',
-    cagrNum: 0.080,
-    sharpe: '1.44',
-    maxDD: '-7.8%',
-    maxDDNum: 0.078,
-    status: 'live',
-    statusLabel: 'Live',
-    liveHeadline: false,
-    additiveEquity: true,
-    description: 'Mean reversion on NZDCAD, AUDCAD, GBPAUD and GBPNZD. RSI extremes drive entries toward the Bollinger midpoint, with a 2.5 ATR stop and 24-bar holding limit. Shared-currency exposure takes half risk. The strategy runs live on Hostinger using the IB TWS feed, with execution enabled on IB and FTMO.',
-    dataSource: 'Latest historical backtest | Current strategy ledger',
-    backtestStart: 2019,
-    backtestEnd: 2026,
-    monthlyNote: 'Historical table is the latest reconstructed backtest through 9 October 2026. It is kept separate from the live section; live trades and positions are actual IB executions.',
-    highlights: [
-      'Historical headline and monthly table use the latest reconstructed strategy record through 9 October 2026',
-      'Recent trades show strategy decisions whether or not IB or FTMO delivered them',
-      'Four-hour candles follow the New York FX rollover; incomplete candles are excluded',
-      'Signals sharing a currency with an open strategy position take half risk',
-      'Live on Hostinger with IB TWS market data and automated execution enabled on IB and FTMO',
-    ],
-    monthlyReturns: [
-      { year: 2019, months: [2.2, 2.9, 2.4, 1.5, -1.4, -0.1, -2.4, 3.8, -0.2, 0.0, 1.4, 1.3], ytd: 11.6 },
-      { year: 2020, months: [-2.5, 0.1, 0.2, 0.6, 2.9, -1.9, 0.9, 1.1, -4.1, 2.6, 0.5, 0.3], ytd: 0.8 },
-      { year: 2021, months: [1.3, 1.2, -2.5, -2.7, 4.1, 2.7, 2.9, 0.8, -1.8, -1.0, 1.7, 0.8], ytd: 7.5 },
-      { year: 2022, months: [-1.0, -0.3, -3.7, -0.3, 0.7, 0.7, 3.8, 3.4, 0.8, 0.4, -0.2, 0.4], ytd: 4.7 },
-      { year: 2023, months: [0.5, 2.8, 5.3, -0.1, -1.6, 3.6, 3.4, 0.3, -0.1, 4.3, 3.0, 3.1], ytd: 24.5 },
-      { year: 2024, months: [0.9, 1.4, 1.8, -0.6, 0.8, 1.5, -5.0, 3.5, 0.6, 2.8, 3.2, 0.6], ytd: 11.5 },
-      { year: 2025, months: [0.5, -2.0, 0.2, 0.9, 2.3, 3.5, 3.7, 3.8, -0.1, 1.0, 1.0, 0.9], ytd: 15.6 },
-      { year: 2026, months: [-3.5, 0.0, 3.2, 1.3, -0.1, -0.7, 5.4, -0.3, 0.3, 0.7, null, null], ytd: 6.3 },
-    ],
-  },
-  {
-    id: 'options',
-    name: 'Options Premium',
-    asset: 'BTC Options (Deribit)',
-    category: 'crypto',
-    edge: 'Volatility',
-    cagr: '24.3%',
-    cagrNum: 0.243,
-    sharpe: '0.95',
-    maxDD: '-10.6%',
-    maxDDNum: 0.106,
-    status: 'live',
-    description: 'Systematic options premium selling on BTC via Deribit, governed by a proprietary cycle-phase regime model with two-tier expiry structure. ALL figures are BTC-denominated  -  pure options alpha, no spot beta. Headline metrics and the monthly table are live performance since Jun 2022, deposit-adjusted (unitized NAV), positions carried per the trading plan; drawdown is stated for the current era (since 2024).',
-    dataSource: 'Live since Jun 2022 | all figures BTC-denominated',
-    backtestStart: 2021,
-    backtestEnd: 2026,
-    liveStart: 2022,
-    highlights: [
-      'Live (all versions, since Jun 2022): +23.5% CAGR, +144% cumulative, max DD since 2024: -9.3%',
-      '34 of 51 live months positive',
-    ],
-    monthlyReturns: [
-      { year: 2022, months: [null, null, null, null, null, 37.1, 2.9, 3.3, 1.1, 2.0, -13.3, 5.8], ytd: 37.8, isLive: true },
-      { year: 2023, months: [-8.4, 1.9, 2.0, 3.6, 5.3, 0.9, -3.7, 0.3, -6.3, 13.6, 2.6, 13.5], ytd: 25.4, isLive: true },
-      { year: 2024, months: [-5.5, 10.6, 19.6, 3.8, -1.1, 0.0, 2.3, -4.9, 2.0, 6.2, -0.8, -0.7], ytd: 33.1, isLive: true },
-      { year: 2025, months: [0.9, -3.7, 0.5, 0.3, -0.6, 0.3, 1.0, -0.1, -0.1, 3.3, -0.7, -0.9], ytd: 0.1, isLive: true },
-      { year: 2026, months: [2.7, 4.0, 3.6, 2.1, 1.8, -0.8, 0.6, -7.6, null, null, null, null], ytd: 5.9, isLive: true },
-    ],
-  },
-  {
-    id: 'btc-lsr',
-    name: 'Long/Short Ratio',
-    asset: 'BTC',
-    category: 'crypto',
-    edge: 'Exchange Data',
-    cagr: '26.0%',
-    cagrLabel: 'CAGR (since first trade)',
-    cagrNum: 0.260,
-    sharpe: '1.71',
-    maxDD: '-7.2%',
-    maxDDNum: 0.072,
-    status: 'live',
-    description: 'Directional BTC strategy using the coefficient between buyers and sellers to identify regime shifts and market bottoms. Card metrics are the signal record at 40% of equity per signal, unlevered (cash otherwise idle). CAGR is measured from the first signal (Dec 2022); the same curve compounds at 20.2% from Jan 2022 and 16.7% from 2014. Trading live since Apr 2025 - live entries tracked the signals within 0.02-1.2%, verified against exchange order IDs.',
-    dataSource: 'Signals: 2022-2026 (4.9 yr) | Live: Apr 2025',
-    backtestStart: 2022,
-    backtestEnd: 2026,
-    liveStart: 2025,
-    liveStartMonth: 4,
-    highlights: [
-      'Entered within days of the Dec-2022 ($16.9K), Sep-2024 ($57K) and Jul-2026 ($60K) lows',
-      'Walk-forward validated with bootstrap drawdown analysis',
-      'Live entries within 0.02-1.2% of signal price, exchange-order-ID verified',
-    ],
-    monthlyReturns: [
-      { year: 2022, months: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.9], ytd: -0.9 },
-      { year: 2023, months: [15.7, 0.0, 13.0, -2.1, 0.0, 0.0, 0.0, -1.1, -1.0, 11.0, 4.0, 3.9], ytd: 50.6 },
-      { year: 2024, months: [0.0, 0.0, 0.0, -2.0, 0.0, 0.0, 0.0, 3.6, 3.1, 4.6, 9.8, 0.0], ytd: 20.3 },
-      { year: 2025, months: [0.0, 0.0, 0.0, 3.5, 4.8, 1.1, 3.7, 3.4, 0.0, 0.0, 1.6, -1.6], ytd: 17.4, isLive: true },
-      { year: 2026, months: [0.0, 0.0, 0.0, 4.7, -1.6, 0.0, 1.9, 10.3, 3.0, -3.3, null, null], ytd: 15.2, isLive: true },
-    ],
-    chartImg: pdf('/charts/btc-lsr-signals-v3.png'),
-    chartImgLabel: 'Strategy signals 2022-2026',
-  },
-  {
-    id: 'yield',
-    name: 'Automated Yield',
-    asset: 'Stablecoins',
-    category: 'crypto',
-    edge: 'Carry',
-    cagr: '10.0%',
-    cagrLabel: 'Annualized (live)',
-    cagrNum: 0.100,
-    status: 'live',
-    statusLabel: 'Live',
-    description: 'Automated yield-generation strategy on stablecoin balances, earning through short-term, collateralized financing at floating market rates. The system continuously reprices its offers as rate conditions shift and rolls maturing balances automatically, so interest compounds without manual intervention. Returns accrue as interest rather than price movement, with zero directional market exposure - the equity curve only steps upward.',
-    dataSource: 'Live: Nov 2025-Present',
-    liveStart: 2025,
-    liveStartMonth: 11,
-    highlights: [
-      'Positive every month since inception - returns are accrued interest, not price movement',
-      'Runs 24/7 unattended - no scheduled reviews or manual intervention required',
-      'Continuously recalibrates offer rates and terms to prevailing market conditions',
-      'Interest auto-reinvests as balances roll, compounding the position',
-      'Dynamic term structure management',
-    ],
-    monthlyReturns: [
-      { year: 2025, months: [null, null, null, null, null, null, null, null, null, null, 0.45, 0.87], ytd: 1.3, isLive: true },
-      { year: 2026, months: [1.13, 1.03, 1.07, 0.75, 0.9, 0.95, 0.87, 0.76, 0.58, null, null, null], ytd: 8.0, isLive: true },
-    ],
-  },
-  {
-    id: 'lp-hedged',
-    name: 'Hedged AMM LP',
-    asset: 'DEX Liquidity Pools',
-    category: 'crypto',
-    edge: 'AMM LP',
-    cagr: '33.0%',
-    cagrLabel: 'Net APR (annualized)',
-    status: 'live',
-    statusLabel: 'Live',
-    extraMetrics: [
-      { label: 'LP gain (before hedges)', value: '+$14,025', tone: 'good' },
-      { label: 'Net P&L (after hedges)', value: '+$7,235', tone: 'good' },
-      { label: 'Initial capital', value: '$200,000', modalOnly: true },
-      { label: 'Current value', value: '$214,025', modalOnly: true },
-      { label: 'Displayed uncollected fees', value: '$1,216', modalOnly: true },
-      { label: 'Hedge loss (realized + open)', value: '$6,790', modalOnly: true },
-    ],
-    description: 'AMM liquidity provision on decentralised exchanges, maximised for fee yield and hedged. Capital sits as concentrated liquidity in DEX pools and earns a fee on every swap that trades through its price range. Positions in the most volatile pools are hedged with offsetting short positions sized to the inventory each LP holds, so their returns come from swap fees rather than price direction; lower-volatility pools carry their direction unhedged. Ranges are re-centred when price leaves them, and each pool is capped at a small share of its total liquidity so added capital does not dilute its own fee share. Net P&L is after all hedge gains and losses.',
-    dataSource: 'Live since Sep 2026 | updated 2026-10-14',
-    highlights: [
-      'Net +$7,235 on $200,000 over 40 days = 33.0% annualized, after realized and open hedge losses',
-      'Initial capital $200,000 -> displayed assets $214,025: +$14,025 before hedges, less $6,790 of realized and open hedge losses',
-      'The latest screenshots show $1,216 of uncollected fees; historical collected fees are already included in displayed assets, so the card does not present that number as cumulative fee earnings',
-      'PLTR is approximately neutral-hedged; AMC is partially hedged, while lower-volatility pools carry their direction',
-      'Each pool capped at 4% of its liquidity, so new capital does not dilute its own fees',
-      'Forty days of live data is far too short to treat the annualized figure as a forecast',
-    ],
-  },
-  {
-    id: 'ta-composite',
-    name: 'TA Composite',
-    asset: 'BTC + Altcoins',
-    category: 'crypto',
-    edge: 'Technical',
-    cagr: '11.7%',
-    cagrNum: 0.117,
-    sharpe: '1.74',
-    maxDD: '-5.1%',
-    maxDDNum: 0.051,
-    status: 'live',
-    statusLabel: 'Live (small-size test)',
-    description: 'Five low-correlation technical strategies netted into a single account: trend, momentum, breakout, chart-pattern and a deep-drawdown crash short. Positive in all ten backtested years. Executed live on Hyperliquid perpetuals by a fully automated bot running 24/7 on a Linux VPS: it wakes at every 4-hour candle close, replays each strategy, nets the five sleeves into one position per coin, and gives each sleeve its own exchange-mounted stop. Trading live since August 2026 at a small test size  -  the live sample is far too short to confirm the backtest, and the figures shown are backtest unless stated otherwise.',
-    dataSource: 'Backtest 2017-2026 (9.0 yr, unlevered) | live since Aug 2026',
-    backtestStart: 2017,
-    backtestEnd: 2026,
-    liveStart: 2026,
-    highlights: [
-      'Fully automated execution: systemd daemon on a Linux VPS, 455 cycles since June 2026',
-      'Unattended on 4h candle closes (00/04/08/12/16/20 UTC), auto-restart on failure',
-      'Stops rest on the exchange, surviving bot, VPS or network failure',
-      'Five sleeves net to one position per coin, each keeping its own stop and target',
-      'Exchange-mounted stop losses + portfolio-level circuit breakers',
-      'All fees and funding rates deducted',
-      'Live since Aug 2026 at $5,000 sizing base  -  track record too short to draw conclusions',
-      'Out-of-sample 2022-2026: CAGR 11.1%, Sharpe 1.73',
-      'Levered equivalent at 2.36x gross: CAGR 29.0%, maxDD -11.7%',
-    ],
-    liveStartMonth: 8,
-    monthlyReturns: [
-      { year: 2017, months: [null, null, null, null, null, null, null, 0.0, 0.07, 4.14, 4.08, 6.68], ytd: 15.7 },
-      { year: 2018, months: [3.19, -0.05, 2.64, 1.68, 1.65, 1.13, 1.46, 2.77, -2.93, -0.97, 4.87, -2.84], ytd: 13.0 },
-      { year: 2019, months: [0.35, 0.8, 0.42, 1.7, 5.56, 1.32, 0.05, -0.75, -0.57, -0.2, -0.09, -0.23], ytd: 8.51 },
-      { year: 2020, months: [2.38, 0.04, 0.49, 0.67, 0.53, -2.13, 2.31, -0.58, 0.05, 6.01, 1.29, 0.71], ytd: 12.18 },
-      { year: 2021, months: [0.97, 0.48, -0.28, -0.17, -1.29, 0.36, -0.17, 2.36, -1.81, 2.54, 0.53, 0.69], ytd: 4.2 },
-      { year: 2022, months: [2.34, 1.26, 1.49, 0.19, 3.78, 4.08, -0.95, -1.34, -0.48, -1.32, 1.62, 0.68], ytd: 11.76 },
-      { year: 2023, months: [6.22, -0.28, 1.26, 0.28, -0.41, 2.28, -0.41, -1.49, 0.12, 3.63, -0.16, 1.52], ytd: 13.03 },
-      { year: 2024, months: [-0.17, 2.15, 0.01, -0.04, 0.06, -0.64, 1.01, 0.86, 0.34, -0.44, 2.56, 0.66], ytd: 6.49 },
-      { year: 2025, months: [-2.07, 2.45, -0.12, -0.07, 3.05, 0.12, -0.7, -0.7, -0.75, -0.06, 0.86, -0.52], ytd: 1.38 },
-      { year: 2026, months: [3.56, 1.75, -0.64, -1.2, 0.82, 4.81, -0.04, -0.22, null, null, null, null], ytd: 9.0 },
-    ],
-
-  },
-  {
-    id: 'crowd-fade',
-    name: 'Crowd-Fade',
-    asset: 'Top-20 Crypto Perps',
-    category: 'crypto',
-    edge: 'Positioning',
-    cagr: '19.8%',
-    cagrNum: 0.198,
-    sharpe: '1.29',
-    maxDD: '-14.5%',
-    maxDDNum: 0.145,
-    status: 'live',
-    statusLabel: 'Live (small-size test)',
-    description: 'A contrarian strategy that fades extreme crowd positioning in crypto perpetuals. For each of the 20 largest coins by 30-day trading volume (re-ranked every month, with no hindsight), it measures how far traders’ long/short positioning has stretched from that coin’s own recent norm; when the crowd is unusually one-sided it takes the other side, and holds until positioning normalizes. Positions are volatility-scaled and never levered above 1x. There are no stop losses by design: exits are purely signal-driven, which tested better than stops for this edge. Executed live on Hyperliquid perpetuals by a fully automated bot running every hour on a Linux VPS, on its own sub-account. Trading live since September 2026 at a small test size  -  the live sample is far too short to confirm the backtest, and the figures shown are backtest unless stated otherwise.',
-    dataSource: 'Backtest 2023-2026 (3.7 yr, on capital, never above 1x gross) | live since Sep 2026',
-    backtestStart: 2023,
-    backtestEnd: 2026,
-    liveStart: 2026,
-    liveStartMonth: 9,
-    highlights: [
-      'Fades the crowd: takes the other side when long/short positioning is extreme against each coin’s own 30-day norm',
-      'Survivorship-free universe: top 20 perpetuals by 30-day volume, re-ranked monthly; delisted coins included in the backtest',
-      'Out-of-sample 2025-2026: CAGR 20.1%, Sharpe 1.41, max drawdown -8.9%',
-      '30 of 44 backtest months positive; every calendar year positive',
-      'Volatility-scaled sizing, never above 1x gross; all fees and actual funding rates deducted',
-      'Fully automated: hourly cycles on a Linux VPS, own Hyperliquid sub-account, every cycle reconciled against the exchange',
-      'Backtest independently code-reviewed and corrected in Sep 2026  -  the figures shown are the corrected ones',
-      'Live since Sep 2026 at $3,500 capital  -  track record too short to draw conclusions',
-    ],
-    monthlyReturns: [
-      { year: 2023, months: [0.15, 1.21, 4.27, -1.66, 1.27, 4.24, -0.72, 4.36, 3.32, 8.27, -1.64, 1.99], ytd: 27.57 },
-      { year: 2024, months: [2.34, 3.07, -2.63, 5.23, -1.89, 3.52, 6.31, 1.69, -2.48, -0.34, -3.8, 0.92], ytd: 11.98 },
-      { year: 2025, months: [0.16, 1.06, 1.99, 2.81, 2.1, 1.17, 8.16, 1.17, 0.06, -1.34, 1.84, -3.45], ytd: 16.45 },
-      { year: 2026, months: [9.93, 7.3, -1.73, -1.96, 4.29, 2.9, -0.07, -4.43, null, null, null, null], ytd: 16.47 },
-    ],
-  },
-  {
-    id: 'hyper-bot',
-    name: 'Hyper Bot',
-    asset: 'BTC Perp',
-    category: 'ml',
-    edge: 'Machine Learning',
-    status: 'active',
-    statusLabel: 'Live',
-    liveHeadline: true,
-    cardSummary: "An autonomous AI trading system that builds plans from market data and Bitcoin Hyper video analysis, executes through exchange APIs, and manages positions within predefined risk controls.",
-    description: "Hyper Bot uses an AI reasoning model to turn market data and Bitcoin Hyper's technical-analysis videos into conditional BTC trade plans. It specifies the direction, entry conditions, stop-loss, targets and invalidation criteria. Once the required conditions and risk checks pass, the execution engine places and manages orders through the Hyperliquid API without routine manual trade approval. New market data, analyst updates and position events prompt reassessment: the bot can revise pending plans, adjust permitted stops and targets, take partial profits, or close positions under its operating rules. It reviews completed trades and skipped setups, records lessons, and compares historical decision contexts to develop and re-evaluate pattern hypotheses. Human oversight defines the operating rules and can intervene; autonomy operates within those limits.",
-    dataSource: 'Live on Hyperliquid since Aug 2026 | record kept at 1 BTC notional per trade',
-    liveStart: 2026,
-    liveStartMonth: 6,
-    highlights: [
-      "AI-designed trade plans: combines market structure, momentum, volume, derivatives data and available analyst transcripts or chart images to define conditional setups.",
-      "Automated execution: validated plans trigger API orders, with exchange-side protective stops and take-profit orders; routine entries do not need manual approval.",
-      "Adaptive management: reassesses new information and can update pending plans, permitted stops and targets, or exit under predefined rules.",
-      "Historical review: examines traded and skipped setups, records post-mortem lessons, and revisits pattern hypotheses as new outcome evidence arrives.",
-      "Guarded autonomy: the AI proposes decisions; deterministic code enforces execution conditions, sizing and risk controls. Human oversight remains available.",
-      "Traceable decisions: stores plan changes, order acknowledgments and outcomes, with Telegram updates and selected trade replays.",
-    ],
-    // Fallback only. The live feed (data/hyper-bot.json) replaces this list, the
-    // open positions and the headline numbers on every load; this is what shows
-    // if raw.githubusercontent cannot be reached.
-    recentTrades: [
-      { date: '2026-08-24', entryDate: '2026-08-24', direction: 'Short', entry: '77,200', exit: '78,542', pnl: '$-1,342', pnlNum: -1342.4 },
-      { date: '2026-08-24', entryDate: '2026-08-23', direction: 'Short', entry: '77,244', exit: '77,680', pnl: '$-436', pnlNum: -436.3 },
-      { date: '2026-08-23', entryDate: '2026-08-22', direction: 'Short', entry: '77,421', exit: '77,228', pnl: '$+193', pnlNum: 192.7 },
-      { date: '2026-08-19', entryDate: '2026-08-19', direction: 'Short', entry: '65,018', exit: '66,297', pnl: '$-1,279', pnlNum: -1279.1 },
-      { date: '2026-08-19', entryDate: '2026-08-10', direction: 'Short', entry: '65,209', exit: '65,216', pnl: '$+899', pnlNum: 898.55 },
-    ],
-  },
-];
+      "AI-designed trade plans: combines market structure, momentum, volume, derivatives data and available analyst transcripts or chart images to define conditional setups.",
+      "Automated execution: validated plans trigger API orders, with exchange-side protective stops and take-profit orders; routine entries do not need manual approval.",
+      "Adaptive management: reassesses new information and can update pending plans, permitted stops and targets, or exit under predefined rules.",
+      "Historical review: examines traded and skipped setups, records post-mortem lessons, and revisits pattern hypotheses as new outcome evidence arrives.",
+      "Guarded autonomy: the AI proposes decisions; deterministic code enforces execution conditions, sizing and risk controls. Human oversight remains available.",
+      "Traceable decisions: stores plan changes, order acknowledgments and outcomes, with Telegram updates and selected trade replays.",
+    ],
+    // Fallback only. The live feed (data/hyper-bot.json) replaces this list, the
+    // open positions and the headline numbers on every load; this is what shows
+    // if raw.githubusercontent cannot be reached.
+    recentTrades: [
+      { date: '2026-08-24', entryDate: '2026-08-24', direction: 'Short', entry: '77,200', exit: '78,542', pnl: '$-1,342', pnlNum: -1342.4 },
+      { date: '2026-08-24', entryDate: '2026-08-23', direction: 'Short', entry: '77,244', exit: '77,680', pnl: '$-436', pnlNum: -436.3 },
+      { date: '2026-08-23', entryDate: '2026-08-22', direction: 'Short', entry: '77,421', exit: '77,228', pnl: '$+193', pnlNum: 192.7 },
+      { date: '2026-08-19', entryDate: '2026-08-19', direction: 'Short', entry: '65,018', exit: '66,297', pnl: '$-1,279', pnlNum: -1279.1 },
+      { date: '2026-08-19', entryDate: '2026-08-10', direction: 'Short', entry: '65,209', exit: '65,216', pnl: '$+899', pnlNum: 898.55 },
+    ],
+  },
+];
