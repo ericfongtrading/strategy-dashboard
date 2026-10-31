@@ -228,9 +228,8 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     const dt=Math.min(ts-lastFrame,100); lastFrame=ts;
     if(stepHoldMs>0) { stepHoldMs=Math.max(0,stepHoldMs-dt); render(); requestAnimationFrame(tick); return; }
     if(now>=T1) { playing=false; anim=null; $('play').textContent='▶ Replay'; render(); return; }
-    const tp1=EV.find(e=>e.kind==='tp' && e.px===83480).ts;
     const tp2=EV.find(e=>e.kind==='tp' && e.px===82200).ts;
-    const per=now<T.armed ? 120 : now<T.fill ? 220 : now<=tp1 ? 5500 : now<=tp2 ? 1100 : 110;
+    const per=now<T.armed ? 120 : now<=tp2 ? 220 : 110;
     const destination=Math.min(T1,now+dt*speed/per*STEP);
     const hit=EV.find(e=>e.ts>now && e.ts<=destination && !fired.has(e));
     if(hit) {
