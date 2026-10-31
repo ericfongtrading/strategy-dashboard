@@ -42,6 +42,7 @@ label { font-size: 0.85rem; color: var(--ink-2); }
     <p class="lede">60-minute candles · recorded trade events · UTC</p>
   </header>
   <p id="eventCaption" class="lede" aria-live="polite">Watching the approach to resistance</p>
+  <p class="lede" style="font-size:0.8rem">4h breakdown shelf: $80,950–$81,141 · shaded band on chart</p>
   <div class="stage"><canvas id="cv" aria-label="trade replay chart"></canvas></div>
   <div class="bar" role="group" aria-label="playback">
     <button class="primary" id="play">▶ Play</button>
@@ -129,7 +130,7 @@ window.REPLAY = {"slug": "drogba", "name": "DROGBA", "direction": "short", "entr
     }
     // zones and levels, each appearing with its step
     const band = { x: padL, y: y(D.zone[1]), w: w - padL - padR, h: y(D.zone[0]) - y(D.zone[1]) };
-    if (settled(E('level'))) { ctx.fillStyle = css('--resist'); ctx.fillRect(band.x, band.y, band.w, band.h); ctx.strokeStyle = css('--down'); ctx.lineWidth = 1; ctx.strokeRect(band.x, band.y, band.w, band.h); labels.push({ text: D.zone_label, y: y((D.zone[0]+D.zone[1])/2), col: css('--down'), side: 'left' }); }
+    if (settled(E('level'))) { ctx.fillStyle = css('--resist'); ctx.fillRect(band.x, band.y, band.w, band.h); ctx.strokeStyle = css('--down'); ctx.lineWidth = 1; ctx.strokeRect(band.x, band.y, band.w, band.h);  }
     if (settled(E('armed')) && !st.filled) hline(ARM_PX, css('--trig'), [10, 5], 'ENTRY GUIDE ' + fmt(ARM_PX));
     // candles
     const slot = (w - padL - padR) / ((XEND - T0) / STEP), cw = Math.max(3, slot * 0.68);

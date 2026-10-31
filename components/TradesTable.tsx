@@ -18,8 +18,7 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
 
   const replayMatches = [
     {name:'CANNAVARO',entry:'2026-10-22',exit:'2026-10-24',file:'cannavaro',version:'20261031-intro-first'},
-    {name:'DROGBA',entry:'2026-10-24',exit:'2026-10-27',file:'drogba',version:'20261031-v1'},
-    {name:'BATISTUTA',entry:'2026-10-30',exit:'2026-10-30',file:'batistuta',version:'20261031-v1'},
+    {name:'DROGBA',entry:'2026-10-24',exit:'2026-10-27',file:'drogba',version:'20261031-clear-label'},
   ];
   const replayFor = (t: Trade) => strategyId==='hyper-bot' ? replayMatches.find(r=>r.name===t.symbol && r.entry===t.entryDate && r.exit===t.date) : undefined;
   const activeReplay = replayMatches.find(r=>r.file===replayOpen);
@@ -545,4 +544,3 @@ export function PendingPlans({ plans }: { plans: Plan[] }) {
   );
 
 }
-
