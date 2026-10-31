@@ -81,6 +81,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
               <div key={i} className={s.id === "ml" && i === 0 ? "col-span-2" : undefined}>
                 <div className="text-[11px] text-muted uppercase tracking-wider">{h.label}</div>
                 <div className="text-xl font-semibold metric-value text-white">{h.value}</div>
+                {h.label === 'Recovery Factor' && <div className="text-[10px] text-muted mt-1 max-w-[170px]">Recorded profit ÷ max closed-trade drawdown</div>}
               </div>
             ))}
           </div>
