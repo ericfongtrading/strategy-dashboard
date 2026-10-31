@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-31T14:49:01.932973+00:00",
+  "updated_utc": "2026-10-31T14:50:02.226320+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -112,7 +112,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-31T14:49:00.920123+00:00",
+      "heartbeat_utc": "2026-10-31T14:49:56.292352+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -173,7 +173,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ERROR",
-      "heartbeat_utc": "2026-10-31T14:49:00.920123+00:00",
+      "heartbeat_utc": "2026-10-31T14:49:56.292352+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [
         "HOST_LOOP_OR_TELEMETRY_FAILURE",
@@ -240,7 +240,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T14:49:02.473569+00:00",
+      "heartbeat_utc": "2026-10-31T14:50:02.668110+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -263,10 +263,10 @@
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
     "healthy": false,
-    "state": "DATA_WAIT",
-    "validator_state": "OK",
-    "data_error": "OperationalError: unable to open database file",
-    "heartbeat_utc": "2026-10-31T14:48:58.970480+00:00",
+    "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
+    "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
+    "data_error": null,
+    "heartbeat_utc": "2026-10-31T14:50:01.449437+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
@@ -325,15 +325,16 @@
         "side": -1,
         "distance_pct": -0.5609023252987426,
         "vwap": 29986.69607556813,
-        "vol_ratio": 1.3419347893543356,
+        "vol_ratio": 1.3419347893543414,
         "busy": true,
         "regime": "ZONE_A",
         "why": "Waiting for required volatility/regime history",
         "data_ready": false,
         "regime_asof": "2026-10-15",
         "regime_provisional": true,
-        "read_hash": "7c91f8960c593719093107d25eaa4ee512e5dbd77c4cbbd2e559f246b7d50fb8",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "e0f6cdcad0861f61ff16a54ea251db2bc87d3da6291f6adcfd2e3955adffb7ce",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-19",
@@ -355,15 +356,16 @@
         "side": 0,
         "distance_pct": 0.285496761119303,
         "vwap": 29727.62858323728,
-        "vol_ratio": 1.0826288770583465,
+        "vol_ratio": 1.0826288770583554,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-18",
         "regime_provisional": true,
-        "read_hash": "b8cf79016d88034d56a889db5c17315677ce49ffce597ffe466a36bdc10b76a9",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "fa97d399ef55c8055b4b32fcc11e195d191c142a4e361411bcc173fba17c3e70",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-20",
@@ -385,15 +387,16 @@
         "side": 0,
         "distance_pct": 0.851791856724112,
         "vwap": 29626.64267031352,
-        "vol_ratio": 1.4316872319818739,
+        "vol_ratio": 1.4316872319818865,
         "busy": true,
         "regime": "ZONE_A",
         "why": "Waiting for required volatility/regime history",
         "data_ready": false,
         "regime_asof": "2026-10-19",
         "regime_provisional": true,
-        "read_hash": "4d1f3b97c7787df817039f7fa0371382916e23677b8532205c58ef0b60821822",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "788e71d342d4ebcdd6e6f381def8fb5367ad7eca3c76e84e0f7a2a74199473fc",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-21",
@@ -415,15 +418,16 @@
         "side": 0,
         "distance_pct": -0.007040808152225216,
         "vwap": 29871.353184670206,
-        "vol_ratio": 1.1927348478621724,
+        "vol_ratio": 1.192734847862182,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-20",
         "regime_provisional": true,
-        "read_hash": "6305ab04b2dcf646f33883691fd5a2ca2b33c52401d8eba6c4bdf529041575df",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "98c7bdb7131c77a60b914acce63b40eedb05fea7c815536184dd490cdf56f1f1",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-22",
@@ -445,15 +449,16 @@
         "side": 0,
         "distance_pct": -0.742642866804787,
         "vwap": 29549.19498878243,
-        "vol_ratio": 1.0731068572783005,
+        "vol_ratio": 1.0731068765219833,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-21",
         "regime_provisional": true,
-        "read_hash": "5c1bd53aafd2cbad33b3551fd3dc49fa33cdd1638ef7d87eaa8712000ff0dec0",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "10fc12bc058763c2c51a7c776f0399765ad9edd7c58429965b937de80af43f59",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-23",
@@ -475,15 +480,16 @@
         "side": 0,
         "distance_pct": 0.16169528080408826,
         "vwap": 29121.412051010004,
-        "vol_ratio": 1.2000984323424602,
+        "vol_ratio": 1.2000984527909742,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-22",
         "regime_provisional": true,
-        "read_hash": "563f316e8eb2d342a02de02d1634a22889a175be13e23163299f1c17c9460127",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "096506e33608fe196355ac4d2c8ee6ae297778fe103f767f5df4b3af74424975",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-26",
@@ -505,15 +511,16 @@
         "side": 0,
         "distance_pct": 0.34440687711025103,
         "vwap": 29218.120782662132,
-        "vol_ratio": 1.2934720870731333,
+        "vol_ratio": 1.2933537759966136,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-25",
         "regime_provisional": true,
-        "read_hash": "d1d92efe70ae16855dea6190140fb8b9a4552bb0f0da735c6e735f5a2cd8d25e",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "068f96ea9e9cd826e2de06fbaa7a3c49d09427f30b977f3b63d8152e6f879137",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-27",
@@ -535,15 +542,16 @@
         "side": 0,
         "distance_pct": 0.3601086210948309,
         "vwap": 29526.921011892315,
-        "vol_ratio": 1.000174975202336,
+        "vol_ratio": 0.9995605393254015,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-26",
         "regime_provisional": true,
-        "read_hash": "45d5f5a4b29d4d8baac12aaae0df29aa0b51dec2008fc2c79027ef6ec2758718",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "53c16631b7d2a71090f22da38adce74a175c287cb707d0bf574139432d329cff",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-28",
@@ -565,15 +573,16 @@
         "side": 0,
         "distance_pct": -0.07372325960624707,
         "vwap": 29880.779084336715,
-        "vol_ratio": 0.7729559483494912,
+        "vol_ratio": 0.7724338923376088,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-27",
         "regime_provisional": true,
-        "read_hash": "31bae36222e083dbea6463c130096908bf163ca73eebe68093d1a3a1564649f1",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "8c19d5fedf48dcc56f77c0880794f32f59830e328f96e50a8a4b5e67453e598a",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-29",
@@ -595,15 +604,16 @@
         "side": 0,
         "distance_pct": -0.036710522321648745,
         "vwap": 29589.86259311219,
-        "vol_ratio": 1.3892549302188468,
+        "vol_ratio": 1.3887234546567038,
         "busy": true,
         "regime": "ZONE_A",
         "why": "Waiting for required volatility/regime history",
         "data_ready": false,
         "regime_asof": "2026-10-28",
         "regime_provisional": true,
-        "read_hash": "c0c7909d5be084123418249109ccce6056d6429c931887e7aec3a6e1a0c7f7dc",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "8655fd03f79b7e4def1221ad397611bd51c404dd19af98ac89a0e8250e188493",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-30",
@@ -625,15 +635,16 @@
         "side": -1,
         "distance_pct": -0.5790489612030201,
         "vwap": 28838.99188291947,
-        "vol_ratio": 1.1383720863037852,
+        "vol_ratio": 1.1383726588793246,
         "busy": false,
         "regime": "ZONE_A",
         "why": "take",
         "data_ready": true,
         "regime_asof": "2026-10-29",
         "regime_provisional": true,
-        "read_hash": "18bbb0dd24e96542ff7096d61c0555360b451fc8eadcda2f46f7ce3ddbee8003",
-        "origin": "BACKFILLED_REPLAY"
+        "read_hash": "220a612cbcdaa27c7a78e1d658155b32d71bc86b9cffd58b8a8bd297fb9ca2c1",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       }
     ],
     "missing_expected_bars": 0,
@@ -657,6 +668,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-10-31T14:48:05.598186+00:00"
+    "validation_updated_utc": "2026-10-31T14:49:05.985623+00:00"
   }
 }
