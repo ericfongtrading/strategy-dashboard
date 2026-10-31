@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T01:04:01.568542+00:00",
+  "lastUpdated": "2026-10-31T12:34:01.852234+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,17 +29,26 @@
       "symbol": "MALDINI",
       "direction": "Long",
       "entry": "76,534",
-      "current": "77,534",
+      "current": "77,564",
       "size": "1 BTC",
-      "pnl": "+$1,030",
-      "pnlNum": 1030,
+      "pnl": "+$1,048",
+      "pnlNum": 1048,
       "stop": "76,534 (BE)",
-      "targets": "✓ 77,600 / 78,350 / 79,150",
+      "targets": "✓ 77,600 / 78,150 / 79,150",
       "realized": "+$430",
       "open": "60%"
     }
   ],
   "plans": [
+    {
+      "symbol": "SHEVCHENKO",
+      "direction": "Long",
+      "zone": "74,050 - 74,450",
+      "stop": "72,200",
+      "targets": "76,900 / 77,800 / 78,150",
+      "conviction": 3,
+      "status": "Waiting"
+    },
     {
       "symbol": "SUAREZ",
       "direction": "Short",
@@ -553,5 +562,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,534"
+  "priceNote": "Unrealised P&L marked at $77,564"
 }
