@@ -9,7 +9,7 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
   useEffect(() => {
     if (replayOpen) replayPanel.current?.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }, [replayOpen]);
-  const replayUrl = `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/replays/cannavaro.html?v=20261031-combined-tp3`;
+  const replayUrl = `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/replays/cannavaro.html?v=20261031-opening-zone`;
   // Keep replay metadata outside the periodically replaced live feed, and match
   // the specific trade so a future reused codename cannot open the wrong replay.
   const hasReplay = (t: Trade) => strategyId === 'hyper-bot' &&

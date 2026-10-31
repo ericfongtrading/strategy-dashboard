@@ -6,7 +6,7 @@
 <title>CANNAVARO Trade Replay</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <style>
-/* One full-width dark chart. Each step pops up as an alert in the middle of the chart, then settles into the caption strip
+/* One full-width dark chart. Only step 1 pops up as an alert in the middle of the chart, then settles into the caption strip
    above the candles (step 1 settles into the resistance box instead). Dark in both modes by design. */
 :root {
   --bg: #07090d; --bg2: #0d1117; --panel: rgba(13,17,23,0.92); --ink: #e8eaf0; --ink-2: #aab2c0; --muted: #6b7484; --grid: #1a2029; --axis: #2a3340; --ring: rgba(255,255,255,0.08);
@@ -128,7 +128,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     const st = state(now), vis = C.filter(c => c.t < now).map(c => partialCandle(c, now)), labels = [], lastC = vis[vis.length - 1];
     const ap = anim ? Math.min(1, (performance.now() - anim.start) / ANIM_MS) : 1;
     if (anim && ap >= 1) anim = null;
-    const alertUp = false;
+    const alertUp = !!anim && anim.ev.kind === 'level' && ap < 0.92;
     const settled = e => now >= e.ts && !(alertUp && anim.ev === e);   // the step's chart elements appear once its alert has settled
     const strip = { x: padL + 8, y: small ? 56 : 54, w: w - padL - padR - 16, h: small ? 56 : 60 };
     ctx.textBaseline = 'middle';
@@ -198,6 +198,39 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
       ctx.font = `700 ${small ? 14 : 19}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--ink'); ctx.fillText(`${cur.step}. ${cur.title}`, strip.x + 14 + tw + (small ? 12 : 22), ty2);
       if (sub) { ctx.font = `800 ${small ? 14 : 18}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--trig'); ctx.fillText(sub, strip.x + 14, strip.y + (small ? 40 : 44)); }
       const ax = x(cur.ts) + slot / 2; if (cur.px && ax > padL && ax < w - padR) { ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(ax, strip.y + strip.h); ctx.lineTo(ax, y(cur.px) - 9); ctx.stroke(); ctx.setLineDash([]); }
+    }
+    // the alert: pops up in the middle with a pulse, holds, then settles into the resistance box (step 1) or the caption strip
+    if (anim && anim.ev.kind === 'level') {
+      const e = anim.ev, col = css(WHO[e.who][1]), red = css('--down'), toBand = e.kind === 'level';
+      const pw = Math.min(small ? w - 40 : 560, w - padL - padR - 40);
+      const headline = `${e.step}. ${e.title}`;
+      let fs = small ? 18 : 26, lines = wrap(headline, pw - 40, `800 ${fs}px Inter, system-ui, sans-serif`);
+      if (lines.length > 2) { fs = small ? 15 : 21; lines = wrap(headline, pw - 40, `800 ${fs}px Inter, system-ui, sans-serif`); }
+      const ph = (small ? 44 : 56) + lines.length * (fs + 6);
+      const cx0 = (padL + w - padR) / 2, cy0 = padT + (h - padT - padB) * 0.42;
+      const pop = { x: cx0 - pw / 2, y: cy0 - ph / 2, w: pw, h: ph }, target = toBand ? band : strip;
+      let rect, scale = 1, textA = 1, mix = 0, glow = 0;
+      if (ap < 0.14) { scale = 0.6 + 0.4 * ease(ap / 0.14); rect = pop; textA = ease(ap / 0.14); glow = 28; }
+      else if (ap < 0.58) { rect = pop; glow = 22 + 16 * Math.sin((ap - 0.14) / 0.44 * Math.PI * 3); }
+      else if (ap < 0.92) { const m = ease((ap - 0.58) / 0.34); mix = m; textA = Math.max(0, 1 - m * 1.8); rect = { x: pop.x + (target.x - pop.x) * m, y: pop.y + (target.y - pop.y) * m, w: pop.w + (target.w - pop.w) * m, h: pop.h + (target.h - pop.h) * m }; glow = 20 * (1 - m); }
+      else { rect = target; textA = 0; mix = 1; }
+      const endCol = toBand ? red : col;
+      ctx.save();
+      ctx.translate(rect.x + rect.w / 2, rect.y + rect.h / 2); ctx.scale(scale, scale); ctx.translate(-(rect.x + rect.w / 2), -(rect.y + rect.h / 2));
+      ctx.shadowColor = mix < 0.5 ? col : endCol; ctx.shadowBlur = glow;
+      if (toBand) ctx.fillStyle = mix < 1 ? `rgba(${Math.round(17 + (239 - 17) * mix)},${Math.round(24 + (68 - 24) * mix)},${Math.round(33 + (68 - 33) * mix)},${0.95 - 0.8 * mix})` : css('--resist');
+      else ctx.fillStyle = `rgba(17,24,33,${0.95 - 0.07 * mix})`;
+      rr(rect.x, rect.y, rect.w, rect.h, 12 - 3 * mix); ctx.fill(); ctx.shadowBlur = 0;
+      ctx.strokeStyle = mix < 0.5 ? col : endCol; ctx.lineWidth = 2 - mix; rr(rect.x, rect.y, rect.w, rect.h, 12 - 3 * mix); ctx.stroke();
+      if (textA > 0) {
+        ctx.globalAlpha = textA; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.font = `700 ${small ? 9 : 11}px Inter, system-ui, sans-serif`; ctx.fillStyle = col; ctx.fillText(WHO[e.who][0] + '  ·  ' + fmtT(e.ts), rect.x + rect.w / 2, rect.y + (small ? 16 : 22));
+        ctx.font = `800 ${fs}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--ink');
+        const y0 = rect.y + (small ? 32 : 42) + ((rect.h - (small ? 32 : 42)) - lines.length * (fs + 6)) / 2 + (fs + 6) / 2;
+        lines.forEach((l, i) => ctx.fillText(l, rect.x + rect.w / 2, y0 + i * (fs + 6)));
+        ctx.globalAlpha = 1;
+      }
+      ctx.restore();
     }
     // result card at the end
     if (st.closed && !alertUp) {
