@@ -93,7 +93,8 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   const WHO = { brain: ['AI BRAIN', '--b-brain'], executor: ['EXECUTOR', '--b-exec'], manager: ['MANAGER', '--b-manager'], video: ['ANALYST VIDEO', '--b-video'], market: ['MARKET', '--b-market'] };
   let now = T0, playing = true, speed = 1, lastFrame = 0, acc = 0, fired = new Set();
   let anim = null;                                              // {start, ev}: the step alert popping up and settling into place
-  const ANIM_MS = 2800;
+  const ANIM_MS = 2000;
+  let stepHoldMs = 0;
   const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
   function state(t) {
     const st = { filled: false, closed: false, pos: 0, real: 0, stop: null, tps: [] };
@@ -265,6 +266,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     if (!playing) return;
     if (!lastFrame) lastFrame=ts;
     const dt=Math.min(ts-lastFrame,100); lastFrame=ts;
+    if(stepHoldMs>0) { stepHoldMs=Math.max(0,stepHoldMs-dt); render(); requestAnimationFrame(tick); return; }
     if(now>=T1) { playing=false; anim=null; $('play').textContent='▶ Replay'; render(); return; }
     const tp1=EV.find(e=>e.kind==='tp' && e.px===83480).ts;
     const tp2=EV.find(e=>e.kind==='tp' && e.px===82200).ts;
@@ -272,12 +274,12 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     const destination=Math.min(T1,now+dt*speed/per*STEP);
     const hit=EV.find(e=>e.ts>now && e.ts<=destination && !fired.has(e));
     if(hit) {
-      now=hit.ts; fired.add(hit); anim={start:ts,ev:hit};
+      now=hit.ts; fired.add(hit); anim={start:ts,ev:hit}; stepHoldMs=2000;
     } else now=destination;
     render(); requestAnimationFrame(tick);
   }
   function restart() {
-    now=T0; fired.clear(); anim=null; lastFrame=0;
+    now=T0; fired.clear(); anim=null; stepHoldMs=0; lastFrame=0;
     const wasPlaying=playing; playing=true; $('play').textContent='❚❚ Pause'; render();
     if(!wasPlaying) requestAnimationFrame(tick);
   }
@@ -289,7 +291,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   $('restart').addEventListener('click',restart);
   document.querySelectorAll('.spd').forEach(b => b.addEventListener('click', () => { speed = +b.dataset.s; document.querySelectorAll('.spd').forEach(x => x.setAttribute('aria-pressed', x === b)); }));
   $('scrub').addEventListener('input',e=>{
-    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; lastFrame=0;
+    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; stepHoldMs=0; lastFrame=0;
     EV.forEach(ev=>{if(ev.ts<=now) fired.add(ev); else fired.delete(ev);});
     if(now>=T1) { playing=false; $('play').textContent='▶ Replay'; }
     render();
