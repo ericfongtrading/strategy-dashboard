@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-31T14:21:02.045928+00:00",
+  "updated_utc": "2026-10-31T14:22:02.042515+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -234,7 +234,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T14:21:02.475472+00:00",
+      "heartbeat_utc": "2026-10-31T14:22:02.640012+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -260,7 +260,7 @@
     "state": "MARKET_CLOSED",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-10-31T14:20:58.286059+00:00",
+    "heartbeat_utc": "2026-10-31T14:21:58.310058+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
@@ -651,6 +651,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-10-31T14:20:57.001657+00:00"
+    "validation_updated_utc": "2026-10-31T14:21:57.004477+00:00"
   }
 }
