@@ -52,7 +52,7 @@ label { font-size: 0.85rem; color: var(--ink-2); }
     <span class="clock" id="clock">—</span>
 
   </div>
-  <p class="foot">Candles: Binance BTCUSDT spot, 1 h. Fills and orders: Hyperliquid, from the bot's order log. Steps: the bot's monitor journal, order log, plan history and the brain's thinking journal, at their logged times. Results in R (risk = entry to stop, 1.1% of price) and % of position. The resistance level came from the analyst's published videos, read automatically; the plan was approved by the desk before going live; the last target was widened by hand. The sell-stop line is a visual trigger guide after the resistance-touch candle, not a historical resting entry order. Within-hour candle bodies are illustrative interpolations anchored to recorded target fills; full wicks appear at the hourly close. The entry is shown at the fill price; the bot's rule was an hourly rejection in the zone followed by a market sell, which filled at $84,075.</p>
+  <p class="foot">Candles: Binance BTCUSDT spot, 1 h. Fills and orders: Hyperliquid, from the bot's order log. Steps: the bot's monitor journal, order log, plan history and the brain's thinking journal, at their logged times. Results in R (risk = entry to stop, 1.1% of price) and % of position. The resistance level came from the analyst's published videos, read automatically; the plan was approved by the desk before going live; the last target was widened by hand. For presentation, the SL/TP levels appear with entry; the logged protective orders were placed several minutes later. The sell-stop line is a visual trigger guide after the resistance-touch candle, not a historical resting entry order. Within-hour candle bodies are illustrative interpolations anchored to recorded target fills; full wicks appear at the hourly close. The entry is shown at the fill price; the bot's rule was an hourly rejection in the zone followed by a market sell, which filled at $84,075.</p>
 </main>
 <!--DATA-->
 <script>
@@ -63,13 +63,12 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
 (function () {
   const D = window.REPLAY; if (!D) { document.body.insertAdjacentHTML('afterbegin', '<p style="color:#f87171">data missing</p>'); return; }
   const C = D.candles.map(c => ({ t: Date.parse(c.t), o: c.o, h: c.h, l: c.l, c: c.c }));
-  const EV = D.events.filter(e => e.kind !== 'method').map(e => ({ ...e, ts: Date.parse(e.t) }));
+  const EV = D.events.filter(e => !['method','review'].includes(e.kind)).map(e => ({ ...e, ts: Date.parse(e.t) }));
   // Preserve source events; include the actual exchange amendments omitted in v1.
-  EV.push({kind:'brackets', step:'4b', who:'executor', ts:Date.parse('2026-10-22T00:06:36Z'), title:'SL $85,000 · TP1 $83,480 · TP2 $82,200 · TP3 $81,740'},
-    {kind:'be', step:'6b', who:'executor', ts:Date.parse('2026-10-22T01:55:14Z'), title:'Stop moved to breakeven — $84,075'},
+  EV.push({kind:'be', step:'6b', who:'executor', ts:Date.parse('2026-10-22T01:55:14Z'), title:'Stop moved to breakeven — $84,075'},
     {kind:'tp3early', step:8, who:'manager', ts:Date.parse('2026-10-22T08:16:40Z'), title:'TP3 lowered: $81,740 → $79,000'});
   EV.find(e=>e.kind==='armed').title='Resistance touched — sell STOP trigger ready';
-  EV.find(e=>e.kind==='fill').title='Sell STOP triggered — short entered at $84,075';
+  EV.find(e=>e.kind==='fill').title='Sell STOP triggered — short $84,075 · SL/TP levels marked';
   EV.find(e=>e.kind==='tp' && e.px===83480).title='TP1 hit — 30% banked at $83,480';
   EV.find(e=>e.kind==='tp3').step='8b';
   EV.find(e=>e.kind==='tp3').ts=Date.parse('2026-10-22T10:09:37Z');
@@ -100,8 +99,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     const st = { filled: false, closed: false, pos: 0, real: 0, stop: null, tps: [] };
     for (const e of EV) {
       if (e.ts > t) break;
-      if (e.kind === 'fill') { st.filled = true; st.pos = 100; st.stop = null; st.tps = []; }
-      if (e.kind === 'brackets') { st.stop = S.stop; st.tps = [83480, 82200, 81740]; }
+      if (e.kind === 'fill') { st.filled = true; st.pos = 100; st.stop = S.stop; st.tps = [83480, 82200, 81740]; }
       if (e.kind === 'be') st.stop = S.entry;
       if (e.kind === 'tp3early') st.tps = [83480, 82200, 79000];
       if (e.kind === 'tp' && e.px === 83480) { st.pos = 70; st.real += 0.30 * (S.entry - 83480) / RISK; }
