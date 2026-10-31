@@ -39,8 +39,9 @@ label { font-size: 0.85rem; color: var(--ink-2); }
 <main>
   <header>
     <h1>CANNAVARO · BTC short at $84k, replayed</h1>
-    <p class="lede">1-hour candles, 20–24 Oct 2026 UTC · every mark is a logged bot event at its real time</p>
+    <p class="lede">1-hour candles, 20–24 Oct 2026 UTC · logged trade events · animated hourly price context</p>
   </header>
+  <p id="eventCaption" class="lede" aria-live="polite">Watching the approach to resistance</p>
   <div class="stage"><canvas id="cv" aria-label="trade replay chart"></canvas></div>
   <div class="bar" role="group" aria-label="playback">
     <button class="primary" id="play">▶ Play</button>
@@ -51,7 +52,7 @@ label { font-size: 0.85rem; color: var(--ink-2); }
     <span class="clock" id="clock">—</span>
     <label><input type="checkbox" id="pauseEv" checked> hold on each step</label>
   </div>
-  <p class="foot">Candles: Binance BTCUSDT spot, 1 h. Fills and orders: Hyperliquid, from the bot's order log. Steps: the bot's monitor journal, order log, plan history and the brain's thinking journal, at their logged times. Results in R (risk = entry to stop, 1.1% of price) and % of position. The resistance level came from the analyst's published videos, read automatically; the plan was approved by the desk before going live; the last target was widened by hand. The entry is shown as a sell stop at the fill price; the bot's rule was an hourly rejection in the zone followed by a market sell, which filled at $84,075.</p>
+  <p class="foot">Candles: Binance BTCUSDT spot, 1 h. Fills and orders: Hyperliquid, from the bot's order log. Steps: the bot's monitor journal, order log, plan history and the brain's thinking journal, at their logged times. Results in R (risk = entry to stop, 1.1% of price) and % of position. The resistance level came from the analyst's published videos, read automatically; the plan was approved by the desk before going live; the last target was widened by hand. The sell-stop line is a visual trigger guide after the resistance-touch candle, not a historical resting entry order. Within-hour candle bodies are illustrative interpolations anchored to recorded target fills; full wicks appear at the hourly close. The entry is shown at the fill price; the bot's rule was an hourly rejection in the zone followed by a market sell, which filled at $84,075.</p>
 </main>
 <!--DATA-->
 <script>
@@ -62,25 +63,34 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
 (function () {
   const D = window.REPLAY; if (!D) { document.body.insertAdjacentHTML('afterbegin', '<p style="color:#f87171">data missing</p>'); return; }
   const C = D.candles.map(c => ({ t: Date.parse(c.t), o: c.o, h: c.h, l: c.l, c: c.c }));
-  const EV = D.events.map(e => Object.assign({}, e, { ts: Date.parse(e.t) }));
+  const EV = D.events.filter(e => e.kind !== 'method').map(e => ({ ...e, ts: Date.parse(e.t) }));
+  // Preserve source events; include the actual exchange amendments omitted in v1.
+  EV.push({kind:'brackets', step:'4b', who:'executor', ts:Date.parse('2026-10-22T00:06:36Z'), title:'SL $85,000 · TP1 $83,480 · TP2 $82,200 · TP3 $81,740'},
+    {kind:'be', step:'6b', who:'executor', ts:Date.parse('2026-10-22T01:55:14Z'), title:'Stop moved to breakeven — $84,075'},
+    {kind:'tp3early', step:8, who:'manager', ts:Date.parse('2026-10-22T08:16:40Z'), title:'TP3 lowered: $81,740 → $79,000'});
+  EV.find(e=>e.kind==='armed').title='Resistance touched — sell STOP trigger ready';
+  EV.find(e=>e.kind==='fill').title='Sell STOP triggered — short entered at $84,075';
+  EV.find(e=>e.kind==='tp' && e.px===83480).title='TP1 hit — 30% banked at $83,480';
+  EV.find(e=>e.kind==='tp3').step='8b';
+  EV.find(e=>e.kind==='tp3').ts=Date.parse('2026-10-22T10:09:37Z');
+  EV.find(e=>e.kind==='tp3').title='TP3 refined: $79,000 → $79,675';
   const S = D.summary, STEP = 3600 * 1000, RISK = Math.abs(S.entry - S.stop);
-  const T0 = C[0].t, T1 = C[C.length - 1].t + STEP, XEND = T1 + 26 * STEP, PLO = 78800, PHI = 85600;
-  const ZONE_LO = 83900, ZONE_HI = 84385, ARM_PX = 84075;
-  // story timing: steps logged before the window opens come in a few bars after the start; step 3 happens on the chart,
-  // at the close of the first bar that traded into the sell zone after the entry method was set
-  EV.forEach(e => { if (e.ts < T0) e.ts = T0 + 4 * STEP; });
+  const T0 = C[0].t, T1 = EV.find(e=>e.kind==='close').ts, XEND = T1 + 26 * STEP, PLO = 78800, PHI = 85600;
+  const ARM_PX = 84075;
   const E = k => EV.find(e => e.kind === k);
-  const T = { step1: E('level').ts, step2: E('method').ts, fill: E('fill').ts };
-  const armBar = C.find(c => c.t >= T.step2 && c.h >= ZONE_LO && c.t < T.fill);
-  T.armed = armBar ? armBar.t + STEP : T.fill - STEP; E('armed').ts = T.armed;
-  EV.sort((a, b) => a.ts - b.ts);
+  // The first large green bar actually touching resistance closes at 15:00 UTC.
+  const armBar = C.find(c => c.c > c.o && c.h >= 84332 && c.t < E('fill').ts);
+  E('level').ts = T0 + 4 * STEP;
+  E('armed').ts = armBar.t + STEP;
+  const T = {step1:E('level').ts, armed:E('armed').ts, fill:E('fill').ts};
+  EV.sort((a,b)=>a.ts-b.ts);
   const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
   const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
   const $ = id => document.getElementById(id);
   const fmt = p => '$' + Math.round(p).toLocaleString();
   const fmtT = ms => new Date(ms).toISOString().slice(5, 16).replace('T', ' ') + ' UTC';
   const WHO = { brain: ['AI BRAIN', '--b-brain'], executor: ['EXECUTOR', '--b-exec'], manager: ['MANAGER', '--b-manager'], video: ['ANALYST VIDEO', '--b-video'], market: ['MARKET', '--b-market'] };
-  let now = T0, playing = false, speed = 1, lastFrame = 0, acc = 0, fired = new Set(), pauseUntil = 0;
+  let now = T0, playing = true, speed = 1, lastFrame = 0, acc = 0, fired = new Set(), pauseUntil = 0;
   let anim = null;                                              // {start, ev}: the step alert popping up and settling into place
   const ANIM_MS = 2800;
   const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
@@ -88,13 +98,24 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     const st = { filled: false, closed: false, pos: 0, real: 0, stop: null, tps: [] };
     for (const e of EV) {
       if (e.ts > t) break;
-      if (e.kind === 'fill') { st.filled = true; st.pos = 100; st.stop = 85000; st.tps = [83480, 82200, 81740]; }
-      if (e.kind === 'tp' && e.px === 83480) { st.pos = 70; st.real += 0.30 * (S.entry - 83480) / RISK; st.stop = S.entry; }
+      if (e.kind === 'fill') { st.filled = true; st.pos = 100; st.stop = null; st.tps = []; }
+      if (e.kind === 'brackets') { st.stop = S.stop; st.tps = [83480, 82200, 81740]; }
+      if (e.kind === 'be') st.stop = S.entry;
+      if (e.kind === 'tp3early') st.tps = [83480, 82200, 79000];
+      if (e.kind === 'tp' && e.px === 83480) { st.pos = 70; st.real += 0.30 * (S.entry - 83480) / RISK; }
       if (e.kind === 'tp' && e.px === 82200) { st.pos = 35; st.real += 0.35 * (S.entry - 82200) / RISK; }
       if (e.kind === 'tp3') st.tps = [83480, 82200, 79675];
       if (e.kind === 'close') { st.pos = 0; st.real += 0.35 * (S.entry - 79675) / RISK; st.closed = true; }
     }
     return st;
+  }
+  function partialCandle(c,t) {
+    if (t >= c.t + STEP) return c;
+    const anchors=[{t:c.t,p:c.o}, ...EV.filter(e => e.px && e.ts>c.t && e.ts<c.t+STEP && e.px>=c.l && e.px<=c.h).map(e=>({t:e.ts,p:e.px})), {t:c.t+STEP,p:c.c}];
+    const next=anchors.findIndex(a=>a.t>=t), a=anchors[Math.max(0,next-1)], b=anchors[next];
+    const price=a.p+(b.p-a.p)*(t-a.t)/Math.max(1,b.t-a.t);
+    const seen=[c.o,price,...anchors.filter(a=>a.t<=t).map(a=>a.p)];
+    return {...c,c:price,h:Math.max(...seen),l:Math.min(...seen)};
   }
   function wrap(text, maxW, font) { ctx.font = font; const words = text.split(' '), lines = []; let line = ''; for (const w of words) { const t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; } if (line) lines.push(line); return lines; }
   function rr(x, y, w, h, r) { r = Math.max(0, Math.min(r, h / 2, w / 2)); ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
@@ -106,7 +127,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     ctx.clearRect(0, 0, w, h);
     const x = t => padL + (t - T0) / (XEND - T0) * (w - padL - padR);
     const y = p => padT + (PHI - p) / (PHI - PLO) * (h - padT - padB);
-    const st = state(now), vis = C.filter(c => c.t < now), labels = [], lastC = vis[vis.length - 1];
+    const st = state(now), vis = C.filter(c => c.t < now).map(c => partialCandle(c, now)), labels = [], lastC = vis[vis.length - 1];
     const ap = anim ? Math.min(1, (performance.now() - anim.start) / ANIM_MS) : 1;
     if (anim && ap >= 1) anim = null;
     const alertUp = !!anim && ap < 0.92;
@@ -126,7 +147,6 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     // zones and levels, each appearing with its step
     const band = { x: padL, y: y(84632), w: w - padL - padR, h: y(84332) - y(84632) };
     if (settled(E('level'))) { ctx.fillStyle = css('--resist'); ctx.fillRect(band.x, band.y, band.w, band.h); ctx.strokeStyle = css('--down'); ctx.lineWidth = 1; ctx.strokeRect(band.x, band.y, band.w, band.h); labels.push({ text: 'resistance $84.3k – 84.6k', y: y(84482), col: css('--down'), side: 'left' }); }
-    if (settled(E('method'))) { ctx.fillStyle = css('--zone'); ctx.fillRect(padL, y(ZONE_HI), w - padL - padR, y(ZONE_LO) - y(ZONE_HI)); labels.push({ text: 'sell zone', y: y((ZONE_LO + ZONE_HI) / 2), col: css('--stop'), side: 'left' }); }
     if (settled(E('armed')) && !st.filled) hline(ARM_PX, css('--trig'), [10, 5], 'SELL STOP ' + fmt(ARM_PX));
     // candles
     const slot = (w - padL - padR) / ((XEND - T0) / STEP), cw = Math.max(3, slot * 0.68);
@@ -142,7 +162,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     // after the fill: entry, stop, targets, markers
     if (st.filled && settled(E('fill'))) {
       hline(S.entry, css('--entry'), [], 'SHORT ' + fmt(S.entry));
-      if (!st.closed) hline(st.stop, css('--stop'), [8, 4], st.stop === S.entry ? 'STOP at entry — risk-free' : 'STOP ' + fmt(st.stop));
+      if (!st.closed && st.stop !== null) hline(st.stop, css('--stop'), [8, 4], st.stop === S.entry ? 'SL at breakeven ' + fmt(S.entry) : 'STOP ' + fmt(st.stop));
       st.tps.forEach((p, i) => { const hit = EV.some(e => (e.kind === 'tp' && e.px === p || e.kind === 'close' && i === 2) && settled(e)); hline(p, css('--tp'), hit ? [] : [3, 5], 'TP' + (i + 1) + ' ' + fmt(p) + (hit ? '  ✓' : '')); });
       for (const e of EV) {
         if (!e.px || !settled(e)) continue;
@@ -163,7 +183,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     const hud = [['STATUS', st.closed ? 'CLOSED' : st.filled ? 'SHORT OPEN' : now >= T.armed ? 'STOP ARMED' : 'WATCHING'],
                  ['POSITION', st.pos + '%'], ['BANKED', (st.real >= 0 ? '+' : '') + st.real.toFixed(2) + ' R'],
                  ['OPEN P&L', st.filled && !st.closed && lastC ? ((S.entry - lastC.c) / RISK * st.pos / 100 >= 0 ? '+' : '') + ((S.entry - lastC.c) / RISK * st.pos / 100).toFixed(2) + ' R' : '—'],
-                 ['STOP', st.filled && !st.closed ? (st.stop === S.entry ? 'ENTRY' : fmt(st.stop)) : '—']];
+                 ['STOP', st.filled && !st.closed && st.stop !== null ? (st.stop === S.entry ? 'ENTRY' : fmt(st.stop)) : '—']];
     let hx = padL + 8; const hy = 14;
     for (const [k, v] of hud) { ctx.font = `600 ${small ? 9 : 10}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--muted'); ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText(k, hx, hy);
       ctx.font = `700 ${small ? 14 : 18}px Inter, system-ui, sans-serif`; ctx.fillStyle = k === 'BANKED' && st.real > 0 ? css('--tp') : css('--ink'); ctx.fillText(v, hx, hy + (small ? 12 : 14));
@@ -172,7 +192,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     // step tracker
     const n = EV.length, trackW = Math.min(w - padL - padR, 520), tx0 = padL + 8, ty = h - 16;
     for (let i = 0; i < n; i++) { const e = EV[i], done = e.ts <= now, cx = tx0 + i * (trackW / (n - 1)); ctx.fillStyle = done ? css(WHO[e.who][1]) : css('--axis'); ctx.beginPath(); ctx.arc(cx, ty, done ? 7 : 5, 0, Math.PI * 2); ctx.fill();
-      ctx.fillStyle = done ? '#06100a' : css('--muted'); ctx.font = `700 9px Inter, system-ui, sans-serif`; ctx.textAlign = 'center'; ctx.fillText(String(i + 1), cx, ty + 0.5); }
+      ctx.fillStyle = done ? '#06100a' : css('--muted'); ctx.font = `700 9px Inter, system-ui, sans-serif`; ctx.textAlign = 'center'; ctx.fillText(String(e.step), cx, ty + 0.5); }
     // caption strip above the candles: badge, time, headline; during the wait phase a single word underneath: WAIT
     const cur = [...EV].reverse().find(e => e.ts <= now);
     if (cur && !alertUp) {
@@ -220,7 +240,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
       ctx.restore();
     }
     // result card at the end
-    if (st.closed && now >= T1 - 2 * STEP && !alertUp) {
+    if (st.closed && !alertUp) {
       const bw = small ? Math.min(300, w - 24) : 360, bh = small ? 150 : 170, bx = padL + 12, by = h - padB - bh - 14;
       ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 30; ctx.fillStyle = css('--panel'); rr(bx, by, bw, bh, 12); ctx.fill(); ctx.shadowBlur = 0; ctx.strokeStyle = css('--tp'); rr(bx, by, bw, bh, 12); ctx.stroke();
       ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillStyle = css('--muted'); ctx.font = `700 10px Inter, system-ui, sans-serif`; ctx.fillText('RESULT', bx + 16, by + 12);
@@ -232,31 +252,54 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     }
     function hline(p, col, dash, text, side) { ctx.strokeStyle = col; ctx.lineWidth = 1.4; ctx.setLineDash(dash); ctx.beginPath(); ctx.moveTo(padL, y(p)); ctx.lineTo(w - padR, y(p)); ctx.stroke(); ctx.setLineDash([]); if (text) labels.push({ text, y: y(p), col, side: side || 'right' }); }
   }
-  function render() { $('clock').textContent = fmtT(now); $('scrub').value = Math.round((now - T0) / (T1 - T0) * 1000); draw(); }
+  let captionKey = '';
+  function render() {
+    $('clock').textContent=fmtT(now); $('scrub').value=Math.round((now-T0)/(T1-T0)*1000);
+    const cur=[...EV].reverse().find(e=>e.ts<=now);
+    const text=state(now).closed ? '9. Trade closed · +2.57 R' : cur ? `${cur.step}. ${cur.title}` : 'Watching the approach to resistance';
+    if(text!==captionKey) { $('eventCaption').textContent=text; captionKey=text; }
+    draw();
+  }
   function tick(ts) {
     if (!playing) return;
-    if (!lastFrame) lastFrame = ts;
-    const dt = ts - lastFrame; lastFrame = ts;
-    if (ts < pauseUntil) { if (anim) render(); requestAnimationFrame(tick); return; }
-    acc += dt * speed;
-    // pace: fast-forward between the resistance box and step 2, slow while the bot waits for the trigger, normal elsewhere
-    const tp2 = EV.find(e => e.kind === 'tp' && e.px === 82200).ts, closeTs = E('close').ts;
-    const per = now < T.step1 ? 380 : now < T.step2 ? 150 : now < T.armed ? 380 : now < T.fill ? 700 : now < tp2 ? 380 : now < closeTs ? 120 : 380;   // fast-forward after TP2 until the close
-    while (acc >= per) {
-      acc -= per; const prev = now; now = Math.min(T1, now + STEP);
-      const hit = EV.find(e => e.ts > prev && e.ts <= now && !fired.has(e.ts));
-      if (hit) { fired.add(hit.ts); anim = { start: performance.now(), ev: hit }; pauseUntil = ts + ANIM_MS + ($('pauseEv').checked ? (hit.kind === 'fill' || hit.kind === 'close' ? 1600 : 700) : 100); break; }
-      if (now >= T1) { playing = false; $('play').textContent = '▶ Replay'; break; }
-    }
-    render();
-    if (playing) requestAnimationFrame(tick);
+    if (!lastFrame) lastFrame=ts;
+    const dt=Math.min(ts-lastFrame,100); lastFrame=ts;
+    if(ts<pauseUntil) { render(); requestAnimationFrame(tick); return; }
+    if(now>=T1) { playing=false; anim=null; $('play').textContent='▶ Replay'; render(); return; }
+    const tp1=EV.find(e=>e.kind==='tp' && e.px===83480).ts;
+    const tp2=EV.find(e=>e.kind==='tp' && e.px===82200).ts;
+    const per=now<T.armed ? 380 : now<T.fill ? 850 : now<=tp1 ? 5500 : now<=tp2 ? 1100 : 220;
+    const destination=Math.min(T1,now+dt*speed/per*STEP);
+    const hit=EV.find(e=>e.ts>now && e.ts<=destination && !fired.has(e));
+    if(hit) {
+      now=hit.ts; fired.add(hit); anim={start:ts,ev:hit};
+      const important=['fill','brackets','tp','be','tp3early','tp3','close'].includes(hit.kind);
+      pauseUntil=ts+ANIM_MS+($('pauseEv').checked ? (important?2400:900) : 200);
+    } else now=destination;
+    render(); requestAnimationFrame(tick);
   }
-  $('play').addEventListener('click', () => { if (now >= T1) { now = T0; fired.clear(); } playing = !playing; $('play').textContent = playing ? '❚❚ Pause' : '▶ Play'; lastFrame = 0; acc = 0; if (playing) requestAnimationFrame(tick); });
-  $('restart').addEventListener('click', () => { now = T0; fired.clear(); anim = null; playing = false; $('play').textContent = '▶ Play'; render(); });
+  function restart() {
+    now=T0; fired.clear(); anim=null; pauseUntil=0; lastFrame=0;
+    const wasPlaying=playing; playing=true; $('play').textContent='❚❚ Pause'; render();
+    if(!wasPlaying) requestAnimationFrame(tick);
+  }
+  $('play').addEventListener('click',()=>{
+    if(now>=T1) { restart(); return; }
+    playing=!playing; $('play').textContent=playing?'❚❚ Pause':'▶ Play'; lastFrame=0;
+    if(playing) requestAnimationFrame(tick);
+  });
+  $('restart').addEventListener('click',restart);
   document.querySelectorAll('.spd').forEach(b => b.addEventListener('click', () => { speed = +b.dataset.s; document.querySelectorAll('.spd').forEach(x => x.setAttribute('aria-pressed', x === b)); }));
-  $('scrub').addEventListener('input', e => { anim = null; now = T0 + Math.round((+e.target.value / 1000) * (T1 - T0) / STEP) * STEP; EV.forEach(ev => { if (ev.ts <= now) fired.add(ev.ts); else fired.delete(ev.ts); }); render(); });
+  $('scrub').addEventListener('input',e=>{
+    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; pauseUntil=0; lastFrame=0;
+    EV.forEach(ev=>{if(ev.ts<=now) fired.add(ev); else fired.delete(ev);});
+    if(now>=T1) { playing=false; $('play').textContent='▶ Replay'; }
+    render();
+  });
   window.addEventListener('resize', render);
+  $('play').textContent='❚❚ Pause';
   render();
+  requestAnimationFrame(tick);
 })();
 </script>
 </body>
