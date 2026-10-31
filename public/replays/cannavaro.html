@@ -78,7 +78,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   const E = k => EV.find(e => e.kind === k);
   // The first large green bar actually touching resistance closes at 15:00 UTC.
   const armBar = C.find(c => c.c > c.o && c.h >= 84332 && c.t < E('fill').ts);
-  E('level').ts = T0 + 4 * STEP;
+  E('level').ts = T0;
   E('armed').ts = armBar.t + STEP;
   const T = {step1:E('level').ts, armed:E('armed').ts, fill:E('fill').ts};
   EV.sort((a,b)=>a.ts-b.ts);
@@ -268,8 +268,11 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
     } else now=destination;
     render(); requestAnimationFrame(tick);
   }
+  function openingIntro() {
+    fired.add(E('level')); anim={start:performance.now(),ev:E('level')}; stepHoldMs=2000;
+  }
   function restart() {
-    now=T0; fired.clear(); anim=null; stepHoldMs=0; lastFrame=0;
+    now=T0; fired.clear(); anim=null; stepHoldMs=0; lastFrame=0; openingIntro();
     const wasPlaying=playing; playing=true; $('play').textContent='❚❚ Pause'; render();
     if(!wasPlaying) requestAnimationFrame(tick);
   }
@@ -288,6 +291,7 @@ window.REPLAY = {"candles": [{"t": "2026-10-20T12:00Z", "o": 81504.32, "h": 8177
   });
   window.addEventListener('resize', render);
   $('play').textContent='❚❚ Pause';
+  openingIntro();
   render();
   requestAnimationFrame(tick);
 })();
