@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-31T15:35:01.695758+00:00",
+  "updated_utc": "2026-10-31T15:36:01.414252+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -112,7 +112,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-10-31T15:35:01.632119+00:00",
+      "heartbeat_utc": "2026-10-31T15:36:01.141632+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -173,7 +173,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T15:35:01.632119+00:00",
+      "heartbeat_utc": "2026-10-31T15:36:01.141632+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [
         "NQ_FEED_STALE",
@@ -239,7 +239,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T15:35:03.019384+00:00",
+      "heartbeat_utc": "2026-10-31T15:36:02.073915+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -265,7 +265,7 @@
     "state": "DATA_WAIT",
     "validator_state": "OK",
     "data_error": "OperationalError: unable to open database file",
-    "heartbeat_utc": "2026-10-31T15:34:59.317759+00:00",
+    "heartbeat_utc": "2026-10-31T15:36:01.781379+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
@@ -332,8 +332,7 @@
         "regime_asof": "2026-10-15",
         "regime_provisional": false,
         "read_hash": "92a5f03e19c27f96cd7de9bf1817780b174f0519c346be3e468096af1ed185d7",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "day": "2026-10-19",
@@ -355,14 +354,14 @@
         "side": 0,
         "distance_pct": 0.285496761119303,
         "vwap": 29727.62858323728,
-        "vol_ratio": 1.0817501628391335,
+        "vol_ratio": 1.0817499751840405,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-18",
-        "regime_provisional": true,
-        "read_hash": "b02fcc65532d653e70a363bdb244897bbdd2888408e91ea0ac60f4f2c0dc8215",
+        "regime_provisional": false,
+        "read_hash": "f899dcc3fcef382fcd9569d9cd848c3f8047db01bce188ae21abae7edf56363a",
         "origin": "BACKFILLED_REPLAY",
         "corrected_after_backfill": true
       },
@@ -386,15 +385,16 @@
         "side": 0,
         "distance_pct": 0.851791856724112,
         "vwap": 29626.64267031352,
-        "vol_ratio": 1.4277618080766206,
+        "vol_ratio": 1.4277618441055844,
         "busy": true,
         "regime": "ZONE_A",
-        "why": "Waiting for required volatility/regime history",
-        "data_ready": false,
+        "why": "one-sided/0.5% condition not met",
+        "data_ready": true,
         "regime_asof": "2026-10-19",
-        "regime_provisional": true,
-        "read_hash": "bc2298588b65546f5b90e399f9363d7bceb8f7e71999ab1c0e1990a5b0be7658",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "abe3763d4d2f04b73810ef66c6e880e19e415c801c7031a0b88958c559c577bd",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-21",
@@ -416,15 +416,16 @@
         "side": 0,
         "distance_pct": -0.007040808152225216,
         "vwap": 29871.353184670206,
-        "vol_ratio": 1.189497359658616,
+        "vol_ratio": 1.1894973788040315,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-20",
-        "regime_provisional": true,
-        "read_hash": "dcbba617ad28d84497f02c9047b0cad4a19d6a1811ecd48e442bac42c1c190b6",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "fc73e66f2d1e7f09029fed10d322ca77f8b938abdc8c167d0310ea3862358691",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-22",
@@ -446,15 +447,16 @@
         "side": 0,
         "distance_pct": -0.742642866804787,
         "vwap": 29549.19498878243,
-        "vol_ratio": 1.072190359145897,
+        "vol_ratio": 1.0721903664853558,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-21",
-        "regime_provisional": true,
-        "read_hash": "3b953f6d8730a711635b18852e069c14755bacbbc031058b6513eb73dcd120d7",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "9f8f55f44b790c043afc0b71911baf39b650d13fc726e0099e0bfd6ace075fbf",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-23",
@@ -476,15 +478,16 @@
         "side": 0,
         "distance_pct": 0.16169528080408826,
         "vwap": 29121.412051010004,
-        "vol_ratio": 1.200284838097437,
+        "vol_ratio": 1.2002848740059453,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-22",
-        "regime_provisional": true,
-        "read_hash": "ed887aba6c5ce52e57b01c082bd20ed1b5807eb771be06f750cb2c3d0b82d3d4",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "053d739938ca1d121128415accba63a74039c41f9a3137e8ce364284dda2960b",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-26",
@@ -506,14 +509,14 @@
         "side": 0,
         "distance_pct": 0.34440687711025103,
         "vwap": 29218.120782662132,
-        "vol_ratio": 1.2932776787036873,
+        "vol_ratio": 1.2932777129750566,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-25",
-        "regime_provisional": true,
-        "read_hash": "b173df95dc03283755d047c832625a3e13d4df7be38bfe4ab657a50bc9ab31e8",
+        "regime_provisional": false,
+        "read_hash": "4318f17bb0fcbe600c0504bb679aad2e9ba41569ebe53928bb82d6e9c696aab5",
         "origin": "BACKFILLED_REPLAY",
         "corrected_after_backfill": true
       },
@@ -537,15 +540,16 @@
         "side": 0,
         "distance_pct": 0.3601086210948309,
         "vwap": 29526.921011892315,
-        "vol_ratio": 0.9993806991218535,
+        "vol_ratio": 0.999380703008695,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-26",
-        "regime_provisional": true,
-        "read_hash": "a1af7bae35d13ce572e00bd062b783be5d022ebffe5301d48092ea85022e1edf",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "3acb6d05573749963448aa8113ba9558e0c434126f43f5d7abb2bd107a91d623",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-28",
@@ -567,14 +571,14 @@
         "side": 0,
         "distance_pct": -0.07372325960624707,
         "vwap": 29880.779084336715,
-        "vol_ratio": 0.7723115069299739,
+        "vol_ratio": 0.7723115103046032,
         "busy": false,
         "regime": "ZONE_A",
         "why": "one-sided/0.5% condition not met",
         "data_ready": true,
         "regime_asof": "2026-10-27",
-        "regime_provisional": true,
-        "read_hash": "521ef7e44024007f05ff2891ff3c0a39988c1cce7960382905cf3273e99d68eb",
+        "regime_provisional": false,
+        "read_hash": "da6217344d01143076eab755320e2c9751983d1eb8772a2e7249fc1d61a53370",
         "origin": "BACKFILLED_REPLAY",
         "corrected_after_backfill": true
       },
@@ -598,15 +602,16 @@
         "side": 0,
         "distance_pct": -0.036710522321648745,
         "vwap": 29589.86259311219,
-        "vol_ratio": 1.3966594199035003,
+        "vol_ratio": 1.3966594360958289,
         "busy": true,
         "regime": "ZONE_A",
-        "why": "Waiting for required volatility/regime history",
-        "data_ready": false,
+        "why": "one-sided/0.5% condition not met",
+        "data_ready": true,
         "regime_asof": "2026-10-28",
-        "regime_provisional": true,
-        "read_hash": "25610b62d6358fb4c2234d0266a2c4f35fae094e45f409bb04e4182dbff374fd",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "91f6a744b016342697c32ae7d8e83ec78d997e58cdd71f3ac2d4cc0323e2b12e",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-10-30",
@@ -628,27 +633,28 @@
         "side": -1,
         "distance_pct": -0.5790489612030201,
         "vwap": 28838.99188291947,
-        "vol_ratio": 1.1455002656425208,
+        "vol_ratio": 1.1455002791147462,
         "busy": false,
         "regime": "ZONE_A",
         "why": "take",
         "data_ready": true,
         "regime_asof": "2026-10-29",
-        "regime_provisional": true,
-        "read_hash": "cb2eebcf2b4cb84e4aa51c5d7a3398c590fa7553b0f7f67c8e1be9c241c19de5",
-        "origin": "BACKFILLED_REPLAY"
+        "regime_provisional": false,
+        "read_hash": "caccc59134a0b9e48cadbc4eef7fc142ecb0b07f315b6dd50d65e2ce09d5dec0",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       }
     ],
     "missing_expected_bars": 0,
-    "historical_data_waits": 2,
+    "historical_data_waits": 0,
     "regime_history_latest_et": "2026-10-30",
-    "regime_pending_closes": 1,
+    "regime_pending_closes": 0,
     "required": {
       "reads": 10,
       "trades": 3
     },
     "validated": {
-      "reads": 9,
+      "reads": 11,
       "trades": 1
     },
     "forward_validated": {
@@ -660,6 +666,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-10-31T15:34:54.826400+00:00"
+    "validation_updated_utc": "2026-10-31T15:35:57.369818+00:00"
   }
 }
