@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-10-31T14:45:01.268048+00:00",
+  "updated_utc": "2026-10-31T14:46:02.103614+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -111,14 +111,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-10-31T01:40:08.923379+00:00",
+      "state": "OBSERVING",
+      "heartbeat_utc": "2026-10-31T14:46:01.899601+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 2,
         "open": 0,
@@ -172,14 +172,20 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-10-31T02:34:45.644112+00:00",
-      "data_final_utc": null,
-      "halt_reasons": [],
+      "state": "ERROR",
+      "heartbeat_utc": "2026-10-31T14:46:01.899601+00:00",
+      "data_final_utc": "2026-10-30T21:00:00+00:00",
+      "halt_reasons": [
+        "HOST_LOOP_OR_TELEMETRY_FAILURE",
+        "NQ_FEED_STALE",
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED",
+        "WARMUP_NOT_READY"
+      ],
       "pilot_hold": false,
-      "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "broker_connected": true,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 1,
         "open": 0,
@@ -234,7 +240,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-10-31T14:45:02.259410+00:00",
+      "heartbeat_utc": "2026-10-31T14:46:02.944955+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -250,17 +256,17 @@
       }
     }
   },
-  "execution_mode": null,
+  "execution_mode": "LIVE",
   "observation_started_utc": "2026-10-27T03:25:00+00:00",
   "osr_paper": {
     "present": true,
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
-    "healthy": true,
-    "state": "MARKET_CLOSED",
+    "healthy": false,
+    "state": "DATA_WAIT",
     "validator_state": "OK",
-    "data_error": null,
-    "heartbeat_utc": "2026-10-31T14:44:58.875465+00:00",
+    "data_error": "OperationalError: unable to open database file",
+    "heartbeat_utc": "2026-10-31T14:45:58.899558+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
@@ -651,6 +657,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-10-31T14:44:04.722897+00:00"
+    "validation_updated_utc": "2026-10-31T14:45:05.756948+00:00"
   }
 }
