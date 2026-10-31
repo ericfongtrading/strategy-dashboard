@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DROGBA Trade Replay</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* One full-width dark chart. Only step 1 pops up as an alert in the middle of the chart, then settles into the caption strip
+   above the candles (step 1 settles into the resistance box instead). Dark in both modes by design. */
+:root {
+  --bg: #07090d; --bg2: #0d1117; --panel: rgba(13,17,23,0.92); --ink: #e8eaf0; --ink-2: #aab2c0; --muted: #6b7484; --grid: #1a2029; --axis: #2a3340; --ring: rgba(255,255,255,0.08);
+  --up: #22c55e; --down: #ef4444; --entry: #60a5fa; --stop: #f87171; --tp: #34d399; --trig: #fbbf24; --zone: rgba(248,113,113,0.16); --resist: rgba(239,68,68,0.13);
+  --b-brain: #60a5fa; --b-exec: #34d399; --b-manager: #fbbf24; --b-video: #a78bfa; --b-market: #94a3b8; color-scheme: dark;
+}
+:root[data-theme="light"], :root[data-theme="dark"] { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(1200px 600px at 30% -10%, #141b26 0%, var(--bg) 60%); color: var(--ink); font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.4;
+  padding-block: 18px 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); min-height: 100vh; }
+main { max-width: 1280px; margin: 0 auto; display: grid; gap: 12px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+h1 { font-size: 1.3rem; margin: 0; letter-spacing: 0.01em; } .lede { color: var(--ink-2); margin: 0; font-size: 0.9rem; }
+.stage { position: relative; background: linear-gradient(180deg, #0e131b 0%, #0a0e14 100%); border: 1px solid var(--ring); border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.45); overflow: hidden; }
+canvas { width: 100%; height: 660px; display: block; }
+@media (max-width: 900px) { canvas { height: 520px; } }
+@media (max-width: 600px) { canvas { height: 440px; } }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; background: var(--bg2); border: 1px solid var(--ring); border-radius: 10px; padding: 10px 14px; }
+button { font: inherit; border: 1px solid var(--ring); background: #161c26; color: var(--ink); border-radius: 8px; padding: 7px 14px; cursor: pointer; }
+button:hover { background: #1c2430; }
+button.primary { background: var(--entry); color: #061018; border-color: transparent; min-width: 96px; font-weight: 600; }
+button[aria-pressed="true"] { outline: 2px solid var(--entry); }
+input[type=range] { flex: 1 1 240px; accent-color: var(--entry); }
+.clock { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 160px; color: var(--ink-2); }
+label { font-size: 0.85rem; color: var(--ink-2); }
+.foot { color: var(--muted); font-size: 0.78rem; max-width: 100ch; margin: 0; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>DROGBA · BTC short at $81k, replayed</h1>
+    <p class="lede">60-minute candles · recorded trade events · UTC</p>
+  </header>
+  <p id="eventCaption" class="lede" aria-live="polite">Watching the approach to resistance</p>
+  <div class="stage"><canvas id="cv" aria-label="trade replay chart"></canvas></div>
+  <div class="bar" role="group" aria-label="playback">
+    <button class="primary" id="play">▶ Play</button>
+    <button id="restart" title="back to the start">↺</button>
+    <span style="color:var(--muted)">speed</span>
+    <button class="spd" data-s="1" aria-pressed="true">1×</button><button class="spd" data-s="2">2×</button><button class="spd" data-s="4">4×</button>
+    <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="position in the replay">
+    <span class="clock" id="clock">—</span>
+
+  </div>
+  <p class="foot">Candles: Binance BTCUSDT spot; execution records: Hyperliquid and the bot journal. Candle bodies between closes are illustrative, not tick data. Step 1 is shown before candles as an introduction. Entry and initial stop verified against Hyperliquid order acknowledgments. TP1 event and +$566.40 partial profit are from the monitor journal; $79,750 is the target, not an asserted exact fill price. Final recorded P&L +$550.80 uses the bot's 1 BTC accounting basis, not the 0.2 BTC live size. The stop was moved to entry but filled $26 above it. Levels appear together at entry for presentation; actual protective orders followed within seconds.</p>
+</main>
+<!--DATA-->
+<script>
+window.REPLAY = {"slug": "drogba", "name": "DROGBA", "direction": "short", "entry": 81024, "stop": 83650, "tps": [79750, 77300, 75650], "pcts": [40, 35, 25], "zone": [80950, 81141], "zone_label": "4h breakdown shelf $80,950\u201381,141", "start": "2026-10-23T12:00:00Z", "interval": 3600000, "per": 220, "pnl": 550.8, "close_reason": "40% banked; remaining 60% stopped near entry", "result_lines": ["TP1 taken \u00b7 TP2 and TP3 not reached", "Remaining 60% exited at $81,050", "Recorded result on 1 BTC accounting basis"], "events": [{"t": "2026-10-23T12:00:00Z", "kind": "level", "title": "Breakdown setup below the $81,141 shelf", "who": "brain"}, {"t": "2026-10-24T04:00:25Z", "kind": "armed", "title": "4h breakdown confirmed \u2014 market entry authorized", "who": "executor"}, {"t": "2026-10-24T04:00:29Z", "kind": "fill", "title": "SHORT $81,024 \u00b7 SL and TP levels marked", "who": "executor", "px": 81024}, {"t": "2026-10-24T15:10:39Z", "kind": "tp", "title": "TP1 $79,750 \u00b7 40% banked", "who": "executor", "px": 79750, "index": 0, "remaining": 60, "banked": 566.4}, {"t": "2026-10-24T15:11:18Z", "kind": "be", "title": "Stop moved to breakeven \u2014 $81,024", "who": "executor"}, {"t": "2026-10-27T21:31:41Z", "kind": "close", "title": "Breakeven stop filled at $81,050", "who": "executor", "px": 81050}], "foot": "Entry and initial stop verified against Hyperliquid order acknowledgments. TP1 event and +$566.40 partial profit are from the monitor journal; $79,750 is the target, not an asserted exact fill price. Final recorded P&L +$550.80 uses the bot's 1 BTC accounting basis, not the 0.2 BTC live size. The stop was moved to entry but filled $26 above it. Levels appear together at entry for presentation; actual protective orders followed within seconds.", "candles": [{"t": "2026-10-23T12:00:00+00:00", "o": 81726.09, "h": 81837.88, "l": 81458.0, "c": 81748.17}, {"t": "2026-10-23T13:00:00+00:00", "o": 81748.16, "h": 82052.38, "l": 81603.91, "c": 82008.95}, {"t": "2026-10-23T14:00:00+00:00", "o": 82008.94, "h": 82060.88, "l": 81099.0, "c": 81784.01}, {"t": "2026-10-23T15:00:00+00:00", "o": 81784.0, "h": 81814.01, "l": 81402.88, "c": 81692.01}, {"t": "2026-10-23T16:00:00+00:00", "o": 81692.01, "h": 81846.26, "l": 81492.42, "c": 81715.24}, {"t": "2026-10-23T17:00:00+00:00", "o": 81715.24, "h": 81842.95, "l": 81567.68, "c": 81649.25}, {"t": "2026-10-23T18:00:00+00:00", "o": 81649.26, "h": 81662.01, "l": 81422.11, "c": 81440.01}, {"t": "2026-10-23T19:00:00+00:00", "o": 81440.02, "h": 81464.01, "l": 81250.01, "c": 81282.33}, {"t": "2026-10-23T20:00:00+00:00", "o": 81282.33, "h": 81498.94, "l": 81268.08, "c": 81403.3}, {"t": "2026-10-23T21:00:00+00:00", "o": 81403.29, "h": 81500.0, "l": 81330.0, "c": 81378.69}, {"t": "2026-10-23T22:00:00+00:00", "o": 81378.69, "h": 81440.96, "l": 80559.6, "c": 80832.13}, {"t": "2026-10-23T23:00:00+00:00", "o": 80832.13, "h": 81200.0, "l": 80513.0, "c": 81189.43}, {"t": "2026-10-24T00:00:00+00:00", "o": 81189.44, "h": 81213.64, "l": 80601.99, "c": 80624.9}, {"t": "2026-10-24T01:00:00+00:00", "o": 80624.89, "h": 80966.9, "l": 80615.71, "c": 80936.01}, {"t": "2026-10-24T02:00:00+00:00", "o": 80936.01, "h": 80995.78, "l": 80847.24, "c": 80995.78}, {"t": "2026-10-24T03:00:00+00:00", "o": 80995.78, "h": 81094.01, "l": 80847.24, "c": 80977.92}, {"t": "2026-10-24T04:00:00+00:00", "o": 80977.92, "h": 81097.47, "l": 80845.04, "c": 80880.01}, {"t": "2026-10-24T05:00:00+00:00", "o": 80880.01, "h": 80888.01, "l": 80722.04, "c": 80776.01}, {"t": "2026-10-24T06:00:00+00:00", "o": 80776.01, "h": 80827.13, "l": 80696.0, "c": 80790.01}, {"t": "2026-10-24T07:00:00+00:00", "o": 80790.01, "h": 80925.98, "l": 80707.1, "c": 80732.01}, {"t": "2026-10-24T08:00:00+00:00", "o": 80732.01, "h": 80828.91, "l": 80633.16, "c": 80715.62}, {"t": "2026-10-24T09:00:00+00:00", "o": 80715.61, "h": 80715.62, "l": 80451.18, "c": 80630.95}, {"t": "2026-10-24T10:00:00+00:00", "o": 80630.95, "h": 80738.76, "l": 80540.46, "c": 80662.01}, {"t": "2026-10-24T11:00:00+00:00", "o": 80662.02, "h": 80704.97, "l": 80581.94, "c": 80599.41}, {"t": "2026-10-24T12:00:00+00:00", "o": 80599.41, "h": 80844.01, "l": 80553.84, "c": 80782.01}, {"t": "2026-10-24T13:00:00+00:00", "o": 80782.0, "h": 80846.01, "l": 80669.96, "c": 80691.86}, {"t": "2026-10-24T14:00:00+00:00", "o": 80691.87, "h": 80760.01, "l": 79833.0, "c": 80214.37}, {"t": "2026-10-24T15:00:00+00:00", "o": 80214.37, "h": 80238.31, "l": 79220.74, "c": 79803.75}, {"t": "2026-10-24T16:00:00+00:00", "o": 79803.74, "h": 80289.92, "l": 79580.0, "c": 80219.31}, {"t": "2026-10-24T17:00:00+00:00", "o": 80219.3, "h": 80309.57, "l": 80114.99, "c": 80276.1}, {"t": "2026-10-24T18:00:00+00:00", "o": 80276.1, "h": 80638.67, "l": 80252.02, "c": 80538.01}, {"t": "2026-10-24T19:00:00+00:00", "o": 80538.0, "h": 80620.01, "l": 80489.1, "c": 80489.11}, {"t": "2026-10-24T20:00:00+00:00", "o": 80489.11, "h": 80627.93, "l": 80489.11, "c": 80521.99}, {"t": "2026-10-24T21:00:00+00:00", "o": 80521.98, "h": 80527.3, "l": 80304.71, "c": 80418.01}, {"t": "2026-10-24T22:00:00+00:00", "o": 80418.01, "h": 80642.83, "l": 80418.0, "c": 80605.6}, {"t": "2026-10-24T23:00:00+00:00", "o": 80605.59, "h": 80933.56, "l": 80552.0, "c": 80888.16}, {"t": "2026-10-25T00:00:00+00:00", "o": 80888.15, "h": 80917.26, "l": 80771.72, "c": 80877.25}, {"t": "2026-10-25T01:00:00+00:00", "o": 80877.25, "h": 80915.2, "l": 80779.86, "c": 80902.01}, {"t": "2026-10-25T02:00:00+00:00", "o": 80902.01, "h": 81001.52, "l": 80814.66, "c": 80920.0}, {"t": "2026-10-25T03:00:00+00:00", "o": 80920.01, "h": 81033.69, "l": 80858.0, "c": 80862.98}, {"t": "2026-10-25T04:00:00+00:00", "o": 80862.98, "h": 80959.97, "l": 80826.0, "c": 80923.19}, {"t": "2026-10-25T05:00:00+00:00", "o": 80923.19, "h": 80930.01, "l": 80510.0, "c": 80607.65}, {"t": "2026-10-25T06:00:00+00:00", "o": 80607.64, "h": 80672.67, "l": 80430.45, "c": 80496.0}, {"t": "2026-10-25T07:00:00+00:00", "o": 80496.01, "h": 80717.59, "l": 80496.01, "c": 80672.83}, {"t": "2026-10-25T08:00:00+00:00", "o": 80672.84, "h": 80697.04, "l": 80372.05, "c": 80404.96}, {"t": "2026-10-25T09:00:00+00:00", "o": 80404.95, "h": 80450.01, "l": 80087.7, "c": 80328.32}, {"t": "2026-10-25T10:00:00+00:00", "o": 80328.32, "h": 80418.68, "l": 80209.57, "c": 80281.07}, {"t": "2026-10-25T11:00:00+00:00", "o": 80281.07, "h": 80632.33, "l": 80281.07, "c": 80580.97}, {"t": "2026-10-25T12:00:00+00:00", "o": 80580.97, "h": 80580.97, "l": 80313.81, "c": 80454.0}, {"t": "2026-10-25T13:00:00+00:00", "o": 80454.01, "h": 80470.34, "l": 80245.0, "c": 80386.09}, {"t": "2026-10-25T14:00:00+00:00", "o": 80386.09, "h": 80650.0, "l": 80294.53, "c": 80649.99}, {"t": "2026-10-25T15:00:00+00:00", "o": 80649.99, "h": 80800.0, "l": 80538.09, "c": 80636.11}, {"t": "2026-10-25T16:00:00+00:00", "o": 80636.11, "h": 80853.14, "l": 80534.0, "c": 80806.01}, {"t": "2026-10-25T17:00:00+00:00", "o": 80806.01, "h": 80951.57, "l": 80744.0, "c": 80796.0}, {"t": "2026-10-25T18:00:00+00:00", "o": 80796.0, "h": 80818.77, "l": 80650.0, "c": 80666.69}, {"t": "2026-10-25T19:00:00+00:00", "o": 80666.69, "h": 80680.0, "l": 80546.33, "c": 80567.47}, {"t": "2026-10-25T20:00:00+00:00", "o": 80567.47, "h": 80622.54, "l": 80432.46, "c": 80492.85}, {"t": "2026-10-25T21:00:00+00:00", "o": 80492.85, "h": 80528.99, "l": 80198.0, "c": 80276.01}, {"t": "2026-10-25T22:00:00+00:00", "o": 80276.0, "h": 80732.01, "l": 80249.91, "c": 80465.34}, {"t": "2026-10-25T23:00:00+00:00", "o": 80465.34, "h": 80478.83, "l": 79845.86, "c": 80154.09}, {"t": "2026-10-26T00:00:00+00:00", "o": 80154.09, "h": 80386.01, "l": 79900.0, "c": 80168.0}, {"t": "2026-10-26T01:00:00+00:00", "o": 80168.01, "h": 80273.48, "l": 79390.0, "c": 79756.51}, {"t": "2026-10-26T02:00:00+00:00", "o": 79756.51, "h": 79964.01, "l": 79470.6, "c": 79580.52}, {"t": "2026-10-26T03:00:00+00:00", "o": 79580.52, "h": 79832.01, "l": 79368.67, "c": 79598.02}, {"t": "2026-10-26T04:00:00+00:00", "o": 79598.02, "h": 80150.01, "l": 79580.01, "c": 80134.01}, {"t": "2026-10-26T05:00:00+00:00", "o": 80134.01, "h": 80300.0, "l": 80072.0, "c": 80263.32}, {"t": "2026-10-26T06:00:00+00:00", "o": 80263.32, "h": 80300.0, "l": 79970.0, "c": 80130.01}, {"t": "2026-10-26T07:00:00+00:00", "o": 80130.01, "h": 80235.25, "l": 79958.0, "c": 80046.71}, {"t": "2026-10-26T08:00:00+00:00", "o": 80046.72, "h": 80418.67, "l": 79673.8, "c": 80235.14}, {"t": "2026-10-26T09:00:00+00:00", "o": 80235.14, "h": 80575.45, "l": 80187.75, "c": 80538.53}, {"t": "2026-10-26T10:00:00+00:00", "o": 80538.53, "h": 80538.54, "l": 80370.0, "c": 80370.01}, {"t": "2026-10-26T11:00:00+00:00", "o": 80370.0, "h": 80540.01, "l": 80242.82, "c": 80416.01}, {"t": "2026-10-26T12:00:00+00:00", "o": 80416.0, "h": 80560.01, "l": 80280.93, "c": 80332.71}, {"t": "2026-10-26T13:00:00+00:00", "o": 80332.71, "h": 80332.71, "l": 79451.35, "c": 79702.63}, {"t": "2026-10-26T14:00:00+00:00", "o": 79702.64, "h": 80424.01, "l": 79583.85, "c": 80411.37}, {"t": "2026-10-26T15:00:00+00:00", "o": 80411.37, "h": 80844.7, "l": 80362.0, "c": 80427.69}, {"t": "2026-10-26T16:00:00+00:00", "o": 80427.69, "h": 80462.91, "l": 79795.21, "c": 80236.25}, {"t": "2026-10-26T17:00:00+00:00", "o": 80236.25, "h": 80553.6, "l": 80141.16, "c": 80334.01}, {"t": "2026-10-26T18:00:00+00:00", "o": 80334.0, "h": 80422.27, "l": 79992.0, "c": 79992.01}, {"t": "2026-10-26T19:00:00+00:00", "o": 79992.01, "h": 80119.85, "l": 79894.72, "c": 80020.01}, {"t": "2026-10-26T20:00:00+00:00", "o": 80020.01, "h": 80034.29, "l": 79828.68, "c": 79864.94}, {"t": "2026-10-26T21:00:00+00:00", "o": 79864.93, "h": 80211.47, "l": 79864.93, "c": 80105.24}, {"t": "2026-10-26T22:00:00+00:00", "o": 80105.25, "h": 80132.36, "l": 79904.61, "c": 80001.86}, {"t": "2026-10-26T23:00:00+00:00", "o": 80001.85, "h": 80190.59, "l": 79728.57, "c": 80150.56}, {"t": "2026-10-27T00:00:00+00:00", "o": 80150.56, "h": 80388.37, "l": 80131.66, "c": 80223.79}, {"t": "2026-10-27T01:00:00+00:00", "o": 80223.79, "h": 80379.37, "l": 80032.93, "c": 80071.43}, {"t": "2026-10-27T02:00:00+00:00", "o": 80071.44, "h": 80122.41, "l": 79756.0, "c": 79818.02}, {"t": "2026-10-27T03:00:00+00:00", "o": 79818.02, "h": 79934.82, "l": 79648.0, "c": 79819.56}, {"t": "2026-10-27T04:00:00+00:00", "o": 79819.56, "h": 79848.61, "l": 79640.0, "c": 79759.26}, {"t": "2026-10-27T05:00:00+00:00", "o": 79759.27, "h": 80048.01, "l": 79718.0, "c": 79976.8}, {"t": "2026-10-27T06:00:00+00:00", "o": 79976.81, "h": 80004.77, "l": 79558.49, "c": 79669.99}, {"t": "2026-10-27T07:00:00+00:00", "o": 79669.99, "h": 80026.57, "l": 79592.68, "c": 79806.72}, {"t": "2026-10-27T08:00:00+00:00", "o": 79806.71, "h": 79954.59, "l": 79728.0, "c": 79871.15}, {"t": "2026-10-27T09:00:00+00:00", "o": 79871.15, "h": 79890.92, "l": 79660.0, "c": 79776.99}, {"t": "2026-10-27T10:00:00+00:00", "o": 79776.99, "h": 80162.44, "l": 79506.0, "c": 79968.01}, {"t": "2026-10-27T11:00:00+00:00", "o": 79968.01, "h": 80154.01, "l": 79858.88, "c": 79910.01}, {"t": "2026-10-27T12:00:00+00:00", "o": 79910.0, "h": 80497.31, "l": 79843.11, "c": 80365.66}, {"t": "2026-10-27T13:00:00+00:00", "o": 80365.66, "h": 80403.23, "l": 79948.0, "c": 80045.0}, {"t": "2026-10-27T14:00:00+00:00", "o": 80044.99, "h": 80415.0, "l": 79890.0, "c": 80356.23}, {"t": "2026-10-27T15:00:00+00:00", "o": 80356.23, "h": 80704.86, "l": 80244.0, "c": 80562.27}, {"t": "2026-10-27T16:00:00+00:00", "o": 80562.27, "h": 80685.99, "l": 80451.95, "c": 80662.0}, {"t": "2026-10-27T17:00:00+00:00", "o": 80662.0, "h": 80836.01, "l": 80504.35, "c": 80507.74}, {"t": "2026-10-27T18:00:00+00:00", "o": 80507.73, "h": 80722.01, "l": 80443.85, "c": 80624.0}, {"t": "2026-10-27T19:00:00+00:00", "o": 80624.0, "h": 80832.01, "l": 80620.13, "c": 80817.76}, {"t": "2026-10-27T20:00:00+00:00", "o": 80817.75, "h": 80829.83, "l": 80638.0, "c": 80797.11}, {"t": "2026-10-27T21:00:00+00:00", "o": 80797.11, "h": 81300.0, "l": 80652.0, "c": 80913.37}], "summary": {"entry": 81024, "stop": 83650, "tps": [79750, 77300, 75650], "r_multiple": 0.20974866717440974, "move_pct": 0.6797985781990521, "risk_pct": 3.241015007898894}};
+</script>
+<!--/DATA-->
+<script>
+(function () {
+  const D = window.REPLAY; if (!D) { document.body.insertAdjacentHTML('afterbegin', '<p style="color:#f87171">data missing</p>'); return; }
+  const C = D.candles.map(c => ({ t: Date.parse(c.t), o: c.o, h: c.h, l: c.l, c: c.c }));
+  const EV = D.events.map((e,i)=>({...e,step:i+1,ts:Date.parse(e.t)}));
+  const S=D.summary, STEP=D.interval, RISK=Math.abs(S.entry-S.stop), DIR=D.direction==='long'?1:-1;
+  const E=k=>EV.find(e=>e.kind===k), T0=C[0].t,T1=E('close').ts,XEND=T1+(T1-T0)*0.15;
+  const range=[...C.flatMap(c=>[c.h,c.l]),S.stop,...S.tps];
+  const PLO=Math.floor((Math.min(...range)-400)/500)*500,PHI=Math.ceil((Math.max(...range)+400)/500)*500;
+  const ARM_PX=S.entry,T={step1:E('level').ts,armed:E('armed').ts,fill:E('fill').ts};
+  EV.sort((a,b)=>a.ts-b.ts);
+  EV.forEach((e,i)=>{ e.step=i+1; });
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+  const $ = id => document.getElementById(id);
+  const fmt = p => '$' + Math.round(p).toLocaleString();
+  const fmtT = ms => new Date(ms).toISOString().slice(5, 16).replace('T', ' ') + ' UTC';
+  const WHO = { brain: ['AI BRAIN', '--b-brain'], executor: ['EXECUTOR', '--b-exec'], manager: ['MANAGER', '--b-manager'], video: ['ANALYST VIDEO', '--b-video'], market: ['MARKET', '--b-market'] };
+  let now = T0, playing = true, speed = 1, lastFrame = 0, acc = 0, fired = new Set();
+  let anim = null;                                              // {start, ev}: the step alert popping up and settling into place
+  const ANIM_MS = 2000;
+  let stepHoldMs = 0;
+  const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  function state(t) {
+    const st={filled:false,closed:false,pos:0,real:0,stop:null,tps:[]};
+    for(const e of EV) { if(e.ts>t) break;
+      if(e.kind==='fill') {st.filled=true;st.pos=100;st.stop=S.stop;st.tps=S.tps;}
+      if(e.kind==='tp') {st.pos=e.remaining;st.real=e.banked/RISK;}
+      if(e.kind==='be') st.stop=S.entry;
+      if(e.kind==='close') {st.pos=0;st.closed=true;st.real=S.r_multiple;}
+    } return st;
+  }
+  function partialCandle(c,t) {
+    if (t >= c.t + STEP) return c;
+    const anchors=[{t:c.t,p:c.o}, ...EV.filter(e => e.px && e.ts>c.t && e.ts<c.t+STEP && e.px>=c.l && e.px<=c.h).map(e=>({t:e.ts,p:e.px})), {t:c.t+STEP,p:c.c}];
+    const next=anchors.findIndex(a=>a.t>=t), a=anchors[Math.max(0,next-1)], b=anchors[next];
+    const price=a.p+(b.p-a.p)*(t-a.t)/Math.max(1,b.t-a.t);
+    const seen=[c.o,price,...anchors.filter(a=>a.t<=t).map(a=>a.p)];
+    return {...c,c:price,h:Math.max(...seen),l:Math.min(...seen)};
+  }
+  function wrap(text, maxW, font) { ctx.font = font; const words = text.split(' '), lines = []; let line = ''; for (const w of words) { const t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; } if (line) lines.push(line); return lines; }
+  function rr(x, y, w, h, r) { r = Math.max(0, Math.min(r, h / 2, w / 2)); ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
+
+  function draw() {
+    const dpr = devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+    cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const small = w < 700, F = small ? 12 : 15, padL = 10, padR = small ? 74 : 96, padT = small ? 124 : 122, padB = small ? 54 : 60;
+    ctx.clearRect(0, 0, w, h);
+    const x = t => padL + (t - T0) / (XEND - T0) * (w - padL - padR);
+    const y = p => padT + (PHI - p) / (PHI - PLO) * (h - padT - padB);
+    const st = state(now), vis = C.filter(c => c.t < now).map(c => partialCandle(c, now)), labels = [], lastC = vis[vis.length - 1];
+    const ap = anim ? Math.min(1, (performance.now() - anim.start) / ANIM_MS) : 1;
+    if (anim && ap >= 1) anim = null;
+    const alertUp = !!anim && anim.ev.kind === 'level' && ap < 0.92;
+    const settled = e => now >= e.ts && !(alertUp && anim.ev === e);   // the step's chart elements appear once its alert has settled
+    const strip = { x: padL + 8, y: small ? 56 : 54, w: w - padL - padR - 16, h: small ? 56 : 60 };
+    ctx.textBaseline = 'middle';
+    // grid + axes
+    for (let p = PLO; p <= PHI; p += 500) {
+      ctx.strokeStyle = p % 1000 === 0 ? css('--axis') : css('--grid'); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, y(p)); ctx.lineTo(w - padR, y(p)); ctx.stroke();
+      if (p % 1000 === 0 || !small) { ctx.fillStyle = css('--ink-2'); ctx.font = `${F}px Inter, system-ui, sans-serif`; ctx.textAlign = 'left'; ctx.fillText(fmt(p), w - padR + 10, y(p)); }
+    }
+    const axisStep=T1-T0<86400000?3600000:86400000;
+    for(let t=Math.ceil(T0/axisStep)*axisStep;t<XEND;t+=axisStep) {
+      ctx.strokeStyle=css('--axis');ctx.beginPath();ctx.moveTo(x(t),padT);ctx.lineTo(x(t),h-padB+6);ctx.stroke();
+      ctx.fillStyle=css('--ink-2');ctx.font=`${F}px Inter,system-ui,sans-serif`;ctx.textAlign='center';
+      ctx.fillText(new Date(t).toISOString().slice(axisStep===3600000?11:8,axisStep===3600000?16:10),x(t),h-padB+22);
+    }
+    // zones and levels, each appearing with its step
+    const band = { x: padL, y: y(D.zone[1]), w: w - padL - padR, h: y(D.zone[0]) - y(D.zone[1]) };
+    if (settled(E('level'))) { ctx.fillStyle = css('--resist'); ctx.fillRect(band.x, band.y, band.w, band.h); ctx.strokeStyle = css('--down'); ctx.lineWidth = 1; ctx.strokeRect(band.x, band.y, band.w, band.h); labels.push({ text: D.zone_label, y: y((D.zone[0]+D.zone[1])/2), col: css('--down'), side: 'left' }); }
+    if (settled(E('armed')) && !st.filled) hline(ARM_PX, css('--trig'), [10, 5], 'ENTRY GUIDE ' + fmt(ARM_PX));
+    // candles
+    const slot = (w - padL - padR) / ((XEND - T0) / STEP), cw = Math.max(3, slot * 0.68);
+    for (let i = 0; i < vis.length; i++) {
+      const c = vis[i], up = c.c >= c.o, col = up ? css('--up') : css('--down'), cx = x(c.t) + slot / 2, last = i === vis.length - 1;
+      ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(cx, y(c.h)); ctx.lineTo(cx, y(c.l)); ctx.stroke();
+      ctx.fillStyle = col; const top = y(Math.max(c.o, c.c)), bh = Math.max(1.5, Math.abs(y(c.o) - y(c.c)));
+      if (last) { ctx.shadowColor = col; ctx.shadowBlur = 14; }
+      ctx.fillRect(cx - cw / 2, top, cw, bh); ctx.shadowBlur = 0;
+    }
+    if (lastC) { const col = lastC.c >= lastC.o ? css('--up') : css('--down'); ctx.strokeStyle = col; ctx.setLineDash([2, 4]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, y(lastC.c)); ctx.lineTo(w - padR, y(lastC.c)); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = col; rr(w - padR + 2, y(lastC.c) - 12, padR - 6, 24, 5); ctx.fill(); ctx.fillStyle = '#06100a'; ctx.font = `bold ${F}px Inter, system-ui, sans-serif`; ctx.textAlign = 'left'; ctx.fillText(fmt(lastC.c), w - padR + 10, y(lastC.c)); }
+    // after the fill: entry, stop, targets, markers
+    if (st.filled && settled(E('fill'))) {
+      hline(S.entry, css('--entry'), [], D.direction.toUpperCase()+' ' + fmt(S.entry));
+      if (!st.closed && st.stop !== null) hline(st.stop, css('--stop'), [8, 4], st.stop === S.entry ? 'SL at breakeven ' + fmt(S.entry) : 'STOP ' + fmt(st.stop));
+      st.tps.forEach((p, i) => { const hit = EV.some(e => (e.kind === 'tp' && e.index === i) && settled(e)); hline(p, css('--tp'), hit ? [] : [3, 5], 'TP' + (i + 1) + ' ' + fmt(p) + (hit ? '  ✓' : '')); });
+
+    }
+    // line labels, staggered per side
+    for (const side of ['left', 'right']) {
+      const L = labels.filter(l => l.side === side).sort((a, b) => a.y - b.y);
+      for (let i = 1; i < L.length; i++) if (L[i].y < L[i - 1].y + F + 4) L[i].y = L[i - 1].y + F + 4;
+      for (let i = L.length - 2; i >= 0; i--) if (L[i].y > L[i + 1].y - F - 4) L[i].y = L[i + 1].y - F - 4;
+      for (const l of L) { ctx.font = `600 ${F - 2}px Inter, system-ui, sans-serif`; const tw = ctx.measureText(l.text).width; const tx = side === 'left' ? padL + 8 : w - padR - 8; ctx.textAlign = side;
+        ctx.fillStyle = 'rgba(10,14,20,0.82)'; rr(side === 'left' ? tx - 5 : tx - tw - 5, l.y - F / 2 - 3, tw + 10, F + 6, 4); ctx.fill(); ctx.fillStyle = l.col; ctx.fillText(l.text, tx, l.y); }
+    }
+    // HUD
+    const hud = [['STATUS', st.closed ? 'CLOSED' : st.filled ? D.direction.toUpperCase()+' OPEN' : now >= T.armed ? 'ENTRY READY' : 'WATCHING'],
+                 ['POSITION', st.pos + '%'], ['BANKED', (st.real >= 0 ? '+' : '') + st.real.toFixed(2) + ' R'],
+                 ['OPEN P&L', st.filled && !st.closed && lastC ? ((DIR*(lastC.c-S.entry)) / RISK * st.pos / 100 >= 0 ? '+' : '') + ((DIR*(lastC.c-S.entry)) / RISK * st.pos / 100).toFixed(2) + ' R' : '—'],
+                 ['STOP', st.filled && !st.closed && st.stop !== null ? (st.stop === S.entry ? 'ENTRY' : fmt(st.stop)) : '—']];
+    let hx = padL + 8; const hy = 14;
+    for (const [k, v] of hud) { ctx.font = `600 ${small ? 9 : 10}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--muted'); ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText(k, hx, hy);
+      ctx.font = `700 ${small ? 14 : 18}px Inter, system-ui, sans-serif`; ctx.fillStyle = k === 'BANKED' && st.real > 0 ? css('--tp') : css('--ink'); ctx.fillText(v, hx, hy + (small ? 12 : 14));
+      hx += Math.max(ctx.measureText(v).width, 60) + (small ? 16 : 30); if (small && hx > w - 120) break; }
+    ctx.textBaseline = 'middle';
+    // step tracker
+    const n = EV.length, trackW = Math.min(w - padL - padR, 520), tx0 = padL + 8, ty = h - 16;
+    for (let i = 0; i < n; i++) { const e = EV[i], done = e.ts <= now, cx = tx0 + i * (trackW / (n - 1)); ctx.fillStyle = done ? css(WHO[e.who][1]) : css('--axis'); ctx.beginPath(); ctx.arc(cx, ty, done ? 7 : 5, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = done ? '#06100a' : css('--muted'); ctx.font = `700 9px Inter, system-ui, sans-serif`; ctx.textAlign = 'center'; ctx.fillText(String(e.step), cx, ty + 0.5); }
+    // caption strip above the candles: badge, time, headline; during the wait phase a single word underneath: WAIT
+    const cur = [...EV].reverse().find(e => e.ts <= now);
+    if (cur && !alertUp) {
+      const col = css(WHO[cur.who][1]), sub = cur.kind === 'armed' && !st.filled ? 'WAIT' : '';
+      ctx.fillStyle = 'rgba(17,24,33,0.88)'; rr(strip.x, strip.y, strip.w, strip.h, 9); ctx.fill(); ctx.strokeStyle = col; ctx.lineWidth = 1; rr(strip.x, strip.y, strip.w, strip.h, 9); ctx.stroke(); ctx.fillStyle = col; ctx.fillRect(strip.x, strip.y + 9, 3, strip.h - 18);
+      const ty2 = sub ? strip.y + (small ? 15 : 18) : strip.y + strip.h / 2;
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      ctx.font = `700 ${small ? 9 : 10}px Inter, system-ui, sans-serif`; ctx.fillStyle = col; const tag = WHO[cur.who][0] + '  ·  ' + fmtT(cur.ts); ctx.fillText(tag, strip.x + 14, ty2);
+      const tw = ctx.measureText(tag).width;
+      ctx.font = `700 ${small ? 14 : 19}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--ink'); ctx.fillText(`${cur.step}. ${cur.title}`, strip.x + 14 + tw + (small ? 12 : 22), ty2);
+      if (sub) { ctx.font = `800 ${small ? 14 : 18}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--trig'); ctx.fillText(sub, strip.x + 14, strip.y + (small ? 40 : 44)); }
+      const ax = x(cur.ts) + slot / 2; if (cur.px && ax > padL && ax < w - padR) { ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(ax, strip.y + strip.h); ctx.lineTo(ax, y(cur.px) - 9); ctx.stroke(); ctx.setLineDash([]); }
+    }
+    // the alert: pops up in the middle with a pulse, holds, then settles into the resistance box (step 1) or the caption strip
+    if (anim && anim.ev.kind === 'level') {
+      const e = anim.ev, col = css(WHO[e.who][1]), red = css('--down'), toBand = e.kind === 'level';
+      const pw = Math.min(small ? w - 40 : 560, w - padL - padR - 40);
+      const headline = `${e.step}. ${e.title}`;
+      let fs = small ? 18 : 26, lines = wrap(headline, pw - 40, `800 ${fs}px Inter, system-ui, sans-serif`);
+      if (lines.length > 2) { fs = small ? 15 : 21; lines = wrap(headline, pw - 40, `800 ${fs}px Inter, system-ui, sans-serif`); }
+      const ph = (small ? 44 : 56) + lines.length * (fs + 6);
+      const cx0 = (padL + w - padR) / 2, cy0 = padT + (h - padT - padB) * 0.42;
+      const pop = { x: cx0 - pw / 2, y: cy0 - ph / 2, w: pw, h: ph }, target = toBand ? band : strip;
+      let rect, scale = 1, textA = 1, mix = 0, glow = 0;
+      if (ap < 0.14) { scale = 0.6 + 0.4 * ease(ap / 0.14); rect = pop; textA = ease(ap / 0.14); glow = 28; }
+      else if (ap < 0.58) { rect = pop; glow = 22 + 16 * Math.sin((ap - 0.14) / 0.44 * Math.PI * 3); }
+      else if (ap < 0.92) { const m = ease((ap - 0.58) / 0.34); mix = m; textA = Math.max(0, 1 - m * 1.8); rect = { x: pop.x + (target.x - pop.x) * m, y: pop.y + (target.y - pop.y) * m, w: pop.w + (target.w - pop.w) * m, h: pop.h + (target.h - pop.h) * m }; glow = 20 * (1 - m); }
+      else { rect = target; textA = 0; mix = 1; }
+      const endCol = toBand ? red : col;
+      ctx.save();
+      ctx.translate(rect.x + rect.w / 2, rect.y + rect.h / 2); ctx.scale(scale, scale); ctx.translate(-(rect.x + rect.w / 2), -(rect.y + rect.h / 2));
+      ctx.shadowColor = mix < 0.5 ? col : endCol; ctx.shadowBlur = glow;
+      if (toBand) ctx.fillStyle = mix < 1 ? `rgba(${Math.round(17 + (239 - 17) * mix)},${Math.round(24 + (68 - 24) * mix)},${Math.round(33 + (68 - 33) * mix)},${0.95 - 0.8 * mix})` : css('--resist');
+      else ctx.fillStyle = `rgba(17,24,33,${0.95 - 0.07 * mix})`;
+      rr(rect.x, rect.y, rect.w, rect.h, 12 - 3 * mix); ctx.fill(); ctx.shadowBlur = 0;
+      ctx.strokeStyle = mix < 0.5 ? col : endCol; ctx.lineWidth = 2 - mix; rr(rect.x, rect.y, rect.w, rect.h, 12 - 3 * mix); ctx.stroke();
+      if (textA > 0) {
+        ctx.globalAlpha = textA; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.font = `700 ${small ? 9 : 11}px Inter, system-ui, sans-serif`; ctx.fillStyle = col; ctx.fillText(WHO[e.who][0] + '  ·  ' + fmtT(e.ts), rect.x + rect.w / 2, rect.y + (small ? 16 : 22));
+        ctx.font = `800 ${fs}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--ink');
+        const y0 = rect.y + (small ? 32 : 42) + ((rect.h - (small ? 32 : 42)) - lines.length * (fs + 6)) / 2 + (fs + 6) / 2;
+        lines.forEach((l, i) => ctx.fillText(l, rect.x + rect.w / 2, y0 + i * (fs + 6)));
+        ctx.globalAlpha = 1;
+      }
+      ctx.restore();
+    }
+    // result card at the end
+    if (st.closed && !alertUp) {
+      const bw = small ? Math.min(300, w - 24) : 360, bh = small ? 150 : 170, bx = padL + 12, by = h - padB - bh - 14;
+      ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 30; ctx.fillStyle = css('--panel'); rr(bx, by, bw, bh, 12); ctx.fill(); ctx.shadowBlur = 0; ctx.strokeStyle = css('--tp'); rr(bx, by, bw, bh, 12); ctx.stroke();
+      ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillStyle = css('--muted'); ctx.font = `700 10px Inter, system-ui, sans-serif`; ctx.fillText('RECORDED BOT RESULT', bx + 16, by + 12);
+      ctx.fillStyle = css(S.r_multiple>=0?'--tp':'--down'); ctx.font = `800 ${small ? 28 : 34}px Inter, system-ui, sans-serif`; ctx.fillText((S.r_multiple>=0?'+':'') + S.r_multiple.toFixed(2) + ' R', bx + 16, by + 26);
+      ctx.fillStyle = css('--ink'); ctx.font = `600 ${small ? 13 : 15}px Inter, system-ui, sans-serif`; ctx.fillText(`${S.move_pct>=0?"+":""}${S.move_pct.toFixed(2)}% recorded · initial risk ${S.risk_pct.toFixed(2)}%`, bx + 16, by + (small ? 62 : 72));
+      ctx.fillStyle = css('--ink-2'); ctx.font = `${small ? 12 : 13}px Inter, system-ui, sans-serif`;
+      D.result_lines.forEach((l, i) => ctx.fillText(l, bx + 16, by + (small ? 84 : 98) + i * (small ? 18 : 20)));
+      ctx.textBaseline = 'middle';
+    }
+    function hline(p, col, dash, text, side) { ctx.strokeStyle = col; ctx.lineWidth = 1.4; ctx.setLineDash(dash); ctx.beginPath(); ctx.moveTo(padL, y(p)); ctx.lineTo(w - padR, y(p)); ctx.stroke(); ctx.setLineDash([]); if (text) labels.push({ text, y: y(p), col, side: side || 'right' }); }
+  }
+  let captionKey = '';
+  function render() {
+    $('clock').textContent=fmtT(now); $('scrub').value=Math.round((now-T0)/(T1-T0)*1000);
+    const cur=[...EV].reverse().find(e=>e.ts<=now);
+    const text=state(now).closed ? `${E('close').step}. Trade closed · ${S.r_multiple>=0?'+':''}${S.r_multiple.toFixed(2)}R` : cur ? `${cur.step}. ${cur.title}` : 'Watching the approach to resistance';
+    if(text!==captionKey) { $('eventCaption').textContent=text; captionKey=text; }
+    draw();
+  }
+  function tick(ts) {
+    if (!playing) return;
+    if (!lastFrame) lastFrame=ts;
+    const dt=Math.min(ts-lastFrame,100); lastFrame=ts;
+    if(stepHoldMs>0) { stepHoldMs=Math.max(0,stepHoldMs-dt); render(); requestAnimationFrame(tick); return; }
+    if(now>=T1) { playing=false; anim=null; $('play').textContent='▶ Replay'; render(); return; }
+    const tp2=Infinity;
+    const per=D.per;
+    const destination=Math.min(T1,now+dt*speed/per*STEP);
+    const hit=EV.find(e=>e.ts>now && e.ts<=destination && !fired.has(e));
+    if(hit) {
+      now=hit.ts; fired.add(hit); anim={start:ts,ev:hit}; stepHoldMs=2000;
+    } else now=destination;
+    render(); requestAnimationFrame(tick);
+  }
+  function openingIntro() {
+    fired.add(E('level')); anim={start:performance.now(),ev:E('level')}; stepHoldMs=2000;
+  }
+  function restart() {
+    now=T0; fired.clear(); anim=null; stepHoldMs=0; lastFrame=0; openingIntro();
+    const wasPlaying=playing; playing=true; $('play').textContent='❚❚ Pause'; render();
+    if(!wasPlaying) requestAnimationFrame(tick);
+  }
+  $('play').addEventListener('click',()=>{
+    if(now>=T1) { restart(); return; }
+    playing=!playing; $('play').textContent=playing?'❚❚ Pause':'▶ Play'; lastFrame=0;
+    if(playing) requestAnimationFrame(tick);
+  });
+  $('restart').addEventListener('click',restart);
+  document.querySelectorAll('.spd').forEach(b => b.addEventListener('click', () => { speed = +b.dataset.s; document.querySelectorAll('.spd').forEach(x => x.setAttribute('aria-pressed', x === b)); }));
+  $('scrub').addEventListener('input',e=>{
+    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; stepHoldMs=0; lastFrame=0;
+    EV.forEach(ev=>{if(ev.ts<=now) fired.add(ev); else fired.delete(ev);});
+    if(now>=T1) { playing=false; $('play').textContent='▶ Replay'; }
+    render();
+  });
+  window.addEventListener('resize', render);
+  $('play').textContent='❚❚ Pause';
+  openingIntro();
+  render();
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>

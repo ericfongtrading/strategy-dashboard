@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BATISTUTA Trade Replay</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* One full-width dark chart. Only step 1 pops up as an alert in the middle of the chart, then settles into the caption strip
+   above the candles (step 1 settles into the resistance box instead). Dark in both modes by design. */
+:root {
+  --bg: #07090d; --bg2: #0d1117; --panel: rgba(13,17,23,0.92); --ink: #e8eaf0; --ink-2: #aab2c0; --muted: #6b7484; --grid: #1a2029; --axis: #2a3340; --ring: rgba(255,255,255,0.08);
+  --up: #22c55e; --down: #ef4444; --entry: #60a5fa; --stop: #f87171; --tp: #34d399; --trig: #fbbf24; --zone: rgba(248,113,113,0.16); --resist: rgba(239,68,68,0.13);
+  --b-brain: #60a5fa; --b-exec: #34d399; --b-manager: #fbbf24; --b-video: #a78bfa; --b-market: #94a3b8; color-scheme: dark;
+}
+:root[data-theme="light"], :root[data-theme="dark"] { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(1200px 600px at 30% -10%, #141b26 0%, var(--bg) 60%); color: var(--ink); font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.4;
+  padding-block: 18px 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); min-height: 100vh; }
+main { max-width: 1280px; margin: 0 auto; display: grid; gap: 12px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+h1 { font-size: 1.3rem; margin: 0; letter-spacing: 0.01em; } .lede { color: var(--ink-2); margin: 0; font-size: 0.9rem; }
+.stage { position: relative; background: linear-gradient(180deg, #0e131b 0%, #0a0e14 100%); border: 1px solid var(--ring); border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.45); overflow: hidden; }
+canvas { width: 100%; height: 660px; display: block; }
+@media (max-width: 900px) { canvas { height: 520px; } }
+@media (max-width: 600px) { canvas { height: 440px; } }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; background: var(--bg2); border: 1px solid var(--ring); border-radius: 10px; padding: 10px 14px; }
+button { font: inherit; border: 1px solid var(--ring); background: #161c26; color: var(--ink); border-radius: 8px; padding: 7px 14px; cursor: pointer; }
+button:hover { background: #1c2430; }
+button.primary { background: var(--entry); color: #061018; border-color: transparent; min-width: 96px; font-weight: 600; }
+button[aria-pressed="true"] { outline: 2px solid var(--entry); }
+input[type=range] { flex: 1 1 240px; accent-color: var(--entry); }
+.clock { font-variant-numeric: tabular-nums; font-weight: 600; min-width: 160px; color: var(--ink-2); }
+label { font-size: 0.85rem; color: var(--ink-2); }
+.foot { color: var(--muted); font-size: 0.78rem; max-width: 100ch; margin: 0; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>BATISTUTA · BTC long at $77k, replayed</h1>
+    <p class="lede">15-minute candles · recorded trade events · UTC</p>
+  </header>
+  <p id="eventCaption" class="lede" aria-live="polite">Watching the approach to resistance</p>
+  <div class="stage"><canvas id="cv" aria-label="trade replay chart"></canvas></div>
+  <div class="bar" role="group" aria-label="playback">
+    <button class="primary" id="play">▶ Play</button>
+    <button id="restart" title="back to the start">↺</button>
+    <span style="color:var(--muted)">speed</span>
+    <button class="spd" data-s="1" aria-pressed="true">1×</button><button class="spd" data-s="2">2×</button><button class="spd" data-s="4">4×</button>
+    <input type="range" id="scrub" min="0" max="1000" value="0" aria-label="position in the replay">
+    <span class="clock" id="clock">—</span>
+
+  </div>
+  <p class="foot">Candles: Binance BTCUSDT spot; execution records: Hyperliquid and the bot journal. Candle bodies between closes are illustrative, not tick data. Step 1 is shown before candles as an introduction. 15-minute Binance candles show context for this 89-minute live position. Entry $77,434 and exchange exit $77,251 are verified Hyperliquid acknowledgments. The bot ledger instead recorded exit $77,282.10 and -$151.90 per accounting BTC; the result card follows that ledger to match the dashboard (-0.06R), not the live cash return. Exchange-price gross result is about -0.067R before fees. Protective lines are shown with entry for presentation; orders were acknowledged at 11:49 UTC. The close decision was recorded at 13:17:03 and exchange acknowledgment at 13:17:18 UTC.</p>
+</main>
+<!--DATA-->
+<script>
+window.REPLAY = {"slug": "batistuta", "name": "BATISTUTA", "direction": "long", "entry": 77434, "stop": 74700, "tps": [79450, 81050], "pcts": [50, 50], "zone": [76789, 77359.1], "zone_label": "Support: weekly $76,789 + VAH $77,359", "start": "2026-10-30T06:00:00Z", "interval": 900000, "per": 700, "pnl": -151.9, "close_reason": "Early exit: new Hyper short contradicted the long", "result_lines": ["No targets reached \u00b7 stop was not hit", "Closed by the contradiction guard", "Recorded result on 1 BTC accounting basis"], "events": [{"t": "2026-10-30T06:00:00Z", "kind": "level", "title": "Long setup at weekly support and value-area high", "who": "brain"}, {"t": "2026-10-30T11:45:20Z", "kind": "armed", "title": "Hourly reaction + oversold gate \u2014 long authorized", "who": "executor"}, {"t": "2026-10-30T11:48:43Z", "kind": "fill", "title": "LONG $77,434 \u00b7 SL and TP levels marked", "who": "executor", "px": 77434}, {"t": "2026-10-30T13:17:03Z", "kind": "decision", "title": "New Hyper short \u2014 close the conflicting long", "who": "brain"}, {"t": "2026-10-30T13:17:18Z", "kind": "close", "title": "Long closed early \u00b7 no TP or stop hit", "who": "executor", "px": 77251}], "foot": "15-minute Binance candles show context for this 89-minute live position. Entry $77,434 and exchange exit $77,251 are verified Hyperliquid acknowledgments. The bot ledger instead recorded exit $77,282.10 and -$151.90 per accounting BTC; the result card follows that ledger to match the dashboard (-0.06R), not the live cash return. Exchange-price gross result is about -0.067R before fees. Protective lines are shown with entry for presentation; orders were acknowledged at 11:49 UTC. The close decision was recorded at 13:17:03 and exchange acknowledgment at 13:17:18 UTC.", "candles": [{"t": "2026-10-30T06:00:00+00:00", "o": 78554.01, "h": 78670.01, "l": 78500.68, "c": 78649.67}, {"t": "2026-10-30T06:15:00+00:00", "o": 78649.67, "h": 78702.01, "l": 78549.88, "c": 78702.0}, {"t": "2026-10-30T06:30:00+00:00", "o": 78702.0, "h": 78804.01, "l": 78548.0, "c": 78551.79}, {"t": "2026-10-30T06:45:00+00:00", "o": 78551.78, "h": 78665.62, "l": 78418.0, "c": 78651.94}, {"t": "2026-10-30T07:00:00+00:00", "o": 78651.94, "h": 78657.52, "l": 78400.94, "c": 78400.95}, {"t": "2026-10-30T07:15:00+00:00", "o": 78400.94, "h": 78519.31, "l": 78400.94, "c": 78500.01}, {"t": "2026-10-30T07:30:00+00:00", "o": 78500.01, "h": 78579.36, "l": 78071.42, "c": 78092.61}, {"t": "2026-10-30T07:45:00+00:00", "o": 78092.61, "h": 78326.01, "l": 78042.01, "c": 78185.38}, {"t": "2026-10-30T08:00:00+00:00", "o": 78186.0, "h": 78197.92, "l": 77984.3, "c": 78130.98}, {"t": "2026-10-30T08:15:00+00:00", "o": 78130.99, "h": 78241.3, "l": 78005.0, "c": 78014.0}, {"t": "2026-10-30T08:30:00+00:00", "o": 78014.0, "h": 78085.83, "l": 77931.84, "c": 77962.01}, {"t": "2026-10-30T08:45:00+00:00", "o": 77962.0, "h": 78100.0, "l": 77911.0, "c": 78030.94}, {"t": "2026-10-30T09:00:00+00:00", "o": 78030.94, "h": 78045.28, "l": 77757.98, "c": 77786.09}, {"t": "2026-10-30T09:15:00+00:00", "o": 77786.09, "h": 77862.16, "l": 77639.4, "c": 77769.91}, {"t": "2026-10-30T09:30:00+00:00", "o": 77769.9, "h": 77782.41, "l": 77555.0, "c": 77730.31}, {"t": "2026-10-30T09:45:00+00:00", "o": 77730.32, "h": 77753.18, "l": 77600.01, "c": 77700.0}, {"t": "2026-10-30T10:00:00+00:00", "o": 77700.01, "h": 77700.01, "l": 77418.62, "c": 77463.98}, {"t": "2026-10-30T10:15:00+00:00", "o": 77463.98, "h": 77554.01, "l": 77345.88, "c": 77402.0}, {"t": "2026-10-30T10:30:00+00:00", "o": 77402.0, "h": 77772.3, "l": 77385.35, "c": 77700.11}, {"t": "2026-10-30T10:45:00+00:00", "o": 77700.12, "h": 77831.03, "l": 77531.45, "c": 77831.02}, {"t": "2026-10-30T11:00:00+00:00", "o": 77831.03, "h": 77866.01, "l": 77654.05, "c": 77696.81}, {"t": "2026-10-30T11:15:00+00:00", "o": 77696.81, "h": 77826.01, "l": 77570.0, "c": 77794.27}, {"t": "2026-10-30T11:30:00+00:00", "o": 77794.27, "h": 77804.62, "l": 77451.76, "c": 77451.77}, {"t": "2026-10-30T11:45:00+00:00", "o": 77451.77, "h": 77488.01, "l": 77239.14, "c": 77382.01}, {"t": "2026-10-30T12:00:00+00:00", "o": 77382.01, "h": 77584.9, "l": 77324.94, "c": 77566.0}, {"t": "2026-10-30T12:15:00+00:00", "o": 77566.0, "h": 77608.02, "l": 77462.0, "c": 77466.0}, {"t": "2026-10-30T12:30:00+00:00", "o": 77466.0, "h": 77528.01, "l": 77285.95, "c": 77333.63}, {"t": "2026-10-30T12:45:00+00:00", "o": 77333.63, "h": 77518.01, "l": 77333.62, "c": 77476.15}, {"t": "2026-10-30T13:00:00+00:00", "o": 77476.15, "h": 77476.15, "l": 77253.57, "c": 77343.36}, {"t": "2026-10-30T13:15:00+00:00", "o": 77343.36, "h": 77444.01, "l": 77277.68, "c": 77284.0}], "summary": {"entry": 77434, "stop": 74700, "tps": [79450, 81050], "r_multiple": -0.0555596196049744, "move_pct": -0.1961670583981197, "risk_pct": 3.530748766691634}};
+</script>
+<!--/DATA-->
+<script>
+(function () {
+  const D = window.REPLAY; if (!D) { document.body.insertAdjacentHTML('afterbegin', '<p style="color:#f87171">data missing</p>'); return; }
+  const C = D.candles.map(c => ({ t: Date.parse(c.t), o: c.o, h: c.h, l: c.l, c: c.c }));
+  const EV = D.events.map((e,i)=>({...e,step:i+1,ts:Date.parse(e.t)}));
+  const S=D.summary, STEP=D.interval, RISK=Math.abs(S.entry-S.stop), DIR=D.direction==='long'?1:-1;
+  const E=k=>EV.find(e=>e.kind===k), T0=C[0].t,T1=E('close').ts,XEND=T1+(T1-T0)*0.15;
+  const range=[...C.flatMap(c=>[c.h,c.l]),S.stop,...S.tps];
+  const PLO=Math.floor((Math.min(...range)-400)/500)*500,PHI=Math.ceil((Math.max(...range)+400)/500)*500;
+  const ARM_PX=S.entry,T={step1:E('level').ts,armed:E('armed').ts,fill:E('fill').ts};
+  EV.sort((a,b)=>a.ts-b.ts);
+  EV.forEach((e,i)=>{ e.step=i+1; });
+  const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+  const cv = document.getElementById('cv'), ctx = cv.getContext('2d');
+  const $ = id => document.getElementById(id);
+  const fmt = p => '$' + Math.round(p).toLocaleString();
+  const fmtT = ms => new Date(ms).toISOString().slice(5, 16).replace('T', ' ') + ' UTC';
+  const WHO = { brain: ['AI BRAIN', '--b-brain'], executor: ['EXECUTOR', '--b-exec'], manager: ['MANAGER', '--b-manager'], video: ['ANALYST VIDEO', '--b-video'], market: ['MARKET', '--b-market'] };
+  let now = T0, playing = true, speed = 1, lastFrame = 0, acc = 0, fired = new Set();
+  let anim = null;                                              // {start, ev}: the step alert popping up and settling into place
+  const ANIM_MS = 2000;
+  let stepHoldMs = 0;
+  const ease = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  function state(t) {
+    const st={filled:false,closed:false,pos:0,real:0,stop:null,tps:[]};
+    for(const e of EV) { if(e.ts>t) break;
+      if(e.kind==='fill') {st.filled=true;st.pos=100;st.stop=S.stop;st.tps=S.tps;}
+      if(e.kind==='tp') {st.pos=e.remaining;st.real=e.banked/RISK;}
+      if(e.kind==='be') st.stop=S.entry;
+      if(e.kind==='close') {st.pos=0;st.closed=true;st.real=S.r_multiple;}
+    } return st;
+  }
+  function partialCandle(c,t) {
+    if (t >= c.t + STEP) return c;
+    const anchors=[{t:c.t,p:c.o}, ...EV.filter(e => e.px && e.ts>c.t && e.ts<c.t+STEP && e.px>=c.l && e.px<=c.h).map(e=>({t:e.ts,p:e.px})), {t:c.t+STEP,p:c.c}];
+    const next=anchors.findIndex(a=>a.t>=t), a=anchors[Math.max(0,next-1)], b=anchors[next];
+    const price=a.p+(b.p-a.p)*(t-a.t)/Math.max(1,b.t-a.t);
+    const seen=[c.o,price,...anchors.filter(a=>a.t<=t).map(a=>a.p)];
+    return {...c,c:price,h:Math.max(...seen),l:Math.min(...seen)};
+  }
+  function wrap(text, maxW, font) { ctx.font = font; const words = text.split(' '), lines = []; let line = ''; for (const w of words) { const t = line ? line + ' ' + w : w; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = w; } else line = t; } if (line) lines.push(line); return lines; }
+  function rr(x, y, w, h, r) { r = Math.max(0, Math.min(r, h / 2, w / 2)); ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); }
+
+  function draw() {
+    const dpr = devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+    cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const small = w < 700, F = small ? 12 : 15, padL = 10, padR = small ? 74 : 96, padT = small ? 124 : 122, padB = small ? 54 : 60;
+    ctx.clearRect(0, 0, w, h);
+    const x = t => padL + (t - T0) / (XEND - T0) * (w - padL - padR);
+    const y = p => padT + (PHI - p) / (PHI - PLO) * (h - padT - padB);
+    const st = state(now), vis = C.filter(c => c.t < now).map(c => partialCandle(c, now)), labels = [], lastC = vis[vis.length - 1];
+    const ap = anim ? Math.min(1, (performance.now() - anim.start) / ANIM_MS) : 1;
+    if (anim && ap >= 1) anim = null;
+    const alertUp = !!anim && anim.ev.kind === 'level' && ap < 0.92;
+    const settled = e => now >= e.ts && !(alertUp && anim.ev === e);   // the step's chart elements appear once its alert has settled
+    const strip = { x: padL + 8, y: small ? 56 : 54, w: w - padL - padR - 16, h: small ? 56 : 60 };
+    ctx.textBaseline = 'middle';
+    // grid + axes
+    for (let p = PLO; p <= PHI; p += 500) {
+      ctx.strokeStyle = p % 1000 === 0 ? css('--axis') : css('--grid'); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, y(p)); ctx.lineTo(w - padR, y(p)); ctx.stroke();
+      if (p % 1000 === 0 || !small) { ctx.fillStyle = css('--ink-2'); ctx.font = `${F}px Inter, system-ui, sans-serif`; ctx.textAlign = 'left'; ctx.fillText(fmt(p), w - padR + 10, y(p)); }
+    }
+    const axisStep=T1-T0<86400000?3600000:86400000;
+    for(let t=Math.ceil(T0/axisStep)*axisStep;t<XEND;t+=axisStep) {
+      ctx.strokeStyle=css('--axis');ctx.beginPath();ctx.moveTo(x(t),padT);ctx.lineTo(x(t),h-padB+6);ctx.stroke();
+      ctx.fillStyle=css('--ink-2');ctx.font=`${F}px Inter,system-ui,sans-serif`;ctx.textAlign='center';
+      ctx.fillText(new Date(t).toISOString().slice(axisStep===3600000?11:8,axisStep===3600000?16:10),x(t),h-padB+22);
+    }
+    // zones and levels, each appearing with its step
+    const band = { x: padL, y: y(D.zone[1]), w: w - padL - padR, h: y(D.zone[0]) - y(D.zone[1]) };
+    if (settled(E('level'))) { ctx.fillStyle = css('--resist'); ctx.fillRect(band.x, band.y, band.w, band.h); ctx.strokeStyle = css('--up'); ctx.lineWidth = 1; ctx.strokeRect(band.x, band.y, band.w, band.h); labels.push({ text: D.zone_label, y: y((D.zone[0]+D.zone[1])/2), col: css('--up'), side: 'left' }); }
+    if (settled(E('armed')) && !st.filled) hline(ARM_PX, css('--trig'), [10, 5], 'ENTRY GUIDE ' + fmt(ARM_PX));
+    // candles
+    const slot = (w - padL - padR) / ((XEND - T0) / STEP), cw = Math.max(3, slot * 0.68);
+    for (let i = 0; i < vis.length; i++) {
+      const c = vis[i], up = c.c >= c.o, col = up ? css('--up') : css('--down'), cx = x(c.t) + slot / 2, last = i === vis.length - 1;
+      ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.moveTo(cx, y(c.h)); ctx.lineTo(cx, y(c.l)); ctx.stroke();
+      ctx.fillStyle = col; const top = y(Math.max(c.o, c.c)), bh = Math.max(1.5, Math.abs(y(c.o) - y(c.c)));
+      if (last) { ctx.shadowColor = col; ctx.shadowBlur = 14; }
+      ctx.fillRect(cx - cw / 2, top, cw, bh); ctx.shadowBlur = 0;
+    }
+    if (lastC) { const col = lastC.c >= lastC.o ? css('--up') : css('--down'); ctx.strokeStyle = col; ctx.setLineDash([2, 4]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(padL, y(lastC.c)); ctx.lineTo(w - padR, y(lastC.c)); ctx.stroke(); ctx.setLineDash([]);
+      ctx.fillStyle = col; rr(w - padR + 2, y(lastC.c) - 12, padR - 6, 24, 5); ctx.fill(); ctx.fillStyle = '#06100a'; ctx.font = `bold ${F}px Inter, system-ui, sans-serif`; ctx.textAlign = 'left'; ctx.fillText(fmt(lastC.c), w - padR + 10, y(lastC.c)); }
+    // after the fill: entry, stop, targets, markers
+    if (st.filled && settled(E('fill'))) {
+      hline(S.entry, css('--entry'), [], D.direction.toUpperCase()+' ' + fmt(S.entry));
+      if (!st.closed && st.stop !== null) hline(st.stop, css('--stop'), [8, 4], st.stop === S.entry ? 'SL at breakeven ' + fmt(S.entry) : 'STOP ' + fmt(st.stop));
+      st.tps.forEach((p, i) => { const hit = EV.some(e => (e.kind === 'tp' && e.index === i) && settled(e)); hline(p, css('--tp'), hit ? [] : [3, 5], 'TP' + (i + 1) + ' ' + fmt(p) + (hit ? '  ✓' : '')); });
+
+    }
+    // line labels, staggered per side
+    for (const side of ['left', 'right']) {
+      const L = labels.filter(l => l.side === side).sort((a, b) => a.y - b.y);
+      for (let i = 1; i < L.length; i++) if (L[i].y < L[i - 1].y + F + 4) L[i].y = L[i - 1].y + F + 4;
+      for (let i = L.length - 2; i >= 0; i--) if (L[i].y > L[i + 1].y - F - 4) L[i].y = L[i + 1].y - F - 4;
+      for (const l of L) { ctx.font = `600 ${F - 2}px Inter, system-ui, sans-serif`; const tw = ctx.measureText(l.text).width; const tx = side === 'left' ? padL + 8 : w - padR - 8; ctx.textAlign = side;
+        ctx.fillStyle = 'rgba(10,14,20,0.82)'; rr(side === 'left' ? tx - 5 : tx - tw - 5, l.y - F / 2 - 3, tw + 10, F + 6, 4); ctx.fill(); ctx.fillStyle = l.col; ctx.fillText(l.text, tx, l.y); }
+    }
+    // HUD
+    const hud = [['STATUS', st.closed ? 'CLOSED' : st.filled ? D.direction.toUpperCase()+' OPEN' : now >= T.armed ? 'ENTRY READY' : 'WATCHING'],
+                 ['POSITION', st.pos + '%'], ['BANKED', (st.real >= 0 ? '+' : '') + st.real.toFixed(2) + ' R'],
+                 ['OPEN P&L', st.filled && !st.closed && lastC ? ((DIR*(lastC.c-S.entry)) / RISK * st.pos / 100 >= 0 ? '+' : '') + ((DIR*(lastC.c-S.entry)) / RISK * st.pos / 100).toFixed(2) + ' R' : '—'],
+                 ['STOP', st.filled && !st.closed && st.stop !== null ? (st.stop === S.entry ? 'ENTRY' : fmt(st.stop)) : '—']];
+    let hx = padL + 8; const hy = 14;
+    for (const [k, v] of hud) { ctx.font = `600 ${small ? 9 : 10}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--muted'); ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillText(k, hx, hy);
+      ctx.font = `700 ${small ? 14 : 18}px Inter, system-ui, sans-serif`; ctx.fillStyle = k === 'BANKED' && st.real > 0 ? css('--tp') : css('--ink'); ctx.fillText(v, hx, hy + (small ? 12 : 14));
+      hx += Math.max(ctx.measureText(v).width, 60) + (small ? 16 : 30); if (small && hx > w - 120) break; }
+    ctx.textBaseline = 'middle';
+    // step tracker
+    const n = EV.length, trackW = Math.min(w - padL - padR, 520), tx0 = padL + 8, ty = h - 16;
+    for (let i = 0; i < n; i++) { const e = EV[i], done = e.ts <= now, cx = tx0 + i * (trackW / (n - 1)); ctx.fillStyle = done ? css(WHO[e.who][1]) : css('--axis'); ctx.beginPath(); ctx.arc(cx, ty, done ? 7 : 5, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = done ? '#06100a' : css('--muted'); ctx.font = `700 9px Inter, system-ui, sans-serif`; ctx.textAlign = 'center'; ctx.fillText(String(e.step), cx, ty + 0.5); }
+    // caption strip above the candles: badge, time, headline; during the wait phase a single word underneath: WAIT
+    const cur = [...EV].reverse().find(e => e.ts <= now);
+    if (cur && !alertUp) {
+      const col = css(WHO[cur.who][1]), sub = cur.kind === 'armed' && !st.filled ? 'WAIT' : '';
+      ctx.fillStyle = 'rgba(17,24,33,0.88)'; rr(strip.x, strip.y, strip.w, strip.h, 9); ctx.fill(); ctx.strokeStyle = col; ctx.lineWidth = 1; rr(strip.x, strip.y, strip.w, strip.h, 9); ctx.stroke(); ctx.fillStyle = col; ctx.fillRect(strip.x, strip.y + 9, 3, strip.h - 18);
+      const ty2 = sub ? strip.y + (small ? 15 : 18) : strip.y + strip.h / 2;
+      ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+      ctx.font = `700 ${small ? 9 : 10}px Inter, system-ui, sans-serif`; ctx.fillStyle = col; const tag = WHO[cur.who][0] + '  ·  ' + fmtT(cur.ts); ctx.fillText(tag, strip.x + 14, ty2);
+      const tw = ctx.measureText(tag).width;
+      ctx.font = `700 ${small ? 14 : 19}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--ink'); ctx.fillText(`${cur.step}. ${cur.title}`, strip.x + 14 + tw + (small ? 12 : 22), ty2);
+      if (sub) { ctx.font = `800 ${small ? 14 : 18}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--trig'); ctx.fillText(sub, strip.x + 14, strip.y + (small ? 40 : 44)); }
+      const ax = x(cur.ts) + slot / 2; if (cur.px && ax > padL && ax < w - padR) { ctx.strokeStyle = col; ctx.lineWidth = 1.2; ctx.setLineDash([3, 4]); ctx.beginPath(); ctx.moveTo(ax, strip.y + strip.h); ctx.lineTo(ax, y(cur.px) - 9); ctx.stroke(); ctx.setLineDash([]); }
+    }
+    // the alert: pops up in the middle with a pulse, holds, then settles into the resistance box (step 1) or the caption strip
+    if (anim && anim.ev.kind === 'level') {
+      const e = anim.ev, col = css(WHO[e.who][1]), red = css('--up'), toBand = e.kind === 'level';
+      const pw = Math.min(small ? w - 40 : 560, w - padL - padR - 40);
+      const headline = `${e.step}. ${e.title}`;
+      let fs = small ? 18 : 26, lines = wrap(headline, pw - 40, `800 ${fs}px Inter, system-ui, sans-serif`);
+      if (lines.length > 2) { fs = small ? 15 : 21; lines = wrap(headline, pw - 40, `800 ${fs}px Inter, system-ui, sans-serif`); }
+      const ph = (small ? 44 : 56) + lines.length * (fs + 6);
+      const cx0 = (padL + w - padR) / 2, cy0 = padT + (h - padT - padB) * 0.42;
+      const pop = { x: cx0 - pw / 2, y: cy0 - ph / 2, w: pw, h: ph }, target = toBand ? band : strip;
+      let rect, scale = 1, textA = 1, mix = 0, glow = 0;
+      if (ap < 0.14) { scale = 0.6 + 0.4 * ease(ap / 0.14); rect = pop; textA = ease(ap / 0.14); glow = 28; }
+      else if (ap < 0.58) { rect = pop; glow = 22 + 16 * Math.sin((ap - 0.14) / 0.44 * Math.PI * 3); }
+      else if (ap < 0.92) { const m = ease((ap - 0.58) / 0.34); mix = m; textA = Math.max(0, 1 - m * 1.8); rect = { x: pop.x + (target.x - pop.x) * m, y: pop.y + (target.y - pop.y) * m, w: pop.w + (target.w - pop.w) * m, h: pop.h + (target.h - pop.h) * m }; glow = 20 * (1 - m); }
+      else { rect = target; textA = 0; mix = 1; }
+      const endCol = toBand ? red : col;
+      ctx.save();
+      ctx.translate(rect.x + rect.w / 2, rect.y + rect.h / 2); ctx.scale(scale, scale); ctx.translate(-(rect.x + rect.w / 2), -(rect.y + rect.h / 2));
+      ctx.shadowColor = mix < 0.5 ? col : endCol; ctx.shadowBlur = glow;
+      if (toBand) ctx.fillStyle = mix < 1 ? `rgba(${Math.round(17 + (239 - 17) * mix)},${Math.round(24 + (68 - 24) * mix)},${Math.round(33 + (68 - 33) * mix)},${0.95 - 0.8 * mix})` : css('--resist');
+      else ctx.fillStyle = `rgba(17,24,33,${0.95 - 0.07 * mix})`;
+      rr(rect.x, rect.y, rect.w, rect.h, 12 - 3 * mix); ctx.fill(); ctx.shadowBlur = 0;
+      ctx.strokeStyle = mix < 0.5 ? col : endCol; ctx.lineWidth = 2 - mix; rr(rect.x, rect.y, rect.w, rect.h, 12 - 3 * mix); ctx.stroke();
+      if (textA > 0) {
+        ctx.globalAlpha = textA; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.font = `700 ${small ? 9 : 11}px Inter, system-ui, sans-serif`; ctx.fillStyle = col; ctx.fillText(WHO[e.who][0] + '  ·  ' + fmtT(e.ts), rect.x + rect.w / 2, rect.y + (small ? 16 : 22));
+        ctx.font = `800 ${fs}px Inter, system-ui, sans-serif`; ctx.fillStyle = css('--ink');
+        const y0 = rect.y + (small ? 32 : 42) + ((rect.h - (small ? 32 : 42)) - lines.length * (fs + 6)) / 2 + (fs + 6) / 2;
+        lines.forEach((l, i) => ctx.fillText(l, rect.x + rect.w / 2, y0 + i * (fs + 6)));
+        ctx.globalAlpha = 1;
+      }
+      ctx.restore();
+    }
+    // result card at the end
+    if (st.closed && !alertUp) {
+      const bw = small ? Math.min(300, w - 24) : 360, bh = small ? 150 : 170, bx = padL + 12, by = h - padB - bh - 14;
+      ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 30; ctx.fillStyle = css('--panel'); rr(bx, by, bw, bh, 12); ctx.fill(); ctx.shadowBlur = 0; ctx.strokeStyle = css('--tp'); rr(bx, by, bw, bh, 12); ctx.stroke();
+      ctx.textAlign = 'left'; ctx.textBaseline = 'top'; ctx.fillStyle = css('--muted'); ctx.font = `700 10px Inter, system-ui, sans-serif`; ctx.fillText('RECORDED BOT RESULT', bx + 16, by + 12);
+      ctx.fillStyle = css(S.r_multiple>=0?'--tp':'--down'); ctx.font = `800 ${small ? 28 : 34}px Inter, system-ui, sans-serif`; ctx.fillText((S.r_multiple>=0?'+':'') + S.r_multiple.toFixed(2) + ' R', bx + 16, by + 26);
+      ctx.fillStyle = css('--ink'); ctx.font = `600 ${small ? 13 : 15}px Inter, system-ui, sans-serif`; ctx.fillText(`${S.move_pct>=0?"+":""}${S.move_pct.toFixed(2)}% recorded · initial risk ${S.risk_pct.toFixed(2)}%`, bx + 16, by + (small ? 62 : 72));
+      ctx.fillStyle = css('--ink-2'); ctx.font = `${small ? 12 : 13}px Inter, system-ui, sans-serif`;
+      D.result_lines.forEach((l, i) => ctx.fillText(l, bx + 16, by + (small ? 84 : 98) + i * (small ? 18 : 20)));
+      ctx.textBaseline = 'middle';
+    }
+    function hline(p, col, dash, text, side) { ctx.strokeStyle = col; ctx.lineWidth = 1.4; ctx.setLineDash(dash); ctx.beginPath(); ctx.moveTo(padL, y(p)); ctx.lineTo(w - padR, y(p)); ctx.stroke(); ctx.setLineDash([]); if (text) labels.push({ text, y: y(p), col, side: side || 'right' }); }
+  }
+  let captionKey = '';
+  function render() {
+    $('clock').textContent=fmtT(now); $('scrub').value=Math.round((now-T0)/(T1-T0)*1000);
+    const cur=[...EV].reverse().find(e=>e.ts<=now);
+    const text=state(now).closed ? `${E('close').step}. Trade closed · ${S.r_multiple>=0?'+':''}${S.r_multiple.toFixed(2)}R` : cur ? `${cur.step}. ${cur.title}` : 'Watching the approach to resistance';
+    if(text!==captionKey) { $('eventCaption').textContent=text; captionKey=text; }
+    draw();
+  }
+  function tick(ts) {
+    if (!playing) return;
+    if (!lastFrame) lastFrame=ts;
+    const dt=Math.min(ts-lastFrame,100); lastFrame=ts;
+    if(stepHoldMs>0) { stepHoldMs=Math.max(0,stepHoldMs-dt); render(); requestAnimationFrame(tick); return; }
+    if(now>=T1) { playing=false; anim=null; $('play').textContent='▶ Replay'; render(); return; }
+    const tp2=Infinity;
+    const per=D.per;
+    const destination=Math.min(T1,now+dt*speed/per*STEP);
+    const hit=EV.find(e=>e.ts>now && e.ts<=destination && !fired.has(e));
+    if(hit) {
+      now=hit.ts; fired.add(hit); anim={start:ts,ev:hit}; stepHoldMs=2000;
+    } else now=destination;
+    render(); requestAnimationFrame(tick);
+  }
+  function openingIntro() {
+    fired.add(E('level')); anim={start:performance.now(),ev:E('level')}; stepHoldMs=2000;
+  }
+  function restart() {
+    now=T0; fired.clear(); anim=null; stepHoldMs=0; lastFrame=0; openingIntro();
+    const wasPlaying=playing; playing=true; $('play').textContent='❚❚ Pause'; render();
+    if(!wasPlaying) requestAnimationFrame(tick);
+  }
+  $('play').addEventListener('click',()=>{
+    if(now>=T1) { restart(); return; }
+    playing=!playing; $('play').textContent=playing?'❚❚ Pause':'▶ Play'; lastFrame=0;
+    if(playing) requestAnimationFrame(tick);
+  });
+  $('restart').addEventListener('click',restart);
+  document.querySelectorAll('.spd').forEach(b => b.addEventListener('click', () => { speed = +b.dataset.s; document.querySelectorAll('.spd').forEach(x => x.setAttribute('aria-pressed', x === b)); }));
+  $('scrub').addEventListener('input',e=>{
+    now=T0+(+e.target.value/1000)*(T1-T0); anim=null; stepHoldMs=0; lastFrame=0;
+    EV.forEach(ev=>{if(ev.ts<=now) fired.add(ev); else fired.delete(ev);});
+    if(now>=T1) { playing=false; $('play').textContent='▶ Replay'; }
+    render();
+  });
+  window.addEventListener('resize', render);
+  $('play').textContent='❚❚ Pause';
+  openingIntro();
+  render();
+  requestAnimationFrame(tick);
+})();
+</script>
+</body>
+</html>
