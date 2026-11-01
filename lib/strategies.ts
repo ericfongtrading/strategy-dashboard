@@ -49,7 +49,7 @@ export type Position = {
   open?: string;
 };
 
-/** A setup that has NOT been entered — published before it triggers rather than
+/** A setup that has NOT been entered â€” published before it triggers rather than
  *  reported after it resolves. Only the Hyper bot has these. */
 export type Plan = {
   symbol: string;
@@ -89,6 +89,7 @@ export type Strategy = {
   status: 'live' | 'backtest' | 'active' | 'development';
   statusLabel?: string;
   description: string;
+  cardSummary?: string;
   dataSource?: string;
   highlights?: string[];
   pdfEn?: string;
@@ -102,7 +103,7 @@ export type Strategy = {
   monthlyReturns?: MonthlyRow[];
   /** Sum the monthly percentages instead of compounding them. Correct for a
    *  fixed-contract, fixed-capital-base strategy where the position size never
-   *  scales with equity — compounding those months overstates the curve. */
+   *  scales with equity â€” compounding those months overstates the curve. */
   additiveEquity?: boolean;
   /** The equity line is a model/signal return stream rather than a broker NAV. */
   equityModelOnly?: boolean;
@@ -114,7 +115,7 @@ export type Strategy = {
   showUnderwater?: boolean;
   /** Drawdown from peak in percentage points, sampled off the DAILY equity
    *  curve (weekly minima, so troughs survive the downsample). Supply this
-   *  wherever the true depth falls between month-ends — deriving the panel
+   *  wherever the true depth falls between month-ends â€” deriving the panel
    *  from monthly rows alone understates it. */
   underwaterSeries?: number[];
   underwaterLabel?: string;
@@ -150,7 +151,7 @@ export const strategies: Strategy[] = [
     "edge": "Technical",
     "status": "live",
     "description": "Systematic intraday trading on Hang Seng Index futures. The historical benchmark uses HSI contracts; current live execution uses MHI.",
-    "dataSource": "HSI model: 2021–30 Oct 2026 | Live: MHI",
+    "dataSource": "HSI model: 2021â€“30 Oct 2026 | Live: MHI",
     "backtestStart": 2021,
     "backtestEnd": 2026,
     "liveStart": 2026,
@@ -165,7 +166,7 @@ export const strategies: Strategy[] = [
       "Returns retain profits; maximum drawdown includes floating P&L at minute closes.",
       "Actual MHI execution results are separate from this full-size HSI benchmark."
     ],
-    "modelCostNote": "HSI model · 4-point total round-trip cost allowance",
+    "modelCostNote": "HSI model Â· 4-point total round-trip cost allowance",
     "modelDataThrough": "2026-10-30T18:59:00+00:00",
     "cagr": `${(hsiModel.cagr * 100).toFixed(2)}%`,
     "cagrNum": hsiModel.cagr,
@@ -184,7 +185,7 @@ export const strategies: Strategy[] = [
     "edge": "Technical",
     "status": "live",
     "description": "Systematic momentum trading on COMEX gold futures with a confirmed 4H and daily structure overlay. Historical performance is a current-strategy simulation; live execution uses IB and FTMO.",
-    "dataSource": "Backtest: 26 Dec 2019–30 Oct 2026 | Live: IB + FTMO",
+    "dataSource": "Backtest: 26 Dec 2019â€“30 Oct 2026 | Live: IB + FTMO",
     "backtestStart": 2019,
     "backtestEnd": 2026,
     "liveStart": 2026,
@@ -199,7 +200,7 @@ export const strategies: Strategy[] = [
       "CAGR and monthly returns retain profits; maximum drawdown includes floating P&L at minute closes.",
       "Daily Sharpe uses marked-to-market equity returns; model history is separate from actual broker results."
     ],
-    "modelCostNote": "Model returns · 1.06 bp assumed round-trip costs",
+    "modelCostNote": "Model returns Â· 1.06 bp assumed round-trip costs",
     "modelDataThrough": "2026-10-30 20:59:00+00:00",
     "cagr": `${(gcModel.cagr * 100).toFixed(2)}%`,
     "cagrNum": gcModel.cagr,
@@ -218,7 +219,7 @@ export const strategies: Strategy[] = [
     "edge": "Technical",
     "status": "live",
     "description": "Five-sleeve systematic intraday portfolio on Nasdaq-100 futures, including OSR. Historical results use the approved reference portfolio; current IB and FTMO executions are reported separately.",
-    "dataSource": "Backtest: 30 Dec 2020–30 Oct 2026 | Live: IB + FTMO",
+    "dataSource": "Backtest: 30 Dec 2020â€“30 Oct 2026 | Live: IB + FTMO",
     "backtestStart": 2020,
     "backtestEnd": 2026,
     "liveStart": 2026,
@@ -233,7 +234,7 @@ export const strategies: Strategy[] = [
       "Monthly returns and the equity curve come from the same five-sleeve model.",
       "Daily Sharpe includes flat weekdays; maximum drawdown includes floating P&L at minute closes."
     ],
-    "modelCostNote": "Five-sleeve model · stated research trading costs",
+    "modelCostNote": "Five-sleeve model Â· stated research trading costs",
     "modelDataThrough": "2026-10-30T20:59:00+00:00",
     "cagr": `${(nqModel.cagr * 100).toFixed(2)}%`,
     "cagrNum": nqModel.cagr,
@@ -252,7 +253,7 @@ export const strategies: Strategy[] = [
     "edge": "Statistical",
     "status": "live",
     "description": "Systematic FX mean reversion. The historical scoreboard uses the approved reduced-risk research benchmark; current broker execution results are separate.",
-    "dataSource": "Model: 2019–30 Oct 2026 | Live: IB + FTMO",
+    "dataSource": "Model: 2019â€“30 Oct 2026 | Live: IB + FTMO",
     "backtestStart": 2019,
     "backtestEnd": 2026,
     "liveStart": 2026,
@@ -267,7 +268,7 @@ export const strategies: Strategy[] = [
       "Monthly returns retain profits and include floating P&L valued at completed four-hour closes.",
       "Uses proportional transaction costs. IB minimum commissions are excluded; this is not actual IB account performance."
     ],
-    "modelCostNote": "Reduced-risk model · proportional cost assumption; IB minimum commissions excluded",
+    "modelCostNote": "Reduced-risk model Â· proportional cost assumption; IB minimum commissions excluded",
     "modelDataThrough": "2026-10-30T21:00:00+00:00",
     "performanceNote": "Reduced-risk research model; IB minimum commissions excluded.",
     "cagr": `${(fxModel.cagr * 100).toFixed(2)}%`,
@@ -456,14 +457,14 @@ export const strategies: Strategy[] = [
     maxDDNum: 0.145,
     status: 'live',
     statusLabel: 'Live (small-size test)',
-    description: 'A contrarian strategy that fades extreme crowd positioning in crypto perpetuals. For each of the 20 largest coins by 30-day trading volume (re-ranked every month, with no hindsight), it measures how far traders’ long/short positioning has stretched from that coin’s own recent norm; when the crowd is unusually one-sided it takes the other side, and holds until positioning normalizes. Positions are volatility-scaled and never levered above 1x. There are no stop losses by design: exits are purely signal-driven, which tested better than stops for this edge. Executed live on Hyperliquid perpetuals by a fully automated bot running every hour on a Linux VPS, on its own sub-account. Trading live since September 2026 at a small test size  -  the live sample is far too short to confirm the backtest, and the figures shown are backtest unless stated otherwise.',
+    description: 'A contrarian strategy that fades extreme crowd positioning in crypto perpetuals. For each of the 20 largest coins by 30-day trading volume (re-ranked every month, with no hindsight), it measures how far tradersâ€™ long/short positioning has stretched from that coinâ€™s own recent norm; when the crowd is unusually one-sided it takes the other side, and holds until positioning normalizes. Positions are volatility-scaled and never levered above 1x. There are no stop losses by design: exits are purely signal-driven, which tested better than stops for this edge. Executed live on Hyperliquid perpetuals by a fully automated bot running every hour on a Linux VPS, on its own sub-account. Trading live since September 2026 at a small test size  -  the live sample is far too short to confirm the backtest, and the figures shown are backtest unless stated otherwise.',
     dataSource: 'Backtest 2023-2026 (3.7 yr, on capital, never above 1x gross) | live since Sep 2026',
     backtestStart: 2023,
     backtestEnd: 2026,
     liveStart: 2026,
     liveStartMonth: 9,
     highlights: [
-      'Fades the crowd: takes the other side when long/short positioning is extreme against each coin’s own 30-day norm',
+      'Fades the crowd: takes the other side when long/short positioning is extreme against each coinâ€™s own 30-day norm',
       'Survivorship-free universe: top 20 perpetuals by 30-day volume, re-ranked monthly; delisted coins included in the backtest',
       'Out-of-sample 2025-2026: CAGR 20.1%, Sharpe 1.41, max drawdown -8.9%',
       '30 of 44 backtest months positive; every calendar year positive',
@@ -481,6 +482,7 @@ export const strategies: Strategy[] = [
   },
   {
     id: 'hyper-bot',
+    cardSummary: "An autonomous AI trading system that builds plans from market data and technical-analysis videos, executes through exchange APIs, and manages positions within predefined risk controls.",
     name: 'Hyper Bot',
     asset: 'BTC Perp',
     category: 'ml',
@@ -493,9 +495,9 @@ export const strategies: Strategy[] = [
     liveStart: 2026,
     liveStartMonth: 6,
     highlights: [
-      'Writes its own plans — no human sets a direction, an entry, a stop or a target',
+      'Writes its own plans â€” no human sets a direction, an entry, a stop or a target',
       'Nothing fires on a hunch: each plan is gated on conditions from a 38-signal library, and waits until they are all true',
-      'Executes and manages on Hyperliquid — stop and staged take-profits go on with the entry, then get revised as the market moves',
+      'Executes and manages on Hyperliquid â€” stop and staged take-profits go on with the entry, then get revised as the market moves',
       'Exits on its own reasoning, not just its stop: a position whose thesis has broken is closed rather than held to be stopped out',
       'Reviews every closed trade in writing and carries the rule forward, so the same mistake is not available to it twice',
       'Runs unattended 24/7 on a VPS, with watchdog alerts to Telegram if any part of the loop stalls',

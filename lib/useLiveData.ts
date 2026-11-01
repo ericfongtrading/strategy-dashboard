@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { hyperDrawdownHeadline } from './hyperMetrics';
 import type { Trade, Position, MonthlyRow, Plan, Headline } from './strategies';
 import type { OptionsPayoff } from '@/components/OptionsPayoffChart';
 
@@ -69,6 +70,10 @@ export function useLiveData(strategyId: string) {
           if (!alive) return;
           if (strategyId === 'fx' && Date.now() - Date.parse(d.lastUpdated) > 15 * 60_000) {
             d.headline = d.headline?.map(h => h.label === 'TWS feed' ? { ...h, value: 'STALE', tone: 'bad' } : h);
+          }
+          if (strategyId === 'hyper-bot') {
+            d.headline = hyperDrawdownHeadline(d.headline, d.recentTrades);
+            d.detailHeadline = hyperDrawdownHeadline(d.detailHeadline, d.recentTrades);
           }
           cache[strategyId] = { data: d, ts: Date.now() };
           setData(d);
