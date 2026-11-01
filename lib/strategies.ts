@@ -99,6 +99,8 @@ export type Strategy = {
    *  fixed-contract, fixed-capital-base strategy where the position size never
    *  scales with equity — compounding those months overstates the curve. */
   additiveEquity?: boolean;
+  /** The equity line is a model/signal return stream rather than a broker NAV. */
+  equityModelOnly?: boolean;
   /** Draw an underwater (drawdown-from-peak) panel beneath the equity line.
    *  Month-end tables cannot show a drawdown whose peak and trough fall
    *  mid-month; this makes it visible. */
