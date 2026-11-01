@@ -55,11 +55,13 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   // Strategies with a track record too short to annualise supply their own
   // headline numbers instead of an invented CAGR.
   const headline = s.id === 'fx' ? undefined : liveData?.detailHeadline || liveData?.headline;
-  const performance = s.id === 'options' ? liveData?.performance : undefined;
-  const cagr = performance ? `${Math.round(performance.cagrPct)}%` : s.cagr;
-  const sharpe = performance ? performance.sharpe.toFixed(2) : s.sharpe;
-  const maxDD = performance ? `${Math.round(performance.maxDrawdownPct)}%` : s.maxDD;
-  const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
+  // Keep verified options performance separate from the live position feed.
+  const cagr = s.cagr;
+  const sharpe = s.sharpe;
+  const maxDD = s.maxDD;
+  const monthlyRows = s.id === 'options'
+    ? s.monthlyReturns
+    : liveData?.monthlyReturns || s.monthlyReturns;
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
   const _basis = (liveData?.basis || '').toUpperCase();
@@ -136,7 +138,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
               ))}
               {s.pf && <Metric label="Profit Factor" value={s.pf} />}
               {s.winRate && <Metric label="Win Rate" value={s.winRate} />}
-              {sharpe && <Metric label={performance?.sharpeBasis || 'Sharpe Ratio'} value={sharpe} large />}
+              {sharpe && <Metric label={s.id === 'options' ? 'Sharpe — BTC NAV, monthly, Rf = 0%' : 'Sharpe Ratio'} value={sharpe} large />}
               {maxDD && <Metric label="Max Drawdown" value={maxDD} large color="text-bad" />}
             </div>
           )}
