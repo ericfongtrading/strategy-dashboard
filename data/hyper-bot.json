@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-01T08:36:01.959607+00:00",
+  "lastUpdated": "2026-11-01T20:38:01.580859+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "MALDINI",
       "direction": "Long",
       "entry": "76,534",
-      "current": "78,143",
+      "current": "77,821",
       "size": "1 BTC",
-      "pnl": "+$1,404",
-      "pnlNum": 1404,
+      "pnl": "+$1,323",
+      "pnlNum": 1323,
       "stop": "76,534 (BE)",
       "targets": "✓ 77,600 / ✓ 78,150 / 79,150",
       "realized": "+$1,001",
@@ -562,5 +562,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $78,143"
+  "priceNote": "Unrealised P&L marked at $77,821"
 }
