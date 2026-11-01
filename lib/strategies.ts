@@ -101,6 +101,8 @@ export type Strategy = {
   additiveEquity?: boolean;
   /** The equity line is a model/signal return stream rather than a broker NAV. */
   equityModelOnly?: boolean;
+  /** Override the right-hand label of the equity curve time axis. */
+  equityEndLabel?: string;
   /** Draw an underwater (drawdown-from-peak) panel beneath the equity line.
    *  Month-end tables cannot show a drawdown whose peak and trough fall
    *  mid-month; this makes it visible. */
