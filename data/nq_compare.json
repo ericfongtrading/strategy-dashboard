@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-01T23:46:01.449520+00:00",
+  "updated_utc": "2026-11-01T23:47:01.620892+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,7 +36,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-01T23:46:01.056368+00:00",
+      "heartbeat_utc": "2026-11-01T23:47:01.360213+00:00",
       "data_final_utc": "2026-11-01T23:46:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -58,7 +58,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T23:46:01.056368+00:00",
+      "heartbeat_utc": "2026-11-01T23:47:01.360213+00:00",
       "data_final_utc": "2026-11-01T23:46:00+00:00",
       "halt_reasons": [
         "NQ_RECOVERY_NOT_VERIFIED",
@@ -83,7 +83,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T23:46:02.089966+00:00",
+      "heartbeat_utc": "2026-11-01T23:47:01.888497+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -165,8 +165,8 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-01T23:45:58.778382+00:00",
-    "last_bar_utc": "2026-11-01T23:44:00+00:00",
+    "heartbeat_utc": "2026-11-01T23:47:01.325513+00:00",
+    "last_bar_utc": "2026-11-01T23:45:00+00:00",
     "position": null,
     "summary": {
       "reads": 11,
@@ -556,6 +556,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-01T23:45:21.138220+00:00"
+    "validation_updated_utc": "2026-11-01T23:46:22.249776+00:00"
   }
 }
