@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-11-01T08:54:17.156262+00:00",
+ "lastUpdated": "2026-11-01T08:55:48.777023+00:00",
  "basis": "Live performance since 2022-06-10 \u2014 BTC-denominated, deposit-adjusted (unitized NAV), marked to daily account equity since 2026-08-28 (earlier months: settled cash flows). Cumulative +158.9% (CAGR +24.2%), max drawdown since 2024 -10.6%, currently -3.6% from the high, 36 of 54 months positive. Refreshed daily.",
  "performance": {
   "cagrPct": 24.2,
@@ -108,172 +108,172 @@
   }
  ],
  "payoff": {
-  "asOf": "2026-11-01T08:54:17.838157+00:00",
-  "spot": 78073.28,
+  "asOf": "2026-11-01T08:55:49.513436+00:00",
+  "spot": 78065.29,
   "points": [
    {
-    "spot": 39036.64,
-    "pnlBtc": -1.99093
+    "spot": 39032.64,
+    "pnlBtc": -1.991473
    },
    {
-    "spot": 40988.47,
-    "pnlBtc": -1.73842
+    "spot": 40984.28,
+    "pnlBtc": -1.738937
    },
    {
-    "spot": 42940.3,
-    "pnlBtc": -1.508866
+    "spot": 42935.91,
+    "pnlBtc": -1.509359
    },
    {
-    "spot": 44892.14,
-    "pnlBtc": -1.299273
+    "spot": 44887.54,
+    "pnlBtc": -1.299745
    },
    {
-    "spot": 46843.97,
-    "pnlBtc": -1.107145
+    "spot": 46839.17,
+    "pnlBtc": -1.107598
    },
    {
-    "spot": 48795.8,
-    "pnlBtc": -0.930388
+    "spot": 48790.81,
+    "pnlBtc": -0.930823
    },
    {
-    "spot": 50747.63,
-    "pnlBtc": -0.783434
+    "spot": 50742.44,
+    "pnlBtc": -0.78374
    },
    {
-    "spot": 52699.46,
-    "pnlBtc": -0.6725
+    "spot": 52694.07,
+    "pnlBtc": -0.672795
    },
    {
-    "spot": 54651.3,
-    "pnlBtc": -0.56949
+    "spot": 54645.7,
+    "pnlBtc": -0.569774
    },
    {
-    "spot": 56603.13,
-    "pnlBtc": -0.473584
+    "spot": 56597.34,
+    "pnlBtc": -0.473859
    },
    {
-    "spot": 58554.96,
-    "pnlBtc": -0.384072
+    "spot": 58548.97,
+    "pnlBtc": -0.384338
    },
    {
-    "spot": 60506.79,
-    "pnlBtc": -0.300335
+    "spot": 60500.6,
+    "pnlBtc": -0.300592
    },
    {
-    "spot": 62458.62,
-    "pnlBtc": -0.221831
+    "spot": 62452.23,
+    "pnlBtc": -0.22208
    },
    {
-    "spot": 64410.46,
-    "pnlBtc": -0.148085
+    "spot": 64403.86,
+    "pnlBtc": -0.148327
    },
    {
-    "spot": 66362.29,
-    "pnlBtc": -0.078677
+    "spot": 66355.5,
+    "pnlBtc": -0.078912
    },
    {
-    "spot": 68314.12,
-    "pnlBtc": -0.013236
+    "spot": 68307.13,
+    "pnlBtc": -0.013464
    },
    {
-    "spot": 70265.95,
-    "pnlBtc": 0.044407
+    "spot": 70258.76,
+    "pnlBtc": 0.044297
    },
    {
-    "spot": 72217.78,
-    "pnlBtc": 0.073255
+    "spot": 72210.39,
+    "pnlBtc": 0.073148
    },
    {
-    "spot": 74169.62,
-    "pnlBtc": 0.099441
+    "spot": 74162.03,
+    "pnlBtc": 0.099388
    },
    {
-    "spot": 76121.45,
+    "spot": 76113.66,
     "pnlBtc": 0.11178
    },
    {
-    "spot": 78073.28,
+    "spot": 78065.29,
     "pnlBtc": 0.11178
    },
    {
-    "spot": 80025.11,
+    "spot": 80016.92,
     "pnlBtc": 0.11178
    },
    {
-    "spot": 81976.94,
+    "spot": 81968.55,
     "pnlBtc": 0.11178
    },
    {
-    "spot": 83928.78,
+    "spot": 83920.19,
     "pnlBtc": 0.11178
    },
    {
-    "spot": 85880.61,
+    "spot": 85871.82,
     "pnlBtc": 0.11178
    },
    {
-    "spot": 87832.44,
-    "pnlBtc": 0.090917
+    "spot": 87823.45,
+    "pnlBtc": 0.091017
    },
    {
-    "spot": 89784.27,
-    "pnlBtc": 0.069632
+    "spot": 89775.08,
+    "pnlBtc": 0.06973
    },
    {
-    "spot": 91736.1,
-    "pnlBtc": 0.030327
+    "spot": 91726.72,
+    "pnlBtc": 0.030523
    },
    {
-    "spot": 93687.94,
-    "pnlBtc": -0.009643
+    "spot": 93678.35,
+    "pnlBtc": -0.009451
    },
    {
-    "spot": 95639.77,
-    "pnlBtc": -0.047981
+    "spot": 95629.98,
+    "pnlBtc": -0.047793
    },
    {
-    "spot": 97591.6,
-    "pnlBtc": -0.084786
+    "spot": 97581.61,
+    "pnlBtc": -0.084602
    },
    {
-    "spot": 99543.43,
-    "pnlBtc": -0.120148
+    "spot": 99533.24,
+    "pnlBtc": -0.119967
    },
    {
-    "spot": 101495.26,
-    "pnlBtc": -0.154149
+    "spot": 101484.88,
+    "pnlBtc": -0.153971
    },
    {
-    "spot": 103447.1,
-    "pnlBtc": -0.186867
+    "spot": 103436.51,
+    "pnlBtc": -0.186693
    },
    {
-    "spot": 105398.93,
-    "pnlBtc": -0.218374
+    "spot": 105388.14,
+    "pnlBtc": -0.218203
    },
    {
-    "spot": 107350.76,
-    "pnlBtc": -0.248735
+    "spot": 107339.77,
+    "pnlBtc": -0.248567
    },
    {
-    "spot": 109302.59,
-    "pnlBtc": -0.289928
+    "spot": 109291.41,
+    "pnlBtc": -0.289663
    },
    {
-    "spot": 111254.42,
-    "pnlBtc": -0.335513
+    "spot": 111243.04,
+    "pnlBtc": -0.335251
    },
    {
-    "spot": 113206.26,
-    "pnlBtc": -0.379525
+    "spot": 113194.67,
+    "pnlBtc": -0.379268
    },
    {
-    "spot": 115158.09,
-    "pnlBtc": -0.423418
+    "spot": 115146.3,
+    "pnlBtc": -0.423063
    },
    {
-    "spot": 117109.92,
-    "pnlBtc": -0.481164
+    "spot": 117097.93,
+    "pnlBtc": -0.480816
    }
   ],
   "method": "Aggregate terminal P&L for current open BTC options at each position's own expiry. Excludes time value, implied-volatility changes, fees and future trades."
