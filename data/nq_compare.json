@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-01T15:29:01.524763+00:00",
+  "updated_utc": "2026-11-01T15:29:14.028943+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -117,7 +117,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-01T15:29:00.494915+00:00",
+      "heartbeat_utc": "2026-11-01T15:29:13.247623+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -178,7 +178,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T15:29:00.494915+00:00",
+      "heartbeat_utc": "2026-11-01T15:29:13.247623+00:00",
       "data_final_utc": "2026-10-30T21:00:00+00:00",
       "halt_reasons": [
         "NQ_FEED_STALE",
@@ -243,7 +243,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T15:29:02.143002+00:00",
+      "heartbeat_utc": "2026-11-01T15:29:14.678115+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -259,8 +259,61 @@
       }
     }
   },
+  "regular_market_open": false,
   "execution_mode": "LIVE",
   "observation_started_utc": "2026-10-27T03:25:00+00:00",
+  "matched_execution": {
+    "schema": "nq.matched-execution.1",
+    "basis": "100 + cumulative net R on identical closed signals",
+    "state": "READY",
+    "counts": {
+      "signals": 2,
+      "matched_closed": 1,
+      "missing_record": {
+        "theoretical": 0,
+        "ib": 1,
+        "ftmo": 1
+      },
+      "waiting_for_close": 0,
+      "missing_cost_or_risk": 0,
+      "ambiguous_or_inconsistent": 0
+    },
+    "lanes": {
+      "theoretical": {
+        "score": 98.95307692307692,
+        "net_r": -1.0469230769230768,
+        "gross_r": -1.0,
+        "fees_r": 0.04692307692307692,
+        "swap_r": 0.0,
+        "entry_slippage_count": 0,
+        "entry_slippage_pts": null,
+        "exit_slippage_count": 0,
+        "exit_slippage_pts": null
+      },
+      "ib": {
+        "score": 98.94068965517242,
+        "net_r": -1.0593103448275862,
+        "gross_r": -1.0172413793103448,
+        "fees_r": 0.04206896551724138,
+        "swap_r": 0.0,
+        "entry_slippage_count": 1,
+        "entry_slippage_pts": 0.75,
+        "exit_slippage_count": 0,
+        "exit_slippage_pts": null
+      },
+      "ftmo": {
+        "score": 98.98794195789904,
+        "net_r": -1.0120580421009606,
+        "gross_r": -1.0120580421009606,
+        "fees_r": 0.0,
+        "swap_r": 0.0,
+        "entry_slippage_count": 0,
+        "entry_slippage_pts": null,
+        "exit_slippage_count": 0,
+        "exit_slippage_pts": null
+      }
+    }
+  },
   "osr_paper": {
     "present": true,
     "mode": "PAPER_OBSERVE_ONLY",
@@ -269,7 +322,7 @@
     "state": "MARKET_CLOSED",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-01T15:28:59.087949+00:00",
+    "heartbeat_utc": "2026-11-01T15:29:14.096927+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
