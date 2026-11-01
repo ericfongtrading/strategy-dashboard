@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-01T23:01:01.931689+00:00",
+  "updated_utc": "2026-11-01T23:02:01.706131+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,8 +36,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-01T23:01:00.042542+00:00",
-      "data_final_utc": "2026-10-30T21:00:00+00:00",
+      "heartbeat_utc": "2026-11-01T23:02:01.553351+00:00",
+      "data_final_utc": "2026-11-01T23:02:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -58,12 +58,12 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T23:01:00.042542+00:00",
-      "data_final_utc": "2026-10-30T21:00:00+00:00",
+      "heartbeat_utc": "2026-11-01T23:02:01.553351+00:00",
+      "data_final_utc": "2026-11-01T23:02:00+00:00",
       "halt_reasons": [
-        "NQ_FEED_STALE",
         "NQ_RECOVERY_NOT_VERIFIED",
-        "VENUE_RECOVERY_NOT_VERIFIED"
+        "VENUE_RECOVERY_NOT_VERIFIED",
+        "WARMUP_NOT_READY"
       ],
       "pilot_hold": false,
       "broker_connected": true,
@@ -84,7 +84,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T23:01:02.784013+00:00",
+      "heartbeat_utc": "2026-11-01T23:02:02.376542+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -162,12 +162,12 @@
     "present": true,
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
-    "healthy": false,
-    "state": "DATA_WAIT",
+    "healthy": true,
+    "state": "PAPER_RUNNING",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-01T23:01:00.365358+00:00",
-    "last_bar_utc": "2026-10-30T20:59:00+00:00",
+    "heartbeat_utc": "2026-11-01T23:01:59.678929+00:00",
+    "last_bar_utc": "2026-11-01T23:00:00+00:00",
     "position": null,
     "summary": {
       "reads": 11,
@@ -533,8 +533,7 @@
         "regime_asof": "2026-10-29",
         "regime_provisional": false,
         "read_hash": "004c5642487f949678cf1b24710887c8dec12280496f87a85199b6983e286eb8",
-        "origin": "BACKFILLED_REPLAY",
-        "corrected_after_backfill": true
+        "origin": "BACKFILLED_REPLAY"
       }
     ],
     "missing_expected_bars": 0,
@@ -558,6 +557,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-01T23:00:56.373611+00:00"
+    "validation_updated_utc": "2026-11-01T23:01:56.225437+00:00"
   }
 }
