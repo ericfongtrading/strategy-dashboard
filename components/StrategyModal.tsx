@@ -55,7 +55,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   // Strategies with a track record too short to annualise supply their own
   // headline numbers instead of an invented CAGR.
   const headline = liveData?.detailHeadline || liveData?.headline;
-  const keepLatestBacktest = s.id === 'hsi' || s.id === 'nq' || s.id === 'fx';
+  const keepLatestBacktest = s.id === 'hsi' || s.id === 'nq' || s.id === 'fx' || !!s.equityModelOnly;
   const monthlyRows = keepLatestBacktest ? s.monthlyReturns : (liveData?.monthlyReturns || s.monthlyReturns);
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
@@ -171,7 +171,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
             <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince}
-              note={s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} dataThrough={liveData?.dataThrough} />
+              note={s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} modelOnly={s.equityModelOnly} dataThrough={s.equityModelOnly ? undefined : liveData?.dataThrough} />
           )}
 
           {s.id === 'ml' && liveData?.basis && <p className="text-xs text-muted leading-relaxed">{liveData.basis}</p>}

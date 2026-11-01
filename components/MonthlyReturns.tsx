@@ -14,10 +14,10 @@ function Cell({ value, isMtd }: { value: number | null; isMtd?: boolean }) {
   );
 }
 
-export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnly, dataThrough }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string; strategyOnly?: boolean; dataThrough?: string }) {
+export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnly, dataThrough, modelOnly }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string; strategyOnly?: boolean; dataThrough?: string; modelOnly?: boolean }) {
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
-      <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">{strategyOnly ? 'Monthly Strategy Returns' : 'Monthly Historical Returns'}</h4>
+      <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">{modelOnly ? 'Monthly Model Returns' : strategyOnly ? 'Monthly Strategy Returns' : 'Monthly Historical Returns'}</h4>
       <div className="overflow-x-auto">
         <table className="w-full text-xs" style={{ minWidth: 700 }}>
           <thead>
@@ -60,11 +60,11 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
         </table>
       </div>
       <div className="flex items-center gap-4 mt-3 text-[10px] text-muted">
-        {!strategyOnly && <span className="flex items-center gap-1">
+        {!strategyOnly && !modelOnly && <span className="flex items-center gap-1">
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-good pulse-dot" />
           Live since {liveSince || 'Jul 2026'}
         </span>}
-        {strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost</span> : theoretical ? (
+        {modelOnly ? <span>Model returns · 1.06 bp assumed round-trip costs</span> : strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost</span> : theoretical ? (
           <span>Strategy returns, net of measured costs</span>
         ) : rows.some((r) => !r.isLive) ? (
           <span>All other rows are backtested</span>

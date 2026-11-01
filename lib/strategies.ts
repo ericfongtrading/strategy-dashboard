@@ -1,3 +1,5 @@
+import gcModel from './gcModel.json';
+
 export type MonthlyRow = {
   year: number;
   months: (number | null)[];
@@ -101,7 +103,9 @@ export type Strategy = {
   /** Sum the monthly percentages instead of compounding them. Correct for a
    *  fixed-contract, fixed-capital-base strategy where the position size never
    *  scales with equity — compounding those months overstates the curve. */
-  additiveEquity?: boolean;
+  additiveEquity?: boolean;
+  equityModelOnly?: boolean;
+  equityEndLabel?: string;
   /** Draw an underwater (drawdown-from-peak) panel beneath the equity line.
    *  Month-end tables cannot show a drawdown whose peak and trough fall
    *  mid-month; this makes it visible. */
@@ -171,41 +175,39 @@ export const strategies: Strategy[] = [
     ],
     recentTrades: [],   // live feed (data/hsi.json) supplies fills from 2026-09-11
   },
-  {
-    id: 'gc',
-    name: 'Intraday Momentum',
-    asset: 'GC Futures',
-    category: 'tradfi',
-    edge: 'Technical',
-    cagr: '33.8%',
-    cagrNum: 0.338,
-    sharpe: '1.55',
-    maxDD: '-12.7%',
-    maxDDNum: 0.127,
-    status: 'live',
-    additiveEquity: true,
-    description: 'Systematic momentum strategy on COMEX gold futures. Trades the Asia/London and US sessions, pyramiding up to 4 positions in a confirmed trend. Fixed-contract sizing on a fixed capital base. Every calendar year positive.',
-    dataSource: 'Backtest: 2020-2026 (6.6 yr) | Live: Aug 2026',
-    backtestStart: 2020,
-    backtestEnd: 2026,
-    liveStart: 2026,
-    liveStartMonth: 8,
-    highlights: [
-      'Profit factor 1.23 across 4,298 trades (~650/yr)',
-      'Walk-forward validated + independently replicated by a third-party review',
-      'Live on IB since Aug 2026  -  trade feed below shows real fills, not signals',
-    ],
-    monthlyReturns: [
-      { year: 2019, months: [null, null, null, null, null, null, null, null, null, null, null, 1.4], ytd: 1.4 },
-      { year: 2020, months: [5.0, 15.6, -4.2, 6.2, 3.1, 4.5, 20.8, 0.1, -3.0, 0.3, 2.5, 0.4], ytd: 51.3 },
-      { year: 2021, months: [-2.3, 14.4, 1.3, -4.6, 11.4, -3.0, -5.4, -1.1, -0.3, -3.1, 3.1, -2.8], ytd: 7.6 },
-      { year: 2022, months: [3.8, 4.7, 4.7, -2.5, 1.6, 2.7, 1.1, 1.7, 2.3, -1.5, -1.8, 6.1], ytd: 22.9 },
-      { year: 2023, months: [3.6, -2.0, -0.8, 1.3, 2.5, 0.8, -2.1, -5.4, 11.7, -1.3, 2.9, 13.5], ytd: 24.7 },
-      { year: 2024, months: [-6.0, -1.9, 19.5, -4.1, -1.4, 0.8, 1.5, -4.1, 4.4, 3.5, -0.6, 9.6], ytd: 21.2 },
-      { year: 2025, months: [8.1, -1.4, 10.5, 5.3, -2.6, 1.8, 5.9, 2.6, 9.2, 6.6, 4.5, -2.3], ytd: 48.2 },
-      { year: 2026, months: [28.5, 1.6, -3.3, 5.9, 5.9, 10.9, -1.5, null, null, null, null, null], ytd: 48.0, isLive: true },
-    ],
-  },
+  {
+    "id": "gc",
+    "name": "Intraday Momentum",
+    "asset": "GC Futures",
+    "category": "tradfi",
+    "edge": "Technical",
+    "cagr": "21.58%",
+    "cagrNum": 0.21579267109699019,
+    "sharpe": "1.48",
+    "maxDD": "-11.70%",
+    "maxDDNum": 0.11700493439814597,
+    "status": "live",
+    "additiveEquity": false,
+    "equityModelOnly": true,
+    "equityEndLabel": "Oct 2026",
+    "description": "Systematic momentum trading on COMEX gold futures with a confirmed 4H and daily structure overlay. Historical performance is a current-strategy simulation; live execution uses IB and FTMO.",
+    "dataSource": "Backtest: 26 Dec 2019–30 Oct 2026 | Live: IB + FTMO",
+    "backtestStart": 2019,
+    "backtestEnd": 2026,
+    "liveStart": 2026,
+    "liveStartMonth": 8,
+    "highlights": [
+      "4,387 historical trade legs on corrected inputs through 30 October 2026",
+      "CAGR and monthly returns retain profits; maximum drawdown includes floating P&L at minute closes",
+      "Daily Sharpe uses marked-to-market equity returns; model history is separate from actual broker results"
+    ],
+    "monthlyNote": "Current-strategy historical simulation through 30 October 2026, using corrected inputs. Returns include floating P&L, retain profits and assume 1.06 bp round-trip costs. Reference normalization; not personal account returns.",
+    "showUnderwater": true,
+    "underwaterLabel": "minute-close model equity",
+    "monthlyReturns": gcModel.monthlyReturns,
+    "underwaterSeries": gcModel.underwaterSeries
+  },
+
   {
     id: 'nq',
     name: 'Four-Sleeve Intraday Portfolio',

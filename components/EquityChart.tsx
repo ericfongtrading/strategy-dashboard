@@ -22,6 +22,7 @@ function hashStr(str: string): number {
 function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; months: number } | null {
   if (!s.monthlyReturns || s.monthlyReturns.length === 0) return null;
 
+  const modelOnly = !!s.equityModelOnly;
   const liveYear = s.liveStart || 9999;
   const liveMonth = (s.liveStartMonth || 1) - 1;
 
@@ -41,7 +42,7 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
       // month adds its percentage points to the same denominator.
       equity = s.additiveEquity ? equity + m : equity * (1 + m / 100);
 
-      const isLiveMonth = row.year > liveYear || (row.year === liveYear && mi >= liveMonth);
+      const isLiveMonth = !modelOnly && (row.year > liveYear || (row.year === liveYear && mi >= liveMonth));
       if (isLiveMonth && !liveStarted) {
         liveStarted = true;
         livePoints.push(backtestPoints[backtestPoints.length - 1]);
@@ -56,7 +57,7 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
 
   if (livePoints.length === 0) {
     livePoints.push(backtestPoints[backtestPoints.length - 1]);
-    if (s.id !== 'fx') livePoints.push(equity);
+    if (s.id !== 'fx' && !modelOnly) livePoints.push(equity);
   }
 
   return {
@@ -109,6 +110,7 @@ function generateEquityCurve(s: Strategy): { backtest: number[]; live: number[];
 }
 
 export function EquityChart({ strategy }: { strategy: Strategy }) {
+  const modelOnly = strategy.id === 'fx' || !!strategy.equityModelOnly;
   const { backtest, live, months } = useMemo(() => generateEquityCurve(strategy), [strategy]);
 
   const all = [...backtest, ...live.slice(1)];
@@ -190,9 +192,9 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
       <div className="flex items-center gap-6 mb-3 text-xs text-muted">
         <span className="flex items-center gap-1.5">
           <svg width="16" height="2"><line x1="0" y1="1" x2="16" y2="1" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="3,2" /></svg>
-          {strategy.id === 'fx' ? 'Strategy returns' : 'Backtest'}
+          {strategy.equityModelOnly ? 'Strategy model' : strategy.id === 'fx' ? 'Strategy returns' : 'Backtest'}
         </span>
-        {strategy.id !== 'fx' && <span className="flex items-center gap-1.5">
+        {!modelOnly && <span className="flex items-center gap-1.5">
           <svg width="16" height="2"><line x1="0" y1="1" x2="16" y2="1" stroke="#10b981" strokeWidth="2" /></svg>
           Live
         </span>}
@@ -216,10 +218,10 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
         ))}
 
         {/* Transition line */}
-        {strategy.id !== 'fx' && <line x1={transitionX} y1={PAD.top} x2={transitionX} y2={H - PAD.bottom} stroke="#1e2029" strokeWidth="1" strokeDasharray="4,3" />}
+        {!modelOnly && <line x1={transitionX} y1={PAD.top} x2={transitionX} y2={H - PAD.bottom} stroke="#1e2029" strokeWidth="1" strokeDasharray="4,3" />}
 
         {/* Live area fill */}
-        {strategy.id !== 'fx' && <path d={liveAreaPath} fill={`url(#live-fill-${strategy.id})`} />}
+        {!modelOnly && <path d={liveAreaPath} fill={`url(#live-fill-${strategy.id})`} />}
 
         {/* Backtest line (dashed) */}
         <path d={backtestPath} fill="none" stroke="#6b7280" strokeWidth="1.5" strokeDasharray="4,3" />
@@ -232,10 +234,10 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
 
         {/* X-axis labels */}
         <text x={x(0)} y={H - 8} fill="#4b5563" fontSize="10" textAnchor="start" fontFamily="Inter, sans-serif">{startYr}</text>
-        {!yrHidden && (
+        {!strategy.equityModelOnly && !yrHidden && (
           <text x={yrCrowded ? transitionX - 6 : transitionX} y={H - 8} fill="#9ca3af" fontSize="10" textAnchor={yrCrowded ? 'end' : 'middle'} fontFamily="Inter, sans-serif">{liveYr}</text>
         )}
-        <text x={x(months)} y={H - 8} fill="#10b981" fontSize="10" textAnchor="end" fontFamily="Inter, sans-serif">Now</text>
+        <text x={x(months)} y={H - 8} fill="#10b981" fontSize="10" textAnchor="end" fontFamily="Inter, sans-serif">{strategy.equityEndLabel || 'Now'}</text>
       </svg>
 
       {underwater && (
