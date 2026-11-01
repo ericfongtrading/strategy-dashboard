@@ -17,10 +17,12 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
   // not turn the grid into ten requests, nine of which 404.
   const { data: live } = useLiveData(s.liveHeadline ? s.id : '');
   const headline = s.liveHeadline ? live?.headline : undefined;
-  const performance = s.id === 'options' ? live?.performance : undefined;
-  const cagr = performance ? `${Math.round(performance.cagrPct)}%` : s.cagr;
-  const sharpe = performance ? performance.sharpe.toFixed(2) : s.sharpe;
-  const maxDD = performance ? `${Math.round(performance.maxDrawdownPct)}%` : s.maxDD;
+  // The options performance record is a verified, unitized monthly series.
+  // Keep it separate from the live current-book feed until its full daily NAV
+  // history is rebuilt; the live feed remains responsible for the payoff chart.
+  const cagr = s.cagr;
+  const sharpe = s.sharpe;
+  const maxDD = s.maxDD;
   const openCount = s.liveHeadline ? live?.positions?.length : undefined;
   const planCount = s.liveHeadline ? live?.plans?.length : undefined;
 
@@ -111,7 +113,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
       <div className="flex items-end gap-6">
         {sharpe && (
           <div>
-            <div className="text-[11px] text-muted uppercase tracking-wider">{performance ? 'Sharpe (Rf 0%)' : 'Sharpe'}</div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">{s.id === 'options' ? 'Sharpe (Rf 0%)' : 'Sharpe'}</div>
             <div className="text-xl font-semibold metric-value text-white">{sharpe}</div>
           </div>
         )}
