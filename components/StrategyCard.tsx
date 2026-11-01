@@ -145,6 +145,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
         ))}
       </div>
 
+      {s.performanceNote && <div className="text-[10px] leading-relaxed text-muted">{s.performanceNote}</div>}
       {s.dataSource && (
         <div className="text-xs text-muted mt-auto pt-1">{s.dataSource}</div>
       )}

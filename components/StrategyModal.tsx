@@ -59,7 +59,8 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   const cagr = s.cagr;
   const sharpe = s.sharpe;
   const maxDD = s.maxDD;
-  const monthlyRows = s.id === 'options'
+  // Approved historical models must not be replaced by a stale live-feed table.
+  const monthlyRows = s.id === 'options' || s.equityModelOnly
     ? s.monthlyReturns
     : liveData?.monthlyReturns || s.monthlyReturns;
   // "theoretical" only when the live feed says so — a feed of real fills
@@ -176,7 +177,10 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
             <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince}
-              note={s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} dataThrough={liveData?.dataThrough} />
+              note={s.equityModelOnly || s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote}
+              strategyOnly={s.id === 'fx'} modelOnly={s.equityModelOnly}
+              costNote={s.modelCostNote}
+              dataThrough={s.equityModelOnly ? s.modelDataThrough : liveData?.dataThrough} />
           )}
 
           {s.id === 'ml' && liveData?.basis && <p className="text-xs text-muted leading-relaxed">{liveData.basis}</p>}

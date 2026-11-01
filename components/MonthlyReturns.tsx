@@ -14,7 +14,7 @@ function Cell({ value, isMtd }: { value: number | null; isMtd?: boolean }) {
   );
 }
 
-export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnly, dataThrough, modelOnly }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string; strategyOnly?: boolean; dataThrough?: string; modelOnly?: boolean }) {
+export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnly, dataThrough, modelOnly, costNote }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string; strategyOnly?: boolean; dataThrough?: string; modelOnly?: boolean; costNote?: string }) {
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
       <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">{modelOnly ? 'Monthly Model Returns' : strategyOnly ? 'Monthly Strategy Returns' : 'Monthly Historical Returns'}</h4>
@@ -32,7 +32,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
           <tbody>
             {rows.map((row) => {
               const lastDataIdx = row.months.reduce<number>((acc, v, i) => (v !== null ? i : acc), -1);
-              const isPartialLive = (row.isLive || (dataThrough && row.year === new Date(dataThrough).getUTCFullYear())) && lastDataIdx < 11 && lastDataIdx >= 0;
+              const isPartialLive = !modelOnly && (row.isLive || (dataThrough && row.year === new Date(dataThrough).getUTCFullYear())) && lastDataIdx < 11 && lastDataIdx >= 0;
               return (
                 <tr key={row.year} className="border-b border-border/50 hover:bg-bg-hover/30">
                   <td className="px-2 py-1.5 text-sm font-semibold text-white">
@@ -64,7 +64,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-good pulse-dot" />
           Live since {liveSince || 'Jul 2026'}
         </span>}
-        {modelOnly ? <span>Model returns · 1.06 bp assumed round-trip costs</span> : strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost</span> : theoretical ? (
+        {modelOnly ? <span>{costNote || 'Historical model returns · stated research costs'}</span> : strategyOnly ? <span>Strategy returns · 1 pip assumed round-trip cost</span> : theoretical ? (
           <span>Strategy returns, net of measured costs</span>
         ) : rows.some((r) => !r.isLive) ? (
           <span>All other rows are backtested</span>
