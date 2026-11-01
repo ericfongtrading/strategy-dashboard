@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-01T12:16:02.025078+00:00",
+  "updated_utc": "2026-11-01T12:17:01.699668+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -177,18 +177,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T12:15:46.534502+00:00",
-      "data_final_utc": "2026-10-30T21:00:00+00:00",
-      "halt_reasons": [
-        "NQ_FEED_STALE",
-        "NQ_RECOVERY_NOT_VERIFIED",
-        "VENUE_RECOVERY_NOT_VERIFIED"
-      ],
+      "state": "ERROR",
+      "heartbeat_utc": "2026-11-01T12:16:19.203009+00:00",
+      "data_final_utc": null,
+      "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": true,
+      "broker_connected": false,
       "armed": false,
-      "warmup_verified": true,
+      "warmup_verified": null,
       "summary": {
         "closed": 1,
         "open": 0,
@@ -243,7 +239,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-01T12:16:02.928524+00:00",
+      "heartbeat_utc": "2026-11-01T12:17:02.546067+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -269,7 +265,7 @@
     "state": "DATA_WAIT",
     "validator_state": "OK",
     "data_error": "OperationalError: unable to open database file",
-    "heartbeat_utc": "2026-11-01T12:15:59.081562+00:00",
+    "heartbeat_utc": "2026-11-01T12:16:59.105170+00:00",
     "last_bar_utc": "2026-10-30T20:59:00+00:00",
     "position": null,
     "summary": {
@@ -661,6 +657,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-01T12:15:46.092292+00:00"
+    "validation_updated_utc": "2026-11-01T12:16:46.088635+00:00"
   }
 }
