@@ -111,7 +111,7 @@ export function StrategyCard({ s, onClick }: { s: Strategy; onClick: () => void 
       <div className="flex items-end gap-6">
         {sharpe && (
           <div>
-            <div className="text-[11px] text-muted uppercase tracking-wider">Sharpe (Rf 0%)</div>
+            <div className="text-[11px] text-muted uppercase tracking-wider">{performance ? 'Sharpe (Rf 0%)' : 'Sharpe'}</div>
             <div className="text-xl font-semibold metric-value text-white">{sharpe}</div>
           </div>
         )}
