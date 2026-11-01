@@ -50,13 +50,16 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   const hasChart = s.status !== 'development' && s.cagrNum;
 
   const trades = liveData?.recentTrades || s.recentTrades;
-  const positions = liveData?.positions || s.positions;
+  const positions = s.id === 'fx' ? undefined : liveData?.positions || s.positions;
   const plans = liveData?.plans;
   // Strategies with a track record too short to annualise supply their own
   // headline numbers instead of an invented CAGR.
-  const headline = liveData?.detailHeadline || liveData?.headline;
-  const keepLatestBacktest = s.id === 'hsi' || s.id === 'nq' || s.id === 'fx' || !!s.equityModelOnly;
-  const monthlyRows = keepLatestBacktest ? s.monthlyReturns : (liveData?.monthlyReturns || s.monthlyReturns);
+  const headline = s.id === 'fx' ? undefined : liveData?.detailHeadline || liveData?.headline;
+  const performance = s.id === 'options' ? liveData?.performance : undefined;
+  const cagr = performance ? `${Math.round(performance.cagrPct)}%` : s.cagr;
+  const sharpe = performance ? performance.sharpe.toFixed(2) : s.sharpe;
+  const maxDD = performance ? `${Math.round(performance.maxDrawdownPct)}%` : s.maxDD;
+  const monthlyRows = liveData?.monthlyReturns || s.monthlyReturns;
   // "theoretical" only when the live feed says so — a feed of real fills
   // (e.g. GC) must not be labelled theoretical.
   const _basis = (liveData?.basis || '').toUpperCase();
@@ -124,17 +127,17 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           )}
 
           {/* Metrics row */}
-          {(s.cagr || s.sharpe || s.maxDD) && (
+          {(cagr || sharpe || maxDD) && (
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {s.cagr && <Metric label={s.cagrLabel || 'CAGR'} value={s.cagr} large color="text-good" />}
+              {cagr && <Metric label={s.cagrLabel || 'CAGR'} value={cagr} large color="text-good" />}
               {s.extraMetrics?.map((x, i) => (
                 <Metric key={i} label={x.label} value={x.value} large
                   color={x.tone === 'good' ? 'text-good' : x.tone === 'bad' ? 'text-bad' : undefined} />
               ))}
               {s.pf && <Metric label="Profit Factor" value={s.pf} />}
               {s.winRate && <Metric label="Win Rate" value={s.winRate} />}
-              {s.sharpe && <Metric label="Sharpe Ratio" value={s.sharpe} large />}
-              {s.maxDD && <Metric label="Max Drawdown" value={s.maxDD} large color="text-bad" />}
+              {sharpe && <Metric label={performance?.sharpeBasis || 'Sharpe Ratio'} value={sharpe} large />}
+              {maxDD && <Metric label="Max Drawdown" value={maxDD} large color="text-bad" />}
             </div>
           )}
 
@@ -171,7 +174,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
           {/* Monthly Returns */}
           {monthlyRows && monthlyRows.length > 0 && (
             <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince}
-              note={s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} modelOnly={s.equityModelOnly} dataThrough={s.equityModelOnly ? undefined : liveData?.dataThrough} />
+              note={s.id === 'fx' ? s.monthlyNote : liveData?.monthlyNote || s.monthlyNote} strategyOnly={s.id === 'fx'} dataThrough={liveData?.dataThrough} />
           )}
 
           {s.id === 'ml' && liveData?.basis && <p className="text-xs text-muted leading-relaxed">{liveData.basis}</p>}
@@ -184,7 +187,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
           {/* Recent Trades */}
           {trades && trades.length > 0 && (
-            <RecentTrades trades={trades} strategyId={s.id} />
+            <RecentTrades trades={trades} />
           )}
 
           {/* Last updated */}
