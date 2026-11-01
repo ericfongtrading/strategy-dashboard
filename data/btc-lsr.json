@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T01:55:02Z",
+  "lastUpdated": "2026-11-01T01:55:03Z",
   "basis": "Card metrics and monthlyReturns are the strategy signal record, 40% of equity per signal, unlevered, mark-to-market daily. Headline CAGR 26.0% is measured from the first signal (2022-12-21); the same curve compounds at 20.2% from 2022-01-01 and 16.7% from 2014. Trade 53 closed on 2026-10-30 via the strategy trail rule. Trading live since 2025-04-10; live fills are recorded separately with exchange order IDs.",
   "recentTrades": [
     {
@@ -116,10 +116,10 @@
       "symbol": "BTC",
       "direction": "Long",
       "entry": "59,983",
-      "current": "77,414",
+      "current": "77,696",
       "size": "40% eq",
-      "pnl": "+29.1%",
-      "pnlNum": 29.1
+      "pnl": "+29.5%",
+      "pnlNum": 29.5
     }
   ],
   "monthlyReturns": [
@@ -207,11 +207,11 @@
         1.9,
         10.27,
         2.99,
-        -3.58,
-        null,
+        -3.48,
+        0.07,
         null
       ],
-      "ytd": 15.0,
+      "ytd": 15.2,
       "isLive": true
     }
   ]
