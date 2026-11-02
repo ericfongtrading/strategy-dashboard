@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-02T04:12:02.349837+00:00",
+  "updated_utc": "2026-11-02T04:13:02.111534+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -35,14 +35,14 @@
       "records": [],
       "source_present": true,
       "errors": 0,
-      "state": "OBSERVING",
+      "state": "STALE",
       "heartbeat_utc": "2026-11-02T04:09:09.118492+00:00",
       "data_final_utc": "2026-11-02T04:09:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
-      "armed": false,
-      "warmup_verified": true,
+      "armed": null,
+      "warmup_verified": null,
       "summary": {
         "closed": 0,
         "open": 0,
@@ -58,7 +58,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ERROR",
-      "heartbeat_utc": "2026-11-02T04:11:14.002271+00:00",
+      "heartbeat_utc": "2026-11-02T04:12:15.241612+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -80,7 +80,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T04:12:03.127656+00:00",
+      "heartbeat_utc": "2026-11-02T04:13:03.115219+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -158,11 +158,11 @@
     "present": true,
     "mode": "PAPER_OBSERVE_ONLY",
     "orders_possible": false,
-    "healthy": true,
-    "state": "PAPER_RUNNING",
+    "healthy": false,
+    "state": "DATA_WAIT",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-02T04:11:59.126832+00:00",
+    "heartbeat_utc": "2026-11-02T04:12:59.151460+00:00",
     "last_bar_utc": "2026-11-02T04:08:00+00:00",
     "position": null,
     "summary": {
@@ -553,6 +553,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-02T04:11:46.754673+00:00"
+    "validation_updated_utc": "2026-11-02T04:12:46.853087+00:00"
   }
 }
