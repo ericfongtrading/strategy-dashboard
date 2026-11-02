@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-02T05:29:01.622007+00:00",
+  "updated_utc": "2026-11-02T05:30:01.376546+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,8 +36,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-02T05:29:00.728828+00:00",
-      "data_final_utc": "2026-11-02T05:28:00+00:00",
+      "heartbeat_utc": "2026-11-02T05:30:00.547247+00:00",
+      "data_final_utc": "2026-11-02T05:29:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -58,8 +58,8 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T05:29:00.728828+00:00",
-      "data_final_utc": "2026-11-02T05:28:00+00:00",
+      "heartbeat_utc": "2026-11-02T05:30:00.547247+00:00",
+      "data_final_utc": "2026-11-02T05:29:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
@@ -79,13 +79,13 @@
       "records": [],
       "source_present": true,
       "errors": 0,
-      "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T05:29:02.611413+00:00",
+      "state": "STALE",
+      "heartbeat_utc": "2026-11-02T05:30:07.065011+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": true,
-      "armed": true,
+      "broker_connected": null,
+      "armed": null,
       "warmup_verified": null,
       "summary": {
         "closed": 0,
@@ -162,8 +162,8 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-02T05:29:01.076664+00:00",
-    "last_bar_utc": "2026-11-02T05:27:00+00:00",
+    "heartbeat_utc": "2026-11-02T05:30:03.567822+00:00",
+    "last_bar_utc": "2026-11-02T05:28:00+00:00",
     "position": null,
     "summary": {
       "reads": 11,
@@ -553,6 +553,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-02T05:28:21.965050+00:00"
+    "validation_updated_utc": "2026-11-02T05:29:24.508932+00:00"
   }
 }
