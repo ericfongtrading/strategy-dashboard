@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-02T09:24:02.205761+00:00",
+  "updated_utc": "2026-11-02T09:25:01.943023+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -80,7 +80,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T09:24:02.869251+00:00",
+      "heartbeat_utc": "2026-11-02T09:25:02.836768+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -162,7 +162,7 @@
     "state": "DATA_WAIT",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-02T09:24:03.063312+00:00",
+    "heartbeat_utc": "2026-11-02T09:25:03.097061+00:00",
     "last_bar_utc": "2026-11-02T09:12:00+00:00",
     "position": null,
     "summary": {
@@ -553,6 +553,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-02T09:23:49.668378+00:00"
+    "validation_updated_utc": "2026-11-02T09:24:50.052021+00:00"
   }
 }
