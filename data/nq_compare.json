@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-02T18:08:02.251160+00:00",
+  "updated_utc": "2026-11-02T18:09:01.618637+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,7 +36,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-02T18:08:01.722092+00:00",
+      "heartbeat_utc": "2026-11-02T18:09:00.669813+00:00",
       "data_final_utc": "2026-11-02T18:08:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -99,7 +99,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T18:08:01.722092+00:00",
+      "heartbeat_utc": "2026-11-02T18:09:00.669813+00:00",
       "data_final_utc": "2026-11-02T18:08:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -127,19 +127,19 @@
           "venue": "ftmo",
           "status": "OPEN",
           "side": 1,
-          "revision": 373,
+          "revision": 509,
           "instrument": "US100.cash",
           "unit": "lots",
           "entry_utc": "2026-11-02T18:05:02.051000+00:00",
           "exit_utc": null,
-          "updated_utc": "2026-11-02T18:08:01.829751+00:00",
+          "updated_utc": "2026-11-02T18:09:01.160281+00:00",
           "size": 1.02,
           "remaining": 1.02,
           "entry": 28451.48,
           "exit": null,
           "stop": 28353.23,
           "target": 28746.23,
-          "gross_usd": -0.87,
+          "gross_usd": 11.78,
           "fees_usd": 0.0,
           "swap_usd": 0.0,
           "initial_risk_usd": 100.22,
@@ -151,8 +151,8 @@
           "venue_mid": 28450.355000000003,
           "quote_age_ms": -857.6481342315674,
           "exit_quote_age_ms": null,
-          "net_usd": -0.87,
-          "net_r": -0.008680902015565756,
+          "net_usd": 11.78,
+          "net_r": 0.11754140890041907,
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
@@ -162,7 +162,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T18:08:02.806760+00:00",
+      "heartbeat_utc": "2026-11-02T18:09:02.342292+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -244,8 +244,8 @@
     "state": "PAPER_RUNNING",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-02T18:07:58.780966+00:00",
-    "last_bar_utc": "2026-11-02T18:06:00+00:00",
+    "heartbeat_utc": "2026-11-02T18:09:01.598547+00:00",
+    "last_bar_utc": "2026-11-02T18:07:00+00:00",
     "position": null,
     "summary": {
       "reads": 12,
@@ -665,6 +665,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-02T18:07:47.727964+00:00"
+    "validation_updated_utc": "2026-11-02T18:08:47.692503+00:00"
   }
 }
