@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-02T10:31:02.019995+00:00",
+  "updated_utc": "2026-11-02T10:32:01.524455+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,7 +36,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-02T10:31:01.986186+00:00",
+      "heartbeat_utc": "2026-11-02T10:31:59.843014+00:00",
       "data_final_utc": "2026-11-02T10:31:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -58,7 +58,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T10:31:01.986186+00:00",
+      "heartbeat_utc": "2026-11-02T10:31:59.843014+00:00",
       "data_final_utc": "2026-11-02T10:31:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -80,7 +80,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T10:31:02.810902+00:00",
+      "heartbeat_utc": "2026-11-02T10:32:02.568418+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -162,8 +162,8 @@
     "state": "PAPER_RUNNING",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-02T10:31:02.593722+00:00",
-    "last_bar_utc": "2026-11-02T10:29:00+00:00",
+    "heartbeat_utc": "2026-11-02T10:32:00.240656+00:00",
+    "last_bar_utc": "2026-11-02T10:30:00+00:00",
     "position": null,
     "summary": {
       "reads": 11,
@@ -553,6 +553,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-02T10:30:28.205105+00:00"
+    "validation_updated_utc": "2026-11-02T10:31:28.105625+00:00"
   }
 }
