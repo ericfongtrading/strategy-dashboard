@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-02T15:31:01.534034+00:00",
+  "updated_utc": "2026-11-02T15:32:01.194013+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,7 +36,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-02T15:31:01.334264+00:00",
+      "heartbeat_utc": "2026-11-02T15:32:00.003833+00:00",
       "data_final_utc": "2026-11-02T15:31:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -58,7 +58,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T15:31:01.334264+00:00",
+      "heartbeat_utc": "2026-11-02T15:32:00.003833+00:00",
       "data_final_utc": "2026-11-02T15:31:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -80,7 +80,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-02T15:31:02.223682+00:00",
+      "heartbeat_utc": "2026-11-02T15:32:01.856216+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -162,11 +162,11 @@
     "state": "PAPER_RUNNING",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-02T15:31:00.572607+00:00",
-    "last_bar_utc": "2026-11-02T15:29:00+00:00",
+    "heartbeat_utc": "2026-11-02T15:31:58.167848+00:00",
+    "last_bar_utc": "2026-11-02T15:30:00+00:00",
     "position": null,
     "summary": {
-      "reads": 11,
+      "reads": 12,
       "trades": 1,
       "net_usd": 290.188148,
       "wins": 1,
@@ -530,6 +530,36 @@
         "regime_provisional": false,
         "read_hash": "004c5642487f949678cf1b24710887c8dec12280496f87a85199b6983e286eb8",
         "origin": "BACKFILLED_REPLAY"
+      },
+      {
+        "day": "2026-11-02",
+        "read_t": 29893890,
+        "read_utc": "2026-11-02T15:31:00+00:00",
+        "coverage": {
+          "expected": 991,
+          "present": 991,
+          "missing": 0,
+          "seeded": 0,
+          "contracts": [
+            "NQ20261218"
+          ],
+          "ready": true,
+          "missing_ranges": []
+        },
+        "qualifies": false,
+        "take": false,
+        "side": 0,
+        "distance_pct": 0.36484079384316603,
+        "vwap": 28744.876962700044,
+        "vol_ratio": 1.0259341519903615,
+        "busy": false,
+        "regime": "ZONE_A",
+        "why": "one-sided/0.5% condition not met",
+        "data_ready": true,
+        "regime_asof": "2026-11-01",
+        "regime_provisional": false,
+        "read_hash": "0fecaf1081c6adde07a02e357bb4652c3c309da487329bf2bc2a1b2d785ec1f6",
+        "origin": "FORWARD"
       }
     ],
     "missing_expected_bars": 0,
@@ -541,11 +571,11 @@
       "trades": 3
     },
     "validated": {
-      "reads": 11,
+      "reads": 12,
       "trades": 1
     },
     "forward_validated": {
-      "reads": 0,
+      "reads": 1,
       "trades": 0
     },
     "failures": {
@@ -553,6 +583,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-02T15:30:58.056977+00:00"
+    "validation_updated_utc": "2026-11-02T15:31:58.215328+00:00"
   }
 }
