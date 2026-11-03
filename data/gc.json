@@ -1,7 +1,20 @@
 {
-  "lastUpdated": "2026-11-03T10:40:10Z",
+  "lastUpdated": "2026-11-03T12:40:11Z",
   "basis": "THEORETICAL GC STRATEGY RECORD. All canonical trades are shown independently of execution venue.",
   "recentTrades": [
+    {
+      "date": "2026-11-03",
+      "entryDate": "2026-11-03",
+      "symbol": "P4",
+      "direction": "Short",
+      "entry": "3,908.5",
+      "exit": "3,924.1",
+      "pnl": "-$481",
+      "pnlNum": -481.45,
+      "rMultiple": "-1.0R",
+      "note": "stop loss",
+      "source": "Strategy model"
+    },
     {
       "date": "2026-11-03",
       "entryDate": "2026-11-03",
@@ -118,19 +131,6 @@
       "rMultiple": "-1.0R",
       "note": "stop loss",
       "source": "Strategy model"
-    },
-    {
-      "date": "2026-10-29",
-      "entryDate": "2026-10-29",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,042.2",
-      "exit": "4,058.4",
-      "pnl": "-$332",
-      "pnlNum": -331.95,
-      "rMultiple": "-1.0R",
-      "note": "stop loss",
-      "source": "Strategy model"
     }
   ],
   "positions": [
@@ -138,20 +138,20 @@
       "symbol": "P2",
       "direction": "Short",
       "entry": "3,928.5",
-      "current": "3,910.3",
+      "current": "3,925.7",
       "size": "3 MGC model",
-      "pnl": "+$546",
-      "pnlNum": 546.0,
+      "pnl": "+$84",
+      "pnlNum": 84.0,
       "open": "2026-11-03 13:35 HKT"
     },
     {
       "symbol": "P3",
       "direction": "Short",
       "entry": "3,920.1",
-      "current": "3,910.3",
+      "current": "3,925.7",
       "size": "3 MGC model",
-      "pnl": "+$294",
-      "pnlNum": 294.0,
+      "pnl": "-$168",
+      "pnlNum": -168.0,
       "open": "2026-11-03 15:06 HKT"
     }
   ],
