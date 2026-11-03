@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T14:00:03Z",
+  "lastUpdated": "2026-11-03T14:05:02Z",
   "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
   "recentTrades": [
     {
@@ -63,34 +63,34 @@
       "symbol": "GBPNZD",
       "direction": "Short",
       "entry": "2.38570",
-      "current": "2.38625",
+      "current": "2.38900",
       "size": "11,217",
       "stop": "2.40165",
-      "targets": "2.37950",
-      "pnl": "-6 NZD",
-      "pnlNum": -6
+      "targets": "2.38045",
+      "pnl": "-37 NZD",
+      "pnlNum": -37
     },
     {
       "symbol": "GBPAUD",
       "direction": "Short",
       "entry": "1.91539",
-      "current": "1.92330",
+      "current": "1.92010",
       "size": "5,741",
       "stop": "1.92775",
-      "targets": "1.90700",
-      "pnl": "-45 AUD",
-      "pnlNum": -45
+      "targets": "1.90860",
+      "pnl": "-27 AUD",
+      "pnlNum": -27
     },
     {
       "symbol": "AUDCAD",
       "direction": "Long",
       "entry": "0.97490",
-      "current": "0.97490",
+      "current": "0.97755",
       "size": "11,707",
       "stop": "0.96860",
-      "targets": "0.98115",
-      "pnl": "-",
-      "pnlNum": 0
+      "targets": "0.98075",
+      "pnl": "+31 CAD",
+      "pnlNum": 31
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
