@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-11-03T01:14:01.548530+00:00",
+  "lastUpdated": "2026-11-03T06:08:01.556499+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$10,446",
+      "value": "+$11,444",
       "tone": "good",
-      "sub": "41 trades, 1 BTC each"
+      "sub": "42 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "61%",
-      "sub": "25W / 16L"
+      "value": "62%",
+      "sub": "26W / 16L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.78",
+      "value": "1.86",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "MALDINI",
-      "direction": "Long",
-      "entry": "76,534",
-      "current": "77,212",
-      "size": "1 BTC",
-      "pnl": "+$1,171",
-      "pnlNum": 1171,
-      "stop": "76,534 (BE)",
-      "targets": "✓ 77,600 / ✓ 78,150 / 79,150",
-      "realized": "+$1,001",
-      "open": "25%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "SHEVCHENKO",
@@ -69,6 +55,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-11-03",
+      "entryDate": "2026-10-30",
+      "symbol": "MALDINI",
+      "direction": "Long",
+      "entry": "76,534",
+      "exit": "76,518",
+      "pnl": "+$997",
+      "pnlNum": 997,
+      "rMultiple": "+0.75R",
+      "note": "Breakeven stop"
+    },
     {
       "date": "2026-10-30",
       "entryDate": "2026-10-30",
@@ -562,5 +560,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $77,212"
+  "priceNote": "Unrealised P&L marked at $76,478"
 }
