@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-03T05:55:01.539405+00:00",
+  "updated_utc": "2026-11-03T05:56:02.606277+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -32,26 +32,114 @@
   ],
   "lanes": {
     "theoretical": {
-      "records": [],
+      "records": [
+        {
+          "position_id": "41ad406f7f0f7a386c30",
+          "signal_id": "b864400955011d731d77",
+          "version": "nq4-cci05-v1",
+          "source": "canonical_signal_model_reconstruction",
+          "sleeve": "VL_R3",
+          "venue": "theoretical",
+          "status": "CLOSED",
+          "side": 1,
+          "revision": 0,
+          "instrument": "NQ signal / MNQ model",
+          "unit": "MNQ",
+          "entry_utc": "2026-11-03T04:30:00+00:00",
+          "exit_utc": "2026-11-03T04:40:00+00:00",
+          "updated_utc": "2026-11-03T05:56:02.606277+00:00",
+          "size": 1,
+          "remaining": 0,
+          "entry": 28185.75,
+          "exit": 28137.25,
+          "stop": 28138.5,
+          "target": 28327.5,
+          "gross_usd": -97.0,
+          "fees_usd": 1.22,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 94.5,
+          "entry_reference": 28184.5,
+          "exit_reference": null,
+          "entry_bid": null,
+          "entry_ask": null,
+          "nq_mid": null,
+          "venue_mid": null,
+          "quote_age_ms": null,
+          "exit_quote_age_ms": null,
+          "model_origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
+          "model_policy": "recorded-canonical-signal-core-fill-v1",
+          "model_exit_reason": "STOP",
+          "net_usd": -98.22,
+          "net_r": -1.0393650793650793,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null
+        },
+        {
+          "position_id": "8d2ba587cc0e01c1ab26",
+          "signal_id": "76df324cef56c7b421d2",
+          "version": "nq4-cci05-v1",
+          "source": "canonical_signal_model_reconstruction",
+          "sleeve": "VL_R3",
+          "venue": "theoretical",
+          "status": "CLOSED",
+          "side": 1,
+          "revision": 0,
+          "instrument": "NQ signal / MNQ model",
+          "unit": "MNQ",
+          "entry_utc": "2026-11-02T18:05:00+00:00",
+          "exit_utc": "2026-11-02T18:41:00+00:00",
+          "updated_utc": "2026-11-03T05:56:02.606277+00:00",
+          "size": 1,
+          "remaining": 0,
+          "entry": 28582.75,
+          "exit": 28483.75,
+          "stop": 28485.0,
+          "target": 28876.0,
+          "gross_usd": -198.0,
+          "fees_usd": 1.22,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 195.5,
+          "entry_reference": 28581.5,
+          "exit_reference": null,
+          "entry_bid": null,
+          "entry_ask": null,
+          "nq_mid": null,
+          "venue_mid": null,
+          "quote_age_ms": null,
+          "exit_quote_age_ms": null,
+          "model_origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
+          "model_policy": "recorded-canonical-signal-core-fill-v1",
+          "model_exit_reason": "STOP",
+          "net_usd": -199.22,
+          "net_r": -1.0190281329923274,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null
+        }
+      ],
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-03T05:54:59.936358+00:00",
-      "data_final_utc": "2026-11-03T05:54:00+00:00",
+      "heartbeat_utc": "2026-11-03T05:56:02.606277+00:00",
+      "data_final_utc": "2026-11-03T05:55:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
       "armed": false,
       "warmup_verified": true,
       "summary": {
-        "closed": 0,
+        "closed": 2,
         "open": 0,
-        "measured": 0,
-        "net_usd": null,
-        "gross_usd": null,
-        "swap_usd": null,
-        "fees_usd": null
-      }
+        "measured": 2,
+        "net_usd": -297.44,
+        "gross_usd": -295.0,
+        "swap_usd": 0.0,
+        "fees_usd": 2.44
+      },
+      "model_reference_state": "READY"
     },
     "ib": {
       "records": [
@@ -139,8 +227,8 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T05:54:59.936358+00:00",
-      "data_final_utc": "2026-11-03T05:54:00+00:00",
+      "heartbeat_utc": "2026-11-03T05:56:01.177302+00:00",
+      "data_final_utc": "2026-11-03T05:55:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
@@ -242,7 +330,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T05:55:03.338372+00:00",
+      "heartbeat_utc": "2026-11-03T05:56:03.597916+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -263,16 +351,29 @@
   "regular_market_open": true,
   "execution_mode": "LIVE",
   "observation_started_utc": "2026-11-01T16:05:24.903980+00:00",
+  "model_reference": {
+    "state": "READY",
+    "policy": "recorded-canonical-signal-core-fill-v1",
+    "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
+    "records": 2,
+    "checked_utc": "2026-11-03T05:56:02.606277+00:00",
+    "fill_model": {
+      "slippage_points_per_side": 1.045,
+      "commission_usd_per_mnq_side": 0.61,
+      "tie": "stop"
+    },
+    "error_count": 0
+  },
   "matched_execution": {
     "schema": "nq.matched-execution.3",
     "basis": "Same completed signals at equal planned stop risk",
     "reference_risk_usd": 100.0,
-    "state": "AWAITING_MATCHED_TRADES",
+    "state": "READY",
     "counts": {
       "signals": 2,
-      "matched_closed": 0,
+      "matched_closed": 2,
       "missing_record": {
-        "theoretical": 2,
+        "theoretical": 0,
         "ib": 0,
         "ftmo": 0
       },
@@ -283,37 +384,78 @@
     },
     "lanes": {
       "theoretical": {
-        "net_usd": null,
-        "gross_usd": null,
-        "fees_usd": null,
-        "swap_usd": null,
+        "net_usd": -205.83932123574067,
+        "gross_usd": -203.92427502401927,
+        "fees_usd": 1.9150462117214033,
+        "swap_usd": 0.0,
         "entry_slippage_count": 0,
         "entry_slippage_pts": null,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       },
       "ib": {
-        "net_usd": null,
-        "gross_usd": null,
-        "fees_usd": null,
-        "swap_usd": null,
-        "entry_slippage_count": 0,
-        "entry_slippage_pts": null,
+        "net_usd": -212.21245452119066,
+        "gross_usd": -210.25187183053086,
+        "fees_usd": 1.9605826906598114,
+        "swap_usd": 0.0,
+        "entry_slippage_count": 2,
+        "entry_slippage_pts": 4.75,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       },
       "ftmo": {
-        "net_usd": null,
-        "gross_usd": null,
-        "fees_usd": null,
-        "swap_usd": null,
+        "net_usd": -201.5588869124166,
+        "gross_usd": -201.5588869124166,
+        "fees_usd": 0.0,
+        "swap_usd": 0.0,
         "entry_slippage_count": 0,
         "entry_slippage_pts": null,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       }
     },
-    "per_signal": {}
+    "per_signal": {
+      "b864400955011d731d77": {
+        "theoretical": {
+          "net_usd": -103.93650793650794,
+          "gross_usd": -102.64550264550265,
+          "fees_usd": 1.291005291005291,
+          "swap_usd": 0.0
+        },
+        "ib": {
+          "net_usd": -105.1584699453552,
+          "gross_usd": -103.82513661202186,
+          "fees_usd": 1.3333333333333333,
+          "swap_usd": 0.0
+        },
+        "ftmo": {
+          "net_usd": -99.67732884400179,
+          "gross_usd": -99.67732884400179,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0
+        }
+      },
+      "76df324cef56c7b421d2": {
+        "theoretical": {
+          "net_usd": -101.90281329923273,
+          "gross_usd": -101.27877237851662,
+          "fees_usd": 0.6240409207161125,
+          "swap_usd": 0.0
+        },
+        "ib": {
+          "net_usd": -107.05398457583547,
+          "gross_usd": -106.426735218509,
+          "fees_usd": 0.6272493573264781,
+          "swap_usd": 0.0
+        },
+        "ftmo": {
+          "net_usd": -101.88155806841482,
+          "gross_usd": -101.88155806841482,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0
+        }
+      }
+    }
   },
   "archive_path": "data/nq_compare_archive_20261101T160524Z.json",
   "osr_paper": {
@@ -324,8 +466,8 @@
     "state": "PAPER_RUNNING",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-03T05:55:03.855848+00:00",
-    "last_bar_utc": "2026-11-03T05:53:00+00:00",
+    "heartbeat_utc": "2026-11-03T05:56:01.526858+00:00",
+    "last_bar_utc": "2026-11-03T05:54:00+00:00",
     "position": null,
     "summary": {
       "reads": 12,
@@ -745,6 +887,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-03T05:54:59.770150+00:00"
+    "validation_updated_utc": "2026-11-03T05:56:00.438419+00:00"
   }
 }
