@@ -18,6 +18,7 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
   }, [replayOpen]);
 
   const replayMatches = [
+    {name:'MALDINI',entry:'2026-10-30',exit:'2026-11-03',file:'maldini',version:'20261103-v1'},
     {name:'CANNAVARO',entry:'2026-10-22',exit:'2026-10-24',file:'cannavaro',version:'20261031-intro-first'},
     {name:'DROGBA',entry:'2026-10-24',exit:'2026-10-27',file:'drogba',version:'20261031-clear-label'},
   ];
