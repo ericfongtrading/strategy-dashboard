@@ -3,7 +3,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 
 import type { Trade, Position, Plan } from '@/lib/strategies';
-import { hyperReturn, hyperMoneyReturn } from '@/lib/hyperMetrics';
+
 
 export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategyId?: string }) {
 
@@ -104,7 +104,7 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
 
               <th className="px-2 py-2 text-right text-[10px] font-semibold text-muted uppercase tracking-wider">Exit</th>
 
-              <th className="px-2 py-2 text-right text-[10px] font-semibold text-muted uppercase tracking-wider">{strategyId === 'hyper-bot' ? 'Model return' : 'P&L'}</th>
+              <th className="px-2 py-2 text-right text-[10px] font-semibold text-muted uppercase tracking-wider">P&L</th>
 
               {showR && (
 
@@ -188,7 +188,7 @@ export function RecentTrades({ trades, strategyId }: { trades: Trade[]; strategy
 
                 }`}>
 
-                  {strategyId === 'hyper-bot' ? hyperReturn(t.pnlNum) : t.pnl}
+                  {t.pnl}
 
                 </td>
 
@@ -390,13 +390,13 @@ export function CurrentPositions({ positions, note, strategyId }: { positions: P
 
                 {showRealized && (
 
-                  <td className="px-2 py-2 text-right text-white/80 font-mono metric-value">{strategyId === 'hyper-bot' ? hyperMoneyReturn(p.realized) : p.realized || '—'}</td>
+                  <td className="px-2 py-2 text-right text-white/80 font-mono metric-value">{p.realized || '—'}</td>
 
                 )}
 
                 <td className={`px-2 py-2 text-right font-semibold font-mono metric-value ${p.pnlNum >= 0 ? 'text-good' : 'text-bad'}`}>
 
-                  {strategyId === 'hyper-bot' ? hyperReturn(p.pnlNum) : p.pnl}
+                  {p.pnl}
 
                 </td>
 
