@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-03T04:30:03.426037+00:00",
+  "updated_utc": "2026-11-03T04:31:01.994468+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,8 +36,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-03T04:30:00.697993+00:00",
-      "data_final_utc": "2026-11-03T04:29:00+00:00",
+      "heartbeat_utc": "2026-11-03T04:31:00.915498+00:00",
+      "data_final_utc": "2026-11-03T04:30:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -55,6 +55,46 @@
     },
     "ib": {
       "records": [
+        {
+          "position_id": "1754190799553568bd38",
+          "signal_id": "b864400955011d731d77",
+          "version": "nq4-cci05-v1",
+          "source": null,
+          "sleeve": "VL_R3",
+          "venue": "ib",
+          "status": "OPEN",
+          "side": 1,
+          "revision": 0,
+          "instrument": "MNQ20261218",
+          "unit": "MNQ",
+          "entry_utc": "2026-11-03T04:30:03+00:00",
+          "exit_utc": null,
+          "updated_utc": "2026-11-03T04:30:05.256732+00:00",
+          "size": 1.0,
+          "remaining": 1.0,
+          "entry": 28187.0,
+          "exit": null,
+          "stop": 28138.25,
+          "target": 28321.25,
+          "gross_usd": 0,
+          "fees_usd": 0.61,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 97.5,
+          "entry_reference": 28184.0,
+          "exit_reference": null,
+          "entry_bid": 28183.5,
+          "entry_ask": 28184.0,
+          "nq_mid": 28183.875,
+          "venue_mid": 28183.75,
+          "quote_age_ms": 292.9339408874512,
+          "exit_quote_age_ms": null,
+          "net_usd": -0.61,
+          "net_r": -0.006256410256410256,
+          "entry_slippage_pts": 3.0,
+          "exit_slippage_pts": null,
+          "basis_pts": 0.125,
+          "entry_spread_pts": 0.5
+        },
         {
           "position_id": "8c8d3a50f211ec29048a",
           "signal_id": "76df324cef56c7b421d2",
@@ -99,7 +139,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T04:30:03.375755+00:00",
+      "heartbeat_utc": "2026-11-03T04:31:00.915498+00:00",
       "data_final_utc": "2026-11-03T04:30:00+00:00",
       "halt_reasons": [
         "VENUE_RECOVERY_NOT_VERIFIED"
@@ -110,7 +150,7 @@
       "warmup_verified": true,
       "summary": {
         "closed": 1,
-        "open": 0,
+        "open": 1,
         "measured": 1,
         "net_usd": -208.22,
         "gross_usd": -207.0,
@@ -120,6 +160,46 @@
     },
     "ftmo": {
       "records": [
+        {
+          "position_id": "83c86c85f9c6acdca317",
+          "signal_id": "b864400955011d731d77",
+          "version": "nq4-cci05-v1",
+          "source": null,
+          "sleeve": "VL_R3",
+          "venue": "ftmo",
+          "status": "OPEN",
+          "side": 1,
+          "revision": 93,
+          "instrument": "US100.cash",
+          "unit": "lots",
+          "entry_utc": "2026-11-03T04:30:04.086000+00:00",
+          "exit_utc": null,
+          "updated_utc": "2026-11-03T04:31:01.455950+00:00",
+          "size": 2.16,
+          "remaining": 2.16,
+          "entry": 28050.58,
+          "exit": null,
+          "stop": 28004.08,
+          "target": 28190.08,
+          "gross_usd": -16.31,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 100.44,
+          "entry_reference": 28050.28,
+          "exit_reference": null,
+          "entry_bid": 28048.63,
+          "entry_ask": 28050.28,
+          "nq_mid": 28183.875,
+          "venue_mid": 28049.455,
+          "quote_age_ms": -1969.1691398620605,
+          "exit_quote_age_ms": null,
+          "net_usd": -16.31,
+          "net_r": -0.16238550378335323,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null
+        },
         {
           "position_id": "813a5cc55ae7b74a4a49",
           "signal_id": "76df324cef56c7b421d2",
@@ -164,7 +244,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T04:30:05.756451+00:00",
+      "heartbeat_utc": "2026-11-03T04:31:03.044965+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -173,7 +253,7 @@
       "warmup_verified": null,
       "summary": {
         "closed": 1,
-        "open": 0,
+        "open": 1,
         "measured": 1,
         "net_usd": -101.69,
         "gross_usd": -101.69,
@@ -191,10 +271,10 @@
     "reference_risk_usd": 100.0,
     "state": "AWAITING_MATCHED_TRADES",
     "counts": {
-      "signals": 1,
+      "signals": 2,
       "matched_closed": 0,
       "missing_record": {
-        "theoretical": 1,
+        "theoretical": 2,
         "ib": 0,
         "ftmo": 0
       },
@@ -246,8 +326,8 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-03T04:30:05.614010+00:00",
-    "last_bar_utc": "2026-11-03T04:28:00+00:00",
+    "heartbeat_utc": "2026-11-03T04:30:58.193827+00:00",
+    "last_bar_utc": "2026-11-03T04:29:00+00:00",
     "position": null,
     "summary": {
       "reads": 12,
@@ -667,6 +747,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-03T04:29:05.448031+00:00"
+    "validation_updated_utc": "2026-11-03T04:30:09.196155+00:00"
   }
 }
