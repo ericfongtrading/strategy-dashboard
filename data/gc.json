@@ -1,7 +1,33 @@
 {
-  "lastUpdated": "2026-11-03T12:40:11Z",
+  "lastUpdated": "2026-11-03T14:40:11Z",
   "basis": "THEORETICAL GC STRATEGY RECORD. All canonical trades are shown independently of execution venue.",
   "recentTrades": [
+    {
+      "date": "2026-11-03",
+      "entryDate": "2026-11-03",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "3,928.5",
+      "exit": "3,944.2",
+      "pnl": "-$484",
+      "pnlNum": -483.91,
+      "rMultiple": "-1.0R",
+      "note": "stop loss",
+      "source": "Strategy model"
+    },
+    {
+      "date": "2026-11-03",
+      "entryDate": "2026-11-03",
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "3,920.1",
+      "exit": "3,935.8",
+      "pnl": "-$483",
+      "pnlNum": -482.88,
+      "rMultiple": "-1.0R",
+      "note": "stop loss",
+      "source": "Strategy model"
+    },
     {
       "date": "2026-11-03",
       "entryDate": "2026-11-03",
@@ -105,56 +131,9 @@
       "rMultiple": "+1.4R",
       "note": "ob rejection",
       "source": "Strategy model"
-    },
-    {
-      "date": "2026-10-30",
-      "entryDate": "2026-10-29",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "4,040.1",
-      "exit": "4,025.6",
-      "pnl": "+$281",
-      "pnlNum": 281.43,
-      "rMultiple": "+0.9R",
-      "note": "rule d opp cluster",
-      "source": "Strategy model"
-    },
-    {
-      "date": "2026-10-29",
-      "entryDate": "2026-10-29",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,049.8",
-      "exit": "4,066.0",
-      "pnl": "-$333",
-      "pnlNum": -332.57,
-      "rMultiple": "-1.0R",
-      "note": "stop loss",
-      "source": "Strategy model"
     }
   ],
-  "positions": [
-    {
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "3,928.5",
-      "current": "3,925.7",
-      "size": "3 MGC model",
-      "pnl": "+$84",
-      "pnlNum": 84.0,
-      "open": "2026-11-03 13:35 HKT"
-    },
-    {
-      "symbol": "P3",
-      "direction": "Short",
-      "entry": "3,920.1",
-      "current": "3,925.7",
-      "size": "3 MGC model",
-      "pnl": "-$168",
-      "pnlNum": -168.0,
-      "open": "2026-11-03 15:06 HKT"
-    }
-  ],
+  "positions": [],
   "monthlyReturns": [
     {
       "year": 2019,
