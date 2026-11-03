@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-03T04:29:01.948512+00:00",
+  "updated_utc": "2026-11-03T04:30:03.426037+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -36,7 +36,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-03T04:29:01.545866+00:00",
+      "heartbeat_utc": "2026-11-03T04:30:00.697993+00:00",
       "data_final_utc": "2026-11-03T04:29:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -99,12 +99,14 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T04:29:01.545866+00:00",
-      "data_final_utc": "2026-11-03T04:29:00+00:00",
-      "halt_reasons": [],
+      "heartbeat_utc": "2026-11-03T04:30:03.375755+00:00",
+      "data_final_utc": "2026-11-03T04:30:00+00:00",
+      "halt_reasons": [
+        "VENUE_RECOVERY_NOT_VERIFIED"
+      ],
       "pilot_hold": false,
       "broker_connected": true,
-      "armed": true,
+      "armed": false,
       "warmup_verified": true,
       "summary": {
         "closed": 1,
@@ -162,7 +164,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T04:29:03.009888+00:00",
+      "heartbeat_utc": "2026-11-03T04:30:05.756451+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -244,8 +246,8 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-03T04:29:03.185688+00:00",
-    "last_bar_utc": "2026-11-03T04:27:00+00:00",
+    "heartbeat_utc": "2026-11-03T04:30:05.614010+00:00",
+    "last_bar_utc": "2026-11-03T04:28:00+00:00",
     "position": null,
     "summary": {
       "reads": 12,
@@ -665,6 +667,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-03T04:28:05.425265+00:00"
+    "validation_updated_utc": "2026-11-03T04:29:05.448031+00:00"
   }
 }
