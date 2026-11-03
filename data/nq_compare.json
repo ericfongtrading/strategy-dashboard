@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-03T22:15:01.441455+00:00",
+  "updated_utc": "2026-11-03T22:16:02.111631+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -47,7 +47,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-03T22:15:01.441455+00:00",
+          "updated_utc": "2026-11-03T22:16:02.111631+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -90,7 +90,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-03T22:15:01.441455+00:00",
+          "updated_utc": "2026-11-03T22:16:02.111631+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -133,7 +133,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-03T22:15:01.441455+00:00",
+          "updated_utc": "2026-11-03T22:16:02.111631+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -166,7 +166,7 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-03T22:15:01.441455+00:00",
+      "heartbeat_utc": "2026-11-03T22:16:02.111631+00:00",
       "data_final_utc": "2026-11-03T22:00:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
@@ -310,7 +310,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T22:15:01.132860+00:00",
+      "heartbeat_utc": "2026-11-03T22:16:01.788537+00:00",
       "data_final_utc": "2026-11-03T22:00:00+00:00",
       "halt_reasons": [
         "NQ_FEED_STALE",
@@ -457,7 +457,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-03T22:15:03.756263+00:00",
+      "heartbeat_utc": "2026-11-03T22:16:02.854796+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -483,7 +483,7 @@
     "policy": "recorded-canonical-signal-core-fill-v1",
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
     "records": 3,
-    "checked_utc": "2026-11-03T22:15:01.441455+00:00",
+    "checked_utc": "2026-11-03T22:16:02.111631+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
@@ -613,7 +613,7 @@
     "state": "MARKET_CLOSED",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-03T22:14:59.520524+00:00",
+    "heartbeat_utc": "2026-11-03T22:15:59.547543+00:00",
     "last_bar_utc": "2026-11-03T21:59:00+00:00",
     "position": null,
     "summary": {
@@ -1064,6 +1064,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-03T22:14:49.295843+00:00"
+    "validation_updated_utc": "2026-11-03T22:15:49.622053+00:00"
   }
 }
