@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T22:05:02Z",
+  "lastUpdated": "2026-11-03T22:10:01Z",
   "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
   "recentTrades": [
     {
@@ -84,8 +84,8 @@
     {
       "symbol": "GBPNZD",
       "direction": "Short",
-      "entry": "2.40110",
-      "current": "2.40110",
+      "entry": "2.40116",
+      "current": "2.40116",
       "size": "5,019",
       "stop": "2.41880",
       "targets": "2.38285",
