@@ -111,7 +111,7 @@ window.REPLAY = {"slug": "maldini", "name": "MALDINI", "direction": "long", "ent
     ctx.clearRect(0, 0, w, h);
     const x = t => padL + (t - T0) / (XEND - T0) * (w - padL - padR);
     const y = p => padT + (PHI - p) / (PHI - PLO) * (h - padT - padB);
-    const st = state(now), vis = C.filter(c => c.t < now).map(c => partialCandle(c, now)), labels = [], lastC = vis[vis.length - 1];
+    const st = state(now), vis = C.filter(c => now > T0 && c.t < now).map(c => partialCandle(c, now)), labels = [], lastC = vis[vis.length - 1];
     const ap = anim ? Math.min(1, (performance.now() - anim.start) / ANIM_MS) : 1;
     if (anim && ap >= 1) anim = null;
     const alertUp = !!anim && anim.ev.kind === 'level' && ap < 0.92;
