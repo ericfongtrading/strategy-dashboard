@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T07:18:02.306270+00:00",
+  "lastUpdated": "2026-11-05T11:28:01.523266+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -38,9 +38,9 @@
     {
       "symbol": "SUAREZ",
       "direction": "Short",
-      "zone": "81,800 - 82,100",
-      "stop": "83,050",
-      "targets": "81,200 / 80,350 / 79,300",
+      "zone": "83,050 - 83,450",
+      "stop": "85,150",
+      "targets": "82,250 / 81,200 / 80,350",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -560,5 +560,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $80,632"
+  "priceNote": "Unrealised P&L marked at $80,280"
 }
