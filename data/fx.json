@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T08:05:02Z",
+  "lastUpdated": "2026-11-05T08:10:01Z",
   "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
   "recentTrades": [
     {
@@ -58,19 +58,7 @@
       "source": "strategy"
     }
   ],
-  "positions": [
-    {
-      "symbol": "GBPAUD",
-      "direction": "Short",
-      "entry": "1.93129",
-      "current": "1.92465",
-      "size": "5,572",
-      "stop": "1.94400",
-      "targets": "1.91970",
-      "pnl": "+37 AUD",
-      "pnlNum": 37
-    }
-  ],
+  "positions": [],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
   "monthlyReturns": [
     {
@@ -212,10 +200,10 @@
         -0.3,
         -1.6,
         0.2,
-        -1.2,
+        -1.1,
         null
       ],
-      "ytd": 2.7,
+      "ytd": 2.8,
       "isLive": true
     }
   ]
