@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-06T10:40:17Z",
+  "lastUpdated": "2026-11-06T14:40:16Z",
   "basis": "THEORETICAL GC STRATEGY RECORD. All canonical trades are shown independently of execution venue.",
   "recentTrades": [
     {
@@ -133,7 +133,18 @@
       "source": "Strategy model"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "4,068.8",
+      "current": "4,047.7",
+      "size": "1 MGC model",
+      "pnl": "+$211",
+      "pnlNum": 211.0,
+      "open": "2026-11-06 21:03 HKT"
+    }
+  ],
   "monthlyReturns": [
     {
       "year": 2019,
