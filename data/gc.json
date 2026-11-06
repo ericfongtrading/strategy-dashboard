@@ -1,7 +1,20 @@
 {
-  "lastUpdated": "2026-11-06T08:40:16Z",
+  "lastUpdated": "2026-11-06T10:40:17Z",
   "basis": "THEORETICAL GC STRATEGY RECORD. All canonical trades are shown independently of execution venue.",
   "recentTrades": [
+    {
+      "date": "2026-11-06",
+      "entryDate": "2026-11-06",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "4,069.1",
+      "exit": "4,085.4",
+      "pnl": "-$167",
+      "pnlNum": -167.08,
+      "rMultiple": "-1.0R",
+      "note": "stop loss",
+      "source": "Strategy model"
+    },
     {
       "date": "2026-11-06",
       "entryDate": "2026-11-06",
@@ -118,33 +131,9 @@
       "rMultiple": "-1.0R",
       "note": "stop loss",
       "source": "Strategy model"
-    },
-    {
-      "date": "2026-11-03",
-      "entryDate": "2026-11-03",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "3,935.4",
-      "exit": "3,913.0",
-      "pnl": "+$659",
-      "pnlNum": 659.49,
-      "rMultiple": "+1.4R",
-      "note": "rule a blue line",
-      "source": "Strategy model"
     }
   ],
-  "positions": [
-    {
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,069.1",
-      "current": "4,080.5",
-      "size": "1 MGC model",
-      "pnl": "-$114",
-      "pnlNum": -114.0,
-      "open": "2026-11-06 09:58 HKT"
-    }
-  ],
+  "positions": [],
   "monthlyReturns": [
     {
       "year": 2019,
