@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-05T23:34:01.641115+00:00",
+  "lastUpdated": "2026-11-06T11:12:01.457710+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,8 +29,8 @@
     {
       "symbol": "SHEVCHENKO",
       "direction": "Long",
-      "zone": "74,950 - 75,350",
-      "stop": "72,850",
+      "zone": "74,050 - 74,450",
+      "stop": "72,350",
       "targets": "76,900 / 77,800 / 78,150",
       "conviction": 3,
       "status": "Waiting"
@@ -560,5 +560,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $75,920"
+  "priceNote": "Unrealised P&L marked at $75,988"
 }
