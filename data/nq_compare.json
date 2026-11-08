@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+  "updated_utc": "2026-11-08T12:17:02.248356+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -47,7 +47,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-06T17:37:00+00:00",
           "exit_utc": "2026-11-06T18:57:00+00:00",
-          "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+          "updated_utc": "2026-11-08T12:17:02.248356+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27088.5,
@@ -90,7 +90,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T18:47:00+00:00",
           "exit_utc": "2026-11-04T19:00:00+00:00",
-          "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+          "updated_utc": "2026-11-08T12:17:02.248356+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28630.0,
@@ -133,7 +133,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T15:31:00+00:00",
           "exit_utc": "2026-11-04T20:56:00+00:00",
-          "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+          "updated_utc": "2026-11-08T12:17:02.248356+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28800.25,
@@ -176,7 +176,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+          "updated_utc": "2026-11-08T12:17:02.248356+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -219,7 +219,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+          "updated_utc": "2026-11-08T12:17:02.248356+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -262,7 +262,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-08T12:16:02.321198+00:00",
+          "updated_utc": "2026-11-08T12:17:02.248356+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -295,8 +295,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-08T12:16:02.321198+00:00",
-      "data_final_utc": "2026-11-06T22:00:00+00:00",
+      "heartbeat_utc": "2026-11-08T12:17:02.248356+00:00",
+      "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -558,18 +558,14 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-08T12:15:46.480882+00:00",
-      "data_final_utc": "2026-11-06T22:00:00+00:00",
-      "halt_reasons": [
-        "NQ_FEED_STALE",
-        "NQ_RECOVERY_NOT_VERIFIED",
-        "VENUE_RECOVERY_NOT_VERIFIED"
-      ],
+      "state": "ERROR",
+      "heartbeat_utc": "2026-11-08T12:16:18.677419+00:00",
+      "data_final_utc": null,
+      "halt_reasons": [],
       "pilot_hold": false,
-      "broker_connected": true,
+      "broker_connected": false,
       "armed": false,
-      "warmup_verified": true,
+      "warmup_verified": null,
       "summary": {
         "closed": 6,
         "open": 0,
@@ -826,7 +822,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-08T12:16:05.056800+00:00",
+      "heartbeat_utc": "2026-11-08T12:17:04.310335+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -852,7 +848,7 @@
     "policy": "recorded-canonical-signal-core-fill-v1",
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
     "records": 6,
-    "checked_utc": "2026-11-08T12:16:02.321198+00:00",
+    "checked_utc": "2026-11-08T12:17:02.248356+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
@@ -1042,7 +1038,7 @@
     "state": "MARKET_CLOSED",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-08T12:16:03.104393+00:00",
+    "heartbeat_utc": "2026-11-08T12:17:03.127703+00:00",
     "last_bar_utc": "2026-11-06T21:59:00+00:00",
     "position": null,
     "summary": {
@@ -1633,6 +1629,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-08T12:15:26.924351+00:00"
+    "validation_updated_utc": "2026-11-08T12:16:25.297428+00:00"
   }
 }
