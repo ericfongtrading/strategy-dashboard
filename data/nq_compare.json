@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+  "updated_utc": "2026-11-09T17:38:02.003325+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -47,7 +47,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-06T17:37:00+00:00",
           "exit_utc": "2026-11-06T18:57:00+00:00",
-          "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+          "updated_utc": "2026-11-09T17:38:02.003325+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27088.5,
@@ -90,7 +90,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T18:47:00+00:00",
           "exit_utc": "2026-11-04T19:00:00+00:00",
-          "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+          "updated_utc": "2026-11-09T17:38:02.003325+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28630.0,
@@ -133,7 +133,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T15:31:00+00:00",
           "exit_utc": "2026-11-04T20:56:00+00:00",
-          "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+          "updated_utc": "2026-11-09T17:38:02.003325+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28800.25,
@@ -176,7 +176,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+          "updated_utc": "2026-11-09T17:38:02.003325+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -219,7 +219,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+          "updated_utc": "2026-11-09T17:38:02.003325+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -262,7 +262,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-09T17:37:02.049065+00:00",
+          "updated_utc": "2026-11-09T17:38:02.003325+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -293,10 +293,10 @@
         }
       ],
       "source_present": true,
-      "errors": 0,
-      "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-09T17:37:02.049065+00:00",
-      "data_final_utc": "2026-11-09T17:36:00+00:00",
+      "errors": 1,
+      "state": "DATA_ERROR",
+      "heartbeat_utc": "2026-11-09T17:37:59.719639+00:00",
+      "data_final_utc": "2026-11-09T17:37:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -306,12 +306,12 @@
         "closed": 6,
         "open": 0,
         "measured": 6,
-        "net_usd": -1594.98,
+        "net_usd": null,
         "gross_usd": -1584.0,
         "swap_usd": 0.0,
         "fees_usd": 10.98
       },
-      "model_reference_state": "READY"
+      "model_reference_state": "DATA_WAIT"
     },
     "ib": {
       "records": [
@@ -559,8 +559,8 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-09T17:37:00.457329+00:00",
-      "data_final_utc": "2026-11-09T17:36:00+00:00",
+      "heartbeat_utc": "2026-11-09T17:37:59.719639+00:00",
+      "data_final_utc": "2026-11-09T17:37:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
@@ -822,7 +822,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-09T17:37:04.865454+00:00",
+      "heartbeat_utc": "2026-11-09T17:38:05.119999+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -844,26 +844,26 @@
   "execution_mode": "LIVE",
   "observation_started_utc": "2026-11-01T16:05:24.903980+00:00",
   "model_reference": {
-    "state": "READY",
+    "state": "DATA_WAIT",
     "policy": "recorded-canonical-signal-core-fill-v1",
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
     "records": 6,
-    "checked_utc": "2026-11-09T17:37:02.049065+00:00",
+    "checked_utc": "2026-11-09T17:38:02.003325+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
       "tie": "stop"
     },
-    "error_count": 0
+    "error_count": 1
   },
   "matched_execution": {
     "schema": "nq.matched-execution.3",
     "basis": "Same completed signals at equal planned stop risk",
     "reference_risk_usd": 100.0,
-    "state": "READY",
+    "state": "DATA_ERROR",
     "counts": {
       "signals": 6,
-      "matched_closed": 6,
+      "matched_closed": 0,
       "missing_record": {
         "theoretical": 0,
         "ib": 0,
@@ -876,158 +876,37 @@
     },
     "lanes": {
       "theoretical": {
-        "net_usd": -443.82407683291865,
-        "gross_usd": -439.4581935644953,
-        "fees_usd": 4.365883268423348,
-        "swap_usd": 0.0,
+        "net_usd": null,
+        "gross_usd": null,
+        "fees_usd": null,
+        "swap_usd": null,
         "entry_slippage_count": 0,
         "entry_slippage_pts": null,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       },
       "ib": {
-        "net_usd": -446.21927957871617,
-        "gross_usd": -441.7666147403329,
-        "fees_usd": 4.452664838383305,
-        "swap_usd": 0.0,
-        "entry_slippage_count": 6,
-        "entry_slippage_pts": 3.6666666666666665,
+        "net_usd": null,
+        "gross_usd": null,
+        "fees_usd": null,
+        "swap_usd": null,
+        "entry_slippage_count": 0,
+        "entry_slippage_pts": null,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       },
       "ftmo": {
-        "net_usd": -428.0335674720841,
-        "gross_usd": -428.0335674720841,
-        "fees_usd": 0.0,
-        "swap_usd": 0.0,
+        "net_usd": null,
+        "gross_usd": null,
+        "fees_usd": null,
+        "swap_usd": null,
         "entry_slippage_count": 0,
         "entry_slippage_pts": null,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       }
     },
-    "per_signal": {
-      "4af3ff4c5c0c82be7a89": {
-        "theoretical": {
-          "net_usd": -101.57293868921776,
-          "gross_usd": -101.05708245243129,
-          "fees_usd": 0.5158562367864693,
-          "swap_usd": 0.0
-        },
-        "ib": {
-          "net_usd": -110.29067245119306,
-          "gross_usd": -109.76138828633405,
-          "fees_usd": 0.5292841648590022,
-          "swap_usd": 0.0
-        },
-        "ftmo": {
-          "net_usd": -98.32819626014931,
-          "gross_usd": -98.32819626014931,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0
-        }
-      },
-      "073dd6ff75f933e31ef4": {
-        "theoretical": {
-          "net_usd": 11.399141630901287,
-          "gross_usd": 12.446351931330472,
-          "fees_usd": 1.0472103004291846,
-          "swap_usd": 0.0
-        },
-        "ib": {
-          "net_usd": 20.070484581497798,
-          "gross_usd": 21.145374449339208,
-          "fees_usd": 1.0748898678414096,
-          "swap_usd": 0.0
-        },
-        "ftmo": {
-          "net_usd": 17.84274802066519,
-          "gross_usd": 17.84274802066519,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0
-        }
-      },
-      "d8e4a883b3d2ac8ac980": {
-        "theoretical": {
-          "net_usd": -45.4263431542461,
-          "gross_usd": -45.320623916811094,
-          "fees_usd": 0.10571923743500866,
-          "swap_usd": 0.0
-        },
-        "ib": {
-          "net_usd": -46.04945770065076,
-          "gross_usd": -45.94360086767896,
-          "fees_usd": 0.10585683297180043,
-          "swap_usd": 0.0
-        },
-        "ftmo": {
-          "net_usd": -46.69359939605377,
-          "gross_usd": -46.69359939605377,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0
-        }
-      },
-      "08a7e0df4c28f14aa02f": {
-        "theoretical": {
-          "net_usd": -102.38461538461539,
-          "gross_usd": -101.6025641025641,
-          "fees_usd": 0.782051282051282,
-          "swap_usd": 0.0
-        },
-        "ib": {
-          "net_usd": -97.73717948717949,
-          "gross_usd": -96.9551282051282,
-          "fees_usd": 0.782051282051282,
-          "swap_usd": 0.0
-        },
-        "ftmo": {
-          "net_usd": -99.2956329241296,
-          "gross_usd": -99.2956329241296,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0
-        }
-      },
-      "b864400955011d731d77": {
-        "theoretical": {
-          "net_usd": -103.93650793650794,
-          "gross_usd": -102.64550264550265,
-          "fees_usd": 1.291005291005291,
-          "swap_usd": 0.0
-        },
-        "ib": {
-          "net_usd": -105.1584699453552,
-          "gross_usd": -103.82513661202186,
-          "fees_usd": 1.3333333333333333,
-          "swap_usd": 0.0
-        },
-        "ftmo": {
-          "net_usd": -99.67732884400179,
-          "gross_usd": -99.67732884400179,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0
-        }
-      },
-      "76df324cef56c7b421d2": {
-        "theoretical": {
-          "net_usd": -101.90281329923273,
-          "gross_usd": -101.27877237851662,
-          "fees_usd": 0.6240409207161125,
-          "swap_usd": 0.0
-        },
-        "ib": {
-          "net_usd": -107.05398457583547,
-          "gross_usd": -106.426735218509,
-          "fees_usd": 0.6272493573264781,
-          "swap_usd": 0.0
-        },
-        "ftmo": {
-          "net_usd": -101.88155806841482,
-          "gross_usd": -101.88155806841482,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0
-        }
-      }
-    }
+    "per_signal": {}
   },
   "archive_path": "data/nq_compare_archive_20261101T160524Z.json",
   "osr_paper": {
@@ -1038,8 +917,8 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-09T17:37:03.021719+00:00",
-    "last_bar_utc": "2026-11-09T17:35:00+00:00",
+    "heartbeat_utc": "2026-11-09T17:38:02.143735+00:00",
+    "last_bar_utc": "2026-11-09T17:36:00+00:00",
     "position": {
       "id": "OSR:2026-11-09",
       "day": "2026-11-09",
@@ -1058,8 +937,8 @@
       "net_usd": null,
       "entry": 27845.0,
       "contract": "NQ20261218",
-      "mark": 27973.0,
-      "mark_utc": "2026-11-09T17:36:00+00:00",
+      "mark": 27966.0,
+      "mark_utc": "2026-11-09T17:37:00+00:00",
       "origin": "FORWARD"
     },
     "summary": {
@@ -1164,8 +1043,8 @@
         "net_usd": null,
         "entry": 27845.0,
         "contract": "NQ20261218",
-        "mark": 27973.0,
-        "mark_utc": "2026-11-09T17:36:00+00:00",
+        "mark": 27966.0,
+        "mark_utc": "2026-11-09T17:37:00+00:00",
         "origin": "FORWARD"
       }
     ],
@@ -1702,6 +1581,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-09T17:36:07.257361+00:00"
+    "validation_updated_utc": "2026-11-09T17:37:06.929349+00:00"
   }
 }
