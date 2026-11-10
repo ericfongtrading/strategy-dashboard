@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+  "updated_utc": "2026-11-10T23:41:02.353726+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -47,7 +47,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-10T15:57:00+00:00",
           "exit_utc": "2026-11-10T16:00:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27733.25,
@@ -90,7 +90,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-09T17:38:00+00:00",
           "exit_utc": "2026-11-09T19:00:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27959.5,
@@ -133,7 +133,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-06T17:37:00+00:00",
           "exit_utc": "2026-11-06T18:57:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27088.5,
@@ -176,7 +176,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T18:47:00+00:00",
           "exit_utc": "2026-11-04T19:00:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28630.0,
@@ -219,7 +219,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T15:31:00+00:00",
           "exit_utc": "2026-11-04T20:56:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28800.25,
@@ -262,7 +262,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -305,7 +305,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -348,7 +348,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-10T23:40:03.966251+00:00",
+          "updated_utc": "2026-11-10T23:41:02.353726+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -381,8 +381,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-10T23:40:03.966251+00:00",
-      "data_final_utc": null,
+      "heartbeat_utc": "2026-11-10T23:41:02.353726+00:00",
+      "data_final_utc": "2026-11-10T23:39:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -724,14 +724,18 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "PAUSED",
-      "heartbeat_utc": "2026-11-10T23:39:41.439874+00:00",
-      "data_final_utc": null,
-      "halt_reasons": [],
+      "state": "ACTIVE",
+      "heartbeat_utc": "2026-11-10T23:41:00.043826+00:00",
+      "data_final_utc": "2026-11-10T23:39:00+00:00",
+      "halt_reasons": [
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED",
+        "WARMUP_NOT_READY"
+      ],
       "pilot_hold": false,
-      "broker_connected": false,
+      "broker_connected": true,
       "armed": false,
-      "warmup_verified": null,
+      "warmup_verified": true,
       "summary": {
         "closed": 8,
         "open": 0,
@@ -1068,7 +1072,7 @@
       "source_present": true,
       "errors": 0,
       "state": "STALE",
-      "heartbeat_utc": "2026-11-10T23:40:23.264537+00:00",
+      "heartbeat_utc": "2026-11-10T23:41:09.768948+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -1094,7 +1098,7 @@
     "policy": "recorded-canonical-signal-core-fill-v1",
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
     "records": 8,
-    "checked_utc": "2026-11-10T23:40:03.966251+00:00",
+    "checked_utc": "2026-11-10T23:41:02.353726+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
@@ -1324,16 +1328,16 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-10T23:40:19.870723+00:00",
-    "last_bar_utc": "2026-11-10T23:38:00+00:00",
+    "heartbeat_utc": "2026-11-10T23:41:24.750179+00:00",
+    "last_bar_utc": "2026-11-10T23:39:00+00:00",
     "position": null,
     "summary": {
       "reads": 18,
       "trades": 4,
       "net_usd": 978.7525919999999,
       "wins": 3,
-      "replayed_trades": 1,
-      "forward_trades": 3
+      "replayed_trades": 4,
+      "forward_trades": 0
     },
     "trades": [
       {
@@ -1370,7 +1374,7 @@
         "signal_utc": "2026-11-04T15:31:00+00:00",
         "entry_utc": "2026-11-04T15:31:00+00:00",
         "entry_t": 29896771,
-        "signal_vwap": 28391.758997434663,
+        "signal_vwap": 28391.78347041802,
         "paper_only": true,
         "status": "CLOSED",
         "exit": 28540.0,
@@ -1384,7 +1388,7 @@
         "reason": "15:55 ET",
         "gross_usd": -518.0,
         "cost_usd": 3.311852,
-        "origin": "FORWARD"
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "id": "OSR:2026-11-05",
@@ -1395,7 +1399,7 @@
         "signal_utc": "2026-11-05T15:31:00+00:00",
         "entry_utc": "2026-11-05T15:31:00+00:00",
         "entry_t": 29898211,
-        "signal_vwap": 27873.17028938987,
+        "signal_vwap": 27873.17016781573,
         "paper_only": true,
         "status": "CLOSED",
         "exit": 26823.5,
@@ -1409,7 +1413,7 @@
         "reason": "15:55 ET",
         "gross_usd": 822.5,
         "cost_usd": 3.311852,
-        "origin": "FORWARD"
+        "origin": "BACKFILLED_REPLAY"
       },
       {
         "id": "OSR:2026-11-09",
@@ -1420,7 +1424,7 @@
         "signal_utc": "2026-11-09T15:31:00+00:00",
         "entry_utc": "2026-11-09T15:31:00+00:00",
         "entry_t": 29903971,
-        "signal_vwap": 27362.921061550285,
+        "signal_vwap": 27362.920936318733,
         "paper_only": true,
         "status": "CLOSED",
         "exit": 28042.0,
@@ -1434,7 +1438,7 @@
         "reason": "15:55 ET",
         "gross_usd": 394.0,
         "cost_usd": 3.311852,
-        "origin": "FORWARD"
+        "origin": "BACKFILLED_REPLAY"
       }
     ],
     "reads": [
@@ -1786,8 +1790,8 @@
         "qualifies": false,
         "take": false,
         "side": 0,
-        "distance_pct": 0.36484079384316603,
-        "vwap": 28744.876962700044,
+        "distance_pct": 0.3648048183335892,
+        "vwap": 28744.88726622824,
         "vol_ratio": 1.0259341519903615,
         "busy": false,
         "regime": "ZONE_A",
@@ -1795,8 +1799,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-01",
         "regime_provisional": false,
-        "read_hash": "0fecaf1081c6adde07a02e357bb4652c3c309da487329bf2bc2a1b2d785ec1f6",
-        "origin": "FORWARD"
+        "read_hash": "1aa997592765ea3212324c835922f53395e693fdc0a9bfb10d97fadcb8d234e4",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-11-03",
@@ -1816,8 +1821,8 @@
         "qualifies": false,
         "take": false,
         "side": 1,
-        "distance_pct": 0.23523204287611804,
-        "vwap": 28261.519849510158,
+        "distance_pct": 0.2352453149529199,
+        "vwap": 28261.516107422623,
         "vol_ratio": 1.269548246399787,
         "busy": false,
         "regime": "BOTH_BEAR",
@@ -1825,8 +1830,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-02",
         "regime_provisional": false,
-        "read_hash": "01a4523981a077b1d48ceacd132d5cb6f6c727af00be2aabf006ae7b2db64384",
-        "origin": "FORWARD"
+        "read_hash": "4028358cadda0733fc4cfd2c9c9d793403d0aa71cd719c34f7d8c0b81c61542a",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-11-04",
@@ -1846,8 +1852,8 @@
         "qualifies": true,
         "take": true,
         "side": 1,
-        "distance_pct": 1.435243947379787,
-        "vwap": 28391.758997434663,
+        "distance_pct": 1.4351565128218426,
+        "vwap": 28391.78347041802,
         "vol_ratio": 1.7012273314881248,
         "busy": true,
         "regime": "BOTH_BEAR",
@@ -1855,8 +1861,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-03",
         "regime_provisional": false,
-        "read_hash": "d8a60a8bb294699706de43aba57d9cfbdafe2aa666ed9fd148abe4ce607b18f1",
-        "origin": "FORWARD"
+        "read_hash": "9fbf1e1784ba48808ef6c0684a73ebc2cc41d8c46a8bf615a8bfd34f58da611a",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-11-05",
@@ -1876,8 +1883,8 @@
         "qualifies": true,
         "take": true,
         "side": -1,
-        "distance_pct": -2.292241186619087,
-        "vwap": 27873.17028938987,
+        "distance_pct": -2.2922407604480908,
+        "vwap": 27873.17016781573,
         "vol_ratio": 1.6514617214035254,
         "busy": true,
         "regime": "BOTH_BEAR",
@@ -1885,8 +1892,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-04",
         "regime_provisional": false,
-        "read_hash": "1a283753a3f3ea2fa0c850dcfe9748dcc0f33efa051c2196ac8fc25ab42e75c3",
-        "origin": "FORWARD"
+        "read_hash": "23ca87eef362a61e7f41ef5d4b09851c1f4e837c07696349ec318f3df86f4677",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-11-06",
@@ -1915,8 +1923,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-05",
         "regime_provisional": false,
-        "read_hash": "031ec4994650c8f997220020aec031c7a4906d3225cc8923741d83800e1e891b",
-        "origin": "FORWARD"
+        "read_hash": "877599acd280aca3a1d667f76873afd9195aafa449853186048305092f7c8598",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-11-09",
@@ -1936,8 +1945,8 @@
         "qualifies": true,
         "take": true,
         "side": 1,
-        "distance_pct": 1.7663645535595864,
-        "vwap": 27362.921061550285,
+        "distance_pct": 1.7663650193124876,
+        "vwap": 27362.920936318733,
         "vol_ratio": 1.2267327181630407,
         "busy": false,
         "regime": "BOTH_BEAR",
@@ -1945,8 +1954,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-08",
         "regime_provisional": false,
-        "read_hash": "b32bd28f31071965804fc9e516164ea33c34c3b983ecf0cfb549bdabac380b03",
-        "origin": "FORWARD"
+        "read_hash": "a64f602545f3204af6aa97d685a517caeb78f2e9954dbe2548d6f63b68ed89b8",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       },
       {
         "day": "2026-11-10",
@@ -1966,8 +1976,8 @@
         "qualifies": false,
         "take": false,
         "side": 0,
-        "distance_pct": 0.08283358842251229,
-        "vwap": 27891.14676228461,
+        "distance_pct": 0.08283412159071299,
+        "vwap": 27891.146613700963,
         "vol_ratio": 1.5053100161051198,
         "busy": true,
         "regime": "BOTH_BEAR",
@@ -1975,8 +1985,9 @@
         "data_ready": true,
         "regime_asof": "2026-11-09",
         "regime_provisional": false,
-        "read_hash": "e0d73ba75d044d82a3568af334dbda60ce105d6ba30fcd8d4d6e6acc2da61407",
-        "origin": "FORWARD"
+        "read_hash": "2b707085373b04e6b8f0effdfa079589d088395b2b2d537d16f241035222d509",
+        "origin": "BACKFILLED_REPLAY",
+        "corrected_after_backfill": true
       }
     ],
     "missing_expected_bars": 0,
@@ -2000,6 +2011,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-10T23:39:46.658396+00:00"
+    "validation_updated_utc": "2026-11-10T23:40:51.242692+00:00"
   }
 }
