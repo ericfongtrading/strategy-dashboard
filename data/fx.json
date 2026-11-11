@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-11T10:00:04Z",
+  "lastUpdated": "2026-11-11T10:05:04Z",
   "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
   "recentTrades": [
     {
@@ -63,12 +63,12 @@
       "symbol": "NZDCAD",
       "direction": "Short",
       "entry": "0.79582",
-      "current": "0.79670",
+      "current": "0.79425",
       "size": "103,637",
       "stop": "0.80195",
-      "targets": "0.79010",
-      "pnl": "-91 CAD",
-      "pnlNum": -91
+      "targets": "0.79065",
+      "pnl": "+163 CAD",
+      "pnlNum": 163
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
