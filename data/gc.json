@@ -1,7 +1,46 @@
 {
-  "lastUpdated": "2026-11-12T08:41:30Z",
+  "lastUpdated": "2026-11-12T14:41:55Z",
   "basis": "THEORETICAL GC STRATEGY RECORD. All canonical trades are shown independently of execution venue.",
   "recentTrades": [
+    {
+      "date": "2026-11-12",
+      "entryDate": "2026-11-12",
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "3,915.4",
+      "exit": "3,895.1",
+      "pnl": "+$398",
+      "pnlNum": 397.7,
+      "rMultiple": "+1.3R",
+      "note": "rule b outer vwap",
+      "source": "Strategy model"
+    },
+    {
+      "date": "2026-11-12",
+      "entryDate": "2026-11-12",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "3,928.2",
+      "exit": "3,898.3",
+      "pnl": "+$590",
+      "pnlNum": 589.67,
+      "rMultiple": "+1.9R",
+      "note": "rule b outer vwap",
+      "source": "Strategy model"
+    },
+    {
+      "date": "2026-11-12",
+      "entryDate": "2026-11-12",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,939.2",
+      "exit": "3,900.3",
+      "pnl": "+$770",
+      "pnlNum": 769.65,
+      "rMultiple": "+2.5R",
+      "note": "rule b outer vwap",
+      "source": "Strategy model"
+    },
     {
       "date": "2026-11-12",
       "entryDate": "2026-11-12",
@@ -92,48 +131,20 @@
       "rMultiple": "+0.4R",
       "note": "ob rejection",
       "source": "Strategy model"
-    },
-    {
-      "date": "2026-11-09",
-      "entryDate": "2026-11-09",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,065.4",
-      "exit": "4,081.7",
-      "pnl": "-$167",
-      "pnlNum": -166.93,
-      "rMultiple": "-1.0R",
-      "note": "stop loss",
-      "source": "Strategy model"
-    },
-    {
-      "date": "2026-11-06",
-      "entryDate": "2026-11-06",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,068.8",
-      "exit": "4,056.4",
-      "pnl": "+$120",
-      "pnlNum": 119.69,
-      "rMultiple": "+0.8R",
-      "note": "rule e two bars",
-      "source": "Strategy model"
-    },
-    {
-      "date": "2026-11-06",
-      "entryDate": "2026-11-06",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,069.1",
-      "exit": "4,085.4",
-      "pnl": "-$167",
-      "pnlNum": -167.08,
-      "rMultiple": "-1.0R",
-      "note": "stop loss",
-      "source": "Strategy model"
     }
   ],
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "P4",
+      "direction": "Short",
+      "entry": "3,900.6",
+      "current": "3,900.2",
+      "size": "2 MGC model",
+      "pnl": "+$8",
+      "pnlNum": 8.0,
+      "open": "2026-11-12 21:45 HKT"
+    }
+  ],
   "monthlyReturns": [
     {
       "year": 2019,
