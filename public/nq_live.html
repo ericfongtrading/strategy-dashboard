@@ -107,12 +107,13 @@ async function refresh(){
  $('connection').textContent=stale?'Published data is stale. Do not infer current trading status.':'Publication is fresh. Broker connectivity requires each source’s own heartbeat.';$('connection').className=stale?'stale':'muted';
  $('updated').textContent='Published '+hkt(d.updated_utc)+' HKT · nq4-cci05-v1';
  const deployment=$('deployment');
- if(stale||age>90){deployment.textContent='Refresh to verify current paired entry status.';}
+ if(stale||age>90){deployment.textContent='Refresh to verify current entry status.';}
  else if(d.execution_mode==='OBSERVE_ONLY'){deployment.textContent='Monitoring mode. Broker entries are disabled.';}
  else if(d.regular_market_open===false){deployment.textContent='Market closed.';}
+ else if(d.entry_policy==='INDEPENDENT_VENUES'&&d.venue_entries_enabled){deployment.textContent=['IB','FTMO'].map(v=>v+' entries '+(d.venue_entries_enabled[v]?'enabled':'paused')).join(' · ')+' at publication.';}
  else if(d.paired_entries_enabled===true){deployment.textContent='Paired entries enabled for IB and FTMO at publication.';}
  else if(d.paired_entries_enabled===false){deployment.textContent='Paired entries paused. IB and FTMO must both be ready.';}
- else{deployment.textContent='Paired entry status is unverified.';}
+ else{deployment.textContent='Entry status is unverified.';}
  $('observation').textContent=d.observation_started_utc?'Comparison reset: '+hkt(d.observation_started_utc)+' HKT · $100 planned risk per matched trade. Earlier records are archived; the OSR paper history is retained.':'Awaiting the new comparison window.';
  $('archive-link').innerHTML=d.archive_path?'<a href="https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/'+esc(d.archive_path)+'" target="_blank" rel="noreferrer">Previous comparison archive</a>':'';
 
