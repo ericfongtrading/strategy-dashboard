@@ -84,7 +84,8 @@ function render(){
  $('osr-trades').innerHTML=osrTrades.map(t=>`<tr><td>${esc(hkt(t.entry_utc))}</td><td>${t.side===1?'Long':'Short'}</td><td>${num(t.entry)}</td><td>${esc(hkt(t.exit_utc))}</td><td>${num(t.exit)}</td><td>${esc(t.status?.replaceAll('_',' '))}<small>${esc(t.reason||'')}</small></td><td class="${t.net_usd>0?'good':t.net_usd<0?'bad':''}">${usd(t.net_usd)}</td><td>${t.origin==='FORWARD'?'Forward observation':'Backfill replay'}</td></tr>`).join('')||blank(8,'No qualifying OSR paper trade yet','Every daily decision is recorded below, including skipped sessions and data waiting to recover.');
  $('osr-reads').innerHTML=[...(o?.reads||[])].reverse().map(r=>`<tr><td>${esc(r.day)}</td><td>${!r.data_ready?'WAITING FOR DATA':r.take?(r.side===1?'LONG':'SHORT'):'NO TRADE'}</td><td>${esc(r.why||'')}</td><td>${r.coverage?.present??'—'} / ${r.coverage?.expected??'—'}<small>${r.coverage?.missing??'—'} missing</small></td><td>${r.origin==='FORWARD'?'Forward observation':'Backfill replay'}</td></tr>`).join('')||blank(5,'Awaiting daily decisions','The first-hour decision is evaluated after its completed candle.');
  const model=dataset?.model_reference;
- $('model-reference-status').textContent=model?.state==='DATA_WAIT'?'Benchmark data needs attention. Existing broker trades remain visible; no missing result is assumed to be zero.':model?.records?`${model.records} benchmark record${model.records===1?'':'s'} reconstructed from recorded signals and completed NQ candles. Broker fills are unchanged. Model costs: 1.045 points slippage per side plus $0.61 per MNQ per side.`:'Benchmark records retain their original provenance. Broker trades remain visible even when a model result is unavailable.';
+ const unpaired=model?.unpaired_signals||0;
+ $('model-reference-status').textContent=model?.state==='DATA_WAIT'?'Some benchmark records could not be verified. Broker records are listed below.':unpaired?`${unpaired} unpaired signal${unpaired===1?'':'s'} excluded from the benchmark. P&L below uses closed trades matched across all three views.`:model?.records?`${model.records} benchmark record${model.records===1?'':'s'} reconstructed from recorded signals and completed NQ candles.`:'Waiting for benchmark records.';
  $('model-reference-status').className=model?.state==='DATA_WAIT'?'notice bad':'notice';
  const common=matched(),counts=common?.counts||{},n=counts.matched_closed||0;
  $('matched-coverage').textContent=common?.state==='RESET_AWAITING_FIRST_SIGNAL'?'Comparison reset to $0 · Awaiting the first matched trade':n?`${n} identical closed signal${n===1?'':'s'} · $${num(common.reference_risk_usd,0)} planned risk per trade · All five sleeves`:'Waiting for the same closed signal, complete costs and verified planned risk on all three sides. Unmatched signals remain visible below.';
@@ -105,13 +106,13 @@ async function refresh(){
  dataset=d;render();const age=(Date.now()-Date.parse(d.updated_utc))/1000,stale=!Number.isFinite(age)||age>600||age< -60;
  $('connection').textContent=stale?'Published data is stale. Do not infer current trading status.':'Publication is fresh. Broker connectivity requires each source’s own heartbeat.';$('connection').className=stale?'stale':'muted';
  $('updated').textContent='Published '+hkt(d.updated_utc)+' HKT · nq4-cci05-v1';
- const armed=['ib','ftmo'].filter(k=>d.lanes[k]?.armed===true);
- const faults=['ib','ftmo'].filter(k=>needsAttention(d.lanes[k]));
- const warming=d.lanes?.ib?.warmup_verified===false;
- if(armed.length){$('deployment').innerHTML='<strong>Entries enabled: '+armed.map(k=>LABEL[k]).join(' / ')+'.</strong> Each venue has its own status and protection. '+(faults.length?'A venue also reports an error; check its entry-halt reasons below.':'Signal processing and position reconciliation remain automatic.');}
- else if(d.execution_mode==='LIVE'){$('deployment').innerHTML=d.regular_market_open===false&&!faults.length?'<strong>Market closed · Live trading configured.</strong> Automatic data recovery and venue checks resume when the market reopens. These P&amp;Ls show recorded trades, not current entry permission.':'<strong>Live trading configured · Waiting for entry readiness.</strong> Check current data and venue status below. Recovery retries continue automatically; a service process alone does not prove entry readiness.';}
- else if(d.execution_mode==='OBSERVE_ONLY'){$('deployment').innerHTML='<strong>Monitoring mode: broker orders are disabled.</strong> New theoretical signals will be counted in this observation period. IB and FTMO stay blank unless a broker fill is actually recorded after a later live release.';}
- else{$('deployment').innerHTML='<strong>New entries are not confirmed enabled.</strong> '+(warming?'Indicator history is incomplete. ':'')+'Check each venue’s heartbeat and entry status below. '+(d.legacy_entries_disabled?'The old five-sleeve runtime remains paused.':'');}
+ const deployment=$('deployment');
+ if(stale||age>90){deployment.textContent='Refresh to verify current paired entry status.';}
+ else if(d.execution_mode==='OBSERVE_ONLY'){deployment.textContent='Monitoring mode. Broker entries are disabled.';}
+ else if(d.regular_market_open===false){deployment.textContent='Market closed.';}
+ else if(d.paired_entries_enabled===true){deployment.textContent='Paired entries enabled for IB and FTMO at publication.';}
+ else if(d.paired_entries_enabled===false){deployment.textContent='Paired entries paused. IB and FTMO must both be ready.';}
+ else{deployment.textContent='Paired entry status is unverified.';}
  $('observation').textContent=d.observation_started_utc?'Comparison reset: '+hkt(d.observation_started_utc)+' HKT · $100 planned risk per matched trade. Earlier records are archived; the OSR paper history is retained.':'Awaiting the new comparison window.';
  $('archive-link').innerHTML=d.archive_path?'<a href="https://raw.githubusercontent.com/ericfongtrading/strategy-dashboard/main/'+esc(d.archive_path)+'" target="_blank" rel="noreferrer">Previous comparison archive</a>':'';
 
