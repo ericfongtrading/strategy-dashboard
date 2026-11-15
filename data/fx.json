@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-15T14:45:23Z",
-  "basis": "Recent trades use the IB ledger. Estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
+  "lastUpdated": "2026-11-15T14:50:03Z",
+  "basis": "Recent trades use the IB ledger. estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
     {
       "date": "2026-11-12",
