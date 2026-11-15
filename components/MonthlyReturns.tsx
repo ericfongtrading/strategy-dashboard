@@ -90,7 +90,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
       {note && <p className="mt-2 text-[10px] leading-relaxed text-muted/80">{note}</p>}
       {brokerMonths.size > 0 && liveMonthly && (
         <p className="mt-2 text-[10px] leading-relaxed text-muted/80">
-          IB months use realized P&amp;L at actual sizes ({liveMonthly.basis}). Returns start from the model’s closing equity. Last recorded IB close {liveMonthly.lastClose} HKT. YTD compounds the months shown.
+          IB months use realized P&amp;L {liveMonthly.riskNormalized ? 'rescaled to the model’s risk per trade' : 'at actual sizes'} ({liveMonthly.basis}). Returns start from the model’s closing equity. Last recorded IB close {liveMonthly.lastClose} HKT. YTD compounds the months shown.
         </p>
       )}
     </div>

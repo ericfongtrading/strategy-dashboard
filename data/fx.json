@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T14:50:03Z",
+  "lastUpdated": "2026-11-15T14:55:04Z",
   "basis": "Recent trades use the IB ledger. estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
     {
@@ -208,8 +208,9 @@
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": 13.0921
+        "returnPct": 0.8058
       }
-    ]
+    ],
+    "riskNormalized": true
   }
 }

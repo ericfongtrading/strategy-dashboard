@@ -12,6 +12,7 @@ export type LiveData = {
   liveMonthly?: {
     basis: string;
     lastClose: string;
+    riskNormalized?: boolean;
     rows: { month: string; returnPct: number }[];
   };
   /** Live performance figures for the BTC options book. */
