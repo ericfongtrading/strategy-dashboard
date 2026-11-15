@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T17:10:01.512354+00:00",
+  "lastUpdated": "2026-11-15T22:12:02.319430+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -27,6 +27,15 @@
   "positions": [],
   "plans": [
     {
+      "symbol": "NESTA",
+      "direction": "Long",
+      "zone": "61,000 - 61,500",
+      "stop": "59,400",
+      "targets": "63,250 / 64,550",
+      "conviction": 3,
+      "status": "Waiting"
+    },
+    {
       "symbol": "FALCAO",
       "direction": "Long",
       "zone": "63,300 - 63,700",
@@ -34,6 +43,15 @@
       "targets": "66,763 / 69,926",
       "conviction": 3,
       "status": "Order resting"
+    },
+    {
+      "symbol": "GRIEZMANN",
+      "direction": "Short",
+      "zone": "69,800 - 70,400",
+      "stop": "72,000",
+      "targets": "64,700 / 63,700",
+      "conviction": 3,
+      "status": "Waiting"
     }
   ],
   "recentTrades": [
@@ -554,5 +572,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $64,695"
+  "priceNote": "Unrealised P&L marked at $65,127"
 }
