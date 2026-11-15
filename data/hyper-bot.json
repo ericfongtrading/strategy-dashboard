@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T00:02:02.105187+00:00",
+  "lastUpdated": "2026-11-15T02:10:03.402384+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -25,7 +25,17 @@
     }
   ],
   "positions": [],
-  "plans": [],
+  "plans": [
+    {
+      "symbol": "FALCAO",
+      "direction": "Long",
+      "zone": "63,300 - 63,700",
+      "stop": "61,300",
+      "targets": "66,763 / 69,926",
+      "conviction": 3,
+      "status": "Order resting"
+    }
+  ],
   "recentTrades": [
     {
       "date": "2026-11-12",
@@ -544,5 +554,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $64,060"
+  "priceNote": "Unrealised P&L marked at $63,811"
 }
