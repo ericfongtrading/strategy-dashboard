@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T14:33:05Z",
+  "lastUpdated": "2026-11-15T14:45:23Z",
   "basis": "Recent trades use the IB ledger. Estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
     {
@@ -203,25 +203,12 @@
     }
   ],
   "liveMonthly": {
-    "currency": "USD",
-    "basis": "Estimated net using the FX ledger\u2019s conversion rate and fee allowance",
-    "firstClose": "2026-09-01",
+    "basis": "estimated net using the FX ledger\u2019s conversion rate and fee allowance",
     "lastClose": "2026-11-12",
     "rows": [
       {
-        "month": "2026-09",
-        "count": 11,
-        "pnl": -1111.87
-      },
-      {
-        "month": "2026-10",
-        "count": 2,
-        "pnl": 15.57
-      },
-      {
         "month": "2026-11",
-        "count": 9,
-        "pnl": 491.13
+        "returnPct": 13.0921
       }
     ]
   }

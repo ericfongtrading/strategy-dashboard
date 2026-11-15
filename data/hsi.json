@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T14:33:03Z",
+  "lastUpdated": "2026-11-15T14:45:20Z",
   "basis": "Recent trades use the IB ledger. Gross before commissions and fees.",
   "recentTrades": [
     {
@@ -143,20 +143,12 @@
     }
   ],
   "liveMonthly": {
-    "currency": "HKD",
-    "basis": "Gross before commissions and fees",
-    "firstClose": "2026-10-26",
+    "basis": "gross before commissions and fees",
     "lastClose": "2026-11-13",
     "rows": [
       {
-        "month": "2026-10",
-        "count": 1,
-        "pnl": -300.0
-      },
-      {
         "month": "2026-11",
-        "count": 3,
-        "pnl": 6520.0
+        "returnPct": 0.2069
       }
     ]
   }

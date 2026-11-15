@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T14:33:04Z",
+  "lastUpdated": "2026-11-15T14:45:21Z",
   "basis": "Recent trades use the IB ledger. Net of recorded IB commissions and fees.",
   "recentTrades": [
     {
@@ -192,20 +192,12 @@
   "dataThrough": "2026-10-13T23:59:00-04:00",
   "monthlyNote": "Model-only results for the modified four-sleeve 1/1/1/1 research allocation. Monthly return = monthly net P&L / fixed $27,412.87 portfolio capital; values are additive and do not compound. The capital reserves $6,800 for each of four possible MNQ sleeve positions plus the mean drawdown buffer. Sharpe uses the complete daily calendar including zero-P&L days.",
   "liveMonthly": {
-    "currency": "USD",
-    "basis": "Net of recorded IB commissions and fees",
-    "firstClose": "2026-10-08",
+    "basis": "net of recorded IB commissions and fees",
     "lastClose": "2026-11-14",
     "rows": [
       {
-        "month": "2026-10",
-        "count": 4,
-        "pnl": -224.88
-      },
-      {
         "month": "2026-11",
-        "count": 10,
-        "pnl": -2133.08
+        "returnPct": -3.4496
       }
     ]
   }
