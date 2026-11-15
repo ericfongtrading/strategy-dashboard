@@ -1,7 +1,43 @@
 {
-  "lastUpdated": "2026-11-15T08:40:03Z",
-  "basis": "Recent rows combine actual IB fills with clearly labelled trades from the latest approved historical backtest through 2026-10-23. New IB fills replace older historical rows automatically. Earlier live fills are withheld: a bar-assembly fault between 2026-06-16 and 2026-09-10 fed the signal engine unfinished candles, so those entries do not reflect the strategy. The modelled record covers that period. Headline and monthly table are backtest 2019-01 to 2026-08 on a fixed single-contract base, NET of trading costs (4.5 pt per round trip modelled; live fills net of actual commission and fees); headline metrics quote the 2022-onward window.",
+  "lastUpdated": "2026-11-15T14:13:48Z",
+  "basis": "Recent closed trades use verified IB executions from the current HSI strategy. Actual-fill P&L is in HKD before commissions and fees. Older model rows are labelled Historical backtest.",
   "recentTrades": [
+    {
+      "date": "2026-11-13",
+      "direction": "Short",
+      "entry": "23,853",
+      "exit": "23,572",
+      "pnl": "+HK$5,620",
+      "pnlNum": 5620,
+      "note": "Actual IB fill \u00b7 Reversal \u00b7 2 MHI \u00b7 gross"
+    },
+    {
+      "date": "2026-11-09",
+      "direction": "Short",
+      "entry": "24,566",
+      "exit": "24,510",
+      "pnl": "+HK$1,120",
+      "pnlNum": 1120,
+      "note": "Actual IB fill \u00b7 Reversal \u00b7 2 MHI \u00b7 gross"
+    },
+    {
+      "date": "2026-11-02",
+      "direction": "Long",
+      "entry": "23,446",
+      "exit": "23,435",
+      "pnl": "-HK$220",
+      "pnlNum": -220,
+      "note": "Actual IB fill \u00b7 P1 \u00b7 2 MHI \u00b7 gross"
+    },
+    {
+      "date": "2026-10-26",
+      "direction": "Long",
+      "entry": "23,253",
+      "exit": "23,223",
+      "pnl": "-HK$300",
+      "pnlNum": -300,
+      "note": "Actual IB fill \u00b7 P1 \u00b7 1 MHI \u00b7 gross"
+    },
     {
       "date": "2026-10-23",
       "direction": "Short",
@@ -10,42 +46,6 @@
       "pnl": "-HK$1,920",
       "pnlNum": -1920,
       "note": "Historical backtest \u00b7 P1"
-    },
-    {
-      "date": "2026-10-22",
-      "direction": "Short",
-      "entry": "23,392",
-      "exit": "23,051",
-      "pnl": "+HK$6,700",
-      "pnlNum": 6700,
-      "note": "Historical backtest \u00b7 P1"
-    },
-    {
-      "date": "2026-10-22",
-      "direction": "Short",
-      "entry": "23,269",
-      "exit": "23,119",
-      "pnl": "+HK$2,880",
-      "pnlNum": 2880,
-      "note": "Historical backtest \u00b7 P2"
-    },
-    {
-      "date": "2026-10-16",
-      "direction": "Short",
-      "entry": "24,296",
-      "exit": "24,148",
-      "pnl": "+HK$2,840",
-      "pnlNum": 2840,
-      "note": "Historical backtest \u00b7 reversal"
-    },
-    {
-      "date": "2026-10-16",
-      "direction": "Short",
-      "entry": "24,324",
-      "exit": "24,227",
-      "pnl": "+HK$1,820",
-      "pnlNum": 1820,
-      "note": "Historical backtest \u00b7 outer-band"
     }
   ],
   "positions": [],
