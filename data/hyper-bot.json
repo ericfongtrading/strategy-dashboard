@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-14T16:06:02.416246+00:00",
+  "lastUpdated": "2026-11-15T00:02:02.105187+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -25,17 +25,7 @@
     }
   ],
   "positions": [],
-  "plans": [
-    {
-      "symbol": "HENRY",
-      "direction": "Long",
-      "zone": "66,800 - 68,300",
-      "stop": "64,900",
-      "targets": "70,950 / 73,550",
-      "conviction": 3,
-      "status": "Waiting"
-    }
-  ],
+  "plans": [],
   "recentTrades": [
     {
       "date": "2026-11-12",
@@ -554,5 +544,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $65,494"
+  "priceNote": "Unrealised P&L marked at $64,060"
 }
