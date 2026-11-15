@@ -46,6 +46,28 @@ const CACHE_TTL = 60_000;
  *  the book, so a page left open should not sit on the snapshot it loaded with. */
 const POLL_MS = 60_000;
 
+/**
+ * The BTC daily publisher can continue to mark the last signal to market after
+ * it has written that signal's exit into recentTrades. Do not let that
+ * contradictory snapshot resurrect a closed position or replace the audited
+ * monthly/equity series. A future, genuinely new entry has a different entry
+ * price and is therefore retained.
+ */
+function reconcileBtcLsr(data: LiveData): LiveData {
+  const key = (value: string) => value.replace(/[^0-9.-]/g, '');
+  const closedEntries = new Set(
+    data.recentTrades.filter((trade) => Boolean(trade.exit)).map((trade) => key(trade.entry)),
+  );
+
+  return {
+    ...data,
+    positions: data.positions.filter((position) => !closedEntries.has(key(position.entry))),
+    // Use the audited static ledger for performance until the publisher emits
+    // an explicit closed/open signal state rather than a price-only snapshot.
+    monthlyReturns: undefined,
+  };
+}
+
 export function useLiveData(strategyId: string) {
   const [data, setData] = useState<LiveData | null>(null);
   const [loading, setLoading] = useState(false);
@@ -72,8 +94,9 @@ export function useLiveData(strategyId: string) {
           if (!r.ok) throw new Error('not found');
           return r.json();
         })
-        .then((d: LiveData) => {
+        .then((raw: LiveData) => {
           if (!alive) return;
+          const d = strategyId === 'btc-lsr' ? reconcileBtcLsr(raw) : raw;
           if (strategyId === 'fx' && Date.now() - Date.parse(d.lastUpdated) > 15 * 60_000) {
             d.headline = d.headline?.map(h => h.label === 'TWS feed' ? { ...h, value: 'STALE', tone: 'bad' } : h);
           }
