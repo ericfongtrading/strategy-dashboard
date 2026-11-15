@@ -9,6 +9,13 @@ export type LiveData = {
   recentTrades: Trade[];
   positions: Position[];
   monthlyReturns?: MonthlyRow[];
+  liveMonthly?: {
+    currency: 'USD' | 'HKD';
+    basis: string;
+    firstClose: string;
+    lastClose: string;
+    rows: { month: string; count: number; pnl: number }[];
+  };
   /** Live performance figures for the BTC options book. */
   performance?: {
     cagrPct: number;

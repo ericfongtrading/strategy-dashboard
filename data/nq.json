@@ -1,56 +1,56 @@
 {
-  "lastUpdated": "2026-10-14T14:30:00Z",
-  "basis": "Modified four-sleeve model (VL_R3 + R3_RE + filtered CCI_AM + TBS), 1 MNQ per sleeve. Fixed $27,412.87 capital base: $27,200 margin capacity for four MNQ plus $212.87 mean drawdown buffer. Returns are additive, net of the backtest execution-cost assumptions, with no compounding.",
+  "lastUpdated": "2026-11-15T14:33:04Z",
+  "basis": "Recent trades use the IB ledger. Net of recorded IB commissions and fees.",
   "recentTrades": [
     {
-      "date": "2026-09-14",
-      "direction": "Long",
-      "entry": "29,236",
-      "exit": "29,199",
-      "pnl": "-$151",
-      "pnlNum": -151.44,
-      "rMultiple": "-1.0R",
-      "sleeve": "VWAP_LONG_R3"
+      "date": "2026-11-14",
+      "symbol": "MNQ",
+      "direction": "Short",
+      "entry": "27,815.5",
+      "exit": "28,059.25",
+      "pnl": "-$488.72",
+      "pnlNum": -488.72,
+      "note": "Actual IB fill \u00b7 OSR \u00b7 1 MNQ \u00b7 net"
     },
     {
-      "date": "2026-09-02",
-      "direction": "Long",
-      "entry": "28,973",
-      "exit": "28,936",
-      "pnl": "-$149",
-      "pnlNum": -149.44,
-      "rMultiple": "-1.1R",
-      "sleeve": "VWAP_LONG_R3"
+      "date": "2026-11-11",
+      "symbol": "MNQ",
+      "direction": "Short",
+      "entry": "27,732.875",
+      "exit": "27,738",
+      "pnl": "-$22.94",
+      "pnlNum": -22.94,
+      "note": "Actual IB fill \u00b7 TBS \u00b7 2 MNQ \u00b7 net"
     },
     {
-      "date": "2026-09-01",
-      "direction": "Long",
-      "entry": "29,214",
-      "exit": "29,182",
-      "pnl": "-$127",
-      "pnlNum": -126.94,
-      "rMultiple": "-1.1R",
-      "sleeve": "VWAP_LONG_R3"
+      "date": "2026-11-10",
+      "symbol": "MNQ",
+      "direction": "Short",
+      "entry": "27,961.25",
+      "exit": "27,965.25",
+      "pnl": "-$18.44",
+      "pnlNum": -18.44,
+      "note": "Actual IB fill \u00b7 TBS \u00b7 2 MNQ \u00b7 net"
     },
     {
-      "date": "2026-08-31",
-      "direction": "Long",
-      "entry": "29,456",
-      "exit": "29,521",
-      "pnl": "+$255",
-      "pnlNum": 254.56,
-      "rMultiple": "+3.0R",
-      "sleeve": "VWAP_LONG_R3"
+      "date": "2026-11-07",
+      "symbol": "MNQ",
+      "direction": "Short",
+      "entry": "27,080",
+      "exit": "27,206.5",
+      "pnl": "-$508.44",
+      "pnlNum": -508.44,
+      "note": "Actual IB fill \u00b7 TBS \u00b7 2 MNQ \u00b7 net"
     },
     {
-      "date": "2026-08-26",
+      "date": "2026-11-05",
+      "symbol": "MNQ",
       "direction": "Long",
-      "entry": "29,283",
-      "exit": "29,346",
-      "pnl": "+$121",
-      "pnlNum": 120.6,
-      "rMultiple": "+0.5R",
-      "sleeve": "VWAP_LONG_R3"
+      "entry": "28,803.5",
+      "exit": "28,538.75",
+      "pnl": "-$530.72",
+      "pnlNum": -530.72,
+      "note": "Actual IB fill \u00b7 OSR \u00b7 1 MNQ \u00b7 net"
     }
   ],
   "positions": [],
@@ -190,5 +190,23 @@
     }
   ],
   "dataThrough": "2026-10-13T23:59:00-04:00",
-  "monthlyNote": "Model-only results for the modified four-sleeve 1/1/1/1 research allocation. Monthly return = monthly net P&L / fixed $27,412.87 portfolio capital; values are additive and do not compound. The capital reserves $6,800 for each of four possible MNQ sleeve positions plus the mean drawdown buffer. Sharpe uses the complete daily calendar including zero-P&L days."
+  "monthlyNote": "Model-only results for the modified four-sleeve 1/1/1/1 research allocation. Monthly return = monthly net P&L / fixed $27,412.87 portfolio capital; values are additive and do not compound. The capital reserves $6,800 for each of four possible MNQ sleeve positions plus the mean drawdown buffer. Sharpe uses the complete daily calendar including zero-P&L days.",
+  "liveMonthly": {
+    "currency": "USD",
+    "basis": "Net of recorded IB commissions and fees",
+    "firstClose": "2026-10-08",
+    "lastClose": "2026-11-14",
+    "rows": [
+      {
+        "month": "2026-10",
+        "count": 4,
+        "pnl": -224.88
+      },
+      {
+        "month": "2026-11",
+        "count": 10,
+        "pnl": -2133.08
+      }
+    ]
+  }
 }

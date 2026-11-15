@@ -1,61 +1,56 @@
 {
-  "lastUpdated": "2026-11-15T14:30:03Z",
-  "basis": "Recent rows are strategy-level trades: what the FX bot should trade when execution venues remain healthy. Venue delivery is not used to include or exclude a row.",
+  "lastUpdated": "2026-11-15T14:33:05Z",
+  "basis": "Recent trades use the IB ledger. Estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
     {
-      "entryDate": "2026-10-15 13:00 HKT",
-      "date": "2026-10-19",
-      "symbol": "GBPAUD",
-      "direction": "Short",
-      "entry": "1.91340",
-      "exit": "1.90893",
-      "pnl": "+0.20R",
-      "pnlNum": 0.2,
-      "source": "strategy"
-    },
-    {
-      "entryDate": "2026-10-27 17:00 HKT",
-      "date": "2026-10-28",
-      "symbol": "GBPNZD",
-      "direction": "Long",
-      "entry": "2.33700",
-      "exit": "2.34718",
-      "pnl": "+0.85R",
-      "pnlNum": 0.85,
-      "source": "strategy"
-    },
-    {
-      "entryDate": "2026-10-28 05:00 HKT",
-      "date": "2026-10-29",
-      "symbol": "GBPAUD",
-      "direction": "Long",
-      "entry": "1.88920",
-      "exit": "1.89469",
-      "pnl": "+0.26R",
-      "pnlNum": 0.26,
-      "source": "strategy"
-    },
-    {
-      "entryDate": "2026-10-28 09:00 HKT",
-      "date": "Open",
+      "date": "2026-11-12",
       "symbol": "NZDCAD",
-      "direction": "Long",
-      "entry": "0.78865",
-      "exit": "Open",
-      "pnl": "Open",
-      "pnlNum": 0,
-      "source": "strategy"
+      "direction": "Short",
+      "entry": "0.79582",
+      "exit": "0.79130",
+      "pnl": "+$337.96",
+      "pnlNum": 337.96,
+      "note": "Actual IB fill \u00b7 estimated net"
     },
     {
-      "entryDate": "2026-10-28 13:00 HKT",
-      "date": "Open",
+      "date": "2026-11-11",
+      "symbol": "GBPAUD",
+      "direction": "Short",
+      "entry": "1.94030",
+      "exit": "1.94344",
+      "pnl": "-$98.65",
+      "pnlNum": -98.65,
+      "note": "Actual IB fill \u00b7 estimated net"
+    },
+    {
+      "date": "2026-11-09",
+      "symbol": "AUDCAD",
+      "direction": "Long",
+      "entry": "0.96705",
+      "exit": "0.97382",
+      "pnl": "+$138.85",
+      "pnlNum": 138.85,
+      "note": "Actual IB fill \u00b7 estimated net"
+    },
+    {
+      "date": "2026-11-09",
       "symbol": "GBPNZD",
       "direction": "Short",
-      "entry": "2.37135",
-      "exit": "Open",
-      "pnl": "Open",
-      "pnlNum": 0,
-      "source": "strategy"
+      "entry": "2.41470",
+      "exit": "2.40050",
+      "pnl": "+$177.17",
+      "pnlNum": 177.17,
+      "note": "Actual IB fill \u00b7 estimated net"
+    },
+    {
+      "date": "2026-11-05",
+      "symbol": "GBPAUD",
+      "direction": "Short",
+      "entry": "1.93129",
+      "exit": "1.91969",
+      "pnl": "+$41.29",
+      "pnlNum": 41.29,
+      "note": "Actual IB fill \u00b7 estimated net"
     }
   ],
   "positions": [],
@@ -206,5 +201,28 @@
       "ytd": 4.6,
       "isLive": true
     }
-  ]
+  ],
+  "liveMonthly": {
+    "currency": "USD",
+    "basis": "Estimated net using the FX ledger\u2019s conversion rate and fee allowance",
+    "firstClose": "2026-09-01",
+    "lastClose": "2026-11-12",
+    "rows": [
+      {
+        "month": "2026-09",
+        "count": 11,
+        "pnl": -1111.87
+      },
+      {
+        "month": "2026-10",
+        "count": 2,
+        "pnl": 15.57
+      },
+      {
+        "month": "2026-11",
+        "count": 9,
+        "pnl": 491.13
+      }
+    ]
+  }
 }

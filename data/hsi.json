@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-11-15T14:13:48Z",
-  "basis": "Recent closed trades use verified IB executions from the current HSI strategy. Actual-fill P&L is in HKD before commissions and fees. Older model rows are labelled Historical backtest.",
+  "lastUpdated": "2026-11-15T14:33:03Z",
+  "basis": "Recent trades use the IB ledger. Gross before commissions and fees.",
   "recentTrades": [
     {
       "date": "2026-11-13",
@@ -141,5 +141,23 @@
       "ytd": 25.1,
       "isLive": true
     }
-  ]
+  ],
+  "liveMonthly": {
+    "currency": "HKD",
+    "basis": "Gross before commissions and fees",
+    "firstClose": "2026-10-26",
+    "lastClose": "2026-11-13",
+    "rows": [
+      {
+        "month": "2026-10",
+        "count": 1,
+        "pnl": -300.0
+      },
+      {
+        "month": "2026-11",
+        "count": 3,
+        "pnl": 6520.0
+      }
+    ]
+  }
 }

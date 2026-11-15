@@ -355,6 +355,35 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
           {/* Monthly Returns */}
 
+          {liveData?.liveMonthly && (
+            <section className="rounded-xl border border-border bg-bg/60 p-4">
+              <h3 className="font-semibold text-white">Monthly IB P&amp;L</h3>
+              <p className="mt-1 text-xs text-muted">
+                {liveData.liveMonthly.basis}. Recorded closes from {liveData.liveMonthly.firstClose} through {liveData.liveMonthly.lastClose} (HKT).
+              </p>
+              <table className="mt-3 w-full text-left text-sm tabular-nums">
+                <thead className="text-xs text-muted">
+                  <tr>
+                    <th scope="col" className="py-2 font-medium">Month (HKT)</th>
+                    <th scope="col" className="py-2 text-right font-medium">Closed trades</th>
+                    <th scope="col" className="py-2 text-right font-medium">P&amp;L ({liveData.liveMonthly.currency})</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {liveData.liveMonthly.rows.map(({ month, count, pnl }) => (
+                    <tr key={month} className="border-t border-border">
+                      <td className="py-2">{month}</td>
+                      <td className="py-2 text-right">{count}</td>
+                      <td className={`py-2 text-right ${pnl > 0 ? 'text-good' : pnl < 0 ? 'text-bad' : ''}`}>
+                        {new Intl.NumberFormat('en-US', { signDisplay: 'exceptZero', minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(pnl)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </section>
+          )}
+
           {monthlyRows && monthlyRows.length > 0 && (
 
             <MonthlyReturns rows={monthlyRows} theoretical={isTheoretical} liveSince={liveSince}
