@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-16T07:38:01.913623+00:00",
+  "lastUpdated": "2026-11-16T14:30:02.387446+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,9 +29,9 @@
     {
       "symbol": "NESTA",
       "direction": "Long",
-      "zone": "61,000 - 62,300",
+      "zone": "61,000 - 62,700",
       "stop": "59,400",
-      "targets": "63,250 / 64,550",
+      "targets": "64,550 / 66,650 / 69,600",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -563,5 +563,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $64,896"
+  "priceNote": "Unrealised P&L marked at $64,495"
 }
