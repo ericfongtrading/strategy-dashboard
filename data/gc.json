@@ -1,7 +1,20 @@
 {
-  "lastUpdated": "2026-11-16T18:40:06Z",
+  "lastUpdated": "2026-11-16T20:40:02Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
+    {
+      "date": "2026-11-17 03:12",
+      "entryDate": "2026-11-17 02:10",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,844.2",
+      "exit": "3,860.8",
+      "pnl": "-$331",
+      "pnlNum": -331.0,
+      "rMultiple": "",
+      "note": "stop loss \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
     {
       "date": "2026-11-16 15:07",
       "entryDate": "2026-11-16 14:40",
@@ -118,33 +131,9 @@
       "rMultiple": "",
       "note": "ob rejection \u00b7 IB gross",
       "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-09 08:15",
-      "entryDate": "2026-11-09 07:56",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "4,065.3",
-      "exit": "4,082.2",
-      "pnl": "-$169",
-      "pnlNum": -169.0,
-      "rMultiple": "",
-      "note": "stop loss \u00b7 IB gross",
-      "source": "IB recorded fills"
     }
   ],
-  "positions": [
-    {
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "3,844.2",
-      "current": "3,851.1",
-      "size": "2 MGC",
-      "pnl": "-$138",
-      "pnlNum": -138.0,
-      "open": "2026-11-17 02:10 HKT"
-    }
-  ],
+  "positions": [],
   "monthlyReturns": [
     {
       "year": 2019,
