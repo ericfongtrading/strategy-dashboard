@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-15T22:12:02.319430+00:00",
+  "lastUpdated": "2026-11-16T00:10:04.013541+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -34,15 +34,6 @@
       "targets": "63,250 / 64,550",
       "conviction": 3,
       "status": "Waiting"
-    },
-    {
-      "symbol": "FALCAO",
-      "direction": "Long",
-      "zone": "63,300 - 63,700",
-      "stop": "61,300",
-      "targets": "66,763 / 69,926",
-      "conviction": 3,
-      "status": "Order resting"
     },
     {
       "symbol": "GRIEZMANN",
@@ -572,5 +563,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $65,127"
+  "priceNote": "Unrealised P&L marked at $65,216"
 }
