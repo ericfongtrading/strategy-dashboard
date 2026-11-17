@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+  "updated_utc": "2026-11-17T05:22:02.129625+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -127,7 +127,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-10T15:57:00+00:00",
           "exit_utc": "2026-11-10T16:00:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27733.25,
@@ -170,7 +170,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-09T17:38:00+00:00",
           "exit_utc": "2026-11-09T19:00:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27959.5,
@@ -213,7 +213,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-06T17:37:00+00:00",
           "exit_utc": "2026-11-06T18:57:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27088.5,
@@ -256,7 +256,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T18:47:00+00:00",
           "exit_utc": "2026-11-04T19:00:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28630.0,
@@ -299,7 +299,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T15:31:00+00:00",
           "exit_utc": "2026-11-04T20:56:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28800.25,
@@ -342,7 +342,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -385,7 +385,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -428,7 +428,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-17T05:21:01.550381+00:00",
+          "updated_utc": "2026-11-17T05:22:02.129625+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -461,13 +461,13 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-17T05:21:01.550381+00:00",
-      "data_final_utc": null,
+      "heartbeat_utc": "2026-11-17T05:22:02.129625+00:00",
+      "data_final_utc": "2026-11-17T05:21:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 10,
         "open": 0,
@@ -884,14 +884,18 @@
       ],
       "source_present": true,
       "errors": 0,
-      "state": "STALE",
-      "heartbeat_utc": "2026-11-17T01:29:38.814699+00:00",
-      "data_final_utc": null,
-      "halt_reasons": [],
+      "state": "ACTIVE",
+      "heartbeat_utc": "2026-11-17T05:21:59.970649+00:00",
+      "data_final_utc": "2026-11-17T05:21:00+00:00",
+      "halt_reasons": [
+        "NQ_RECOVERY_NOT_VERIFIED",
+        "VENUE_RECOVERY_NOT_VERIFIED",
+        "WARMUP_NOT_READY"
+      ],
       "pilot_hold": false,
-      "broker_connected": null,
-      "armed": null,
-      "warmup_verified": null,
+      "broker_connected": true,
+      "armed": false,
+      "warmup_verified": true,
       "summary": {
         "closed": 10,
         "open": 0,
@@ -1228,7 +1232,7 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-17T05:21:04.588302+00:00",
+      "heartbeat_utc": "2026-11-17T05:22:05.375854+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -1247,7 +1251,7 @@
     }
   },
   "regular_market_open": true,
-  "execution_mode": null,
+  "execution_mode": "LIVE",
   "observation_started_utc": "2026-11-01T16:05:24.903980+00:00",
   "model_reference": {
     "state": "READY",
@@ -1255,7 +1259,7 @@
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
     "records": 8,
     "unpaired_signals": 2,
-    "checked_utc": "2026-11-17T05:21:01.550381+00:00",
+    "checked_utc": "2026-11-17T05:22:02.129625+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
@@ -1264,8 +1268,11 @@
     "error_count": 0
   },
   "paired_entries_enabled": null,
-  "entry_policy": null,
-  "venue_entries_enabled": null,
+  "entry_policy": "INDEPENDENT_VENUES",
+  "venue_entries_enabled": {
+    "IB": false,
+    "FTMO": false
+  },
   "matched_execution": {
     "schema": "nq.matched-execution.3",
     "basis": "Same completed signals at equal planned stop risk",
@@ -1488,7 +1495,7 @@
     "state": "DATA_WAIT",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-17T05:21:04.276096+00:00",
+    "heartbeat_utc": "2026-11-17T05:22:04.325834+00:00",
     "last_bar_utc": "2026-11-17T01:28:00+00:00",
     "position": null,
     "summary": {
@@ -2334,6 +2341,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-17T05:20:21.487176+00:00"
+    "validation_updated_utc": "2026-11-17T05:21:21.871190+00:00"
   }
 }
