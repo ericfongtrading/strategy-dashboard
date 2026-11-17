@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-17T02:32:01.239898+00:00",
+  "lastUpdated": "2026-11-17T14:08:01.608238+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -38,7 +38,7 @@
     {
       "symbol": "GRIEZMANN",
       "direction": "Short",
-      "zone": "69,100 - 70,400",
+      "zone": "69,100 - 70,900",
       "stop": "72,000",
       "targets": "64,700 / 63,700",
       "conviction": 3,
@@ -563,5 +563,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $64,374"
+  "priceNote": "Unrealised P&L marked at $64,934"
 }
