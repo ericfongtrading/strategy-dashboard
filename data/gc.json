@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T16:40:05Z",
+  "lastUpdated": "2026-11-18T18:40:05Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
     {
@@ -135,23 +135,33 @@
   ],
   "positions": [
     {
+      "symbol": "P3",
+      "direction": "Short",
+      "entry": "3,736.1",
+      "current": "3,744.8",
+      "size": "2 MGC",
+      "pnl": "-$174",
+      "pnlNum": -174.0,
+      "open": "2026-11-19 01:52 HKT"
+    },
+    {
       "symbol": "P2",
       "direction": "Short",
       "entry": "3,743.5",
-      "current": "3,740.0",
+      "current": "3,744.8",
       "size": "2 MGC",
-      "pnl": "+$70",
-      "pnlNum": 70.0,
+      "pnl": "-$26",
+      "pnlNum": -26.0,
       "open": "2026-11-19 00:22 HKT"
     },
     {
       "symbol": "P1",
       "direction": "Short",
       "entry": "3,749.6",
-      "current": "3,740.0",
+      "current": "3,744.8",
       "size": "2 MGC",
-      "pnl": "+$192",
-      "pnlNum": 192.0,
+      "pnl": "+$96",
+      "pnlNum": 96.0,
       "open": "2026-11-19 00:08 HKT"
     }
   ],
