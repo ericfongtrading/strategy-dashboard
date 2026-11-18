@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-11-18T10:05:03Z",
+  "lastUpdated": "2026-11-18T11:50:02Z",
   "basis": "Recent trades use the IB ledger. estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
+    {
+      "date": "2026-11-18",
+      "symbol": "GBPAUD",
+      "direction": "Short",
+      "entry": "1.96370",
+      "exit": "1.95553",
+      "pnl": "+$169.93",
+      "pnlNum": 169.93,
+      "note": "Actual IB fill \u00b7 estimated net"
+    },
     {
       "date": "2026-11-18",
       "symbol": "GBPAUD",
@@ -41,16 +51,6 @@
       "pnl": "+$138.85",
       "pnlNum": 138.85,
       "note": "Actual IB fill \u00b7 estimated net"
-    },
-    {
-      "date": "2026-11-09",
-      "symbol": "GBPNZD",
-      "direction": "Short",
-      "entry": "2.41470",
-      "exit": "2.40050",
-      "pnl": "+$177.17",
-      "pnlNum": 177.17,
-      "note": "Actual IB fill \u00b7 estimated net"
     }
   ],
   "positions": [
@@ -64,17 +64,6 @@
       "targets": "0.96455",
       "pnl": "-27 CAD",
       "pnlNum": -27
-    },
-    {
-      "symbol": "GBPAUD",
-      "direction": "Short",
-      "entry": "1.96370",
-      "current": "1.95710",
-      "size": "31,568",
-      "stop": "1.97445",
-      "targets": "1.95560",
-      "pnl": "+208 AUD",
-      "pnlNum": 208
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
@@ -231,7 +220,7 @@
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": -0.2096
+        "returnPct": 0.1679
       }
     ],
     "riskNormalized": true
