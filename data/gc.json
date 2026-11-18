@@ -1,7 +1,20 @@
 {
-  "lastUpdated": "2026-11-18T18:40:05Z",
+  "lastUpdated": "2026-11-18T20:40:04Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
+    {
+      "date": "2026-11-19 04:05",
+      "entryDate": "2026-11-19 00:08",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,749.6",
+      "exit": "3,727.7",
+      "pnl": "+$438",
+      "pnlNum": 438.0,
+      "rMultiple": "",
+      "note": "rule a blue line \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
     {
       "date": "2026-11-18 21:10",
       "entryDate": "2026-11-18 20:48",
@@ -118,19 +131,6 @@
       "rMultiple": "",
       "note": "stop loss \u00b7 IB gross",
       "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-16 15:07",
-      "entryDate": "2026-11-16 14:40",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "3,843.6",
-      "exit": "3,858.4",
-      "pnl": "-$296",
-      "pnlNum": -296.0,
-      "rMultiple": "",
-      "note": "stop loss \u00b7 IB gross",
-      "source": "IB recorded fills"
     }
   ],
   "positions": [
@@ -138,31 +138,21 @@
       "symbol": "P3",
       "direction": "Short",
       "entry": "3,736.1",
-      "current": "3,744.8",
+      "current": "3,733.6",
       "size": "2 MGC",
-      "pnl": "-$174",
-      "pnlNum": -174.0,
+      "pnl": "+$50",
+      "pnlNum": 50.0,
       "open": "2026-11-19 01:52 HKT"
     },
     {
       "symbol": "P2",
       "direction": "Short",
       "entry": "3,743.5",
-      "current": "3,744.8",
+      "current": "3,733.6",
       "size": "2 MGC",
-      "pnl": "-$26",
-      "pnlNum": -26.0,
+      "pnl": "+$198",
+      "pnlNum": 198.0,
       "open": "2026-11-19 00:22 HKT"
-    },
-    {
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "3,749.6",
-      "current": "3,744.8",
-      "size": "2 MGC",
-      "pnl": "+$96",
-      "pnlNum": 96.0,
-      "open": "2026-11-19 00:08 HKT"
     }
   ],
   "monthlyReturns": [
