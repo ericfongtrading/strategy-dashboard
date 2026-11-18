@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-18T00:04:01.909146+00:00",
+  "lastUpdated": "2026-11-18T11:26:01.689919+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -31,7 +31,16 @@
       "direction": "Long",
       "zone": "61,000 - 62,700",
       "stop": "59,400",
-      "targets": "64,550 / 66,650 / 69,600",
+      "targets": "64,550 / 66,050 / 69,350",
+      "conviction": 3,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "BERGKAMP",
+      "direction": "Short",
+      "zone": "65,400 - 66,300",
+      "stop": "68,150",
+      "targets": "64,150 / 63,400 / 62,300",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -563,5 +572,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $64,808"
+  "priceNote": "Unrealised P&L marked at $64,214"
 }
