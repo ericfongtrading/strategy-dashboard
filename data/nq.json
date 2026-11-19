@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-11-18T08:40:05Z",
+  "lastUpdated": "2026-11-19T08:40:05Z",
   "basis": "Recent trades use the IB ledger. net of recorded IB commissions and fees.",
   "recentTrades": [
+    {
+      "date": "2026-11-18",
+      "symbol": "MNQ",
+      "direction": "Short",
+      "entry": "27,153.5",
+      "exit": "27,320.875",
+      "pnl": "-$671.94",
+      "pnlNum": -671.94,
+      "note": "Actual IB fill \u00b7 TBS \u00b7 2 MNQ \u00b7 net"
+    },
     {
       "date": "2026-11-18",
       "symbol": "MNQ",
@@ -40,16 +50,6 @@
       "exit": "27,738",
       "pnl": "-$22.94",
       "pnlNum": -22.94,
-      "note": "Actual IB fill \u00b7 TBS \u00b7 2 MNQ \u00b7 net"
-    },
-    {
-      "date": "2026-11-10",
-      "symbol": "MNQ",
-      "direction": "Short",
-      "entry": "27,961.25",
-      "exit": "27,965.25",
-      "pnl": "-$18.44",
-      "pnlNum": -18.44,
       "note": "Actual IB fill \u00b7 TBS \u00b7 2 MNQ \u00b7 net"
     }
   ],
@@ -197,7 +197,7 @@
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": -3.5816
+        "returnPct": -4.6683
       }
     ]
   }
