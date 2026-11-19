@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-19T21:06:01.512067+00:00",
+  "lastUpdated": "2026-11-19T22:24:01.937818+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "NESTA",
       "direction": "Long",
       "entry": "61,845",
-      "current": "62,096",
+      "current": "61,953",
       "size": "1 BTC",
-      "pnl": "+$251",
-      "pnlNum": 251,
+      "pnl": "+$108",
+      "pnlNum": 108,
       "stop": "58,600",
       "targets": "64,550 / 66,050 / 69,350",
       "realized": "-",
@@ -40,15 +40,6 @@
     }
   ],
   "plans": [
-    {
-      "symbol": "BERGKAMP",
-      "direction": "Short",
-      "zone": "65,400 - 66,300",
-      "stop": "68,150",
-      "targets": "64,150 / 63,400 / 62,300",
-      "conviction": 3,
-      "status": "Waiting"
-    },
     {
       "symbol": "GRIEZMANN",
       "direction": "Short",
@@ -577,5 +568,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $62,096"
+  "priceNote": "Unrealised P&L marked at $61,953"
 }
