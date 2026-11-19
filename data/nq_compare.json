@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+  "updated_utc": "2026-11-19T13:17:00.812260+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -34,28 +34,28 @@
     "theoretical": {
       "records": [
         {
-          "position_id": "437ee3472678810fad77",
+          "position_id": "f9b5d6423279d3d05ce2",
           "signal_id": "ee34e263118bea8f074e",
           "version": "nq4-cci05-v1",
-          "source": "admitted_signal_reference",
+          "source": "canonical_signal_model_reconstruction",
           "sleeve": "TBS",
           "venue": "theoretical",
-          "status": "OPEN",
+          "status": "CLOSED",
           "side": -1,
           "revision": 0,
           "instrument": "NQ signal / MNQ model",
           "unit": "MNQ",
           "entry_utc": "2026-11-18T14:36:00+00:00",
-          "exit_utc": null,
-          "updated_utc": "2026-11-18T14:37:00.958820+00:00",
+          "exit_utc": "2026-11-18T15:00:00+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 2,
-          "remaining": 2,
+          "remaining": 0,
           "entry": 27150.25,
-          "exit": null,
+          "exit": 27272.75,
           "stop": 27271.5,
           "target": 26907.75,
-          "gross_usd": 0.0,
-          "fees_usd": 1.22,
+          "gross_usd": -490.0,
+          "fees_usd": 2.44,
           "swap_usd": 0.0,
           "initial_risk_usd": 485.0,
           "entry_reference": 27151.5,
@@ -66,12 +66,16 @@
           "venue_mid": null,
           "quote_age_ms": null,
           "exit_quote_age_ms": null,
-          "net_usd": -1.22,
-          "net_r": -0.002515463917525773,
+          "model_origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
+          "model_policy": "recorded-canonical-signal-core-fill-v1",
+          "model_exit_reason": "STOP",
+          "net_usd": -492.44,
+          "net_r": -1.015340206185567,
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 485.0
         },
         {
           "position_id": "99fa54ba704a47ab1ad4",
@@ -111,7 +115,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 370.0
         },
         {
           "position_id": "720be79e071834699fd5",
@@ -151,7 +156,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 1099.0
         },
         {
           "position_id": "b56168ee056707cb1a04",
@@ -191,7 +197,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 1114.0
         },
         {
           "position_id": "bd77adfd6047f19cb0df",
@@ -207,7 +214,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-10T15:57:00+00:00",
           "exit_utc": "2026-11-10T16:00:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27733.25,
@@ -234,7 +241,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 325.0
         },
         {
           "position_id": "903451a56e6f78156783",
@@ -250,7 +258,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-09T17:38:00+00:00",
           "exit_utc": "2026-11-09T19:00:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27959.5,
@@ -277,7 +285,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 218.0
         },
         {
           "position_id": "67049eee870ff8bc14b4",
@@ -293,7 +302,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-06T17:37:00+00:00",
           "exit_utc": "2026-11-06T18:57:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27088.5,
@@ -320,7 +329,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 473.0
         },
         {
           "position_id": "aa0f7ba42831379c6303",
@@ -336,7 +346,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T18:47:00+00:00",
           "exit_utc": "2026-11-04T19:00:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28630.0,
@@ -363,7 +373,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 233.0
         },
         {
           "position_id": "91870963f7e17f6280f0",
@@ -379,7 +390,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T15:31:00+00:00",
           "exit_utc": "2026-11-04T20:56:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28800.25,
@@ -406,7 +417,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 1154.0
         },
         {
           "position_id": "69d87bef38861b243c95",
@@ -422,7 +434,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -449,7 +461,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 312.0
         },
         {
           "position_id": "41ad406f7f0f7a386c30",
@@ -465,7 +478,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -492,7 +505,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 94.5
         },
         {
           "position_id": "8d2ba587cc0e01c1ab26",
@@ -508,7 +522,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-19T13:16:02.303272+00:00",
+          "updated_utc": "2026-11-19T13:17:00.812260+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -535,27 +549,28 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 195.5
         }
       ],
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-19T13:16:02.303272+00:00",
-      "data_final_utc": "2026-11-19T13:15:00+00:00",
+      "heartbeat_utc": "2026-11-19T13:17:00.812260+00:00",
+      "data_final_utc": "2026-11-19T13:16:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
       "armed": false,
       "warmup_verified": true,
       "summary": {
-        "closed": 11,
-        "open": 1,
-        "measured": 11,
-        "net_usd": -2248.7400000000002,
-        "gross_usd": -2228.0,
+        "closed": 12,
+        "open": 0,
+        "measured": 12,
+        "net_usd": -2741.1800000000003,
+        "gross_usd": -2718.0,
         "swap_usd": 0.0,
-        "fees_usd": 20.74
+        "fees_usd": 23.18
       },
       "model_reference_state": "READY"
     },
@@ -599,7 +614,8 @@
           "entry_slippage_pts": -1.25,
           "exit_slippage_pts": null,
           "basis_pts": 0.125,
-          "entry_spread_pts": 0.75
+          "entry_spread_pts": 0.75,
+          "planned_stop_risk_usd": 476.0
         },
         {
           "position_id": "a4dba1b82f77964c757f",
@@ -639,7 +655,8 @@
           "entry_slippage_pts": -0.25,
           "exit_slippage_pts": null,
           "basis_pts": 0.125,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 361.0
         },
         {
           "position_id": "b7519a336db1aeb3970f",
@@ -679,7 +696,8 @@
           "entry_slippage_pts": 6.0,
           "exit_slippage_pts": null,
           "basis_pts": 0.0,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 1097.5
         },
         {
           "position_id": "fcaa1ab60ee5b0f714da",
@@ -719,7 +737,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 1112.5
         },
         {
           "position_id": "33de4374b057ce6884e1",
@@ -759,7 +778,8 @@
           "entry_slippage_pts": 1.375,
           "exit_slippage_pts": null,
           "basis_pts": -0.25,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 322.0
         },
         {
           "position_id": "a5249a451299614c0112",
@@ -799,7 +819,8 @@
           "entry_slippage_pts": -1.0,
           "exit_slippage_pts": null,
           "basis_pts": 0.0,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 215.0
         },
         {
           "position_id": "25d6155e8e069c950e93",
@@ -839,7 +860,8 @@
           "entry_slippage_pts": 11.25,
           "exit_slippage_pts": null,
           "basis_pts": 0.375,
-          "entry_spread_pts": 1.25
+          "entry_spread_pts": 1.25,
+          "planned_stop_risk_usd": 461.0
         },
         {
           "position_id": "ef945f26ffdec83c16e5",
@@ -879,7 +901,8 @@
           "entry_slippage_pts": 4.25,
           "exit_slippage_pts": null,
           "basis_pts": 0.125,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 1152.5
         },
         {
           "position_id": "5d4907147c1b6d1cef34",
@@ -919,7 +942,8 @@
           "entry_slippage_pts": -2.125,
           "exit_slippage_pts": null,
           "basis_pts": 0.0,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 227.0
         },
         {
           "position_id": "cebfa9c3d949e32481f7",
@@ -959,7 +983,8 @@
           "entry_slippage_pts": -0.875,
           "exit_slippage_pts": null,
           "basis_pts": 0.0,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 312.0
         },
         {
           "position_id": "1754190799553568bd38",
@@ -999,7 +1024,8 @@
           "entry_slippage_pts": 3.0,
           "exit_slippage_pts": null,
           "basis_pts": 0.125,
-          "entry_spread_pts": 0.5
+          "entry_spread_pts": 0.5,
+          "planned_stop_risk_usd": 91.5
         },
         {
           "position_id": "8c8d3a50f211ec29048a",
@@ -1039,14 +1065,15 @@
           "entry_slippage_pts": 6.5,
           "exit_slippage_pts": null,
           "basis_pts": 0.0,
-          "entry_spread_pts": 0.25
+          "entry_spread_pts": 0.25,
+          "planned_stop_risk_usd": 194.5
         }
       ],
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-19T13:15:59.890618+00:00",
-      "data_final_utc": "2026-11-19T13:15:00+00:00",
+      "heartbeat_utc": "2026-11-19T13:17:00.475933+00:00",
+      "data_final_utc": "2026-11-19T13:16:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
@@ -1064,6 +1091,129 @@
     },
     "ftmo": {
       "records": [
+        {
+          "position_id": "62a745c99e8a1c62ca27",
+          "signal_id": "ee34e263118bea8f074e",
+          "version": "nq4-cci05-v1",
+          "source": "ftmo_execution_journal",
+          "sleeve": "TBS",
+          "venue": "ftmo",
+          "status": "CLOSED",
+          "side": -1,
+          "revision": 0,
+          "instrument": "US100.cash",
+          "unit": "lots",
+          "entry_utc": "2026-11-18T14:36:03.526000+00:00",
+          "exit_utc": "2026-11-18T15:00:05.572000+00:00",
+          "updated_utc": "2026-11-18T15:00:05.572000+00:00",
+          "size": 0.83,
+          "remaining": 0,
+          "entry": 27074.13,
+          "exit": 27196.38,
+          "stop": 27190.7,
+          "target": 26840.99,
+          "gross_usd": -101.47,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 96.75,
+          "entry_reference": 27071.43,
+          "exit_reference": null,
+          "entry_bid": 27071.43,
+          "entry_ask": 27072.88,
+          "nq_mid": 27152.75,
+          "venue_mid": 27072.155,
+          "quote_age_ms": -2279.391288757324,
+          "exit_quote_age_ms": null,
+          "net_usd": -101.47,
+          "net_r": -1.0487855297157622,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 98.99092819765008
+        },
+        {
+          "position_id": "083beac5c50eeef788b8",
+          "signal_id": "0387b16ca67b8584d5ff",
+          "version": "nq4-cci05-v1",
+          "source": "ftmo_execution_journal",
+          "sleeve": "TBS",
+          "venue": "ftmo",
+          "status": "CLOSED",
+          "side": -1,
+          "revision": 0,
+          "instrument": "US100.cash",
+          "unit": "lots",
+          "entry_utc": "2026-11-17T17:58:01.712000+00:00",
+          "exit_utc": "2026-11-17T18:26:35.747000+00:00",
+          "updated_utc": "2026-11-17T18:26:35.747000+00:00",
+          "size": 1.1,
+          "remaining": 0,
+          "entry": 26880.03,
+          "exit": 26971.68,
+          "stop": 26968.41,
+          "target": 26614.89,
+          "gross_usd": -100.82,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 97.22,
+          "entry_reference": 26877.83,
+          "exit_reference": null,
+          "entry_bid": 26877.83,
+          "entry_ask": 26879.28,
+          "nq_mid": 26963.625,
+          "venue_mid": 26878.555,
+          "quote_age_ms": -743.5324192047119,
+          "exit_quote_age_ms": null,
+          "net_usd": -100.82,
+          "net_r": -1.0370294178152644,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.640049785016
+        },
+        {
+          "position_id": "acfe86619abb0bdd4bbe",
+          "signal_id": "9bfb6b4c426abb4cd09a",
+          "version": "nq4-cci05-v1",
+          "source": "ftmo_execution_journal",
+          "sleeve": "OSR",
+          "venue": "ftmo",
+          "status": "CLOSED",
+          "side": -1,
+          "revision": 0,
+          "instrument": "US100.cash",
+          "unit": "lots",
+          "entry_utc": "2026-11-16T15:31:03.296000+00:00",
+          "exit_utc": "2026-11-16T20:56:00.811000+00:00",
+          "updated_utc": "2026-11-16T20:56:00.811000+00:00",
+          "size": 0.18,
+          "remaining": 0,
+          "entry": 27337.23,
+          "exit": 27187.08,
+          "stop": 27884.760000000002,
+          "target": null,
+          "gross_usd": 27.03,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 98.56,
+          "entry_reference": 27335.53,
+          "exit_reference": null,
+          "entry_bid": 27335.53,
+          "entry_ask": 27336.98,
+          "nq_mid": 27428.5,
+          "venue_mid": 27336.254999999997,
+          "quote_age_ms": -1908.3456993103027,
+          "exit_quote_age_ms": null,
+          "net_usd": 27.03,
+          "net_r": 0.2742491883116883,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 98.86601428232255
+        },
         {
           "position_id": "5733b0b3b51b3a45a4ad",
           "signal_id": "81e5a0fbb414ac034d13",
@@ -1102,7 +1252,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.57003799873334
         },
         {
           "position_id": "0aa295ef5af45958a0e6",
@@ -1142,7 +1293,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.57600885282453
         },
         {
           "position_id": "a3963592f6f7eae551f8",
@@ -1182,47 +1334,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
-        },
-        {
-          "position_id": "e11c1a9d294f86ee9c76",
-          "signal_id": "d8e4a883b3d2ac8ac980",
-          "version": "nq4-cci05-v1",
-          "source": null,
-          "sleeve": "OSR",
-          "venue": "ftmo",
-          "status": "CLOSED",
-          "side": 1,
-          "revision": 38428,
-          "instrument": "US100.cash",
-          "unit": "lots",
-          "entry_utc": "2026-11-04T15:31:01.380000+00:00",
-          "exit_utc": "2026-11-04T20:56:00.769000+00:00",
-          "updated_utc": "2026-11-04T20:56:02.102518+00:00",
-          "size": 0.17,
-          "remaining": 0.0,
-          "entry": 28676.48,
-          "exit": 28407.23,
-          "stop": 28100.48,
-          "target": null,
-          "gross_usd": -45.77,
-          "fees_usd": 0.0,
-          "swap_usd": 0.0,
-          "initial_risk_usd": 97.92,
-          "entry_reference": 28677.08,
-          "exit_reference": null,
-          "entry_bid": 28675.63,
-          "entry_ask": 28677.08,
-          "nq_mid": 28799.125,
-          "venue_mid": 28676.355000000003,
-          "quote_age_ms": -317.96860694885254,
-          "exit_quote_age_ms": null,
-          "net_usd": -45.77,
-          "net_r": -0.46742238562091504,
-          "entry_slippage_pts": null,
-          "exit_slippage_pts": null,
-          "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.05602228510979
         },
         {
           "position_id": "6af8ab3d69f158e64240",
@@ -1262,7 +1375,49 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.48019206145952
+        },
+        {
+          "position_id": "e11c1a9d294f86ee9c76",
+          "signal_id": "d8e4a883b3d2ac8ac980",
+          "version": "nq4-cci05-v1",
+          "source": null,
+          "sleeve": "OSR",
+          "venue": "ftmo",
+          "status": "CLOSED",
+          "side": 1,
+          "revision": 38428,
+          "instrument": "US100.cash",
+          "unit": "lots",
+          "entry_utc": "2026-11-04T15:31:01.380000+00:00",
+          "exit_utc": "2026-11-04T20:56:00.769000+00:00",
+          "updated_utc": "2026-11-04T20:56:02.102518+00:00",
+          "size": 0.17,
+          "remaining": 0.0,
+          "entry": 28676.48,
+          "exit": 28407.23,
+          "stop": 28100.48,
+          "target": null,
+          "gross_usd": -45.77,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0,
+          "initial_risk_usd": 97.92,
+          "entry_reference": 28677.08,
+          "exit_reference": null,
+          "entry_bid": 28675.63,
+          "entry_ask": 28677.08,
+          "nq_mid": 28799.125,
+          "venue_mid": 28676.355000000003,
+          "quote_age_ms": -317.96860694885254,
+          "exit_quote_age_ms": null,
+          "net_usd": -45.77,
+          "net_r": -0.46742238562091504,
+          "entry_slippage_pts": null,
+          "exit_slippage_pts": null,
+          "basis_pts": null,
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 98.02200000000038
         },
         {
           "position_id": "b1826688800d561a9225",
@@ -1302,7 +1457,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.38
         },
         {
           "position_id": "83c86c85f9c6acdca317",
@@ -1342,7 +1498,8 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.7919999999937
         },
         {
           "position_id": "813a5cc55ae7b74a4a49",
@@ -1382,13 +1539,15 @@
           "entry_slippage_pts": null,
           "exit_slippage_pts": null,
           "basis_pts": null,
-          "entry_spread_pts": null
+          "entry_spread_pts": null,
+          "planned_stop_risk_usd": 99.81197964376813
         }
       ],
       "source_present": true,
       "errors": 0,
+      "journal_projection": "CURRENT",
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-19T13:16:05.096248+00:00",
+      "heartbeat_utc": "2026-11-19T13:17:03.792778+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -1396,11 +1555,11 @@
       "armed": true,
       "warmup_verified": null,
       "summary": {
-        "closed": 8,
+        "closed": 11,
         "open": 0,
-        "measured": 8,
-        "net_usd": -445.62,
-        "gross_usd": -445.62,
+        "measured": 11,
+        "net_usd": -620.88,
+        "gross_usd": -620.88,
         "swap_usd": 0.0,
         "fees_usd": 0.0
       }
@@ -1409,13 +1568,16 @@
   "regular_market_open": true,
   "execution_mode": "LIVE",
   "observation_started_utc": "2026-11-01T16:05:24.903980+00:00",
+  "ftmo_no_send": {
+    "68dc05126e12913c4be3": "EXPIRED_NO_SEND"
+  },
   "model_reference": {
     "state": "READY",
     "policy": "recorded-canonical-signal-core-fill-v1",
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
-    "records": 8,
+    "records": 9,
     "unpaired_signals": 2,
-    "checked_utc": "2026-11-19T13:16:02.303272+00:00",
+    "checked_utc": "2026-11-19T13:17:00.812260+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
@@ -1436,11 +1598,11 @@
     "state": "READY",
     "counts": {
       "signals": 12,
-      "matched_closed": 8,
+      "matched_closed": 11,
       "missing_record": {
         "theoretical": 0,
         "ib": 0,
-        "ftmo": 4
+        "ftmo": 1
       },
       "waiting_for_close": 0,
       "missing_costs": 0,
@@ -1449,9 +1611,9 @@
     },
     "lanes": {
       "theoretical": {
-        "net_usd": -471.13659624011694,
-        "gross_usd": -464.90067768587846,
-        "fees_usd": 6.2359185542384505,
+        "net_usd": -645.7205541481014,
+        "gross_usd": -638.2110733417991,
+        "fees_usd": 7.509480806302245,
         "swap_usd": 0.0,
         "entry_slippage_count": 0,
         "entry_slippage_pts": null,
@@ -1459,18 +1621,18 @@
         "exit_slippage_pts": null
       },
       "ib": {
-        "net_usd": -461.92024736724716,
-        "gross_usd": -455.57493483277835,
-        "fees_usd": 6.3453125344688175,
+        "net_usd": -681.4313563968294,
+        "gross_usd": -673.7863768121282,
+        "fees_usd": 7.644979584701224,
         "swap_usd": 0.0,
-        "entry_slippage_count": 8,
-        "entry_slippage_pts": 2.796875,
+        "entry_slippage_count": 11,
+        "entry_slippage_pts": 2.4431818181818183,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       },
       "ftmo": {
-        "net_usd": -448.48093713097023,
-        "gross_usd": -448.48093713097023,
+        "net_usd": -624.8294602791873,
+        "gross_usd": -624.8294602791873,
         "fees_usd": 0.0,
         "swap_usd": 0.0,
         "entry_slippage_count": 0,
@@ -1480,6 +1642,66 @@
       }
     },
     "per_signal": {
+      "ee34e263118bea8f074e": {
+        "theoretical": {
+          "net_usd": -101.5340206185567,
+          "gross_usd": -101.03092783505154,
+          "fees_usd": 0.5030927835051546,
+          "swap_usd": 0.0
+        },
+        "ib": {
+          "net_usd": -141.1638655462185,
+          "gross_usd": -140.65126050420167,
+          "fees_usd": 0.5126050420168067,
+          "swap_usd": 0.0
+        },
+        "ftmo": {
+          "net_usd": -102.50434241549901,
+          "gross_usd": -102.50434241549901,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0
+        }
+      },
+      "0387b16ca67b8584d5ff": {
+        "theoretical": {
+          "net_usd": -102.01081081081081,
+          "gross_usd": -101.35135135135135,
+          "fees_usd": 0.6594594594594595,
+          "swap_usd": 0.0
+        },
+        "ib": {
+          "net_usd": -105.66204986149584,
+          "gross_usd": -104.98614958448753,
+          "fees_usd": 0.6759002770083102,
+          "swap_usd": 0.0
+        },
+        "ftmo": {
+          "net_usd": -101.18421279147277,
+          "gross_usd": -101.18421279147277,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0
+        }
+      },
+      "9bfb6b4c426abb4cd09a": {
+        "theoretical": {
+          "net_usd": 28.96087352138307,
+          "gross_usd": 29.071883530482257,
+          "fees_usd": 0.11101000909918107,
+          "swap_usd": 0.0
+        },
+        "ib": {
+          "net_usd": 27.314806378132115,
+          "gross_usd": 27.425968109339408,
+          "fees_usd": 0.1111617312072893,
+          "swap_usd": 0.0
+        },
+        "ftmo": {
+          "net_usd": 27.340032058754712,
+          "gross_usd": 27.340032058754712,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0
+        }
+      },
       "81e5a0fbb414ac034d13": {
         "theoretical": {
           "net_usd": -10.596923076923076,
@@ -1651,8 +1873,8 @@
     "state": "VALIDATION_WAITING_FOR_SAME_SNAPSHOT",
     "validator_state": "WAITING_FOR_SAME_SNAPSHOT",
     "data_error": null,
-    "heartbeat_utc": "2026-11-19T13:16:02.293015+00:00",
-    "last_bar_utc": "2026-11-19T13:14:00+00:00",
+    "heartbeat_utc": "2026-11-19T13:17:02.783641+00:00",
+    "last_bar_utc": "2026-11-19T13:15:00+00:00",
     "position": null,
     "summary": {
       "reads": 24,
@@ -2557,6 +2779,6 @@
       "trades": 0
     },
     "ready_for_live_review": false,
-    "validation_updated_utc": "2026-11-19T13:15:21.345603+00:00"
+    "validation_updated_utc": "2026-11-19T13:16:11.392283+00:00"
   }
 }
