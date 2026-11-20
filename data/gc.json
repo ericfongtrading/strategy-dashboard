@@ -1,7 +1,20 @@
 {
-  "lastUpdated": "2026-11-20T02:40:03Z",
+  "lastUpdated": "2026-11-20T04:40:03Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
+    {
+      "date": "2026-11-20 11:21",
+      "entryDate": "2026-11-20 11:12",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,525.2",
+      "exit": "3,531.1",
+      "pnl": "-$118",
+      "pnlNum": -118.0,
+      "rMultiple": "",
+      "note": "ob rejection \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
     {
       "date": "2026-11-20 10:37",
       "entryDate": "2026-11-20 10:24",
@@ -117,19 +130,6 @@
       "pnlNum": 743.0,
       "rMultiple": "",
       "note": "ob rejection \u00b7 IB gross",
-      "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-19 08:41",
-      "entryDate": "2026-11-19 01:52",
-      "symbol": "P3",
-      "direction": "Short",
-      "entry": "3,736.1",
-      "exit": "3,751.5",
-      "pnl": "-$308",
-      "pnlNum": -308.0,
-      "rMultiple": "",
-      "note": "stop loss \u00b7 IB gross",
       "source": "IB recorded fills"
     }
   ],
