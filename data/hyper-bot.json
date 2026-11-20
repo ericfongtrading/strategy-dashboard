@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-11-20T11:56:02.116740+00:00",
+  "lastUpdated": "2026-11-20T18:48:01.864286+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
       "label": "Cumulative P&L",
-      "value": "+$9,515",
+      "value": "+$6,215",
       "tone": "good",
-      "sub": "43 trades, 1 BTC each"
+      "sub": "44 trades, 1 BTC each"
     },
     {
       "label": "Win Rate",
-      "value": "60%",
-      "sub": "26W / 17L"
+      "value": "59%",
+      "sub": "26W / 18L"
     },
     {
       "label": "Profit Factor",
-      "value": "1.62",
+      "value": "1.33",
       "sub": "gross win / gross loss"
     },
     {
@@ -24,21 +24,7 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [
-    {
-      "symbol": "NESTA",
-      "direction": "Long",
-      "entry": "61,845",
-      "current": "61,768",
-      "size": "1 BTC",
-      "pnl": "-$77",
-      "pnlNum": -77,
-      "stop": "58,600",
-      "targets": "64,550 / 66,050 / 69,350",
-      "realized": "-",
-      "open": "100%"
-    }
-  ],
+  "positions": [],
   "plans": [
     {
       "symbol": "RAUL",
@@ -60,6 +46,18 @@
     }
   ],
   "recentTrades": [
+    {
+      "date": "2026-11-20",
+      "entryDate": "2026-11-19",
+      "symbol": "NESTA",
+      "direction": "Long",
+      "entry": "61,845",
+      "exit": "58,545",
+      "pnl": "-$3,300",
+      "pnlNum": -3300,
+      "rMultiple": "-1.02R",
+      "note": "Stopped out"
+    },
     {
       "date": "2026-11-12",
       "entryDate": "2026-11-08",
@@ -577,5 +575,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $61,768"
+  "priceNote": "Unrealised P&L marked at $58,472"
 }
