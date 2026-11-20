@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-20T18:48:01.864286+00:00",
+  "lastUpdated": "2026-11-20T19:08:01.799149+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -20,7 +20,7 @@
     },
     {
       "label": "Lessons Learned",
-      "value": "112",
+      "value": "113",
       "sub": "rules written from its own trades"
     }
   ],
@@ -575,5 +575,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $58,472"
+  "priceNote": "Unrealised P&L marked at $58,298"
 }
