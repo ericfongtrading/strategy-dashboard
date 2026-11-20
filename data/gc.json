@@ -1,7 +1,33 @@
 {
-  "lastUpdated": "2026-11-20T04:40:03Z",
+  "lastUpdated": "2026-11-20T16:40:03Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
+    {
+      "date": "2026-11-20 23:35",
+      "entryDate": "2026-11-20 23:25",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,535.2",
+      "exit": "3,550.4",
+      "pnl": "-$305",
+      "pnlNum": -305.0,
+      "rMultiple": "",
+      "note": "stop loss \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
+    {
+      "date": "2026-11-20 23:33",
+      "entryDate": "2026-11-20 23:28",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "3,528.5",
+      "exit": "3,543.9",
+      "pnl": "-$308",
+      "pnlNum": -308.0,
+      "rMultiple": "",
+      "note": "stop loss \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
     {
       "date": "2026-11-20 11:21",
       "entryDate": "2026-11-20 11:12",
@@ -104,32 +130,6 @@
       "pnlNum": 198.0,
       "rMultiple": "",
       "note": "rule e two bars \u00b7 IB gross",
-      "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-19 11:17",
-      "entryDate": "2026-11-19 11:07",
-      "symbol": "P4",
-      "direction": "Short",
-      "entry": "3,705.0",
-      "exit": "3,705.6",
-      "pnl": "-$12",
-      "pnlNum": -12.0,
-      "rMultiple": "",
-      "note": "rule d opp cluster \u00b7 IB gross",
-      "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-19 11:17",
-      "entryDate": "2026-11-19 00:22",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "3,743.5",
-      "exit": "3,706.3",
-      "pnl": "+$743",
-      "pnlNum": 743.0,
-      "rMultiple": "",
-      "note": "ob rejection \u00b7 IB gross",
       "source": "IB recorded fills"
     }
   ],
