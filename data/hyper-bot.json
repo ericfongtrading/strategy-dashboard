@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-20T19:08:01.799149+00:00",
+  "lastUpdated": "2026-11-20T20:02:01.295833+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,7 +29,7 @@
     {
       "symbol": "RAUL",
       "direction": "Long",
-      "zone": "57,300 - 58,400",
+      "zone": "57,300 - 58,900",
       "stop": "56,000",
       "targets": "61,200 / 62,900",
       "conviction": 3,
@@ -575,5 +575,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $58,298"
+  "priceNote": "Unrealised P&L marked at $58,534"
 }
