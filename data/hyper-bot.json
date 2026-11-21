@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-20T20:02:01.295833+00:00",
+  "lastUpdated": "2026-11-21T07:02:01.779622+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -24,17 +24,22 @@
       "sub": "rules written from its own trades"
     }
   ],
-  "positions": [],
-  "plans": [
+  "positions": [
     {
       "symbol": "RAUL",
       "direction": "Long",
-      "zone": "57,300 - 58,900",
+      "entry": "57,958",
+      "current": "57,744",
+      "size": "1 BTC",
+      "pnl": "-$214",
+      "pnlNum": -214,
       "stop": "56,000",
       "targets": "61,200 / 62,900",
-      "conviction": 3,
-      "status": "Waiting"
-    },
+      "realized": "-",
+      "open": "100%"
+    }
+  ],
+  "plans": [
     {
       "symbol": "GRIEZMANN",
       "direction": "Short",
@@ -575,5 +580,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $58,534"
+  "priceNote": "Unrealised P&L marked at $57,744"
 }
