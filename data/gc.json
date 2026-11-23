@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-20T20:40:03Z",
+  "lastUpdated": "2026-11-23T03:47:27Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
     {
@@ -282,5 +282,15 @@
   ],
   "dataThrough": "2026-10-30 20:59:00+00:00",
   "monthlyNote": "Current-strategy historical simulation through 30 October 2026, using corrected inputs. Returns include floating P&L, retain profits and assume 1.06 bp round-trip costs. Reference normalization; not personal account returns.",
-  "modelVersion": "gc.h4_daily5.20261101"
+  "modelVersion": "gc.h4_daily5.20261101",
+  "liveMonthly": {
+    "basis": "gross before commissions and fees",
+    "lastClose": "2026-11-21",
+    "rows": [
+      {
+        "month": "2026-11",
+        "returnPct": -0.136
+      }
+    ]
+  }
 }
