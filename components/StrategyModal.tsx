@@ -103,7 +103,9 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
   const trades = liveData?.recentTrades || s.recentTrades;
 
-  const positions = s.id === 'fx' ? undefined : liveData?.positions || s.positions;
+  const positions = s.id === 'fx'
+    ? undefined
+    : (liveData?.positions?.length ? liveData.positions : s.positions);
 
   const plans = liveData?.plans;
 
@@ -539,4 +541,5 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
   );
 
 }
+
 
