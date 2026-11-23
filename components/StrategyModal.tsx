@@ -309,7 +309,7 @@ export function StrategyModal({ s, onClose }: { s: Strategy | null; onClose: () 
 
               </div>
 
-              <EquityChart strategy={monthlyRows ? { ...s, monthlyReturns: monthlyRows } : s} />
+              <EquityChart strategy={monthlyRows ? { ...s, monthlyReturns: monthlyRows } : s} liveMonthly={liveData?.liveMonthly} />
 
             </div>
 

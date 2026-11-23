@@ -2,6 +2,8 @@
 
 import { useMemo } from 'react';
 import type { Strategy } from '@/lib/strategies';
+import type { LiveData } from '@/lib/useLiveData';
+import { performanceMonths } from '@/lib/performanceMonths';
 
 function seededRandom(seed: number) {
   let s = seed;
@@ -19,7 +21,7 @@ function hashStr(str: string): number {
   return Math.abs(h);
 }
 
-function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; months: number } | null {
+function buildFromMonthly(s: Strategy, liveMonthly?: LiveData['liveMonthly']): { backtest: number[]; live: number[]; months: number } | null {
   if (!s.monthlyReturns || s.monthlyReturns.length === 0) return null;
 
   const modelOnly = !!s.equityModelOnly;
@@ -31,7 +33,8 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
   let equity = 100;
   let liveStarted = false;
 
-  for (const row of s.monthlyReturns) {
+  const { rows, brokerMonths } = performanceMonths(s.monthlyReturns, liveMonthly);
+  for (const row of rows) {
     for (let mi = 0; mi < row.months.length; mi++) {
       const m = row.months[mi];
       if (m === null) {
@@ -42,7 +45,8 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
       // month adds its percentage points to the same denominator.
       equity = s.additiveEquity ? equity + m : equity * (1 + m / 100);
 
-      const isLiveMonth = !modelOnly && (row.year > liveYear || (row.year === liveYear && mi >= liveMonth));
+      const isLiveMonth = brokerMonths.has(`${row.year}-${String(mi + 1).padStart(2, '0')}`)
+        || (!modelOnly && (row.year > liveYear || (row.year === liveYear && mi >= liveMonth)));
       if (isLiveMonth && !liveStarted) {
         liveStarted = true;
         livePoints.push(backtestPoints[backtestPoints.length - 1]);
@@ -67,8 +71,8 @@ function buildFromMonthly(s: Strategy): { backtest: number[]; live: number[]; mo
   };
 }
 
-function generateEquityCurve(s: Strategy): { backtest: number[]; live: number[]; months: number } {
-  const fromData = buildFromMonthly(s);
+function generateEquityCurve(s: Strategy, liveMonthly?: LiveData['liveMonthly']): { backtest: number[]; live: number[]; months: number } {
+  const fromData = buildFromMonthly(s, liveMonthly);
   if (fromData) return fromData;
 
   const cagr = s.cagrNum || 0.15;
@@ -109,9 +113,11 @@ function generateEquityCurve(s: Strategy): { backtest: number[]; live: number[];
   return { backtest, live, months: totalMonths };
 }
 
-export function EquityChart({ strategy }: { strategy: Strategy }) {
-  const modelOnly = strategy.id === 'fx' || !!strategy.equityModelOnly;
-  const { backtest, live, months } = useMemo(() => generateEquityCurve(strategy), [strategy]);
+export function EquityChart({ strategy, liveMonthly }: { strategy: Strategy; liveMonthly?: LiveData['liveMonthly'] }) {
+  const hasBrokerMonths = performanceMonths(strategy.monthlyReturns || [], liveMonthly).brokerMonths.size > 0;
+  const modelOnly = !hasBrokerMonths && (strategy.id === 'fx' || !!strategy.equityModelOnly);
+  const { backtest, live, months } = useMemo(() => generateEquityCurve(strategy, liveMonthly), [strategy, liveMonthly]);
+  const endLabel = hasBrokerMonths ? `${liveMonthly!.lastClose} HKT` : strategy.equityEndLabel || 'Now';
 
   const all = [...backtest, ...live.slice(1)];
   const minVal = Math.min(...all) * 0.95;
@@ -196,7 +202,7 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
         </span>
         {!modelOnly && <span className="flex items-center gap-1.5">
           <svg width="16" height="2"><line x1="0" y1="1" x2="16" y2="1" stroke="#10b981" strokeWidth="2" /></svg>
-          Live
+          {hasBrokerMonths ? 'IB closed-trade extension' : 'Live'}
         </span>}
       </div>
       <svg viewBox={`0 0 ${W} ${H}`} className="w-full" style={{ maxHeight: 220 }}>
@@ -234,17 +240,17 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
 
         {/* X-axis labels */}
         <text x={x(0)} y={H - 8} fill="#4b5563" fontSize="10" textAnchor="start" fontFamily="Inter, sans-serif">{startYr}</text>
-        {!strategy.equityModelOnly && !yrHidden && (
+        {!modelOnly && !yrHidden && (
           <text x={yrCrowded ? transitionX - 6 : transitionX} y={H - 8} fill="#9ca3af" fontSize="10" textAnchor={yrCrowded ? 'end' : 'middle'} fontFamily="Inter, sans-serif">{liveYr}</text>
         )}
-        <text x={x(months)} y={H - 8} fill="#10b981" fontSize="10" textAnchor="end" fontFamily="Inter, sans-serif">{strategy.equityEndLabel || 'Now'}</text>
+        <text x={x(months)} y={H - 8} fill="#10b981" fontSize="10" textAnchor="end" fontFamily="Inter, sans-serif">{endLabel}</text>
       </svg>
 
       {underwater && (
         <div className="mt-1">
           <div className="flex items-baseline justify-between mb-1">
             <span className="text-[10px] uppercase tracking-wider text-muted">
-              Drawdown from peak{strategy.underwaterLabel ? ` · ${strategy.underwaterLabel}` : ''}
+              {hasBrokerMonths ? 'Historical model drawdown' : 'Drawdown from peak'}{strategy.underwaterLabel ? ` · ${strategy.underwaterLabel}` : ''}
             </span>
             <span className="text-[10px] metric-value text-bad">{underwater.worst.toFixed(1)}% worst</span>
           </div>
@@ -282,6 +288,10 @@ export function EquityChart({ strategy }: { strategy: Strategy }) {
           </svg>
         </div>
       )}
+      {hasBrokerMonths && <p className="mt-2 text-[10px] leading-relaxed text-muted/80">
+        November onward follows the same IB months as the table: {liveMonthly!.basis}.
+        Open-position P&amp;L is excluded. Historical headline metrics retain their stated model period.
+      </p>}
     </div>
   );
 }

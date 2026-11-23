@@ -1,5 +1,6 @@
 import type { MonthlyRow } from '@/lib/strategies';
 import type { LiveData } from '@/lib/useLiveData';
+import { performanceMonths } from '@/lib/performanceMonths';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -17,20 +18,7 @@ function Cell({ value, isMtd, isBroker }: { value: number | null; isMtd?: boolea
 }
 
 export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnly, dataThrough, modelOnly, costNote, liveMonthly }: { rows: MonthlyRow[]; theoretical?: boolean; liveSince?: string; note?: string; strategyOnly?: boolean; dataThrough?: string; modelOnly?: boolean; costNote?: string; liveMonthly?: LiveData['liveMonthly'] }) {
-  const tableRows = new Map(rows.map((row) => [row.year, row]));
-  const brokerMonths = new Set<string>();
-  for (const { month, returnPct } of liveMonthly?.rows ?? []) {
-    if (!/^\d{4}-(0[1-9]|1[0-2])$/.test(month) || !Number.isFinite(returnPct)) continue;
-    const year = Number(month.slice(0, 4));
-    const index = Number(month.slice(5)) - 1;
-    const existing = tableRows.get(year);
-    if (existing?.months[index] != null) continue;
-    const months = existing ? [...existing.months] : Array<number | null>(12).fill(null);
-    months[index] = returnPct;
-    const ytd = (months.reduce<number>((nav, value) => nav * (1 + (value ?? 0) / 100), 1) - 1) * 100;
-    tableRows.set(year, { ...existing, year, months, ytd });
-    brokerMonths.add(month);
-  }
+  const { rows: tableRows, brokerMonths } = performanceMonths(rows, liveMonthly);
   return (
     <div className="rounded-xl border border-border bg-bg/40 p-4">
       <h4 className="text-xs font-semibold text-muted uppercase tracking-wider mb-3">{brokerMonths.size ? 'Monthly Returns' : modelOnly ? 'Monthly Model Returns' : strategyOnly ? 'Monthly Strategy Returns' : 'Monthly Historical Returns'}</h4>
@@ -46,7 +34,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
             </tr>
           </thead>
           <tbody>
-            {Array.from(tableRows.values()).sort((a, b) => a.year - b.year).map((row) => {
+            {tableRows.map((row) => {
               const lastDataIdx = row.months.reduce<number>((acc, v, i) => (v !== null ? i : acc), -1);
               const isPartialLive = !modelOnly && (row.isLive || (dataThrough && row.year === new Date(dataThrough).getUTCFullYear())) && lastDataIdx < 11 && lastDataIdx >= 0;
               return (
@@ -61,7 +49,7 @@ export function MonthlyReturns({ rows, theoretical, liveSince, note, strategyOnl
                     <Cell
                       key={i}
                       value={v}
-                      isMtd={!!isPartialLive && i === lastDataIdx}
+                      isMtd={(!!isPartialLive && i === lastDataIdx) || (brokerMonths.has(`${row.year}-${String(i + 1).padStart(2, '0')}`) && `${row.year}-${String(i + 1).padStart(2, '0')}` === liveMonthly?.lastClose.slice(0, 7))}
                       isBroker={brokerMonths.has(`${row.year}-${String(i + 1).padStart(2, '0')}`)}
                     />
                   ))}
