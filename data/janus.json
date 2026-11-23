@@ -1,97 +1,8 @@
 {
-  "lastUpdated": "2026-11-23T04:25:00.661947+00:00",
+  "lastUpdated": "2026-11-23T04:35:00.749844+00:00",
   "basis": "Paper · combined momentum + fade book · figures on a modeled $100k base",
   "positions": [],
-  "recentTrades": [
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "NEAR",
-      "direction": "Short",
-      "entry": "3.004",
-      "exit": "3.017",
-      "pnl": "-$6",
-      "pnlNum": -5.98,
-      "note": "CF · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "ELSA",
-      "direction": "Long",
-      "entry": "0.09882",
-      "exit": "0.10091",
-      "pnl": "+$28",
-      "pnlNum": 27.54,
-      "note": "SP · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "ADA",
-      "direction": "Short",
-      "entry": "0.1444",
-      "exit": "0.1448",
-      "pnl": "-$6",
-      "pnlNum": -5.82,
-      "note": "CF · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "SOL",
-      "direction": "Short",
-      "entry": "71.32",
-      "exit": "71.48",
-      "pnl": "-$5",
-      "pnlNum": -5.41,
-      "note": "CF · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "XRP",
-      "direction": "Short",
-      "entry": "0.9338",
-      "exit": "0.936",
-      "pnl": "-$6",
-      "pnlNum": -5.91,
-      "note": "CF · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "ETH",
-      "direction": "Short",
-      "entry": "1,732",
-      "exit": "1,735",
-      "pnl": "-$4",
-      "pnlNum": -4.42,
-      "note": "CF · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "JCT",
-      "direction": "Short",
-      "entry": "0.001582",
-      "exit": "0.001583",
-      "pnl": "+$0",
-      "pnlNum": -0.28,
-      "note": "CF · signal"
-    },
-    {
-      "date": "2026-11-23",
-      "entryDate": "2026-11-23",
-      "symbol": "BTC",
-      "direction": "Short",
-      "entry": "61,340",
-      "exit": "61,447",
-      "pnl": "-$6",
-      "pnlNum": -5.99,
-      "note": "CF · signal"
-    }
-  ],
+  "recentTrades": [],
   "monthlyReturns": [
     {
       "year": 2023,
@@ -160,11 +71,10 @@
         3.81,
         1.05,
         4.22,
-        -0.01,
+        null,
         null
       ],
-      "ytd": 65.19,
-      "isLive": true
+      "ytd": 65.2
     }
   ],
   "priceNote": "Open-position P&L marked at the last publish"
