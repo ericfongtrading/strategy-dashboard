@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T11:36:02.052826+00:00",
+  "lastUpdated": "2026-11-23T11:56:01.979656+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -32,6 +32,15 @@
       "zone": "54,700 - 55,800",
       "stop": "53,200",
       "targets": "59,250 / 61,050",
+      "conviction": 3,
+      "status": "Waiting"
+    },
+    {
+      "symbol": "CRESPO",
+      "direction": "Long",
+      "zone": "57,300 - 58,300",
+      "stop": "55,850",
+      "targets": "61,050 / 64,700",
       "conviction": 3,
       "status": "Waiting"
     },
@@ -587,5 +596,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $61,437"
+  "priceNote": "Unrealised P&L marked at $61,345"
 }
