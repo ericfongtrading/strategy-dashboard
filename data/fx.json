@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-23T20:20:02Z",
+  "lastUpdated": "2026-11-23T22:20:02Z",
   "basis": "Recent trades use the IB ledger. estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
     {
@@ -58,12 +58,12 @@
       "symbol": "AUDCAD",
       "direction": "Long",
       "entry": "0.95027",
-      "current": "0.95190",
+      "current": "0.95180",
       "size": "91,654",
       "stop": "0.94340",
-      "targets": "0.95560",
-      "pnl": "+149 CAD",
-      "pnlNum": 149
+      "targets": "0.95500",
+      "pnl": "+140 CAD",
+      "pnlNum": 140
     },
     {
       "symbol": "NZDCAD",
