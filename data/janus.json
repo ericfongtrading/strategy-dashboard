@@ -1,15 +1,15 @@
 {
-  "lastUpdated": "2026-11-23T06:15:01.612418+00:00",
+  "lastUpdated": "2026-11-23T06:20:01.355569+00:00",
   "basis": "Paper · combined momentum + fade book · figures on a modeled $100k base",
   "positions": [
     {
       "symbol": "ELSA",
       "direction": "Long",
       "entry": "0.10373",
-      "current": "0.10427",
+      "current": "0.10242",
       "size": "$900",
-      "pnl": "+$5",
-      "pnlNum": 4.69,
+      "pnl": "-$11",
+      "pnlNum": -11.37,
       "stop": "0.072632",
       "targets": "0.41504"
     },
@@ -17,10 +17,10 @@
       "symbol": "EVAA",
       "direction": "Long",
       "entry": "3.105",
-      "current": "2.914",
+      "current": "2.92",
       "size": "$900",
-      "pnl": "-$56",
-      "pnlNum": -55.51,
+      "pnl": "-$54",
+      "pnlNum": -53.62,
       "stop": "2.174",
       "targets": "12.42"
     },
@@ -28,51 +28,51 @@
       "symbol": "NEAR",
       "direction": "Short",
       "entry": "3.022",
-      "current": "3.004",
+      "current": "3.002",
       "size": "$1,148",
       "pnl": "+$7",
-      "pnlNum": 6.69,
+      "pnlNum": 7.45,
       "stop": "3.776"
     },
     {
       "symbol": "ETH",
       "direction": "Short",
       "entry": "1,733",
-      "current": "1,729",
+      "current": "1,727",
       "size": "$1,912",
-      "pnl": "+$4",
-      "pnlNum": 3.76,
+      "pnl": "+$6",
+      "pnlNum": 6.38,
       "stop": "2,166"
-    },
-    {
-      "symbol": "HYPE",
-      "direction": "Long",
-      "entry": "63.04",
-      "current": "63.09",
-      "size": "$1,398",
-      "pnl": "+$1",
-      "pnlNum": 1.0,
-      "stop": "47.29"
-    },
-    {
-      "symbol": "SOL",
-      "direction": "Short",
-      "entry": "71.96",
-      "current": "71.98",
-      "size": "$1,810",
-      "pnl": "+$0",
-      "pnlNum": -0.4,
-      "stop": "89.94"
     },
     {
       "symbol": "BTC",
       "direction": "Short",
       "entry": "61,733",
-      "current": "61,747",
+      "current": "61,649",
       "size": "$2,409",
-      "pnl": "-$1",
-      "pnlNum": -0.52,
+      "pnl": "+$3",
+      "pnlNum": 3.28,
       "stop": "77,151"
+    },
+    {
+      "symbol": "SOL",
+      "direction": "Short",
+      "entry": "71.96",
+      "current": "71.9",
+      "size": "$1,810",
+      "pnl": "+$2",
+      "pnlNum": 1.61,
+      "stop": "89.94"
+    },
+    {
+      "symbol": "ADA",
+      "direction": "Short",
+      "entry": "0.1458",
+      "current": "0.1458",
+      "size": "$1,654",
+      "pnl": "+$0",
+      "pnlNum": -0.0,
+      "stop": "0.18225"
     },
     {
       "symbol": "JCT",
@@ -85,33 +85,33 @@
       "stop": "0.0019725"
     },
     {
-      "symbol": "ADA",
-      "direction": "Short",
-      "entry": "0.1458",
-      "current": "0.146",
-      "size": "$1,654",
-      "pnl": "-$2",
-      "pnlNum": -2.27,
-      "stop": "0.18225"
+      "symbol": "HYPE",
+      "direction": "Long",
+      "entry": "63.04",
+      "current": "62.98",
+      "size": "$1,398",
+      "pnl": "-$1",
+      "pnlNum": -1.33,
+      "stop": "47.29"
     },
     {
       "symbol": "ENA",
       "direction": "Long",
       "entry": "0.10328",
-      "current": "0.10297",
+      "current": "0.10296",
       "size": "$1,076",
       "pnl": "-$3",
-      "pnlNum": -3.23,
+      "pnlNum": -3.33,
       "stop": "0.0774825"
     },
     {
       "symbol": "XRP",
       "direction": "Short",
       "entry": "0.9396",
-      "current": "0.9446",
+      "current": "0.9427",
       "size": "$1,907",
-      "pnl": "-$10",
-      "pnlNum": -10.15,
+      "pnl": "-$6",
+      "pnlNum": -6.29,
       "stop": "1.174"
     }
   ],
