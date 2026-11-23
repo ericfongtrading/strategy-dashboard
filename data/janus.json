@@ -1,7 +1,90 @@
 {
-  "lastUpdated": "2026-11-23T05:40:02.818043+00:00",
+  "lastUpdated": "2026-11-23T05:55:04.158975+00:00",
   "basis": "Paper · combined momentum + fade book · figures on a modeled $100k base",
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "EVAA",
+      "direction": "Long",
+      "entry": "3.105",
+      "current": "3.115",
+      "size": "$900",
+      "pnl": "+$3",
+      "pnlNum": 2.96,
+      "stop": "2.174",
+      "targets": "12.42"
+    },
+    {
+      "symbol": "ELSA",
+      "direction": "Long",
+      "entry": "0.10373",
+      "current": "0.1026",
+      "size": "$900",
+      "pnl": "-$10",
+      "pnlNum": -9.8,
+      "stop": "0.072632",
+      "targets": "0.41504"
+    },
+    {
+      "symbol": "ETH",
+      "direction": "Short",
+      "entry": "1,733",
+      "current": "1,730",
+      "size": "$1,912",
+      "pnl": "+$3",
+      "pnlNum": 3.38,
+      "stop": "2,166"
+    },
+    {
+      "symbol": "XRP",
+      "direction": "Short",
+      "entry": "0.9396",
+      "current": "0.9385",
+      "size": "$1,907",
+      "pnl": "+$2",
+      "pnlNum": 2.23,
+      "stop": "1.174"
+    },
+    {
+      "symbol": "ADA",
+      "direction": "Short",
+      "entry": "0.1458",
+      "current": "0.1457",
+      "size": "$1,654",
+      "pnl": "+$1",
+      "pnlNum": 1.13,
+      "stop": "0.18225"
+    },
+    {
+      "symbol": "JCT",
+      "direction": "Short",
+      "entry": "0.001578",
+      "current": "0.001578",
+      "size": "$201",
+      "pnl": "+$0",
+      "pnlNum": -0.0,
+      "stop": "0.0019725"
+    },
+    {
+      "symbol": "ENA",
+      "direction": "Long",
+      "entry": "0.10328",
+      "current": "0.10324",
+      "size": "$1,076",
+      "pnl": "+$0",
+      "pnlNum": -0.42,
+      "stop": "0.0774825"
+    },
+    {
+      "symbol": "HYPE",
+      "direction": "Long",
+      "entry": "63.04",
+      "current": "63.01",
+      "size": "$1,398",
+      "pnl": "-$1",
+      "pnlNum": -0.73,
+      "stop": "47.29"
+    }
+  ],
   "recentTrades": [],
   "monthlyReturns": [
     {
