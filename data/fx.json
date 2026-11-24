@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-24T10:05:02Z",
+  "lastUpdated": "2026-11-24T14:05:02Z",
   "basis": "Recent trades use the IB ledger. estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
     {
@@ -58,23 +58,23 @@
       "symbol": "AUDCAD",
       "direction": "Long",
       "entry": "0.95027",
-      "current": "0.95065",
+      "current": "0.95105",
       "size": "91,654",
       "stop": "0.94340",
-      "targets": "0.95355",
-      "pnl": "+35 CAD",
-      "pnlNum": 35
+      "targets": "0.95315",
+      "pnl": "+71 CAD",
+      "pnlNum": 71
     },
     {
       "symbol": "NZDCAD",
       "direction": "Long",
       "entry": "0.78240",
-      "current": "0.78220",
+      "current": "0.78370",
       "size": "63,041",
       "stop": "0.77665",
-      "targets": "0.78540",
-      "pnl": "-13 CAD",
-      "pnlNum": -13
+      "targets": "0.78520",
+      "pnl": "+82 CAD",
+      "pnlNum": 82
     }
   ],
   "priceNote": "Open positions are marked to the last closed 4H bar; unrealised P&L is in the quote currency.",
