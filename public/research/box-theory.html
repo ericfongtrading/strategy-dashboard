@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Box Theory</title>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body><meta name="claude:viewport-fit-sides" content="cover">
+<title>Box Theory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: single editorial research column; full-width sections; charts & diagrams in bordered panels.
+   Palette: cool paper + ink, "edge" green accent, muted red for losses/drawdown, steel-blue for benchmark/core. */
+:root{
+  --bg:#f4f5f7; --surface:#ffffff; --surface2:#fbfcfd;
+  --ink:#141820; --muted:#5c6572; --faint:#8b94a2; --line:#e4e7ec; --line2:#eef1f4;
+  --accent:#117a52; --accent-fill:rgba(17,122,82,.12); --accent-ink:#0c5e3f;
+  --neg:#c13b2c; --neg-fill:rgba(193,59,44,.12);
+  --steel:#2d62b3; --steel-fill:rgba(45,98,179,.12);
+  --gold:#b07a1e;
+  --shadow:0 1px 2px rgba(20,24,32,.04),0 8px 24px rgba(20,24,32,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1116; --surface:#161b23; --surface2:#1b212a;
+  --ink:#e9edf3; --muted:#9aa4b2; --faint:#6b7684; --line:#262e39; --line2:#1f2630;
+  --accent:#34c58a; --accent-fill:rgba(52,197,138,.14); --accent-ink:#5fd6a3;
+  --neg:#e9685c; --neg-fill:rgba(233,104,92,.15);
+  --steel:#6aa0f0; --steel-fill:rgba(106,160,240,.15);
+  --gold:#d9a847;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0e1116; --surface:#161b23; --surface2:#1b212a;
+  --ink:#e9edf3; --muted:#9aa4b2; --faint:#6b7684; --line:#262e39; --line2:#1f2630;
+  --accent:#34c58a; --accent-fill:rgba(52,197,138,.14); --accent-ink:#5fd6a3;
+  --neg:#e9685c; --neg-fill:rgba(233,104,92,.15);
+  --steel:#6aa0f0; --steel-fill:rgba(106,160,240,.15);
+  --gold:#d9a847;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.58;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.muted{color:var(--muted)}
+a{color:var(--accent)}
+p{margin:.6rem 0}
+
+.hero{margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 3.4rem);padding-bottom:2.2rem;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(2.7rem,8vw,5rem);font-weight:700;letter-spacing:-.025em;line-height:1;margin:.5rem 0 .3rem}
+.hero .lede{font-size:clamp(1.08rem,2.4vw,1.4rem);color:var(--muted);max-width:46ch;margin-top:.7rem}
+.tagrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:.28rem .7rem;background:var(--surface)}
+
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:1.8rem 0 0}
+.stat{background:var(--surface);padding:1.05rem 1rem}
+.stat .v{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.4rem,3.6vw,2rem);font-weight:700;letter-spacing:-.01em;line-height:1}
+.stat .v.pos{color:var(--accent)}
+.stat .k{font-size:.72rem;color:var(--muted);margin-top:.42rem}
+.stat .s{font-size:.68rem;color:var(--faint);margin-top:.15rem;font-family:"IBM Plex Mono",monospace}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}.stat:last-child{grid-column:1/-1}}
+
+section{padding:2.7rem 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1.3rem}
+.sec-head.row{flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:1rem}
+.sec-head h2{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:600;letter-spacing:-.01em}
+.sec-head p{margin:0;color:var(--muted);max-width:66ch}
+.prose{max-width:68ch}
+.prose p{color:var(--ink)}
+.prose .lead{font-size:1.08rem}
+
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.8rem}
+.badge{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem;box-shadow:var(--shadow)}
+.badge .t{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.5rem}
+.badge .d{color:var(--muted);font-size:.84rem;margin-top:.35rem}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem 1.2rem 1rem;box-shadow:var(--shadow)}
+.panel h3{font-size:1rem;font-weight:600}
+.panel .cap{color:var(--muted);font-size:.82rem;margin:.2rem 0 .9rem}
+svg{display:block;width:100%;height:auto}
+.grid{stroke:var(--line2)} .axis{stroke:var(--line)}
+.tick{fill:var(--faint);font-family:"IBM Plex Mono",monospace;font-size:11px}
+.barlbl{fill:var(--ink);font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500}
+.barval{fill:var(--muted);font-family:"IBM Plex Mono",monospace;font-size:12px}
+.dlabel{fill:var(--muted);font-family:Inter,sans-serif;font-size:12.5px}
+.dlabel.b{fill:var(--ink);font-weight:600}
+
+.legend{display:flex;flex-wrap:wrap;gap:1rem;font-size:.82rem;color:var(--muted);margin:.2rem 0 .7rem}
+.legend span{display:inline-flex;align-items:center;gap:.4rem}
+.swatch{width:14px;height:3px;border-radius:2px;display:inline-block}
+
+.toggle{display:inline-flex;background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.toggle button{font:inherit;font-size:.82rem;font-weight:600;border:0;background:transparent;color:var(--muted);padding:.42rem .9rem;border-radius:999px;cursor:pointer}
+.toggle button[aria-pressed="true"]{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toggle button[aria-pressed="true"]{color:#07140e}}
+:root[data-theme="dark"] .toggle button[aria-pressed="true"]{color:#07140e}
+.toggle button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+table{width:100%;border-collapse:collapse;font-size:.9rem}
+th,td{text-align:right;padding:.6rem .7rem;border-bottom:1px solid var(--line2)}
+th:first-child,td:first-child{text-align:left}
+thead th{color:var(--muted);font-weight:600;font-size:.78rem;border-bottom:1px solid var(--line)}
+td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+.win{color:var(--accent);font-weight:600} .loss{color:var(--neg)}
+.tblwrap{overflow-x:auto}
+.best{color:var(--accent);font-weight:600}
+
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+@media(max-width:620px){.cmp{grid-template-columns:1fr}}
+.cmpcard{border:1px solid var(--line);border-radius:14px;padding:1.2rem;background:var(--surface);box-shadow:var(--shadow)}
+.cmpcard.core{border-color:var(--steel);box-shadow:0 0 0 1px var(--steel) inset,var(--shadow)}
+.cmpcard h3{font-size:1.05rem}
+.cmpcard .sub{color:var(--muted);font-size:.82rem;margin:.2rem 0 1rem}
+.big{font-family:"Space Grotesk",sans-serif;font-size:2.1rem;font-weight:700;line-height:1}
+.kv{display:flex;justify-content:space-between;align-items:baseline;padding:.42rem 0;border-top:1px solid var(--line2)}
+.kv .k{color:var(--muted);font-size:.86rem}
+.kv .v{font-family:"IBM Plex Mono",monospace;font-weight:600}
+
+.chips{display:flex;flex-wrap:wrap;gap:.7rem}
+.chip{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.8rem 1rem;flex:1 1 150px;box-shadow:var(--shadow)}
+.chip .n{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.5rem}
+.chip .l{color:var(--muted);font-size:.76rem;margin-top:.2rem}
+
+.steps{display:grid;gap:.7rem;counter-reset:s}
+.step{display:flex;gap:.9rem;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;box-shadow:var(--shadow)}
+.step .n{font-family:"Space Grotesk",sans-serif;font-weight:700;color:var(--accent);font-size:1.1rem;min-width:1.6rem}
+.step.todo{border-style:dashed;opacity:.92}
+.step.todo .n{color:var(--gold)}
+.step .t{font-weight:600} .step .d{color:var(--muted);font-size:.86rem;margin-top:.15rem}
+.pill{font-family:"IBM Plex Mono",monospace;font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;padding:.15rem .5rem;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-left:.5rem}
+.pill.done{color:var(--accent);border-color:var(--accent)}
+.pill.next{color:var(--gold);border-color:var(--gold)}
+
+.notes{columns:2;column-gap:1.6rem}
+@media(max-width:680px){.notes{columns:1}}
+.notes li{break-inside:avoid;margin:0 0 .7rem;color:var(--muted);font-size:.86rem}
+.notes b{color:var(--ink);font-weight:600}
+
+/* diagram strokes */
+.px{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}
+.pxbox{fill:var(--accent-fill);stroke:var(--accent);stroke-width:1.5}
+.pxstop{stroke:var(--neg);stroke-width:1.6;stroke-dasharray:5 4;fill:none}
+.pxtrail{stroke:var(--steel);stroke-width:1.6;stroke-dasharray:4 3;fill:none}
+.vol{fill:var(--faint);opacity:.5}
+
+footer{padding:2.2rem 0 3rem;color:var(--faint);font-size:.8rem}
+.disc{border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;background:var(--surface2);margin-top:1rem}
+.themebtn{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:calc(env(safe-area-inset-right,0px) + 12px);z-index:20;background:var(--surface);border:1px solid var(--line);color:var(--muted);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:1rem;box-shadow:var(--shadow)}
+</style>
+
+<button class="themebtn" id="themebtn" aria-label="Toggle theme">◐</button>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Research notebook · idea → data → verification</div>
+    <h1>Box Theory</h1>
+    <p class="lede">Reverse-engineering the quiet filter that lets the S&amp;P 500 beat most of Wall Street — and turning it into one rule that works across 15 markets.</p>
+    <div class="tagrow">
+      <span class="tag">consolidation-breakout</span>
+      <span class="tag">survivorship-free</span>
+      <span class="tag">held-out walk-forward</span>
+      <span class="tag">costs included</span>
+      <span class="tag">15 markets · 2015–2026</span>
+    </div>
+    <div class="stats" id="statrow"></div>
+    <p class="muted" style="font-size:.8rem;margin-top:.7rem">Headline figures compare the global Box Theory book with the S&amp;P 500 at equal volatility, 2015–2026. Full method and caveats below.</p>
+  </header>
+
+  <!-- ORIGIN -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">Where the idea came from</div><h2>Start with the one index nobody beats</h2></div>
+    <div class="prose">
+      <p class="lead">Most active fund managers fail to beat the S&amp;P 500 over time. That is strange — thousands of smart, well-resourced people, losing to a list. So the question that started this project was simple: <b>what does the index do that they don't?</b></p>
+      <p>The answer isn't magic, it's a <b>filter</b>. To stay in the index a company has to keep earning its place among the largest by market value. Companies that stall drop out; companies that compound rise in. The index quietly, mechanically lets its winners run and cuts its losers — with no ego, no story, no fear of missing out. That is the behaviour managers struggle to follow and the index does for free.</p>
+      <p>Box Theory asks whether that same filter can be written as an explicit, testable rule: <b>buy leaders exactly as they break out of a consolidation, ride them while they work, and cut them fast when they don't</b> — and whether it generalises beyond the US.</p>
+      <p>There is one trap on this path, and it is the reason most of the work here went into method rather than ideas. The instant you study "the winners," you invite <b>survivorship bias</b> — testing a rule only on the companies that happened to survive is the easiest way to fake a brilliant backtest. Eliminating it, carefully and provably, is what the rest of this page is about.</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS IT -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">The rule</div><h2>What a "box" is, and how a trade plays out</h2>
+      <p>After a move, a stock pauses and coils into a tight range — the box. Supply and demand balance, volume dries up. The break above the box is the market voting that the pause is over.</p></div>
+    <div class="panel">
+      <h3>Anatomy of a Box Theory trade</h3>
+      <div class="cap">Illustrative schematic of the mechanic — entry, risk, and exit.</div>
+      <div id="boxdiagram"></div>
+    </div>
+    <div class="badges" style="margin-top:1.1rem">
+      <div class="badge"><div class="t"><span class="dot"></span>Entry</div><div class="d">Buy the break above the box ceiling, confirmed by volume expanding as price clears the range.</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Risk</div><div class="d">Initial stop sits just under the box floor. The box defines the risk before the trade is taken — that fixed risk is one "R".</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Ride</div><div class="d">As price advances, the stop trails up beneath it, locking in progress while leaving room for the trend.</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Exit</div><div class="d">Out when the trend breaks and the trailing stop is hit. Many trades stop out near breakeven; a few run for many R.</div></div>
+    </div>
+
+    <div class="panel" style="margin-top:1.3rem">
+      <h3>Accumulation — pressing the winners</h3>
+      <div class="cap">When a trade keeps working and coils into a new, higher box, the strategy adds a second tranche on that breakout — and raises the stop under the new box. Size builds up only in the trends that keep proving themselves.</div>
+      <div id="accumdiagram"></div>
+    </div>
+    <div class="badges" style="margin-top:1.1rem">
+      <div class="badge"><div class="t"><span class="dot"></span>Why it helps</div><div class="d">The rare trends that run for months are where the money is. Adding to them concentrates capital in exactly those names — this is a big part of why the biggest winners reach +9R, +13R.</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Risk stays bounded</div><div class="d">Each add comes with the stop raised under the new box, so the first leg's profit is protected and total open risk stays near 1R. You press with the market's money, not more of your own.</div></div>
+    </div>
+
+    <div class="panel" style="margin-top:1.1rem">
+      <h3>Every trade carries a stop — and gaps are modelled honestly</h3>
+      <div class="prose" style="max-width:none">
+        <p>A stop sits under the box from the moment the trade opens, and the position is sized so a normal stop-out costs exactly <b>one R</b> — that is the definition of 1R. Most of the losers in the trade list sit right around −1R.</p>
+        <p>A few losses are bigger — the <b>−1.6R on AMT</b>, for instance. That's a <b>gap down</b>: news hits overnight and the stock opens <i>below</i> the stop, so the exit fills at the worse opening price rather than the stop price. The backtest fills at that real gapped price instead of pretending the stop always holds — which is why you occasionally see a loss past −1R. Gaps cut both ways and sometimes jump a winner further in your favour; modelling them is the conservative, honest choice.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA & METHOD -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">Data &amp; method</div><h2>How the numbers were made — and kept honest</h2>
+      <p>Everything rests on the data handling. Here is exactly what was done, and why each choice closes a way a backtest can lie.</p></div>
+    <div class="prose">
+      <p><b>Source.</b> End-of-day price and volume for every market, from EODHD — roughly 14&nbsp;GB spanning 2011 to today. Critically, it includes <b>delisted and dead tickers</b>, not just today's survivors.</p>
+      <p><b>Top-market-cap basket, rotated through time.</b> Mirroring how an index works, each market is reduced to its ~500 most liquid names — a proxy for the investable leaders — rebuilt as time passes so the basket <b>rotates</b>: names enter as they grow into it and leave as they fade. A company that was tradeable in 2016 and died in 2019 is in the test in 2016 and gone by 2019, exactly as it happened. No hindsight about who survived.</p>
+      <p><b>Costs and liquidity.</b> Commissions and slippage are inside every trade's net result. Trades in names below ~$100k median daily turnover are dropped, so no part of the edge can hide in untradeable micro-caps.</p>
+      <p><b>Held-out walk-forward.</b> Parameters are fit only on past data (2011 → an anchor year), then scored once on the <b>untouched</b> window after it. This is repeated at four anchors — 2015, 2018, 2021, 2024 — and the forward slices are stitched into one continuous out-of-sample record from 2015 to 2026. The same rules, re-fit at each anchor, stay profitable across all of them: that repetition is the consistency check.</p>
+    </div>
+    <div class="panel" style="margin-top:1.2rem">
+      <h3>Walk-forward design</h3>
+      <div class="cap">Each anchor trains on everything before it, then trades the forward slice it never saw. The four slices tile into one continuous out-of-sample track record.</div>
+      <div class="legend"><span><span class="swatch" style="background:var(--line);height:12px;width:22px;border-radius:3px"></span>Training (in-sample, 2011→anchor)</span><span><span class="swatch" style="background:var(--accent);height:12px;width:22px;border-radius:3px"></span>Out-of-sample — traded &amp; scored</span></div>
+      <div id="wfodiagram"></div>
+    </div>
+  </section>
+
+  <!-- SURVIVORSHIP -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">The one that matters most</div><h2>Survivorship bias — and why we hunt it down</h2>
+      <p>This is the single most common way a backtest flatters itself, and the reason this took weeks of data work rather than days.</p></div>
+    <div class="prose">
+      <p><b>What it is.</b> Survivorship bias is judging something by the survivors alone, while the ones that dropped out stay invisible. Test a rule only on the stocks that still trade today and you have quietly stacked the deck: today's listings are disproportionately the companies that kept winning. The ones that broke out, failed and were delisted — bankruptcies, busted mergers, frauds — aren't in the data at all.</p>
+      <p><b>Why it's poison for a breakout rule.</b> Box Theory buys strength — stocks making new highs out of a base. A painful share of spectacular blow-ups made new highs <i>right before</i> they collapsed. Bear Stearns had real, tradeable breakouts in its good years, then went to zero. A survivors-only database holds neither: it deletes Bear Stearns entirely, erasing its winning trades and, more importantly, its catastrophic ending. Keep only survivors and you systematically strip out losing trades the rule would really have taken — so it looks far better than it ever was.</p>
+      <p><b>Why including delisted names is the right call.</b> Your intuition is exactly right: a company gone today was alive and tradeable fifteen years ago, and the rule should be judged on how it traded <i>then</i>. So we keep every delisted and dead ticker and rebuild the tradeable universe <b>as of each date</b> — a liquid leader in 2016 is in the test in 2016, and gone the year it actually died. Nothing is chosen with hindsight. That is the honest population: winners that kept winning, winners that later died, and everything between. Less flattering, and the only version worth trusting.</p>
+    </div>
+    <div class="panel" style="margin-top:1.1rem">
+      <h3>Survivors-only vs the full population</h3>
+      <div class="cap">Each line is one stock's tradeable life. A survivors-only test keeps only the lines that reach <b>today</b>; our test trades every line for exactly the span it truly existed — including the ones that ended badly.</div>
+      <div class="legend"><span><span class="swatch" style="background:var(--accent);height:10px;width:18px;border-radius:2px"></span>survived to today</span><span><span class="swatch" style="background:var(--neg);height:10px;width:18px;border-radius:2px"></span>delisted — deleted by a survivors-only test</span></div>
+      <div id="survdiagram"></div>
+    </div>
+  </section>
+
+  <!-- RESULTS VS S&P -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">The result</div><h2>Box Theory vs the S&amp;P 500</h2>
+      <p>The global book, scaled to the same volatility as the S&amp;P so the two take equal risk. Both are price-based and exclude dividends, measured on the same monthly basis. 2015–2026.</p></div>
+    <div class="tblwrap panel" style="padding-bottom:1.2rem">
+      <table id="metrics"></table>
+      <p class="muted" style="font-size:.78rem;margin-top:.8rem">S&amp;P series is a monthly index level, which understates sharp intra-month crashes (the real 2020 low was near −34%); the same monthly basis is applied to both sides for fairness. "R" = one unit of per-trade risk; the strategy's return/risk ratios (Sharpe, Calmar) are independent of position size.</p>
+    </div>
+    <div class="grid2" style="display:grid;grid-template-columns:1fr;gap:1.1rem;margin-top:1.1rem">
+      <div class="panel">
+        <h3>Growth of 100 (equal-risk)</h3>
+        <div class="legend"><span><span class="swatch" style="background:var(--accent)"></span>Box Theory</span><span><span class="swatch" style="background:var(--steel)"></span>S&amp;P 500</span></div>
+        <div id="cmpgrowth"></div>
+      </div>
+      <div class="panel">
+        <h3>Drawdown — how deep the holes get</h3>
+        <div class="legend"><span><span class="swatch" style="background:var(--accent)"></span>Box Theory</span><span><span class="swatch" style="background:var(--steel)"></span>S&amp;P 500</span></div>
+        <div id="cmpdd"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEAR MARKETS -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">When it matters most</div><h2>Behaviour in the bear markets</h2>
+      <p>A long-only book should be judged by how it handles the bad years. In both 2020 and 2022 Box Theory drew down roughly half as deep as the index — the trailing-stop discipline cuts losers before they compound.</p></div>
+    <div class="cmp" id="bearcards"></div>
+    <div class="panel" style="margin-top:1.1rem">
+      <h3>Annual return — Box Theory vs S&amp;P 500</h3>
+      <div class="legend"><span><span class="swatch" style="background:var(--accent)"></span>Box Theory</span><span><span class="swatch" style="background:var(--steel)"></span>S&amp;P 500</span></div>
+      <div id="yrcompare"></div>
+    </div>
+  </section>
+
+  <!-- UNIVERSALITY (toggle) -->
+  <section>
+    <div class="sec-head row">
+      <div><div class="eyebrow">Universality</div><h2>The same rule, 15 markets</h2>
+        <p id="uniCap">Independently out-of-sample, every market is net-positive. Switch between the full universe and the subset reachable through retail brokers.</p></div>
+      <div class="toggle" role="group" aria-label="Universe">
+        <button id="btnFull" aria-pressed="true">All 15 markets</button>
+        <button id="btnCore" aria-pressed="false">Tradeable core (11)</button>
+      </div>
+    </div>
+    <div class="grid2" style="display:grid;grid-template-columns:1fr;gap:1.1rem">
+      <div class="panel">
+        <h3>Cumulative R — the book's own track record</h3>
+        <div class="cap" id="eqsub"></div>
+        <div id="eqchart"></div>
+      </div>
+      <div class="panel">
+        <h3 id="pmhead">Out-of-sample sum of R by market</h3>
+        <div class="cap">Bars are total R over the full window; win rate at right. Low hit rate, large winners — the breakout signature.</div>
+        <div id="pmchart"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADTH -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">Why breadth</div><h2>The edge compounds as markets are added</h2>
+      <p>Each market is a thin, near-independent stream of the same edge, so total return grows with breadth while the return-to-risk ratio holds. More markets mainly buy capacity, not a higher ratio.</p></div>
+    <div class="chips" id="breadth"></div>
+  </section>
+
+  <!-- RECENT TRADES -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">See for yourself</div><h2>Recent US trades &amp; open positions</h2>
+      <p>Pull any of these up on a chart and you'll see the box and the breakout. This is the most recent handful from the US sleeve — a few large winners paying for many small, controlled losers.</p></div>
+    <div class="tblwrap panel">
+      <table id="trades"></table>
+      <p class="muted" style="font-size:.78rem;margin-top:.8rem">As of the 2026-11-02 data cut. Result in R (multiples of the risk taken). Tickers shown for verification, not as recommendations.</p>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">Where this goes</div><h2>From a verified signal to a complete strategy</h2>
+      <p>This is a research project in motion. What's proven so far is the hard, unglamorous part: a signal that survives honest testing and generalises. The next phase turns it into a managed, deployable book.</p></div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><div class="t">The idea <span class="pill done">done</span></div><div class="d">Frame the S&amp;P's winner-filter as an explicit consolidation-breakout rule.</div></div></div>
+      <div class="step"><div class="n">2</div><div><div class="t">The data <span class="pill done">done</span></div><div class="d">Survivorship-free, rotating top-cap baskets across 15 markets, costs and liquidity included.</div></div></div>
+      <div class="step"><div class="n">3</div><div><div class="t">Verification <span class="pill done">done</span></div><div class="d">Held-out walk-forward at four anchors; the same rules stay positive out-of-sample everywhere, and beat the S&amp;P at equal risk.</div></div></div>
+      <div class="step todo"><div class="n">4</div><div><div class="t">Sizing &amp; allocation <span class="pill next">next</span></div><div class="d">Position sizing and capital allocation across markets — converting the raw signal into a risk-managed portfolio with a defined drawdown budget.</div></div></div>
+      <div class="step todo"><div class="n">5</div><div><div class="t">The complete book <span class="pill next">next</span></div><div class="d">A full, automated, risk-controlled version ready to run — and to extend to new markets.</div></div></div>
+    </div>
+  </section>
+
+  <!-- CAVEATS -->
+  <section>
+    <div class="sec-head"><div class="eyebrow">Honest caveats</div><h2>What this is, and isn't</h2></div>
+    <ul class="notes" style="list-style:none;padding:0;margin:0">
+      <li><b>Equal-risk comparison.</b> The strategy is scaled to the S&amp;P's ~12% volatility so the two take the same risk; Sharpe and Calmar don't depend on that scaling.</li>
+      <li><b>Monthly basis.</b> Both sides use monthly data; the S&amp;P series is a monthly index level that understates sharp intra-month crashes — a conservative choice for the comparison.</li>
+      <li><b>Price-based, both sides.</b> Neither side includes dividends, so the comparison is like-for-like.</li>
+      <li><b>Sizing not yet optimised.</b> Results are in R; position sizing and portfolio allocation are the next phase, not claimed here.</li>
+      <li><b>It's a wide book.</b> The edge lives in breadth — many small positions at once — so it's built for automated, diversified execution, not a handful of hand-picked trades.</li>
+      <li><b>Down years are real.</b> 2018 and 2022 lost money; a long-only breakout book should.</li>
+      <li><b>Access varies.</b> TW, TH, HK and VN carry real edge but are restricted for foreign retail — hence the separate tradeable core.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="eyebrow">Box Theory</div>
+    <p class="muted" style="margin:.4rem 0 0">A universal consolidation-breakout edge · 11-year held-out walk-forward across 15 equity markets · survivorship-free, costs included · research in progress.</p>
+    <div class="disc">For research and discussion only. Simulated/backtested results reflect modelled assumptions, do not include every real-world cost, and are not indicative of future results or the returns of any actual account. Nothing here is investment advice.</div>
+  </footer>
+</div>
+
+<script>
+const DATA = {"full": {"sumR": 7377, "maxDD": -543, "calmar": 1.15, "curve": [["2015-01", -7.0], ["2015-02", 3.1], ["2015-03", 87.8], ["2015-04", 180.3], ["2015-05", 218.3], ["2015-06", 260.9], ["2015-07", 250.7], ["2015-08", 171.1], ["2015-09", 165.2], ["2015-10", 171.2], ["2015-11", 164.5], ["2015-12", 150.6], ["2016-01", 68.8], ["2016-02", 32.3], ["2016-03", 63.6], ["2016-04", 87.0], ["2016-05", 132.9], ["2016-06", 92.2], ["2016-07", 139.2], ["2016-08", 171.9], ["2016-09", 343.3], ["2016-10", 332.0], ["2016-11", 420.2], ["2016-12", 460.5], ["2017-01", 503.9], ["2017-02", 548.7], ["2017-03", 638.8], ["2017-04", 679.7], ["2017-05", 826.3], ["2017-06", 969.4], ["2017-07", 1033.1], ["2017-08", 1157.6], ["2017-09", 1179.3], ["2017-10", 1295.9], ["2017-11", 1387.9], ["2017-12", 1422.3], ["2018-01", 1547.2], ["2018-02", 1373.6], ["2018-03", 1362.8], ["2018-04", 1354.3], ["2018-05", 1501.9], ["2018-06", 1515.5], ["2018-07", 1441.5], ["2018-08", 1434.0], ["2018-09", 1442.5], ["2018-10", 1318.5], ["2018-11", 1307.7], ["2018-12", 1223.3], ["2019-01", 1221.6], ["2019-02", 1215.0], ["2019-03", 1196.1], ["2019-04", 1202.2], ["2019-05", 1208.9], ["2019-06", 1187.7], ["2019-07", 1317.1], ["2019-08", 1216.4], ["2019-09", 1345.1], ["2019-10", 1338.0], ["2019-11", 1355.2], ["2019-12", 1368.2], ["2020-01", 1578.9], ["2020-02", 1445.7], ["2020-03", 1190.2], ["2020-04", 1195.9], ["2020-05", 1195.3], ["2020-06", 1248.6], ["2020-07", 1258.7], ["2020-08", 1322.5], ["2020-09", 1372.7], ["2020-10", 1462.8], ["2020-11", 1516.9], ["2020-12", 1808.0], ["2021-01", 2275.9], ["2021-02", 2499.5], ["2021-03", 2606.0], ["2021-04", 2797.0], ["2021-05", 3020.1], ["2021-06", 3416.5], ["2021-07", 3459.0], ["2021-08", 3726.8], ["2021-09", 3845.3], ["2021-10", 3863.4], ["2021-11", 4054.3], ["2021-12", 4130.9], ["2022-01", 4094.8], ["2022-02", 4036.4], ["2022-03", 4006.3], ["2022-04", 4041.0], ["2022-05", 3978.3], ["2022-06", 3919.8], ["2022-07", 3888.2], ["2022-08", 3873.7], ["2022-09", 3736.6], ["2022-10", 3692.6], ["2022-11", 3683.3], ["2022-12", 3658.4], ["2023-01", 3671.7], ["2023-02", 3647.1], ["2023-03", 3755.2], ["2023-04", 3821.5], ["2023-05", 3824.2], ["2023-06", 3952.7], ["2023-07", 4042.9], ["2023-08", 4135.8], ["2023-09", 4134.4], ["2023-10", 4021.2], ["2023-11", 4013.6], ["2023-12", 4128.7], ["2024-01", 4117.0], ["2024-02", 4153.2], ["2024-03", 4305.3], ["2024-04", 4469.2], ["2024-05", 4676.6], ["2024-06", 5230.6], ["2024-07", 5297.6], ["2024-08", 5200.8], ["2024-09", 5241.8], ["2024-10", 5545.9], ["2024-11", 5568.5], ["2024-12", 5627.6], ["2025-01", 5604.8], ["2025-02", 5745.8], ["2025-03", 5678.2], ["2025-04", 5432.5], ["2025-05", 5469.9], ["2025-06", 5616.7], ["2025-07", 5729.5], ["2025-08", 5822.4], ["2025-09", 5998.7], ["2025-10", 6210.0], ["2025-11", 6196.1], ["2025-12", 6329.3], ["2026-01", 6514.5], ["2026-02", 6908.6], ["2026-03", 6849.1], ["2026-04", 7002.8], ["2026-05", 7281.3], ["2026-06", 7392.8], ["2026-07", 7374.3], ["2026-08", 7417.7], ["2026-09", 7484.1], ["2026-10", 7388.8], ["2026-11", 7376.8]], "perMkt": [["CA", 3818, 1397, 0.366, 39], ["TW", 3708, 1170, 0.315, 31], ["SE", 3080, 740, 0.24, 43], ["DE", 1799, 664, 0.369, 39], ["AU", 2641, 655, 0.248, 32], ["TH", 2292, 419, 0.183, 37], ["HK", 1943, 390, 0.201, 38], ["PL", 440, 360, 0.819, 38], ["NO", 912, 320, 0.351, 43], ["KR", 1594, 288, 0.181, 21], ["ES", 583, 278, 0.478, 34], ["CH", 1402, 231, 0.165, 43], ["US", 1123, 202, 0.18, 27], ["VN", 1084, 140, 0.129, 35], ["NL", 446, 122, 0.273, 41]]}, "core": {"sumR": 5257, "maxDD": -329, "calmar": 1.35, "curve": [["2015-01", -5.7], ["2015-02", 5.5], ["2015-03", 91.4], ["2015-04", 191.3], ["2015-05", 231.9], ["2015-06", 197.2], ["2015-07", 204.9], ["2015-08", 148.9], ["2015-09", 142.5], ["2015-10", 146.0], ["2015-11", 154.8], ["2015-12", 157.8], ["2016-01", 91.5], ["2016-02", 59.8], ["2016-03", 85.6], ["2016-04", 114.5], ["2016-05", 169.6], ["2016-06", 119.0], ["2016-07", 168.0], ["2016-08", 176.2], ["2016-09", 325.8], ["2016-10", 322.8], ["2016-11", 408.8], ["2016-12", 435.5], ["2017-01", 465.3], ["2017-02", 486.1], ["2017-03", 547.3], ["2017-04", 590.5], ["2017-05", 754.3], ["2017-06", 875.4], ["2017-07", 928.1], ["2017-08", 1041.6], ["2017-09", 1022.1], ["2017-10", 1077.0], ["2017-11", 1106.8], ["2017-12", 1126.4], ["2018-01", 1236.2], ["2018-02", 1083.9], ["2018-03", 1099.1], ["2018-04", 1107.9], ["2018-05", 1254.2], ["2018-06", 1280.5], ["2018-07", 1216.7], ["2018-08", 1226.3], ["2018-09", 1245.9], ["2018-10", 1163.0], ["2018-11", 1161.0], ["2018-12", 1090.2], ["2019-01", 1090.1], ["2019-02", 1081.3], ["2019-03", 1063.0], ["2019-04", 1077.7], ["2019-05", 1094.5], ["2019-06", 1052.4], ["2019-07", 1121.3], ["2019-08", 1030.6], ["2019-09", 1155.4], ["2019-10", 1145.0], ["2019-11", 1152.3], ["2019-12", 1165.4], ["2020-01", 1397.6], ["2020-02", 1332.3], ["2020-03", 1162.6], ["2020-04", 1170.6], ["2020-05", 1169.4], ["2020-06", 1155.7], ["2020-07", 1167.2], ["2020-08", 1210.7], ["2020-09", 1252.4], ["2020-10", 1318.7], ["2020-11", 1279.8], ["2020-12", 1453.3], ["2021-01", 1713.7], ["2021-02", 1854.7], ["2021-03", 1912.1], ["2021-04", 1994.0], ["2021-05", 2086.8], ["2021-06", 2402.2], ["2021-07", 2430.5], ["2021-08", 2662.7], ["2021-09", 2766.3], ["2021-10", 2802.1], ["2021-11", 2958.9], ["2021-12", 2930.6], ["2022-01", 2917.0], ["2022-02", 2860.0], ["2022-03", 2867.4], ["2022-04", 2912.3], ["2022-05", 2864.2], ["2022-06", 2819.7], ["2022-07", 2810.8], ["2022-08", 2801.5], ["2022-09", 2723.7], ["2022-10", 2700.9], ["2022-11", 2704.4], ["2022-12", 2676.0], ["2023-01", 2692.5], ["2023-02", 2674.6], ["2023-03", 2734.3], ["2023-04", 2812.6], ["2023-05", 2788.2], ["2023-06", 2832.3], ["2023-07", 2846.4], ["2023-08", 2828.9], ["2023-09", 2829.2], ["2023-10", 2737.9], ["2023-11", 2739.7], ["2023-12", 2833.0], ["2024-01", 2833.0], ["2024-02", 2873.5], ["2024-03", 2960.3], ["2024-04", 3024.3], ["2024-05", 3137.2], ["2024-06", 3614.1], ["2024-07", 3619.2], ["2024-08", 3580.0], ["2024-09", 3606.2], ["2024-10", 3731.9], ["2024-11", 3768.0], ["2024-12", 3825.7], ["2025-01", 3830.3], ["2025-02", 3934.9], ["2025-03", 3904.4], ["2025-04", 3755.5], ["2025-05", 3774.4], ["2025-06", 3821.6], ["2025-07", 3929.8], ["2025-08", 3939.5], ["2025-09", 4069.4], ["2025-10", 4326.1], ["2025-11", 4345.4], ["2025-12", 4476.5], ["2026-01", 4614.5], ["2026-02", 4981.5], ["2026-03", 4941.4], ["2026-04", 5047.7], ["2026-05", 5244.3], ["2026-06", 5237.2], ["2026-07", 5258.8], ["2026-08", 5268.2], ["2026-09", 5333.3], ["2026-10", 5264.0], ["2026-11", 5257.2]], "perMkt": [["CA", 3818, 1397, 0.366, 39], ["SE", 3080, 740, 0.24, 43], ["DE", 1799, 664, 0.369, 39], ["AU", 2641, 655, 0.248, 32], ["PL", 440, 360, 0.819, 38], ["NO", 912, 320, 0.351, 43], ["KR", 1594, 288, 0.181, 21], ["ES", 583, 278, 0.478, 34], ["CH", 1402, 231, 0.165, 43], ["US", 1123, 202, 0.18, 27], ["NL", 446, 122, 0.273, 41]]}, "breadth": [["CORE-6", 6, 3556, 1.18], ["8-mkt", 8, 3998, 1.18], ["10-mkt", 10, 5587, 1.21], ["15-mkt", 15, 7377, 1.15]]};
+const CMP = {"window": "2015-01..2026-09", "spx": {"cagr": 11.9, "maxDD": -20.3, "sharpe": 1.01, "vol": 11.9, "final": 373.3, "yearly": {"2015": -0.0, "2016": 9.4, "2017": 18.6, "2018": -3.6, "2019": 23.7, "2020": 16.3, "2021": 26.5, "2022": -16.3, "2023": 19.7, "2024": 28.3, "2025": 14.0, "2026": 11.9}, "dd2020": -19.1, "dd2022": -20.3, "growth": [["2014-12", 100.0], ["2015-01", 98.7], ["2015-02", 101.4], ["2015-03", 101.3], ["2015-04", 102.0], ["2015-05", 102.8], ["2015-06", 102.2], ["2015-07", 101.9], ["2015-08", 99.3], ["2015-09", 94.7], ["2015-10", 98.6], ["2015-11", 101.3], ["2015-12", 100.0], ["2016-01", 93.4], ["2016-02", 92.7], ["2016-03", 98.4], ["2016-04", 101.0], ["2016-05", 100.5], ["2016-06", 101.4], ["2016-07", 104.6], ["2016-08", 105.7], ["2016-09", 105.0], ["2016-10", 104.3], ["2016-11", 105.4], ["2016-12", 109.4], ["2017-01", 110.8], ["2017-02", 113.4], ["2017-03", 115.2], ["2017-04", 114.8], ["2017-05", 116.6], ["2017-06", 118.5], ["2017-07", 119.5], ["2017-08", 119.6], ["2017-09", 121.3], ["2017-10", 124.5], ["2017-11", 126.3], ["2017-12", 129.7], ["2018-01", 135.8], ["2018-02", 131.7], ["2018-03", 131.6], ["2018-04", 129.2], ["2018-05", 131.5], ["2018-06", 134.1], ["2018-07", 136.0], ["2018-08", 139.1], ["2018-09", 141.2], ["2018-10", 135.6], ["2018-11", 132.6], ["2018-12", 125.0], ["2019-01", 126.9], ["2019-02", 134.1], ["2019-03", 136.5], ["2019-04", 141.4], ["2019-05", 139.0], ["2019-06", 140.7], ["2019-07", 145.8], ["2019-08", 141.0], ["2019-09", 145.2], ["2019-10", 145.0], ["2019-11", 151.1], ["2019-12", 154.6], ["2020-01", 159.6], ["2020-02", 159.5], ["2020-03", 129.1], ["2020-04", 134.5], ["2020-05", 142.1], ["2020-06", 151.1], ["2020-07", 156.1], ["2020-08", 165.1], ["2020-09", 163.8], ["2020-10", 166.4], ["2020-11", 172.8], ["2020-12", 179.9], ["2021-01", 184.7], ["2021-02", 189.0], ["2021-03", 190.4], ["2021-04", 201.6], ["2021-05", 202.9], ["2021-06", 206.3], ["2021-07", 212.4], ["2021-08", 216.8], ["2021-09", 216.4], ["2021-10", 217.1], ["2021-11", 227.2], ["2021-12", 227.6], ["2022-01", 222.6], ["2022-02", 215.9], ["2022-03", 213.8], ["2022-04", 213.8], ["2022-05", 196.7], ["2022-06", 189.8], ["2022-07", 190.4], ["2022-08", 202.4], ["2022-09", 187.4], ["2022-10", 181.4], ["2022-11", 190.7], ["2022-12", 190.5], ["2023-01", 192.8], ["2023-02", 198.6], ["2023-03", 193.2], ["2023-04", 200.6], ["2023-05", 201.8], ["2023-06", 211.5], ["2023-07", 219.4], ["2023-08", 217.0], ["2023-09", 219.8], ["2023-10", 207.8], ["2023-11", 217.1], ["2023-12", 228.1], ["2024-01", 233.9], ["2024-02", 244.0], ["2024-03", 251.7], ["2024-04", 248.9], ["2024-05", 254.8], ["2024-06", 263.6], ["2024-07", 269.6], ["2024-08", 266.7], ["2024-09", 273.6], ["2024-10", 282.0], ["2024-11", 288.7], ["2024-12", 292.6], ["2025-01", 291.1], ["2025-02", 294.0], ["2025-03", 276.7], ["2025-04", 261.4], ["2025-05", 282.9], ["2025-06", 293.5], ["2025-07", 306.5], ["2025-08", 312.0], ["2025-09", 320.5], ["2025-10", 327.9], ["2025-11", 328.1], ["2025-12", 333.6], ["2026-01", 337.3], ["2026-02", 336.8], ["2026-03", 323.9], ["2026-04", 338.7], ["2026-05", 360.8], ["2026-06", 362.7], ["2026-07", 364.2], ["2026-08", 375.4], ["2026-09", 373.3]], "ddcurve": [["2014-12", 0.0], ["2015-01", -1.3], ["2015-02", 0.0], ["2015-03", -0.1], ["2015-04", 0.0], ["2015-05", 0.0], ["2015-06", -0.6], ["2015-07", -0.8], ["2015-08", -3.4], ["2015-09", -7.9], ["2015-10", -4.1], ["2015-11", -1.5], ["2015-12", -2.7], ["2016-01", -9.2], ["2016-02", -9.8], ["2016-03", -4.3], ["2016-04", -1.7], ["2016-05", -2.2], ["2016-06", -1.3], ["2016-07", 0.0], ["2016-08", 0.0], ["2016-09", -0.6], ["2016-10", -1.3], ["2016-11", -0.3], ["2016-12", 0.0], ["2017-01", 0.0], ["2017-02", 0.0], ["2017-03", 0.0], ["2017-04", -0.3], ["2017-05", 0.0], ["2017-06", 0.0], ["2017-07", 0.0], ["2017-08", 0.0], ["2017-09", 0.0], ["2017-10", 0.0], ["2017-11", 0.0], ["2017-12", 0.0], ["2018-01", 0.0], ["2018-02", -3.0], ["2018-03", -3.1], ["2018-04", -4.9], ["2018-05", -3.2], ["2018-06", -1.3], ["2018-07", 0.0], ["2018-08", 0.0], ["2018-09", 0.0], ["2018-10", -4.0], ["2018-11", -6.1], ["2018-12", -11.5], ["2019-01", -10.1], ["2019-02", -5.1], ["2019-03", -3.4], ["2019-04", 0.0], ["2019-05", -1.7], ["2019-06", -0.5], ["2019-07", 0.0], ["2019-08", -3.3], ["2019-09", -0.5], ["2019-10", -0.6], ["2019-11", 0.0], ["2019-12", 0.0], ["2020-01", 0.0], ["2020-02", -0.0], ["2020-03", -19.1], ["2020-04", -15.7], ["2020-05", -10.9], ["2020-06", -5.3], ["2020-07", -2.2], ["2020-08", 0.0], ["2020-09", -0.8], ["2020-10", 0.0], ["2020-11", 0.0], ["2020-12", 0.0], ["2021-01", 0.0], ["2021-02", 0.0], ["2021-03", 0.0], ["2021-04", 0.0], ["2021-05", 0.0], ["2021-06", 0.0], ["2021-07", 0.0], ["2021-08", 0.0], ["2021-09", -0.2], ["2021-10", 0.0], ["2021-11", 0.0], ["2021-12", 0.0], ["2022-01", -2.2], ["2022-02", -5.1], ["2022-03", -6.1], ["2022-04", -6.1], ["2022-05", -13.6], ["2022-06", -16.6], ["2022-07", -16.3], ["2022-08", -11.0], ["2022-09", -17.6], ["2022-10", -20.3], ["2022-11", -16.2], ["2022-12", -16.3], ["2023-01", -15.3], ["2023-02", -12.7], ["2023-03", -15.1], ["2023-04", -11.8], ["2023-05", -11.3], ["2023-06", -7.0], ["2023-07", -3.6], ["2023-08", -4.7], ["2023-09", -3.4], ["2023-10", -8.7], ["2023-11", -4.6], ["2023-12", 0.0], ["2024-01", 0.0], ["2024-02", 0.0], ["2024-03", 0.0], ["2024-04", -1.1], ["2024-05", 0.0], ["2024-06", 0.0], ["2024-07", 0.0], ["2024-08", -1.1], ["2024-09", 0.0], ["2024-10", 0.0], ["2024-11", 0.0], ["2024-12", 0.0], ["2025-01", -0.5], ["2025-02", 0.0], ["2025-03", -5.9], ["2025-04", -11.1], ["2025-05", -3.8], ["2025-06", -0.1], ["2025-07", 0.0], ["2025-08", 0.0], ["2025-09", 0.0], ["2025-10", 0.0], ["2025-11", 0.0], ["2025-12", 0.0], ["2026-01", 0.0], ["2026-02", -0.1], ["2026-03", -4.0], ["2026-04", 0.0], ["2026-05", 0.0], ["2026-06", 0.0], ["2026-07", 0.0], ["2026-08", 0.0], ["2026-09", -0.5]]}, "strat": {"cagr": 19.3, "maxDD": -13.2, "sharpe": 1.55, "vol": 11.9, "final": 792.1, "yearly": {"2015": 4.3, "2016": 9.1, "2017": 31.5, "2018": -6.0, "2019": 4.1, "2020": 12.5, "2021": 90.8, "2022": -12.9, "2023": 14.2, "2024": 51.2, "2025": 21.4, "2026": 37.9}, "dd2020": -10.9, "dd2022": -12.9, "growth": [["2014-12", 100.0], ["2015-01", 99.8], ["2015-02", 100.1], ["2015-03", 102.5], ["2015-04", 105.3], ["2015-05", 106.4], ["2015-06", 107.8], ["2015-07", 107.4], ["2015-08", 105.0], ["2015-09", 104.8], ["2015-10", 105.0], ["2015-11", 104.8], ["2015-12", 104.3], ["2016-01", 101.9], ["2016-02", 100.8], ["2016-03", 101.7], ["2016-04", 102.4], ["2016-05", 103.8], ["2016-06", 102.5], ["2016-07", 103.9], ["2016-08", 104.9], ["2016-09", 110.1], ["2016-10", 109.8], ["2016-11", 112.6], ["2016-12", 113.9], ["2017-01", 115.3], ["2017-02", 116.8], ["2017-03", 119.8], ["2017-04", 121.2], ["2017-05", 126.4], ["2017-06", 131.6], ["2017-07", 134.0], ["2017-08", 138.9], ["2017-09", 139.7], ["2017-10", 144.4], ["2017-11", 148.3], ["2017-12", 149.8], ["2018-01", 155.2], ["2018-02", 147.4], ["2018-03", 146.9], ["2018-04", 146.6], ["2018-05", 152.8], ["2018-06", 153.4], ["2018-07", 150.1], ["2018-08", 149.8], ["2018-09", 150.2], ["2018-10", 144.8], ["2018-11", 144.3], ["2018-12", 140.8], ["2019-01", 140.8], ["2019-02", 140.5], ["2019-03", 139.7], ["2019-04", 140.0], ["2019-05", 140.2], ["2019-06", 139.4], ["2019-07", 144.6], ["2019-08", 140.4], ["2019-09", 145.6], ["2019-10", 145.3], ["2019-11", 146.0], ["2019-12", 146.6], ["2020-01", 155.5], ["2020-02", 149.5], ["2020-03", 138.5], ["2020-04", 138.7], ["2020-05", 138.7], ["2020-06", 140.8], ["2020-07", 141.2], ["2020-08", 143.8], ["2020-09", 145.9], ["2020-10", 149.7], ["2020-11", 152.1], ["2020-12", 164.9], ["2021-01", 187.2], ["2021-02", 199.3], ["2021-03", 205.4], ["2021-04", 216.8], ["2021-05", 230.7], ["2021-06", 257.2], ["2021-07", 260.4], ["2021-08", 280.5], ["2021-09", 290.1], ["2021-10", 291.6], ["2021-11", 307.7], ["2021-12", 314.6], ["2022-01", 311.3], ["2022-02", 306.0], ["2022-03", 303.4], ["2022-04", 306.4], ["2022-05", 300.9], ["2022-06", 295.8], ["2022-07", 293.1], ["2022-08", 291.8], ["2022-09", 280.3], ["2022-10", 276.7], ["2022-11", 275.9], ["2022-12", 274.0], ["2023-01", 275.0], ["2023-02", 273.1], ["2023-03", 281.6], ["2023-04", 287.0], ["2023-05", 287.2], ["2023-06", 297.9], ["2023-07", 305.7], ["2023-08", 313.9], ["2023-09", 313.7], ["2023-10", 303.5], ["2023-11", 302.8], ["2023-12", 312.9], ["2024-01", 311.8], ["2024-02", 315.1], ["2024-03", 329.0], ["2024-04", 344.5], ["2024-05", 365.2], ["2024-06", 423.7], ["2024-07", 431.9], ["2024-08", 419.8], ["2024-09", 424.8], ["2024-10", 462.2], ["2024-11", 465.2], ["2024-12", 473.1], ["2025-01", 470.0], ["2025-02", 489.2], ["2025-03", 479.6], ["2025-04", 445.6], ["2025-05", 450.4], ["2025-06", 469.5], ["2025-07", 484.8], ["2025-08", 497.8], ["2025-09", 523.2], ["2025-10", 555.2], ["2025-11", 553.0], ["2025-12", 574.3], ["2026-01", 605.0], ["2026-02", 674.0], ["2026-03", 662.4], ["2026-04", 691.8], ["2026-05", 747.5], ["2026-06", 771.6], ["2026-07", 767.5], ["2026-08", 777.1], ["2026-09", 792.1]], "ddcurve": [["2014-12", 0.0], ["2015-01", -0.2], ["2015-02", 0.0], ["2015-03", 0.0], ["2015-04", 0.0], ["2015-05", 0.0], ["2015-06", 0.0], ["2015-07", -0.3], ["2015-08", -2.6], ["2015-09", -2.8], ["2015-10", -2.6], ["2015-11", -2.8], ["2015-12", -3.2], ["2016-01", -5.5], ["2016-02", -6.5], ["2016-03", -5.6], ["2016-04", -5.0], ["2016-05", -3.7], ["2016-06", -4.8], ["2016-07", -3.5], ["2016-08", -2.6], ["2016-09", 0.0], ["2016-10", -0.3], ["2016-11", 0.0], ["2016-12", 0.0], ["2017-01", 0.0], ["2017-02", 0.0], ["2017-03", 0.0], ["2017-04", 0.0], ["2017-05", 0.0], ["2017-06", 0.0], ["2017-07", 0.0], ["2017-08", 0.0], ["2017-09", 0.0], ["2017-10", 0.0], ["2017-11", 0.0], ["2017-12", 0.0], ["2018-01", 0.0], ["2018-02", -5.0], ["2018-03", -5.3], ["2018-04", -5.5], ["2018-05", -1.5], ["2018-06", -1.1], ["2018-07", -3.2], ["2018-08", -3.5], ["2018-09", -3.2], ["2018-10", -6.7], ["2018-11", -7.0], ["2018-12", -9.3], ["2019-01", -9.3], ["2019-02", -9.5], ["2019-03", -10.0], ["2019-04", -9.8], ["2019-05", -9.6], ["2019-06", -10.2], ["2019-07", -6.8], ["2019-08", -9.5], ["2019-09", -6.2], ["2019-10", -6.4], ["2019-11", -5.9], ["2019-12", -5.5], ["2020-01", 0.0], ["2020-02", -3.9], ["2020-03", -11.0], ["2020-04", -10.8], ["2020-05", -10.8], ["2020-06", -9.5], ["2020-07", -9.2], ["2020-08", -7.5], ["2020-09", -6.2], ["2020-10", -3.7], ["2020-11", -2.2], ["2020-12", 0.0], ["2021-01", 0.0], ["2021-02", 0.0], ["2021-03", 0.0], ["2021-04", 0.0], ["2021-05", 0.0], ["2021-06", 0.0], ["2021-07", 0.0], ["2021-08", 0.0], ["2021-09", 0.0], ["2021-10", 0.0], ["2021-11", 0.0], ["2021-12", 0.0], ["2022-01", -1.0], ["2022-02", -2.7], ["2022-03", -3.6], ["2022-04", -2.6], ["2022-05", -4.4], ["2022-06", -6.0], ["2022-07", -6.8], ["2022-08", -7.2], ["2022-09", -10.9], ["2022-10", -12.0], ["2022-11", -12.3], ["2022-12", -12.9], ["2023-01", -12.6], ["2023-02", -13.2], ["2023-03", -10.5], ["2023-04", -8.8], ["2023-05", -8.7], ["2023-06", -5.3], ["2023-07", -2.8], ["2023-08", -0.2], ["2023-09", -0.3], ["2023-10", -3.5], ["2023-11", -3.7], ["2023-12", -0.5], ["2024-01", -0.9], ["2024-02", 0.0], ["2024-03", 0.0], ["2024-04", 0.0], ["2024-05", 0.0], ["2024-06", 0.0], ["2024-07", 0.0], ["2024-08", -2.8], ["2024-09", -1.6], ["2024-10", 0.0], ["2024-11", 0.0], ["2024-12", 0.0], ["2025-01", -0.7], ["2025-02", 0.0], ["2025-03", -2.0], ["2025-04", -8.9], ["2025-05", -7.9], ["2025-06", -4.0], ["2025-07", -0.9], ["2025-08", 0.0], ["2025-09", 0.0], ["2025-10", 0.0], ["2025-11", -0.4], ["2025-12", 0.0], ["2026-01", 0.0], ["2026-02", 0.0], ["2026-03", -1.7], ["2026-04", 0.0], ["2026-05", 0.0], ["2026-06", 0.0], ["2026-07", -0.5], ["2026-08", 0.0], ["2026-09", 0.0]], "calmarR": 1.15}};
+const TRADES = {open:[["VST.US","2026-10-08",-1.01],["SHOP.US","2026-08-11",-0.51]],
+  closed:[["VLO.US","2026-06-30","2026-09-22",13.15],["MCO.US","2026-06-30","2026-07-21",9.22],["ADP.US","2026-06-30","2026-09-08",6.99],["MPC.US","2026-06-30","2026-08-04",3.70],["HPE.US","2026-09-04","2026-09-16",0.44],["DE.US","2026-08-24","2026-10-01",-0.04],["ALAB.US","2026-06-23","2026-07-02",-0.01],["MDB.US","2026-06-01","2026-06-08",-0.51],["CLS.US","2026-07-31","2026-09-02",-1.01],["PGR.US","2026-06-24","2026-07-15",-1.20],["AMT.US","2026-10-13","2026-10-27",-1.58]]};
+const $=s=>document.querySelector(s);
+let view='full';
+const fmt=n=>(n>0?'+':'')+Math.round(n).toLocaleString();
+const svg=(w,h)=>`<svg viewBox="0 0 ${w} ${h}" role="img" preserveAspectRatio="xMidYMid meet">`;
+
+/* hero stats */
+function renderStats(){
+  const c=[['19.3%','CAGR, equal-risk','vs 11.9% S&P',true],['1.55','Sharpe ratio','vs 1.01 S&P'],
+    ['−13%','max drawdown','vs −20% S&P'],['15','markets · all positive'],['9 / 11','profitable years']];
+  $('#statrow').innerHTML=c.map(x=>`<div class="stat"><div class="v ${x[3]?'pos':''}">${x[0]}</div><div class="k">${x[1]}</div>${x[2]?`<div class="s">${x[2]}</div>`:''}</div>`).join('');
+}
+
+/* box schematic */
+function renderBox(){
+  const W=760,H=320;
+  const price="M60 288 L110 244 L158 196 L205 160 L228 168 L256 146 L284 170 L312 148 L340 168 L368 150 L394 156 L410 126 L440 102 L480 82 L520 70 L552 66 L580 76 L612 98 L642 124 L664 140";
+  const trail="M412 172 L470 122 L520 98 L560 90 L600 110 L642 128";
+  $('#boxdiagram').innerHTML=svg(W,H)+
+    `<line class="axis" x1="55" y1="292" x2="720" y2="292"/>`+
+    `<rect class="pxbox" x="212" y="136" width="188" height="42" rx="3"/>`+
+    `<text class="dlabel b" x="306" y="128" text-anchor="middle" fill="var(--accent-ink)">Consolidation box</text>`+
+    `<line class="pxstop" x1="212" y1="182" x2="540" y2="182"/>`+
+    `<text class="dlabel" x="214" y="198" fill="var(--neg)">Initial stop — just under the box floor (defines 1R of risk)</text>`+
+    `<path class="pxtrail" d="${trail}"/>`+
+    `<text class="dlabel" x="486" y="150" fill="var(--steel)">trailing stop</text>`+
+    `<path class="px" d="${price}"/>`+
+    `<text class="dlabel" x="120" y="250" fill="var(--muted)">prior uptrend</text>`+
+    /* entry marker */
+    `<circle cx="408" cy="128" r="5" fill="var(--accent)"/>`+
+    `<text class="dlabel b" x="408" y="112" text-anchor="middle" fill="var(--accent-ink)">Breakout → BUY</text>`+
+    /* exit marker */
+    `<circle cx="646" cy="130" r="5" fill="var(--neg)"/>`+
+    `<text class="dlabel b" x="690" y="120" text-anchor="end" fill="var(--neg)">Trend breaks → EXIT</text>`+
+    '</svg>';
+}
+
+/* walk-forward diagram */
+function renderWFO(){
+  const W=820,H=300,L=70,R=30,y0=48,rh=38,barh=22;
+  const Y0=2011,Y1=2027, x=y=>L+(W-L-R)*(y-Y0)/(Y1-Y0);
+  const anchors=[2015,2018,2021,2024];
+  let s='';
+  // year ticks
+  for(let yr=2011;yr<=2027;yr+=2){s+=`<line class="grid" x1="${x(yr)}" y1="38" x2="${x(yr)}" y2="${y0+anchors.length*rh+30}"/><text class="tick" x="${x(yr)}" y="30" text-anchor="middle">${yr}</text>`;}
+  anchors.forEach((a,i)=>{
+    const y=y0+i*rh;
+    s+=`<rect x="${x(Y0)}" y="${y}" width="${x(a)-x(Y0)}" height="${barh}" rx="3" fill="var(--line)"/>`;
+    const end=Math.min(a+3,2027);
+    s+=`<rect x="${x(a)}" y="${y}" width="${x(end)-x(a)}" height="${barh}" rx="3" fill="var(--accent)"/>`;
+    s+=`<text class="tick" x="${L-10}" y="${y+barh/2+4}" text-anchor="end">fit @${a}</text>`;
+  });
+  // stitched
+  const sy=y0+anchors.length*rh+14;
+  s+=`<rect x="${x(2015)}" y="${sy}" width="${x(2027)-x(2015)}" height="${barh}" rx="3" fill="var(--accent)" opacity="0.92"/>`;
+  s+=`<text class="tick" x="${L-10}" y="${sy+barh/2+4}" text-anchor="end">stitched</text>`;
+  s+=`<text class="dlabel b" x="${x(2021)}" y="${sy+barh/2+5}" text-anchor="middle" fill="#fff">continuous out-of-sample 2015 → 2026</text>`;
+  $('#wfodiagram').innerHTML=svg(W,sy+barh+16)+s+'</svg>';
+}
+
+/* metrics table */
+function renderMetrics(){
+  const s=CMP.strat,p=CMP.spx;
+  const rows=[['CAGR (equal-risk)',s.cagr+'%',p.cagr+'%',true],
+    ['Max drawdown',s.maxDD+'%',p.maxDD+'%',true],
+    ['Sharpe ratio',s.sharpe,p.sharpe,true],
+    ['Volatility (annualised)',s.vol+'%',p.vol+'%',false],
+    ['2020 drawdown',s.dd2020+'%',p.dd2020+'%',true],
+    ['2022 drawdown',s.dd2022+'%',p.dd2022+'%',true],
+    ['Growth of 100','×'+(s.final/100).toFixed(1),'×'+(p.final/100).toFixed(1),true]];
+  $('#metrics').innerHTML='<thead><tr><th>Metric</th><th>Box Theory</th><th>S&amp;P 500</th></tr></thead><tbody>'+
+    rows.map(r=>`<tr><td>${r[0]}</td><td class="num ${r[3]?'best':''}">${r[1]}</td><td class="num">${r[2]}</td></tr>`).join('')+'</tbody>';
+}
+
+/* generic line chart, multiple series [{pts:[[ym,v]],color}] on shared x by index */
+function lineChart(el,series,{ymin,ymax,step,fmtY,zero=false,h=300}){
+  const W=1000,L=54,R=16,T=16,B=28,H=h;
+  const n=series[0].pts.length, xs=i=>L+(W-L-R)*i/(n-1), ys=v=>T+(H-T-B)*(1-(v-ymin)/(ymax-ymin));
+  let g='';
+  for(let v=Math.ceil(ymin/step)*step; v<=ymax+0.01; v+=step){const y=ys(v);g+=`<line class="grid" x1="${L}" y1="${y}" x2="${W-R}" y2="${y}"/><text class="tick" x="${L-8}" y="${y+4}" text-anchor="end">${fmtY(v)}</text>`;}
+  // year ticks from first series months
+  let xl='';series[0].pts.forEach((p,i)=>{if(String(p[0]).slice(5)==='01'){xl+=`<text class="tick" x="${xs(i)}" y="${H-8}" text-anchor="middle">${String(p[0]).slice(0,4)}</text>`;}});
+  let paths='';
+  series.forEach(se=>{
+    const line='M'+se.pts.map((p,i)=>`${xs(i).toFixed(1)} ${ys(p[1]).toFixed(1)}`).join(' L');
+    if(se.fill){const area=line+` L${xs(n-1)} ${ys(zero?0:ymin)} L${xs(0)} ${ys(zero?0:ymin)} Z`;paths+=`<path d="${area}" fill="${se.fill}"/>`;}
+    paths+=`<path d="${line}" fill="none" stroke="${se.color}" stroke-width="${se.w||2.2}" stroke-linejoin="round"/>`;
+    const last=se.pts[n-1];paths+=`<circle cx="${xs(n-1)}" cy="${ys(last[1])}" r="3.5" fill="${se.color}"/>`;
+  });
+  const z=zero?`<line class="axis" x1="${L}" y1="${ys(0)}" x2="${W-R}" y2="${ys(0)}"/>`:'';
+  el.innerHTML=svg(W,H)+g+z+paths+xl+'</svg>';
+}
+
+function renderCompare(){
+  lineChart($('#cmpgrowth'),[
+    {pts:CMP.spx.growth,color:'var(--steel)',w:2},
+    {pts:CMP.strat.growth,color:'var(--accent)',w:2.6}
+  ],{ymin:100,ymax:820,step:100,fmtY:v=>v});
+  lineChart($('#cmpdd'),[
+    {pts:CMP.spx.ddcurve,color:'var(--steel)',w:1.8},
+    {pts:CMP.strat.ddcurve,color:'var(--accent)',w:2}
+  ],{ymin:-22,ymax:0,step:5,fmtY:v=>v+'%',zero:true,h:200});
+}
+
+/* bear cards */
+function renderBear(){
+  const mk=(yr,s,p)=>`<div class="cmpcard"><h3>${yr}</h3><div class="sub">Peak-to-trough drawdown</div>
+    <div style="display:flex;gap:1.4rem;align-items:flex-end"><div><div class="big" style="color:var(--accent)">${s}%</div><div class="muted" style="font-size:.8rem">Box Theory</div></div>
+    <div><div class="big" style="color:var(--steel)">${p}%</div><div class="muted" style="font-size:.8rem">S&amp;P 500</div></div></div></div>`;
+  $('#bearcards').innerHTML=mk('2020 — COVID crash',CMP.strat.dd2020,CMP.spx.dd2020)+mk('2022 — rate shock',CMP.strat.dd2022,CMP.spx.dd2022);
+}
+
+/* yearly grouped bars strat vs spx */
+function renderYrCompare(){
+  const yrs=Object.keys(CMP.strat.yearly);
+  const W=1000,H=300,L=46,R=12,T=18,B=34;
+  const vals=yrs.flatMap(y=>[CMP.strat.yearly[y],CMP.spx.yearly[y]]);
+  const ymax=Math.max(...vals,0),ymin=Math.min(...vals,0);
+  const ys=v=>T+(H-T-B)*(1-(v-ymin)/(ymax-ymin));
+  const gw=(W-L-R)/yrs.length, bw=gw*0.32;
+  let g='';for(let v=Math.ceil(ymin/20)*20;v<=ymax;v+=20){const y=ys(v);g+=`<line class="grid" x1="${L}" y1="${y}" x2="${W-R}" y2="${y}"/><text class="tick" x="${L-8}" y="${y+4}" text-anchor="end">${v}%</text>`;}
+  let b='';yrs.forEach((y,i)=>{
+    const cx=L+gw*i+gw/2, y0=ys(0);
+    const sv=CMP.strat.yearly[y], pv=CMP.spx.yearly[y];
+    b+=`<rect x="${cx-bw-1}" y="${Math.min(ys(sv),y0)}" width="${bw}" height="${Math.abs(ys(sv)-y0)}" rx="2" fill="var(--accent)"/>`;
+    b+=`<rect x="${cx+1}" y="${Math.min(ys(pv),y0)}" width="${bw}" height="${Math.abs(ys(pv)-y0)}" rx="2" fill="var(--steel)"/>`;
+    b+=`<text class="tick" x="${cx}" y="${H-10}" text-anchor="middle">${y.slice(2)}</text>`;
+  });
+  $('#yrcompare').innerHTML=svg(W,H)+g+`<line class="axis" x1="${L}" y1="${ys(0)}" x2="${W-R}" y2="${ys(0)}"/>`+b+'</svg>';
+}
+
+/* strategy equity (R) with toggle */
+function renderEquity(){
+  const c=DATA[view].curve,n=c.length;
+  lineChart($('#eqchart'),[{pts:c.map(p=>[p[0],p[1]]),color:view==='core'?'var(--steel)':'var(--accent)',w:2.4,fill:view==='core'?'var(--steel-fill)':'var(--accent-fill)'}],
+    {ymin:0,ymax:Math.max(...c.map(p=>p[1]))*1.05,step: (view==='core'?1000:1000),fmtY:v=>v>=1000?(v/1000)+'k':v});
+}
+function renderPM(){
+  const rows=DATA[view].perMkt, rowH=30,W=1000,L=52,R=160,T=8,H=T+rows.length*rowH+8;
+  const max=Math.max(...rows.map(r=>r[2])),xs=v=>L+(W-L-R)*v/max,col=view==='core'?'var(--steel)':'var(--accent)';
+  let b='';rows.forEach((r,i)=>{const y=T+i*rowH;b+=`<text class="barlbl" x="${L-8}" y="${y+rowH/2+4}" text-anchor="end">${r[0]}</text><rect x="${L}" y="${y+5}" width="${Math.max(xs(r[2])-L,1)}" height="${rowH-12}" rx="3" fill="${col}"/><text class="barval" x="${xs(r[2])+8}" y="${y+rowH/2+4}">${fmt(r[2])} R · ${r[4]}% win</text>`;});
+  $('#pmchart').innerHTML=svg(W,H)+b+'</svg>';
+  $('#pmhead').textContent=`Out-of-sample sum of R — ${rows.length} markets, all positive`;
+}
+function renderBreadth(){$('#breadth').innerHTML=DATA.breadth.map(b=>`<div class="chip"><div class="n">+${b[2].toLocaleString()}</div><div class="l">${b[0]} · ${b[1]} markets · Calmar ${b[3]}</div></div>`).join('');}
+
+function renderTrades(){
+  const row=(sym,entry,exit,r,open)=>`<tr><td>${sym}</td><td class="num">${entry}</td><td class="num">${open?'<span style="color:var(--gold)">open</span>':exit}</td><td class="num ${r>0?'win':(r<-0.1?'loss':'')}">${r>0?'+':''}${r.toFixed(2)}R</td></tr>`;
+  let h='<thead><tr><th>Ticker</th><th>Entry</th><th>Exit</th><th>Result</th></tr></thead><tbody>';
+  TRADES.open.forEach(t=>h+=row(t[0],t[1],null,t[2],true));
+  TRADES.closed.forEach(t=>h+=row(t[0],t[1],t[2],t[3],false));
+  $('#trades').innerHTML=h+'</tbody>';
+}
+
+function renderView(){
+  renderEquity();renderPM();
+  const d=DATA[view];
+  $('#eqsub').textContent=`${view==='core'?'Tradeable core · 11 markets':'Broad universe · 15 markets'} — ${fmt(d.sumR)} R · Calmar ${d.calmar} · max drawdown −${-d.maxDD} R`;
+  $('#btnFull').setAttribute('aria-pressed',view==='full');$('#btnCore').setAttribute('aria-pressed',view==='core');
+}
+
+function renderAccum(){
+  const W=760,H=300;
+  const price="M58 276 L100 240 L150 198 L196 170 L210 176 L236 162 L262 178 L288 164 L300 170 L318 146 L344 126 L372 116 L392 120 L408 124 L436 112 L462 126 L488 116 L496 120 L516 98 L548 80 L578 68 L600 72 L632 92 L660 112 L682 128";
+  $('#accumdiagram').innerHTML=svg(W,H)+
+    `<line class="axis" x1="54" y1="280" x2="716" y2="280"/>`+
+    `<rect class="pxbox" x="200" y="158" width="104" height="30" rx="3"/><text class="dlabel b" x="252" y="152" text-anchor="middle" fill="var(--accent-ink)">Box 1</text>`+
+    `<rect class="pxbox" x="396" y="106" width="104" height="28" rx="3"/><text class="dlabel b" x="448" y="100" text-anchor="middle" fill="var(--accent-ink)">Box 2 (higher)</text>`+
+    `<line class="pxstop" x1="200" y1="192" x2="392" y2="192"/><text class="dlabel" x="202" y="208" fill="var(--neg)">initial stop — risk = 1R</text>`+
+    `<line class="pxstop" x1="392" y1="138" x2="614" y2="138"/><text class="dlabel" x="612" y="158" text-anchor="end" fill="var(--neg)">stop raised under Box 2 (first leg locked in)</text>`+
+    `<path class="px" d="${price}"/>`+
+    `<circle cx="318" cy="146" r="5" fill="var(--accent)"/><text class="dlabel b" x="318" y="134" text-anchor="middle" fill="var(--accent-ink)">BUY — 1R</text>`+
+    `<circle cx="516" cy="98" r="5" fill="var(--accent)"/><text class="dlabel b" x="516" y="86" text-anchor="middle" fill="var(--accent-ink)">ADD — press the winner</text>`+
+    `<circle cx="664" cy="116" r="5" fill="var(--neg)"/><text class="dlabel b" x="710" y="108" text-anchor="end" fill="var(--neg)">EXIT</text>`+
+    '</svg>';
+}
+function renderSurv(){
+  const W=820,L=152,R=30,Y0=2011,Y1=2026, x=y=>L+(W-L-R)*(y-Y0)/(Y1-Y0);
+  const rows=[["survived to today",2011,2026,true],["survived to today",2011,2026,true],
+    ["bust 2015",2012,2015,false],["survived to today",2011,2026,true],
+    ["delisted 2019",2013,2019,false],["survived to today",2014,2026,true],
+    ["to zero 2022",2011,2022,false]];
+  const top=46,rh=30,H=top+rows.length*rh+30;
+  let s='';
+  for(let yr=2011;yr<=2026;yr+=3){s+=`<line class="grid" x1="${x(yr)}" y1="36" x2="${x(yr)}" y2="${top+rows.length*rh}"/><text class="tick" x="${x(yr)}" y="28" text-anchor="middle">${yr}</text>`;}
+  s+=`<line x1="${x(2026)}" y1="36" x2="${x(2026)}" y2="${top+rows.length*rh}" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="4 3"/><text class="dlabel b" x="${x(2026)}" y="${top+rows.length*rh+20}" text-anchor="middle">today</text>`;
+  rows.forEach((r,i)=>{
+    const yy=top+i*rh, x1=x(r[1]), x2=x(r[2]), col=r[3]?'var(--accent)':'var(--neg)';
+    s+=`<line x1="${x1}" y1="${yy}" x2="${x2}" y2="${yy}" stroke="${col}" stroke-width="4" stroke-linecap="round" opacity="${r[3]?1:.9}"/>`;
+    s+=`<text class="dlabel" x="${L-14}" y="${yy+4}" text-anchor="end" fill="${r[3]?'var(--muted)':'var(--neg)'}">${r[0]}</text>`;
+    if(!r[3]) s+=`<path d="M${x2+4} ${yy-4} l8 8 M${x2+12} ${yy-4} l-8 8" stroke="var(--neg)" stroke-width="2"/>`;
+  });
+  $('#survdiagram').innerHTML=svg(W,H)+s+'</svg>';
+}
+renderStats();renderBox();renderAccum();renderSurv();renderWFO();renderMetrics();renderCompare();renderBear();renderYrCompare();renderBreadth();renderTrades();renderView();
+$('#btnFull').onclick=()=>{view='full';renderView();};
+$('#btnCore').onclick=()=>{view='core';renderView();};
+window.addEventListener('resize',()=>{renderWFO();},{passive:true});
+
+(function(){const btn=$('#themebtn');let t=null;try{t=localStorage.getItem('bt-theme');}catch(e){}if(t)document.documentElement.setAttribute('data-theme',t);
+  btn.onclick=()=>{const cur=document.documentElement.getAttribute('data-theme');const mq=window.matchMedia('(prefers-color-scheme:dark)').matches;const next=(cur?cur==='dark':mq)?'light':'dark';document.documentElement.setAttribute('data-theme',next);try{localStorage.setItem('bt-theme',next);}catch(e){}};})();
+</script>
+
+</body>
+</html>
