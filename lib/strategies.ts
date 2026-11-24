@@ -495,6 +495,34 @@ export const strategies: Strategy[] = [
     proofUrl: pdf('/research/box-theory.html'),
     proofLabel: 'Read the full research',
   },
+
+  {
+    id: 'candlestick-ta',
+    name: 'Candlestick Patterns',
+    asset: 'Global Equities',
+    category: 'research',
+    edge: 'Chart Patterns (TA)',
+    status: 'backtest',
+    statusLabel: 'Early research',
+    cardSummary:
+      'Classical candlestick entries — inside-bar and HZG reversal candles, volume-confirmed — forward paper-traded across five markets. The chart-pattern complement to the statistical Box Theory work.',
+    description:
+      "A deliberately simple technical-analysis strand running alongside Box Theory. It enters on classical candlestick chart patterns — inside bars and HZG reversal candles — but only when a volume surge confirms the move, then trails the exit under the prior pivot low. Tested across US, Hong Kong, Japan, Taiwan and crypto, a real aggregate edge appears in backtest (1,100+ trades, 43% win rate). Two honest caveats keep it firmly in the research column: the backtest universe is survivorship-tilted, so its headline magnitudes are an upper bound rather than a forecast, and the most recent window has weakened sharply — recent average payoff is close to zero against a much stronger full-period figure. Rather than claim an edge, the strategy is now running as a live forward paper-trade across all five markets to gather honest, out-of-sample evidence before any conclusion. Work in progress — shown for the research process, not as a finished product.",
+    dataSource: 'Backtest 2011–2026 · 5 markets · now live forward paper-trade',
+    backtestStart: 2011,
+    backtestEnd: 2026,
+    extraMetrics: [
+      { label: 'Markets', value: '5' },
+      { label: 'Stage', value: 'Forward paper' },
+    ],
+    highlights: [
+      'Two methodologies side by side — classical candlestick TA here, statistical breakout in Box Theory',
+      'Entry on inside-bar / HZG reversal candles, confirmed by a volume surge; exit trails under the prior pivot low',
+      'Tested across US, Hong Kong, Japan, Taiwan and crypto',
+      'Honest caveats: survivorship-tilted backtest universe (magnitudes are an upper bound) and a recently weakening edge',
+      'Now running as a live forward paper-trade to gather out-of-sample evidence before any claim',
+    ],
+  },
 ];
 
 
