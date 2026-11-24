@@ -24,7 +24,7 @@ export default function Home() {
               Strategy Dashboard
             </h1>
             <p className="mt-2 text-base text-muted max-w-2xl">
-              AI-built systematic strategies across futures, FX, crypto, and options — from
+              AI-built systematic strategies across futures, FX, equities, crypto, and options — from
               initial research through backtesting to fully automated live execution.
               Every strategy follows the same rigorous pipeline: research, data,
               backtesting, validation, deployment, monitoring.
