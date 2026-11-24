@@ -1,12 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Box Theory</title>
-<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-</head>
-<body><meta name="claude:viewport-fit-sides" content="cover">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Box Theory</title><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<meta name="claude:viewport-fit-sides" content="cover">
 <title>Box Theory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,6 +103,7 @@ th,td{text-align:right;padding:.6rem .7rem;border-bottom:1px solid var(--line2)}
 th:first-child,td:first-child{text-align:left}
 thead th{color:var(--muted);font-weight:600;font-size:.78rem;border-bottom:1px solid var(--line)}
 td.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+th.num{text-align:right}
 .win{color:var(--accent);font-weight:600} .loss{color:var(--neg)}
 .tblwrap{overflow-x:auto}
 .best{color:var(--accent);font-weight:600}
@@ -295,7 +289,7 @@ footer{padding:2.2rem 0 3rem;color:var(--faint);font-size:.8rem}
   <section>
     <div class="sec-head row">
       <div><div class="eyebrow">Universality</div><h2>The same rule, 15 markets</h2>
-        <p id="uniCap">Independently out-of-sample, every market is net-positive. Switch between the full universe and the subset reachable through retail brokers.</p></div>
+        <p id="uniCap">Independently out-of-sample, every market is net-positive. The table below gives the full per-market breakdown; the toggle switches the charts between the whole universe and the most liquid, consistent core.</p></div>
       <div class="toggle" role="group" aria-label="Universe">
         <button id="btnFull" aria-pressed="true">All 15 markets</button>
         <button id="btnCore" aria-pressed="false">Tradeable core (11)</button>
@@ -311,6 +305,12 @@ footer{padding:2.2rem 0 3rem;color:var(--faint);font-size:.8rem}
         <h3 id="pmhead">Out-of-sample sum of R by market</h3>
         <div class="cap">Bars are total R over the full window; win rate at right. Low hit rate, large winners — the breakout signature.</div>
         <div id="pmchart"></div>
+      </div>
+      <div class="panel">
+        <h3>Every market, side by side — decision &amp; allocation metrics</h3>
+        <div class="cap">The full out-of-sample record for each market — survivorship-free, costs in net-R, $100k liquidity floor, sorted by total edge. Country names in full; see the note below on how to read these for an allocation decision.</div>
+        <div class="tblwrap"><table id="pmtable"></table></div>
+        <p class="muted" style="font-size:.78rem;margin-top:.7rem;line-height:1.5" id="pmtablenote"></p>
       </div>
     </div>
   </section>
@@ -355,7 +355,7 @@ footer{padding:2.2rem 0 3rem;color:var(--faint);font-size:.8rem}
       <li><b>Sizing not yet optimised.</b> Results are in R; position sizing and portfolio allocation are the next phase, not claimed here.</li>
       <li><b>It's a wide book.</b> The edge lives in breadth — many small positions at once — so it's built for automated, diversified execution, not a handful of hand-picked trades.</li>
       <li><b>Down years are real.</b> 2018 and 2022 lost money; a long-only breakout book should.</li>
-      <li><b>Access varies.</b> TW, TH, HK and VN carry real edge but are restricted for foreign retail — hence the separate tradeable core.</li>
+      <li><b>Access varies.</b> Taiwan, Thailand and Vietnam carry real edge but need a local/prop route or have limited emerging-market access. Hong Kong and the United States are fully retail-tradeable (Interactive Brokers / Futu); Hong Kong sits outside the conservative core only because its edge is more recent and concentrated, not for access reasons.</li>
     </ul>
   </section>
 
@@ -508,14 +508,39 @@ function renderEquity(){
     {ymin:0,ymax:Math.max(...c.map(p=>p[1]))*1.05,step: (view==='core'?1000:1000),fmtY:v=>v>=1000?(v/1000)+'k':v});
 }
 function renderPM(){
-  const rows=DATA[view].perMkt, rowH=30,W=1000,L=52,R=160,T=8,H=T+rows.length*rowH+8;
+  const rows=DATA[view].perMkt, rowH=30,W=1000,L=150,R=160,T=8,H=T+rows.length*rowH+8;
   const max=Math.max(...rows.map(r=>r[2])),xs=v=>L+(W-L-R)*v/max,col=view==='core'?'var(--steel)':'var(--accent)';
-  let b='';rows.forEach((r,i)=>{const y=T+i*rowH;b+=`<text class="barlbl" x="${L-8}" y="${y+rowH/2+4}" text-anchor="end">${r[0]}</text><rect x="${L}" y="${y+5}" width="${Math.max(xs(r[2])-L,1)}" height="${rowH-12}" rx="3" fill="${col}"/><text class="barval" x="${xs(r[2])+8}" y="${y+rowH/2+4}">${fmt(r[2])} R · ${r[4]}% win</text>`;});
+  let b='';rows.forEach((r,i)=>{const y=T+i*rowH;b+=`<text class="barlbl" x="${L-8}" y="${y+rowH/2+4}" text-anchor="end">${NAMES[r[0]]||r[0]}</text><rect x="${L}" y="${y+5}" width="${Math.max(xs(r[2])-L,1)}" height="${rowH-12}" rx="3" fill="${col}"/><text class="barval" x="${xs(r[2])+8}" y="${y+rowH/2+4}">${fmt(r[2])} R · ${r[4]}% win</text>`;});
   $('#pmchart').innerHTML=svg(W,H)+b+'</svg>';
   $('#pmhead').textContent=`Out-of-sample sum of R — ${rows.length} markets, all positive`;
 }
 function renderBreadth(){$('#breadth').innerHTML=DATA.breadth.map(b=>`<div class="chip"><div class="n">+${b[2].toLocaleString()}</div><div class="l">${b[0]} · ${b[1]} markets · Calmar ${b[3]}</div></div>`).join('');}
 
+const NAMES={US:"United States",CA:"Canada",DE:"Germany",AU:"Australia",ES:"Spain",NL:"Netherlands",NO:"Norway",PL:"Poland",SE:"Sweden",CH:"Switzerland",KR:"South Korea",TW:"Taiwan",HK:"Hong Kong",TH:"Thailand",VN:"Vietnam"};
+const PMTABLE=[
+ ["CA",3818,1397,0.366,39,-125,0.94,9,12,77,1.5,"R"],
+ ["TW",3708,1170,0.315,31,-129,0.77,8,12,61,2.6,"X"],
+ ["SE",3080,740,0.240,43,-124,0.51,9,12,65,0.6,"R"],
+ ["DE",1799,664,0.369,39,-75,0.75,7,12,85,1.0,"R"],
+ ["AU",2641,655,0.248,32,-127,0.44,7,12,55,1.8,"R"],
+ ["TH",2292,419,0.183,37,-141,0.25,6,12,67,0.9,"X"],
+ ["HK",1943,390,0.201,38,-122,0.27,5,12,52,17.5,"R"],
+ ["PL",440,360,0.819,38,-43,0.71,6,12,86,0.2,"R"],
+ ["NO",912,320,0.351,43,-62,0.44,8,12,69,0.5,"R"],
+ ["KR",1594,288,0.181,21,-182,0.13,5,12,42,8.4,"R"],
+ ["ES",583,278,0.478,34,-38,0.63,9,12,73,1.5,"R"],
+ ["CH",1402,231,0.165,43,-61,0.32,8,12,72,1.3,"R"],
+ ["US",1123,202,0.180,27,-91,0.19,7,12,73,474.9,"R"],
+ ["VN",1084,140,0.129,35,-133,0.10,7,11,51,0.3,"E"],
+ ["NL",446,122,0.273,41,-69,0.15,6,12,73,0.6,"R"]];
+const ACCESS={R:["✓","Retail · IB/Futu"],X:["◐","Local/prop"],E:["◐","EM · limited"]};
+function renderPMTable(){
+  let h='<thead><tr><th>Market</th><th class="num">Trades</th><th class="num">Total&nbsp;R</th><th class="num">Avg&nbsp;R</th><th class="num">Win</th><th class="num">Max&nbsp;DD</th><th class="num">Calmar</th><th class="num">Yrs&nbsp;+</th><th class="num">Hold</th><th class="num">Liq&nbsp;$M</th><th>Access</th></tr></thead><tbody>';
+  PMTABLE.forEach(r=>{const[c,tr,sr,ar,win,dd,cal,yp,yt,hold,liq,acc]=r,a=ACCESS[acc];
+    h+=`<tr><td><b>${NAMES[c]}</b> <span class="muted">${c}</span></td><td class="num">${tr.toLocaleString()}</td><td class="num win">+${sr}</td><td class="num">${ar.toFixed(2)}</td><td class="num">${win}%</td><td class="num loss">${dd}</td><td class="num">${cal}</td><td class="num">${yp}/${yt}</td><td class="num">${hold}d</td><td class="num">${liq>=100?Math.round(liq):liq}</td><td style="white-space:nowrap">${a[0]} ${a[1]}</td></tr>`;});
+  $('#pmtable').innerHTML=h+'</tbody>';
+  $('#pmtablenote').innerHTML='<b>Reading it for allocation.</b> <b>Total&nbsp;R</b> is how much edge a market produced (its capacity); <b>Avg&nbsp;R</b> is edge per trade (quality); <b>Calmar</b> is annual&nbsp;R ÷ max drawdown. Single-market Calmars are modest and noisy on purpose — the book\'s 1.15 comes from combining ~15 near-independent streams (average cross-market correlation ≈ 0.10), not from any one name. <b>Liquidity</b> sets how much capital a sleeve absorbs: the United States (~$475M median daily volume) scales almost without limit, Hong&nbsp;Kong (~$17.5M) and South&nbsp;Korea carry Asia at size, and the smaller markets add diversification but reach capacity early. <b>Access</b>: ✓ reachable through retail brokers (Interactive Brokers / Futu); ◐ needs a local or prop route (Taiwan, Thailand) or is an emerging market with limited access (Vietnam).';
+}
 function renderTrades(){
   const row=(sym,entry,exit,r,open)=>`<tr><td>${sym}</td><td class="num">${entry}</td><td class="num">${open?'<span style="color:var(--gold)">open</span>':exit}</td><td class="num ${r>0?'win':(r<-0.1?'loss':'')}">${r>0?'+':''}${r.toFixed(2)}R</td></tr>`;
   let h='<thead><tr><th>Ticker</th><th>Entry</th><th>Exit</th><th>Result</th></tr></thead><tbody>';
@@ -564,7 +589,7 @@ function renderSurv(){
   });
   $('#survdiagram').innerHTML=svg(W,H)+s+'</svg>';
 }
-renderStats();renderBox();renderAccum();renderSurv();renderWFO();renderMetrics();renderCompare();renderBear();renderYrCompare();renderBreadth();renderTrades();renderView();
+renderStats();renderBox();renderAccum();renderSurv();renderWFO();renderMetrics();renderCompare();renderBear();renderYrCompare();renderBreadth();renderPMTable();renderTrades();renderView();
 $('#btnFull').onclick=()=>{view='full';renderView();};
 $('#btnCore').onclick=()=>{view='core';renderView();};
 window.addEventListener('resize',()=>{renderWFO();},{passive:true});
@@ -573,5 +598,4 @@ window.addEventListener('resize',()=>{renderWFO();},{passive:true});
   btn.onclick=()=>{const cur=document.documentElement.getAttribute('data-theme');const mq=window.matchMedia('(prefers-color-scheme:dark)').matches;const next=(cur?cur==='dark':mq)?'light':'dark';document.documentElement.setAttribute('data-theme',next);try{localStorage.setItem('bt-theme',next);}catch(e){}};})();
 </script>
 
-</body>
-</html>
+</body></html>
