@@ -522,6 +522,8 @@ export const strategies: Strategy[] = [
       'Honest caveats: survivorship-tilted backtest universe (magnitudes are an upper bound) and a recently weakening edge',
       'Now running as a live forward paper-trade to gather out-of-sample evidence before any claim',
     ],
+    proofUrl: 'https://polygontrading.github.io/pattern-signal-dashboard/paper.html#combined',
+    proofLabel: 'Live forward tracking',
   },
 ];
 
