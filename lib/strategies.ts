@@ -76,7 +76,7 @@ export type Strategy = {
   id: string;
   name: string;
   asset: string;
-  category: 'tradfi' | 'crypto' | 'ml';
+  category: 'tradfi' | 'crypto' | 'ml' | 'research';
   edge: string;
   cagr?: string;
   cagrLabel?: string;
@@ -462,6 +462,38 @@ export const strategies: Strategy[] = [
       { date: '2026-08-19', entryDate: '2026-08-19', direction: 'Short', entry: '65,018', exit: '66,297', pnl: '$-1,279', pnlNum: -1279.1 },
       { date: '2026-08-19', entryDate: '2026-08-10', direction: 'Short', entry: '65,209', exit: '65,216', pnl: '$+899', pnlNum: 898.55 },
     ],
+  },
+
+  {
+    id: 'box-theory',
+    name: 'Box Theory',
+    asset: 'Global Equities',
+    category: 'research',
+    edge: 'Consolidation Breakout',
+    status: 'backtest',
+    statusLabel: 'Research',
+    cagr: '19.3%',
+    cagrLabel: 'CAGR vs S&P 11.9% (equal risk)',
+    cagrNum: 0.193,
+    sharpe: '1.55',
+    maxDD: '-13.2%',
+    maxDDNum: 0.132,
+    cardSummary:
+      'A consolidation-breakout edge tested across 15 global equity markets — survivorship-free, held-out walk-forward, costs included.',
+    description:
+      "Reverse-engineering the filter that lets the S&P 500 beat most active managers, written as an explicit breakout rule and tested across 15 markets (2015–2026). Built survivorship-free (delisted names kept, the top-liquidity basket rebuilt point-in-time), held-out walk-forward, with costs and a liquidity floor. At equal volatility the global book returns 19.3% CAGR vs the S&P 500's 11.9%, with a shallower max drawdown (-13% vs -20%) and higher Sharpe (1.55 vs 1.01), and it defends better in the 2020 and 2022 bear markets. Position sizing and portfolio allocation are the next phase.",
+    dataSource: 'Held-out walk-forward 2015–2026 · 15 markets · vs S&P 500 at equal risk',
+    backtestStart: 2015,
+    backtestEnd: 2026,
+    highlights: [
+      'All 15 markets net-positive out-of-sample — North America, Europe, Asia-Pacific',
+      'Survivorship-free: delisted/dead tickers kept; top-liquidity basket rebuilt point-in-time',
+      'Held-out walk-forward re-optimised at 2015 / 18 / 21 / 24 anchors, stitched to one continuous out-of-sample record',
+      'Beats the S&P 500 at equal volatility — higher return, shallower drawdown, better bear-market defence',
+      'Next: position sizing and portfolio allocation',
+    ],
+    proofUrl: pdf('/research/box-theory.html'),
+    proofLabel: 'Read the full research',
   },
 ];
 
