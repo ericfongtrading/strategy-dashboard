@@ -1,7 +1,33 @@
 {
-  "lastUpdated": "2026-11-24T16:40:05Z",
+  "lastUpdated": "2026-11-24T18:40:05Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
+    {
+      "date": "2026-11-25 00:45",
+      "entryDate": "2026-11-25 00:20",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "3,558.7",
+      "exit": "3,572.3",
+      "pnl": "-$272",
+      "pnlNum": -272.0,
+      "rMultiple": "",
+      "note": "stop loss \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
+    {
+      "date": "2026-11-25 00:45",
+      "entryDate": "2026-11-24 23:16",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,596.6",
+      "exit": "3,573.9",
+      "pnl": "+$453",
+      "pnlNum": 453.0,
+      "rMultiple": "",
+      "note": "rule a blue line \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
     {
       "date": "2026-11-24 14:12",
       "entryDate": "2026-11-24 11:47",
@@ -105,54 +131,18 @@
       "rMultiple": "",
       "note": "stop loss \u00b7 IB gross",
       "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-20 08:10",
-      "entryDate": "2026-11-20 07:38",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "3,602.9",
-      "exit": "3,618.7",
-      "pnl": "-$316",
-      "pnlNum": -316.0,
-      "rMultiple": "",
-      "note": "stop loss \u00b7 IB gross",
-      "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-20 07:41",
-      "entryDate": "2026-11-20 07:33",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "3,622.3",
-      "exit": "3,603.9",
-      "pnl": "+$369",
-      "pnlNum": 369.0,
-      "rMultiple": "",
-      "note": "rule b outer vwap \u00b7 IB gross",
-      "source": "IB recorded fills"
     }
   ],
   "positions": [
     {
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "3,558.7",
-      "current": "3,566.1",
-      "size": "2 MGC",
-      "pnl": "-$148",
-      "pnlNum": -148.0,
-      "open": "2026-11-25 00:20 HKT"
-    },
-    {
       "symbol": "P1",
       "direction": "Short",
-      "entry": "3,596.6",
-      "current": "3,566.1",
+      "entry": "3,560.6",
+      "current": "3,559.1",
       "size": "2 MGC",
-      "pnl": "+$610",
-      "pnlNum": 610.0,
-      "open": "2026-11-24 23:16 HKT"
+      "pnl": "+$30",
+      "pnlNum": 30.0,
+      "open": "2026-11-25 02:23 HKT"
     }
   ],
   "monthlyReturns": [
@@ -306,11 +296,11 @@
   "modelVersion": "gc.h4_daily5.20261101",
   "liveMonthly": {
     "basis": "gross before commissions and fees",
-    "lastClose": "2026-11-24",
+    "lastClose": "2026-11-25",
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": -0.1136
+        "returnPct": 0.0263
       }
     ]
   }
