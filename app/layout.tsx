@@ -5,7 +5,7 @@ import './globals.css';
 const SITE_URL = 'https://ericfongtrading.github.io/strategy-dashboard/';
 const TITLE = 'Strategy Dashboard — Eric Fong';
 const DESCRIPTION =
-  'Systematic trading strategies across futures, FX, crypto, and options — from research through walk-forward backtesting to fully automated live execution.';
+  'Systematic trading strategies across futures, FX, equities, crypto, and options — from research through walk-forward backtesting to fully automated live execution.';
 
 // Absolute og:image URL. LinkedIn, Slack and X refuse to build a link preview
 // from a relative path, and basePath means a root-relative one resolves wrong.
