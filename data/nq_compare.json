@@ -1,7 +1,7 @@
 {
   "schema": "nq4.dashboard.1",
   "version": "nq4-cci05-v1",
-  "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+  "updated_utc": "2026-11-25T17:43:02.235870+00:00",
   "legacy_entries_disabled": true,
   "allocation": [
     {
@@ -211,7 +211,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-18T14:36:00+00:00",
           "exit_utc": "2026-11-18T15:00:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27150.25,
@@ -378,7 +378,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-10T15:57:00+00:00",
           "exit_utc": "2026-11-10T16:00:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27733.25,
@@ -422,7 +422,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-09T17:38:00+00:00",
           "exit_utc": "2026-11-09T19:00:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27959.5,
@@ -466,7 +466,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-06T17:37:00+00:00",
           "exit_utc": "2026-11-06T18:57:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 27088.5,
@@ -510,7 +510,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T18:47:00+00:00",
           "exit_utc": "2026-11-04T19:00:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28630.0,
@@ -554,7 +554,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-04T15:31:00+00:00",
           "exit_utc": "2026-11-04T20:56:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28800.25,
@@ -598,7 +598,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T16:33:00+00:00",
           "exit_utc": "2026-11-03T17:08:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 2,
           "remaining": 0,
           "entry": 28302.25,
@@ -642,7 +642,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-03T04:30:00+00:00",
           "exit_utc": "2026-11-03T04:40:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28185.75,
@@ -686,7 +686,7 @@
           "unit": "MNQ",
           "entry_utc": "2026-11-02T18:05:00+00:00",
           "exit_utc": "2026-11-02T18:41:00+00:00",
-          "updated_utc": "2026-11-25T17:42:01.496154+00:00",
+          "updated_utc": "2026-11-25T17:43:02.235870+00:00",
           "size": 1,
           "remaining": 0,
           "entry": 28582.75,
@@ -720,8 +720,8 @@
       "source_present": true,
       "errors": 0,
       "state": "OBSERVING",
-      "heartbeat_utc": "2026-11-25T17:42:01.496154+00:00",
-      "data_final_utc": "2026-11-25T17:41:00+00:00",
+      "heartbeat_utc": "2026-11-25T17:43:02.235870+00:00",
+      "data_final_utc": "2026-11-25T17:43:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": null,
@@ -747,22 +747,22 @@
           "source": null,
           "sleeve": "OSR",
           "venue": "ib",
-          "status": "OPEN",
+          "status": "CLOSED",
           "side": -1,
-          "revision": 0,
+          "revision": 1,
           "instrument": "MNQ20261218",
           "unit": "MNQ",
           "entry_utc": "2026-11-25T15:31:01+00:00",
-          "exit_utc": null,
-          "updated_utc": "2026-11-25T15:31:03.927067+00:00",
+          "exit_utc": "2026-11-25T17:42:20+00:00",
+          "updated_utc": "2026-11-25T17:42:21.327161+00:00",
           "size": 1.0,
-          "remaining": 1.0,
+          "remaining": 0.0,
           "entry": 25182.75,
-          "exit": null,
+          "exit": 25688.5,
           "stop": 25692.5,
           "target": null,
-          "gross_usd": 0,
-          "fees_usd": 0.61,
+          "gross_usd": -1011.5,
+          "fees_usd": 1.22,
           "swap_usd": 0.0,
           "initial_risk_usd": 1019.5,
           "entry_reference": 25189.25,
@@ -773,8 +773,8 @@
           "venue_mid": 25189.375,
           "quote_age_ms": 618.2401180267334,
           "exit_quote_age_ms": null,
-          "net_usd": -0.61,
-          "net_r": -0.0005983325159391858,
+          "net_usd": -1012.72,
+          "net_r": -0.9933496812162825,
           "entry_slippage_pts": 6.5,
           "exit_slippage_pts": null,
           "basis_pts": 0.5,
@@ -1400,21 +1400,21 @@
       "source_present": true,
       "errors": 0,
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-25T17:42:00.657611+00:00",
-      "data_final_utc": "2026-11-25T17:41:00+00:00",
+      "heartbeat_utc": "2026-11-25T17:43:02.094823+00:00",
+      "data_final_utc": "2026-11-25T17:43:00+00:00",
       "halt_reasons": [],
       "pilot_hold": false,
       "broker_connected": true,
       "armed": true,
       "warmup_verified": true,
       "summary": {
-        "closed": 15,
-        "open": 1,
-        "measured": 15,
-        "net_usd": -3355.06,
-        "gross_usd": -3327.0,
+        "closed": 16,
+        "open": 0,
+        "measured": 16,
+        "net_usd": -4367.78,
+        "gross_usd": -4338.5,
         "swap_usd": 0.0,
-        "fees_usd": 28.06
+        "fees_usd": 29.28
       }
     },
     "ftmo": {
@@ -2039,7 +2039,7 @@
       "errors": 0,
       "journal_projection": "CURRENT",
       "state": "ACTIVE",
-      "heartbeat_utc": "2026-11-25T17:42:03.873468+00:00",
+      "heartbeat_utc": "2026-11-25T17:43:04.645999+00:00",
       "data_final_utc": null,
       "halt_reasons": [],
       "pilot_hold": false,
@@ -2069,7 +2069,7 @@
     "origin": "RECONSTRUCTED_FROM_RECORDED_SIGNAL",
     "records": 9,
     "unpaired_signals": 2,
-    "checked_utc": "2026-11-25T17:42:01.496154+00:00",
+    "checked_utc": "2026-11-25T17:43:02.235870+00:00",
     "fill_model": {
       "slippage_points_per_side": 1.045,
       "commission_usd_per_mnq_side": 0.61,
@@ -2090,22 +2090,22 @@
     "state": "READY",
     "counts": {
       "signals": 16,
-      "matched_closed": 14,
+      "matched_closed": 15,
       "missing_record": {
         "theoretical": 0,
         "ib": 0,
         "ftmo": 1
       },
-      "waiting_for_close": 1,
+      "waiting_for_close": 0,
       "missing_costs": 0,
       "missing_risk": 0,
       "ambiguous_or_inconsistent": 0
     },
     "lanes": {
       "theoretical": {
-        "net_usd": -643.4846258649765,
-        "gross_usd": -634.7935594439018,
-        "fees_usd": 8.691066421074664,
+        "net_usd": -695.8543737641362,
+        "gross_usd": -687.0426943919987,
+        "fees_usd": 8.811679372137442,
         "swap_usd": 0.0,
         "entry_slippage_count": 0,
         "entry_slippage_pts": null,
@@ -2113,18 +2113,18 @@
         "exit_slippage_pts": null
       },
       "ib": {
-        "net_usd": -658.3596020899663,
-        "gross_usd": -649.5150526676478,
-        "fees_usd": 8.844549422318517,
+        "net_usd": -758.9775851997526,
+        "gross_usd": -750.011823656222,
+        "fees_usd": 8.965761543530638,
         "swap_usd": 0.0,
-        "entry_slippage_count": 14,
-        "entry_slippage_pts": 2.3035714285714284,
+        "entry_slippage_count": 15,
+        "entry_slippage_pts": 2.5833333333333335,
         "exit_slippage_count": 0,
         "exit_slippage_pts": null
       },
       "ftmo": {
-        "net_usd": -619.5732934339271,
-        "gross_usd": -619.5732934339271,
+        "net_usd": -672.0201423883491,
+        "gross_usd": -672.0201423883491,
         "fees_usd": 0.0,
         "swap_usd": 0.0,
         "entry_slippage_count": 0,
@@ -2134,6 +2134,26 @@
       }
     },
     "per_signal": {
+      "7a67b52541b072bb21f6": {
+        "theoretical": {
+          "net_usd": -52.36974789915966,
+          "gross_usd": -52.24913494809689,
+          "fees_usd": 0.12061295106277806,
+          "swap_usd": 0.0
+        },
+        "ib": {
+          "net_usd": -100.6179831097864,
+          "gross_usd": -100.49677098857427,
+          "fees_usd": 0.12121212121212122,
+          "swap_usd": 0.0
+        },
+        "ftmo": {
+          "net_usd": -52.44684895442193,
+          "gross_usd": -52.44684895442193,
+          "fees_usd": 0.0,
+          "swap_usd": 0.0
+        }
+      },
       "b0034dd133974713a363": {
         "theoretical": {
           "net_usd": -33.7501187648456,
@@ -2425,8 +2445,8 @@
     "state": "PAPER_RUNNING",
     "validator_state": "OK",
     "data_error": null,
-    "heartbeat_utc": "2026-11-25T17:42:03.192875+00:00",
-    "last_bar_utc": "2026-11-25T17:40:00+00:00",
+    "heartbeat_utc": "2026-11-25T17:43:04.501426+00:00",
+    "last_bar_utc": "2026-11-25T17:41:00+00:00",
     "position": null,
     "summary": {
       "reads": 29,
@@ -3556,6 +3576,6 @@
       "trades": 0
     },
     "ready_for_live_review": true,
-    "validation_updated_utc": "2026-11-25T17:41:59.267591+00:00"
+    "validation_updated_utc": "2026-11-25T17:42:59.311411+00:00"
   }
 }
