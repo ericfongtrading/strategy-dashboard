@@ -525,6 +525,27 @@ export const strategies: Strategy[] = [
     proofUrl: 'https://polygontrading.github.io/pattern-signal-dashboard/paper.html#combined',
     proofLabel: 'Live forward tracking',
   },
+
+  {
+    id: 'vix-reversal',
+    name: 'VIX Reversal Signal',
+    asset: 'US Equities · VIX',
+    category: 'research',
+    edge: 'Volatility Regime',
+    status: 'development',
+    statusLabel: 'Evaluating',
+    description:
+      "How I turn an idea I find into a strategy. I came across a public study — the sharpest intraday VIX drops tend to be followed by strongly positive equity returns, especially a year out — and rather than take it at face value, I would reproduce every number myself, then stress-test it across markets and parameters to rule out curve-fitting. If the edge holds I would make it tradeable (the raw study has no entry/exit rules or stops of its own); and if it does not stand alone, I would test it as a regime filter to sharpen other strategies.",
+    chartImg: pdf('/charts/vix-reversal.svg?v=1'),
+    chartImgLabel: 'The source study (QQQ & SPY) + how I vet an external idea',
+    highlights: [
+      'Start by distrusting it — reproduce every number from the raw data before believing the claim',
+      'Stress-test for curve-fitting: other markets, different parameters and thresholds',
+      'Make it tradeable — the raw study has no buy/sell or stops, so define detection, entry/exit and risk',
+      'Two outcomes: a standalone strategy, or — if drawdown / consistency / trade frequency fall short — a regime filter for other strategies',
+      'Status: spotted, not yet verified — shown to illustrate the process, not a result',
+    ],
+  },
 ];
 
 
