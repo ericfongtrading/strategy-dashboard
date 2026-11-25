@@ -531,12 +531,12 @@ export const strategies: Strategy[] = [
     name: 'VIX Reversal Signal',
     asset: 'US Equities · VIX',
     category: 'research',
-    edge: 'Volatility Regime',
+    edge: 'Statistical',
     status: 'development',
     statusLabel: 'Evaluating',
     description:
-      "How I turn an idea I find into a strategy. I came across a public study — the sharpest intraday VIX drops tend to be followed by strongly positive equity returns, especially a year out — and rather than take it at face value, I would reproduce every number myself, then stress-test it across markets and parameters to rule out curve-fitting. If the edge holds I would make it tradeable (the raw study has no entry/exit rules or stops of its own); and if it does not stand alone, I would test it as a regime filter to sharpen other strategies.",
-    chartImg: pdf('/charts/vix-reversal.svg?v=1'),
+      "How I pressure-test an interesting idea I find before trusting or trading it. Worked example: a public VIX-reversal study, with the verify → stress-test → strategy-or-regime process I would run on it.",
+    chartImg: pdf('/charts/vix-reversal.svg?v=2'),
     chartImgLabel: 'The source study (QQQ & SPY) + how I vet an external idea',
     highlights: [
       'Start by distrusting it — reproduce every number from the raw data before believing the claim',
