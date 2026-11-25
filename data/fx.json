@@ -1,7 +1,17 @@
 {
-  "lastUpdated": "2026-11-25T06:05:02Z",
+  "lastUpdated": "2026-11-25T06:35:02Z",
   "basis": "Recent trades use the IB ledger. estimated net using the FX ledger\u2019s conversion rate and fee allowance.",
   "recentTrades": [
+    {
+      "date": "2026-11-25",
+      "symbol": "AUDCAD",
+      "direction": "Long",
+      "entry": "0.94703",
+      "exit": "0.93964",
+      "pnl": "-$240.64",
+      "pnlNum": -240.64,
+      "note": "Actual IB fill \u00b7 estimated net"
+    },
     {
       "date": "2026-11-25",
       "symbol": "AUDCAD",
@@ -41,16 +51,6 @@
       "pnl": "-$470.22",
       "pnlNum": -470.22,
       "note": "Actual IB fill \u00b7 estimated net"
-    },
-    {
-      "date": "2026-11-19",
-      "symbol": "AUDCAD",
-      "direction": "Long",
-      "entry": "0.96390",
-      "exit": "0.95798",
-      "pnl": "-$237.13",
-      "pnlNum": -237.13,
-      "note": "Actual IB fill \u00b7 estimated net"
     }
   ],
   "positions": [
@@ -64,17 +64,6 @@
       "targets": "0.78385",
       "pnl": "-132 CAD",
       "pnlNum": -132
-    },
-    {
-      "symbol": "AUDCAD",
-      "direction": "Long",
-      "entry": "0.94703",
-      "current": "0.94100",
-      "size": "43,865",
-      "stop": "0.93970",
-      "targets": "0.95090",
-      "pnl": "-265 CAD",
-      "pnlNum": -265
     },
     {
       "symbol": "GBPAUD",
@@ -242,7 +231,7 @@
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": -0.7326
+        "returnPct": -1.2671
       }
     ],
     "riskNormalized": true
