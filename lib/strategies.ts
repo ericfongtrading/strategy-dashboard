@@ -511,8 +511,8 @@ export const strategies: Strategy[] = [
     dataSource: 'Backtest 2011–2026 · 5 markets · now live forward paper-trade',
     backtestStart: 2011,
     backtestEnd: 2026,
-    chartImg: pdf('/charts/candlestick-pattern.svg?v=2'),
-    chartImgLabel: 'The two setups + three real winners (out-of-sample)',
+    chartImg: pdf('/charts/candlestick-pattern.svg?v=3'),
+    chartImgLabel: 'Patterns, first-run results, and the research roadmap',
     extraMetrics: [
       { label: 'Markets', value: '5' },
       { label: 'Stage', value: 'Forward paper' },
