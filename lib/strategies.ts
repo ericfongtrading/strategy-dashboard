@@ -536,7 +536,7 @@ export const strategies: Strategy[] = [
     statusLabel: 'Evaluating',
     description:
       "How I pressure-test an interesting idea I find before trusting or trading it. Worked example: a public VIX-reversal study, with the verify → stress-test → strategy-or-regime process I would run on it.",
-    chartImg: pdf('/charts/vix-reversal.svg?v=2'),
+    chartImg: pdf('/charts/vix-reversal.svg?v=3'),
     chartImgLabel: 'The source study (QQQ & SPY) + how I vet an external idea',
     highlights: [
       'Start by distrusting it — reproduce every number from the raw data before believing the claim',
