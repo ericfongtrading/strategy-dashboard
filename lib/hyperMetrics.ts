@@ -38,7 +38,7 @@ export function hyperDrawdownHeadline(headline: Headline[] | undefined, trades: 
 
 // Fixed capital base per 1 BTC trade, set 2026-11-03; do not resize.
 export const HYPER_MODEL_CAPITAL = 21775.50;
-export const HYPER_RETURN_BASIS = 'Return = recorded P&L ÷ a fixed capital base of 21,775.50 USDC per 1 BTC trade, the bot\'s standard accounting unit (live orders on Hyperliquid are currently 0.4 BTC). Cumulative over closed trades, not annualized; excludes open P&L and funding.';
+export const HYPER_RETURN_BASIS = 'Cumulative return on the bot\'s standard accounting unit of 1 BTC per trade. Closed trades only, not annualized; excludes open P&L and funding.';
 export function hyperReturn(pnl: number): string {
   if (!Number.isFinite(pnl)) return '—';
   const pct = pnl / HYPER_MODEL_CAPITAL * 100;
