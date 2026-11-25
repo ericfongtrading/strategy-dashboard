@@ -1,7 +1,16 @@
 {
-  "lastUpdated": "2026-11-24T08:40:03Z",
+  "lastUpdated": "2026-11-25T08:40:02Z",
   "basis": "Recent trades use the IB ledger. gross before commissions and fees.",
   "recentTrades": [
+    {
+      "date": "2026-11-25",
+      "direction": "Long",
+      "entry": "22,429",
+      "exit": "22,340",
+      "pnl": "-HK$1,780",
+      "pnlNum": -1780,
+      "note": "Actual IB fill \u00b7 P1 \u00b7 2 MHI \u00b7 gross"
+    },
     {
       "date": "2026-11-24",
       "direction": "Short",
@@ -37,15 +46,6 @@
       "pnl": "-HK$420",
       "pnlNum": -420,
       "note": "Actual IB fill \u00b7 P2 \u00b7 2 MHI \u00b7 gross"
-    },
-    {
-      "date": "2026-11-20",
-      "direction": "Short",
-      "entry": "22,401",
-      "exit": "22,379",
-      "pnl": "+HK$440",
-      "pnlNum": 440,
-      "note": "Actual IB fill \u00b7 P1 \u00b7 2 MHI \u00b7 gross"
     }
   ],
   "positions": [],
@@ -144,11 +144,11 @@
   ],
   "liveMonthly": {
     "basis": "gross before commissions and fees",
-    "lastClose": "2026-11-24",
+    "lastClose": "2026-11-25",
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": 0.4282
+        "returnPct": 0.3717
       }
     ]
   }
