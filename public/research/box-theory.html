@@ -199,12 +199,14 @@ footer{padding:2.2rem 0 3rem;color:var(--faint);font-size:.8rem}
 
     <div class="panel" style="margin-top:1.3rem">
       <h3>Accumulation — pressing the winners</h3>
-      <div class="cap">When a trade keeps working and coils into a new, higher box, the strategy adds a second tranche on that breakout — and raises the stop under the new box. Size builds up only in the trends that keep proving themselves.</div>
+      <div class="cap">Size is added on an <b>R-ladder</b>, measured in the trade's own risk rather than in new chart patterns. Every time the position gains another fixed step of open profit, one more equal-risk tranche goes on — in most markets a rung at every <b>+½R</b> up to +5R, ten in all; in a few, coarser steps and a lower ceiling, fit per market like every other parameter. Adds only fire while volatility is still expanding, and the whole stack sits behind a single stop that ratchets up and never down.</div>
       <div id="accumdiagram"></div>
+      <div class="legend"><span><span class="swatch" style="background:var(--accent)"></span>add — one equal-risk tranche</span><span><span class="swatch" style="background:var(--steel)"></span>shared stop, ratcheting up</span><span><span class="swatch" style="background:var(--neg)"></span>initial stop — defines 1R</span></div>
     </div>
     <div class="badges" style="margin-top:1.1rem">
-      <div class="badge"><div class="t"><span class="dot"></span>Why it helps</div><div class="d">The rare trends that run for months are where the money is. Adding to them concentrates capital in exactly those names — this is a big part of why the biggest winners reach +9R, +13R.</div></div>
-      <div class="badge"><div class="t"><span class="dot"></span>Risk stays bounded</div><div class="d">Each add comes with the stop raised under the new box, so the first leg's profit is protected and total open risk stays near 1R. You press with the market's money, not more of your own.</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Why it helps</div><div class="d">The rare trends that run for months are where the money is. Adding to them concentrates capital in exactly those names — this is a big part of why the biggest winners reach +9R, +13R. Re-running the held-out book with the adds switched off cuts average R per trade by half to two-thirds, so the accumulation isn't a garnish on the edge; it is a large share of it.</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Only into expansion</div><div class="d">A rung fills only on a bar where the 20-day Bollinger band is <i>wider</i> than its own 20-day average — volatility opening up, the trend accelerating. Price can drift up through a rung in a quiet tape and no add is taken. Pressing is reserved for trends that are actually moving.</div></div>
+      <div class="badge"><div class="t"><span class="dot"></span>Risk stays bounded</div><div class="d">Every tranche sits behind one shared stop that only moves up: to breakeven once the trade is 1R ahead, then onto a volatility (ATR) trail, and tighter still — under the recent 10-day low — as soon as more than one tranche is on. The adds are bought with open profit, and the whole stack leaves together when the stop goes.</div></div>
     </div>
 
     <div class="panel" style="margin-top:1.1rem">
@@ -556,20 +558,43 @@ function renderView(){
   $('#btnFull').setAttribute('aria-pressed',view==='full');$('#btnCore').setAttribute('aria-pressed',view==='core');
 }
 
+/* accumulation: the R-ladder. Rungs are fixed steps of open profit measured in R
+   (the trade's own initial risk), NOT new boxes; one shared stop ratchets up. */
 function renderAccum(){
-  const W=760,H=300;
-  const price="M58 276 L100 240 L150 198 L196 170 L210 176 L236 162 L262 178 L288 164 L300 170 L318 146 L344 126 L372 116 L392 120 L408 124 L436 112 L462 126 L488 116 L496 120 L516 98 L548 80 L578 68 L600 72 L632 92 L660 112 L682 128";
-  $('#accumdiagram').innerHTML=svg(W,H)+
-    `<line class="axis" x1="54" y1="280" x2="716" y2="280"/>`+
-    `<rect class="pxbox" x="200" y="158" width="104" height="30" rx="3"/><text class="dlabel b" x="252" y="152" text-anchor="middle" fill="var(--accent-ink)">Box 1</text>`+
-    `<rect class="pxbox" x="396" y="106" width="104" height="28" rx="3"/><text class="dlabel b" x="448" y="100" text-anchor="middle" fill="var(--accent-ink)">Box 2 (higher)</text>`+
-    `<line class="pxstop" x1="200" y1="192" x2="392" y2="192"/><text class="dlabel" x="202" y="208" fill="var(--neg)">initial stop — risk = 1R</text>`+
-    `<line class="pxstop" x1="392" y1="138" x2="614" y2="138"/><text class="dlabel" x="612" y="158" text-anchor="end" fill="var(--neg)">stop raised under Box 2 (first leg locked in)</text>`+
-    `<path class="px" d="${price}"/>`+
-    `<circle cx="318" cy="146" r="5" fill="var(--accent)"/><text class="dlabel b" x="318" y="134" text-anchor="middle" fill="var(--accent-ink)">BUY — 1R</text>`+
-    `<circle cx="516" cy="98" r="5" fill="var(--accent)"/><text class="dlabel b" x="516" y="86" text-anchor="middle" fill="var(--accent-ink)">ADD — press the winner</text>`+
-    `<circle cx="664" cy="116" r="5" fill="var(--neg)"/><text class="dlabel b" x="710" y="108" text-anchor="end" fill="var(--neg)">EXIT</text>`+
-    '</svg>';
+  const W=760,H=312,L=100,RX=648,AX=292,y0=238,PR=30,yR=r=>y0-PR*r;
+  const pts=[[104,274],[126,260],[144,250],[162,264],[180,246],[192,242],[198,238],
+             [216,222],[230,208],[246,214],[260,192],[274,178],[294,186],[312,162],
+             [332,148],[350,154],[370,136],[402,118],[426,126],[446,102],[472,88],
+             [494,80],[514,72],[536,88],[558,102],[580,116],[598,128],[618,142]];
+  /* first bar on which price reaches a given level — keeps every dot on the line */
+  const cross=ty=>{for(let i=1;i<pts.length;i++){const a=pts[i-1],b=pts[i];
+    if(a[1]>ty&&b[1]<=ty) return a[0]+(b[0]-a[0])*(a[1]-ty)/(a[1]-b[1]);}return null;};
+  let s=`<line class="grid" x1="${L}" y1="${y0}" x2="${RX}" y2="${y0}"/>`+
+        `<text class="tick" x="${L-8}" y="${y0+4}" text-anchor="end">entry</text>`;
+  for(let r=1;r<=5;r++){const y=yR(r);
+    s+=`<line class="grid" x1="${L}" y1="${y}" x2="${RX}" y2="${y}"/>`+
+       `<text class="tick" x="${L-8}" y="${y+4}" text-anchor="end">+${r}R</text>`;}
+  s+=`<rect class="pxbox" x="112" y="${y0}" width="78" height="${PR}" rx="3"/>`+
+     `<line class="pxstop" x1="112" y1="${yR(-1)}" x2="232" y2="${yR(-1)}"/>`+
+     `<text class="dlabel" x="114" y="${yR(-1)+15}" fill="var(--neg)">initial stop — the box floor; this gap is 1R</text>`;
+  let d=`M230 ${yR(-1)} `;
+  [[230,274,238],[274,332,208],[332,402,178],[402,472,152],[472,606,128]]
+    .forEach(t=>{d+=`L${t[0]} ${t[2]} L${t[1]} ${t[2]} `;});
+  s+=`<path class="pxtrail" d="${d}"/>`+
+     `<text class="dlabel" x="${RX-4}" y="196" text-anchor="end" fill="var(--steel)">one shared stop — ratchets up, never down</text>`+
+     `<path class="px" d="M${pts.map(p=>p.join(' ')).join(' L')}"/>`+
+     `<circle cx="198" cy="${y0}" r="5" fill="var(--accent)"/>`+
+     `<text class="dlabel b" x="204" y="${y0+16}" fill="var(--accent-ink)">BUY — 1 unit</text>`;
+  for(let m=0.5;m<=5.0001;m+=0.5){const y=yR(m),x=cross(y);if(x===null)continue;
+    s+=Math.abs(m-2.5)<1e-9
+      ? `<circle cx="${x.toFixed(1)}" cy="${y}" r="5.5" fill="var(--surface)" stroke="var(--muted)" stroke-width="1.8"/>`
+      : `<circle cx="${x.toFixed(1)}" cy="${y}" r="4.5" fill="var(--accent)"/>`;}
+  s+=`<text class="dlabel b" x="${(cross(yR(0.5))-8).toFixed(1)}" y="${yR(0.5)-4}" text-anchor="end" fill="var(--accent-ink)">ADD at +½R</text>`+
+     `<text class="dlabel" x="${(cross(yR(2.5))-10).toFixed(1)}" y="${yR(2.5)-2}" text-anchor="end" fill="var(--muted)">no add — bands flat</text>`+
+     `<circle cx="598" cy="128" r="5" fill="var(--neg)"/>`+
+     `<text class="dlabel b" x="608" y="124" fill="var(--neg)">EXIT — whole stack out</text>`+
+     `<line class="axis" x1="${L-6}" y1="${AX}" x2="716" y2="${AX}"/>`;
+  $('#accumdiagram').innerHTML=svg(W,H)+s+'</svg>';
 }
 function renderSurv(){
   const W=820,L=152,R=30,Y0=2011,Y1=2026, x=y=>L+(W-L-R)*(y-Y0)/(Y1-Y0);
