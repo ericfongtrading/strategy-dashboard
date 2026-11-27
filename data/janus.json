@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-27T06:25:02.011399+00:00",
+  "lastUpdated": "2026-11-27T06:30:02.399085+00:00",
   "basis": "Live own funds · combined momentum + fade book · shown at the $100k standard size",
   "positions": [
     {
@@ -9,77 +9,77 @@
       "current": "66.08",
       "size": "$2,795",
       "pnl": "+$135",
-      "pnlNum": 134.84,
+      "pnlNum": 134.57,
       "stop": "47.29"
     },
     {
       "symbol": "1000PEPE",
       "direction": "Long",
       "entry": "0.0034253",
-      "current": "0.0036",
+      "current": "0.003605",
       "size": "$2,044",
-      "pnl": "+$104",
-      "pnlNum": 104.23,
+      "pnl": "+$107",
+      "pnlNum": 107.21,
       "stop": "0.0025695"
     },
     {
       "symbol": "ENA",
       "direction": "Long",
       "entry": "0.10328",
-      "current": "0.10615",
+      "current": "0.10633",
       "size": "$2,152",
-      "pnl": "+$60",
-      "pnlNum": 59.79,
+      "pnl": "+$64",
+      "pnlNum": 63.54,
       "stop": "0.0774825"
     },
     {
       "symbol": "JCT",
       "direction": "Short",
       "entry": "0.001578",
-      "current": "0.001502",
+      "current": "0.001505",
       "size": "$401",
       "pnl": "+$19",
-      "pnlNum": 19.33,
+      "pnlNum": 18.57,
       "stop": "0.0019725"
     },
     {
       "symbol": "BTC",
       "direction": "Short",
       "entry": "61,733",
-      "current": "61,687",
+      "current": "61,671",
       "size": "$4,818",
-      "pnl": "+$4",
-      "pnlNum": 3.62,
+      "pnl": "+$5",
+      "pnlNum": 4.84,
       "stop": "77,151"
     },
     {
       "symbol": "ETH",
       "direction": "Short",
       "entry": "1,733",
-      "current": "1,736",
+      "current": "1,735",
       "size": "$3,824",
-      "pnl": "-$7",
-      "pnlNum": -7.35,
+      "pnl": "-$5",
+      "pnlNum": -5.08,
       "stop": "2,166"
     },
     {
       "symbol": "SOL",
       "direction": "Short",
       "entry": "71.96",
-      "current": "73.03",
+      "current": "73",
       "size": "$3,620",
-      "pnl": "-$54",
-      "pnlNum": -53.62,
+      "pnl": "-$52",
+      "pnlNum": -52.11,
       "stop": "89.94"
     },
     {
       "symbol": "NEAR",
       "direction": "Short",
       "entry": "3.022",
-      "current": "3.119",
+      "current": "3.118",
       "size": "$2,296",
-      "pnl": "-$74",
-      "pnlNum": -74.0,
+      "pnl": "-$73",
+      "pnlNum": -73.24,
       "stop": "3.776"
     },
     {
@@ -206,10 +206,10 @@
         3.81,
         1.05,
         4.22,
-        -0.11,
+        -0.1,
         null
       ],
-      "ytd": 65.03,
+      "ytd": 65.05,
       "isLive": true
     }
   ],
