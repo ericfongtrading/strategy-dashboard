@@ -1,7 +1,33 @@
 {
-  "lastUpdated": "2026-11-25T00:40:03Z",
+  "lastUpdated": "2026-11-27T16:40:03Z",
   "basis": "Recent trades and open positions use recorded IB execution. Closed trade P&L is gross before commissions and fees. Timestamps are HKT.",
   "recentTrades": [
+    {
+      "date": "2026-11-27 22:20",
+      "entryDate": "2026-11-27 21:21",
+      "symbol": "P2",
+      "direction": "Short",
+      "entry": "3,672.4",
+      "exit": "3,666.6",
+      "pnl": "+$116",
+      "pnlNum": 116.0,
+      "rMultiple": "",
+      "note": "rule d opp cluster \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
+    {
+      "date": "2026-11-27 22:20",
+      "entryDate": "2026-11-27 21:19",
+      "symbol": "P1",
+      "direction": "Short",
+      "entry": "3,679.3",
+      "exit": "3,666.6",
+      "pnl": "+$254",
+      "pnlNum": 254.0,
+      "rMultiple": "",
+      "note": "ob rejection \u00b7 IB gross",
+      "source": "IB recorded fills"
+    },
     {
       "date": "2026-11-25 08:32",
       "entryDate": "2026-11-25 02:46",
@@ -104,32 +130,6 @@
       "pnlNum": -305.0,
       "rMultiple": "",
       "note": "stop loss \u00b7 IB gross",
-      "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-20 23:33",
-      "entryDate": "2026-11-20 23:28",
-      "symbol": "P2",
-      "direction": "Short",
-      "entry": "3,528.5",
-      "exit": "3,543.9",
-      "pnl": "-$308",
-      "pnlNum": -308.0,
-      "rMultiple": "",
-      "note": "stop loss \u00b7 IB gross",
-      "source": "IB recorded fills"
-    },
-    {
-      "date": "2026-11-20 11:21",
-      "entryDate": "2026-11-20 11:12",
-      "symbol": "P1",
-      "direction": "Short",
-      "entry": "3,525.2",
-      "exit": "3,531.1",
-      "pnl": "-$118",
-      "pnlNum": -118.0,
-      "rMultiple": "",
-      "note": "ob rejection \u00b7 IB gross",
       "source": "IB recorded fills"
     }
   ],
@@ -285,11 +285,11 @@
   "modelVersion": "gc.h4_daily5.20261101",
   "liveMonthly": {
     "basis": "gross before commissions and fees",
-    "lastClose": "2026-11-25",
+    "lastClose": "2026-11-27",
     "rows": [
       {
         "month": "2026-11",
-        "returnPct": 0.354
+        "returnPct": 0.6399
       }
     ]
   }
