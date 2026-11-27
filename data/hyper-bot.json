@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-27T12:00:02.898096+00:00",
+  "lastUpdated": "2026-11-27T12:26:02.263679+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "CRESPO",
       "direction": "Long",
       "entry": "58,749",
-      "current": "61,637",
+      "current": "61,573",
       "size": "1 BTC",
-      "pnl": "+$2,653",
-      "pnlNum": 2653,
+      "pnl": "+$2,615",
+      "pnlNum": 2615,
       "stop": "58,749 (BE)",
       "targets": "✓ 61,050 / 64,700",
       "realized": "+$920",
@@ -40,15 +40,6 @@
     }
   ],
   "plans": [
-    {
-      "symbol": "PIRLO",
-      "direction": "Long",
-      "zone": "54,700 - 55,800",
-      "stop": "53,200",
-      "targets": "59,250 / 61,050",
-      "conviction": 3,
-      "status": "Waiting"
-    },
     {
       "symbol": "KANE",
       "direction": "Short",
@@ -601,5 +592,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $61,637"
+  "priceNote": "Unrealised P&L marked at $61,573"
 }
