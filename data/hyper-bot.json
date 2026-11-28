@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-28T08:02:01.566651+00:00",
+  "lastUpdated": "2026-11-28T11:48:01.928718+00:00",
   "basis": "record kept at 1 BTC notional per trade",
   "headline": [
     {
@@ -29,10 +29,10 @@
       "symbol": "CRESPO",
       "direction": "Long",
       "entry": "58,749",
-      "current": "59,772",
+      "current": "59,182",
       "size": "1 BTC",
-      "pnl": "+$1,534",
-      "pnlNum": 1534,
+      "pnl": "+$1,180",
+      "pnlNum": 1180,
       "stop": "58,749 (BE)",
       "targets": "✓ 61,050 / 64,700",
       "realized": "+$920",
@@ -42,10 +42,10 @@
       "symbol": "LAMPARD",
       "direction": "Long",
       "entry": "59,827",
-      "current": "59,772",
+      "current": "59,182",
       "size": "1 BTC",
-      "pnl": "-$55",
-      "pnlNum": -55,
+      "pnl": "-$646",
+      "pnlNum": -646,
       "stop": "58,000",
       "targets": "61,100 / 61,650 / 64,450",
       "realized": "-",
@@ -53,6 +53,15 @@
     }
   ],
   "plans": [
+    {
+      "symbol": "BAGGIO",
+      "direction": "Short",
+      "zone": "61,050 - 62,100",
+      "stop": "63,450",
+      "targets": "58,900 / 57,500",
+      "conviction": 3,
+      "status": "Waiting"
+    },
     {
       "symbol": "KANE",
       "direction": "Short",
@@ -605,5 +614,5 @@
       "note": "Partial take-profit"
     }
   ],
-  "priceNote": "Unrealised P&L marked at $59,772"
+  "priceNote": "Unrealised P&L marked at $59,182"
 }
